@@ -721,6 +721,10 @@ function onWindowResize() {
 
 function animate3D() {
   requestAnimationFrame(animate3D);
+
+  const container = document.getElementById('threejs-container');
+  if (document.hidden || !container || container.offsetParent === null) return;
+
   if (controls) controls.update();
   if (renderer && scene && camera) {
     renderer.render(scene, camera);

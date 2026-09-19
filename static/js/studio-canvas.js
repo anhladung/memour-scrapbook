@@ -116,7 +116,7 @@ function initStudioCanvas() {
     renderSafeZoneGuide();
     if (typeof syncTo3DViewer === 'function') setTimeout(syncTo3DViewer, 100);
   }
-  setTimeout(() => { if (typeof applyBackgroundPattern === 'function') applyBackgroundPattern('PAT-001', 'Nền Giấy Mỹ Thuật Sợi Tự Nhiên', '/static/assets/patterns/pat_001.png', 3000); }, 200);
+  setTimeout(() => { if (typeof applyBackgroundPattern === 'function') applyBackgroundPattern('PAT-001', 'Nền Giấy Mỹ Thuật Sợi Tự Nhiên', '/static/assets/patterns/pat_001.webp', 3000); }, 200);
 }
 
 // ================= KEYBOARD & MOUSE SHORTCUTS =================
@@ -809,7 +809,7 @@ function deletePage(index) {
       });
     } else {
       canvas.clear();
-      const patUrl = targetPage.bgPattern || '/static/assets/patterns/pat_001.png';
+      const patUrl = targetPage.bgPattern || '/static/assets/patterns/pat_001.webp';
       applyBackgroundPattern('PAT-001', 'Nền Giấy Mỹ Thuật', patUrl, 500);
     }
     showToast('Đã xóa trang', 'info');
@@ -874,9 +874,9 @@ const OLD_TEMPLATE_PRESETS = {
     bg: '#e8d8c3',
     items: [
       { sku: 'LAY-001', type: 'layout', image: '/static/assets/layouts/lay_001.svg', name: 'Khung Polaroid Vintage Film', left: 240, top: 220, scale: 0.85, angle: -4 },
-      { sku: 'STK-CMP-025', type: 'sticker', image: '/static/assets/stickers/stk_cmp_025.png', name: 'Máy Ảnh Polaroid Vintage', left: 120, top: 110, scale: 0.7, angle: -12 },
-      { sku: 'STK-TRV-014', type: 'sticker', image: '/static/assets/stickers/stk_trv_014.png', name: 'Tem Bưu Chính Xe Vespa', left: 460, top: 130, scale: 0.75, angle: 15 },
-      { sku: 'STK-VN-008', type: 'sticker', image: '/static/assets/stickers/stk_vn_008.png', name: 'Ly Cà Phê Phin Nhỏ Giọt', left: 240, top: 75, scale: 0.8, angle: 2 },
+      { sku: 'STK-CMP-025', type: 'sticker', image: '/static/assets/stickers/stk_cmp_025.webp', name: 'Máy Ảnh Polaroid Vintage', left: 120, top: 110, scale: 0.7, angle: -12 },
+      { sku: 'STK-TRV-014', type: 'sticker', image: '/static/assets/stickers/stk_trv_014.webp', name: 'Tem Bưu Chính Xe Vespa', left: 460, top: 130, scale: 0.75, angle: 15 },
+      { sku: 'STK-VN-008', type: 'sticker', image: '/static/assets/stickers/stk_vn_008.webp', name: 'Ly Cà Phê Phin Nhỏ Giọt', left: 240, top: 75, scale: 0.8, angle: 2 },
       { type: 'text', text: 'Đà Lạt ✦ Mùa Hoa Dã Quỳ', fontFamily: 'Patrick Hand', fontSize: 34, fill: '#78350f', left: 300, top: 480, angle: -2 }
     ]
   },
@@ -886,9 +886,9 @@ const OLD_TEMPLATE_PRESETS = {
     pattern: '/static/assets/patterns/pat_gingham_pink.svg',
     items: [
       { sku: 'LAY-002', type: 'layout', image: '/static/assets/layouts/lay_002.svg', name: 'Layout Khung Kép Bạn Thân', left: 300, top: 240, scale: 0.88, angle: 3 },
-      { sku: 'STK-TRV-001', type: 'sticker', image: '/static/assets/stickers/stk_trv_001.png', name: 'Cung Đường Phượt Road Trip', left: 130, top: 120, scale: 0.75, angle: -18 },
-      { sku: 'STK-CMP-023', type: 'sticker', image: '/static/assets/stickers/stk_cmp_023.png', name: 'Xe Van VW Camper Xanh Mint', left: 470, top: 380, scale: 0.8, angle: 12 },
-      { sku: 'STK-TRV-007', type: 'sticker', image: '/static/assets/stickers/stk_trv_007.png', name: 'Vé Máy Bay Boarding Pass', left: 460, top: 110, scale: 0.7, angle: 20 },
+      { sku: 'STK-TRV-001', type: 'sticker', image: '/static/assets/stickers/stk_trv_001.webp', name: 'Cung Đường Phượt Road Trip', left: 130, top: 120, scale: 0.75, angle: -18 },
+      { sku: 'STK-CMP-023', type: 'sticker', image: '/static/assets/stickers/stk_cmp_023.webp', name: 'Xe Van VW Camper Xanh Mint', left: 470, top: 380, scale: 0.8, angle: 12 },
+      { sku: 'STK-TRV-007', type: 'sticker', image: '/static/assets/stickers/stk_trv_007.webp', name: 'Vé Máy Bay Boarding Pass', left: 460, top: 110, scale: 0.7, angle: 20 },
       { type: 'text', text: 'Best Friends Forever ✦', fontFamily: 'Patrick Hand', fontSize: 36, fill: '#db2777', left: 300, top: 490, angle: 0 }
     ]
   },
@@ -898,7 +898,7 @@ const OLD_TEMPLATE_PRESETS = {
     pattern: '/static/assets/patterns/pat_dotgrid.svg',
     items: [
       { sku: 'LAY-003', type: 'layout', image: '/static/assets/layouts/lay_003.svg', name: 'Khung Polaroid Viền Đỏ Rượu', left: 260, top: 230, scale: 0.82, angle: -5 },
-      { sku: 'STK-TRV-004', type: 'sticker', image: '/static/assets/stickers/stk_trv_004.png', name: 'Máy Bay Du Lịch Quốc Tế', left: 450, top: 160, scale: 0.75, angle: 14 },
+      { sku: 'STK-TRV-004', type: 'sticker', image: '/static/assets/stickers/stk_trv_004.webp', name: 'Máy Bay Du Lịch Quốc Tế', left: 450, top: 160, scale: 0.75, angle: 14 },
       { sku: 'STK-TRV-028', type: 'sticker', image: '/static/assets/stickers/stk_trv_028.png', name: 'Chữ Viết Tay Memories', left: 110, top: 380, scale: 0.7, angle: -10 },
       { type: 'text', text: 'Every moment with you ✦', fontFamily: 'Playfair Display', fontSize: 30, fill: '#881337', left: 300, top: 480, angle: 0 }
     ]
@@ -909,8 +909,8 @@ const OLD_TEMPLATE_PRESETS = {
     pattern: '/static/assets/patterns/pat_botanical.svg',
     items: [
       { sku: 'LAY-004', type: 'layout', image: '/static/assets/layouts/lay_004.svg', name: 'Bố Cục 4 Ô Kỷ Yếu', left: 300, top: 250, scale: 0.8, angle: 0 },
-      { sku: 'STK-VN-001', type: 'sticker', image: '/static/assets/stickers/stk_vn_001.png', name: 'Nón Lá Việt Nam Quai Đỏ', left: 110, top: 100, scale: 0.75, angle: -15 },
-      { sku: 'STK-VN-017', type: 'sticker', image: '/static/assets/stickers/stk_vn_017.png', name: 'Chữ Nghệ Thuật VIỆT NAM 3D', left: 470, top: 420, scale: 0.7, angle: 10 },
+      { sku: 'STK-VN-001', type: 'sticker', image: '/static/assets/stickers/stk_vn_001.webp', name: 'Nón Lá Việt Nam Quai Đỏ', left: 110, top: 100, scale: 0.75, angle: -15 },
+      { sku: 'STK-VN-017', type: 'sticker', image: '/static/assets/stickers/stk_vn_017.webp', name: 'Chữ Nghệ Thuật VIỆT NAM 3D', left: 470, top: 420, scale: 0.7, angle: 10 },
       { type: 'text', text: 'Tự Hào Non Sông Gấm Vóc', fontFamily: 'Patrick Hand', fontSize: 32, fill: '#065f46', left: 300, top: 490, angle: 0 }
     ]
   },
@@ -920,8 +920,8 @@ const OLD_TEMPLATE_PRESETS = {
     pattern: '/static/assets/patterns/pat_black_card.svg',
     items: [
       { sku: 'LAY-005', type: 'layout', image: '/static/assets/layouts/lay_005.svg', name: 'Layout Khung Đen Gunmetal', left: 280, top: 230, scale: 0.84, angle: 4 },
-      { sku: 'STK-CMP-002', type: 'sticker', image: '/static/assets/stickers/stk_cmp_002.png', name: 'Huy Hiệu Cắm Trại Ngàn Sao', left: 120, top: 120, scale: 0.8, angle: -15 },
-      { sku: 'STK-CMP-030', type: 'sticker', image: '/static/assets/stickers/stk_cmp_030.png', name: 'La Bàn Bỏ Túi Đồng Cổ', left: 300, top: 75, scale: 0.82, angle: -2 },
+      { sku: 'STK-CMP-002', type: 'sticker', image: '/static/assets/stickers/stk_cmp_002.webp', name: 'Huy Hiệu Cắm Trại Ngàn Sao', left: 120, top: 120, scale: 0.8, angle: -15 },
+      { sku: 'STK-CMP-030', type: 'sticker', image: '/static/assets/stickers/stk_cmp_030.webp', name: 'La Bàn Bỏ Túi Đồng Cổ', left: 300, top: 75, scale: 0.82, angle: -2 },
       { type: 'text', text: 'EXPLORE UNDER STARS ✦', fontFamily: 'Plus Jakarta Sans', fontSize: 32, fill: '#fbbf24', left: 300, top: 480, angle: 0 }
     ]
   },
@@ -931,8 +931,8 @@ const OLD_TEMPLATE_PRESETS = {
     pattern: '/static/assets/patterns/pat_grid.svg',
     items: [
       { sku: 'LAY-006', type: 'layout', image: '/static/assets/layouts/lay_006.svg', name: 'Khung Ảnh Sinh Nhật Rực Rỡ', left: 270, top: 230, scale: 0.82, angle: -3 },
-      { sku: 'STK-CMP-001', type: 'sticker', image: '/static/assets/stickers/stk_cmp_001.png', name: 'Biển Gỗ Adventure Awaits', left: 460, top: 140, scale: 0.8, angle: 12 },
-      { sku: 'STK-CMP-008', type: 'sticker', image: '/static/assets/stickers/stk_cmp_008.png', name: 'Chữ Collect Moments', left: 300, top: 70, scale: 0.85, angle: 0 },
+      { sku: 'STK-CMP-001', type: 'sticker', image: '/static/assets/stickers/stk_cmp_001.webp', name: 'Biển Gỗ Adventure Awaits', left: 460, top: 140, scale: 0.8, angle: 12 },
+      { sku: 'STK-CMP-008', type: 'sticker', image: '/static/assets/stickers/stk_cmp_008.webp', name: 'Chữ Collect Moments', left: 300, top: 70, scale: 0.85, angle: 0 },
       { type: 'text', text: 'Collect moments, not things! 🌲', fontFamily: 'Patrick Hand', fontSize: 34, fill: '#b45309', left: 300, top: 480, angle: 0 }
     ]
   }
@@ -1592,7 +1592,7 @@ let currentPaperPatternUrl = null;
 function applyBackgroundPattern(sku, name, imageUrl, price) {
   if (!canvas) return;
 
-  const patternUrl = imageUrl || '/static/assets/patterns/pat_001.png';
+  const patternUrl = imageUrl || '/static/assets/patterns/pat_001.webp';
   currentPaperPatternUrl = patternUrl;
 
   // 1. Cập nhật trạng thái trang hiện tại
@@ -1658,7 +1658,7 @@ function saveStudioDraftToStorage(isImmediate = false) {
       activePageIndex: activePageIndex,
       currentBookSku: currentBookSku || 'SCR-001',
       currentSizeKey: currentSizeKey || 'a5_portrait',
-      currentPaperPatternUrl: (typeof currentPaperPatternUrl !== 'undefined') ? currentPaperPatternUrl : '/static/assets/patterns/pat_001.png',
+      currentPaperPatternUrl: (typeof currentPaperPatternUrl !== 'undefined') ? currentPaperPatternUrl : '/static/assets/patterns/pat_001.webp',
       studioPages: studioPages.map(page => ({
         id: page.id,
         name: page.name,
@@ -1762,7 +1762,7 @@ function clearStudioDraftAndReset() {
     } catch (e) {}
 
     studioPages = [
-      { id: Date.now(), name: 'Trang 1', json: null, bg: '#e8d8c3', bgPattern: '/static/assets/patterns/pat_001.png' }
+      { id: Date.now(), name: 'Trang 1', json: null, bg: '#e8d8c3', bgPattern: '/static/assets/patterns/pat_001.webp' }
     ];
     activePageIndex = 0;
     switchPage(0);
@@ -1853,12 +1853,12 @@ function getPageSnapshotDataUrl(pageIdx, onRenderedCallback) {
       } catch(e) {}
     }
 
-    const fallbackUrl = (page && page.bgPattern) ? page.bgPattern : ((typeof currentPaperPatternUrl !== 'undefined') ? currentPaperPatternUrl : '/static/assets/patterns/pat_001.png');
+    const fallbackUrl = (page && page.bgPattern) ? page.bgPattern : ((typeof currentPaperPatternUrl !== 'undefined') ? currentPaperPatternUrl : '/static/assets/patterns/pat_001.webp');
     if (onRenderedCallback) onRenderedCallback(fallbackUrl);
     return fallbackUrl;
   }
 
-  const defaultUrl = (typeof currentPaperPatternUrl !== 'undefined') ? currentPaperPatternUrl : '/static/assets/patterns/pat_001.png';
+  const defaultUrl = (typeof currentPaperPatternUrl !== 'undefined') ? currentPaperPatternUrl : '/static/assets/patterns/pat_001.webp';
   if (onRenderedCallback) onRenderedCallback(defaultUrl);
   return defaultUrl;
 }

@@ -73,7 +73,7 @@
         {
           "sku": "LAY-VN-001",
           "type": "layout",
-          "image": "/static/assets/layouts/lay_vn_001.png",
+          "image": "/static/assets/layouts/lay_vn_001.webp",
           "name": "Khung Hoa Sen",
           "left": 250,
           "top": 220,
@@ -83,7 +83,7 @@
         {
           "sku": "STK-006",
           "type": "sticker",
-          "image": "/static/assets/stickers/stk_006.png",
+          "image": "/static/assets/stickers/stk_006.webp",
           "name": "Rước Cờ Đỏ",
           "left": 120,
           "top": 110,
@@ -93,7 +93,7 @@
         {
           "sku": "STK-008",
           "type": "sticker",
-          "image": "/static/assets/stickers/stk_008.png",
+          "image": "/static/assets/stickers/stk_008.webp",
           "name": "Chim Lạc",
           "left": 400,
           "top": 120,
@@ -178,7 +178,7 @@
         {
           "sku": "LAY-001",
           "type": "layout",
-          "image": "/static/assets/layouts/lay_001.png",
+          "image": "/static/assets/layouts/lay_001.webp",
           "name": "Khung Polaroid",
           "left": 260,
           "top": 240,
@@ -188,7 +188,7 @@
         {
           "sku": "STK-001",
           "type": "sticker",
-          "image": "/static/assets/stickers/stk_001.png",
+          "image": "/static/assets/stickers/stk_001.webp",
           "name": "Câu Cá",
           "left": 130,
           "top": 120,
@@ -198,7 +198,7 @@
         {
           "sku": "STK-002",
           "type": "sticker",
-          "image": "/static/assets/stickers/stk_002.png",
+          "image": "/static/assets/stickers/stk_002.webp",
           "name": "Hộp Danisa",
           "left": 420,
           "top": 380,
@@ -283,7 +283,7 @@
         {
           "sku": "LAY-TXT-001",
           "type": "layout",
-          "image": "/static/assets/layouts/lay_txt_001.png",
+          "image": "/static/assets/layouts/lay_txt_001.webp",
           "name": "Thư Hà Nội",
           "left": 250,
           "top": 240,
@@ -293,7 +293,7 @@
         {
           "sku": "STK-012",
           "type": "sticker",
-          "image": "/static/assets/stickers/stk_012.png",
+          "image": "/static/assets/stickers/stk_012.webp",
           "name": "Cầu Thê Húc",
           "left": 120,
           "top": 100,
@@ -303,7 +303,7 @@
         {
           "sku": "STK-014",
           "type": "sticker",
-          "image": "/static/assets/stickers/stk_014.png",
+          "image": "/static/assets/stickers/stk_014.webp",
           "name": "Nón Lá Trà Sữa",
           "left": 410,
           "top": 400,
@@ -380,7 +380,7 @@
         {
           "sku": "LAY-001",
           "type": "layout",
-          "image": "/static/assets/layouts/lay_001.png",
+          "image": "/static/assets/layouts/lay_001.webp",
           "name": "Khung Polaroid",
           "left": 180,
           "top": 180,
@@ -390,7 +390,7 @@
         {
           "sku": "LAY-004",
           "type": "layout",
-          "image": "/static/assets/layouts/lay_004.png",
+          "image": "/static/assets/layouts/lay_004.webp",
           "name": "Khung Len",
           "left": 360,
           "top": 280,
@@ -467,7 +467,7 @@
         {
           "sku": "LAY-VN-002",
           "type": "layout",
-          "image": "/static/assets/layouts/lay_vn_002.png",
+          "image": "/static/assets/layouts/lay_vn_002.webp",
           "name": "Khung Kỷ Hà",
           "left": 250,
           "top": 230,
@@ -477,7 +477,7 @@
         {
           "sku": "STK-009",
           "type": "sticker",
-          "image": "/static/assets/stickers/stk_009.png",
+          "image": "/static/assets/stickers/stk_009.webp",
           "name": "Chữ 3D VN",
           "left": 130,
           "top": 120,
@@ -554,7 +554,7 @@
         {
           "sku": "LAY-VN-004",
           "type": "layout",
-          "image": "/static/assets/layouts/lay_vn_004.png",
+          "image": "/static/assets/layouts/lay_vn_004.webp",
           "name": "Khung Rồng Thiêng",
           "left": 250,
           "top": 240,
@@ -564,7 +564,7 @@
         {
           "sku": "STK-005",
           "type": "sticker",
-          "image": "/static/assets/stickers/stk_005.png",
+          "image": "/static/assets/stickers/stk_005.webp",
           "name": "Hạc Tiên",
           "left": 130,
           "top": 110,

@@ -29,7 +29,7 @@ class SeoSmokeTests(unittest.TestCase):
         self.assertEqual(website['url'], f'{self.site_url}/')
 
     def test_favicon_and_public_urls(self):
-        for path in ('/favicon.ico', '/static/assets/favicon-512.webp', '/static/assets/apple-touch-icon.webp'):
+        for path in ('/favicon.ico', '/static/assets/favicon-512.png', '/static/assets/apple-touch-icon.png'):
             with self.subTest(path=path):
                 response = self.client.get(path)
                 self.assertEqual(response.status_code, 200)

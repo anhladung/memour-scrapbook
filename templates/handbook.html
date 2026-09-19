@@ -41,7 +41,7 @@
       <article class="bg-white border-3 border-black rounded-3xl overflow-hidden shadow-neo-lg flex flex-col justify-between hover:border-rose-700 hover:shadow-neo-xl transition-all group">
         <div>
           <div class="w-full aspect-[16/10] bg-stone-100 relative overflow-hidden border-b-2 border-black">
-            <img src="{{ blog.cover_image }}" alt="{{ blog.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="{{ blog.cover_image }}" alt="{{ blog.title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <span class="absolute top-3 left-3 bg-amber-300 text-stone-950 text-xs font-heading font-black px-3 py-1 rounded-xl border border-black shadow-sm">
               ✦ {{ blog.category }}
             </span>

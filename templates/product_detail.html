@@ -110,7 +110,7 @@
         {% for rel in related_products %}
         <div class="bg-white border-2 border-black rounded-3xl overflow-hidden shadow-neo flex flex-col justify-between hover:border-rose-700 transition-all group">
           <div class="p-4 bg-[#fbf8f2] border-b-2 border-black flex items-center justify-center">
-            <img src="{{ rel.image }}" alt="{{ rel.name }}" class="max-h-32 object-contain group-hover:scale-105 transition-transform duration-300">
+            <img src="{{ rel.image }}" alt="{{ rel.name }}" loading="lazy" class="max-h-32 object-contain group-hover:scale-105 transition-transform duration-300">
           </div>
           <div class="p-4">
             <span class="text-[10px] font-mono font-bold text-amber-800">{{ rel.sku }}</span>

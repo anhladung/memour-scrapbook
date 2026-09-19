@@ -305,8 +305,59 @@ body.lightbox-open { overflow: hidden; }
     max-width: 100%;
   }
 
-  .hero-title .whitespace-nowrap {
+
+  .hero-content {
+    padding-inline: 2.5rem;
+  }
+
+  .hero-title {
+    width: 100%;
+    max-width: 19rem;
+    margin-inline: auto;
+    font-size: 1.25rem !important;
+    line-height: 1.15 !important;
+    text-wrap: balance;
+  }
+
+  .hero-title .whitespace-nowrap,
+  .hero-title > span {
     white-space: normal !important;
+  }
+
+  .hero-brand-pill {
+    max-width: 15.5rem;
+    margin-inline: auto;
+    padding: .5rem .8rem !important;
+    font-size: .625rem !important;
+    line-height: 1.2;
+    letter-spacing: .04em;
+    text-align: center;
+  }
+
+  .hero-primary-cta,
+  .hero-actions > a {
+    width: min(100%, 15rem);
+    min-height: 3.25rem;
+    padding: .75rem 1rem !important;
+    font-size: .8125rem !important;
+    line-height: 1.2;
+    justify-content: center;
+  }
+
+  .hero-nav {
+    width: 2rem !important;
+    height: 2rem !important;
+    border-radius: .75rem;
+    font-size: .875rem !important;
+  }
+
+  .carousel-dot-btn {
+    height: .625rem;
+  }
+
+  .carousel-container [class*="bottom-4"][class*="left-1/2"] {
+    padding: .35rem .7rem;
+    gap: .5rem;
   }
 
   .hero-brand-pill {

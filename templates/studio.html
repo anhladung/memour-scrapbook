@@ -3,6 +3,8 @@
 {% block title %}Xưởng Thiết Kế Scrapbook 2D/3D & Trợ Lý AI - MEMOUR Studio | Every memory has a story{% endblock %}
 
 {% block extra_head %}
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <script>
   // Server-side preset data if user came from "Remix" button
   window.STUDIO_PRESET_DATA = {% if active_preset %}{{ active_preset.canvas_preset | tojson }}{% else %}null{% endif %};

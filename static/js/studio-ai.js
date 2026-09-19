@@ -63,7 +63,7 @@ function renderAiSuggestions(data) {
     let items = [data.book, ...data.layouts, ...data.stickers];
     itemsContainer.innerHTML = items.map(item => `
       <div class="bg-white border border-black/20 rounded-xl p-2.5 flex items-center gap-2.5 shadow-sm hover:border-rose-700 transition-all">
-        <img src="${item.image}" alt="${item.name}" class="w-10 h-10 object-contain rounded bg-amber-50/50 p-1 border">
+        <img src="${item.image}" alt="${item.name}" loading="lazy" class="w-10 h-10 object-contain rounded bg-amber-50/50 p-1 border">
         <div class="flex-grow min-w-0">
           <div class="flex items-center gap-1.5">
             <span class="text-[10px] font-mono font-black bg-stone-900 text-white px-1.5 py-0.2 rounded">${item.sku}</span>

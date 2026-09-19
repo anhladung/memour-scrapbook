@@ -330,7 +330,7 @@
             <span class="text-xs font-bold text-stone-500">Sticker 3D</span>
           </div>
           <div class="w-full aspect-video bg-amber-50 rounded-2xl border border-black/10 p-4 flex items-center justify-center mb-5">
-            <img src="/static/assets/stickers/stk_006.webp" alt="Sticker MEMOUR" class="max-h-28 object-contain">
+            <img src="/static/assets/stickers/stk_006.webp" alt="Sticker MEMOUR" loading="lazy" class="max-h-28 object-contain">
           </div>
           <h3 class="font-heading font-bold text-xl text-stone-900 mb-2">Sticker &amp; Nhãn Dán Nổi 3D</h3>
           <p class="text-xs text-stone-600 leading-relaxed mb-4">
@@ -356,7 +356,7 @@
             <span class="text-xs font-bold text-stone-500">Khung Ảnh</span>
           </div>
           <div class="w-full aspect-video bg-rose-50 rounded-2xl border border-black/10 p-4 flex items-center justify-center mb-5">
-            <img src="/static/assets/layouts/lay_001.webp" alt="Layout MEMOUR" class="max-h-28 object-contain">
+            <img src="/static/assets/layouts/lay_001.webp" alt="Layout MEMOUR" loading="lazy" class="max-h-28 object-contain">
           </div>
           <h3 class="font-heading font-bold text-xl text-stone-900 mb-2">Khung Ảnh Polaroid &amp; Layout</h3>
           <p class="text-xs text-stone-600 leading-relaxed mb-4">
@@ -382,7 +382,7 @@
             <span class="text-xs font-bold text-stone-500">Sổ Bìa Cứng</span>
           </div>
           <div class="w-full aspect-video bg-stone-100 rounded-2xl border border-black/10 p-4 flex items-center justify-center mb-5">
-            <img src="/static/assets/scrapbooks/scr_001.webp" alt="Book MEMOUR" class="max-h-28 object-contain">
+            <img src="/static/assets/scrapbooks/scr_001.webp" alt="Book MEMOUR" loading="lazy" class="max-h-28 object-contain">
           </div>
           <h3 class="font-heading font-bold text-xl text-stone-900 mb-2">Sổ Scrapbook Bìa Cứng Hoàng Sa &amp; Trường Sa</h3>
           <p class="text-xs text-stone-600 leading-relaxed mb-4">
@@ -427,7 +427,7 @@
         <div>
           <!-- Image -->
           <div class="w-full aspect-[4/3] bg-stone-100 relative overflow-hidden border-b-2 border-black">
-            <img src="{{ insp.image }}" alt="{{ insp.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="{{ insp.image }}" alt="{{ insp.title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <span class="absolute top-3 right-3 bg-black text-white text-[10px] font-black px-2.5 py-1 rounded-full">
               {{ insp.theme }}
             </span>
@@ -501,7 +501,7 @@
       <article class="bg-white border-3 border-black rounded-3xl overflow-hidden shadow-neo-lg flex flex-col justify-between hover:border-rose-700 hover:shadow-neo-xl transition-all group">
         <div>
           <div class="w-full aspect-[16/10] bg-rose-50 border-b-2 border-black overflow-hidden relative">
-            <img src="{{ blog.cover_image }}" alt="{{ blog.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="{{ blog.cover_image }}" alt="{{ blog.title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <span class="absolute bottom-3 left-3 bg-amber-300 text-stone-950 text-xs font-heading font-black px-3 py-1 rounded-xl border border-black shadow-sm">
               ✦ {{ blog.read_time }}
             </span>

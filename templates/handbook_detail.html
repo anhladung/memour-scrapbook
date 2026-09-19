@@ -159,7 +159,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {% for rel in related_products %}
         <div class="bg-white border border-black rounded-2xl p-4 flex items-center gap-3">
-          <img src="{{ rel.image }}" alt="{{ rel.name }}" class="w-12 h-12 object-contain flex-shrink-0">
+          <img src="{{ rel.image }}" alt="{{ rel.name }}" loading="lazy" class="w-12 h-12 object-contain flex-shrink-0">
           <div class="overflow-hidden">
             <span class="text-[10px] font-mono font-black text-rose-800">{{ rel.sku }}</span>
             <h4 class="font-bold text-xs text-stone-900 truncate">{{ rel.name }}</h4>

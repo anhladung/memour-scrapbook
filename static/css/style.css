@@ -1,6 +1,5 @@
 /* Custom Gen Z & Scrapbook Neo-Aesthetic CSS - Vietnamese Typography Harmonization */
 
-0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=Patrick+Hand&display=swap');
 
 :root {
   --font-main: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -288,4 +287,54 @@ body.lightbox-open { overflow: hidden; }
   font-size: .8rem;
   font-weight: 700;
   text-align: center;
+}
+
+
+/* Mobile responsive safeguards */
+@media (max-width: 639px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
+
+  .hero-title .whitespace-nowrap {
+    white-space: normal !important;
+  }
+
+  .hero-brand-pill {
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero-actions > a {
+    width: min(100%, 18rem);
+    justify-content: center;
+  }
+
+  .carousel-container .shadow-neo-xl,
+  .shadow-neo-xl {
+    box-shadow: 6px 6px 0 #000;
+  }
+
+  .studio-canvas-scroll {
+    scroll-padding-inline: .5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .studio-fabric-wrapper {
+    margin-inline: 0;
+  }
+
+  .seo-article-body {
+    overflow-wrap: anywhere;
+  }
 }

@@ -41,7 +41,7 @@ function loadCartView() {
     html += `
       <div class="bg-stone-50 border-2 border-stone-200 rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4 transition-all hover:border-black">
         <div class="w-16 h-16 bg-white rounded-xl border border-stone-300 p-2 flex items-center justify-center flex-shrink-0">
-          <img src="${item.image}" alt="${item.name}" class="w-full h-full object-contain">
+          <img src="${item.image}" alt="${item.name}" loading="lazy" class="w-full h-full object-contain">
         </div>
         
         <div class="flex-grow text-center sm:text-left">

@@ -15,14 +15,14 @@
 {% block content %}
 <!-- Studio Top Bar -->
 <section class="bg-stone-900 text-white py-2.5 px-4 sm:px-6 lg:px-8 border-b-2 border-black sticky top-20 z-30 shadow-md">
-  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 sm:gap-3">
     
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2 sm:gap-3 min-w-0">
       <div class="bg-stone-950 p-1.5 rounded-xl border border-stone-700 flex-shrink-0 flex items-center justify-center">
         <img src="/static/assets/logo_icon.webp" alt="MEMOUR Icon" class="h-7 sm:h-8 w-auto object-contain">
       </div>
       <div>
-        <h1 class="font-heading font-black text-sm sm:text-base text-white leading-tight flex items-center gap-2">
+        <h1 class="font-heading font-black text-sm sm:text-base text-white leading-tight flex flex-wrap items-center gap-1.5 sm:gap-2">
           <span>Xưởng Thiết Kế MEMOUR</span>
           <span class="bg-rose-800 text-white text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border border-rose-600">3D &amp; 2D Live Studio</span>
         </h1>
@@ -31,11 +31,11 @@
     </div>
 
     <!-- Mode Switcher Tabs (2D Canvas vs 3D 360° Viewer) -->
-    <div class="flex items-center gap-2 bg-stone-950 p-1 rounded-2xl border border-stone-800">
-      <button id="tab-btn-2d" onclick="switchStudioView('2d')" class="px-4 sm:px-5 py-1.5 rounded-xl font-heading font-black text-xs border-2 border-black bg-rose-800 text-white shadow-neo transition-all">
+    <div class="flex items-center gap-2 bg-stone-950 p-1 rounded-2xl border border-stone-800 w-full sm:w-auto">
+      <button id="tab-btn-2d" onclick="switchStudioView('2d')" class="flex-1 sm:flex-none px-3 sm:px-5 py-1.5 rounded-xl font-heading font-black text-[11px] sm:text-xs border-2 border-black bg-rose-800 text-white shadow-neo transition-all">
         Thiết Kế 2D
       </button>
-      <button id="tab-btn-3d" onclick="switchStudioView('3d')" class="px-4 sm:px-5 py-1.5 rounded-xl font-heading font-black text-xs border-2 border-black bg-white text-stone-900 hover:bg-amber-100 transition-all flex items-center gap-1.5">
+      <button id="tab-btn-3d" onclick="switchStudioView('3d')" class="flex-1 sm:flex-none px-3 sm:px-5 py-1.5 rounded-xl font-heading font-black text-[11px] sm:text-xs border-2 border-black bg-white text-stone-900 hover:bg-amber-100 transition-all flex items-center justify-center gap-1.5">
         <span>Xem 3D 360°</span>
         <span class="bg-amber-300 text-stone-950 text-[9px] px-1 py-0.2 rounded font-black">WebGL</span>
       </button>
@@ -46,7 +46,7 @@
 
 <!-- Studio Workspace Container -->
 <div class="bg-[#f4efe6] py-5 sm:py-6 min-h-[calc(100vh-160px)]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
     
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
       
@@ -344,13 +344,13 @@
       <div class="lg:col-span-8 space-y-4">
         
         <!-- 2D FABRIC CANVAS VIEW -->
-        <div id="studio-2d-panel" class="bg-white border-3 border-black rounded-3xl p-4 sm:p-5 shadow-neo-xl">
+        <div id="studio-2d-panel" class="bg-white border-3 border-black rounded-2xl sm:rounded-3xl p-2.5 sm:p-5 shadow-neo-xl">
           
           <!-- Quick Toolbar: Size, Text Tool, Shortcuts & Actions -->
           <div class="flex items-center justify-between pb-3.5 mb-3 border-b-2 border-stone-200 flex-wrap gap-2.5">
             
             <!-- Size Selector Pills -->
-            <div class="flex items-center gap-1 bg-stone-100 p-1 rounded-2xl border border-stone-200">
+            <div class="flex items-center gap-1 bg-stone-100 p-1 rounded-2xl border border-stone-200 flex-wrap w-full lg:w-auto">
               <span class="text-[11px] font-heading font-black text-stone-700 px-2">Khổ sổ:</span>
               <button onclick="changeCanvasSize('a5_portrait')" data-size="a5_portrait" class="btn-canvas-size text-xs px-2.5 py-1 rounded-xl font-heading font-black bg-rose-800 text-white border-2 border-black shadow-sm transition-all">
                 A5 Đứng (15x21 cm)
@@ -421,7 +421,7 @@
           </div>
 
           <!-- Canvas Interactive Workspace with Safe Zone Overlay -->
-          <div class="w-full flex flex-col justify-center items-center bg-[#eae3d2] rounded-2xl p-4 sm:p-6 border-2 border-stone-300 shadow-inner overflow-auto min-h-[520px] relative">
+          <div class="studio-canvas-scroll w-full flex flex-col justify-start sm:justify-center items-start sm:items-center bg-[#eae3d2] rounded-2xl p-2 sm:p-6 border-2 border-stone-300 shadow-inner overflow-x-auto overflow-y-hidden min-h-[420px] sm:min-h-[520px] relative">
             
             <!-- Safe Zone Guide Banner -->
             <div id="safe-zone-banner" class="w-full max-w-[500px] mb-3 px-3 py-1.5 bg-amber-50/95 border-2 border-amber-300/80 text-amber-950 text-[11px] font-bold rounded-xl flex items-center justify-between shadow-sm">
@@ -435,7 +435,7 @@
             </div>
 
             <!-- Canvas Wrapper with Rounded Aesthetic & Safe Zone Overlay -->
-            <div class="relative bg-[#fdfbf7] shadow-2xl rounded-2xl border-2 border-stone-800 overflow-hidden">
+            <div class="studio-fabric-wrapper relative flex-none bg-[#fdfbf7] shadow-2xl rounded-2xl border-2 border-stone-800 overflow-hidden">
               <canvas id="scrapbook-fabric-canvas"></canvas>
               <!-- Interactive Safe Zone Overlay (1cm Margin & Spine Punch Guide) -->
               <div id="safe-zone-overlay" class="absolute inset-0 pointer-events-none z-10"></div>
@@ -507,8 +507,8 @@
           </div>
 
           <!-- WebGL Three.js Container -->
-          <div id="threejs-container" class="w-full h-[520px] rounded-2xl bg-gradient-to-b from-[#fdfbf7] to-[#e8d8c3] border border-stone-700 overflow-hidden relative">
-            <div class="absolute bottom-4 left-4 bg-stone-900/80 backdrop-blur text-stone-300 text-xs px-3.5 py-1.5 rounded-xl border border-stone-700 pointer-events-none font-bold">
+          <div id="threejs-container" class="w-full h-[360px] sm:h-[520px] rounded-2xl bg-gradient-to-b from-[#fdfbf7] to-[#e8d8c3] border border-stone-700 overflow-hidden relative">
+            <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-auto bg-stone-900/80 backdrop-blur text-stone-300 text-[10px] sm:text-xs px-2.5 sm:px-3.5 py-1.5 rounded-xl border border-stone-700 pointer-events-none font-bold">
               Kéo chuột để xoay 360° • Cuộn chuột để phóng to/thu nhỏ • Bấm "Gấp Sổ" để ngắm trọn bìa trước &amp; sau
             </div>
           </div>

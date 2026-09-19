@@ -312,9 +312,9 @@ body.lightbox-open { overflow: hidden; }
 
   .hero-title {
     width: 100%;
-    max-width: 19rem;
+    max-width: 18rem;
     margin-inline: auto;
-    font-size: 1.25rem !important;
+    font-size: 1.125rem !important;
     line-height: 1.15 !important;
     text-wrap: balance;
   }
@@ -358,17 +358,6 @@ body.lightbox-open { overflow: hidden; }
   .carousel-container [class*="bottom-4"][class*="left-1/2"] {
     padding: .35rem .7rem;
     gap: .5rem;
-  }
-
-  .hero-brand-pill {
-    line-height: 1.25;
-    text-align: center;
-    white-space: normal;
-  }
-
-  .hero-actions > a {
-    width: min(100%, 18rem);
-    justify-content: center;
   }
 
   .carousel-container .shadow-neo-xl,

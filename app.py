@@ -91,7 +91,9 @@ def format_vnd_filter(amount):
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(app.static_folder, 'assets/favicon.ico', mimetype='image/vnd.microsoft.icon')
+    response = send_from_directory(app.static_folder, 'assets/favicon.ico', mimetype='image/vnd.microsoft.icon')
+    response.headers['Cache-Control'] = 'public, max-age=604800, immutable'
+    return response
 
 @app.route('/robots.txt')
 def robots_txt():

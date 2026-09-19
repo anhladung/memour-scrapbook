@@ -3,6 +3,10 @@
 {% block title %}MEMOUR Studio | Sổ Scrapbook Thủ Công & Phụ Kiện{% endblock %}
 {% block meta_desc %}Khám phá sổ scrapbook thủ công, sticker và khung ảnh tại MEMOUR Studio. Tự thiết kế món quà lưu giữ kỷ niệm theo câu chuyện của bạn.{% endblock %}
 
+{% block extra_head %}
+<link rel="preload" as="image" href="/static/assets/banners/hero_banner_01.jpg" fetchpriority="high">
+{% endblock %}
+
 {% block content %}
 <!-- ================= SECTION 1: HOME HERO CAROUSEL (FIXED STATIC CONTENT & SLIDING BACKGROUND) ================= -->
 <section class="py-6 sm:py-10 bg-[#fdfbf7]">
@@ -21,7 +25,7 @@
         ] %}
         <div class="carousel-slide-item min-w-full h-full flex-shrink-0 relative overflow-hidden" data-slide-index="{{ loop.index0 }}">
           <!-- Full-Bleed Background Image -->
-          <img src="{{ bg_img }}" alt="MEMOUR Scrapbook Background Showcase" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.78] contrast-[1.05] select-none pointer-events-none">
+          <img src="{{ bg_img }}" alt="MEMOUR Scrapbook Background Showcase" loading="{% if loop.first %}eager{% else %}lazy{% endif %}" fetchpriority="{% if loop.first %}high{% else %}low{% endif %}" decoding="async" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.78] contrast-[1.05] select-none pointer-events-none">
           
           <!-- Atmospheric Darkening & Vignette Overlay -->
           <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/30 to-stone-950/60"></div>

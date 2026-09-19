@@ -80,6 +80,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=Patrick+Hand&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -120,11 +121,6 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/static/css/style.css">
   
-  <!-- Fabric.js & Three.js Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-
   {% block extra_head %}{% endblock %}
 </head>
 <body class="bg-[#fdfbf7] text-zinc-900 flex flex-col min-h-screen selection:bg-amber-200 selection:text-amber-950 font-sans">
@@ -208,7 +204,7 @@
         <!-- Brand & Slogan Column -->
         <div class="lg:col-span-2 space-y-4">
           <a href="/" class="inline-flex items-center group flex-shrink-0">
-            <img src="/static/assets/logo_light.webp" alt="MEMOUR • Every memory has a story" class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-sm">
+            <img src="/static/assets/logo_light.webp" alt="MEMOUR • Every memory has a story" loading="lazy" decoding="async" class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-sm">
           </a>
           <p class="text-stone-400 text-sm leading-relaxed pr-6">
             <b>MEMOUR</b> là sự hòa quyện giữa <i>Memory</i> và <i>Our</i> — nơi lưu giữ và kể lại câu chuyện của những khoảnh khắc đẹp nhất. Kết hợp công nghệ mô phỏng 3D 360° &amp; AI cùng nghệ thuật làm sổ thủ công giấy mỹ thuật cao cấp.

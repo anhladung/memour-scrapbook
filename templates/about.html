@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}Về Chúng Tôi - Câu Chuyện Thương Hiệu MEMOUR Studio | Every memory has a story{% endblock %}
+
+{% block content %}
+{% import "components/carousel.html" as carousels %}
+
+{% set about_title = "<span class='whitespace-nowrap inline-block'>MEMOUR = Memory + Our</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Nơi Ký Ức Chúng Ta Sống Lại</span>" %}
+{% set about_buttons = [
+  { "text": "Khám Phá Xưởng Thiết Kế", "url": "/studio", "primary": true },
+  { "text": "Xem Sản Phẩm", "url": "/products", "primary": false }
+] %}
+
+{{ carousels.render_hero_carousel("about-carousel", about_title, about_buttons) }}
+
+<!-- Brand Storytelling Visual Section -->
+<section class="py-16 md:py-24 bg-white border-b-2 border-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Visual Collage (Scrapbook Opened Metaphor) -->
+      <div class="lg:col-span-6 relative">
+        <div class="w-full bg-[#fdfbf7] border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-xl relative flex flex-col items-center justify-center text-center">
+          <div class="washi-tape-top"></div>
+          <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-stone-800 shadow-neo w-full flex items-center justify-center">
+            <img src="/static/assets/logo.png" alt="MEMOUR • Every memory has a story" class="h-16 sm:h-20 md:h-24 w-auto object-contain max-w-full">
+          </div>
+        </div>
+      </div>
+
+      <!-- Story Text -->
+      <div class="lg:col-span-6 space-y-6">
+        <div class="inline-flex items-center gap-2 bg-rose-100 text-rose-800 px-3 py-1 rounded-full text-xs font-black uppercase border border-rose-300">
+          <span>Ý Nghĩa Thương Hiệu MEMOUR</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black text-stone-900 leading-tight">
+          MEMOUR = Memory + Our: <br><span class="text-rose-800">Every memory has a story</span>
+        </h2>
+        <p class="text-stone-700 text-sm sm:text-base leading-relaxed">
+          Tên gọi <b>MEMOUR</b> được kết tinh từ hai từ thiêng liêng: <b>Memory</b> (Ký ức) và <b>Our</b> (Của chúng ta). Chúng tôi tin rằng mỗi khoảnh khắc bạn trải qua cùng người thân, bạn bè hay chính bản thân đều là một câu chuyện độc bản xứng đáng được lưu giữ và xúc chạm trong đời thực.
+        </p>
+        <p class="text-stone-700 text-sm sm:text-base leading-relaxed">
+          Tại <b>MEMOUR Studio</b>, chúng tôi kết hợp tinh thần thủ công truyền thống với công nghệ đột phá: từ việc ứng dụng <b>trợ lý Memour AI phân tích ý tưởng</b> đến <b>trình xem 3D 360 độ có tính năng gấp/mở sổ thật</b>, giúp bất kỳ ai cũng có thể tự tay tạo nên cuốn sổ ký ức độc bản cho riêng mình.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Craftsmanship & Quality Standards (4 Pillars) -->
+<section id="craft-process" class="py-16 md:py-24 bg-[#fbf8f2] border-b-2 border-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 bg-amber-300 border-2 border-black px-3.5 py-1 rounded-full text-xs font-black uppercase mb-3 shadow-neo">
+        <span>✦ TIÊU CHUẨN XƯỞNG THỦ CÔNG</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-heading font-black text-stone-900">
+        4 Cam Kết Chất Lượng Độc Bản
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Pillar 1 -->
+      <div class="bg-white border-2 border-black rounded-3xl p-6 shadow-neo flex flex-col justify-between hover:border-rose-700 transition-colors">
+        <div>
+          <span class="font-heading font-black text-2xl text-rose-800 mb-3 block font-mono">01.</span>
+          <h3 class="font-heading font-bold text-lg text-stone-900 mb-2">Giấy Dày Cao Cấp Chống Ố Vàng</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Giấy mỹ thuật định lượng 300 - 350gsm không chứa axit tự do, ngăn chặn triệt để hiện tượng ố vàng ảnh và phai màu mực theo năm tháng.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-stone-100 text-xs font-bold text-amber-800">
+          Tiêu chuẩn bảo tàng quốc tế
+        </div>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="bg-white border-2 border-black rounded-3xl p-6 shadow-neo flex flex-col justify-between hover:border-rose-700 transition-colors">
+        <div>
+          <span class="font-heading font-black text-2xl text-amber-600 mb-3 block font-mono">02.</span>
+          <h3 class="font-heading font-bold text-lg text-stone-900 mb-2">Dập Nổi 3D &amp; Ép Kim Tinh Xảo</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Từng chi tiết sticker được dập nổi viền sắc nét với bề mặt phủ màng lấp lánh ánh kim phản chiếu ánh sáng lấp lánh chân thực.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-stone-100 text-xs font-bold text-rose-800">
+          Hiệu ứng xúc chạm nổi khối
+        </div>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="bg-white border-2 border-black rounded-3xl p-6 shadow-neo flex flex-col justify-between hover:border-rose-700 transition-colors">
+        <div>
+          <span class="font-heading font-black text-2xl text-stone-900 mb-3 block font-mono">03.</span>
+          <h3 class="font-heading font-bold text-lg text-stone-900 mb-2">Khung Cài Giấy Không Hỏng Ảnh</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Thiết kế khe cài góc thông minh cho ảnh polaroid, cho phép bạn dễ dàng thay đổi ảnh mà không cần dán băng dính trực tiếp lên bề mặt ảnh.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-stone-100 text-xs font-bold text-stone-700">
+          Bảo vệ tối đa kỷ vật gốc
+        </div>
+      </div>
+
+      <!-- Pillar 4 -->
+      <div class="bg-white border-2 border-black rounded-3xl p-6 shadow-neo flex flex-col justify-between hover:border-rose-700 transition-colors">
+        <div>
+          <span class="font-heading font-black text-2xl text-rose-800 mb-3 block font-mono">04.</span>
+          <h3 class="font-heading font-bold text-lg text-stone-900 mb-2">Đồng Bộ Phụ Kiện Thực Tế 100%</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Mọi phụ kiện bạn nhìn thấy trong xưởng thiết kế online đều có sẵn chính xác 100% trong kho thực tế, đảm bảo thành phẩm y hệt bản thảo.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-stone-100 text-xs font-bold text-amber-800">
+          Chuẩn Xác 100%
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Call to action in studio -->
+<section class="py-16 md:py-20 bg-gradient-to-r from-stone-900 via-rose-950 to-amber-950 text-white text-center border-b-2 border-black">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    <h2 class="text-3xl sm:text-4xl font-heading font-black">
+      Sẵn Sàng Tự Tay Tạo Nên Cuốn Sổ Kỷ Niệm Của Riêng Bạn?
+    </h2>
+    <p class="text-stone-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+      Thử nghiệm kéo thả sticker, bố cục khung ảnh và xoay ngắm tác phẩm 360 độ trong không gian 3D tương tác.
+    </p>
+    <div class="pt-4 flex flex-wrap justify-center gap-4">
+      <a href="/studio" class="bg-amber-400 hover:bg-amber-300 text-stone-950 font-heading font-black text-sm px-8 py-3.5 rounded-2xl border-2 border-black shadow-neo shadow-neo-hover transition-all">
+        Vào Xưởng Thiết Kế Ngay →
+      </a>
+      <a href="/products" class="bg-white hover:bg-stone-100 text-stone-900 font-heading font-bold text-sm px-7 py-3.5 rounded-2xl border-2 border-black shadow-neo shadow-neo-hover transition-all">
+        Xem Kho Phụ Kiện
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

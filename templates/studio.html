@@ -1,0 +1,657 @@
+{% extends "base.html" %}
+
+{% block title %}Xưởng Thiết Kế Scrapbook 2D/3D & Trợ Lý AI - MEMOUR Studio | Every memory has a story{% endblock %}
+
+{% block extra_head %}
+<script>
+  // Server-side preset data if user came from "Remix" button
+  window.STUDIO_PRESET_DATA = {% if active_preset %}{{ active_preset.canvas_preset | tojson }}{% else %}null{% endif %};
+  window.STUDIO_ACTIVE_PRODUCT = {% if active_product %}{{ active_product | tojson }}{% else %}null{% endif %};
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- Studio Top Bar -->
+<section class="bg-stone-900 text-white py-2.5 px-4 sm:px-6 lg:px-8 border-b-2 border-black sticky top-20 z-30 shadow-md">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+    
+    <div class="flex items-center gap-3">
+      <div class="bg-stone-950 p-1.5 rounded-xl border border-stone-700 flex-shrink-0 flex items-center justify-center">
+        <img src="/static/assets/logo_icon.png" alt="MEMOUR Icon" class="h-7 sm:h-8 w-auto object-contain">
+      </div>
+      <div>
+        <h1 class="font-heading font-black text-sm sm:text-base text-white leading-tight flex items-center gap-2">
+          <span>Xưởng Thiết Kế MEMOUR</span>
+          <span class="bg-rose-800 text-white text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border border-rose-600">3D &amp; 2D Live Studio</span>
+        </h1>
+        <p class="text-[10px] text-amber-300 font-bold tracking-wide">Every memory has a story • Kéo thả phụ kiện • AI gợi ý thông minh</p>
+      </div>
+    </div>
+
+    <!-- Mode Switcher Tabs (2D Canvas vs 3D 360° Viewer) -->
+    <div class="flex items-center gap-2 bg-stone-950 p-1 rounded-2xl border border-stone-800">
+      <button id="tab-btn-2d" onclick="switchStudioView('2d')" class="px-4 sm:px-5 py-1.5 rounded-xl font-heading font-black text-xs border-2 border-black bg-rose-800 text-white shadow-neo transition-all">
+        Thiết Kế 2D
+      </button>
+      <button id="tab-btn-3d" onclick="switchStudioView('3d')" class="px-4 sm:px-5 py-1.5 rounded-xl font-heading font-black text-xs border-2 border-black bg-white text-stone-900 hover:bg-amber-100 transition-all flex items-center gap-1.5">
+        <span>Xem 3D 360°</span>
+        <span class="bg-amber-300 text-stone-950 text-[9px] px-1 py-0.2 rounded font-black">WebGL</span>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Studio Workspace Container -->
+<div class="bg-[#f4efe6] py-5 sm:py-6 min-h-[calc(100vh-160px)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+      
+      <!-- ================= LEFT COLUMN: COMPONENTS TABS & AI ASSISTANT ================= -->
+      <div class="lg:col-span-4 space-y-4">
+        
+        <!-- AI RECOMMENDATION & AUTO-ARRANGER WIDGET -->
+        <div class="bg-gradient-to-br from-stone-900 via-stone-950 to-rose-950 text-white border-3 border-amber-400 rounded-3xl p-4 sm:p-5 shadow-neo-lg relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 font-mono font-bold text-base">✦</span>
+              <h3 class="font-heading font-black text-sm text-amber-300">Trợ Lý Memour AI</h3>
+            </div>
+            <span class="text-[9px] bg-gradient-to-r from-rose-700 to-amber-600 text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Memour AI</span>
+          </div>
+
+          <p class="text-xs text-stone-300 leading-relaxed mb-3">
+            <i>"Every memory has a story"</i>. Nhập chủ đề của bạn, <b>Memour AI</b> sẽ phân tích cảm xúc và chọn mã <b>STK-xxx &amp; LAY-xxx</b> chuẩn kho để tự động dàn trang:
+          </p>
+
+          <div class="space-y-2">
+            <div class="relative">
+              <input type="text" id="ai-prompt-input" placeholder="VD: Kỷ niệm bạn thân đi đà lạt vintage..." class="w-full bg-stone-800 border-2 border-stone-700 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-stone-400 font-medium focus:outline-none focus:border-amber-400">
+              <button id="btn-ai-generate" onclick="requestAiLayoutSuggestion()" class="absolute right-1.5 top-1.5 bg-amber-400 hover:bg-amber-300 text-stone-950 font-black text-xs px-3 py-1.5 rounded-lg transition-colors">
+                Gợi Ý AI
+              </button>
+            </div>
+
+            <!-- Quick Preset Chips -->
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <button onclick="setAiPrompt('kỷ yếu bạn thân phong cách y2k')" class="text-[10px] bg-stone-800 hover:bg-rose-800 text-stone-300 hover:text-white px-2 py-0.5 rounded-md border border-stone-700 transition-colors">
+                #Y2K Kỷ Yếu
+              </button>
+              <button onclick="setAiPrompt('kỷ niệm ngày yêu nhau lãng mạn')" class="text-[10px] bg-stone-800 hover:bg-rose-800 text-stone-300 hover:text-white px-2 py-0.5 rounded-md border border-stone-700 transition-colors">
+                #Couple Tình Yêu
+              </button>
+              <button onclick="setAiPrompt('chuyến đi đà lạt hoài niệm vintage')" class="text-[10px] bg-stone-800 hover:bg-rose-800 text-stone-300 hover:text-white px-2 py-0.5 rounded-md border border-stone-700 transition-colors">
+                #Vintage Đà Lạt
+              </button>
+            </div>
+          </div>
+
+          <!-- AI Loading Spinner -->
+          <div id="ai-loading" class="hidden mt-3 text-center py-2 bg-stone-800/80 rounded-xl border border-amber-400/50">
+            <span class="text-xs font-bold text-amber-300 animate-pulse">✦ Trợ lý Memour AI đang phân tích kho linh kiện MEMOUR...</span>
+          </div>
+        </div>
+
+        <!-- UPLOAD PHOTO TOOL (DIRECT & WORKING) -->
+        <div class="bg-white border-2 border-black rounded-3xl p-4 shadow-neo">
+          <label class="block text-xs font-heading font-black text-stone-900 uppercase mb-2 flex items-center justify-between">
+            <span>Tải Ảnh Cá Nhân Vào Trang:</span>
+            <span class="text-[10px] bg-amber-200 text-amber-950 px-2 py-0.5 rounded font-bold">JPG, PNG, WEBP</span>
+          </label>
+          <div class="relative border-2 border-dashed border-stone-300 hover:border-rose-800 rounded-2xl p-4 text-center bg-stone-50 hover:bg-amber-50/50 cursor-pointer transition-colors" onclick="document.getElementById('user-photo-upload').click()">
+            <input type="file" id="user-photo-upload" accept="image/*" class="hidden" onchange="handleUserPhotoUpload(event)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 mx-auto text-rose-800 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <p class="text-xs font-black text-stone-900">Bấm để tải ảnh từ máy tính</p>
+            <p class="text-[10px] text-stone-500 mt-0.5">Tự động gắn viền ảnh polaroid và đổ bóng chân thực</p>
+          </div>
+        </div>
+
+        <!-- COMPONENT CATALOG ACCORDION (STICKER / LAYOUT / BOOK / PATTERNS / TEMPLATES - CLEARED) -->
+        <div class="bg-white border-2 border-black rounded-3xl p-4 shadow-neo space-y-3.5">
+          <div class="flex items-center justify-between pb-2 border-b border-stone-200">
+            <span class="font-heading font-black text-xs text-stone-900 uppercase">Kho Phụ Kiện Xưởng Thiết Kế</span>
+            <span class="text-[10px] bg-stone-100 text-stone-700 font-bold px-2 py-0.5 rounded border border-stone-300">Trang Trắng Sáng Tạo</span>
+          </div>
+
+          <!-- Component Tabs (5 Tabs) -->
+          <div class="grid grid-cols-5 gap-1 bg-stone-100 p-1 rounded-xl">
+            <button onclick="switchCatalogTab('stickers')" id="tab-stk-btn" class="py-1.5 px-1 rounded-lg text-[11px] font-black bg-white text-stone-900 border border-black shadow-sm transition-all text-center">
+              Sticker
+            </button>
+            <button onclick="switchCatalogTab('layouts')" id="tab-lay-btn" class="py-1.5 px-1 rounded-lg text-[11px] font-bold text-stone-600 hover:bg-white transition-all text-center">
+              Layout
+            </button>
+            <button onclick="switchCatalogTab('books')" id="tab-book-btn" class="py-1.5 px-1 rounded-lg text-[11px] font-bold text-stone-600 hover:bg-white transition-all text-center">
+              Bìa Sổ
+            </button>
+            <button onclick="switchCatalogTab('patterns')" id="tab-pat-btn" class="py-1.5 px-1 rounded-lg text-[11px] font-bold text-stone-600 hover:bg-white transition-all text-center">
+              Nền Giấy
+            </button>
+            <button onclick="switchCatalogTab('templates')" id="tab-templates-btn" class="py-1.5 px-1 rounded-lg text-[11px] font-bold text-stone-600 hover:bg-white transition-all text-center">
+              Mẫu Sẵn
+            </button>
+          </div>
+
+          <!-- Catalog 1: Stickers (Đồng bộ Single Source of Truth từ Database) -->
+          <div id="catalog-stickers" class="space-y-2">
+            
+            <div class="flex items-center justify-between pb-1 text-[10px]">
+              <span class="font-bold text-stone-600">Kho Sticker ({{ stickers|length }} mẫu):</span>
+            </div>
+
+            {% if stickers and stickers|length > 0 %}
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-[350px] overflow-y-auto pr-1">
+              {% for stk in stickers %}
+              <div data-sku="{{ stk.sku }}" data-name="{{ stk.ten or stk.name }}" data-image="{{ stk.image }}" data-price="{{ stk.price or 3000 }}" onclick="handleStickerCardClick(this)" class="stk-item-card bg-stone-50 hover:bg-amber-50 border-2 border-stone-200 hover:border-black rounded-2xl p-2 cursor-pointer transition-all flex flex-col items-center justify-between text-center group shadow-sm hover:shadow-md relative">
+                
+                <!-- Transparent Checkerboard Thumbnail -->
+                <div class="w-16 h-16 rounded-xl p-1 flex items-center justify-center mb-1 bg-checkerboard border border-stone-200">
+                  <img src="{{ stk.image }}" alt="{{ stk.ten or stk.name }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform">
+                </div>
+
+                {% if stk.is3D or stk.is_3d %}
+                <span class="absolute top-1.5 right-1.5 bg-black text-amber-300 text-[7px] font-black px-1 rounded">3D</span>
+                {% endif %}
+
+                <span class="text-[9px] font-mono font-black text-rose-800 block">{{ stk.sku }}</span>
+                <span class="text-[10px] font-bold text-stone-800 leading-tight line-clamp-2 w-full mt-0.5">{{ stk.ten or stk.name }}</span>
+              </div>
+              {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-10 px-4 bg-stone-50 rounded-2xl border-2 border-dashed border-stone-300">
+              <span class="text-2xl block mb-1.5">✨</span>
+              <p class="text-xs font-black text-stone-700">Kho sticker xưởng đang trống</p>
+              <a href="/admin/stickers" class="inline-block mt-2 text-xs font-black text-rose-800 hover:underline">
+                + Tải ảnh sticker sheet lên ngay →
+              </a>
+            </div>
+            {% endif %}
+          </div>
+
+          <!-- Catalog 2: Layouts (Gồm Khung Lồng Ảnh & Layout Giấy Thư Viết Chữ) -->
+          <div id="catalog-layouts" class="hidden space-y-3">
+            <div class="flex items-center justify-between pb-1 text-[10px]">
+              <span class="font-bold text-stone-600">Kho Layout Xưởng ({{ layouts|length }} mẫu):</span>
+              <span class="text-rose-900 font-bold bg-rose-100 px-2 py-0.5 rounded-full">✨ Khung Ảnh &amp; Giấy Viết</span>
+            </div>
+
+            <!-- Sub-filter Switcher -->
+            <div class="flex gap-1.5 p-1 bg-stone-100 rounded-xl border border-stone-200 text-[10px] font-black">
+              <button onclick="filterLayoutSubtype('all')" id="btn-sublay-all" class="flex-1 py-1 rounded-lg bg-white text-stone-900 shadow-sm border border-stone-300">Tất Cả ({{ layouts|length }})</button>
+              <button onclick="filterLayoutSubtype('photo')" id="btn-sublay-photo" class="flex-1 py-1 rounded-lg text-stone-600 hover:text-stone-900">📷 Khung Ảnh</button>
+              <button onclick="filterLayoutSubtype('text')" id="btn-sublay-text" class="flex-1 py-1 rounded-lg text-stone-600 hover:text-stone-900">✍️ Giấy Viết Thư</button>
+            </div>
+
+            {% if layouts and layouts|length > 0 %}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[350px] overflow-y-auto pr-1">
+              {% for lay in layouts %}
+              {% set is_text = (lay.subCategory == 'text_layout' or lay.type == 'layout_text' or 'TXT' in lay.sku) %}
+              <div class="lay-item-card bg-stone-50 hover:bg-amber-50/60 border-2 border-stone-200 hover:border-black rounded-2xl p-2.5 transition-all flex flex-col justify-between group shadow-sm hover:shadow-md relative" data-subtype="{% if is_text %}text{% else %}photo{% endif %}">
+                
+                <!-- Badge -->
+                <span class="absolute top-2 right-2 {% if is_text %}bg-amber-700 text-amber-100{% else %}bg-rose-800 text-white{% endif %} text-[8px] font-black px-1.5 py-0.5 rounded-md shadow-sm z-10">
+                  {% if is_text %}✍️ Giấy Viết Thư{% else %}📷 Khung Ảnh{% endif %}
+                </span>
+
+                <!-- Thumbnail -->
+                <div class="w-full aspect-square rounded-xl p-1 flex items-center justify-center mb-1.5 bg-checkerboard border border-stone-200 overflow-hidden cursor-pointer" onclick="{% if is_text %}addTextLayoutToCanvas('{{ lay.sku }}', '{{ lay.ten or lay.name }}', '{{ lay.image }}', {{ lay.price or 2000 }}){% else %}addLayoutFrameToCanvas('{{ lay.sku }}', '{{ lay.ten or lay.name }}', '{{ lay.image }}', {{ lay.price or 1000 }}){% endif %}">
+                  <img src="{{ lay.image }}" alt="{{ lay.ten or lay.name }}" class="w-full h-full object-contain group-hover:scale-105 transition-transform">
+                </div>
+
+                <div class="space-y-1">
+                  <div class="flex items-center justify-between pr-14">
+                    <span class="text-[9px] font-mono font-black text-rose-800">{{ lay.sku }}</span>
+                    <span class="text-[9px] font-bold text-stone-500">{{ lay.price or 1000 }} đ</span>
+                  </div>
+                  <h4 class="text-[11px] font-heading font-black text-stone-900 leading-tight line-clamp-1">{{ lay.ten or lay.name }}</h4>
+                  <p class="text-[10px] text-stone-500 line-clamp-2 leading-tight">{{ lay.moTa or lay.description }}</p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-2.5 pt-2 border-t border-stone-200 grid grid-cols-2 gap-1.5">
+                  {% if is_text %}
+                  <button onclick="addTextLayoutToCanvas('{{ lay.sku }}', '{{ lay.ten or lay.name }}', '{{ lay.image }}', {{ lay.price or 2000 }})" class="col-span-2 bg-amber-300 hover:bg-amber-400 text-stone-950 text-[10px] font-black py-1 px-2 rounded-lg border border-black shadow-sm text-center transition-transform active:scale-95">
+                    + Thêm Vào Trang
+                  </button>
+                  {% else %}
+                  <button onclick="addLayoutFrameToCanvas('{{ lay.sku }}', '{{ lay.ten or lay.name }}', '{{ lay.image }}', {{ lay.price or 1000 }})" class="bg-white hover:bg-stone-100 text-stone-900 text-[10px] font-bold py-1 px-1 rounded-lg border border-black shadow-sm text-center">
+                    + Thêm Khung
+                  </button>
+                  <button onclick="promptPhotoForLayout('{{ lay.sku }}', '{{ lay.ten or lay.name }}', '{{ lay.image }}', {{ lay.price or 1000 }})" class="bg-amber-400 hover:bg-amber-300 text-stone-950 text-[10px] font-black py-1 px-1 rounded-lg border border-black shadow-sm text-center">
+                    📷 Chèn Ảnh
+                  </button>
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-10 px-4 bg-stone-50 rounded-2xl border-2 border-dashed border-stone-300">
+              <span class="text-2xl block mb-1.5">🖼️</span>
+              <p class="text-xs font-black text-stone-700">Kho layout xưởng đang trống</p>
+            </div>
+            {% endif %}
+          </div>
+
+          <!-- Catalog 3: Books (Bìa Sổ Thủ Công Độc Bản) -->
+          <div id="catalog-books" class="hidden space-y-3">
+            <div class="flex items-center justify-between pb-1 text-[10px]">
+              <span class="font-bold text-stone-600">Mẫu Bìa Sổ Thủ Công ({{ books|length }} mẫu):</span>
+              <span class="text-amber-800 font-bold bg-amber-100 px-2 py-0.5 rounded-full">📖 Đồng bộ mô hình 3D</span>
+            </div>
+
+            {% if books and books|length > 0 %}
+            <div class="space-y-3 max-h-[360px] overflow-y-auto pr-1">
+              {% for bk in books %}
+              <div class="book-item-card bg-stone-50 hover:bg-amber-50/70 border-2 border-stone-200 hover:border-black rounded-2xl p-3 transition-all flex flex-col group shadow-sm hover:shadow-md relative">
+                
+                <div class="flex gap-3 items-start">
+                  <!-- Thumbnail -->
+                  <div class="w-24 h-32 rounded-xl p-1 bg-white border border-stone-200 overflow-hidden flex-shrink-0 shadow-sm cursor-pointer" onclick="setScrapbookCover('{{ bk.sku }}', '{{ bk.ten or bk.name }}', '{{ bk.image }}', {{ bk.price or 100000 }}, '{{ bk.colorHex or '#e8d8c3' }}')">
+                    <img src="{{ bk.image }}" alt="{{ bk.ten or bk.name }}" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform">
+                  </div>
+
+                  <!-- Info -->
+                  <div class="space-y-1.5 flex-1 min-w-0">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[9px] font-mono font-black text-rose-800">{{ bk.sku }}</span>
+                      <span class="text-xs font-black text-stone-900">{{ "{:,}".format(bk.price or 100000) }} đ</span>
+                    </div>
+                    <h4 class="text-xs font-heading font-black text-stone-900 leading-tight line-clamp-2 cursor-pointer hover:text-rose-800" onclick="setScrapbookCover('{{ bk.sku }}', '{{ bk.ten or bk.name }}', '{{ bk.image }}', {{ bk.price or 100000 }}, '{{ bk.colorHex or '#e8d8c3' }}')">{{ bk.ten or bk.name }}</h4>
+                    <p class="text-[10px] text-stone-500 line-clamp-3 leading-relaxed">{{ bk.moTa or bk.description }}</p>
+                    
+                    <div class="pt-1 flex flex-wrap gap-1 text-[9px] text-stone-600 font-bold">
+                      <span class="bg-stone-200/80 px-1.5 py-0.5 rounded">Gáy xoắn vintage</span>
+                      <span class="bg-stone-200/80 px-1.5 py-0.5 rounded">Giấy mỹ thuật 300gsm</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Action Button -->
+                <button onclick="setScrapbookCover('{{ bk.sku }}', '{{ bk.ten or bk.name }}', '{{ bk.image }}', {{ bk.price or 100000 }}, '{{ bk.colorHex or '#e8d8c3' }}')" class="mt-3 w-full bg-rose-800 hover:bg-rose-900 text-white text-[11px] font-black py-2 px-3 rounded-xl border-2 border-black shadow-neo text-center flex items-center justify-center gap-1.5 transition-transform active:scale-95">
+                  <span>📖 Áp Dụng Bìa Sổ Này Cho Mô Hình 3D</span>
+                </button>
+              </div>
+              {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-10 px-4 bg-stone-50 rounded-2xl border-2 border-dashed border-stone-300">
+              <span class="text-2xl block mb-1.5">📖</span>
+              <p class="text-xs font-black text-stone-700">Kho bìa sổ xưởng đang trống</p>
+            </div>
+            {% endif %}
+          </div>
+
+          <!-- Catalog 4: Paper Patterns & Textures (Nền Giấy Mỹ Thuật Mộc) -->
+          <div id="catalog-patterns" class="hidden space-y-3">
+            <div class="flex items-center justify-between pb-1 text-[10px]">
+              <span class="font-bold text-stone-600">Nền Giấy Cố Định Toàn Sổ ({{ patterns|length }} mẫu):</span>
+              <span class="text-amber-800 font-bold bg-amber-100 px-2 py-0.5 rounded-full">📄 Ép sợi tự nhiên</span>
+            </div>
+
+            {% if patterns and patterns|length > 0 %}
+            <div class="grid grid-cols-2 gap-2.5 max-h-[360px] overflow-y-auto pr-1">
+              {% for pat in patterns %}
+              <div class="pattern-item-card bg-stone-50 hover:bg-amber-50/70 border-2 border-stone-200 hover:border-black rounded-2xl p-2 transition-all flex flex-col group shadow-sm hover:shadow-md relative">
+                <!-- Thumbnail -->
+                <div class="w-full h-32 rounded-xl p-1 bg-white border border-stone-200 overflow-hidden flex items-center justify-center shadow-sm cursor-pointer" onclick="applyBackgroundPattern('{{ pat.sku }}', '{{ pat.ten or pat.name }}', '{{ pat.image }}', {{ pat.price or 500 }})">
+                  <img src="{{ pat.image }}" alt="{{ pat.ten or pat.name }}" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform">
+                </div>
+
+                <!-- Info -->
+                <div class="mt-2 space-y-1 flex-1 min-w-0">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[9px] font-mono font-black text-rose-800">{{ pat.sku }}</span>
+                    <span class="text-xs font-black text-stone-900">{{ "{:,}".format(pat.price or 500) }} đ</span>
+                  </div>
+                  <h4 class="text-[11px] font-heading font-black text-stone-900 leading-snug line-clamp-2 cursor-pointer hover:text-rose-800" onclick="applyBackgroundPattern('{{ pat.sku }}', '{{ pat.ten or pat.name }}', '{{ pat.image }}', {{ pat.price or 500 }})">{{ pat.ten or pat.name }}</h4>
+                  <p class="text-[9px] text-stone-500 line-clamp-2 leading-tight">{{ pat.moTa or pat.description }}</p>
+                </div>
+
+                <!-- Action Button -->
+                <button onclick="applyBackgroundPattern('{{ pat.sku }}', '{{ pat.ten or pat.name }}', '{{ pat.image }}', {{ pat.price or 500 }})" class="mt-2 w-full bg-amber-400 hover:bg-amber-300 text-stone-950 text-[10px] font-black py-1.5 px-2 rounded-xl border-2 border-black shadow-sm text-center flex items-center justify-center gap-1 transition-transform active:scale-95">
+                  <span>📄 Áp Dụng Nền Này</span>
+                </button>
+              </div>
+              {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-10 px-4 bg-stone-50 rounded-2xl border-2 border-dashed border-stone-300">
+              <span class="text-2xl block mb-1.5">📄</span>
+              <p class="text-xs font-black text-stone-700">Kho nền giấy xưởng đang trống</p>
+            </div>
+            {% endif %}
+          </div>
+
+          <!-- Catalog 5: Ready-made Templates (Đã dọn trống) -->
+          <div id="catalog-templates" class="hidden space-y-2">
+            <div class="text-center py-10 px-4 bg-stone-50 rounded-2xl border-2 border-dashed border-stone-300">
+              <span class="text-2xl block mb-1.5">🎨</span>
+              <p class="text-xs font-black text-stone-700">Kho mẫu sẵn xưởng đang trống</p>
+              <p class="text-[10px] text-stone-500 mt-1">Sẵn sàng để cập nhật các mẫu thiết kế mới thực tế</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= CENTER/RIGHT COLUMN: WORKSPACE CANVASES ================= -->
+      <div class="lg:col-span-8 space-y-4">
+        
+        <!-- 2D FABRIC CANVAS VIEW -->
+        <div id="studio-2d-panel" class="bg-white border-3 border-black rounded-3xl p-4 sm:p-5 shadow-neo-xl">
+          
+          <!-- Quick Toolbar: Size, Text Tool, Shortcuts & Actions -->
+          <div class="flex items-center justify-between pb-3.5 mb-3 border-b-2 border-stone-200 flex-wrap gap-2.5">
+            
+            <!-- Size Selector Pills -->
+            <div class="flex items-center gap-1 bg-stone-100 p-1 rounded-2xl border border-stone-200">
+              <span class="text-[11px] font-heading font-black text-stone-700 px-2">Khổ sổ:</span>
+              <button onclick="changeCanvasSize('a5_portrait')" data-size="a5_portrait" class="btn-canvas-size text-xs px-2.5 py-1 rounded-xl font-heading font-black bg-rose-800 text-white border-2 border-black shadow-sm transition-all">
+                A5 Đứng (15x21 cm)
+              </button>
+              <button onclick="changeCanvasSize('square')" data-size="square" class="btn-canvas-size text-xs px-2.5 py-1 rounded-xl font-bold bg-stone-100 hover:bg-amber-100 text-stone-800 border border-stone-300 transition-all">
+                Vuông (20x20)
+              </button>
+              <button onclick="changeCanvasSize('a4_landscape')" data-size="a4_landscape" class="btn-canvas-size text-xs px-2.5 py-1 rounded-xl font-bold bg-stone-100 hover:bg-amber-100 text-stone-800 border border-stone-300 transition-all">
+                A4 Ngang (21x15)
+              </button>
+              <button onclick="changeCanvasSize('mini_pocket')" data-size="mini_pocket" class="btn-canvas-size text-xs px-2.5 py-1 rounded-xl font-bold bg-stone-100 hover:bg-amber-100 text-stone-800 border border-stone-300 transition-all">
+                Mini (10x15)
+              </button>
+            </div>
+
+            <!-- Design Action Icons & Text Tool -->
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <!-- Text & Note Card Triggers -->
+              <button onclick="openTextModal()" class="text-xs bg-amber-300 hover:bg-amber-400 text-stone-950 font-heading font-black px-3 py-1.5 rounded-xl border-2 border-black shadow-neo flex items-center gap-1 transition-all" title="Thêm chữ viết nghệ thuật">
+                <span>✦ + Chữ</span>
+              </button>
+              <button onclick="addHandwritingNoteCard('lined')" class="text-xs bg-emerald-100 hover:bg-emerald-200 text-emerald-950 font-heading font-black px-3 py-1.5 rounded-xl border-2 border-emerald-800 shadow-sm flex items-center gap-1 transition-all" title="Thêm khung giấy kẻ dòng viết tay">
+                <span>✍ Khung Viết Tay</span>
+              </button>
+
+              <!-- Undo / Redo -->
+              <button onclick="undoCanvas()" class="p-1.5 bg-stone-100 hover:bg-amber-200 text-stone-900 rounded-xl border border-black font-bold text-xs shadow-sm transition-colors" title="Hoàn tác (Ctrl+Z)">
+                ↶
+              </button>
+              <button onclick="redoCanvas()" class="p-1.5 bg-stone-100 hover:bg-amber-200 text-stone-900 rounded-xl border border-black font-bold text-xs shadow-sm transition-colors" title="Làm lại (Ctrl+Y)">
+                ↷
+              </button>
+
+              <!-- Copy / Duplicate / Delete -->
+              <button onclick="duplicateActiveObject()" class="text-xs bg-stone-100 hover:bg-amber-100 font-bold px-2.5 py-1.5 rounded-xl border border-stone-300 transition-colors" title="Nhân bản phần tử (Ctrl+D)">
+                Nhân Bản
+              </button>
+              <button onclick="deleteSelectedObject()" class="text-xs bg-rose-50 hover:bg-rose-200 text-rose-900 font-bold px-2.5 py-1.5 rounded-xl border border-rose-300 transition-colors" title="Xóa phần tử (Delete)">
+                Xóa
+              </button>
+              <button onclick="centerActiveObject()" class="text-xs bg-stone-100 hover:bg-stone-200 font-bold px-2.5 py-1.5 rounded-xl border border-stone-300 transition-colors" title="Căn giữa trang">
+                Căn Giữa
+              </button>
+              <button onclick="bringForward()" class="p-1.5 bg-stone-100 hover:bg-stone-200 font-bold text-xs rounded-xl border border-stone-300 transition-colors" title="Lên 1 lớp (])">
+                ▲
+              </button>
+              <button onclick="sendBackward()" class="p-1.5 bg-stone-100 hover:bg-stone-200 font-bold text-xs rounded-xl border border-stone-300 transition-colors" title="Xuống 1 lớp ([)">
+                ▼
+              </button>
+              <button onclick="clearCanvas()" class="text-xs bg-stone-100 hover:bg-stone-200 font-bold px-2.5 py-1.5 rounded-xl border border-stone-300 transition-colors" title="Làm mới trang này">
+                Trang Trắng
+              </button>
+              
+              <!-- Auto-save Status & Manual Save Trigger -->
+              <div class="h-6 w-px bg-stone-300 mx-0.5"></div>
+              <button onclick="manualSaveStudioDraft()" class="text-xs bg-rose-800 hover:bg-rose-900 text-white font-heading font-black px-3 py-1.5 rounded-xl border border-black shadow-sm flex items-center gap-1.5 transition-transform active:scale-95" title="Lưu bản thiết kế">
+                <span>💾 Lưu Thiết Kế</span>
+              </button>
+              <div id="auto-save-status" class="text-[10px] text-stone-500 font-mono px-1 py-0.5 rounded bg-stone-100 border border-stone-200 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>Tự động lưu</span>
+              </div>
+              <button onclick="clearStudioDraftAndReset()" class="text-[10px] text-stone-500 hover:text-rose-700 font-bold underline px-1" title="Xóa bản nháp làm mới">
+                Xóa nháp
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Canvas Interactive Workspace with Safe Zone Overlay -->
+          <div class="w-full flex flex-col justify-center items-center bg-[#eae3d2] rounded-2xl p-4 sm:p-6 border-2 border-stone-300 shadow-inner overflow-auto min-h-[520px] relative">
+            
+            <!-- Safe Zone Guide Banner -->
+            <div id="safe-zone-banner" class="w-full max-w-[500px] mb-3 px-3 py-1.5 bg-amber-50/95 border-2 border-amber-300/80 text-amber-950 text-[11px] font-bold rounded-xl flex items-center justify-between shadow-sm">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-rose-600 animate-pulse"></span>
+                <span>📐 <b>Khung An Toàn 1cm</b>: Đặt ảnh, chữ & sticker trong viền đứt đỏ để không bị cấn mép.</span>
+              </div>
+              <button onclick="toggleSafeZone()" id="btn-toggle-safe-zone" class="ml-2 px-2 py-0.5 rounded bg-rose-800 hover:bg-rose-900 text-white text-[10px] font-black shrink-0 shadow-sm transition-transform active:scale-95">
+                Bật/Tắt
+              </button>
+            </div>
+
+            <!-- Canvas Wrapper with Rounded Aesthetic & Safe Zone Overlay -->
+            <div class="relative bg-[#fdfbf7] shadow-2xl rounded-2xl border-2 border-stone-800 overflow-hidden">
+              <canvas id="scrapbook-fabric-canvas"></canvas>
+              <!-- Interactive Safe Zone Overlay (1cm Margin & Spine Punch Guide) -->
+              <div id="safe-zone-overlay" class="absolute inset-0 pointer-events-none z-10"></div>
+            </div>
+          </div>
+
+          <!-- Multi-Page Bottom Navigator Bar -->
+          <div class="mt-4 pt-3.5 border-t-2 border-stone-200 flex items-center justify-between flex-wrap gap-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-heading font-black text-stone-900 uppercase">Trang Đang Mở:</span>
+              <div id="studio-page-tabs" class="flex items-center gap-1.5 flex-wrap">
+                <!-- Injected dynamically: [Trang 1] [Trang 2] ... -->
+              </div>
+              <button onclick="addNewPage()" class="px-3 py-1.5 rounded-xl text-xs font-heading font-black bg-amber-300 hover:bg-amber-400 text-stone-950 border-2 border-black shadow-neo flex items-center gap-1 transition-all">
+                <span>+ Thêm Trang</span>
+              </button>
+            </div>
+
+            <div class="flex items-center gap-1.5">
+              <button onclick="duplicatePage(activePageIndex)" class="text-xs bg-stone-100 hover:bg-stone-200 font-bold px-3 py-1.5 rounded-xl border border-stone-300 transition-colors">
+                Nhân Bản Trang Này
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 3D THREE.JS 360° VIEWER (WITH BOOK FOLDING & FLIPPING) -->
+        <div id="studio-3d-panel" class="hidden bg-stone-950 border-3 border-amber-400 rounded-3xl p-4 sm:p-5 shadow-neo-xl text-white">
+          <div class="flex items-center justify-between mb-3.5 flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+              <span class="font-mono font-bold text-amber-400">✦</span>
+              <h3 class="font-heading font-black text-sm text-white uppercase">Mô Phỏng 3D Scrapbook 360° Chân Thực</h3>
+              <span class="text-[10px] bg-rose-800 text-white px-2 py-0.5 rounded-full font-bold">Bìa Ngoài &amp; Nổi Khối 3D</span>
+            </div>
+
+            <!-- 3D Controls Bar: Fold Book, Page Flip & View Angles -->
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <!-- Gấp / Mở Sổ 3D Toggle -->
+              <button id="btn-toggle-fold" onclick="toggleFoldBook()" class="text-xs bg-gradient-to-r from-rose-800 to-amber-600 hover:from-rose-900 hover:to-amber-700 text-white font-heading font-black px-3 py-1.5 rounded-xl border-2 border-white shadow-neo transition-all">
+                <span>📕 Gấp Sổ Lại</span>
+              </button>
+
+              <!-- Lật trang 3D Tuần Tự -->
+              <button onclick="flipPage3D(-1)" class="text-xs bg-stone-800 hover:bg-stone-700 text-amber-300 font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Lật về trang trước">
+                ⏮ Lật Trước
+              </button>
+              <span id="3d-page-indicator" class="text-xs font-mono font-black text-amber-300 bg-stone-900 px-2.5 py-1.5 rounded-xl border border-stone-700">
+                Trang 1 / 1
+              </span>
+              <button onclick="flipPage3D(1)" class="text-xs bg-stone-800 hover:bg-stone-700 text-amber-300 font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Lật sang trang kế">
+                Lật Kế ⏭
+              </button>
+
+              <!-- Quick Angles -->
+              <button onclick="set3DViewAngle('cover')" class="text-xs bg-stone-800 hover:bg-stone-700 text-white font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Xem Bìa Trước Ngoài">
+                Bìa Trước
+              </button>
+              <button onclick="set3DViewAngle('back')" class="text-xs bg-stone-800 hover:bg-stone-700 text-white font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Xem Bìa Sau Ngoài">
+                Bìa Sau
+              </button>
+              <button onclick="set3DViewAngle('front')" class="text-xs bg-stone-800 hover:bg-stone-700 text-white font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Xem Mặt Trong Trải Phẳng">
+                Mặt Trong
+              </button>
+              <button id="btn-toggle-rotate" onclick="toggle3DAutoRotate()" class="text-xs bg-stone-800 hover:bg-stone-700 text-amber-300 font-bold px-2.5 py-1.5 rounded-xl border border-stone-700">
+                Dừng xoay
+              </button>
+            </div>
+          </div>
+
+          <!-- WebGL Three.js Container -->
+          <div id="threejs-container" class="w-full h-[520px] rounded-2xl bg-gradient-to-b from-[#fdfbf7] to-[#e8d8c3] border border-stone-700 overflow-hidden relative">
+            <div class="absolute bottom-4 left-4 bg-stone-900/80 backdrop-blur text-stone-300 text-xs px-3.5 py-1.5 rounded-xl border border-stone-700 pointer-events-none font-bold">
+              Kéo chuột để xoay 360° • Cuộn chuột để phóng to/thu nhỏ • Bấm "Gấp Sổ" để ngắm trọn bìa trước &amp; sau
+            </div>
+          </div>
+        </div>
+
+        <!-- USED COMPONENTS SKU SUMMARY & PROMINENT BOTTOM ACTIONS -->
+        <div class="bg-white border-2 border-black rounded-3xl p-5 shadow-neo space-y-4">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+              <span class="font-heading font-black text-xs text-stone-900 uppercase">Danh Mục Linh Kiện Đang Sử Dụng:</span>
+              <span id="used-skus-count" class="text-xs font-mono font-bold bg-amber-300 text-stone-950 px-2.5 py-0.5 rounded-full border border-black">0 linh kiện</span>
+            </div>
+            <div class="text-xs font-bold text-stone-600">
+              Tổng giá trị set: <span id="design-total-price" class="font-heading font-black text-lg text-rose-800 ml-1">0 đ</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Used SKU List Container -->
+          <div id="used-components-list" class="flex flex-wrap gap-2 min-h-[36px] items-center text-xs text-stone-400 border-t border-stone-100 pt-3">
+            <span>Chưa có phụ kiện nào được thêm vào trang sổ. Hãy chọn sticker hoặc layout ở cột bên trái.</span>
+          </div>
+
+          <!-- Bottom Action Buttons: Export Image & Purchase Set -->
+          <div class="pt-3 border-t-2 border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <button onclick="exportCanvasImage()" class="w-full sm:w-auto bg-stone-100 hover:bg-stone-200 text-stone-900 text-xs font-heading font-black px-5 py-3 rounded-2xl border-2 border-black shadow-sm flex items-center justify-center gap-2 transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-rose-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Xuất Ảnh HD Thiết Kế (PNG)</span>
+            </button>
+
+            <button onclick="addDesignComponentsToCart()" class="w-full sm:w-auto bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-500 hover:to-amber-400 text-stone-950 text-xs font-heading font-black px-7 py-3 rounded-2xl border-2 border-black shadow-neo transform hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              <span>Mua Trọn Bộ Linh Kiện Đã Thiết Kế →</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= MODAL: RICH TEXT CUSTOMIZATION TOOL ================= -->
+<div id="text-tool-modal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+  <div class="bg-white border-3 border-black rounded-3xl max-w-md w-full p-6 shadow-neo-xl space-y-4 animate-in fade-in zoom-in duration-200">
+    <div class="flex items-center justify-between pb-2 border-b-2 border-stone-200">
+      <div class="flex items-center gap-2">
+        <span class="text-rose-800 font-black text-lg">✦</span>
+        <h3 class="font-heading font-black text-base text-stone-900">Thêm Chữ Viết Tay Nghệ Thuật</h3>
+      </div>
+      <button onclick="closeTextModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 font-black text-stone-700 flex items-center justify-center">×</button>
+    </div>
+
+    <div class="space-y-3">
+      <div>
+        <label class="block text-xs font-bold text-stone-700 mb-1">Nội dung văn bản:</label>
+        <input type="text" id="text-input-field" placeholder="VD: Memories ✦ 2026" class="w-full bg-stone-50 border-2 border-stone-300 focus:border-rose-800 rounded-xl px-3.5 py-2 text-sm font-medium text-stone-900 outline-none">
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-bold text-stone-700 mb-1">Font chữ:</label>
+          <select id="text-font-select" class="w-full bg-stone-50 border-2 border-stone-300 rounded-xl px-3 py-2 text-xs font-bold text-stone-900 outline-none">
+            <option value="Patrick Hand" selected>Patrick Hand (Viết tay mộc)</option>
+            <option value="Be Vietnam Pro">Be Vietnam Pro (Hiện đại)</option>
+            <option value="Playfair Display">Playfair Display (Cổ điển)</option>
+            <option value="Courier Prime">Courier Prime (Máy đánh chữ)</option>
+            <option value="Plus Jakarta Sans">Plus Jakarta Sans (Gen Z)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-stone-700 mb-1">Cỡ chữ (px):</label>
+          <input type="number" id="text-size-input" value="34" min="14" max="72" class="w-full bg-stone-50 border-2 border-stone-300 rounded-xl px-3 py-2 text-xs font-bold text-stone-900 outline-none">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-stone-700 mb-1.5">Màu sắc:</label>
+        <div class="flex items-center gap-2">
+          <input type="color" id="text-color-input" value="#78350f" class="w-10 h-10 rounded-xl border-2 border-stone-300 cursor-pointer p-0.5">
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <button onclick="document.getElementById('text-color-input').value='#78350f'" class="w-7 h-7 rounded-lg bg-[#78350f] border border-black" title="Nâu Kraft"></button>
+            <button onclick="document.getElementById('text-color-input').value='#881337'" class="w-7 h-7 rounded-lg bg-[#881337] border border-black" title="Đỏ Rượu"></button>
+            <button onclick="document.getElementById('text-color-input').value='#18181b'" class="w-7 h-7 rounded-lg bg-[#18181b] border border-black" title="Đen Mực"></button>
+            <button onclick="document.getElementById('text-color-input').value='#db2777'" class="w-7 h-7 rounded-lg bg-[#db2777] border border-black" title="Hồng Pastel"></button>
+            <button onclick="document.getElementById('text-color-input').value='#059669'" class="w-7 h-7 rounded-lg bg-[#059669] border border-black" title="Xanh Rêu"></button>
+            <button onclick="document.getElementById('text-color-input').value='#d97706'" class="w-7 h-7 rounded-lg bg-[#d97706] border border-black" title="Vàng Hổ Phách"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-2 flex items-center justify-end gap-2">
+      <button onclick="closeTextModal()" class="px-4 py-2 rounded-xl text-xs font-bold text-stone-700 hover:bg-stone-100">Hủy</button>
+      <button onclick="addCustomTextToCanvas()" class="px-5 py-2 rounded-xl text-xs font-heading font-black bg-rose-800 hover:bg-rose-900 text-white border-2 border-black shadow-neo">
+        + Chèn Vào Trang Sổ
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+
+<script>
+function filterLayoutSubtype(type) {
+  const cards = document.querySelectorAll('.lay-item-card');
+  cards.forEach(card => {
+    const sub = card.getAttribute('data-subtype');
+    if (type === 'all' || sub === type) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  const btnAll = document.getElementById('btn-sublay-all');
+  const btnPhoto = document.getElementById('btn-sublay-photo');
+  const btnText = document.getElementById('btn-sublay-text');
+
+  [btnAll, btnPhoto, btnText].forEach(b => {
+    if (b) b.className = 'flex-1 py-1 rounded-lg text-stone-600 hover:text-stone-900';
+  });
+
+  if (type === 'all' && btnAll) btnAll.className = 'flex-1 py-1 rounded-lg bg-white text-stone-900 shadow-sm border border-stone-300 font-black';
+  if (type === 'photo' && btnPhoto) btnPhoto.className = 'flex-1 py-1 rounded-lg bg-white text-stone-900 shadow-sm border border-stone-300 font-black';
+  if (type === 'text' && btnText) btnText.className = 'flex-1 py-1 rounded-lg bg-white text-stone-900 shadow-sm border border-stone-300 font-black';
+}
+</script>
+
+<script>
+function handleStickerCardClick(el) {
+  if (!el) return;
+  const sku = el.getAttribute('data-sku');
+  const name = el.getAttribute('data-name');
+  const image = el.getAttribute('data-image');
+  const price = parseFloat(el.getAttribute('data-price')) || 300;
+  if (typeof addStickerToCanvas === 'function') {
+    addStickerToCanvas(sku, name, image, price);
+  }
+}
+</script>
+<script src="/static/js/studio-canvas.js"></script>
+<script src="/static/js/studio-3d.js"></script>
+<script src="/static/js/studio-ai.js"></script>
+{% endblock %}

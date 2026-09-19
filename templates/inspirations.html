@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Mẫu Tham Khảo Scrapbook DIY - MEMOUR Studio | Every memory has a story{% endblock %}
+
+{% block content %}
+{% import "components/carousel.html" as carousels %}
+
+{% set insp_title = "<span class='whitespace-nowrap inline-block'>Mẫu Bố Cục Tinh Tuyển</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Đầy Đủ Phụ Kiện Có Sẵn</span>" %}
+{% set insp_buttons = [
+  { "text": "Khám Phá Xưởng 3D", "url": "/studio", "primary": true },
+  { "text": "Cách làm scrapbook", "url": "/guide", "primary": false }
+] %}
+
+{{ carousels.render_hero_carousel("inspiration-carousel", insp_title, insp_buttons) }}
+
+<!-- Inspiration List -->
+<section id="inspiration-list" class="py-12 md:py-16 bg-[#fdfbf7]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    
+    {% for insp in inspirations %}
+    <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:border-rose-700 transition-all">
+      
+      <!-- Visual Display Box (Mockup) -->
+      <div class="lg:col-span-6 relative">
+        <div class="w-full aspect-[4/3] bg-stone-100 rounded-2xl overflow-hidden border-2 border-black relative group shadow-sm">
+          <img src="{{ insp.image }}" alt="{{ insp.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-3 left-3 bg-amber-300 text-black text-xs font-black px-3 py-1 rounded-md border border-black shadow-sm">
+            {{ insp.theme }}
+          </span>
+          <span class="absolute bottom-3 right-3 bg-black/80 text-white text-xs font-bold px-2.5 py-1 rounded-md">
+            Độ khó: {{ insp.difficulty }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Inspiration Details & Strict Components SKU Checklist -->
+      <div class="lg:col-span-6 space-y-4">
+        <div>
+          <div class="flex items-center justify-between gap-2">
+            <span class="text-xs font-mono font-black text-rose-800 uppercase tracking-wider">Mã Dự Án: {{ insp.id|upper }}</span>
+            <span class="text-xs font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">Tone: {{ insp.color_palette|join(', ') }}</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-heading font-black text-stone-900 mt-1 leading-tight">
+            {{ insp.title }}
+          </h2>
+          <p class="text-xs text-stone-500 font-semibold mt-0.5">{{ insp.subtitle }}</p>
+        </div>
+
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+          {{ insp.description }}
+        </p>
+
+        <!-- Components Breakdown with Exact SKUs -->
+        <div class="bg-stone-50 border-2 border-black rounded-2xl p-4 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-heading font-black text-stone-900 uppercase">Linh Kiện Cấu Thành (Chuẩn SKU):</span>
+            <span class="text-[11px] font-bold text-rose-800">{{ insp.components|length }} Phụ Kiện</span>
+          </div>
+          
+          <div class="flex flex-wrap gap-2 pt-1">
+            {% for comp in insp.components %}
+            <a href="/product/{{ comp.sku }}" class="inline-flex items-center gap-1.5 bg-white border border-stone-300 px-2.5 py-1 rounded-lg hover:border-black transition-colors" title="{{ comp.name }}">
+              <span class="text-[10px] font-mono font-black text-rose-800">{{ comp.sku }}</span>
+              <span class="text-[10px] font-bold text-stone-700 truncate max-w-[120px]">{{ comp.name }}</span>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a href="/studio?remix={{ insp.id }}" class="flex-1 bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-xs sm:text-sm py-3.5 rounded-2xl border-2 border-black shadow-neo shadow-neo-hover transition-all text-center flex items-center justify-center gap-2">
+            <span>Dùng Mẫu Trong Xưởng (Remix)</span>
+            <span class="font-mono">→</span>
+          </a>
+
+          <button onclick="buyInspirationBundle('{{ insp.id }}', {{ insp.bundle_price }})" class="flex-1 bg-amber-300 hover:bg-amber-400 text-stone-950 font-heading font-black text-xs sm:text-sm py-3.5 rounded-2xl border-2 border-black shadow-neo shadow-neo-hover transition-all text-center">
+            Mua Trọn Bộ ({{ insp.bundle_price|format_vnd }})
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+    {% endfor %}
+
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}Tra Cứu Tiến Độ Đơn Hàng - MEMOUR Studio | Every memory has a story{% endblock %}
+
+{% block content %}
+<div class="py-12 md:py-16 bg-[#fdfbf7]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    
+    <div class="text-center max-w-xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-amber-300 text-stone-950 px-3.5 py-1 rounded-full text-xs font-black uppercase mb-2 border border-black shadow-neo">
+        <span>✦ HỆ THỐNG TRA CỨU ĐƠN HÀNG</span>
+      </div>
+      <h1 class="text-3xl font-heading font-black text-stone-900">
+        Kiểm Tra Tiến Độ Đơn Hàng
+      </h1>
+      <p class="text-xs text-stone-600 mt-1">
+        Nhập mã đơn hàng (VD: SC-xxxxxx) hoặc số điện thoại bạn đã dùng khi đặt hàng.
+      </p>
+    </div>
+
+    <!-- Query Search Form -->
+    <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-xl">
+      <form id="order-tracking-form" onsubmit="handleOrderSearch(event)" class="flex flex-col sm:flex-row items-center gap-3">
+        <input type="text" id="query-input" value="{{ initial_code }}" required placeholder="Nhập mã đơn hàng hoặc SĐT..." class="flex-grow w-full bg-stone-50 border-2 border-black rounded-2xl px-5 py-3 text-sm font-semibold focus:outline-none focus:border-rose-800">
+        <button type="submit" class="w-full sm:w-auto bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-sm px-8 py-3.5 rounded-2xl border-2 border-black shadow-neo shadow-neo-hover transition-all">
+          Tra Cứu Ngay →
+        </button>
+      </form>
+    </div>
+
+    <!-- Tracking Results Area -->
+    <div id="tracking-results-area" class="space-y-6">
+      <!-- Injected via JavaScript -->
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const initCode = '{{ initial_code }}';
+  if (initCode) {
+    fetchOrdersData(initCode);
+  }
+});
+
+async function handleOrderSearch(e) {
+  e.preventDefault();
+  const q = document.getElementById('query-input').value.trim();
+  if (q) fetchOrdersData(q);
+}
+
+async function fetchOrdersData(query) {
+  const resultsArea = document.getElementById('tracking-results-area');
+  resultsArea.innerHTML = '<div class="text-center py-8 font-bold text-stone-600">Đang tra cứu cơ sở dữ liệu xưởng...</div>';
+  
+  try {
+    const res = await fetch(`/api/orders?q=${encodeURIComponent(query)}`);
+    const data = await res.json();
+    
+    if (!data.orders || data.orders.length === 0) {
+      resultsArea.innerHTML = `
+        <div class="bg-white border-2 border-black rounded-3xl p-8 text-center shadow-neo">
+          <p class="font-heading font-black text-lg text-stone-900 mb-1">Không tìm thấy đơn hàng phù hợp</p>
+          <p class="text-xs text-stone-500">Vui lòng kiểm tra lại mã đơn hàng hoặc số điện thoại.</p>
+        </div>
+      `;
+      return;
+    }
+
+    resultsArea.innerHTML = data.orders.map(order => `
+      <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-xl space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-stone-200">
+          <div>
+            <span class="text-xs font-mono font-bold text-stone-400">Mã đơn:</span>
+            <h2 class="text-xl font-heading font-black text-rose-800 font-mono">${order.order_code}</h2>
+          </div>
+          <span class="bg-amber-300 text-stone-950 text-xs font-black px-3.5 py-1.5 rounded-full border border-black shadow-sm">
+            ${order.status}
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div>
+            <span class="text-stone-400 font-bold block mb-1">Thông tin khách hàng:</span>
+            <p class="font-bold text-stone-900">${order.name} - ${order.phone}</p>
+            <p class="text-stone-600 mt-0.5">${order.address}</p>
+          </div>
+          <div>
+            <span class="text-stone-400 font-bold block mb-1">Thời gian đặt:</span>
+            <p class="font-bold text-stone-900">${order.created_at}</p>
+            <p class="text-stone-600 mt-0.5">Ghi chú: ${order.note || 'Không có'}</p>
+          </div>
+        </div>
+
+        <div class="border-t border-stone-200 pt-4 space-y-3">
+          <span class="text-xs font-black text-stone-900 uppercase">Sản phẩm trong đơn:</span>
+          <div class="space-y-2">
+            ${order.items.map(item => `
+              <div class="flex justify-between items-center bg-stone-50 p-3 rounded-xl border border-stone-200 text-xs">
+                <span class="font-bold text-stone-800">${item.sku || ''} - ${item.name} (x${item.quantity || 1})</span>
+                <span class="font-black text-stone-900">${(item.price * (item.quantity || 1)).toLocaleString('vi-VN')} đ</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="border-t border-stone-200 pt-4 flex justify-between items-center text-sm">
+          <span class="font-bold text-stone-600">Tổng thanh toán:</span>
+          <span class="font-heading font-black text-xl text-rose-800">${order.final_amount.toLocaleString('vi-VN')} đ</span>
+        </div>
+      </div>
+    `).join('');
+
+  } catch (err) {
+    resultsArea.innerHTML = '<div class="text-center py-8 font-bold text-rose-800">Lỗi kết nối máy chủ!</div>';
+  }
+}
+</script>
+{% endblock %}

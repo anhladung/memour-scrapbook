@@ -1,0 +1,1588 @@
+[
+  {
+    "sku": "STK_VN_001",
+    "id": "stk_vn_001",
+    "name": "Nón Lá Việt Nam Quai Đỏ",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_001.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "non la",
+      "truyen thong",
+      "ao dai",
+      "van hoa"
+    ],
+    "description": "Sticker Nón lá truyền thống dập nổi viền trắng",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_002",
+    "id": "stk_vn_002",
+    "name": "Bánh Chưng & Củ Kiệu Hoa Đào",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_002.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "tet",
+      "banh chung",
+      "am thuc",
+      "xuan"
+    ],
+    "description": "Sticker Bánh Chưng ngày Tết sum vầy",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_003",
+    "id": "stk_vn_003",
+    "name": "Bánh Tét & Dưa Kiệu Miền Nam",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_003.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "tet",
+      "banh tet",
+      "am thuc",
+      "mien nam"
+    ],
+    "description": "Sticker Đòn Bánh Tét đậm đà phong vị Tết",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_004",
+    "id": "stk_vn_004",
+    "name": "Nhánh Lúa Vàng Trĩu Hạt",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_004.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "lua vang",
+      "dong que",
+      "que huong",
+      "mua gat"
+    ],
+    "description": "Sticker Bông lúa vàng ấm no trù phú",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_005",
+    "id": "stk_vn_005",
+    "name": "Đĩa Cơm Tấm Sườn Bì Trứng",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_005.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "com tam",
+      "am thuc",
+      "sai gon",
+      "dac san"
+    ],
+    "description": "Sticker Cơm tấm Sài Gòn đặc sản nức tiếng",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_006",
+    "id": "stk_vn_006",
+    "name": "Mẹt Bánh Xèo Miền Tây",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_006.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "banh xeo",
+      "am thuc",
+      "mien tay",
+      "dac san"
+    ],
+    "description": "Sticker Mẹt Bánh Xèo vàng giòn rau rừng",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_007",
+    "id": "stk_vn_007",
+    "name": "Ổ Bánh Mì Thịt Nguội Giòn Rụm",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_007.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "banh mi",
+      "am thuc",
+      "streetfood",
+      "an vat"
+    ],
+    "description": "Sticker Ổ Bánh Mì Việt Nam vươn tầm thế giới",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_008",
+    "id": "stk_vn_008",
+    "name": "Ly Cà Phê Phin Nhỏ Giọt",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_008.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "ca phe phin",
+      "coffee",
+      "sai gon",
+      "chill"
+    ],
+    "description": "Sticker Ly Cà Phê Phin truyền thống đậm đà",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_009",
+    "id": "stk_vn_009",
+    "name": "Cồng Chiêng Tây Nguyên Đại Ngàn",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_009.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "cong chieng",
+      "tay nguyen",
+      "di san",
+      "am nhac"
+    ],
+    "description": "Sticker Không gian văn hóa Cồng Chiêng Tây Nguyên",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_010",
+    "id": "stk_vn_010",
+    "name": "Đại Nội Kinh Thành Huế Cổ Kính",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_010.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "hue",
+      "dai noi",
+      "co do",
+      "di san",
+      "du lich"
+    ],
+    "description": "Sticker Lầu Ngũ Phụng - Cố Đô Huế trầm mặc",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_011",
+    "id": "stk_vn_011",
+    "name": "Cô Gái Áo Dài Cầm Cờ Tổ Quốc",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_011.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "ao dai",
+      "co do sao vang",
+      "tu hao",
+      "nu cuoi"
+    ],
+    "description": "Sticker Tà Áo Dài trắng và lá cờ đỏ sao vàng",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_012",
+    "id": "stk_vn_012",
+    "name": "Đàn Nguyệt Âm Nhạc Cổ Truyền",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_012.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "dan nguyet",
+      "nhac cu",
+      "truyen thong",
+      "dan toc"
+    ],
+    "description": "Sticker Cây Đàn Nguyệt thanh âm dân tộc",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_013",
+    "id": "stk_vn_013",
+    "name": "Đàn Bầu Độc Huyền Cổ Kính",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_013.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "dan bau",
+      "nhac cu",
+      "que huong",
+      "dan toc"
+    ],
+    "description": "Sticker Đàn Bầu một dây ngân vang hồn nước",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_014",
+    "id": "stk_vn_014",
+    "name": "Mặt Trống Đồng Đông Sơn Cổ",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_014.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "trong dong",
+      "dong son",
+      "lich su",
+      "di san"
+    ],
+    "description": "Sticker Trống Đồng Đông Sơn biểu tượng rạng ngời",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_015",
+    "id": "stk_vn_015",
+    "name": "Chim Lạc Lược Đồng Cổ",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_015.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "chim lac",
+      "dong son",
+      "hoa van",
+      "to quoc"
+    ],
+    "description": "Sticker Chim Lạc sải cánh hào khí non sông",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_016",
+    "id": "stk_vn_016",
+    "name": "Búp & Hoa Sen Hồng Tươi",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_016.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "hoa sen",
+      "quoc hoa",
+      "thanh tao",
+      "tu nhien"
+    ],
+    "description": "Sticker Hoa Sen Hồng thanh khiết đất Việt",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_017",
+    "id": "stk_vn_017",
+    "name": "Chữ Nghệ Thuật VIỆT NAM 3D",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_017.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "chu viet nam",
+      "typography",
+      "3d",
+      "tu hao"
+    ],
+    "description": "Sticker Chữ 3D VIỆT NAM nón lá cờ đỏ sao vàng",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_VN_018",
+    "id": "stk_vn_018",
+    "name": "Tháp Cổ Chùa Một Cột",
+    "theme": "Bản Sắc Việt Nam & Di Sản",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_vn_018.png",
+    "price": 12000,
+    "tags": [
+      "vietnam",
+      "chua mot cot",
+      "ha noi",
+      "di tich",
+      "tam linh"
+    ],
+    "description": "Sticker Chùa Một Cột nghìn năm văn hiến",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_001",
+    "id": "stk_trv_001",
+    "name": "Cung Đường Phượt Road Trip",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_001.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "road trip",
+      "cung duong",
+      "phuot",
+      "xe may"
+    ],
+    "description": "Sticker Cung đường phượt khám phá chân trời",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_002",
+    "id": "stk_trv_002",
+    "name": "Huy Hiệu You're Going Places",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_002.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "badge",
+      "going places",
+      "dong luc",
+      "kham pha"
+    ],
+    "description": "Huy hiệu truyền cảm hứng You're Going Places",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_003",
+    "id": "stk_trv_003",
+    "name": "Sticker Explore Cắm Trại Rừng",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_003.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "explore",
+      "camping",
+      "rung nui",
+      "da ngoai"
+    ],
+    "description": "Sticker Khám phá thiên nhiên lều cắm trại",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_004",
+    "id": "stk_trv_004",
+    "name": "Máy Bay Du Lịch Quốc Tế",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_004.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "may bay",
+      "airplane",
+      "flight",
+      "quoc te"
+    ],
+    "description": "Sticker Chuyến bay cất cánh vi vu bốn phương",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_005",
+    "id": "stk_trv_005",
+    "name": "Cuốn Sổ Nhật Ký Adventure",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_005.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "scrapbook",
+      "nhat ky",
+      "adventure",
+      "ky niem"
+    ],
+    "description": "Sticker Cuốn sổ tay hành trình Adventure",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_006",
+    "id": "stk_trv_006",
+    "name": "Huy Hiệu Road Trip Shield",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_006.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "road trip",
+      "shield",
+      "xe hoi",
+      "chuyen di"
+    ],
+    "description": "Huy hiệu biển báo Road Trip Highway",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_007",
+    "id": "stk_trv_007",
+    "name": "Vé Máy Bay Boarding Pass 1A",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_007.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "boarding pass",
+      "ticket",
+      "ve may bay",
+      "san bay"
+    ],
+    "description": "Sticker Thẻ lên tàu bay hạng thương gia 1A",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_008",
+    "id": "stk_trv_008",
+    "name": "Huy Hiệu Rừng Washington",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_008.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "washington",
+      "nature",
+      "cay xanh",
+      "vintage"
+    ],
+    "description": "Huy hiệu phong cảnh rừng nguyên sinh",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_009",
+    "id": "stk_trv_009",
+    "name": "Huy Hiệu Hawaii Aloha Hoàng Hôn",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_009.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "hawaii",
+      "bien",
+      "hoang hon",
+      "aloha"
+    ],
+    "description": "Huy hiệu biển đảo Hawaii hoàng hôn lãng mạn",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_010",
+    "id": "stk_trv_010",
+    "name": "Huy Hiệu California Chòi Biển",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_010.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "california",
+      "beach",
+      "bien",
+      "mua he"
+    ],
+    "description": "Huy hiệu bãi biển California nắng vàng",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_011",
+    "id": "stk_trv_011",
+    "name": "Bản Đồ Thế Giới Vintage Xanh",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_011.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "world map",
+      "ban do",
+      "quoc te",
+      "kham pha"
+    ],
+    "description": "Sticker Bản đồ thế giới thám hiểm năm châu",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_012",
+    "id": "stk_trv_012",
+    "name": "Quả Địa Cầu Lộ Trình Bay",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_012.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "globe",
+      "trai dat",
+      "dia cau",
+      "du lich"
+    ],
+    "description": "Sticker Quả địa cầu và lộ trình vòng quanh thế giới",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_013",
+    "id": "stk_trv_013",
+    "name": "Balo Phượt Dã Ngoại Xanh",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_013.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "backpack",
+      "balo",
+      "leo nui",
+      "hiking"
+    ],
+    "description": "Sticker Balo phượt dã ngoại dẻo dai",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_014",
+    "id": "stk_trv_014",
+    "name": "Tem Bưu Chính Milano Ý Xe Vespa",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_014.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "milano",
+      "italia",
+      "vespa",
+      "stamp",
+      "vintage"
+    ],
+    "description": "Tem cổ điển thành phố Milano nước Ý và xe Vespa",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_015",
+    "id": "stk_trv_015",
+    "name": "Huy Hiệu New York Skyline",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_015.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "new york",
+      "thanh pho",
+      "skyline",
+      "du lich"
+    ],
+    "description": "Huy hiệu đường chân trời New York tráng lệ",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_016",
+    "id": "stk_trv_016",
+    "name": "Quả Địa Cầu & Máy Bay Giấy",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_016.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "may bay giay",
+      "globe",
+      "uoc mo",
+      "bay"
+    ],
+    "description": "Sticker Máy bay giấy bay quanh trái đất tuổi thơ",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_017",
+    "id": "stk_trv_017",
+    "name": "Bộ Ảnh Polaroid Kim Tự Tháp",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_017.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "polaroid",
+      "kim tu thap",
+      "danh lam",
+      "anh dep"
+    ],
+    "description": "Sticker Chùm ảnh Polaroid kỳ quan thế giới",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_018",
+    "id": "stk_trv_018",
+    "name": "Huy Hiệu Bờ Biển Oregon",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_018.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "oregon",
+      "bien",
+      "vintage",
+      "da ngoai"
+    ],
+    "description": "Huy hiệu bờ biển Oregon sóng vỗ",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_019",
+    "id": "stk_trv_019",
+    "name": "Nhãn Oval Call Me If You Get Lost",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_019.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "lost",
+      "quote",
+      "genz",
+      "chuyen di"
+    ],
+    "description": "Sticker thông điệp Call Me If You Get Lost",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_020",
+    "id": "stk_trv_020",
+    "name": "Balo Da Du Lịch Cổ Điển",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_020.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "leather backpack",
+      "balo da",
+      "vintage",
+      "retro"
+    ],
+    "description": "Sticker Balo da du lịch phong cách vintage",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_021",
+    "id": "stk_trv_021",
+    "name": "Sổ Hướng Dẫn Du Lịch 1920s",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_021.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "travel guide",
+      "sach",
+      "huong dan",
+      "vintage"
+    ],
+    "description": "Sticker Cuốn cẩm nang du lịch thập niên 1920",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_022",
+    "id": "stk_trv_022",
+    "name": "Chữ Nghệ Thuật Adventure Quả Cầu",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_022.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "adventure",
+      "lettering",
+      "phieu luu",
+      "typography"
+    ],
+    "description": "Sticker Chữ nghệ thuật Adventure thám hiểm",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_023",
+    "id": "stk_trv_023",
+    "name": "Dấu Mộc Express Delivery Flight",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_023.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "stamp",
+      "dau moc",
+      "express",
+      "may bay"
+    ],
+    "description": "Dấu mộc bưu điện chuyển phát nhanh đường hàng không",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_024",
+    "id": "stk_trv_024",
+    "name": "Biển Báo Đường Phố Ivy St",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_024.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "ivy st",
+      "bien bao",
+      "duong pho",
+      "vintage"
+    ],
+    "description": "Sticker Biển báo góc phố Ivy Street hoài cổ",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_025",
+    "id": "stk_trv_025",
+    "name": "Huy Hiệu Sa Mạc Xương Rồng",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_025.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "xuong rong",
+      "sa mac",
+      "cactus",
+      "nature"
+    ],
+    "description": "Huy hiệu sa mạc xương rồng rực rỡ",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_026",
+    "id": "stk_trv_026",
+    "name": "Dấu Mộc Tròn Travel Ticket",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_026.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "dau moc",
+      "stamp",
+      "ticket",
+      "tron"
+    ],
+    "description": "Dấu mộc visa du lịch quốc tế",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_027",
+    "id": "stk_trv_027",
+    "name": "Khung Tranh Phong Cảnh Rừng Thông",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_027.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "khung anh",
+      "tranh ve",
+      "rung thong",
+      "nature"
+    ],
+    "description": "Sticker Bức họa phong cảnh thiên nhiên núi đồi",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_028",
+    "id": "stk_trv_028",
+    "name": "Chữ Viết Tay memories Mềm Mại",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_028.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "memories",
+      "chu viet tay",
+      "calligraphy",
+      "ky niem"
+    ],
+    "description": "Sticker Chữ viết tay memories lưu dấu kỷ niệm",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_029",
+    "id": "stk_trv_029",
+    "name": "Tấm Bản Đồ Gấp Định Vị",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_029.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "ban do",
+      "folded map",
+      "dinh vi",
+      "hanh trinh"
+    ],
+    "description": "Sticker Bản đồ du lịch gập bỏ túi",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_030",
+    "id": "stk_trv_030",
+    "name": "Vali Du Lịch Retro Màu Xanh Ngọc",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_030.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "vali",
+      "suitcase",
+      "xanh ngoc",
+      "hanh ly"
+    ],
+    "description": "Sticker Chiếc vali hành lý xanh ngọc cổ điển",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_031",
+    "id": "stk_trv_031",
+    "name": "Ngôi Sao Hollywood Đại Lộ Danh Vọng",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_031.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "hollywood",
+      "ngoi sao",
+      "star",
+      "dien anh"
+    ],
+    "description": "Sticker Ngôi sao Đại lộ Danh vọng Hollywood",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_032",
+    "id": "stk_trv_032",
+    "name": "Cửa Sổ Máy Bay Ngắm Mây Trời",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_032.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "cua so may bay",
+      "may troi",
+      "window",
+      "ngam canh"
+    ],
+    "description": "Sticker Cửa sổ máy bay ngắm mây trời bao la",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_033",
+    "id": "stk_trv_033",
+    "name": "Túi Xách Da Du Lịch Cầm Tay",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_033.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "tui xach",
+      "handbag",
+      "hanh ly",
+      "thoi trang"
+    ],
+    "description": "Sticker Túi xách da du lịch sang trọng",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_034",
+    "id": "stk_trv_034",
+    "name": "Máy Ảnh Cơ Chuyên Nghiệp Canon",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_034.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "may anh",
+      "canon",
+      "camera",
+      "nhiep anh"
+    ],
+    "description": "Sticker Máy ảnh cơ DSLR Canon bắt trọn khoảnh khắc",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_035",
+    "id": "stk_trv_035",
+    "name": "Điện Thoại Bản Đồ GPS",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_035.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "smartphone",
+      "gps",
+      "dinh vi",
+      "cong nghe"
+    ],
+    "description": "Sticker Điện thoại mở bản đồ định vị chuyến đi",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_TRV_036",
+    "id": "stk_trv_036",
+    "name": "Đoạn Đường Cao Tốc Trải Nhựa",
+    "theme": "Du Lịch Thế Giới & Chuyến Bay",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_trv_036.png",
+    "price": 12000,
+    "tags": [
+      "travel",
+      "cao toc",
+      "duong nhua",
+      "highway",
+      "hanh trinh"
+    ],
+    "description": "Sticker Dải đường cao tốc uốn lượn thênh thang",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_001",
+    "id": "stk_cmp_001",
+    "name": "Biển Gỗ Chỉ Hướng Adventure Awaits",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_001.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "bien go",
+      "adventure awaits",
+      "chi huong",
+      "kham pha"
+    ],
+    "description": "Sticker Biển gỗ chỉ đường Adventure Awaits",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_002",
+    "id": "stk_cmp_002",
+    "name": "Huy Hiệu Cắm Trại Dưới Ngàn Sao",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_002.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "ngan sao",
+      "leu trai",
+      "nui rung",
+      "night sky"
+    ],
+    "description": "Huy hiệu cắm trại ngủ dưới bầu trời ngàn sao",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_003",
+    "id": "stk_cmp_003",
+    "name": "Máy Ảnh Vintage Xanh Bạc Hà",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_003.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "may anh vintage",
+      "camera",
+      "mint",
+      "retro"
+    ],
+    "description": "Sticker Máy ảnh vintage màu xanh bạc hà dễ thương",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_004",
+    "id": "stk_cmp_004",
+    "name": "Tem Bưu Chính Khinh Khí Cầu World",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_004.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "khinh khi cau",
+      "tem thu",
+      "stamp",
+      "the gioi"
+    ],
+    "description": "Tem bưu chính khinh khí cầu bay lượn ngắm thế giới",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_005",
+    "id": "stk_cmp_005",
+    "name": "Cây Dừa Nhiệt Đới Đảo Xanh",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_005.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "cay dua",
+      "nhiet doi",
+      "dao bien",
+      "summer"
+    ],
+    "description": "Sticker Cây dừa nhiệt đới đung đưa trước gió",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_006",
+    "id": "stk_cmp_006",
+    "name": "Quả Địa Cầu Chân Đế Đồng Cổ",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_006.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "qua dia cau",
+      "globe",
+      "vintage",
+      "dong co"
+    ],
+    "description": "Sticker Quả địa cầu để bàn chân đế đồng vintage",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_007",
+    "id": "stk_cmp_007",
+    "name": "Vali Da Cổ Điển Dán Tem Du Lịch",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_007.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "vali da",
+      "suitcase",
+      "vintage",
+      "tem du lich"
+    ],
+    "description": "Sticker Chiếc vali da cổ dán đầy tem hành trình",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_008",
+    "id": "stk_cmp_008",
+    "name": "Chữ Nghệ Thuật Collect Moments",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_008.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "quote",
+      "collect moments",
+      "y nghia",
+      "typography"
+    ],
+    "description": "Sticker Chữ nghệ thuật Collect moments not things",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_009",
+    "id": "stk_cmp_009",
+    "name": "Biển Gỗ Chỉ Hướng 4 Miền",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_009.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "bien go",
+      "4 mien",
+      "bien nui rung",
+      "chi huong"
+    ],
+    "description": "Sticker Cột mốc gỗ chỉ hướng Beach - Mountains - City - Forest",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_010",
+    "id": "stk_cmp_010",
+    "name": "Cuốn Hộ Chiếu Passport Xanh Navy",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_010.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "passport",
+      "ho chieu",
+      "quoc te",
+      "hai quan"
+    ],
+    "description": "Sticker Cuốn hộ chiếu Passport màu xanh Navy quyền lực",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_011",
+    "id": "stk_cmp_011",
+    "name": "Huy Hiệu Tam Giác Adventure Is Calling",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_011.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "tam giac",
+      "adventure is calling",
+      "nui tuyet",
+      "badge"
+    ],
+    "description": "Huy hiệu tam giác Adventure Is Calling tiếng gọi phiêu lưu",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_012",
+    "id": "stk_cmp_012",
+    "name": "Bản Đồ Thám Hiểm Trải Rộng",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_012.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "ban do",
+      "tham hiem",
+      "map",
+      "la ban"
+    ],
+    "description": "Sticker Bản đồ thám hiểm vintage biển đảo",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_013",
+    "id": "stk_cmp_013",
+    "name": "Cửa Sổ Máy Bay Hoàng Hôn Mây Vàng",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_013.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "cua so may bay",
+      "hoang hon",
+      "sunset",
+      "may vang"
+    ],
+    "description": "Sticker Cửa sổ máy bay ngắm hoàng hôn rực rỡ",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_014",
+    "id": "stk_cmp_014",
+    "name": "Huy Hiệu Sóng Biển Salt In The Air",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_014.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "song bien",
+      "salt in the air",
+      "ocean wave",
+      "bien"
+    ],
+    "description": "Huy hiệu sóng biển dạt dào Salt in the air",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_015",
+    "id": "stk_cmp_015",
+    "name": "Vé Hành Trình Destination Anywhere",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_015.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "ve may bay",
+      "anywhere",
+      "ticket",
+      "vintage"
+    ],
+    "description": "Sticker Vé hành trình Destination Anywhere bất tận",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_016",
+    "id": "stk_cmp_016",
+    "name": "Huy Hiệu Xe Bus Rừng Thông",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_016.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "xe bus",
+      "van",
+      "not all who wander",
+      "rung thong"
+    ],
+    "description": "Huy hiệu Not all those who wander are lost",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_017",
+    "id": "stk_cmp_017",
+    "name": "Balo Phượt Dã Ngoại Kèm Ly Cà Phê",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_017.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "balo",
+      "ly ca phe",
+      "rucksack",
+      "cam trai"
+    ],
+    "description": "Sticker Balo phượt kèm ly cà phê cắm trại",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_018",
+    "id": "stk_cmp_018",
+    "name": "Tem Phong Cảnh Làng Biển Châu Âu",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_018.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "tem phong canh",
+      "chau au",
+      "lang bien",
+      "wander often"
+    ],
+    "description": "Tem Wander often wonder always làng biển xinh đẹp",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_019",
+    "id": "stk_cmp_019",
+    "name": "Huy Hiệu Take The Scenic Route",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_019.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "scenic route",
+      "hoa la",
+      "badge",
+      "vintage"
+    ],
+    "description": "Huy hiệu hoa lá Take the scenic route",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_020",
+    "id": "stk_cmp_020",
+    "name": "Chữ Say Yes To New Adventures",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_020.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "say yes",
+      "typography",
+      "chuyen di",
+      "phieu luu"
+    ],
+    "description": "Sticker Chữ nghệ thuật Say Yes To New Adventures",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_021",
+    "id": "stk_cmp_021",
+    "name": "Tem Thác Nước Nature Is My Therapy",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_021.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "thac nuoc",
+      "nature therapy",
+      "rung nui",
+      "stamp"
+    ],
+    "description": "Tem phong cảnh thác nước Nature Is My Therapy",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_022",
+    "id": "stk_cmp_022",
+    "name": "Cặp Ảnh Polaroid Bãi Biển Hàng Dừa",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_022.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "polaroid",
+      "cap anh",
+      "bai bien",
+      "hang dua"
+    ],
+    "description": "Sticker Cặp ảnh Polaroid biển xanh nhiệt đới",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_023",
+    "id": "stk_cmp_023",
+    "name": "Xe Van Cổ Điển VW Camper Màu Xanh Mint",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_023.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "xe van",
+      "vw camper",
+      "mint green",
+      "du muc"
+    ],
+    "description": "Sticker Chiếc xe Van du mục VW Camper lãng tử",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_024",
+    "id": "stk_cmp_024",
+    "name": "Huy Hiệu Trăng Khuyết & Rừng Đêm",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_024.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "trang khuyet",
+      "dem rung",
+      "moon",
+      "badge"
+    ],
+    "description": "Huy hiệu vầng trăng khuyết và con đường rừng đêm",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_025",
+    "id": "stk_cmp_025",
+    "name": "Máy Ảnh Chụp Lấy Liền Polaroid Vintage",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_025.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "may anh polaroid",
+      "instant camera",
+      "chup anh",
+      "retro"
+    ],
+    "description": "Sticker Máy ảnh chụp lấy liền Polaroid OneStep huyền thoại",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_026",
+    "id": "stk_cmp_026",
+    "name": "Cờ Đuôi Nheo Keep Exploring",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_026.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "co duoi nheo",
+      "keep exploring",
+      "pennant",
+      "phuot"
+    ],
+    "description": "Sticker Cờ đuôi nheo Keep Exploring tràn đầy nhiệt huyết",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_027",
+    "id": "stk_cmp_027",
+    "name": "Thẻ Hành Lý Da To Travel Is To Live",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_027.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "the hanh ly",
+      "tag",
+      "travel to live",
+      "vintage"
+    ],
+    "description": "Sticker Thẻ hành lý da Kraft To travel is to live",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_028",
+    "id": "stk_cmp_028",
+    "name": "Máy Bay Bay Theo Đường Chấm Dotted Path",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_028.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "may bay",
+      "duong bay",
+      "dotted path",
+      "uoc mo"
+    ],
+    "description": "Sticker Chuyến bay tạo đường chấm uốn lượn tự do",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_029",
+    "id": "stk_cmp_029",
+    "name": "Huy Hiệu Mặt Trời Good Things Take Time",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_029.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "mat troi",
+      "good things",
+      "dong luc",
+      "retro sun"
+    ],
+    "description": "Huy hiệu mặt trời Good things take time an yên",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_030",
+    "id": "stk_cmp_030",
+    "name": "La Bàn Bỏ Túi Bằng Đồng Cổ",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_030.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "la ban",
+      "compass",
+      "dong co",
+      "dinh huong"
+    ],
+    "description": "Sticker Chiếc la bàn đồng cổ định hướng mọi hành trình",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_031",
+    "id": "stk_cmp_031",
+    "name": "Khung Cửa Sổ Mở Ra Dãy Núi Hùng Vĩ",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_031.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "cua so",
+      "nui hung vi",
+      "window",
+      "ngam canh"
+    ],
+    "description": "Sticker Khung cửa sổ gỗ nhìn ra dãy núi đại ngàn",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_032",
+    "id": "stk_cmp_032",
+    "name": "Tem Air Mail Par Avion Cổ Điển",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_032.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "air mail",
+      "par avion",
+      "tem buu dien",
+      "vintage"
+    ],
+    "description": "Sticker Tem bưu chính hàng không Air Mail Par Avion",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_033",
+    "id": "stk_cmp_033",
+    "name": "Máy Ảnh Phim Cổ Điển Màu Vàng",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_033.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "may anh phim",
+      "yellow camera",
+      "vintage",
+      "film"
+    ],
+    "description": "Sticker Máy ảnh phim cổ điển màu vàng cam ấm áp",
+    "is_3d": true
+  },
+  {
+    "sku": "STK_CMP_034",
+    "id": "stk_cmp_034",
+    "name": "Tem Bãi Biển Nhiệt Đới Flip Flops",
+    "theme": "Cắm Trại, Thiên Nhiên & Phiêu Lưu",
+    "category": "sticker",
+    "image": "/static/assets/stickers/stk_cmp_034.png",
+    "price": 12000,
+    "tags": [
+      "camping",
+      "bien nhiet doi",
+      "flip flops",
+      "summer",
+      "stamp"
+    ],
+    "description": "Tem Life is better in flip flops thư thái bên bờ biển",
+    "is_3d": true
+  }
+]

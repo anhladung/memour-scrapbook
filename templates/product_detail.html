@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }} ({{ product.sku }}) - ScrapCraft Studio{% endblock %}
+
+{% block content %}
+<div class="py-10 bg-[#fdfbf7]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-xs font-bold text-stone-500 mb-8">
+      <a href="/" class="hover:text-rose-800">Trang chủ</a>
+      <span>/</span>
+      <a href="/products" class="hover:text-rose-800">Sản phẩm</a>
+      <span>/</span>
+      <a href="/products?category={{ product.category }}" class="hover:text-rose-800">{{ product.category|capitalize }}</a>
+      <span>/</span>
+      <span class="text-stone-900 font-mono">{{ product.sku }}</span>
+    </nav>
+
+    <!-- Product Main Box -->
+    <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-10 shadow-neo-xl grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- Product Image Gallery -->
+      <div class="lg:col-span-6 flex flex-col items-center justify-center">
+        <div class="w-full aspect-square bg-[#fbf8f2] border-2 border-black rounded-3xl p-8 flex items-center justify-center relative shadow-inner">
+          <div class="washi-tape-top"></div>
+          <img src="{{ product.image }}" alt="{{ product.name }}" class="max-h-72 object-contain drop-shadow-md">
+          
+          <div class="absolute top-4 left-4 bg-stone-900 text-white font-mono font-black text-xs px-3 py-1 rounded-md border border-black shadow-sm">
+            {{ product.sku }}
+          </div>
+
+          {% if product.is_3d %}
+          <div class="absolute top-4 right-4 bg-amber-300 text-stone-950 font-black text-xs px-3 py-1 rounded-md border border-black shadow-sm">
+            ✦ Hiệu Ứng Nổi 3D
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Product Info & Direct Actions -->
+      <div class="lg:col-span-6 space-y-6">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-rose-100 text-rose-800 border border-rose-300 px-3 py-1 rounded-full text-xs font-black uppercase mb-2">
+            <span>{{ product.category|capitalize }}</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-stone-900 leading-tight">
+            {{ product.name }}
+          </h1>
+          <p class="text-xs font-mono font-bold text-stone-400 mt-1">Mã định danh kho: {{ product.sku }}</p>
+        </div>
+
+        <!-- Price -->
+        <div class="flex items-baseline gap-4 border-y border-stone-200 py-4">
+          <span class="text-3xl font-heading font-black text-rose-800">{{ product.price|format_vnd }}</span>
+          <span class="text-xs text-stone-500 font-bold bg-amber-100 text-amber-900 px-2.5 py-1 rounded-full border border-amber-200">
+            100% Sẵn hàng tại Showroom
+          </span>
+        </div>
+
+        <p class="text-stone-700 text-sm leading-relaxed">
+          {{ product.description }}
+        </p>
+
+        <!-- Technical Specs Table -->
+        <div class="bg-stone-50 border-2 border-black rounded-2xl p-4 space-y-2 text-xs">
+          <div class="font-heading font-black text-stone-900 uppercase tracking-wider mb-2">Thông Số Kỹ Thuật:</div>
+          {% if product.attributes %}
+            {% for key, val in product.attributes.items() %}
+            <div class="flex justify-between border-b border-stone-200/80 pb-1.5 last:border-0 last:pb-0">
+              <span class="text-stone-500 font-bold capitalize">{{ key.replace('_', ' ') }}:</span>
+              <span class="text-stone-900 font-black">{{ val }}</span>
+            </div>
+            {% endfor %}
+          {% elif product.specs %}
+            {% for key, val in product.specs.items() %}
+            <div class="flex justify-between border-b border-stone-200/80 pb-1.5 last:border-0 last:pb-0">
+              <span class="text-stone-500 font-bold capitalize">{{ key.replace('_', ' ') }}:</span>
+              <span class="text-stone-900 font-black">{{ val }}</span>
+            </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <button onclick="quickAddToCart('{{ product.sku }}', '{{ product.name }}', {{ product.price }}, '{{ product.image }}', '{{ product.category }}')" class="flex-1 bg-amber-300 hover:bg-amber-400 text-stone-950 font-heading font-black text-sm py-4 rounded-2xl border-2 border-black shadow-neo shadow-neo-hover transition-all text-center">
+            Thêm Vào Giỏ Hàng
+          </button>
+          
+          <a href="/studio?sku={{ product.sku }}" class="flex-1 bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-sm py-4 rounded-2xl border-2 border-black shadow-neo shadow-neo-hover transition-all text-center flex items-center justify-center gap-2">
+            <span>Mở Trong Xưởng 3D</span>
+            <span class="font-mono">→</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Related Products -->
+    {% if related_products %}
+    <div class="mt-16">
+      <div class="flex items-center justify-between mb-8">
+        <h3 class="text-2xl font-heading font-black text-stone-900">Sản Phẩm Cùng Bộ Sưu Tập</h3>
+        <a href="/products?category={{ product.category }}" class="text-xs font-black text-rose-800 underline">Xem tất cả →</a>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {% for rel in related_products %}
+        <div class="bg-white border-2 border-black rounded-3xl overflow-hidden shadow-neo flex flex-col justify-between hover:border-rose-700 transition-all group">
+          <div class="p-4 bg-[#fbf8f2] border-b-2 border-black flex items-center justify-center">
+            <img src="{{ rel.image }}" alt="{{ rel.name }}" class="max-h-32 object-contain group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-4">
+            <span class="text-[10px] font-mono font-bold text-amber-800">{{ rel.sku }}</span>
+            <h4 class="font-heading font-bold text-sm text-stone-900 truncate hover:text-rose-800">
+              <a href="/product/{{ rel.sku }}">{{ rel.name }}</a>
+            </h4>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="font-heading font-black text-sm text-rose-800">{{ rel.price|format_vnd }}</span>
+              <a href="/studio?sku={{ rel.sku }}" class="text-xs font-black text-stone-800 underline">Thử 3D</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

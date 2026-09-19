@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="180" viewBox="0 0 420 180">
+  <defs>
+    <filter id="filmShadow">
+      <feDropShadow dx="3" dy="5" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <g filter="url(#filmShadow)">
+    <rect x="10" y="10" width="400" height="160" rx="8" fill="#18181b" stroke="#27272a" stroke-width="3"/>
+    <!-- Sprocket holes top & bottom -->
+    <rect x="25" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="57" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="89" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="121" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="153" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="185" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="217" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="249" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="281" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="313" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="345" y="18" width="16" height="12" rx="3" fill="#ffffff"/><rect x="377" y="18" width="16" height="12" rx="3" fill="#ffffff"/>
+    <rect x="25" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="57" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="89" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="121" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="153" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="185" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="217" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="249" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="281" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="313" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="345" y="150" width="16" height="12" rx="3" fill="#ffffff"/><rect x="377" y="150" width="16" height="12" rx="3" fill="#ffffff"/>
+    <rect x="30" y="40" width="105" height="100" rx="4" fill="#3f3f46"/>
+    <text x="82" y="95" font-family="sans-serif" font-size="12" font-weight="bold" fill="#a1a1aa" text-anchor="middle">FRAME #01</text>
+    <rect x="155" y="40" width="105" height="100" rx="4" fill="#3f3f46"/>
+    <text x="207" y="95" font-family="sans-serif" font-size="12" font-weight="bold" fill="#a1a1aa" text-anchor="middle">FRAME #02</text>
+    <rect x="280" y="40" width="105" height="100" rx="4" fill="#3f3f46"/>
+    <text x="332" y="95" font-family="sans-serif" font-size="12" font-weight="bold" fill="#a1a1aa" text-anchor="middle">FRAME #03</text>
+  </g>
+</svg>

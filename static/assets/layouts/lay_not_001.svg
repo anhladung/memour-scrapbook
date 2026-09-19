@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="300" viewBox="0 0 360 300">
+  <defs>
+    <filter id="shadow01" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="3" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow01)">
+    <rect x="20" y="20" width="320" height="260" rx="8" fill="#fdfbf7" stroke="#e2e8f0" stroke-width="2"/>
+    <rect x="130" y="10" width="100" height="22" rx="3" fill="#fb7185" opacity="0.85" transform="rotate(-2 180 20)"/>
+    <text x="45" y="60" font-family="'Patrick Hand', cursive, sans-serif" font-size="20" font-weight="bold" fill="#881337">✦ Nhật Ký Ghi Chú:</text>
+    <line x1="45" y1="95" x2="315" y2="95" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <line x1="45" y1="130" x2="315" y2="130" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <line x1="45" y1="165" x2="315" y2="165" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <line x1="45" y1="200" x2="315" y2="200" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <line x1="45" y1="235" x2="315" y2="235" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <line x1="45" y1="260" x2="315" y2="260" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <text x="310" y="272" font-family="'Patrick Hand', cursive" font-size="11" fill="#94a3b8" text-anchor="end">MEMOUR • LAY-NOT-001</text>
+  </g>
+</svg>

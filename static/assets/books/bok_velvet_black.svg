@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="350" viewBox="0 0 350 350">
+  <defs>
+    <linearGradient id="goldCorner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#854d0e" />
+    </linearGradient>
+    <filter id="velvetShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="8" stdDeviation="5" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <g filter="url(#velvetShadow)">
+    <rect x="45" y="25" width="275" height="300" rx="10" fill="#18181b" stroke="#27272a" stroke-width="4"/>
+    <polygon points="45,25 90,25 45,70" fill="url(#goldCorner)" stroke="#713f12" stroke-width="1"/>
+    <polygon points="320,25 275,25 320,70" fill="url(#goldCorner)" stroke="#713f12" stroke-width="1"/>
+    <polygon points="45,325 90,325 45,280" fill="url(#goldCorner)" stroke="#713f12" stroke-width="1"/>
+    <polygon points="320,325 275,325 320,280" fill="url(#goldCorner)" stroke="#713f12" stroke-width="1"/>
+    <rect x="95" y="110" width="180" height="100" rx="6" fill="#09090b" stroke="url(#goldCorner)" stroke-width="3"/>
+    <text x="185" y="155" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#fef08a" text-anchor="middle" letter-spacing="3">CHRONICLES</text>
+    <text x="185" y="180" font-family="sans-serif" font-size="10" fill="#ca8a04" text-anchor="middle" letter-spacing="4">DARK ACADEMIA</text>
+  </g>
+</svg>

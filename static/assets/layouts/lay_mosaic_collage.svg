@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="300" viewBox="0 0 350 300">
+  <defs>
+    <filter id="mosShadow">
+      <feDropShadow dx="3" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <g filter="url(#mosShadow)">
+    <rect x="15" y="15" width="320" height="270" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
+    <rect x="30" y="30" width="135" height="135" rx="8" fill="#fed7aa" stroke="#fb923c" stroke-width="2"/>
+    <text x="97" y="102" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ea580c" text-anchor="middle">MAIN PHOTO</text>
+    <rect x="180" y="30" width="135" height="60" rx="8" fill="#e9d5ff" stroke="#c084fc" stroke-width="2"/>
+    <text x="247" y="65" font-family="sans-serif" font-size="11" font-weight="bold" fill="#7e22ce" text-anchor="middle">MOMENT 1</text>
+    <rect x="180" y="105" width="135" height="60" rx="8" fill="#bbf7d0" stroke="#4ade80" stroke-width="2"/>
+    <text x="247" y="140" font-family="sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">MOMENT 2</text>
+    <rect x="30" y="180" width="285" height="85" rx="8" fill="#fef08a" stroke="#facc15" stroke-width="2"/>
+    <text x="172" y="228" font-family="sans-serif" font-size="13" font-weight="bold" fill="#854d0e" text-anchor="middle">PANORAMA GROUP SHOT</text>
+  </g>
+</svg>

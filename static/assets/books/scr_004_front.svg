@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="linenGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="50%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+  </defs>
+  <rect x="15" y="15" width="570" height="570" rx="18" fill="url(#linenGrad)" stroke="#064e3b" stroke-width="6"/>
+  <rect x="35" y="35" width="530" height="530" rx="12" fill="none" stroke="#d1fae5" stroke-width="3" stroke-dasharray="8 6"/>
+  
+  <!-- Bronze Corners -->
+  <polygon points="15,15 90,15 15,90" fill="#b45309" stroke="#78350f" stroke-width="3"/>
+  <polygon points="585,15 510,15 585,90" fill="#b45309" stroke="#78350f" stroke-width="3"/>
+  <polygon points="15,585 90,585 15,510" fill="#b45309" stroke="#78350f" stroke-width="3"/>
+  <polygon points="585,585 510,585 585,510" fill="#b45309" stroke="#78350f" stroke-width="3"/>
+
+  <!-- Left Ring Holes -->
+  <circle cx="35" cy="100" r="10" fill="#022c22" stroke="#b45309" stroke-width="3"/>
+  <circle cx="35" cy="200" r="10" fill="#022c22" stroke="#b45309" stroke-width="3"/>
+  <circle cx="35" cy="300" r="10" fill="#022c22" stroke="#b45309" stroke-width="3"/>
+  <circle cx="35" cy="400" r="10" fill="#022c22" stroke="#b45309" stroke-width="3"/>
+  <circle cx="35" cy="500" r="10" fill="#022c22" stroke="#b45309" stroke-width="3"/>
+
+  <!-- Center Plaque -->
+  <rect x="120" y="160" width="360" height="260" rx="16" fill="#ecfdf5" stroke="#047857" stroke-width="4"/>
+  <text x="300" y="225" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="900" fill="#047857" letter-spacing="4" text-anchor="middle">✦ MEMOUR STUDIO ✦</text>
+  <text x="300" y="295" font-family="'Patrick Hand', cursive, sans-serif" font-size="44" font-weight="bold" fill="#064e3b" text-anchor="middle">Botanical Journal</text>
+  <text x="300" y="340" font-family="'Playfair Display', serif" font-size="15" font-style="italic" fill="#047857" text-anchor="middle">"Every memory has a story"</text>
+  
+  <rect x="210" y="470" width="180" height="34" rx="8" fill="#064e3b"/>
+  <text x="300" y="492" font-family="monospace" font-size="13" font-weight="bold" fill="#d1fae5" text-anchor="middle">SCR-004 • BOTANICAL</text>
+</svg>

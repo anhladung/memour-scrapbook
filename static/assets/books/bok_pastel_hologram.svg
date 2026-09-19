@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="350" viewBox="0 0 350 350">
+  <defs>
+    <linearGradient id="holoBook" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbcfe8" />
+      <stop offset="30%" stop-color="#e9d5ff" />
+      <stop offset="70%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#fed7aa" />
+    </linearGradient>
+    <filter id="holoShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="8" stdDeviation="5" flood-color="#8b5cf6" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <g filter="url(#holoShadow)">
+    <rect x="45" y="25" width="275" height="300" rx="16" fill="url(#holoBook)" stroke="#ffffff" stroke-width="5"/>
+    <rect x="30" y="25" width="25" height="300" rx="6" fill="#c084fc"/>
+    <path d="M 295 160 C 295 145, 280 145, 280 160 C 280 175, 295 190, 295 190 C 295 190, 310 175, 310 160 C 310 145, 295 145, 295 160 Z" fill="#881337" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="185" cy="165" r="55" fill="#ffffff" opacity="0.9" stroke="#e879f9" stroke-width="3"/>
+    <text x="185" y="160" font-family="'Patrick Hand', cursive, sans-serif" font-size="20" font-weight="bold" fill="#7e22ce" text-anchor="middle">SWEET</text>
+    <text x="185" y="182" font-family="sans-serif" font-size="11" font-weight="bold" fill="#a855f7" text-anchor="middle" letter-spacing="3">MOMENTS</text>
+  </g>
+</svg>

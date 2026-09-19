@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EH7LKGCKHH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EH7LKGCKHH');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}MEMOUR Studio | Sổ Scrapbook Thủ Công & Phụ Kiện{% endblock %}</title>
+  
+  <!-- SEO & Search Engine Optimization -->
+  <meta name="description" content="{% block meta_desc %}Khám phá sổ scrapbook thủ công, sticker và khung ảnh tại MEMOUR Studio. Tự thiết kế món quà lưu giữ kỷ niệm theo câu chuyện của bạn.{% endblock %}">
+  <meta name="keywords" content="{% block meta_keywords %}scrapbook, memour studio, sổ lưu niệm handmade, sticker 3d, layout polaroid, xưởng thiết kế scrapbook, tự hào việt nam, quà tặng handmade{% endblock %}">
+  <meta name="author" content="MEMOUR Studio">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="google-site-verification" content="6aHy4Rw-px9tN5fK78Ghss2zoohlbM6Mw0Cfrxb4KSU">
+
+  <!-- Open Graph / Facebook / Zalo -->
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}MEMOUR Studio | Sổ Scrapbook Thủ Công & Phụ Kiện{% endblock %}">
+  <meta property="og:description" content="{% block og_desc %}Khám phá sổ scrapbook thủ công, sticker và khung ảnh tại MEMOUR Studio. Tự thiết kế món quà lưu giữ kỷ niệm theo câu chuyện của bạn.{% endblock %}">
+  <meta property="og:url" content="{% block og_url %}{{ site_url }}{{ request.path }}{% endblock %}">
+  <meta property="og:site_name" content="MEMOUR Studio">
+  <meta property="og:image" content="{% block og_image %}{{ site_url }}/static/assets/banners/hero_banner_01.jpg{% endblock %}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block twitter_title %}MEMOUR Studio | Sổ Scrapbook Thủ Công & Phụ Kiện{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_desc %}Khám phá sổ scrapbook thủ công, sticker và khung ảnh tại MEMOUR Studio. Tự thiết kế món quà lưu giữ kỷ niệm theo câu chuyện của bạn.{% endblock %}">
+  <meta name="twitter:image" content="{% block twitter_image %}{{ site_url }}/static/assets/banners/hero_banner_01.jpg{% endblock %}">
+  {% block canonical %}<link rel="canonical" href="{{ site_url }}{{ request.path }}">{% endblock %}
+
+  <!-- Schema.org JSON-LD Structured Data for Google Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ site_url }}/#organization",
+        "name": "MEMOUR Studio",
+        "url": "{{ site_url }}/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ site_url }}/static/assets/favicon-512.png"
+        },
+        "slogan": "Every memory has a story",
+        "description": "Thương hiệu sổ scrapbook thủ công và phụ kiện lưu giữ ký ức cho Gen Z với xưởng thiết kế DIY 2D, AI bố cục và mô hình 3D."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site_url }}/#website",
+        "url": "{{ site_url }}/",
+        "name": "MEMOUR Studio",
+        "alternateName": "MEMOUR",
+        "inLanguage": "vi-VN",
+        "publisher": {"@id": "{{ site_url }}/#organization"},
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "{{ site_url }}/products?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Google Fonts for Vietnamese Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            craft: {
+              cream: '#fdfbf7',
+              ivory: '#fbf8f2',
+              beige: '#e8d8c3',
+              kraft: '#d97706',
+              brown: '#78350f',
+              darkbrown: '#29180c',
+              burgundy: '#881337',
+              wine: '#9f1239',
+              dustypink: '#db2777',
+              softpink: '#f472b6',
+              mutedorange: '#ea580c',
+              yellow: '#fde047',
+              softyellow: '#fef08a'
+            }
+          },
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', '"Be Vietnam Pro"', 'sans-serif'],
+            hand: ['"Patrick Hand"', 'cursive', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="/static/assets/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/apple-touch-icon.png">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  
+  <!-- Fabric.js & Three.js Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-[#fdfbf7] text-zinc-900 flex flex-col min-h-screen selection:bg-amber-200 selection:text-amber-950 font-sans">
+
+  <!-- Main Navigation Header (Strictly Contained & Perfectly Responsive) -->
+  <header class="sticky top-0 z-40 bg-[#fdfbf7]/95 backdrop-blur-md border-b-2 border-black shadow-sm w-full">
+    <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
+      
+      <!-- Official Brand Logo -->
+      <a href="/" class="flex items-center group flex-shrink-0">
+        <img src="/static/assets/logo.png" alt="MEMOUR • Every memory has a story" class="h-11 sm:h-12 md:h-13 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-sm">
+      </a>
+
+      <!-- Desktop Nav Links (Responsive Laptop & Desktop) -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2.5 font-heading font-bold text-xs xl:text-sm whitespace-nowrap">
+        <a href="/" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path == '/' %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Trang Chủ</a>
+        <a href="/about" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path == '/about' %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Về Chúng Tôi</a>
+        <a href="/products" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path.startswith('/products') or request.path.startswith('/product/') %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Sản Phẩm</a>
+        <a href="/inspiration" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path.startswith('/inspiration') %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Mẫu Tham Khảo</a>
+        <a href="/guide" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path.startswith('/guide') or request.path.startswith('/handbook') %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Cẩm Nang</a>
+        <a href="/contact" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path == '/contact' %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Liên Hệ</a>
+      </nav>
+
+      <!-- Action Buttons & Cart Icon -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <!-- CTA Xưởng Thiết Kế -->
+        <a href="/studio" class="hidden sm:inline-flex items-center gap-1.5 md:gap-2 bg-gradient-to-r from-rose-800 to-amber-700 hover:from-rose-900 hover:to-amber-800 text-white font-black text-xs md:text-sm px-3.5 md:px-4 py-2.5 rounded-xl border-2 border-black shadow-neo hover:translate-x-0.5 hover:-translate-y-0.5 transition-all whitespace-nowrap">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+          </svg>
+          <span>Xưởng Thiết Kế 3D</span>
+          <span class="bg-amber-300 text-black text-[9px] md:text-[10px] px-1.5 py-0.2 rounded font-black">Memour AI</span>
+        </a>
+
+        <!-- Cart Icon Button (Top Right) -->
+        <a href="/cart" class="relative p-2.5 bg-amber-300 hover:bg-amber-400 border-2 border-black rounded-xl shadow-neo transition-transform active:scale-95 flex items-center justify-center" title="Kiểm tra giỏ hàng">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <!-- Real-time Count Badge -->
+          <span id="header-cart-count" class="hidden absolute -top-2 -right-2 bg-rose-800 text-white text-[11px] font-black w-5 h-5 rounded-full border-2 border-black flex items-center justify-center shadow-sm">
+            0
+          </span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2.5 bg-stone-100 border-2 border-black rounded-xl shadow-neo" aria-label="Mở menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-drawer" class="hidden lg:hidden border-t-2 border-black bg-[#fdfbf7] px-4 py-6 space-y-3 font-bold">
+      <a href="/" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Trang Chủ</a>
+      <a href="/about" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Về Chúng Tôi (MEMOUR)</a>
+      <a href="/products" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Sản Phẩm (Sticker / Layout / Sổ)</a>
+      <a href="/inspiration" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Mẫu Tham Khảo DIY</a>
+      <a href="/guide" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Cẩm Nang Thủ Công</a>
+      <a href="/contact" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Liên Hệ Xưởng</a>
+      <a href="/studio" class="block px-4 py-3 rounded-xl bg-rose-800 text-white font-black text-center shadow-neo">
+        Vào Xưởng Thiết Kế 3D AI
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Block -->
+  <main class="flex-grow">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="bg-stone-950 text-white border-t-3 border-black pt-16 pb-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        
+        <!-- Brand & Slogan Column -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="/" class="inline-flex items-center group flex-shrink-0">
+            <img src="/static/assets/logo_light.png" alt="MEMOUR • Every memory has a story" class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-sm">
+          </a>
+          <p class="text-stone-400 text-sm leading-relaxed pr-6">
+            <b>MEMOUR</b> là sự hòa quyện giữa <i>Memory</i> và <i>Our</i> — nơi lưu giữ và kể lại câu chuyện của những khoảnh khắc đẹp nhất. Kết hợp công nghệ mô phỏng 3D 360° &amp; AI cùng nghệ thuật làm sổ thủ công giấy mỹ thuật cao cấp.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="{{ company.contact.socials.threads }}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 bg-stone-800 hover:bg-amber-400 hover:text-stone-950 rounded-xl border border-stone-700 font-heading font-black text-xs transition-all shadow-sm flex items-center gap-1.5">
+              <span>@ Threads</span>
+            </a>
+            <a href="{{ company.contact.socials.instagram }}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 bg-stone-800 hover:bg-rose-700 hover:text-white rounded-xl border border-stone-700 font-heading font-black text-xs transition-all shadow-sm flex items-center gap-1.5">
+              <span>✦ Instagram</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-heading font-black text-base uppercase tracking-wider text-amber-400 mb-4">Danh Mục</h4>
+          <ul class="space-y-2.5 text-sm font-semibold text-stone-300">
+            <li><a href="/" class="hover:text-white transition-colors">Trang Chủ</a></li>
+            <li><a href="/about" class="hover:text-white transition-colors">Về MEMOUR</a></li>
+            <li><a href="/products" class="hover:text-white transition-colors">Sản Phẩm &amp; Phụ Kiện</a></li>
+            <li><a href="/inspiration" class="hover:text-white transition-colors">Mẫu Tham Khảo DIY</a></li>
+            <li><a href="/guide" class="hover:text-white transition-colors">Cẩm Nang Thủ Công</a></li>
+            <li><a href="/studio" class="hover:text-amber-300 transition-colors text-rose-400 font-bold">Xưởng Thiết Kế 3D</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <h4 class="font-heading font-black text-base uppercase tracking-wider text-amber-400 mb-4">Sản Phẩm</h4>
+          <ul class="space-y-2.5 text-sm font-semibold text-stone-300">
+            <li><a href="/products?category=sticker" class="hover:text-white transition-colors">Sticker Nổi 3D Ánh Kim</a></li>
+            <li><a href="/products?category=layout" class="hover:text-white transition-colors">Layout Khung Ảnh</a></li>
+            <li><a href="/products?category=scrapbook" class="hover:text-white transition-colors">Sổ Scrapbook Thủ Công</a></li>
+            <li><a href="/products?is_3d=true" class="hover:text-white transition-colors">Phụ Kiện Dập Nổi 3D</a></li>
+            <li><a href="/cart" class="hover:text-white transition-colors">Giỏ Hàng Của Bạn</a></li>
+            <li><a href="/order-tracking" class="hover:text-white transition-colors">Tra Cứu Đơn Hàng</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Workshop Info -->
+        <div>
+          <h4 class="font-heading font-black text-base uppercase tracking-wider text-amber-400 mb-4">Xưởng Thủ Công</h4>
+          <div class="space-y-3 text-xs text-stone-400 leading-relaxed font-medium">
+            <p><b class="text-white">Địa chỉ:</b> {{ company.contact.address }}</p>
+            <p><b class="text-white">Hotline:</b> {{ company.contact.hotline }}</p>
+            <p><b class="text-white">Email:</b> {{ company.contact.email }}</p>
+            <p><b class="text-white">Giờ làm việc:</b> {{ company.contact.working_hours }}</p>
+            <div class="pt-2">
+              <span class="inline-block bg-stone-800 text-amber-300 text-[10px] font-extrabold px-2 py-1 rounded border border-stone-700">
+                Giấy mỹ thuật acid-free hỗ trợ bảo quản ảnh
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-stone-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-stone-400 gap-4">
+        <p>&copy; {{ current_year }} MEMOUR Studio. All rights reserved. Every memory has a story.</p>
+        <div class="flex items-center gap-6">
+          <a href="/contact" class="hover:text-stone-200 transition-colors">Chính sách bảo mật ký ức</a>
+          <a href="/contact" class="hover:text-stone-200 transition-colors">Bảo hành 1-đổi-1</a>
+          <a href="/contact" class="hover:text-stone-200 transition-colors">Điều khoản dịch vụ</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Main Scripts -->
+  <script src="/static/js/main.js"></script>
+  <script src="/static/js/cart.js"></script>
+  {% block extra_scripts %}{% endblock %}
+  <script src="/static/js/article-lightbox.js" defer></script>
+</body>
+</html>

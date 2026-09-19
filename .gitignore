@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+env/
+venv/
+.system_generated/
+*.log
+
+.vercel
+.env*
+
+# Local customer/order data (contains personal information)
+data/orders.json
+
+# Local design/debug artifacts
+contact_sheet.png
+clean_contact_sheet.png
+scratch_dark_mask.png
+static/assets/test_*.png

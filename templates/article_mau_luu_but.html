@@ -1,0 +1,1062 @@
+{% extends "base.html" %}
+
+{% block title %}Mẫu Lưu Bút Đẹp: 20+ Mẫu Sáng Tạo Cho Tuổi Học Trò{% endblock %}
+
+{% block meta_desc %}Khám phá 20+ mẫu lưu bút đẹp, sáng tạo cho học sinh lớp 6, lớp 9 và kỷ yếu. Xem ý tưởng, cách chọn mẫu và cảm hứng thiết kế lưu bút độc đáo.{% endblock %}
+{% block meta_keywords %}mẫu lưu bút đẹp, lưu bút lớp 6, lưu bút lớp 9, lưu bút kỷ yếu, scrapbook học sinh{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_url }}/guide/mau-luu-but-dep">{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_title %}Mẫu Lưu Bút Đẹp: 20+ Mẫu Sáng Tạo Cho Tuổi Học Trò{% endblock %}
+{% block og_desc %}Khám phá 20+ mẫu lưu bút đẹp, sáng tạo cho học sinh lớp 6, lớp 9 và kỷ yếu. Xem ý tưởng, cách chọn mẫu và cảm hứng thiết kế lưu bút độc đáo.{% endblock %}
+{% block og_url %}{{ site_url }}/guide/mau-luu-but-dep{% endblock %}
+{% block og_image %}{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-anh-va-loi-nhan-lop-6.webp{% endblock %}
+{% block twitter_title %}Mẫu Lưu Bút Đẹp: 20+ Mẫu Sáng Tạo Cho Tuổi Học Trò{% endblock %}
+{% block twitter_desc %}Khám phá 20+ mẫu lưu bút đẹp, sáng tạo cho học sinh lớp 6, lớp 9 và kỷ yếu. Xem ý tưởng, cách chọn mẫu và cảm hứng thiết kế lưu bút độc đáo.{% endblock %}
+{% block twitter_image %}{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-anh-va-loi-nhan-lop-6.webp{% endblock %}
+
+{% block extra_head %}
+  <!-- Schema.org JSON-LD Structured Data for Article & BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": "{{ site_url }}/guide/mau-luu-but-dep#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": "{{ site_url }}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Cẩm nang",
+            "item": "{{ site_url }}/guide"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Mẫu Lưu Bút Đẹp: 20+ Mẫu Sáng Tạo Cho Tuổi Học Trò",
+            "item": "{{ site_url }}/guide/mau-luu-but-dep"
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "{{ site_url }}/guide/mau-luu-but-dep#article",
+        "image": [
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-anh-va-loi-nhan-lop-6.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-nhieu-mau-sac-lop-6.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-chu-ky-ban-be-lop-6.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-cau-hoi-vui-lop-6.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-sticker-dang-yeu-lop-6.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-anh-ky-niem-4-nam-lop-9.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-timeline-tuoi-hoc-tro-lop-9.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-anh-va-loi-nhan-chia-tay-lop-9.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-chu-ky-cuoi-cap-lop-9.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-tap-the-lop-9.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-cuoi-cap-hoa-phuong-lop-9.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-ket-hop-ky-yeu-lop-9.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-trang-ca-nhan-ky-yeu.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-trang-ban-than-ky-yeu.webp",
+          "{{ site_url }}/static/assets/blog/mau-luu-but-dep/mau-luu-but-trang-tap-the-ky-yeu.webp"
+        ],
+        "headline": "Mẫu Lưu Bút Đẹp: 20+ Mẫu Sáng Tạo Cho Tuổi Học Trò",
+        "description": "Khám phá 20+ mẫu lưu bút đẹp, sáng tạo cho học sinh lớp 6, lớp 9 và kỷ yếu. Xem ý tưởng, cách chọn mẫu và cảm hứng thiết kế lưu bút độc đáo.",
+        "mainEntityOfPage": "{{ site_url }}/guide/mau-luu-but-dep",
+        "inLanguage": "vi-VN",
+        "publisher": {
+          "@type": "Organization",
+          "name": "MEMOUR Studio",
+          "url": "{{ site_url }}/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site_url }}/static/assets/favicon-512.png"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block content %}
+<!-- ================= READING PROGRESS BAR (STICKY BELOW HEADER) ================= -->
+<div class="fixed top-20 left-0 w-full h-1.5 bg-stone-200/80 z-30 pointer-events-none" aria-hidden="true">
+  <div id="reading-progress-bar" class="h-full bg-gradient-to-r from-amber-400 via-rose-700 to-amber-500 w-0 transition-all duration-75 ease-out shadow-sm"></div>
+</div>
+
+<!-- ================= MAIN BLOG ARTICLE SECTION ================= -->
+<article class="py-8 sm:py-12 bg-[#fdfbf7] min-h-screen">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- ================= BREADCRUMB ================= -->
+    <nav aria-label="Breadcrumb" class="mb-6">
+      <ol class="flex items-center flex-wrap gap-2 text-xs font-bold text-stone-500">
+        <li>
+          <a href="/" class="hover:text-rose-800 transition-colors flex items-center gap-1">
+            <span>Trang chủ</span>
+          </a>
+        </li>
+        <li class="text-stone-400" aria-hidden="true">&gt;</li>
+        <li>
+          <a href="/guide" class="hover:text-rose-800 transition-colors">Cẩm nang</a>
+        </li>
+        <li class="text-stone-400" aria-hidden="true">&gt;</li>
+        <li class="text-stone-900 font-extrabold truncate max-w-[260px] sm:max-w-md" aria-current="page">
+          Mẫu Lưu Bút Đẹp: 20+ Mẫu Sáng Tạo Cho Tuổi Học Trò
+        </li>
+      </ol>
+    </nav>
+
+    <!-- ================= ARTICLE HEADER ================= -->
+    <header class="bg-white border-3 border-black rounded-3xl p-6 sm:p-10 md:p-12 shadow-neo-xl mb-8 sm:mb-12 relative overflow-hidden">
+      <!-- Decorative Background Orbs -->
+      <div class="absolute -top-12 -right-12 w-48 h-48 bg-amber-200/40 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-rose-200/30 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="relative z-10 space-y-4 sm:space-y-6">
+        <!-- Category Badge & Read Time -->
+        <div class="flex flex-wrap items-center gap-2.5">
+          <span class="inline-flex items-center gap-1.5 bg-amber-300 text-stone-950 px-3.5 py-1 rounded-full border-2 border-black font-heading font-black text-xs shadow-neo uppercase">
+            <span>✦ Cẩm Nang</span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-stone-100 text-stone-700 px-3 py-1 rounded-full border border-stone-300 font-bold text-xs">
+            <span>⏱️ 8 phút đọc</span>
+          </span>
+        </div>
+
+        <!-- H1 Headline (100% Exact to Source) -->
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-black text-stone-900 leading-tight tracking-tight">
+          Mẫu Lưu Bút Đẹp: 20+ Mẫu Sáng Tạo Cho Tuổi Học Trò
+        </h1>
+
+        <!-- Featured Image Slot (Cover Image) -->
+        <div class="w-full aspect-[21/9] sm:aspect-[2.4/1] bg-gradient-to-br from-amber-50 to-stone-100 rounded-2xl overflow-hidden border-2 border-black shadow-neo relative group">
+          <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-anh-va-loi-nhan-lop-6.webp" alt="Mẫu Lưu Bút Đẹp: 20+ Mẫu Sáng Tạo Cho Tuổi Học Trò - MEMOUR Studio" class="legacy-article-hero w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] font-mono font-bold text-white/90 drop-shadow">
+            <span>MEMOUR Studio • Sổ Lưu Bút Thủ Công &amp; Kỷ Niệm Tuổi Học Trò</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= MAIN LAYOUT (DESKTOP: TOC LEFT + CONTENT RIGHT) ================= -->
+    <div class="lg:grid lg:grid-cols-12 lg:gap-10 items-start">
+      
+      <!-- ================= DESKTOP STICKY TABLE OF CONTENTS (LEFT COLUMN) ================= -->
+      <aside class="hidden lg:block lg:col-span-4 sticky top-28 z-20">
+        <div class="bg-white border-3 border-black rounded-3xl p-6 shadow-neo-lg space-y-4 max-h-[calc(100vh-8.5rem)] flex flex-col">
+          <div class="flex items-center justify-between pb-3 border-b-2 border-black/10">
+            <h2 class="font-heading font-black text-base text-stone-900 flex items-center gap-2">
+              <span>📑 Mục Lục Bài Viết</span>
+            </h2>
+            <span class="text-[10px] font-mono font-bold bg-amber-100 text-amber-950 px-2 py-0.5 rounded border border-amber-300">
+              Tự động
+            </span>
+          </div>
+          
+          <!-- Auto-Generated Desktop TOC Links -->
+          <nav id="desktop-toc" class="space-y-1 text-xs font-semibold text-stone-600 overflow-y-auto pr-1 custom-scrollbar" aria-label="Mục lục bài viết">
+            <!-- Dynamically populated from H2/H3 by JavaScript -->
+          </nav>
+        </div>
+      </aside>
+
+      <!-- ================= ARTICLE MAIN CONTENT (RIGHT COLUMN) ================= -->
+      <div class="lg:col-span-8">
+        
+        <!-- MOBILE ACCORDION / COLLAPSIBLE TOC (VISIBLE ON MOBILE ONLY) -->
+        <nav id="mobile-toc" class="lg:hidden mb-8 bg-white border-3 border-black rounded-2xl p-4 shadow-neo">
+          <button id="mobile-toc-toggle" type="button" class="w-full flex items-center justify-between font-heading font-black text-sm text-stone-900 focus:outline-none" aria-expanded="false" aria-controls="mobile-toc-content">
+            <span class="flex items-center gap-2">
+              <span>📑 Mục Lục Bài Viết (Nhấn để xem)</span>
+            </span>
+            <svg class="toc-arrow w-5 h-5 text-stone-900 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="mobile-toc-content" class="mt-3 pt-3 border-t border-stone-200 hidden space-y-1 text-xs max-h-80 overflow-y-auto pr-1">
+            <!-- Dynamically populated from H2/H3 by JavaScript -->
+          </div>
+        </nav>
+
+        <!-- ARTICLE BODY (100% STRICT SOURCE CONTENT PRESERVATION) -->
+        <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-10 md:p-12 shadow-neo-xl">
+          <div id="article-content" class="space-y-6 text-stone-800 text-base sm:text-[17px] leading-relaxed font-sans">
+            
+            <!-- INTRO PARAGRAPHS (EXACT SOURCE OF TRUTH) -->
+            <p class="text-stone-700 leading-relaxed font-medium">
+              Muốn làm một cuốn lưu bút thật đẹp nhưng chưa biết bắt đầu từ đâu? Thay vì chỉ sử dụng một cuốn sổ với những dòng nhắn quen thuộc, bạn có thể tham khảo nhiều <strong>mẫu lưu bút đẹp</strong> với cách kết hợp ảnh, lời nhắn, chữ ký, màu sắc và các chi tiết trang trí khác nhau.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Mỗi độ tuổi và hoàn cảnh lại phù hợp với một cách thể hiện riêng. Học sinh lớp 6 có thể lựa chọn những mẫu vui tươi, nhiều màu sắc để lưu lại những kỷ niệm đầu cấp. Với học sinh lớp 9, những mẫu lưu bút thiên về ảnh, khoảnh khắc và lời nhắn chia tay sẽ phù hợp hơn. Trong khi đó, lưu bút trong kỷ yếu có thể được thiết kế bài bản với ảnh cá nhân, thông tin, lời nhắn và những dấu mốc đáng nhớ của cả lớp.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Bài viết dưới đây tổng hợp <strong>20+ mẫu lưu bút đẹp và sáng tạo</strong> để bạn dễ dàng tìm được phong cách phù hợp với câu chuyện của mình.
+            </p>
+
+            <!-- ================= H2: LỚP 6 ================= -->
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-stone-950 pt-8 pb-3 border-b-2 border-black/15">
+              Mẫu lưu bút đẹp cho học sinh lớp 6
+            </h2>
+
+            <p class="text-stone-700 leading-relaxed">
+              Lớp 6 là một dấu mốc đặc biệt khi học sinh bắt đầu bước vào môi trường THCS. Vì vậy, <strong>mẫu lưu bút đẹp cho học sinh lớp 6</strong> không nhất thiết phải quá cầu kỳ hay trang trọng. Những thiết kế nhiều màu sắc, đáng yêu và có nhiều không gian cho bạn bè viết lời nhắn sẽ dễ tạo cảm giác gần gũi hơn.
+            </p>
+
+            <!-- H3: 1 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              1. Mẫu lưu bút ảnh và lời nhắn
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Đây là mẫu đơn giản nhưng dễ tạo dấu ấn. Một phần trang dành cho ảnh cá nhân hoặc ảnh chụp cùng bạn bè, phần còn lại dành cho lời nhắn.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Bạn có thể sử dụng một bức ảnh lớn làm điểm nhìn chính, sau đó đặt lời nhắn bên cạnh bằng kiểu chữ viết tay. Một vài sticker nhỏ ở góc trang sẽ giúp tổng thể sinh động mà không bị rối.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-xl border border-rose-200 text-xs font-bold">
+                <strong>Phù hợp:</strong> học sinh lớp 6, lưu bút bạn bè.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-anh-va-loi-nhan-lop-6.webp" alt="Mẫu lưu bút ảnh và lời nhắn cho học sinh lớp 6 - MEMOUR Studio" title="Mẫu lưu bút ảnh và lời nhắn - Lớp 6" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 1: Mẫu lưu bút kết hợp ảnh kỷ niệm và lời nhắn viết tay sinh động</figcaption>
+            </figure>
+
+            <!-- H3: 2 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              2. Mẫu lưu bút nhiều màu sắc
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Với học sinh lớp 6, một trang lưu bút nhiều màu có thể tạo cảm giác vui vẻ và đúng với không khí tuổi học trò.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Thay vì sử dụng một màu duy nhất, hãy kết hợp hai đến ba màu chủ đạo như xanh, vàng, cam hoặc hồng. Có thể thêm hình ngôi sao, đám mây, hoa, bút chì hoặc các biểu tượng trường học để tạo điểm nhấn.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-xl border border-rose-200 text-xs font-bold">
+                <strong>Phù hợp:</strong> những bạn yêu thích phong cách vui nhộn, năng động.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-nhieu-mau-sac-lop-6.webp" alt="Mẫu lưu bút nhiều màu sắc vui tươi cho học sinh lớp 6 - MEMOUR Studio" title="Mẫu lưu bút nhiều màu sắc - Lớp 6" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 2: Mẫu lưu bút phối màu sắc năng động, tươi sáng tuổi học trò</figcaption>
+            </figure>
+
+            <!-- H3: 3 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              3. Mẫu lưu bút chữ ký bạn bè
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Một trang lưu bút không cần quá nhiều nội dung vẫn có thể trở thành kỷ niệm đáng nhớ nếu có chữ ký của những người bạn thân.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Hãy chia trang thành những ô nhỏ hoặc sử dụng các hình dạng tự do để mỗi người có một khu vực riêng. Bên cạnh chữ ký có thể để thêm tên, biệt danh hoặc một câu ngắn dành cho chủ nhân cuốn lưu bút.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-xl border border-rose-200 text-xs font-bold">
+                <strong>Phù hợp:</strong> lưu bút cuối năm, lưu bút cả lớp.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-chu-ky-ban-be-lop-6.webp" alt="Mẫu lưu bút chữ ký bạn bè cho học sinh lớp 6 - MEMOUR Studio" title="Mẫu lưu bút chữ ký bạn bè - Lớp 6" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 3: Mẫu lưu bút dành riêng cho chữ ký và biệt danh của bạn bè</figcaption>
+            </figure>
+
+            <!-- H3: 4 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              4. Mẫu lưu bút câu hỏi vui
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Thay vì yêu cầu bạn bè viết một đoạn dài, bạn có thể thiết kế trang lưu bút bằng những câu hỏi ngắn như:
+            </p>
+
+            <div class="space-y-2.5 my-3 pl-3 sm:pl-4 border-l-4 border-amber-400 bg-amber-50/70 p-3.5 sm:p-4 rounded-r-2xl">
+              <p class="italic font-medium text-stone-800">“Ấn tượng đầu tiên về tớ là gì?”</p>
+              <p class="italic font-medium text-stone-800">“Điều nhớ nhất về lớp mình?”</p>
+              <p class="italic font-medium text-stone-800">“Nếu được quay lại một ngày, bạn sẽ chọn ngày nào?”</p>
+              <p class="italic font-medium text-stone-800">“Một lời muốn nói với tớ?”</p>
+            </div>
+
+            <p class="text-stone-700 leading-relaxed">
+              Cách này giúp mỗi trang có nội dung khác nhau và khiến việc viết lưu bút trở nên thú vị hơn.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-xl border border-rose-200 text-xs font-bold">
+                <strong>Phù hợp:</strong> học sinh lớp 6, lưu bút nhóm bạn thân.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-cau-hoi-vui-lop-6.webp" alt="Mẫu lưu bút câu hỏi vui tương tác cho học sinh lớp 6 - MEMOUR Studio" title="Mẫu lưu bút câu hỏi vui - Lớp 6" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 4: Mẫu lưu bút dạng câu hỏi phỏng vấn vui và thú vị</figcaption>
+            </figure>
+
+            <!-- H3: 5 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              5. Mẫu lưu bút sticker
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Sticker có thể trở thành thành phần chính của mẫu lưu bút thay vì chỉ được sử dụng để trang trí ở các góc.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Bạn có thể chọn một chủ đề thống nhất như trường học, động vật, hoa lá, bầu trời hoặc hoạt hình. Sau đó kết hợp sticker với ảnh và những mẩu giấy nhỏ để tạo thành một trang lưu bút nhiều lớp.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-xl border border-rose-200 text-xs font-bold">
+                <strong>Phù hợp:</strong> học sinh yêu thích trang trí và phong cách dễ thương.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-sticker-dang-yeu-lop-6.webp" alt="Mẫu lưu bút trang trí sticker nổi 3D dễ thương học sinh lớp 6 - MEMOUR Studio" title="Mẫu lưu bút sticker - Lớp 6" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 5: Mẫu lưu bút trang trí đa lớp với sticker dập nổi dễ thương</figcaption>
+            </figure>
+
+            <!-- H3: 6 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              6. Mẫu lưu bút ảnh lớp
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Nếu muốn lưu lại kỷ niệm của cả tập thể, ảnh lớp có thể trở thành trung tâm của trang.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Đặt ảnh lớp ở giữa, phía dưới là tên lớp và năm học. Xung quanh có thể để những lời nhắn ngắn, chữ ký hoặc những câu nói đặc trưng của lớp.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Đây là một trong những <strong>mẫu lưu bút đẹp cho học sinh lớp 6</strong> phù hợp để lưu lại dấu mốc đầu tiên dưới mái trường THCS.
+            </p>
+
+            <!-- ================= H2: LỚP 9 ================= -->
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-stone-950 pt-8 pb-3 border-b-2 border-black/15">
+              Mẫu lưu bút đẹp cho học sinh lớp 9
+            </h2>
+
+            <p class="text-stone-700 leading-relaxed">
+              Nếu lớp 6 là sự khởi đầu, lớp 9 lại gắn với cảm giác chia tay và khép lại một chặng đường. Vì vậy, <strong>mẫu lưu bút đẹp cho học sinh lớp 9</strong> có thể tập trung nhiều hơn vào ảnh kỷ niệm, câu chuyện của lớp và những lời nhắn gửi trước khi mỗi người bước sang một môi trường mới.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Các hình thức lưu bút hiện nay cũng ngày càng đa dạng, từ sổ truyền thống đến album ảnh, thiết kế từng trang trên máy tính và những hình thức lưu giữ kỷ niệm mang tính cá nhân hóa hơn.
+            </p>
+
+            <!-- H3: 7 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              7. Mẫu lưu bút ảnh kỷ niệm 4 năm
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Thay vì chỉ sử dụng một bức ảnh, bạn có thể chọn những khoảnh khắc tiêu biểu trong bốn năm THCS.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Mỗi ảnh đi kèm một mốc thời gian hoặc một câu chú thích ngắn. Khi đặt các ảnh theo trình tự, trang lưu bút sẽ giống như một cuốn nhật ký thu nhỏ về hành trình của cả lớp.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-xl border border-rose-200 text-xs font-bold">
+                <strong>Phù hợp:</strong> lưu bút cuối cấp lớp 9.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-anh-ky-niem-4-nam-lop-9.webp" alt="Mẫu lưu bút ảnh kỷ niệm 4 năm THCS cho học sinh lớp 9 cuối cấp - MEMOUR Studio" title="Mẫu lưu bút ảnh kỷ niệm 4 năm - Lớp 9" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 7: Mẫu lưu bút tổng hợp ảnh kỷ niệm 4 năm THCS</figcaption>
+            </figure>
+
+            <!-- H3: 8 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              8. Mẫu lưu bút timeline tuổi học trò
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Timeline là một cách trình bày giúp câu chuyện được kể theo trình tự.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Bạn có thể tạo đường thời gian từ năm lớp 6 đến lớp 9, sau đó đặt ảnh hoặc những kỷ niệm nổi bật tại từng mốc. Cuối trang có thể thêm một câu nhắn về những điều sắp tới.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-900 px-3 py-1 rounded-xl border border-amber-200 text-xs font-bold">
+                <strong>Điểm nổi bật:</strong> dễ kể câu chuyện và tạo cảm giác hoài niệm.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-timeline-tuoi-hoc-tro-lop-9.webp" alt="Mẫu lưu bút timeline dòng thời gian tuổi học trò lớp 9 - MEMOUR Studio" title="Mẫu lưu bút timeline tuổi học trò - Lớp 9" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 8: Mẫu lưu bút theo dòng thời gian timeline từ lớp 6 đến lớp 9</figcaption>
+            </figure>
+
+            <!-- H3: 9 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              9. Mẫu lưu bút ảnh và lời nhắn
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Nếu muốn cân bằng giữa hình ảnh và cảm xúc, hãy chia trang thành hai khu vực: ảnh và lời nhắn.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Ảnh có thể chiếm phần lớn trang để tạo điểm nhìn, trong khi lời nhắn được đặt như một tờ giấy nhỏ hoặc một mảnh note. Cách trình bày này vừa dễ thực hiện vừa có nhiều không gian để cá nhân hóa.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-xl border border-rose-200 text-xs font-bold">
+                <strong>Phù hợp:</strong> lưu bút cho bạn thân hoặc nhóm bạn.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-anh-va-loi-nhan-chia-tay-lop-9.webp" alt="Mẫu lưu bút ảnh và lời nhắn chia tay cảm xúc lớp 9 - MEMOUR Studio" title="Mẫu lưu bút ảnh và lời nhắn - Lớp 9" width="1200" height="669" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 9: Mẫu lưu bút cân bằng giữa ảnh kỷ niệm và note lời nhắn chia tay</figcaption>
+            </figure>
+
+            <!-- H3: 10 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              10. Mẫu lưu bút chữ ký
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Chữ ký có thể trở thành một phần quan trọng của trang cuối cấp.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Bạn có thể để một khu vực lớn cho bạn bè ký tên, sau đó thêm một câu hỏi hoặc lời nhắn ngắn dưới mỗi chữ ký. Những nét chữ khác nhau sẽ tạo nên cảm giác rất riêng mà một thiết kế hoàn toàn bằng máy tính khó thay thế.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-xl border border-rose-200 text-xs font-bold">
+                <strong>Phù hợp:</strong> lưu bút lớp 9, lưu bút tập thể.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-chu-ky-cuoi-cap-lop-9.webp" alt="Mẫu lưu bút chữ ký lưu niệm lớp 9 cuối cấp - MEMOUR Studio" title="Mẫu lưu bút chữ ký - Lớp 9" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 10: Mẫu trang lưu bút chữ ký và lời chúc chân thành của cả lớp</figcaption>
+            </figure>
+
+            <!-- H3: 11 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              11. Mẫu lưu bút tập thể
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Thay vì mỗi người một trang riêng, mẫu lưu bút tập thể tập trung vào câu chuyện chung của cả lớp.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Có thể sử dụng ảnh lớp ở trung tâm, xung quanh là tên thành viên, biệt danh, lời nhắn hoặc những câu nói quen thuộc. Đây cũng là một cách hay để biến những chi tiết rất đời thường của lớp thành một phần của kỷ niệm.
+            </p>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-tap-the-lop-9.webp" alt="Mẫu lưu bút tập thể cả lớp học sinh lớp 9 - MEMOUR Studio" title="Mẫu lưu bút tập thể - Lớp 9" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 11: Mẫu lưu bút tập thể lưu giữ câu chuyện chung của cả lớp</figcaption>
+            </figure>
+
+            <!-- H3: 12 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              12. Mẫu lưu bút cuối cấp
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Mẫu này có thể sử dụng những biểu tượng gắn với thời điểm chia tay như ảnh lớp, bảng đen, sách vở, hoa phượng, đồng phục hoặc những dòng chữ viết tay.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Không cần sử dụng quá nhiều yếu tố. Chỉ cần một bức ảnh đáng nhớ, một câu nhắn chân thành và một vài chi tiết trang trí phù hợp cũng đủ tạo nên một trang lưu bút có cảm xúc.
+            </p>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-cuoi-cap-hoa-phuong-lop-9.webp" alt="Mẫu lưu bút chia tay cuối cấp nhiều cảm xúc học sinh lớp 9 - MEMOUR Studio" title="Mẫu lưu bút cuối cấp - Lớp 9" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 12: Mẫu lưu bút mùa hoa phượng chia tay tuổi học trò</figcaption>
+            </figure>
+
+            <!-- H3: 13 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              13. Mẫu lưu bút kết hợp kỷ yếu
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Nếu lớp đang thực hiện kỷ yếu, lưu bút có thể được tích hợp trực tiếp vào từng trang hoặc dành riêng một phần cuối cuốn kỷ yếu.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Một trang có thể gồm ảnh cá nhân, tên, một vài thông tin thú vị và lời nhắn gửi đến bạn bè. Cách này giúp cuốn kỷ yếu không chỉ là nơi lưu ảnh mà còn lưu lại những suy nghĩ của từng thành viên.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-xl border border-rose-200 text-xs font-bold">
+                <strong>Phù hợp:</strong> lớp 9 cuối cấp và các bộ kỷ yếu tập thể.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-ket-hop-ky-yeu-lop-9.webp" alt="Mẫu lưu bút kết hợp kỷ yếu lớp 9 cuối cấp - MEMOUR Studio" title="Mẫu lưu bút kết hợp kỷ yếu - Lớp 9" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 13: Mẫu lưu bút tích hợp trang kỷ yếu lớp học sinh động</figcaption>
+            </figure>
+
+            <!-- ================= H2: KỶ YẾU ================= -->
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-stone-950 pt-8 pb-3 border-b-2 border-black/15">
+              Mẫu lưu bút đẹp cho kỷ yếu
+            </h2>
+
+            <p class="text-stone-700 leading-relaxed">
+              Khác với lưu bút cá nhân, <strong>mẫu lưu bút đẹp cho kỷ yếu</strong> cần cân bằng giữa tính cá nhân và sự thống nhất của toàn bộ cuốn sách.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Một mẫu tốt nên có hệ thống bố cục tương đối đồng nhất nhưng vẫn để mỗi học sinh có đủ không gian thể hiện cá tính. Đó có thể là ảnh, câu nói yêu thích, kỷ niệm đáng nhớ, lời nhắn hoặc chữ ký của bạn bè.
+            </p>
+
+            <!-- H3: 14 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              14. Trang lưu bút cá nhân
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Mỗi thành viên có một trang riêng với ảnh chân dung, tên, biệt danh và một khu vực để viết lời nhắn.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Để tránh cảm giác đơn điệu, phần ảnh có thể được thiết kế theo dạng Polaroid hoặc khung ảnh, kết hợp một vài chi tiết đồ họa liên quan đến trường lớp.
+            </p>
+
+            <div>
+              <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-xl border border-rose-200 text-xs font-bold">
+                <strong>Phù hợp:</strong> kỷ yếu lớp, kỷ yếu cuối cấp.
+              </span>
+            </div>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-trang-ca-nhan-ky-yeu.webp" alt="Mẫu trang lưu bút cá nhân trong kỷ yếu lớp học - MEMOUR Studio" title="Trang lưu bút cá nhân - Kỷ yếu" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 14: Trang lưu bút cá nhân thiết kế theo phong cách khung ảnh Polaroid</figcaption>
+            </figure>
+
+            <!-- H3: 15 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              15. Trang lưu bút dành cho bạn thân
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Đây là mẫu có thể khai thác sâu hơn về mối quan hệ giữa hai hoặc một nhóm người.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Trang có thể gồm ảnh chụp chung, một dòng “chúng ta đã gặp nhau như thế nào?”, kỷ niệm đáng nhớ nhất và một lời nhắn dành cho tương lai.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Cách thiết kế này biến trang lưu bút thành một câu chuyện nhỏ thay vì chỉ là một khu vực để ghi vài dòng.
+            </p>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-trang-ban-than-ky-yeu.webp" alt="Mẫu trang lưu bút dành cho bạn thân trong kỷ yếu - MEMOUR Studio" title="Trang lưu bút bạn thân - Kỷ yếu" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 15: Trang lưu bút đôi bạn thân chia sẻ kỷ niệm và lời nhắn tương lai</figcaption>
+            </figure>
+
+            <!-- H3: 16 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              16. Trang lưu bút tập thể
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Trang tập thể phù hợp để đặt ở phần mở đầu hoặc cuối một chương của kỷ yếu.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Có thể sử dụng ảnh lớp làm yếu tố chính, sau đó bổ sung tên thành viên, năm học, giáo viên chủ nhiệm hoặc một câu nói đặc trưng của tập thể.
+            </p>
+            <!-- Ảnh minh họa SEO cho phần này -->
+            <figure class="my-6">
+              <div class="rounded-2xl border-2 border-black shadow-neo overflow-hidden bg-stone-100">
+                <img src="/static/assets/blog/mau-luu-but-dep/mau-luu-but-trang-tap-the-ky-yeu.webp" alt="Mẫu trang lưu bút tập thể mở đầu kỷ yếu lớp học - MEMOUR Studio" title="Trang lưu bút tập thể - Kỷ yếu" width="1200" height="1489" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500">
+              </div>
+              <figcaption class="mt-2.5 text-center text-xs font-bold text-stone-500 italic">Mẫu 16: Trang lưu bút tập thể trang trọng lưu giữ trọn vẹn gương mặt các thành viên</figcaption>
+            </figure>
+
+            <!-- H3: 17 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              17. Trang ảnh và thông tin cá nhân
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Đây là dạng khá linh hoạt cho kỷ yếu. Một bên là ảnh, bên còn lại là những thông tin ngắn như:
+            </p>
+
+            <div class="my-3 pl-4 border-l-3 border-stone-300 space-y-1 font-medium text-stone-700 text-sm sm:text-base">
+              <p>Tên:</p>
+              <p>Biệt danh:</p>
+              <p>Điều yêu thích:</p>
+              <p>Kỷ niệm đáng nhớ:</p>
+              <p>Một câu muốn nói:</p>
+            </div>
+
+            <p class="text-stone-700 leading-relaxed">
+              Cách này giúp mỗi thành viên có một “hồ sơ ký ức” nhỏ trong cuốn kỷ yếu.
+            </p>
+
+            <!-- H3: 18 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              18. Trang lời nhắn
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Thay vì dành toàn bộ không gian cho ảnh, trang này tập trung vào những lời nhắn.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Bạn có thể sử dụng nền giấy, những mảnh note hoặc khung chữ để tạo cảm giác giống một trang nhật ký. Các lời nhắn có thể được sắp xếp tự do nhưng vẫn cần có một khu vực chính để người đọc biết nên nhìn vào đâu trước.
+            </p>
+
+            <!-- H3: 19 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              19. Trang chữ ký
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Đơn giản nhưng có giá trị lưu niệm cao, trang chữ ký dành nhiều không gian cho mọi người viết tên hoặc lời nhắn trực tiếp.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Có thể đặt một câu ở giữa như:
+            </p>
+
+            <div class="my-3 p-4 bg-amber-50/80 rounded-2xl border-l-4 border-amber-400 font-medium text-stone-800 italic shadow-sm">
+              “Đừng chỉ ký tên, hãy để lại một điều gì đó để sau này còn nhớ.”
+            </div>
+
+            <p class="text-stone-700 leading-relaxed">
+              Sau đó tạo các khu vực nhỏ xung quanh để mọi người cùng tham gia.
+            </p>
+
+            <!-- H3: 20 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              20. Trang timeline lớp học
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Đây là lựa chọn phù hợp với những bộ kỷ yếu muốn kể lại hành trình của cả tập thể.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Bạn có thể bắt đầu từ ngày đầu tiên bước vào lớp, sau đó lần lượt đưa vào những dấu mốc quan trọng như hoạt động ngoại khóa, ngày hội trường, chuyến đi, cuộc thi hoặc những khoảnh khắc đời thường.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Cuối timeline là một cột mốc mang ý nghĩa khép lại chặng đường và mở ra hành trình mới.
+            </p>
+
+            <!-- H3: 21 -->
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 pt-5 pb-1">
+              21. Trang “Những điều muốn nói”
+            </h3>
+
+            <p class="text-stone-700 leading-relaxed">
+              Một trang dành cho những điều đôi khi rất khó nói trực tiếp.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Có thể chia thành các câu hỏi:
+            </p>
+
+            <div class="space-y-2.5 my-3 pl-3 sm:pl-4 border-l-4 border-amber-400 bg-amber-50/70 p-3.5 sm:p-4 rounded-r-2xl">
+              <p class="italic font-medium text-stone-800">“Điều mình nhớ nhất về lớp?”</p>
+              <p class="italic font-medium text-stone-800">“Điều mình muốn cảm ơn?”</p>
+              <p class="italic font-medium text-stone-800">“Điều mình tiếc nhất?”</p>
+              <p class="italic font-medium text-stone-800">“Điều muốn nhắn gửi cho tương lai?”</p>
+              <p class="italic font-medium text-stone-800">“10 năm nữa, bạn nghĩ chúng ta sẽ thế nào?”</p>
+            </div>
+
+            <p class="text-stone-700 leading-relaxed">
+              Mỗi câu trả lời sẽ tạo thành một mảnh nhỏ trong câu chuyện chung của cuốn kỷ yếu.
+            </p>
+
+            <!-- ================= H2: NÊN CHỌN MẪU NÀO ================= -->
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-stone-950 pt-8 pb-3 border-b-2 border-black/15">
+              Nên chọn mẫu lưu bút nào cho phù hợp?
+            </h2>
+
+            <p class="text-stone-700 leading-relaxed">
+              Không có một <strong>mẫu lưu bút đẹp</strong> duy nhất phù hợp với tất cả mọi người. Điều quan trọng là lựa chọn dựa trên độ tuổi, hoàn cảnh và lượng nội dung bạn muốn lưu giữ.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Nếu làm cho <strong>học sinh lớp 6</strong>, những mẫu nhiều màu sắc, ảnh + lời nhắn, sticker hoặc câu hỏi vui sẽ tạo cảm giác gần gũi và phù hợp với lứa tuổi.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Nếu làm cho <strong>học sinh lớp 9</strong>, bạn có thể ưu tiên mẫu timeline, ảnh kỷ niệm, lưu bút tập thể hoặc những trang kết hợp ảnh với lời nhắn chia tay.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Nếu làm <strong>kỷ yếu</strong>, nên ưu tiên các mẫu có cấu trúc rõ ràng như trang cá nhân, trang bạn thân, trang tập thể, timeline hoặc trang “những điều muốn nói”. Những mẫu này vừa giữ được sự thống nhất vừa tạo không gian để mỗi thành viên thể hiện cá tính.
+            </p>
+
+            <!-- ================= H2: ĐẶC BIỆT HƠN ================= -->
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-stone-950 pt-8 pb-3 border-b-2 border-black/15">
+              Làm thế nào để một mẫu lưu bút trở nên đặc biệt hơn?
+            </h2>
+
+            <p class="text-stone-700 leading-relaxed">
+              Một mẫu đẹp không nhất thiết phải có thật nhiều chi tiết. Điều tạo nên dấu ấn thường nằm ở những nội dung chỉ thuộc về người sở hữu cuốn lưu bút.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Bạn có thể bắt đầu từ một bức ảnh thật, một câu nói quen thuộc, một biệt danh, một ngày đáng nhớ hoặc một câu chuyện mà chỉ nhóm bạn hiểu. Sau đó mới lựa chọn màu sắc, hình ảnh và các chi tiết trang trí.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Một nguyên tắc đơn giản là hãy xác định <strong>một điểm nhìn chính</strong> cho mỗi trang. Đó có thể là ảnh, lời nhắn hoặc một câu quote. Những thành phần còn lại nên đóng vai trò hỗ trợ thay vì cạnh tranh với yếu tố chính.
+            </p>
+
+            <!-- ================= H2: TỪ THAM KHẢO ĐẾN THIẾT KẾ ================= -->
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-stone-950 pt-8 pb-3 border-b-2 border-black/15">
+              Từ mẫu lưu bút tham khảo đến thiết kế của riêng bạn
+            </h2>
+
+            <p class="text-stone-700 leading-relaxed">
+              Xem mẫu là bước đầu tiên, nhưng giá trị của một cuốn lưu bút lại nằm ở việc nó mang câu chuyện của chính bạn.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Bạn có thể chọn một <strong>mẫu lưu bút đẹp</strong> làm điểm bắt đầu, sau đó thay ảnh, màu sắc, lời nhắn và các chi tiết trang trí bằng nội dung của riêng mình. Khi đó, cùng một bố cục có thể tạo ra rất nhiều phiên bản khác nhau.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Với những bạn không muốn bắt đầu từ một trang giấy trắng, việc thiết kế trực tuyến cũng giúp quá trình này dễ hình dung hơn. Bạn có thể bắt đầu từ một ý tưởng, sắp xếp hình ảnh và nội dung, sau đó tiếp tục cá nhân hóa cho đến khi tìm được phiên bản phù hợp.
+            </p>
+
+            <!-- CTA 1 (EXACT VERBATIM TEXT INSIDE) -->
+            <div class="my-8 p-6 sm:p-8 bg-gradient-to-br from-amber-50 via-rose-50/50 to-amber-100/60 border-3 border-black rounded-3xl shadow-neo-lg text-center space-y-4">
+              <p class="font-heading font-black text-lg sm:text-xl text-stone-900 leading-snug">
+                <strong>Đã tìm được mẫu mình thích? Hãy biến cảm hứng đó thành một trang lưu bút mang dấu ấn riêng trên MEMOUR.</strong>
+              </p>
+              <div class="pt-1">
+                <a href="/studio" class="inline-flex items-center gap-2 bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-xs sm:text-sm px-7 py-3 rounded-xl border-2 border-black shadow-neo hover:translate-x-0.5 hover:-translate-y-0.5 transition-all">
+                  <span>Mở Xưởng Thiết Kế 2D &amp; 3D</span>
+                  <span class="font-mono">→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- ================= H2: KẾT LUẬN ================= -->
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-stone-950 pt-8 pb-3 border-b-2 border-black/15">
+              Kết luận
+            </h2>
+
+            <p class="text-stone-700 leading-relaxed">
+              Một cuốn lưu bút đẹp không nằm ở việc trang trí thật nhiều mà ở cách nó lưu giữ được những điều bạn muốn nhớ nhất.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Từ những <strong>mẫu lưu bút đẹp cho học sinh lớp 6</strong> đầy màu sắc, những <strong>mẫu lưu bút đẹp cho học sinh lớp 9</strong> mang cảm giác chia tay đến các <strong>mẫu lưu bút đẹp cho kỷ yếu</strong>, mỗi cách trình bày đều có thể trở thành một phần của câu chuyện tuổi học trò.
+            </p>
+
+            <p class="text-stone-700 leading-relaxed">
+              Hãy bắt đầu bằng việc chọn một mẫu phù hợp với mình, sau đó thay những hình ảnh và lời nhắn có sẵn bằng những kỷ niệm thật của bạn. Khi mỗi chi tiết đều mang một câu chuyện riêng, cuốn lưu bút sẽ không chỉ đẹp để xem mà còn đáng để giữ lại thật lâu.
+            </p>
+
+            <!-- CTA 2 (EXACT VERBATIM TEXT INSIDE) -->
+            <div class="my-8 p-6 sm:p-8 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 border-3 border-black rounded-3xl shadow-neo-lg text-center space-y-4">
+              <p class="font-heading font-black text-lg sm:text-xl text-stone-950 leading-snug">
+                <strong>Khám phá MEMOUR và bắt đầu thiết kế scrapbook từ chính những kỷ niệm của bạn.</strong>
+              </p>
+              <div class="pt-1">
+                <a href="/studio" class="inline-flex items-center gap-2 bg-stone-950 hover:bg-stone-800 text-amber-300 font-heading font-black text-xs sm:text-sm px-8 py-3.5 rounded-xl border-2 border-black shadow-neo hover:translate-x-0.5 hover:-translate-y-0.5 transition-all">
+                  <span>Thiết Kế Sổ Scrapbook Ngay</span>
+                  <span class="font-mono">→</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= SHARE & NAVIGATION (OUTSIDE CONTENT) ================= -->
+        <div class="mt-8 bg-white border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo flex flex-wrap items-center justify-between gap-4">
+          <!-- Back to Handbook -->
+          <a href="/guide" class="inline-flex items-center gap-2 text-stone-800 hover:text-rose-800 font-heading font-black text-xs sm:text-sm transition-colors">
+            <span class="font-mono text-base">←</span>
+            <span>Quay lại Cẩm nang</span>
+          </a>
+
+          <!-- Social Share Buttons -->
+          <div class="flex items-center gap-2.5">
+            <span class="text-xs font-black text-stone-900 uppercase tracking-wide mr-1">Chia sẻ:</span>
+            
+            <!-- Threads Share -->
+            <a href="https://www.threads.net/intent/post?text=M%E1%BA%ABu%20L%C6%B0u%20B%C3%BAt%20%C4%90%E1%BA%B9p%3A%2020%2B%20M%E1%BA%ABu%20S%C3%A1ng%20T%E1%BA%A1o%20Cho%20Tu%E1%BB%95i%20H%E1%BB%8Dc%20Tr%C3%B2&url={{ (site_url ~ '/guide/mau-luu-but-dep') | urlencode }}" target="_blank" rel="noopener noreferrer" class="px-3 py-2 bg-stone-900 hover:bg-amber-400 text-white hover:text-stone-950 border-2 border-black rounded-xl shadow-sm transition-all text-xs font-heading font-black flex items-center gap-1.5" title="Chia sẻ lên Threads" aria-label="Chia sẻ lên Threads">
+              <span>@ Threads</span>
+            </a>
+
+            <!-- Copy Link Button -->
+            <button onclick="copyArticleLink()" type="button" class="p-2.5 bg-amber-300 hover:bg-amber-400 border-2 border-black rounded-xl shadow-sm transition-all flex items-center gap-1.5 text-xs font-heading font-black text-stone-950" title="Sao chép liên kết" aria-label="Sao chép liên kết bài viết">
+              <svg class="w-4 h-4 text-stone-950" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <span>Sao chép link</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Copy Link Toast Notification -->
+        <div id="copy-toast" class="hidden fixed bottom-6 right-6 z-50 bg-stone-900 text-white px-5 py-3 rounded-2xl border-2 border-amber-300 shadow-neo flex items-center gap-2 text-xs font-bold transition-all duration-300">
+          <span class="text-amber-300 font-black">✓</span>
+          <span>Đã sao chép liên kết bài viết vào bộ nhớ tạm!</span>
+        </div>
+
+        <!-- ================= RELATED ARTICLES (REAL ARTICLES FROM BLOGS.JSON) ================= -->
+        {% if related_blogs %}
+        <section class="mt-12 space-y-6">
+          <div class="flex items-center justify-between">
+            <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-300 border-2 border-black px-4 py-1.5 rounded-full text-xs font-heading font-black uppercase text-stone-950 shadow-neo">
+              <span>✦ BÀI VIẾT LIÊN QUAN ✦</span>
+            </div>
+            <a href="/guide" class="text-xs font-black text-rose-800 hover:underline">Xem tất cả cẩm nang →</a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {% for rel_b in related_blogs %}
+            <article class="bg-white border-3 border-black rounded-3xl p-5 shadow-neo hover:shadow-neo-lg hover:-translate-y-1 transition-all flex flex-col justify-between group">
+              <div>
+                <div class="w-full aspect-[16/10] bg-stone-100 rounded-2xl overflow-hidden border-2 border-black mb-4 relative">
+                  <img src="{{ rel_b.cover_image or '/static/assets/banners/hero_banner_01.jpg' }}" alt="{{ rel_b.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <span class="bg-amber-100 text-amber-950 text-[10px] font-heading font-black px-2.5 py-0.5 rounded-full border border-amber-300 uppercase">
+                  {{ rel_b.category }}
+                </span>
+                <h3 class="font-heading font-black text-sm text-stone-900 mt-2 mb-2 line-clamp-2 group-hover:text-rose-800 transition-colors">
+                  <a href="{{ rel_b.url or ('/guide/' ~ rel_b.slug) }}">{{ rel_b.title }}</a>
+                </h3>
+              </div>
+              <a href="{{ rel_b.url or ('/guide/' ~ rel_b.slug) }}" class="text-xs font-bold text-rose-800 flex items-center gap-1 mt-3">
+                <span>Đọc bài viết</span>
+                <span class="font-mono">→</span>
+              </a>
+            </article>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+</article>
+
+<!-- ================= JAVASCRIPT: AUTOMATIC TOC GENERATION & READING PROGRESS ================= -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const article = document.getElementById('article-content');
+  const desktopToc = document.getElementById('desktop-toc');
+  const mobileToc = document.getElementById('mobile-toc-content');
+  const progressBar = document.getElementById('reading-progress-bar');
+  
+  if (!article) return;
+  
+  // 1. Gather all H2 and H3 elements inside article
+  const headings = article.querySelectorAll('h2, h3');
+  const tocItems = [];
+  
+  headings.forEach((heading, idx) => {
+    // Generate clean unique ID if not present
+    if (!heading.id) {
+      const slug = heading.textContent
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[đĐ]/g, 'd')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+      heading.id = slug || ('muc-' + (idx + 1));
+    }
+    // Add scroll offset for sticky header
+    heading.classList.add('scroll-mt-28');
+    
+    const isH2 = heading.tagName.toLowerCase() === 'h2';
+    tocItems.push({
+      id: heading.id,
+      text: heading.textContent.trim(),
+      level: isH2 ? 2 : 3
+    });
+  });
+  
+  // 2. Render TOC Links into a container
+  function renderTocList(container) {
+    if (!container) return;
+    container.innerHTML = '';
+    const list = document.createElement('ul');
+    list.className = 'space-y-1';
+    
+    tocItems.forEach(item => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + item.id;
+      a.textContent = item.text;
+      a.setAttribute('data-target', item.id);
+      
+      if (item.level === 2) {
+        a.className = 'toc-link block py-1.5 px-3 rounded-xl font-heading font-black text-stone-900 hover:bg-amber-100 hover:text-rose-800 transition-all leading-snug text-xs';
+      } else {
+        a.className = 'toc-link block py-1 pl-6 pr-2 rounded-xl text-stone-600 hover:bg-stone-100 hover:text-stone-950 transition-all leading-snug text-[11px] font-semibold';
+      }
+      
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetEl = document.getElementById(item.id);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          try {
+            history.pushState(null, '', '#' + item.id);
+          } catch(err) {}
+          
+          // Collapse mobile TOC on click
+          const mobileContent = document.getElementById('mobile-toc-content');
+          if (mobileContent && !mobileContent.classList.contains('hidden')) {
+            mobileContent.classList.add('hidden');
+            const arrow = document.querySelector('#mobile-toc-toggle .toc-arrow');
+            if (arrow) arrow.classList.remove('rotate-180');
+          }
+        }
+      });
+      
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+    container.appendChild(list);
+  }
+  
+  renderTocList(desktopToc);
+  renderTocList(mobileToc);
+  
+  // 3. Mobile TOC Accordion Toggle
+  const mobileToggle = document.getElementById('mobile-toc-toggle');
+  const mobileContent = document.getElementById('mobile-toc-content');
+  if (mobileToggle && mobileContent) {
+    mobileToggle.addEventListener('click', () => {
+      const isExpanded = mobileContent.classList.toggle('hidden');
+      mobileToggle.setAttribute('aria-expanded', !isExpanded);
+      const arrow = mobileToggle.querySelector('.toc-arrow');
+      if (arrow) arrow.classList.toggle('rotate-180');
+    });
+  }
+  
+  // 4. Reading Progress Bar & Scrollspy Highlight
+  function updateProgressAndScrollspy() {
+    const articleRect = article.getBoundingClientRect();
+    const articleTop = articleRect.top + window.scrollY;
+    const articleHeight = article.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+    
+    // Progress calculation based strictly on article bounds
+    const start = articleTop - 120;
+    const total = articleHeight - windowHeight + 120;
+    let progress = 0;
+    if (scrollY > start && total > 0) {
+      progress = Math.min(100, Math.max(0, ((scrollY - start) / total) * 100));
+    }
+    if (progressBar) {
+      progressBar.style.width = progress + '%';
+    }
+    
+    // Scrollspy for active heading
+    let activeId = '';
+    headings.forEach(heading => {
+      const rect = heading.getBoundingClientRect();
+      if (rect.top <= 160) {
+        activeId = heading.id;
+      }
+    });
+    
+    document.querySelectorAll('.toc-link').forEach(link => {
+      if (link.getAttribute('data-target') === activeId) {
+        link.classList.add('bg-amber-300', 'text-stone-950', 'font-black', 'border', 'border-black/20');
+      } else {
+        link.classList.remove('bg-amber-300', 'text-stone-950', 'font-black', 'border', 'border-black/20');
+      }
+    });
+  }
+  
+  window.addEventListener('scroll', updateProgressAndScrollspy, { passive: true });
+  updateProgressAndScrollspy();
+});
+
+// Copy link utility
+function copyArticleLink() {
+  const dummy = document.createElement('input');
+  document.body.appendChild(dummy);
+  dummy.value = window.location.href;
+  dummy.select();
+  document.execCommand('copy');
+  document.body.removeChild(dummy);
+
+  const toast = document.getElementById('copy-toast');
+  if (toast) {
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 2500);
+  }
+}
+</script>
+{% endblock %}

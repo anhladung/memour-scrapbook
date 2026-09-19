@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}Cửa Hàng Phụ Kiện Scrapbook & Sổ Thủ Công - MEMOUR Studio | Every memory has a story{% endblock %}
+
+{% block content %}
+{% import "components/carousel.html" as carousels %}
+
+{% set products_title = "<span class='whitespace-nowrap inline-block'>Kho Phụ Kiện Thủ Công</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Đa Dạng Mẫu Mã Chuẩn Gu</span>" %}
+{% set products_buttons = [
+  { "text": "Mở Trong Xưởng 3D", "url": "/studio", "primary": true },
+  { "text": "Xem Mẫu Bố Cục", "url": "/inspiration", "primary": false }
+] %}
+
+{{ carousels.render_hero_carousel("products-carousel", products_title, products_buttons) }}
+
+<!-- Filter & Search Controls Bar -->
+<section class="bg-white py-8 border-b-2 border-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+      
+      <!-- Search Bar -->
+      <form action="/products" method="GET" class="flex items-center gap-2 max-w-md w-full">
+        <input type="text" name="q" value="{{ search_q }}" placeholder="Tìm theo mã SKU, từ khóa (y2k, vintage, polaroid...)" class="flex-grow bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-rose-800 shadow-sm">
+        <button type="submit" class="bg-rose-800 hover:bg-rose-900 text-white font-bold text-xs px-4 py-2.5 rounded-xl border-2 border-black shadow-neo transition-all">
+          Tìm kiếm
+        </button>
+      </form>
+
+      <!-- Quick 3D Filter & Sort Dropdown -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <a href="/products?category={{ selected_category }}&is_3d={% if selected_3d == 'true' %}all{% else %}true{% endif %}" class="px-3.5 py-2 rounded-xl text-xs font-black border-2 border-black transition-all {% if selected_3d == 'true' %}bg-amber-300 text-stone-900 shadow-neo{% else %}bg-stone-100 text-stone-700 hover:bg-amber-100{% endif %}">
+          ✦ Dập Nổi 3D ({% if selected_3d == 'true' %}Đang lọc{% else %}Bật{% endif %})
+        </a>
+        <select onchange="location = this.value;" class="bg-white border-2 border-black rounded-xl px-3 py-2 text-xs font-bold text-stone-800 focus:outline-none shadow-sm">
+          <option value="/products?category={{ selected_category }}&sort=default" {% if selected_sort == 'default' %}selected{% endif %}>Sắp xếp mặc định</option>
+          <option value="/products?category={{ selected_category }}&sort=price_asc" {% if selected_sort == 'price_asc' %}selected{% endif %}>Giá: Thấp đến Cao</option>
+          <option value="/products?category={{ selected_category }}&sort=price_desc" {% if selected_sort == 'price_desc' %}selected{% endif %}>Giá: Cao đến Thấp</option>
+          <option value="/products?category={{ selected_category }}&sort=name_asc" {% if selected_sort == 'name_asc' %}selected{% endif %}>Tên A-Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="flex flex-wrap items-center gap-2 mt-6 pt-4 border-t border-stone-200">
+      <a href="/products?category=all{% if selected_3d != 'all' %}&is_3d={{ selected_3d }}{% endif %}" class="px-4 py-2 rounded-xl text-xs font-black border-2 border-black transition-all {% if selected_category == 'all' %}bg-rose-800 text-white shadow-neo{% else %}bg-white text-stone-800 hover:bg-stone-100{% endif %}">
+        Tất Cả ({{ categories_stat.all }})
+      </a>
+      <a href="/products?category=sticker{% if selected_3d != 'all' %}&is_3d={{ selected_3d }}{% endif %}" class="px-4 py-2 rounded-xl text-xs font-black border-2 border-black transition-all {% if selected_category == 'sticker' %}bg-rose-800 text-white shadow-neo{% else %}bg-white text-stone-800 hover:bg-stone-100{% endif %}">
+        Sticker &amp; Decal 3D ({{ categories_stat.sticker }})
+      </a>
+      <a href="/products?category=layout{% if selected_3d != 'all' %}&is_3d={{ selected_3d }}{% endif %}" class="px-4 py-2 rounded-xl text-xs font-black border-2 border-black transition-all {% if selected_category == 'layout' %}bg-rose-800 text-white shadow-neo{% else %}bg-white text-stone-800 hover:bg-stone-100{% endif %}">
+        Layout Khung Ảnh ({{ categories_stat.layout }})
+      </a>
+      <a href="/products?category=scrapbook{% if selected_3d != 'all' %}&is_3d={{ selected_3d }}{% endif %}" class="px-4 py-2 rounded-xl text-xs font-black border-2 border-black transition-all {% if selected_category == 'scrapbook' %}bg-rose-800 text-white shadow-neo{% else %}bg-white text-stone-800 hover:bg-stone-100{% endif %}">
+        Sổ Scrapbook Bìa Cứng ({{ categories_stat.scrapbook }})
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Product List Grid -->
+<section class="py-12 md:py-16 bg-[#fdfbf7]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {% if products|length == 0 %}
+    <div class="bg-white border-2 border-black rounded-3xl p-12 text-center shadow-neo max-w-lg mx-auto">
+      <span class="text-rose-800 font-mono font-black text-2xl block mb-3 font-mono">✦</span>
+      <h3 class="font-heading font-black text-lg text-stone-900 mb-1">Không tìm thấy sản phẩm phù hợp</h3>
+      <p class="text-xs text-stone-600 mb-4">Vui lòng thử tìm kiếm với từ khóa hoặc danh mục khác.</p>
+      <a href="/products" class="inline-block bg-rose-800 text-white font-bold text-xs px-5 py-2.5 rounded-xl border border-black shadow-sm">
+        Xem tất cả sản phẩm
+      </a>
+    </div>
+    {% else %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {% for item in products %}
+      <div class="bg-white border-2 border-black rounded-3xl overflow-hidden shadow-neo flex flex-col justify-between hover:border-rose-700 transition-all group">
+        <div>
+          <!-- Thumbnail Box -->
+          <div class="w-full aspect-square bg-[#fbf8f2] relative border-b-2 border-black p-4 flex items-center justify-center overflow-hidden">
+            <img src="{{ item.image }}" alt="{{ item.name }}" class="max-h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+            
+            <span class="absolute top-3 left-3 bg-stone-900 text-white text-[10px] font-mono font-black px-2 py-0.5 rounded border border-black shadow-sm">
+              {{ item.sku }}
+            </span>
+            
+            {% if item.is_3d %}
+            <span class="absolute top-3 right-3 bg-amber-300 text-stone-950 text-[10px] font-black px-2 py-0.5 rounded border border-black shadow-sm">
+              3D Relief
+            </span>
+            {% endif %}
+          </div>
+
+          <!-- Content -->
+          <div class="p-5">
+            <div class="text-[11px] font-bold text-amber-800 uppercase tracking-wider mb-1">
+              {{ item.category|capitalize }} • {{ item.material or (item.attributes and item.attributes.material) or 'Thủ công' }}
+            </div>
+            
+            <h3 class="font-heading font-bold text-base text-stone-900 leading-snug line-clamp-1 hover:text-rose-800 transition-colors">
+              <a href="/product/{{ item.sku }}">{{ item.name }}</a>
+            </h3>
+
+            <p class="text-xs text-stone-500 line-clamp-2 mt-1 leading-relaxed">
+              {{ item.description }}
+            </p>
+
+            <div class="mt-4 flex items-baseline justify-between border-t border-stone-100 pt-3">
+              <span class="text-xs text-stone-500 font-semibold">Giá bán:</span>
+              <span class="font-heading font-black text-lg text-rose-800">{{ item.price|format_vnd }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+          <button onclick="quickAddToCart('{{ item.sku }}', '{{ item.name }}', {{ item.price }}, '{{ item.image }}', '{{ item.category }}')" class="w-full bg-amber-300 hover:bg-amber-400 text-stone-950 font-bold text-xs py-2.5 rounded-xl border border-black shadow-sm transition-colors text-center">
+            Thêm Vào Giỏ
+          </button>
+          <a href="/studio?sku={{ item.sku }}" class="w-full bg-rose-800 hover:bg-rose-900 text-white font-bold text-xs py-2.5 rounded-xl border border-black shadow-sm transition-colors text-center">
+            Mở Trong Xưởng →
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endblock %}

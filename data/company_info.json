@@ -1,0 +1,80 @@
+{
+  "brand_name": "MEMOUR",
+  "full_brand_name": "MEMOUR Studio",
+  "brand_meaning": "MEMOUR là sự kết hợp sâu lắng giữa 'Memory' (Ký ức) và 'Our' (Của chúng ta) — Không gian nơi ký ức số được xúc chạm và sống lại thành câu chuyện vật lý độc bản.",
+  "slogan": "Every memory has a story",
+  "slogan_vi": "Mỗi ký ức là một câu chuyện",
+  "tagline": "Thương hiệu Sổ Scrapbook Thủ Công & Phụ Kiện Ký Ức Gen Z",
+  "sub_tagline": "Kết hợp công nghệ WebGL 3D 360 độ và Trợ lý Memour AI thông minh",
+  "story": {
+    "mission": "Mang ký ức số trong điện thoại trở về thế giới vật lý ấm áp, nơi từng bức ảnh polaroid và chi tiết dập nổi có thể chạm vào được bằng tay với thông điệp: Every memory has a story.",
+    "vision": "Trở thành thương hiệu thủ công và hệ sinh thái DIY Scrapbook trực tuyến số 1 tại Việt Nam, chuẩn hóa mã định danh linh kiện.",
+    "milestones": [
+      {
+        "year": "2023",
+        "title": "Thành Lập Xưởng Thủ Công MEMOUR",
+        "desc": "Khởi xướng dự án lưu giữ ký ức tại TP. Hồ Chí Minh với giấy mỹ thuật FSC và acid-free, hỗ trợ bảo quản ảnh tốt hơn khi được cất giữ đúng cách."
+      },
+      {
+        "year": "2024",
+        "title": "Đột Phá Kỹ Thuật Dập Nổi 3D Hologram",
+        "desc": "Nghiên cứu thành công kỹ thuật dập nổi viền sắc nét 0.8mm và phủ màng Hologram laser bắt sáng."
+      },
+      {
+        "year": "2025",
+        "title": "Tích Hợp Xưởng 3D & Trí Tuệ Nhân Tạo Memour AI",
+        "desc": "Tiên phong ứng dụng mô phỏng 3D WebGL và Trí tuệ nhân tạo Memour AI phân tích cảm xúc để tự động gợi ý bố cục dàn trang."
+      }
+    ],
+    "craft_pillars": [
+      {
+        "icon": "FSC",
+        "title": "100% Giấy Mỹ Thuật FSC Acid-Free",
+        "desc": "Nguyên liệu giấy nhập khẩu không axit, bảo vệ ảnh polaroid và mực viết không bị ố vàng theo năm tháng."
+      },
+      {
+        "icon": "3D",
+        "title": "Sticker Dập Nổi 3D Khối Thật",
+        "desc": "Bề dày vật lý nổi khối, phủ lớp màng bóng vinyl phản chiếu ánh kim lấp lánh."
+      },
+      {
+        "icon": "POL",
+        "title": "Khung Cài Thông Minh Không Hỏng Ảnh",
+        "desc": "Bảo tồn ảnh kỷ niệm nguyên vẹn, dễ dàng thay đổi ảnh linh hoạt."
+      },
+      {
+        "icon": "SKU",
+        "title": "Kho Phụ Kiện Đa Dạng Sáng Tạo",
+        "desc": "Hàng trăm mẫu nhãn dán, khung ảnh và sổ scrapbook được cập nhật liên tục theo xu hướng."
+      }
+    ]
+  },
+  "contact": {
+    "address": "...",
+    "hotline": "...",
+    "email": "...",
+    "working_hours": "08:30 - 21:00 (Thứ 2 - Chủ Nhật)",
+    "socials": {
+      "threads": "https://www.threads.net/@memour.studio",
+      "instagram": "https://instagram.com/memour.studio"
+    }
+  },
+  "policies": {
+    "privacy": {
+      "title": "Chính Sách Bảo Mật Ký Ức Tuyệt Đối",
+      "detail": "Mọi hình ảnh bạn tải lên Xưởng Thiết Kế chỉ được xử lý tạm thời trên trình duyệt cục bộ. MEMOUR cam kết 100% không lưu trữ vĩnh viễn, không phục vụ quảng cáo và không chia sẻ cho bên thứ ba."
+    },
+    "copyright": {
+      "title": "Quyền Sở Hữu Thiết Kế Thuộc Về Bạn",
+      "detail": "Khách hàng nắm giữ 100% quyền sở hữu trí tuệ đối với các tác phẩm, trang sổ và nội dung nhật ký được sáng tạo trên nền tảng MEMOUR."
+    },
+    "shipping": {
+      "title": "Đóng Gói 3 Lớp Chuyên Dụng & Giao Toàn Quốc",
+      "detail": "Đơn hàng phụ kiện được đóng gói 3 lớp chống sốc và bảo vệ góc sổ. Miễn phí vận chuyển toàn quốc cho đơn hàng từ 350.000đ."
+    },
+    "warranty": {
+      "title": "Bảo Hành Thủ Công 1-Đổi-1 Trong 7 Ngày",
+      "detail": "Đổi mới miễn phí trong 7 ngày nếu phát hiện bất kỳ lỗi sản xuất nào như lỏng còng sổ, móp góc bìa hoặc sticker bong tróc."
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}Liên Hệ &amp; Chính Sách Bảo Mật - MEMOUR Studio | Every memory has a story{% endblock %}
+
+{% block content %}
+{% import "components/carousel.html" as carousels %}
+
+{% set contact_title = "<span class='whitespace-nowrap inline-block'>Bạn Có Gặp Khó Khăn Gì</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Cứ Liên Hệ Đến Chúng Tôi</span>" %}
+{% set contact_buttons = [
+  { "text": "Gửi Lời Nhắn Cho Xưởng", "url": "#contact-box", "primary": true },
+  { "text": "Liên hệ chúng tôi", "url": "#contact-box", "primary": false }
+] %}
+
+{{ carousels.render_hero_carousel("contact-carousel", contact_title, contact_buttons) }}
+
+<!-- Content Grid -->
+<div id="contact-box" class="py-12 md:py-16 bg-[#fdfbf7]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    
+    <!-- Top Row: Contact Info & Membership Form -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Company Information Card -->
+      <div class="lg:col-span-5 bg-white border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-xl space-y-6">
+        <div>
+          <span class="bg-amber-300 text-stone-900 text-xs font-black px-3 py-1 rounded-full border border-black inline-block mb-2">Showroom &amp; Xưởng Thủ Công</span>
+          <h2 class="text-2xl font-heading font-black text-stone-900">{{ company.brand_name }}</h2>
+          <p class="text-xs text-stone-500 font-semibold mt-1">{{ company.tagline }}</p>
+        </div>
+
+        <div class="space-y-3 text-xs sm:text-sm text-stone-700">
+          <p class="flex items-start gap-2.5">
+            <span class="font-mono font-bold text-rose-800 flex-shrink-0">✦</span>
+            <span><b>Địa chỉ:</b> {{ company.contact.address }}</span>
+          </p>
+          <p class="flex items-center gap-2.5">
+            <span class="font-mono font-bold text-rose-800 flex-shrink-0">✦</span>
+            <span><b>Hotline Zalo:</b> <span class="text-rose-800 font-black">{{ company.contact.hotline }}</span></span>
+          </p>
+          <p class="flex items-center gap-2.5">
+            <span class="font-mono font-bold text-rose-800 flex-shrink-0">✦</span>
+            <span><b>Email:</b> <span class="text-rose-800 font-bold">{{ company.contact.email }}</span></span>
+          </p>
+          <p class="flex items-center gap-2.5">
+            <span class="font-mono font-bold text-rose-800 flex-shrink-0">✦</span>
+            <span><b>Giờ làm việc:</b> {{ company.contact.working_hours }}</span>
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-stone-200">
+          <span class="text-xs font-black text-stone-900 uppercase block mb-3">Kênh Mạng Xã Hội Chính Thức:</span>
+          <div class="grid grid-cols-2 gap-3">
+            <a href="{{ company.contact.socials.threads }}" target="_blank" rel="noopener noreferrer" class="bg-stone-900 hover:bg-amber-400 text-white hover:text-stone-950 text-xs font-heading font-black p-3 rounded-2xl border-2 border-black flex items-center justify-center gap-2 shadow-neo transition-all">
+              <span>@ Threads</span>
+            </a>
+            <a href="{{ company.contact.socials.instagram }}" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-500 hover:opacity-95 text-white text-xs font-heading font-black p-3 rounded-2xl border-2 border-black flex items-center justify-center gap-2 shadow-neo transition-all">
+              <span>✦ Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Message Form -->
+      <div class="lg:col-span-7 bg-white border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-xl">
+        <div class="mb-6">
+          <div class="inline-flex items-center gap-2 bg-rose-100 text-rose-800 px-3 py-1 rounded-full text-xs font-black uppercase mb-2">
+            <span>Hộp Thư Tiếp Nhận Yêu Cầu</span>
+          </div>
+          <h3 class="text-2xl font-heading font-black text-stone-900">Gửi Lời Nhắn Cho ScrapCraft Studio</h3>
+          <p class="text-xs text-stone-500 font-medium mt-1">Đội ngũ nghệ nhân sẽ phản hồi qua Zalo/Email trong vòng 2 giờ làm việc.</p>
+        </div>
+
+        <form id="contact-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-black text-stone-800 uppercase mb-1">Họ &amp; Tên *</label>
+              <input type="text" name="name" required placeholder="Nguyễn Văn A" class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-rose-800">
+            </div>
+            <div>
+              <label class="block text-xs font-black text-stone-800 uppercase mb-1">Số điện thoại / Zalo *</label>
+              <input type="tel" name="phone" required placeholder="0988 xxx xxx" class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-rose-800">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-black text-stone-800 uppercase mb-1">Email</label>
+              <input type="email" name="email" placeholder="email@gmail.com" class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-rose-800">
+            </div>
+            <div>
+              <label class="block text-xs font-black text-stone-800 uppercase mb-1">Chủ đề cần tư vấn</label>
+              <select name="subject" class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-rose-800">
+                <option value="custom_order">Đặt làm sổ thiết kế riêng</option>
+                <option value="bulk_order">Đặt in số lượng lớn / Lớp học</option>
+                <option value="product_qa">Tư vấn phụ kiện &amp; Kỹ thuật</option>
+                <option value="cooperation">Hợp tác thương hiệu / Workshop</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-black text-stone-800 uppercase mb-1">Nội dung chi tiết</label>
+            <textarea name="message" rows="4" placeholder="Mô tả ý tưởng cuốn sổ, số lượng trang dự kiến, dịp kỷ niệm..." class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-rose-800"></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-sm py-3.5 rounded-2xl border-2 border-black shadow-neo shadow-neo-hover transition-all">
+            Gửi Thông Tin Ngay →
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Bottom Row: Detailed Policies (4 Pillars) -->
+    <div id="policies-section" class="space-y-8 pt-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-amber-300 border-2 border-black px-3.5 py-1 rounded-full text-xs font-black uppercase mb-2 shadow-neo">
+          <span>✦ CAM KẾT MINH BẠCH</span>
+        </div>
+        <h2 class="text-3xl font-heading font-black text-stone-900">
+          Chính Sách Khách Hàng &amp; Bảo Mật Toàn Diện
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Policy 1: Privacy -->
+        <div class="bg-white border-2 border-black rounded-3xl p-6 shadow-neo space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="font-mono font-black text-rose-800 text-lg">01.</span>
+            <h3 class="font-heading font-bold text-lg text-stone-900">{{ company.policies.privacy.title }}</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            {{ company.policies.privacy.detail }}
+          </p>
+        </div>
+
+        <!-- Policy 2: Copyright -->
+        <div class="bg-white border-2 border-black rounded-3xl p-6 shadow-neo space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="font-mono font-black text-amber-600 text-lg">02.</span>
+            <h3 class="font-heading font-bold text-lg text-stone-900">{{ company.policies.copyright.title }}</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            {{ company.policies.copyright.detail }}
+          </p>
+        </div>
+
+        <!-- Policy 3: Shipping -->
+        <div class="bg-white border-2 border-black rounded-3xl p-6 shadow-neo space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="font-mono font-black text-stone-900 text-lg">03.</span>
+            <h3 class="font-heading font-bold text-lg text-stone-900">{{ company.policies.shipping.title }}</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            {{ company.policies.shipping.detail }}
+          </p>
+        </div>
+
+        <!-- Policy 4: Warranty -->
+        <div class="bg-white border-2 border-black rounded-3xl p-6 shadow-neo space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="font-mono font-black text-rose-800 text-lg">04.</span>
+            <h3 class="font-heading font-bold text-lg text-stone-900">{{ company.policies.warranty.title }}</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            {{ company.policies.warranty.detail }}
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

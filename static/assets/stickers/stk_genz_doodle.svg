@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <filter id="neoShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="5" dy="5" stdDeviation="0" flood-color="#000000" flood-opacity="1"/>
+    </filter>
+  </defs>
+  <g filter="url(#neoShadow)">
+    <rect x="25" y="45" width="250" height="210" rx="28" fill="#fde047" stroke="#000000" stroke-width="5" />
+    <path d="M150 105 C150 75, 110 75, 110 105 C110 135, 150 165, 150 165 C150 165, 190 135, 190 105 C190 75, 150 75, 150 105 Z" fill="#e11d48" stroke="#000000" stroke-width="4" />
+    <rect x="123" y="94" width="24" height="15" rx="4" fill="#000000" />
+    <rect x="153" y="94" width="24" height="15" rx="4" fill="#000000" />
+    <line x1="147" y1="101" x2="153" y2="101" stroke="#000000" stroke-width="4" />
+    <text x="150" y="215" font-family="Impact, sans-serif" font-size="30" fill="#000000" text-anchor="middle" letter-spacing="2">SLAY VIBES</text>
+    <polygon points="50,70 72,70 60,92 82,92 48,135 58,102 42,102" fill="#fbbf24" stroke="#000000" stroke-width="2.5" />
+    <circle cx="235" cy="85" r="14" fill="#38bdf8" stroke="#000000" stroke-width="3" />
+    <text x="235" y="90" font-family="sans-serif" font-size="12" font-weight="bold" fill="#000000" text-anchor="middle">100</text>
+  </g>
+</svg>

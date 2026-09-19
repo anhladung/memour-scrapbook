@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Cẩm Nang Scrapbook & Nghệ Thuật Thủ Công - MEMOUR Studio | Every memory has a story{% endblock %}
+{% block meta_desc %}Cẩm nang scrapbook MEMOUR: hướng dẫn làm sổ, chọn giấy, bố cục ảnh, ý tưởng quà tặng và lưu bút học trò từ đội ngũ xưởng thủ công.{% endblock %}
+{% block canonical %}<link rel="canonical" href="{{ site_url }}/guide">{% endblock %}
+
+{% block content %}
+{% import "components/carousel.html" as carousels %}
+
+{% set handbook_title = "<span class='whitespace-nowrap inline-block'>Bí Quyết Sáng Tạo Sổ Thủ Công</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Scrapbook Chuẩn Gu Gen Z</span>" %}
+{% set handbook_buttons = [
+  { "text": "Đọc Bài Viết Mới", "url": "#handbook-list", "primary": true },
+  { "text": "Bạn muốn biết thêm?", "url": "/contact", "primary": false }
+] %}
+
+{{ carousels.render_hero_carousel("handbook-carousel", handbook_title, handbook_buttons) }}
+
+<!-- Tag Filter -->
+<section class="bg-white py-6 border-b-2 border-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+    <form action="/guide" method="get" class="flex gap-2 max-w-xl" role="search">
+      <label for="guide-search" class="sr-only">Tìm trong cẩm nang</label>
+      <input id="guide-search" type="search" name="q" value="{{ search_q }}" placeholder="Tìm cách làm, ý tưởng, vật liệu..." class="min-w-0 flex-1 rounded-xl border-2 border-black px-4 py-2 text-sm font-semibold focus:outline-none focus:border-rose-800">
+      <button class="bg-rose-800 text-white border-2 border-black rounded-xl px-4 py-2 text-sm font-black shadow-neo">Tìm bài</button>
+    </form>
+    <div class="flex flex-wrap gap-2">
+      <a href="/guide" class="text-xs font-black px-4 py-2 rounded-xl border-2 border-black transition-all {% if selected_tag == 'all' %}bg-rose-800 text-white shadow-neo{% else %}bg-white text-stone-800 hover:bg-stone-100{% endif %}">Tất cả bài viết</a>
+      {% for tag in available_tags %}
+      <a href="/guide?tag={{ tag | urlencode }}" class="text-xs font-black px-4 py-2 rounded-xl border-2 border-black transition-all {% if selected_tag == tag %}bg-rose-800 text-white shadow-neo{% else %}bg-white text-stone-800 hover:bg-stone-100{% endif %}">#{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Blog List Grid -->
+<section id="handbook-list" class="py-12 md:py-16 bg-[#fdfbf7]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="{% if blogs|length == 1 %}max-w-2xl mx-auto{% else %}grid grid-cols-1 md:grid-cols-3 gap-8{% endif %}">
+      {% for blog in blogs %}
+      <article class="bg-white border-3 border-black rounded-3xl overflow-hidden shadow-neo-lg flex flex-col justify-between hover:border-rose-700 hover:shadow-neo-xl transition-all group">
+        <div>
+          <div class="w-full aspect-[16/10] bg-stone-100 relative overflow-hidden border-b-2 border-black">
+            <img src="{{ blog.cover_image }}" alt="{{ blog.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 bg-amber-300 text-stone-950 text-xs font-heading font-black px-3 py-1 rounded-xl border border-black shadow-sm">
+              ✦ {{ blog.category }}
+            </span>
+          </div>
+
+          <div class="p-6 sm:p-8 space-y-3">
+            <div class="flex items-center gap-2 text-xs text-stone-400 font-bold">
+              <span>{{ blog.published_date }}</span>
+              {% if blog.published_date %}<span>•</span>{% endif %}
+              <span>{{ blog.read_time }}</span>
+            </div>
+
+            <h2 class="font-heading font-black text-xl sm:text-2xl text-stone-900 leading-snug hover:text-rose-800 transition-colors">
+              <a href="/guide/{{ blog.slug }}">{{ blog.title }}</a>
+            </h2>
+
+            <p class="text-sm text-stone-600 line-clamp-3 leading-relaxed font-medium">
+              {{ blog.excerpt }}
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              {% for tag in blog.tags %}
+              <span class="text-xs bg-amber-100 text-amber-950 font-bold px-2.5 py-1 rounded-lg border border-amber-300">#{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-8 pt-0">
+          <a href="/guide/{{ blog.slug }}" class="w-full block text-center bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-sm py-3.5 rounded-2xl border-2 border-black shadow-neo hover:translate-x-0.5 hover:-translate-y-0.5 transition-all">
+            Đọc Bài Hướng Dẫn Chi Tiết →
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% if not blogs %}
+    <div class="max-w-2xl mx-auto bg-white border-2 border-black rounded-2xl p-8 text-center shadow-neo">
+      <h2 class="font-heading font-black text-xl">Chưa tìm thấy bài phù hợp</h2>
+      <p class="text-sm text-stone-600 mt-2">Thử từ khóa ngắn hơn hoặc xem toàn bộ Cẩm nang MEMOUR.</p>
+      <a href="/guide" class="inline-block mt-5 text-sm font-black text-rose-800 underline">Xem tất cả bài viết</a>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endblock %}

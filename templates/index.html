@@ -1,0 +1,584 @@
+{% extends "base.html" %}
+
+{% block title %}MEMOUR Studio | Sổ Scrapbook Thủ Công & Phụ Kiện{% endblock %}
+{% block meta_desc %}Khám phá sổ scrapbook thủ công, sticker và khung ảnh tại MEMOUR Studio. Tự thiết kế món quà lưu giữ kỷ niệm theo câu chuyện của bạn.{% endblock %}
+
+{% block content %}
+<!-- ================= SECTION 1: HOME HERO CAROUSEL (FIXED STATIC CONTENT & SLIDING BACKGROUND) ================= -->
+<section class="py-6 sm:py-10 bg-[#fdfbf7]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div id="home-hero-carousel" class="carousel-container relative overflow-hidden w-full rounded-3xl border-3 border-black shadow-neo-xl bg-stone-900 min-h-[420px] sm:min-h-[480px] md:min-h-[520px] flex items-center justify-center" data-current-index="0">
+      
+      <!-- 1. Sliding Background Images Track (Only Images Slide) -->
+      <div id="home-hero-carousel-track" class="carousel-slider-track flex w-full h-full absolute inset-0 transition-transform duration-700 ease-out will-change-transform" style="transform: translateX(0%);" data-current-index="0">
+        
+        {% for bg_img in [
+          '/static/assets/banners/hero_banner_01.jpg',
+          '/static/assets/banners/hero_banner_02.jpg',
+          '/static/assets/banners/hero_banner_03.jpg',
+          '/static/assets/banners/hero_banner_04.jpg'
+        ] %}
+        <div class="carousel-slide-item min-w-full h-full flex-shrink-0 relative overflow-hidden" data-slide-index="{{ loop.index0 }}">
+          <!-- Full-Bleed Background Image -->
+          <img src="{{ bg_img }}" alt="MEMOUR Scrapbook Background Showcase" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.78] contrast-[1.05] select-none pointer-events-none">
+          
+          <!-- Atmospheric Darkening & Vignette Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/30 to-stone-950/60"></div>
+          <div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <!-- 2. FIXED STATIC FOREGROUND CONTENT (Permanently Fixed in Center) -->
+      <div class="relative z-10 max-w-4xl mx-auto text-center space-y-4 sm:space-y-6 px-4 sm:px-8 py-8 pointer-events-auto">
+        
+        <!-- Fixed 3D Embossed Floating Brand Pill -->
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 text-stone-950 px-5 sm:px-6 py-1.5 rounded-full border-2 border-black shadow-neo font-heading font-black text-xs sm:text-sm tracking-wider uppercase transform -rotate-1 hover:rotate-0 transition-transform">
+          <span>✦ MEMOUR • Every memory has a story ✦</span>
+        </div>
+
+        <!-- Fixed 3D Pop High-Impact Slogan (Strictly 2 Lines as requested) -->
+        <h1 class="font-heading font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-snug sm:leading-tight tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_0px_#000000,_4px_4px_0px_rgba(136,19,55,0.9),_6px_6px_0px_rgba(0,0,0,0.6)] max-w-4xl mx-auto">
+          <span class="inline-block">Sổ Scrapbook Thủ Công</span><br>
+          <span class="inline-block text-amber-300">Lưu Giữ Ký Ức Cùng MEMOUR</span>
+        </h1>
+
+        <!-- Fixed Single CTA Button -->
+        <div class="pt-2 flex items-center justify-center">
+          <a href="/studio" class="bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-sm sm:text-base px-8 sm:px-10 py-3.5 sm:py-4 rounded-2xl border-2 border-white shadow-neo-lg hover:translate-x-0.5 hover:-translate-y-0.5 transition-all flex items-center gap-2.5">
+            <span>Thiết kế scrapbook ngay</span>
+            <span class="text-amber-300 font-mono font-bold text-base sm:text-lg">→</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- 3. Navigation Arrows (Slide Background Left / Right) -->
+      <button onclick="slideCarouselTrack('home-hero-carousel', -1)" class="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/90 hover:bg-amber-400 text-stone-950 font-black text-lg sm:text-xl border-2 border-black shadow-neo flex items-center justify-center transition-all z-20 hover:scale-110 active:scale-95" aria-label="Slide trước">
+        ←
+      </button>
+
+      <button onclick="slideCarouselTrack('home-hero-carousel', 1)" class="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/90 hover:bg-amber-400 text-stone-950 font-black text-lg sm:text-xl border-2 border-black shadow-neo flex items-center justify-center transition-all z-20 hover:scale-110 active:scale-95" aria-label="Slide tiếp theo">
+        →
+      </button>
+
+      <!-- 4. Dot Indicators -->
+      <div class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-20 bg-stone-950/70 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-md">
+        {% for idx in range(4) %}
+        <button onclick="setCarouselSlide('home-hero-carousel', {{ idx }})" class="carousel-dot-btn h-3 rounded-full border border-black transition-all duration-300 {% if loop.first %}w-7 bg-amber-400{% else %}w-3 bg-white/70 hover:bg-amber-300{% endif %}" data-dot-index="{{ idx }}" aria-label="Slide {{ idx + 1 }}"></button>
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SECTION 2: 3 TÍNH NĂNG NỔI BẬT CỦA MEMOUR STUDIO ================= -->
+<section class="py-16 md:py-24 bg-gradient-to-b from-[#fbf8f2] via-[#f5eee2] to-[#fbf8f2] border-b-2 border-black relative overflow-hidden">
+  
+  <!-- Subtle Ambient Glow Orbs behind cards -->
+  <div class="absolute top-1/4 left-10 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-10 right-10 w-96 h-96 bg-rose-900/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 border-2 border-black px-5 py-1.5 rounded-full text-xs font-heading font-black uppercase text-stone-950 shadow-neo transform -rotate-1 hover:rotate-0 transition-transform">
+        <span>✦ TÍNH NĂNG NỔI BẬT MEMOUR STUDIO ✦</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-stone-900 leading-tight">
+        Sáng Tạo Scrapbook Thật <span class="text-rose-800">Dễ Dàng &amp; Thú Vị</span>
+      </h2>
+    </div>
+
+    <!-- 3 Core Feature Cards Grid (Elevated, Vibrant, High Contrast) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-9 items-stretch">
+      
+      <!-- Card 1: AI Gợi Ý Thông Minh -->
+      <div class="bg-gradient-to-br from-amber-50/95 via-white to-amber-100/50 border-3 border-black rounded-3xl p-7 sm:p-8 shadow-neo-lg hover:shadow-neo-2xl hover:-translate-y-2 hover:border-amber-600 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+        <!-- Card Glow Accent -->
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-amber-300/30 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <span class="w-12 h-12 bg-amber-300 border-2 border-black rounded-2xl flex items-center justify-center font-mono font-black text-lg text-stone-950 shadow-neo group-hover:rotate-6 group-hover:scale-110 transition-transform">
+              01
+            </span>
+            <span class="bg-amber-400 text-stone-950 text-xs font-heading font-black px-3.5 py-1 rounded-full border-2 border-black shadow-sm">
+              ✦ Memour AI
+            </span>
+          </div>
+
+          <h3 class="font-heading font-black text-2xl text-stone-900 mb-3 group-hover:text-amber-800 transition-colors">
+            AI Gợi Ý Bố Cục Tự Động
+          </h3>
+          
+          <p class="text-stone-700 text-sm leading-relaxed mb-6 font-medium">
+            Chỉ cần nhập chủ đề chuyến đi hay cảm xúc kỷ niệm, <b>Memour AI</b> sẽ tự động chọn sticker và xếp sẵn trang ảnh đẹp mắt, hài hòa chỉ trong vài giây.
+          </p>
+        </div>
+
+        <div class="pt-4 border-t-2 border-dashed border-amber-300/80">
+          <div class="flex items-center gap-2.5 text-xs font-bold text-stone-900 bg-amber-200/60 px-3.5 py-2.5 rounded-2xl border border-amber-300 shadow-sm">
+            <span class="w-5 h-5 bg-amber-400 border border-black rounded-full flex items-center justify-center text-stone-950 font-black text-xs flex-shrink-0">✓</span>
+            <span>Tự động sắp đặt không cần biết thiết kế</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Tự Do Sắp Xếp & Dàn Trang 2D -->
+      <div class="bg-gradient-to-br from-rose-50/95 via-white to-rose-100/50 border-3 border-black rounded-3xl p-7 sm:p-8 shadow-neo-lg hover:shadow-neo-2xl hover:-translate-y-2 hover:border-rose-700 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+        <!-- Card Glow Accent -->
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-rose-400/25 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <span class="w-12 h-12 bg-rose-200 border-2 border-black rounded-2xl flex items-center justify-center font-mono font-black text-lg text-rose-950 shadow-neo group-hover:rotate-6 group-hover:scale-110 transition-transform">
+              02
+            </span>
+            <span class="bg-rose-800 text-white text-xs font-heading font-black px-3.5 py-1 rounded-full border-2 border-black shadow-sm">
+              ✦ Kéo Thả Trực Quan
+            </span>
+          </div>
+
+          <h3 class="font-heading font-black text-2xl text-stone-900 mb-3 group-hover:text-rose-800 transition-colors">
+            Tự Do Sắp Xếp &amp; Dán Ảnh
+          </h3>
+          
+          <p class="text-stone-700 text-sm leading-relaxed mb-6 font-medium">
+            Thoải mái kéo thả ảnh kỷ niệm từ máy, dán hàng chục mẫu sticker nổi 3D, khung cài ảnh và ghi chú theo phong cách riêng của bạn.
+          </p>
+        </div>
+
+        <div class="pt-4 border-t-2 border-dashed border-rose-300/80">
+          <div class="flex items-center gap-2.5 text-xs font-bold text-stone-900 bg-rose-200/60 px-3.5 py-2.5 rounded-2xl border border-rose-300 shadow-sm">
+            <span class="w-5 h-5 bg-rose-700 border border-black rounded-full flex items-center justify-center text-white font-black text-xs flex-shrink-0">✓</span>
+            <span>Tự do thêm bớt ảnh và đổi kiểu trang trí</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Xem Thành Phẩm 3D 360° -->
+      <div class="bg-gradient-to-br from-stone-100/95 via-white to-amber-50/60 border-3 border-black rounded-3xl p-7 sm:p-8 shadow-neo-lg hover:shadow-neo-2xl hover:-translate-y-2 hover:border-stone-900 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+        <!-- Card Glow Accent -->
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-amber-400/25 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <span class="w-12 h-12 bg-stone-900 text-amber-300 border-2 border-black rounded-2xl flex items-center justify-center font-mono font-black text-lg shadow-neo group-hover:rotate-6 group-hover:scale-110 transition-transform">
+              03
+            </span>
+            <span class="bg-stone-950 text-amber-300 text-xs font-heading font-black px-3.5 py-1 rounded-full border-2 border-black shadow-sm">
+              ✦ Xem Thử 3D 360°
+            </span>
+          </div>
+
+          <h3 class="font-heading font-black text-2xl text-stone-900 mb-3 group-hover:text-amber-700 transition-colors">
+            Xem Trước 3D Chân Thực
+          </h3>
+          
+          <p class="text-stone-700 text-sm leading-relaxed mb-6 font-medium">
+            Xoay ngắm 360 độ, lật từng trang và quan sát độ nổi lấp lánh của sticker như đang cầm cuốn sổ thật trên tay trước khi quyết định đặt làm.
+          </p>
+        </div>
+
+        <div class="pt-4 border-t-2 border-dashed border-stone-300/80">
+          <div class="flex items-center gap-2.5 text-xs font-bold text-stone-900 bg-stone-200/80 px-3.5 py-2.5 rounded-2xl border border-stone-400 shadow-sm">
+            <span class="w-5 h-5 bg-stone-900 border border-black rounded-full flex items-center justify-center text-amber-300 font-black text-xs flex-shrink-0">✓</span>
+            <span>Thấy rõ từng góc cạnh trước khi đặt in</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SECTION 3: CÂU CHUYỆN THƯƠNG HIỆU MEMOUR (STORY LEFT & VIDEO RIGHT) ================= -->
+<section class="py-16 md:py-24 bg-gradient-to-b from-[#fbf8f2] via-[#f8f3ea] to-[#f4ece1] border-b-2 border-black relative overflow-hidden">
+  
+  <!-- Subtle Craft Texture & Floating Sparkles Background -->
+  <div class="absolute top-10 left-10 w-72 h-72 bg-rose-900/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-10 right-10 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    
+    <!-- Main 2-Column Grid: Text on Left + Video on Right -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      
+      <!-- LEFT COLUMN: Brand Story & Emotional Narrative -->
+      <div class="lg:col-span-6 space-y-6">
+        
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-300 border-2 border-black px-4 py-1.5 rounded-full text-xs font-heading font-black uppercase shadow-neo transform -rotate-1 hover:rotate-0 transition-transform">
+          <span>✦ CÂU CHUYỆN THƯƠNG HIỆU MEMOUR ✦</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-[42px] font-heading font-black text-stone-900 leading-snug tracking-tight">
+          <span class="block text-stone-800 text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3">
+            Sự Hòa Quyện Giữa
+          </span>
+          <span class="inline-flex items-center flex-wrap gap-2.5 sm:gap-3.5 pt-1">
+            <!-- Memory Sticker Badge in Rose Red -->
+            <span class="inline-flex items-center gap-1.5 bg-rose-800 text-white text-2xl sm:text-3xl lg:text-4xl px-4 sm:px-5 py-1.5 rounded-2xl border-3 border-black shadow-neo transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all cursor-default select-none">
+              <span>Memory</span>
+              <span class="text-amber-300 text-lg sm:text-xl">✦</span>
+            </span>
+
+            <!-- Sparkling Ampersand Connector in Golden Amber -->
+            <span class="text-2xl sm:text-3xl font-heading font-black text-amber-500 mx-1">&amp;</span>
+
+            <!-- Our Sticker Badge in Golden Amber -->
+            <span class="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-300 via-amber-300 to-amber-400 text-stone-950 text-2xl sm:text-3xl lg:text-4xl px-4 sm:px-5 py-1.5 rounded-2xl border-3 border-black shadow-neo transform rotate-2 hover:rotate-0 hover:scale-105 transition-all cursor-default select-none">
+              <span>Our</span>
+              <span class="text-rose-800 text-lg sm:text-xl">✨</span>
+            </span>
+          </span>
+        </h2>
+
+        <p class="font-heading font-black text-base sm:text-lg text-rose-900 tracking-wide uppercase">
+          Every memory has a story
+        </p>
+
+        <!-- Narrative Paragraph 1 & 2 (Exact verbatim as requested) -->
+        <div class="space-y-4 text-stone-700 text-sm sm:text-base md:text-lg leading-relaxed font-medium">
+          <p>
+            Có những bức ảnh chỉ mất vài giây để chụp, nhưng lại chứa đựng cả một câu chuyện. <b>MEMOUR</b> ra đời để giúp bạn biến những tấm ảnh, dòng tin nhắn và khoảnh khắc đáng nhớ thành một scrapbook mang dấu ấn của riêng mình.
+          </p>
+          <p>
+            Kết hợp sự sáng tạo của bạn với công nghệ AI, <b>MEMOUR</b> giúp quá trình tạo scrapbook trở nên đơn giản và thú vị hơn. Bạn không cần khéo tay hay biết thiết kế. Chỉ cần mang đến câu chuyện của mình, <b>MEMOUR</b> sẽ cùng bạn biến những ký ức ấy thành một món quà độc bản, giàu cảm xúc và có thể lưu giữ theo thời gian.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Brand Video Showcase Frame -->
+      <div class="lg:col-span-6 flex flex-col justify-center">
+        <div class="relative bg-[#fdfbf7] border-3 border-black rounded-3xl p-5 sm:p-7 shadow-neo-xl overflow-hidden group hover:border-rose-800 transition-colors">
+          
+          <!-- Top Washi Tape Accent -->
+          <div class="washi-tape-top"></div>
+          
+          <!-- Video Frame Container -->
+          <div class="relative w-full aspect-[16/10] bg-stone-950 rounded-2xl border-2 border-black overflow-hidden shadow-neo group/video">
+            
+            <!-- HTML5 Video Player with Fallback & Poster -->
+            <video 
+              id="memour-brand-video" 
+              class="w-full h-full object-cover"
+              poster="/static/assets/layouts/insp_001.svg"
+              controls 
+              playsinline
+              preload="metadata"
+            >
+              <source src="/static/assets/video_intro.mp4" type="video/mp4">
+              Trình duyệt của bạn không hỗ trợ phát video HTML5.
+            </video>
+
+            <!-- Decorative Overlay Header on Video -->
+            <div class="absolute top-3 left-3 pointer-events-none z-10">
+              <span class="bg-black/80 text-amber-300 text-[10px] sm:text-xs font-heading font-black px-3 py-1 rounded-full border border-amber-400/60 backdrop-blur-sm flex items-center gap-1.5 shadow-sm">
+                <span>🎬</span>
+                <span>Video Giới Thiệu MEMOUR</span>
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SECTION 4: 3 DÒNG SẢN PHẨM CHỦ ĐẠO (GIÁ BÁN MINH BẠCH) ================= -->
+<section class="py-16 md:py-24 bg-white border-b-2 border-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-300 border-2 border-black px-4 py-1.5 rounded-full text-xs font-heading font-black uppercase shadow-neo transform -rotate-1 hover:rotate-0 transition-transform mb-2">
+          <span>✦ 3 DÒNG SẢN PHẨM CỐT LÕI ✦</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black text-stone-900 leading-tight">
+          Phụ Kiện Thủ Công - Giá Bán Trực Tiếp &amp; Minh Bạch
+        </h2>
+      </div>
+      <a href="/products" class="inline-flex items-center gap-2 text-sm font-black text-rose-800 hover:text-rose-950 underline">
+        Khám phá toàn bộ phụ kiện →
+      </a>
+    </div>
+
+    <!-- Product Trio Grid with Direct Prices -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Group 1: STICKER -->
+      <div class="bg-[#fdfbf7] border-2 border-black rounded-3xl p-6 shadow-neo hover:border-rose-700 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-amber-300 text-stone-950 text-xs font-heading font-black px-3 py-1 rounded-full border border-black shadow-sm">
+              Giá chỉ: 300đ - 500đ / cái
+            </span>
+            <span class="text-xs font-bold text-stone-500">Sticker 3D</span>
+          </div>
+          <div class="w-full aspect-video bg-amber-50 rounded-2xl border border-black/10 p-4 flex items-center justify-center mb-5">
+            <img src="/static/assets/stickers/stk_006.png" alt="Sticker MEMOUR" class="max-h-28 object-contain">
+          </div>
+          <h3 class="font-heading font-bold text-xl text-stone-900 mb-2">Sticker &amp; Nhãn Dán Nổi 3D</h3>
+          <p class="text-xs text-stone-600 leading-relaxed mb-4">
+            Nhãn dán dập nổi lấp lánh ánh kim chống thấm nước và giấy washi xé dán tự nhiên với các chủ đề: Tự hào non sông, đồ chơi tuổi thơ, hoa sen và du lịch Việt Nam.
+          </p>
+          <div class="text-xs text-stone-500 space-y-1.5 mb-4">
+            <p>• <b>Ưu điểm:</b> Bóc dán trực tiếp, độ dính cao, dập nổi 3D sắc nét</p>
+            <p>• <b>Chủ đề:</b> Tổ quốc &amp; Biển đảo, đồ chơi tuổi thơ, văn hóa Việt Nam</p>
+          </div>
+        </div>
+        <a href="/products?category=sticker" class="w-full text-center bg-rose-100 hover:bg-rose-200 text-rose-900 font-bold text-xs py-3 rounded-xl border border-rose-300 transition-colors">
+          Xem Kho Sticker (Chỉ từ 300đ) →
+        </a>
+      </div>
+
+      <!-- Group 2: LAYOUT -->
+      <div class="bg-[#fdfbf7] border-2 border-black rounded-3xl p-6 shadow-neo hover:border-amber-600 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-amber-300 text-stone-950 text-xs font-heading font-black px-3 py-1 rounded-full border border-black shadow-sm">
+              Giá chỉ: 1.000đ - 2.000đ / khung
+            </span>
+            <span class="text-xs font-bold text-stone-500">Khung Ảnh</span>
+          </div>
+          <div class="w-full aspect-video bg-rose-50 rounded-2xl border border-black/10 p-4 flex items-center justify-center mb-5">
+            <img src="/static/assets/layouts/lay_001.png" alt="Layout MEMOUR" class="max-h-28 object-contain">
+          </div>
+          <h3 class="font-heading font-bold text-xl text-stone-900 mb-2">Khung Ảnh Polaroid &amp; Layout</h3>
+          <p class="text-xs text-stone-600 leading-relaxed mb-4">
+            Khung ảnh phong cách Polaroid trái tim đỏ, máy ảnh Digicam Y2K, giao diện Instagram, khung hoa sen cờ đỏ và thư tay vintage các thành phố.
+          </p>
+          <div class="text-xs text-stone-500 space-y-1.5 mb-4">
+            <p>• <b>Chất liệu:</b> Giấy mỹ thuật 300gsm dày dặn, đứng dáng sang trọng</p>
+            <p>• <b>Tiện ích:</b> Lồng ảnh 1 chạm, tháo đổi ảnh kỷ niệm dễ dàng</p>
+          </div>
+        </div>
+        <a href="/products?category=layout" class="w-full text-center bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs py-3 rounded-xl border border-amber-300 transition-colors">
+          Xem Mẫu Khung Ảnh (Từ 1.000đ) →
+        </a>
+      </div>
+
+      <!-- Group 3: BOOK -->
+      <div class="bg-[#fdfbf7] border-2 border-black rounded-3xl p-6 shadow-neo hover:border-stone-800 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-amber-300 text-stone-950 text-xs font-heading font-black px-3 py-1 rounded-full border border-black shadow-sm">
+              Giá: 100.000đ / cuốn
+            </span>
+            <span class="text-xs font-bold text-stone-500">Sổ Bìa Cứng</span>
+          </div>
+          <div class="w-full aspect-video bg-stone-100 rounded-2xl border border-black/10 p-4 flex items-center justify-center mb-5">
+            <img src="/static/assets/scrapbooks/scr_001.png" alt="Book MEMOUR" class="max-h-28 object-contain">
+          </div>
+          <h3 class="font-heading font-bold text-xl text-stone-900 mb-2">Sổ Scrapbook Bìa Cứng Hoàng Sa &amp; Trường Sa</h3>
+          <p class="text-xs text-stone-600 leading-relaxed mb-4">
+            Bìa cứng dày dặn bọc giấy mỹ thuật sợi tự nhiên dập nổi bản đồ Việt Nam, cờ đỏ sao vàng, dải ruy băng đỏ thắm, charm mỏ neo cổ điển và dấu sáp niêm phong.
+          </p>
+          <div class="text-xs text-stone-500 space-y-1.5 mb-4">
+            <p>• <b>Chất liệu:</b> Bìa cứng mỹ thuật chống cong vênh + Ruột giấy 300gsm</p>
+            <p>• <b>Quy cách:</b> Tặng kèm 30 trang ruột dày + gọng gáy xoắn mở rộng</p>
+          </div>
+        </div>
+        <a href="/products?category=scrapbook" class="w-full text-center bg-stone-200 hover:bg-stone-300 text-stone-900 font-bold text-xs py-3 rounded-xl border border-stone-400 transition-colors">
+          Xem Chi Tiết Mẫu Sổ (100.000đ) →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 5: CÁC MẪU THAM KHẢO NỔI BẬT ================= -->
+<section class="py-16 md:py-24 bg-[#fbf8f2] border-b-2 border-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-300 border-2 border-black px-4 py-1.5 rounded-full text-xs font-heading font-black uppercase shadow-neo transform -rotate-1 hover:rotate-0 transition-transform mb-2">
+          <span>✦ MẪU GỢI Ý ĐẸP ✦</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black text-stone-900 leading-tight">
+          Ý Tưởng Bố Cục Được Yêu Thích Nhất
+        </h2>
+      </div>
+      <a href="/inspiration" class="inline-flex items-center gap-2 bg-white text-stone-900 font-bold text-sm px-5 py-2.5 rounded-xl border-2 border-black shadow-neo shadow-neo-hover transition-all">
+        Xem tất cả mẫu gợi ý →
+      </a>
+    </div>
+
+    <!-- Inspirations Grid with Direct Combo Price -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for insp in inspirations[:3] %}
+      <div class="bg-white border-2 border-black rounded-3xl overflow-hidden shadow-neo flex flex-col justify-between group hover:border-rose-700 transition-all">
+        <div>
+          <!-- Image -->
+          <div class="w-full aspect-[4/3] bg-stone-100 relative overflow-hidden border-b-2 border-black">
+            <img src="{{ insp.image }}" alt="{{ insp.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 right-3 bg-black text-white text-[10px] font-black px-2.5 py-1 rounded-full">
+              {{ insp.theme }}
+            </span>
+          </div>
+          <!-- Body -->
+          <div class="p-6">
+            <h4 class="font-heading font-extrabold text-lg text-stone-900 leading-snug mb-2">{{ insp.title }}</h4>
+            <p class="text-xs text-stone-600 line-clamp-2 leading-relaxed mb-4">{{ insp.description }}</p>
+            
+            <!-- Direct Combo Price Box -->
+            <div class="bg-rose-50 border border-rose-200 rounded-xl p-3 mb-4 flex items-center justify-between">
+              <span class="text-xs font-bold text-stone-700">Giá trọn bộ gợi ý:</span>
+              <span class="font-heading font-black text-sm text-rose-800">
+                {{ (insp.components | map(attribute='price') | sum) | format_vnd }}
+              </span>
+            </div>
+
+            <!-- Friendly Component Count Summary -->
+            <div class="border-t border-stone-100 pt-3">
+              <span class="text-[11px] font-bold text-stone-500 block mb-1.5">Bộ sản phẩm bao gồm:</span>
+              <div class="flex flex-wrap gap-1.5">
+                {% for comp in insp.components[:3] %}
+                <span class="text-[10px] font-bold {% if comp.category == 'scrapbook' %}bg-amber-100 text-stone-900 border-amber-300{% elif comp.category == 'layout' %}bg-rose-100 text-rose-900 border-rose-300{% else %}bg-stone-100 text-stone-800 border-stone-300{% endif %} px-2 py-0.5 rounded border truncate max-w-[150px]" title="{{ comp.name }}">
+                  {{ comp.name }}
+                </span>
+                {% endfor %}
+                {% if insp.components|length > 3 %}
+                <span class="text-[10px] font-bold bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded border border-stone-200">
+                  +{{ insp.components|length - 3 }} món
+                </span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions (Single Direct Button) -->
+        <div class="p-6 pt-0">
+          <a href="/studio?remix={{ insp.id }}" class="block w-full text-center bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-xs py-3.5 rounded-xl border border-black shadow-sm transition-colors">
+            Thử Thiết Kế Theo Mẫu Này →
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SECTION 6: CẨM NANG THỦ CÔNG (BÀI VIẾT HỮU ÍCH) ================= -->
+<section class="py-16 md:py-24 bg-[#fbf8f2] border-b-2 border-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-300 border-2 border-black px-4 py-1.5 rounded-full text-xs font-heading font-black uppercase shadow-neo transform -rotate-1 hover:rotate-0 transition-transform mb-2">
+          <span>✦ CẨM NANG THỦ CÔNG MEMOUR ✦</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black text-stone-900 leading-tight">
+          Mẹo Hay &amp; Ý Tưởng Trang Trí Sổ Kỷ Niệm
+        </h2>
+      </div>
+      <a href="/guide" class="inline-flex items-center gap-2 text-sm font-black text-rose-800 hover:text-rose-950 underline">
+        Xem tất cả bài viết →
+      </a>
+    </div>
+
+    <!-- Blogs Grid -->
+    <div class="{% if blogs|length == 1 %}max-w-2xl mx-auto{% else %}grid grid-cols-1 md:grid-cols-3 gap-8{% endif %}">
+      {% for blog in blogs[:3] %}
+      <article class="bg-white border-3 border-black rounded-3xl overflow-hidden shadow-neo-lg flex flex-col justify-between hover:border-rose-700 hover:shadow-neo-xl transition-all group">
+        <div>
+          <div class="w-full aspect-[16/10] bg-rose-50 border-b-2 border-black overflow-hidden relative">
+            <img src="{{ blog.cover_image }}" alt="{{ blog.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute bottom-3 left-3 bg-amber-300 text-stone-950 text-xs font-heading font-black px-3 py-1 rounded-xl border border-black shadow-sm">
+              ✦ {{ blog.read_time }}
+            </span>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-xs text-stone-500 font-bold mb-2">
+              {% if blog.published_date %}<span>{{ blog.published_date }}</span><span>•</span>{% endif %}
+              <span class="text-rose-800 font-black">{{ blog.category }}</span>
+            </div>
+            <h3 class="font-heading font-black text-xl sm:text-2xl text-stone-900 leading-snug mb-3 hover:text-rose-800 transition-colors">
+              <a href="/guide/{{ blog.slug }}">{{ blog.title }}</a>
+            </h3>
+            <p class="text-sm text-stone-600 line-clamp-3 leading-relaxed font-medium">
+              {{ blog.excerpt }}
+            </p>
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-8 pt-0">
+          <a href="/guide/{{ blog.slug }}" class="w-full block text-center bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-xs sm:text-sm py-3 rounded-xl border-2 border-black shadow-neo hover:translate-x-0.5 hover:-translate-y-0.5 transition-all">
+            Đọc bài viết cẩm nang →
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SECTION 7: GỬI LỜI NHẮN ================= -->
+<section class="py-16 md:py-24 bg-gradient-to-b from-[#fbf8f2] to-amber-100/50 relative">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="bg-white border-3 border-black rounded-3xl p-8 sm:p-12 shadow-neo-xl relative">
+
+      <div class="text-center max-w-lg mx-auto mb-8">
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-300 border-2 border-black px-4 py-1.5 rounded-full text-xs font-heading font-black uppercase shadow-neo transform -rotate-1 hover:rotate-0 transition-transform mb-2">
+          <span>✦ GỬI LỜI NHẮN TỚI XƯỞNG MEMOUR ✦</span>
+        </div>
+        <h2 class="text-3xl font-heading font-black text-stone-900">
+          Kết Nối Cùng MEMOUR Studio
+        </h2>
+        <p class="text-xs text-stone-600 mt-1">
+          <i>Every memory has a story</i>. Bạn cần tư vấn set phụ kiện riêng cho lớp, đặt làm số lượng lớn hoặc có ý tưởng hợp tác? Hãy để lại lời nhắn nhé!
+        </p>
+      </div>
+
+      <form id="contact-form" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-black text-stone-800 uppercase mb-1">Tên của bạn *</label>
+            <input type="text" name="name" required placeholder="VD: Linh Đan" class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-sm font-medium focus:bg-white focus:outline-none focus:border-rose-700">
+          </div>
+          <div>
+            <label class="block text-xs font-black text-stone-800 uppercase mb-1">Số điện thoại / Zalo *</label>
+            <input type="tel" name="phone" required placeholder="0988 xxx xxx" class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-sm font-medium focus:bg-white focus:outline-none focus:border-rose-700">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-black text-stone-800 uppercase mb-1">Email của bạn</label>
+          <input type="email" name="email" placeholder="you@gmail.com" class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-sm font-medium focus:bg-white focus:outline-none focus:border-rose-700">
+        </div>
+
+        <div>
+          <label class="block text-xs font-black text-stone-800 uppercase mb-1">Lời nhắn / Ý tưởng cần hỗ trợ</label>
+          <textarea name="message" rows="3" placeholder="Chia sẻ với xưởng về cuốn sổ hoặc dự án kỷ niệm bạn đang ấp ủ..." class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-sm font-medium focus:bg-white focus:outline-none focus:border-rose-700"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-sm py-3.5 rounded-xl border-2 border-black shadow-neo shadow-neo-hover transition-all">
+          Gửi Lời Nhắn Ngay →
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="kraftGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#df9b42"/>
+      <stop offset="50%" stop-color="#c67d26"/>
+      <stop offset="100%" stop-color="#a66015"/>
+    </linearGradient>
+    <filter id="emboss" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#451a03" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <!-- Book Cover Base Slab -->
+  <rect x="15" y="15" width="570" height="570" rx="18" fill="url(#kraftGrad)" stroke="#78350f" stroke-width="6"/>
+  <!-- Decorative Stitched Inset Border -->
+  <rect x="35" y="35" width="530" height="530" rx="12" fill="none" stroke="#78350f" stroke-width="3" stroke-dasharray="8 6"/>
+  
+  <!-- Brass Metal Corner Protectors -->
+  <polygon points="15,15 90,15 15,90" fill="#ca8a04" stroke="#713f12" stroke-width="3"/>
+  <polygon points="585,15 510,15 585,90" fill="#ca8a04" stroke="#713f12" stroke-width="3"/>
+  <polygon points="15,585 90,585 15,510" fill="#ca8a04" stroke="#713f12" stroke-width="3"/>
+  <polygon points="585,585 510,585 585,510" fill="#ca8a04" stroke="#713f12" stroke-width="3"/>
+  <circle cx="45" cy="45" r="4" fill="#713f12"/>
+  <circle cx="555" cy="45" r="4" fill="#713f12"/>
+  <circle cx="45" cy="555" r="4" fill="#713f12"/>
+  <circle cx="555" cy="555" r="4" fill="#713f12"/>
+
+  <!-- Left Ring Hole Markers -->
+  <circle cx="35" cy="100" r="10" fill="#451a03" stroke="#ca8a04" stroke-width="3"/>
+  <circle cx="35" cy="200" r="10" fill="#451a03" stroke="#ca8a04" stroke-width="3"/>
+  <circle cx="35" cy="300" r="10" fill="#451a03" stroke="#ca8a04" stroke-width="3"/>
+  <circle cx="35" cy="400" r="10" fill="#451a03" stroke="#ca8a04" stroke-width="3"/>
+  <circle cx="35" cy="500" r="10" fill="#451a03" stroke="#ca8a04" stroke-width="3"/>
+
+  <!-- Center Title Plaque -->
+  <g filter="url(#emboss)">
+    <rect x="120" y="160" width="360" height="260" rx="16" fill="#fef3c7" stroke="#78350f" stroke-width="4"/>
+    <rect x="135" y="175" width="330" height="230" rx="10" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="5 4"/>
+    
+    <text x="300" y="225" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="900" fill="#9a3412" letter-spacing="4" text-anchor="middle">✦ MEMOUR STUDIO ✦</text>
+    <text x="300" y="295" font-family="'Patrick Hand', cursive, sans-serif" font-size="44" font-weight="bold" fill="#78350f" text-anchor="middle">Our Memories</text>
+    <text x="300" y="340" font-family="'Playfair Display', serif" font-size="15" font-style="italic" fill="#b45309" text-anchor="middle">"Every memory has a story"</text>
+    
+    <!-- Botanical Motif -->
+    <path d="M 270 375 Q 300 360 330 375 Q 300 390 270 375" fill="#ca8a04" opacity="0.8"/>
+  </g>
+
+  <!-- Bottom SKU Tag -->
+  <rect x="210" y="470" width="180" height="34" rx="8" fill="#78350f"/>
+  <text x="300" y="492" font-family="monospace" font-size="13" font-weight="bold" fill="#fef08a" text-anchor="middle">SCR-001 • KRAFT FSC</text>
+</svg>

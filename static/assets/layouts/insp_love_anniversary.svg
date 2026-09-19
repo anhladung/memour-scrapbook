@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400">
+  <defs><filter id="inspShadow3"><feDropShadow dx="4" dy="6" stdDeviation="4" flood-color="#881337" flood-opacity="0.25"/></filter></defs>
+  <rect width="500" height="400" fill="#fff1f2"/>
+  <rect x="25" y="25" width="450" height="350" rx="16" fill="#ffe4e6" stroke="#881337" stroke-width="3" filter="url(#inspShadow3)"/>
+  <g transform="translate(60, 80)">
+    <rect width="220" height="170" rx="12" fill="#fff" stroke="#881337" stroke-width="3"/>
+    <text x="110" y="90" font-family="sans-serif" font-size="15" font-weight="bold" fill="#881337" text-anchor="middle">365 DAYS WITH YOU</text>
+  </g>
+  <g transform="translate(290, 160) rotate(8)">
+    <rect width="150" height="180" rx="8" fill="#ffffff" filter="url(#inspShadow3)"/>
+    <rect x="12" y="12" width="126" height="126" fill="#fda4af"/>
+    <text x="75" y="160" font-family="sans-serif" font-size="12" fill="#881337" text-anchor="middle">Hen Ho Dau Tien</text>
+  </g>
+  <g transform="translate(320, 40) scale(0.45)">
+    <path d="M 150 85 C 130 25, 35 35, 35 120 C 35 185, 150 260, 150 260 C 150 260, 265 185, 265 120 C 265 35, 170 25, 150 85 Z" fill="#881337" stroke="#fff" stroke-width="4"/>
+  </g>
+</svg>

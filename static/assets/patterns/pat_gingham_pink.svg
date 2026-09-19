@@ -1,0 +1,11 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#ffffff"/>
+  <defs>
+    <pattern id="gingham" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="20" height="40" fill="#f472b6" fill-opacity="0.22"/>
+      <rect x="0" y="0" width="40" height="20" fill="#f472b6" fill-opacity="0.22"/>
+      <rect x="0" y="0" width="20" height="20" fill="#db2777" fill-opacity="0.25"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="url(#gingham)"/>
+</svg>

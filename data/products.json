@@ -1,0 +1,2327 @@
+[
+  {
+    "id": "SCR-001",
+    "sku": "SCR-001",
+    "name": "Sổ Scrapbook Bìa Cứng Hoàng Sa & Trường Sa",
+    "ten": "Sổ Scrapbook Bìa Cứng Hoàng Sa & Trường Sa",
+    "category": "scrapbook",
+    "type": "scrapbook",
+    "loai": "bìa sổ scrapbook",
+    "description": "Bìa sổ scrapbook thủ công độc bản chủ đề 'Hoàng Sa & Trường Sa - Biển đảo thiêng liêng'. Bìa cứng bọc giấy mỹ thuật sợi tự nhiên dập nổi bản đồ Việt Nam, cờ đỏ sao vàng, dải ruy băng đỏ thắm, charm mỏ neo cổ điển, hoa khô ép và dấu sáp niêm phong hoàng gia.",
+    "moTa": "Bìa sổ scrapbook thủ công độc bản chủ đề 'Hoàng Sa & Trường Sa - Biển đảo thiêng liêng'. Bìa cứng bọc giấy mỹ thuật sợi tự nhiên dập nổi bản đồ Việt Nam, cờ đỏ sao vàng, dải ruy băng đỏ thắm, charm mỏ neo cổ điển, hoa khô ép và dấu sáp niêm phong hoàng gia.",
+    "image": "/static/assets/scrapbooks/scr_001.png",
+    "imageUrl": "/static/assets/scrapbooks/scr_001.png",
+    "thumbnailUrl": "/static/assets/scrapbooks/scr_001.png",
+    "price": 100000,
+    "colorHex": "#f4ede2",
+    "doiTuong": [
+      "người yêu tổ quốc",
+      "học sinh sinh viên",
+      "khách du lịch",
+      "lưu giữ kỷ niệm thanh xuân"
+    ],
+    "chuDe": [
+      "hoàng sa",
+      "trường sa",
+      "biển đảo việt nam",
+      "tự hào dân tộc",
+      "bản đồ việt nam",
+      "lịch sử",
+      "tổ quốc"
+    ],
+    "phongCach": [
+      "thủ công vintage",
+      "kraft mỹ thuật",
+      "dập nổi",
+      "dấu sáp",
+      "bản đồ tổ quốc"
+    ],
+    "mauSac": [
+      "kem mộc",
+      "đỏ cờ",
+      "vàng sao",
+      "đồng cổ"
+    ],
+    "camXuc": [
+      "tự hào",
+      "thiêng liêng",
+      "xúc động",
+      "trân quý",
+      "vững bền"
+    ],
+    "dipSuDung": [
+      "lưu giữ ký ức thanh xuân",
+      "kỷ yếu",
+      "quà tặng ý nghĩa",
+      "nhật ký hành trình việt nam"
+    ],
+    "tuKhoa": [
+      "hoàng sa",
+      "trường sa",
+      "biển đảo",
+      "sổ scrapbook",
+      "bìa sổ",
+      "bản đồ việt nam",
+      "cờ đỏ sao vàng",
+      "hải đăng",
+      "mỏ neo",
+      "dấu sáp"
+    ],
+    "tuKhoaLienQuan": [
+      "tổ quốc",
+      "chủ quyền biển đảo",
+      "quần đảo hoàng sa",
+      "quần đảo trường sa",
+      "ngọn hải đăng"
+    ],
+    "specs": {
+      "pages": 30,
+      "paperWeight": "300gsm",
+      "size": "A5 (21 x 15 cm)",
+      "binding": "Bìa cứng gáy may chỉ thủ công kèm dây chun co giãn"
+    },
+    "createdAt": "2026-08-28T11:55:00Z",
+    "backImage": "/static/assets/scrapbooks/scr_001_back.png",
+    "backImageUrl": "/static/assets/scrapbooks/scr_001_back.png"
+  },
+  {
+    "id": "LAY-001",
+    "sku": "LAY-001",
+    "name": "Khung ảnh Polaroid trái tim đỏ tối giản",
+    "ten": "Khung ảnh Polaroid trái tim đỏ tối giản",
+    "category": "layout",
+    "type": "layout",
+    "loai": "khung ảnh",
+    "description": "Khung ảnh phong cách Polaroid kinh điển viền trắng với điểm nhấn trái tim đỏ rượu tinh tế, cửa sổ trong suốt dễ dàng lồng ảnh cá nhân.",
+    "moTa": "Khung ảnh phong cách Polaroid kinh điển viền trắng với điểm nhấn trái tim đỏ rượu tinh tế, cửa sổ trong suốt dễ dàng lồng ảnh cá nhân.",
+    "image": "/static/assets/layouts/lay_001.png",
+    "imageUrl": "/static/assets/layouts/lay_001.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_001.png",
+    "price": 1000,
+    "themes": [
+      "kỷ niệm",
+      "tình yêu",
+      "bạn thân",
+      "tối giản"
+    ],
+    "chuDe": [
+      "kỷ niệm",
+      "tình yêu",
+      "bạn thân",
+      "tối giản"
+    ],
+    "style": "vintage",
+    "phongCach": [
+      "vintage",
+      "polaroid",
+      "tối giản"
+    ],
+    "inner_window": {
+      "x": 32,
+      "y": 32,
+      "width": 425,
+      "height": 435,
+      "origW": 489,
+      "origH": 582
+    },
+    "createdAt": "2026-08-27T23:50:00Z"
+  },
+  {
+    "id": "LAY-002",
+    "sku": "LAY-002",
+    "name": "Khung máy ảnh kỹ thuật số Canon Y2K & ngôi sao bạc",
+    "ten": "Khung máy ảnh kỹ thuật số Canon Y2K & ngôi sao bạc",
+    "category": "layout",
+    "type": "layout",
+    "loai": "khung ảnh",
+    "description": "Khung máy ảnh compact Canon cổ điển phong cách Y2K với màn hình LCD trong suốt để lồng ảnh kỷ niệm, điểm xuyết các ngôi sao bạc 3D.",
+    "moTa": "Khung máy ảnh compact Canon cổ điển phong cách Y2K với màn hình LCD trong suốt để lồng ảnh kỷ niệm, điểm xuyết các ngôi sao bạc 3D.",
+    "image": "/static/assets/layouts/lay_002.png",
+    "imageUrl": "/static/assets/layouts/lay_002.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_002.png",
+    "price": 1500,
+    "themes": [
+      "y2k",
+      "nhiếp ảnh",
+      "du lịch",
+      "thanh xuân"
+    ],
+    "chuDe": [
+      "y2k",
+      "nhiếp ảnh",
+      "du lịch",
+      "thanh xuân"
+    ],
+    "style": "retro",
+    "phongCach": [
+      "y2k",
+      "digicam",
+      "retro",
+      "metallic"
+    ],
+    "inner_window": {
+      "x": 58,
+      "y": 135,
+      "width": 246,
+      "height": 177,
+      "origW": 547,
+      "origH": 360
+    },
+    "createdAt": "2026-08-27T23:50:00Z"
+  },
+  {
+    "id": "LAY-003",
+    "sku": "LAY-003",
+    "name": "Khung giao diện bài đăng Instagram hiện đại",
+    "ten": "Khung giao diện bài đăng Instagram hiện đại",
+    "category": "layout",
+    "type": "layout",
+    "loai": "khung ảnh",
+    "description": "Khung bài đăng Instagram thế hệ mới với avatar story, biểu tượng thả tim đỏ và khung ảnh vuông trung tâm hiển thị trọn vẹn ảnh của bạn.",
+    "moTa": "Khung bài đăng Instagram thế hệ mới với avatar story, biểu tượng thả tim đỏ và khung ảnh vuông trung tâm hiển thị trọn vẹn ảnh của bạn.",
+    "image": "/static/assets/layouts/lay_003.png",
+    "imageUrl": "/static/assets/layouts/lay_003.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_003.png",
+    "price": 1000,
+    "themes": [
+      "mạng xã hội",
+      "check-in",
+      "gen z",
+      "đời sống"
+    ],
+    "chuDe": [
+      "mạng xã hội",
+      "check-in",
+      "gen z",
+      "đời sống"
+    ],
+    "style": "hiện đại",
+    "phongCach": [
+      "instagram",
+      "hiện đại",
+      "clean",
+      "social"
+    ],
+    "inner_window": {
+      "x": 40,
+      "y": 170,
+      "width": 530,
+      "height": 530,
+      "origW": 610,
+      "origH": 890
+    },
+    "createdAt": "2026-08-27T23:50:00Z"
+  },
+  {
+    "id": "LAY-004",
+    "sku": "LAY-004",
+    "name": "Khung ảnh len đan ấm áp & ruy băng nơ",
+    "ten": "Khung ảnh len đan ấm áp & ruy băng nơ",
+    "category": "layout",
+    "type": "layout",
+    "loai": "khung ảnh",
+    "description": "Khung ảnh len dệt đan ấm áp phong cách Hàn Quốc với thanh sticker kẹo ngọt dạ nỉ, ruy băng nơ đen và menu tương tác nỉ bông.",
+    "moTa": "Khung ảnh len dệt đan ấm áp phong cách Hàn Quốc với thanh sticker kẹo ngọt dạ nỉ, ruy băng nơ đen và menu tương tác nỉ bông.",
+    "image": "/static/assets/layouts/lay_004.png",
+    "imageUrl": "/static/assets/layouts/lay_004.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_004.png",
+    "price": 1500,
+    "themes": [
+      "ấm áp",
+      "mùa đông",
+      "dễ thương",
+      "hàn quốc"
+    ],
+    "chuDe": [
+      "ấm áp",
+      "mùa đông",
+      "dễ thương",
+      "hàn quốc"
+    ],
+    "style": "cozy",
+    "phongCach": [
+      "cozy",
+      "knitted",
+      "dễ thương",
+      "pastel"
+    ],
+    "inner_window": {
+      "x": 83,
+      "y": 115,
+      "width": 450,
+      "height": 440,
+      "origW": 545,
+      "origH": 880
+    },
+    "createdAt": "2026-08-27T23:50:00Z"
+  },
+  {
+    "id": "STK-001",
+    "sku": "STK-001",
+    "name": "Bộ đồ chơi câu cá nam châm tuổi thơ",
+    "ten": "Bộ đồ chơi câu cá nam châm tuổi thơ",
+    "category": "sticker",
+    "loai": "đồ vật",
+    "moTa": "Sticker mô phỏng bàn đồ chơi câu cá nam châm xoay tròn quen thuộc của tuổi thơ thế hệ 8x, 9x.",
+    "description": "Sticker mô phỏng bàn đồ chơi câu cá nam châm xoay tròn quen thuộc của tuổi thơ thế hệ 8x, 9x.",
+    "doiTuong": [
+      "bàn câu cá",
+      "cần câu",
+      "chú cá nhỏ"
+    ],
+    "chuDe": [
+      "tuổi thơ",
+      "kỷ niệm",
+      "trò chơi dân gian",
+      "hoài niệm"
+    ],
+    "themes": [
+      "tuổi thơ",
+      "kỷ niệm",
+      "trò chơi dân gian",
+      "hoài niệm"
+    ],
+    "phongCach": [
+      "retro",
+      "vintage",
+      "analog"
+    ],
+    "style": "retro",
+    "mauSac": [
+      "nâu",
+      "vàng cam",
+      "be"
+    ],
+    "dipSuDung": [
+      "kỷ niệm",
+      "họp lớp",
+      "tình bạn"
+    ],
+    "camXuc": [
+      "hoài niệm",
+      "vui tươi",
+      "ấm áp"
+    ],
+    "tuKhoa": [
+      "câu cá",
+      "đồ chơi câu cá",
+      "câu cá nam châm",
+      "tuổi thơ",
+      "retro",
+      "8x 9x",
+      "kỷ niệm",
+      "trò chơi",
+      "game tuổi thơ"
+    ],
+    "tags": [
+      "câu cá",
+      "đồ chơi câu cá",
+      "câu cá nam châm",
+      "tuổi thơ",
+      "retro",
+      "8x 9x",
+      "kỷ niệm",
+      "trò chơi",
+      "game tuổi thơ"
+    ],
+    "tuKhoaLienQuan": [
+      "chú cá",
+      "cần câu",
+      "ký ức",
+      "hồi ức",
+      "trẻ con"
+    ],
+    "is3D": false,
+    "is_3d": false,
+    "price": 300,
+    "doTinCay": 0.98,
+    "createdAt": "2026-08-27T23:15:00Z",
+    "image": "/static/assets/stickers/stk_001.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_001.png",
+    "imageUrl": "/static/assets/stickers/stk_001.png",
+    "sourceImage": "media_1787846843373.jpg"
+  },
+  {
+    "id": "STK-002",
+    "sku": "STK-002",
+    "name": "Hộp bánh Danisa đựng kim chỉ huyền thoại",
+    "ten": "Hộp bánh Danisa đựng kim chỉ huyền thoại",
+    "category": "sticker",
+    "loai": "đồ vật",
+    "moTa": "Sticker tái hiện hình ảnh chiếc hộp bánh quy bơ Danisa kinh điển đựng cuộn chỉ vàng, kéo may và cúc áo của mẹ.",
+    "description": "Sticker tái hiện hình ảnh chiếc hộp bánh quy bơ Danisa kinh điển đựng cuộn chỉ vàng, kéo may và cúc áo của mẹ.",
+    "doiTuong": [
+      "hộp bánh Danisa",
+      "cuộn chỉ",
+      "cây kéo",
+      "cúc áo",
+      "thước dây"
+    ],
+    "chuDe": [
+      "gia đình",
+      "tuổi thơ",
+      "kỷ niệm",
+      "đời sống",
+      "hoài niệm"
+    ],
+    "themes": [
+      "gia đình",
+      "tuổi thơ",
+      "kỷ niệm",
+      "đời sống",
+      "hoài niệm"
+    ],
+    "phongCach": [
+      "vintage",
+      "thủ công",
+      "hoài cổ"
+    ],
+    "style": "vintage",
+    "mauSac": [
+      "đỏ mận",
+      "xanh dương",
+      "vàng chỉ",
+      "nâu"
+    ],
+    "dipSuDung": [
+      "gia đình",
+      "kỷ niệm",
+      "ngày của mẹ"
+    ],
+    "camXuc": [
+      "ấm áp",
+      "thân thương",
+      "hoài niệm"
+    ],
+    "tuKhoa": [
+      "hộp bánh danisa",
+      "kim chỉ",
+      "hộp kim chỉ",
+      "may vá",
+      "cuộn chỉ",
+      "kéo may",
+      "bánh quy danisa",
+      "mẹ",
+      "gia đình",
+      "tuổi thơ"
+    ],
+    "tags": [
+      "hộp bánh danisa",
+      "kim chỉ",
+      "hộp kim chỉ",
+      "may vá",
+      "cuộn chỉ",
+      "kéo may",
+      "bánh quy danisa",
+      "mẹ",
+      "gia đình",
+      "tuổi thơ"
+    ],
+    "tuKhoaLienQuan": [
+      "cúc áo",
+      "thước dây",
+      "hộp thiếc",
+      "hồi ức gia đình",
+      "bà",
+      "mẹ"
+    ],
+    "is3D": false,
+    "is_3d": false,
+    "price": 300,
+    "doTinCay": 0.99,
+    "createdAt": "2026-08-27T23:15:00Z",
+    "image": "/static/assets/stickers/stk_002.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_002.png",
+    "imageUrl": "/static/assets/stickers/stk_002.png",
+    "sourceImage": "media_1787846843383.jpg"
+  },
+  {
+    "id": "STK-003",
+    "sku": "STK-003",
+    "name": "Trò chơi Đông Tây Nam Bắc xếp giấy",
+    "ten": "Trò chơi Đông Tây Nam Bắc xếp giấy",
+    "category": "sticker",
+    "loai": "đồ vật",
+    "moTa": "Sticker trò chơi gấp giấy Đông Tây Nam Bắc quen thuộc trong giờ ra chơi thời học sinh.",
+    "description": "Sticker trò chơi gấp giấy Đông Tây Nam Bắc quen thuộc trong giờ ra chơi thời học sinh.",
+    "doiTuong": [
+      "giấy xếp",
+      "trò chơi gấp giấy"
+    ],
+    "chuDe": [
+      "học đường",
+      "tuổi thơ",
+      "kỷ niệm",
+      "tình bạn",
+      "học sinh"
+    ],
+    "themes": [
+      "học đường",
+      "tuổi thơ",
+      "kỷ niệm",
+      "tình bạn",
+      "học sinh"
+    ],
+    "phongCach": [
+      "tối giản",
+      "vintage",
+      "thủ công"
+    ],
+    "style": "tối giản",
+    "mauSac": [
+      "kem",
+      "nâu be",
+      "cam đất"
+    ],
+    "dipSuDung": [
+      "kỷ yếu",
+      "tình bạn",
+      "họp lớp",
+      "thời học sinh"
+    ],
+    "camXuc": [
+      "vui vẻ",
+      "tươi vui",
+      "ngây thơ",
+      "hoài niệm"
+    ],
+    "tuKhoa": [
+      "đông tây nam bắc",
+      "gấp giấy",
+      "xếp giấy",
+      "học sinh",
+      "kỷ yếu",
+      "trường học",
+      "bạn thân",
+      "tuổi học trò",
+      "thời đi học"
+    ],
+    "tags": [
+      "đông tây nam bắc",
+      "gấp giấy",
+      "xếp giấy",
+      "học sinh",
+      "kỷ yếu",
+      "trường học",
+      "bạn thân",
+      "tuổi học trò",
+      "thời đi học"
+    ],
+    "tuKhoaLienQuan": [
+      "giờ ra chơi",
+      "bút mực",
+      "lớp học",
+      "trò chơi học trò"
+    ],
+    "is3D": false,
+    "is_3d": false,
+    "price": 300,
+    "doTinCay": 0.97,
+    "createdAt": "2026-08-27T23:15:00Z",
+    "image": "/static/assets/stickers/stk_003.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_003.png",
+    "imageUrl": "/static/assets/stickers/stk_003.png",
+    "sourceImage": "media_1787846843389.jpg"
+  },
+  {
+    "id": "STK-004",
+    "sku": "STK-004",
+    "name": "Gói mì sấy Miu Miu phô mai tuổi thơ",
+    "ten": "Gói mì sấy Miu Miu phô mai tuổi thơ",
+    "category": "sticker",
+    "loai": "ẩm thực",
+    "moTa": "Sticker gói snack mì sấy Miu Miu vị phô mai in hình chú mèo cam Garfield gắn liền với ký ức cổng trường.",
+    "description": "Sticker gói snack mì sấy Miu Miu vị phô mai in hình chú mèo cam Garfield gắn liền với ký ức cổng trường.",
+    "doiTuong": [
+      "gói mì sấy",
+      "chú mèo cam"
+    ],
+    "chuDe": [
+      "ẩm thực",
+      "tuổi thơ",
+      "kỷ niệm",
+      "học đường",
+      "ăn vặt"
+    ],
+    "themes": [
+      "ẩm thực",
+      "tuổi thơ",
+      "kỷ niệm",
+      "học đường",
+      "ăn vặt"
+    ],
+    "phongCach": [
+      "retro",
+      "dễ thương",
+      "hoài cổ"
+    ],
+    "style": "retro",
+    "mauSac": [
+      "đỏ",
+      "vàng tươi",
+      "cam"
+    ],
+    "dipSuDung": [
+      "kỷ yếu",
+      "ăn vặt",
+      "tuổi học trò",
+      "kỷ niệm"
+    ],
+    "camXuc": [
+      "ngọt ngào",
+      "vui tươi",
+      "thích thú",
+      "hoài niệm"
+    ],
+    "tuKhoa": [
+      "mì sấy",
+      "miu miu",
+      "mì tôm trẻ em",
+      "ăn vặt",
+      "cổng trường",
+      "mèo cam",
+      "phô mai",
+      "snack",
+      "tuổi thơ",
+      "bánh kẹo"
+    ],
+    "tags": [
+      "mì sấy",
+      "miu miu",
+      "mì tôm trẻ em",
+      "ăn vặt",
+      "cổng trường",
+      "mèo cam",
+      "phô mai",
+      "snack",
+      "tuổi thơ",
+      "bánh kẹo"
+    ],
+    "tuKhoaLienQuan": [
+      "mì vụn",
+      "quà vặt",
+      "tuổi học trò",
+      "ký ức 9x"
+    ],
+    "is3D": false,
+    "is_3d": false,
+    "price": 300,
+    "doTinCay": 0.98,
+    "createdAt": "2026-08-27T23:15:00Z",
+    "image": "/static/assets/stickers/stk_004.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_004.png",
+    "imageUrl": "/static/assets/stickers/stk_004.png",
+    "sourceImage": "media_1787846843401.jpg"
+  },
+  {
+    "id": "STK-005",
+    "sku": "STK-005",
+    "name": "Chim Hạc tiên bay phong cách cổ phong dát kim",
+    "ten": "Chim Hạc tiên bay phong cách cổ phong dát kim",
+    "category": "sticker",
+    "loai": "động vật",
+    "moTa": "Sticker chú chim Hạc tiên sải cánh bay với họa tiết dát kim hoàng gia và ngọc bích phong cách sơn thủy cổ điển.",
+    "description": "Sticker chú chim Hạc tiên sải cánh bay với họa tiết dát kim hoàng gia và ngọc bích phong cách sơn thủy cổ điển.",
+    "doiTuong": [
+      "chim hạc",
+      "cánh hạc",
+      "mào đỏ"
+    ],
+    "chuDe": [
+      "truyền thống",
+      "cổ phong",
+      "thiên nhiên",
+      "nghệ thuật"
+    ],
+    "themes": [
+      "truyền thống",
+      "cổ phong",
+      "thiên nhiên",
+      "nghệ thuật"
+    ],
+    "phongCach": [
+      "cổ phong",
+      "sơn thủy",
+      "thanh lịch",
+      "dát kim"
+    ],
+    "style": "cổ phong",
+    "mauSac": [
+      "xanh ngọc",
+      "trắng ngà",
+      "vàng kim",
+      "đỏ chu sa"
+    ],
+    "dipSuDung": [
+      "chúc mừng",
+      "năm mới",
+      "kỷ niệm",
+      "thanh xuân"
+    ],
+    "camXuc": [
+      "thanh tịnh",
+      "bình yên",
+      "sang trọng"
+    ],
+    "tuKhoa": [
+      "chim hạc",
+      "hạc tiên",
+      "cổ phong",
+      "dát kim",
+      "sơn thủy",
+      "chim bay",
+      "ngọc bích",
+      "hoàng gia",
+      "truyền thống"
+    ],
+    "tags": [
+      "chim hạc",
+      "hạc tiên",
+      "cổ phong",
+      "dát kim",
+      "sơn thủy",
+      "chim bay",
+      "ngọc bích",
+      "hoàng gia",
+      "truyền thống"
+    ],
+    "tuKhoaLienQuan": [
+      "hạc trắng",
+      "sếu",
+      "tiên hạc",
+      "thanh tao",
+      "mỹ thuật"
+    ],
+    "is3D": true,
+    "is_3d": true,
+    "price": 500,
+    "doTinCay": 0.99,
+    "createdAt": "2026-08-27T23:15:00Z",
+    "image": "/static/assets/stickers/stk_005.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_005.png",
+    "imageUrl": "/static/assets/stickers/stk_005.png",
+    "sourceImage": "media_1787846843529.jpg"
+  },
+  {
+    "id": "STK-006",
+    "sku": "STK-006",
+    "name": "Trẻ em rước cờ đỏ sao vàng tung bay",
+    "ten": "Trẻ em rước cờ đỏ sao vàng tung bay",
+    "category": "sticker",
+    "loai": "con người",
+    "moTa": "Sticker minh họa nhóm thiếu nhi tung bay lá cờ Tổ quốc đỏ sao vàng trong ngày hội non sông rực rỡ.",
+    "description": "Sticker minh họa nhóm thiếu nhi tung bay lá cờ Tổ quốc đỏ sao vàng trong ngày hội non sông rực rỡ.",
+    "doiTuong": [
+      "trẻ em",
+      "lá cờ đỏ sao vàng",
+      "cờ tổ quốc"
+    ],
+    "chuDe": [
+      "việt nam",
+      "tự hào dân tộc",
+      "kỷ niệm",
+      "lễ hội",
+      "tuổi thơ"
+    ],
+    "themes": [
+      "việt nam",
+      "tự hào dân tộc",
+      "kỷ niệm",
+      "lễ hội",
+      "tuổi thơ"
+    ],
+    "phongCach": [
+      "thủ công",
+      "màu nước",
+      "ấm áp"
+    ],
+    "style": "thủ công",
+    "mauSac": [
+      "đỏ",
+      "vàng",
+      "trắng kem",
+      "hồng"
+    ],
+    "dipSuDung": [
+      "quốc khánh",
+      "ngày lễ 30-4",
+      "kỷ niệm",
+      "kỷ yếu"
+    ],
+    "camXuc": [
+      "tự hào",
+      "rực rỡ",
+      "vui tươi",
+      "ấm áp"
+    ],
+    "tuKhoa": [
+      "cờ đỏ sao vàng",
+      "lá cờ",
+      "trẻ em",
+      "việt nam",
+      "tự hào",
+      "quốc khánh",
+      "30 tháng 4",
+      "2 tháng 9",
+      "yêu nước",
+      "tổ quốc"
+    ],
+    "tags": [
+      "cờ đỏ sao vàng",
+      "lá cờ",
+      "trẻ em",
+      "việt nam",
+      "tự hào",
+      "quốc khánh",
+      "30 tháng 4",
+      "2 tháng 9",
+      "yêu nước",
+      "tổ quốc"
+    ],
+    "tuKhoaLienQuan": [
+      "thiếu nhi",
+      "non sông",
+      "rước cờ",
+      "ngày hội"
+    ],
+    "is3D": false,
+    "is_3d": false,
+    "price": 400,
+    "doTinCay": 0.99,
+    "image": "/static/assets/stickers/stk_006.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_006.png",
+    "imageUrl": "/static/assets/stickers/stk_006.png",
+    "sourceImage": "media_1787847705359.jpg",
+    "createdAt": "2026-08-27T23:22:00Z"
+  },
+  {
+    "id": "STK-007",
+    "sku": "STK-007",
+    "name": "Nét chữ uốn Đây là Việt Nam cầm cờ Tổ quốc",
+    "ten": "Nét chữ uốn Đây là Việt Nam cầm cờ Tổ quốc",
+    "category": "sticker",
+    "loai": "chữ",
+    "moTa": "Sticker nghệ thuật Typography nét liền tạo hình người đội nón lá cầm cờ đỏ sao vàng uốn thành dòng chữ 'Đây là Việt Nam'.",
+    "description": "Sticker nghệ thuật Typography nét liền tạo hình người đội nón lá cầm cờ đỏ sao vàng uốn thành dòng chữ 'Đây là Việt Nam'.",
+    "doiTuong": [
+      "chữ nghệ thuật",
+      "người đội nón lá",
+      "cờ đỏ sao vàng"
+    ],
+    "chuDe": [
+      "việt nam",
+      "nghệ thuật",
+      "tự hào dân tộc",
+      "văn hóa"
+    ],
+    "themes": [
+      "việt nam",
+      "nghệ thuật",
+      "tự hào dân tộc",
+      "văn hóa"
+    ],
+    "phongCach": [
+      "tối giản",
+      "line art",
+      "vintage",
+      "retro"
+    ],
+    "style": "tối giản",
+    "mauSac": [
+      "đen",
+      "đỏ",
+      "vàng",
+      "be kraft"
+    ],
+    "dipSuDung": [
+      "du lịch việt nam",
+      "quốc khánh",
+      "kỷ niệm",
+      "tự hào"
+    ],
+    "camXuc": [
+      "tự hào",
+      "độc đáo",
+      "tinh tế"
+    ],
+    "tuKhoa": [
+      "đây là việt nam",
+      "chữ nghệ thuật",
+      "line art",
+      "nón lá",
+      "cờ đỏ sao vàng",
+      "tự hào việt nam",
+      "việt nam",
+      "typography"
+    ],
+    "tags": [
+      "đây là việt nam",
+      "chữ nghệ thuật",
+      "line art",
+      "nón lá",
+      "cờ đỏ sao vàng",
+      "tự hào việt nam",
+      "việt nam",
+      "typography"
+    ],
+    "tuKhoaLienQuan": [
+      "chữ uốn",
+      "bản đồ",
+      "tổ quốc",
+      "nét vẽ",
+      "dấu ấn việt"
+    ],
+    "is3D": false,
+    "is_3d": false,
+    "price": 400,
+    "doTinCay": 0.98,
+    "image": "/static/assets/stickers/stk_007.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_007.png",
+    "imageUrl": "/static/assets/stickers/stk_007.png",
+    "sourceImage": "media_1787847705374.jpg",
+    "createdAt": "2026-08-27T23:22:00Z"
+  },
+  {
+    "id": "STK-008",
+    "sku": "STK-008",
+    "name": "Chim Lạc nón lá cờ đỏ Độc Lập - Tự Do - Hạnh Phúc",
+    "ten": "Chim Lạc nón lá cờ đỏ Độc Lập - Tự Do - Hạnh Phúc",
+    "category": "sticker",
+    "loai": "biểu tượng",
+    "moTa": "Sticker biểu tượng Chim Lạc trống đồng Đông Sơn kết hợp chiếc nón lá cờ đỏ sao vàng và khẩu hiệu 'Độc Lập - Tự Do - Hạnh Phúc'.",
+    "description": "Sticker biểu tượng Chim Lạc trống đồng Đông Sơn kết hợp chiếc nón lá cờ đỏ sao vàng và khẩu hiệu 'Độc Lập - Tự Do - Hạnh Phúc'.",
+    "doiTuong": [
+      "chim lạc",
+      "nón lá cờ đỏ",
+      "đám mây cổ",
+      "chữ độc lập tự do hạnh phúc"
+    ],
+    "chuDe": [
+      "truyền thống",
+      "lịch sử",
+      "việt nam",
+      "tự hào dân tộc",
+      "văn hóa đông sơn"
+    ],
+    "themes": [
+      "truyền thống",
+      "lịch sử",
+      "việt nam",
+      "tự hào dân tộc",
+      "văn hóa đông sơn"
+    ],
+    "phongCach": [
+      "truyền thống",
+      "cổ điển",
+      "khắc nét",
+      "vintage"
+    ],
+    "style": "truyền thống",
+    "mauSac": [
+      "đỏ",
+      "vàng",
+      "nâu tre",
+      "đen",
+      "trắng"
+    ],
+    "dipSuDung": [
+      "quốc khánh",
+      "kỷ niệm lịch sử",
+      "du lịch việt nam"
+    ],
+    "camXuc": [
+      "trang nghiêm",
+      "tự hào",
+      "bản sắc"
+    ],
+    "tuKhoa": [
+      "chim lạc",
+      "trống đồng",
+      "nón lá",
+      "độc lập tự do hạnh phúc",
+      "việt nam",
+      "cờ đỏ sao vàng",
+      "lịch sử",
+      "đông sơn",
+      "tự hào"
+    ],
+    "tags": [
+      "chim lạc",
+      "trống đồng",
+      "nón lá",
+      "độc lập tự do hạnh phúc",
+      "việt nam",
+      "cờ đỏ sao vàng",
+      "lịch sử",
+      "đông sơn",
+      "tự hào"
+    ],
+    "tuKhoaLienQuan": [
+      "cội nguồn",
+      "dân tộc",
+      "tổ quốc",
+      "bản sắc",
+      "chim hạc"
+    ],
+    "is3D": false,
+    "is_3d": false,
+    "price": 500,
+    "doTinCay": 0.99,
+    "image": "/static/assets/stickers/stk_008.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_008.png",
+    "imageUrl": "/static/assets/stickers/stk_008.png",
+    "sourceImage": "media_1787847705384.jpg",
+    "createdAt": "2026-08-27T23:22:00Z"
+  },
+  {
+    "id": "STK-009",
+    "sku": "STK-009",
+    "name": "Nhãn chữ 3D VIỆT NAM khối nổi nón lá bông lúa",
+    "ten": "Nhãn chữ 3D VIỆT NAM khối nổi nón lá bông lúa",
+    "category": "sticker",
+    "loai": "chữ",
+    "moTa": "Sticker chữ khối 3D dập nổi 'VIỆT NAM' màu vàng viền đỏ kết hợp bông lúa vàng óng, nón lá truyền thống và lá cờ sao vàng.",
+    "description": "Sticker chữ khối 3D dập nổi 'VIỆT NAM' màu vàng viền đỏ kết hợp bông lúa vàng óng, nón lá truyền thống và lá cờ sao vàng.",
+    "doiTuong": [
+      "chữ VIỆT NAM 3D",
+      "bông lúa vàng",
+      "nón lá",
+      "lá cờ"
+    ],
+    "chuDe": [
+      "việt nam",
+      "tự hào dân tộc",
+      "nông nghiệp",
+      "bản sắc việt"
+    ],
+    "themes": [
+      "việt nam",
+      "tự hào dân tộc",
+      "nông nghiệp",
+      "bản sắc việt"
+    ],
+    "phongCach": [
+      "3D nổi",
+      "rực rỡ",
+      "hiện đại",
+      "gen z"
+    ],
+    "style": "3D nổi",
+    "mauSac": [
+      "vàng",
+      "đỏ",
+      "nâu nón lá",
+      "xanh lá lúa"
+    ],
+    "dipSuDung": [
+      "du lịch",
+      "kỷ niệm",
+      "quốc khánh",
+      "tự hào việt nam"
+    ],
+    "camXuc": [
+      "rực rỡ",
+      "nhiệt huyết",
+      "tự hào"
+    ],
+    "tuKhoa": [
+      "việt nam",
+      "chữ 3d",
+      "bông lúa",
+      "nón lá",
+      "cờ đỏ sao vàng",
+      "tự hào việt nam",
+      "3d nổi",
+      "dập nổi",
+      "khối nổi"
+    ],
+    "tags": [
+      "việt nam",
+      "chữ 3d",
+      "bông lúa",
+      "nón lá",
+      "cờ đỏ sao vàng",
+      "tự hào việt nam",
+      "3d nổi",
+      "dập nổi",
+      "khối nổi"
+    ],
+    "tuKhoaLienQuan": [
+      "lúa nước",
+      "hạt gạo",
+      "đất nước",
+      "quê hương",
+      "đẹp tươi"
+    ],
+    "is3D": true,
+    "is_3d": true,
+    "price": 500,
+    "doTinCay": 0.99,
+    "image": "/static/assets/stickers/stk_009.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_009.png",
+    "imageUrl": "/static/assets/stickers/stk_009.png",
+    "sourceImage": "media_1787847705385.jpg",
+    "createdAt": "2026-08-27T23:22:00Z"
+  },
+  {
+    "id": "STK-010",
+    "sku": "STK-010",
+    "name": "Em bé chibi đội nón lá vẫy cờ đỏ sao vàng",
+    "ten": "Em bé chibi đội nón lá vẫy cờ đỏ sao vàng",
+    "category": "sticker",
+    "loai": "con người",
+    "moTa": "Sticker em bé cười rạng rỡ phong cách chibi dễ thương, đội chiếc nón lá và giơ cao lá cờ đỏ sao vàng Việt Nam.",
+    "description": "Sticker em bé cười rạng rỡ phong cách chibi dễ thương, đội chiếc nón lá và giơ cao lá cờ đỏ sao vàng Việt Nam.",
+    "doiTuong": [
+      "em bé chibi",
+      "nón lá",
+      "cờ đỏ sao vàng",
+      "áo đỏ"
+    ],
+    "chuDe": [
+      "tuổi thơ",
+      "dễ thương",
+      "việt nam",
+      "tự hào dân tộc",
+      "đời sống"
+    ],
+    "themes": [
+      "tuổi thơ",
+      "dễ thương",
+      "việt nam",
+      "tự hào dân tộc",
+      "đời sống"
+    ],
+    "phongCach": [
+      "chibi",
+      "dễ thương",
+      "cute",
+      "ngộ nghĩnh"
+    ],
+    "style": "chibi",
+    "mauSac": [
+      "đỏ",
+      "vàng",
+      "nâu kem",
+      "da người"
+    ],
+    "dipSuDung": [
+      "kỷ niệm",
+      "quốc khánh",
+      "du lịch",
+      "sinh nhật"
+    ],
+    "camXuc": [
+      "vui vẻ",
+      "ngây thơ",
+      "đáng yêu",
+      "ấm áp"
+    ],
+    "tuKhoa": [
+      "em bé",
+      "chibi",
+      "dễ thương",
+      "nón lá",
+      "cờ đỏ sao vàng",
+      "việt nam",
+      "cute",
+      "ngộ nghĩnh",
+      "áo đỏ",
+      "yêu nước"
+    ],
+    "tags": [
+      "em bé",
+      "chibi",
+      "dễ thương",
+      "nón lá",
+      "cờ đỏ sao vàng",
+      "việt nam",
+      "cute",
+      "ngộ nghĩnh",
+      "áo đỏ",
+      "yêu nước"
+    ],
+    "tuKhoaLienQuan": [
+      "bé con",
+      "má hồng",
+      "nụ cười",
+      "quốc kỳ",
+      "mầm non"
+    ],
+    "is3D": false,
+    "is_3d": false,
+    "price": 400,
+    "doTinCay": 0.99,
+    "image": "/static/assets/stickers/stk_010.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_010.png",
+    "imageUrl": "/static/assets/stickers/stk_010.png",
+    "sourceImage": "media_1787847705526.jpg",
+    "createdAt": "2026-08-27T23:22:00Z"
+  },
+  {
+    "id": "STK-011",
+    "sku": "STK-011",
+    "name": "Nón lá truyền thống quai đỏ thắm",
+    "ten": "Nón lá truyền thống quai đỏ thắm",
+    "category": "sticker",
+    "loai": "đồ vật",
+    "moTa": "Sticker chiếc nón lá chóp tre truyền thống với dải quai lụa đỏ thắm mang đậm nét dịu dàng Việt Nam.",
+    "doiTuong": [
+      "nón lá",
+      "quai nón đỏ"
+    ],
+    "chuDe": [
+      "truyền thống",
+      "việt nam",
+      "văn hóa dân gian",
+      "đời sống"
+    ],
+    "phongCach": [
+      "thủ công",
+      "mộc mạc",
+      "vintage"
+    ],
+    "mauSac": [
+      "vàng tre",
+      "đỏ thắm",
+      "nâu"
+    ],
+    "dipSuDung": [
+      "du lịch",
+      "kỷ niệm",
+      "quốc khánh"
+    ],
+    "camXuc": [
+      "thân thương",
+      "dịu dàng",
+      "ấm áp"
+    ],
+    "tuKhoa": [
+      "nón lá",
+      "quai đỏ",
+      "truyền thống",
+      "việt nam",
+      "nón lá việt nam",
+      "thủ công",
+      "chóp nón"
+    ],
+    "tuKhoaLienQuan": [
+      "lá cọ",
+      "nón bài thơ",
+      "du lịch việt nam",
+      "quê hương"
+    ],
+    "is3D": false,
+    "price": 300,
+    "doTinCay": 0.99,
+    "image": "/static/assets/stickers/stk_011.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_011.png",
+    "imageUrl": "/static/assets/stickers/stk_011.png",
+    "sourceImage": "media_1787847987872.jpg"
+  },
+  {
+    "id": "STK-012",
+    "sku": "STK-012",
+    "name": "Biểu tượng Hà Nội Cầu Thê Húc & Hoa Sen hồng",
+    "ten": "Biểu tượng Hà Nội Cầu Thê Húc & Hoa Sen hồng",
+    "category": "sticker",
+    "loai": "biểu tượng",
+    "moTa": "Sticker huy hiệu kỷ niệm Hà Nội nghìn năm văn hiến khắc họa Cầu Thê Húc đỏ son, Đền Ngọc Sơn và hoa sen hồng thanh tao.",
+    "doiTuong": [
+      "cầu thê húc",
+      "đền ngọc sơn",
+      "hoa sen",
+      "chữ HA NOI"
+    ],
+    "chuDe": [
+      "hà nội",
+      "du lịch",
+      "di sản",
+      "việt nam",
+      "thủ đô"
+    ],
+    "phongCach": [
+      "thủ công",
+      "cổ kính",
+      "vintage"
+    ],
+    "mauSac": [
+      "đỏ son",
+      "hồng sen",
+      "xanh ngọc",
+      "nâu kraft"
+    ],
+    "dipSuDung": [
+      "du lịch hà nội",
+      "kỷ niệm",
+      "quà lưu niệm"
+    ],
+    "camXuc": [
+      "hoài cổ",
+      "thanh tao",
+      "tự hào"
+    ],
+    "tuKhoa": [
+      "hà nội",
+      "cầu thê húc",
+      "đền ngọc sơn",
+      "hoa sen",
+      "hồ gươm",
+      "thủ đô",
+      "du lịch hà nội",
+      "ha noi"
+    ],
+    "tuKhoaLienQuan": [
+      "hồ hoàn kiếm",
+      "tháp rùa",
+      "hoa sen hồng",
+      "phố cổ"
+    ],
+    "is3D": true,
+    "price": 500,
+    "doTinCay": 0.99,
+    "image": "/static/assets/stickers/stk_012.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_012.png",
+    "imageUrl": "/static/assets/stickers/stk_012.png",
+    "sourceImage": "media_1787847987872.webp"
+  },
+  {
+    "id": "STK-013",
+    "sku": "STK-013",
+    "name": "Nón lá trên vệt cọ cờ đỏ sao vàng",
+    "ten": "Nón lá trên vệt cọ cờ đỏ sao vàng",
+    "category": "sticker",
+    "loai": "biểu tượng",
+    "moTa": "Sticker nghệ thuật kết hợp chiếc nón lá viền dập nổi trên nền vệt cọ sơn nước lá cờ đỏ sao vàng Việt Nam.",
+    "doiTuong": [
+      "nón lá",
+      "vệt cọ cờ đỏ sao vàng"
+    ],
+    "chuDe": [
+      "việt nam",
+      "tự hào dân tộc",
+      "nghệ thuật",
+      "bản sắc việt"
+    ],
+    "phongCach": [
+      "sơn cọ",
+      "hiện đại",
+      "rực rỡ"
+    ],
+    "mauSac": [
+      "đỏ tươi",
+      "vàng sao",
+      "nâu tre"
+    ],
+    "dipSuDung": [
+      "quốc khánh",
+      "du lịch việt nam",
+      "kỷ niệm"
+    ],
+    "camXuc": [
+      "tự hào",
+      "nhiệt huyết",
+      "rực rỡ"
+    ],
+    "tuKhoa": [
+      "nón lá",
+      "vệt cọ",
+      "cờ đỏ sao vàng",
+      "việt nam",
+      "tự hào việt nam",
+      "sơn cọ",
+      "tổ quốc"
+    ],
+    "tuKhoaLienQuan": [
+      "quốc kỳ",
+      "dấu ấn việt",
+      "bản sắc"
+    ],
+    "is3D": false,
+    "price": 300,
+    "doTinCay": 0.99,
+    "image": "/static/assets/stickers/stk_013.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_013.png",
+    "imageUrl": "/static/assets/stickers/stk_013.png",
+    "sourceImage": "media_1787847987875.jpg"
+  },
+  {
+    "id": "STK-014",
+    "sku": "STK-014",
+    "name": "Bộ quà lưu niệm Nón lá & Trà sữa cờ đỏ sao vàng",
+    "ten": "Bộ quà lưu niệm Nón lá & Trà sữa cờ đỏ sao vàng",
+    "category": "sticker",
+    "loai": "đồ vật",
+    "moTa": "Sticker bộ quà lưu niệm trẻ trung gồm nón lá đỏ sao vàng, nón lá chữ VIET NAM, ly trà sữa và cờ Tổ quốc phong cách Gen Z.",
+    "doiTuong": [
+      "nón lá đỏ sao vàng",
+      "ly trà sữa cờ đỏ",
+      "nón lá việt nam",
+      "lá cờ mini"
+    ],
+    "chuDe": [
+      "gen z",
+      "du lịch",
+      "tự hào việt nam",
+      "ẩm thực trẻ"
+    ],
+    "phongCach": [
+      "cute",
+      "dễ thương",
+      "hiện đại"
+    ],
+    "mauSac": [
+      "đỏ",
+      "vàng tươi",
+      "trắng sữa"
+    ],
+    "dipSuDung": [
+      "du lịch việt nam",
+      "check-in",
+      "kỷ niệm bạn bè"
+    ],
+    "camXuc": [
+      "tươi vui",
+      "ngọt ngào",
+      "tự hào"
+    ],
+    "tuKhoa": [
+      "nón lá",
+      "trà sữa",
+      "cờ đỏ sao vàng",
+      "việt nam",
+      "quà lưu niệm",
+      "check-in",
+      "gen z"
+    ],
+    "tuKhoaLienQuan": [
+      "uống trà sữa",
+      "du lịch",
+      "nón lá mini"
+    ],
+    "is3D": false,
+    "price": 400,
+    "doTinCay": 0.99,
+    "image": "/static/assets/stickers/stk_014.png",
+    "thumbnailUrl": "/static/assets/stickers/stk_014.png",
+    "imageUrl": "/static/assets/stickers/stk_014.png",
+    "sourceImage": "media_1787847987902.jpg"
+  },
+  {
+    "id": "LAY-TXT-001",
+    "sku": "LAY-TXT-001",
+    "name": "Layout giấy thư vintage Hà Nội Không vội được đâu",
+    "ten": "Layout giấy thư vintage Hà Nội Không vội được đâu",
+    "category": "layout",
+    "subCategory": "text_layout",
+    "type": "layout_text",
+    "loai": "layout chữ",
+    "description": "Giấy thư bưu chính hoài niệm với biểu tượng Cột cờ Hà Nội, Lăng Bác, Tháp Rùa Hồ Gươm và Nhà thờ Lớn. Các dòng kẻ chấm thanh lịch sẵn sàng để bạn viết nhật ký hoặc lời nhắn gửi tâm tình.",
+    "moTa": "Giấy thư bưu chính hoài niệm với biểu tượng Cột cờ Hà Nội, Lăng Bác, Tháp Rùa Hồ Gươm và Nhà thờ Lớn. Các dòng kẻ chấm thanh lịch sẵn sàng để bạn viết nhật ký hoặc lời nhắn gửi tâm tình.",
+    "image": "/static/assets/layouts/lay_txt_001.png",
+    "imageUrl": "/static/assets/layouts/lay_txt_001.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_txt_001.png",
+    "price": 2000,
+    "doiTuong": [
+      "người yêu hà nội",
+      "khách du lịch",
+      "bạn bè",
+      "bản thân"
+    ],
+    "chuDe": [
+      "hà nội",
+      "thủ đô",
+      "du lịch",
+      "hoài niệm",
+      "vintage",
+      "thư tay",
+      "nhật ký",
+      "di sản"
+    ],
+    "phongCach": [
+      "vintage postal",
+      "bưu chính hoài niệm",
+      "giấy kraft cổ điển",
+      "retro airmail"
+    ],
+    "mauSac": [
+      "nâu kraft",
+      "đỏ hoài niệm",
+      "xanh cổ vịt"
+    ],
+    "camXuc": [
+      "nhẹ nhàng",
+      "lắng đọng",
+      "thanh bình",
+      "hoài niệm",
+      "trân quý"
+    ],
+    "dipSuDung": [
+      "nhật ký du lịch hà nội",
+      "viết thư tay cho bạn",
+      "lưu giữ kỷ niệm thanh xuân",
+      "ghi chép hành trình"
+    ],
+    "tuKhoa": [
+      "hà nội",
+      "không vội được đâu",
+      "lăng bác",
+      "hồ gươm",
+      "tháp rùa",
+      "nhà thờ lớn",
+      "cột cờ",
+      "thư tay",
+      "layout chữ",
+      "viết nhật ký",
+      "kraft"
+    ],
+    "tuKhoaLienQuan": [
+      "thủ đô",
+      "phố cổ",
+      "mùa thu hà nội",
+      "thư gửi hà nội",
+      "nhật ký hành trình"
+    ],
+    "defaultText": "Hà Nội mùa thu... Từng góc phố, mái ngói rêu phong và hương hoa sữa nồng nàn. Không vội được đâu, hãy sống chậm lại một chút để cảm nhận trọn vẹn vẻ đẹp này.",
+    "writingArea": {
+      "top": 240,
+      "left": 180,
+      "width": 370,
+      "height": 380
+    },
+    "createdAt": "2026-08-28T11:30:00Z"
+  },
+  {
+    "id": "LAY-TXT-002",
+    "sku": "LAY-TXT-002",
+    "name": "Layout giấy thư vintage Sài Gòn Vi Vu",
+    "ten": "Layout giấy thư vintage Sài Gòn Vi Vu",
+    "category": "layout",
+    "subCategory": "text_layout",
+    "type": "layout_text",
+    "loai": "layout chữ",
+    "description": "Giấy viết thư mang phong cách Sài Gòn retro với tòa tháp Bitexco, Nhà thờ Đức Bà, UBND Thành phố và tem bưu chính cổ điển. Thích hợp ghi lại nhật ký vi vu khám phá phố thị.",
+    "moTa": "Giấy viết thư mang phong cách Sài Gòn retro với tòa tháp Bitexco, Nhà thờ Đức Bà, UBND Thành phố và tem bưu chính cổ điển. Thích hợp ghi lại nhật ký vi vu khám phá phố thị.",
+    "image": "/static/assets/layouts/lay_txt_002.png",
+    "imageUrl": "/static/assets/layouts/lay_txt_002.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_txt_002.png",
+    "price": 2000,
+    "doiTuong": [
+      "giới trẻ gen z",
+      "người sài gòn",
+      "khách du lịch",
+      "bạn thân"
+    ],
+    "chuDe": [
+      "sài gòn",
+      "tp hcm",
+      "sài gòn vi vu",
+      "năng động",
+      "du lịch",
+      "thư tay",
+      "nhật ký",
+      "phố thị"
+    ],
+    "phongCach": [
+      "vintage postcard",
+      "sài gòn retro",
+      "kraft giấy mộc",
+      "airmail bưu điện"
+    ],
+    "mauSac": [
+      "nâu kraft",
+      "đỏ gạch",
+      "xanh ngọc retro"
+    ],
+    "camXuc": [
+      "hào sảng",
+      "nhộn nhịp",
+      "tươi vui",
+      "phóng khoáng",
+      "ấm áp"
+    ],
+    "dipSuDung": [
+      "vi vu sài gòn",
+      "food tour sài gòn",
+      "hẹn hò cafe bệt",
+      "kỷ niệm thời sinh viên"
+    ],
+    "tuKhoa": [
+      "sài gòn",
+      "sài gòn vi vu",
+      "bitexco",
+      "nhà thờ đức bà",
+      "bến thành",
+      "thư tay",
+      "layout chữ",
+      "nhật ký sài gòn"
+    ],
+    "tuKhoaLienQuan": [
+      "tp hcm",
+      "hòn ngọc viễn đông",
+      "phố đi bộ",
+      "cafe sữa đá",
+      "chuyến đi sài gòn"
+    ],
+    "defaultText": "Sài Gòn những ngày nắng đẹp vi vu qua từng con hẻm, thưởng thức ly cafe sữa đá ven đường và ngắm nhìn phố phường rực rỡ...",
+    "writingArea": {
+      "top": 240,
+      "left": 180,
+      "width": 370,
+      "height": 380
+    },
+    "createdAt": "2026-08-28T11:30:00Z"
+  },
+  {
+    "id": "LAY-TXT-003",
+    "sku": "LAY-TXT-003",
+    "name": "Layout giấy thư vintage Thương Lắm Đà Nẵng Ơi",
+    "ten": "Layout giấy thư vintage Thương Lắm Đà Nẵng Ơi",
+    "category": "layout",
+    "subCategory": "text_layout",
+    "type": "layout_text",
+    "loai": "layout chữ",
+    "description": "Giấy thư du lịch Đà Nẵng với Cầu Rồng hùng vĩ, Cầu Vàng Bàn Tay Khổng Lồ Bà Nà Hills và viền tem bưu thiếp. Hoàn hảo để viết nhật ký du lịch miền biển đáng sống.",
+    "moTa": "Giấy thư du lịch Đà Nẵng với Cầu Rồng hùng vĩ, Cầu Vàng Bàn Tay Khổng Lồ Bà Nà Hills và viền tem bưu thiếp. Hoàn hảo để viết nhật ký du lịch miền biển đáng sống.",
+    "image": "/static/assets/layouts/lay_txt_003.png",
+    "imageUrl": "/static/assets/layouts/lay_txt_003.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_txt_003.png",
+    "price": 2000,
+    "doiTuong": [
+      "người yêu đà nẵng",
+      "gia đình",
+      "cặp đôi",
+      "hội bạn thân"
+    ],
+    "chuDe": [
+      "đà nẵng",
+      "miền trung",
+      "biển",
+      "cầu rồng",
+      "cầu vàng",
+      "bà nà",
+      "du lịch hè",
+      "nhật ký"
+    ],
+    "phongCach": [
+      "vintage thư tay",
+      "du lịch biển",
+      "giấy kraft hoài niệm"
+    ],
+    "mauSac": [
+      "nâu kraft",
+      "vàng cầu rồng",
+      "đỏ tươi"
+    ],
+    "camXuc": [
+      "thân thương",
+      "chữa lành",
+      "tươi mới",
+      "yêu mến",
+      "rực rỡ"
+    ],
+    "dipSuDung": [
+      "du lịch đà nẵng",
+      "check-in bà nà",
+      "hành trình miền trung",
+      "kỷ niệm chuyến đi gia đình bạn bè"
+    ],
+    "tuKhoa": [
+      "đà nẵng",
+      "thương lắm đà nẵng ơi",
+      "cầu rồng",
+      "cầu vàng",
+      "bà nà hills",
+      "sông hàn",
+      "layout chữ",
+      "nhật ký"
+    ],
+    "tuKhoaLienQuan": [
+      "thành phố đáng sống",
+      "biển mỹ khê",
+      "hội an",
+      "chuyến đi mùa hè"
+    ],
+    "defaultText": "Đà Nẵng ơi, thương thành phố đáng sống với biển xanh cát trắng, những cây cầu rực rỡ ánh đèn và sự chân chất mến khách...",
+    "writingArea": {
+      "top": 240,
+      "left": 180,
+      "width": 370,
+      "height": 380
+    },
+    "createdAt": "2026-08-28T11:30:00Z"
+  },
+  {
+    "id": "LAY-TXT-004",
+    "sku": "LAY-TXT-004",
+    "name": "Layout giấy thư vintage Hải Phòng Không Lòng Vòng",
+    "ten": "Layout giấy thư vintage Hải Phòng Không Lòng Vòng",
+    "category": "layout",
+    "subCategory": "text_layout",
+    "type": "layout_text",
+    "loai": "layout chữ",
+    "description": "Giấy viết thư mang cá tính Đất Cảng với Tượng Nữ tướng Lê Chân, Nhà hát Lớn Hải Phòng cùng slogan 'Hải Phòng không lòng vòng'. Thích hợp ghi lại nhật ký food tour và kỷ niệm cùng hội bạn.",
+    "moTa": "Giấy viết thư mang cá tính Đất Cảng với Tượng Nữ tướng Lê Chân, Nhà hát Lớn Hải Phòng cùng slogan 'Hải Phòng không lòng vòng'. Thích hợp ghi lại nhật ký food tour và kỷ niệm cùng hội bạn.",
+    "image": "/static/assets/layouts/lay_txt_004.png",
+    "imageUrl": "/static/assets/layouts/lay_txt_004.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_txt_004.png",
+    "price": 2000,
+    "doiTuong": [
+      "gen z food tour",
+      "người đất cảng",
+      "bạn thân",
+      "dân phượt"
+    ],
+    "chuDe": [
+      "hải phòng",
+      "thành phố hoa phượng đỏ",
+      "không lòng vòng",
+      "food tour",
+      "đất cảng",
+      "nhật ký"
+    ],
+    "phongCach": [
+      "vintage postcard",
+      "phong cách đất cảng",
+      "giấy kraft mộc"
+    ],
+    "mauSac": [
+      "nâu kraft",
+      "đỏ hoa phượng",
+      "vàng đất cảng"
+    ],
+    "camXuc": [
+      "thẳng thắn",
+      "mạnh mẽ",
+      "hào sảng",
+      "đậm chất riêng",
+      "tự hào"
+    ],
+    "dipSuDung": [
+      "food tour hải phòng",
+      "khám phá đất cảng",
+      "nhật ký bạn bè",
+      "hành trình hoa phượng đỏ"
+    ],
+    "tuKhoa": [
+      "hải phòng",
+      "không lòng vòng",
+      "hoa phượng đỏ",
+      "nhà hát lớn",
+      "lê chân",
+      "đất cảng",
+      "layout chữ",
+      "viết thư"
+    ],
+    "tuKhoaLienQuan": [
+      "bánh đa cua",
+      "cát bà",
+      "đồ sơn",
+      "food tour",
+      "kỷ niệm đất cảng"
+    ],
+    "defaultText": "Hải Phòng ăn chơi không lòng vòng! Một ngày càn quét hết các món ngon đất Cảng, bánh đa cua, cafe cốt dừa và ngắm hoa phượng đỏ...",
+    "writingArea": {
+      "top": 240,
+      "left": 180,
+      "width": 370,
+      "height": 380
+    },
+    "createdAt": "2026-08-28T11:30:00Z"
+  },
+  {
+    "id": "LAY-TXT-005",
+    "sku": "LAY-TXT-005",
+    "name": "Layout giấy thư vintage Cần Thơ Gạo trắng nước trong",
+    "ten": "Layout giấy thư vintage Cần Thơ Gạo trắng nước trong",
+    "category": "layout",
+    "subCategory": "text_layout",
+    "type": "layout_text",
+    "loai": "layout chữ",
+    "description": "Giấy thư bưu chính sông nước miền Tây với Chợ Cổ Cần Thơ, nét chèo xuồng mộc mạc và câu ca 'Cần Thơ gạo trắng nước trong'. Các dòng kẻ chấm sẵn sàng để bạn viết nhật ký du lịch miền Tây sông nước.",
+    "moTa": "Giấy thư bưu chính sông nước miền Tây với Chợ Cổ Cần Thơ, nét chèo xuồng mộc mạc và câu ca 'Cần Thơ gạo trắng nước trong'. Các dòng kẻ chấm sẵn sàng để bạn viết nhật ký du lịch miền Tây sông nước.",
+    "image": "/static/assets/layouts/lay_txt_005.png",
+    "imageUrl": "/static/assets/layouts/lay_txt_005.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_txt_005.png",
+    "price": 2000,
+    "doiTuong": [
+      "người yêu miền tây",
+      "khách du lịch cần thơ",
+      "bạn bè",
+      "gia đình"
+    ],
+    "chuDe": [
+      "cần thơ",
+      "miền tây",
+      "sông nước",
+      "chợ nổi cái răng",
+      "gạo trắng nước trong",
+      "du lịch",
+      "nhật ký",
+      "thư tay"
+    ],
+    "phongCach": [
+      "vintage postal",
+      "sông nước miền tây",
+      "giấy kraft mộc",
+      "airmail bưu điện"
+    ],
+    "mauSac": [
+      "nâu kraft",
+      "đỏ hoài niệm",
+      "xanh ngọc sông nước"
+    ],
+    "camXuc": [
+      "bình dị",
+      "chất phác",
+      "ấm áp",
+      "thư thái",
+      "mến khách"
+    ],
+    "dipSuDung": [
+      "du lịch cần thơ",
+      "khám phá chợ nổi",
+      "hành trình miền tây",
+      "ghi chép nhật ký sông nước"
+    ],
+    "tuKhoa": [
+      "cần thơ",
+      "gạo trắng nước trong",
+      "chợ nổi cái răng",
+      "chợ cổ cần thơ",
+      "miền tây",
+      "chèo xuồng",
+      "sông nước",
+      "layout chữ",
+      "viết thư",
+      "kraft"
+    ],
+    "tuKhoaLienQuan": [
+      "tây đô",
+      "bến ninh kiều",
+      "vườn trái cây",
+      "miệt vườn",
+      "thư gửi miền tây"
+    ],
+    "defaultText": "Cần Thơ gạo trắng nước trong, ai đi đến đó lòng không muốn về. Một sớm bồng bềnh trên chợ nổi Cái Răng, thưởng thức tô hủ tiếu nóng hổi và cảm nhận sự chất phác của người miền Tây...",
+    "writingArea": {
+      "top": 240,
+      "left": 180,
+      "width": 370,
+      "height": 380
+    },
+    "createdAt": "2026-08-28T11:37:00Z"
+  },
+  {
+    "id": "PAT-001",
+    "sku": "PAT-001",
+    "name": "Nền Giấy Mỹ Thuật Sợi Tự Nhiên Mộc Cao Cấp",
+    "ten": "Nền Giấy Mỹ Thuật Sợi Tự Nhiên Mộc Cao Cấp",
+    "category": "pattern",
+    "type": "paper_pattern",
+    "loai": "nền giấy mỹ thuật",
+    "description": "Nền giấy mỹ thuật dập nổi xơ sợi thực vật tự nhiên, vân giấy sần mộc mạc ấm áp, mang đậm phong cách vintage thủ công.",
+    "moTa": "Nền giấy mỹ thuật dập nổi xơ sợi thực vật tự nhiên, vân giấy sần mộc mạc ấm áp, mang đậm phong cách vintage thủ công.",
+    "image": "/static/assets/patterns/pat_001.png",
+    "imageUrl": "/static/assets/patterns/pat_001.png",
+    "thumbnailUrl": "/static/assets/patterns/pat_001.png",
+    "price": 500,
+    "chuDe": [
+      "vintage",
+      "thủ công",
+      "sợi tự nhiên",
+      "mộc mạc",
+      "scrapbook"
+    ],
+    "phongCach": [
+      "kraft vintage",
+      "sợi tự nhiên",
+      "mỹ thuật"
+    ],
+    "mauSac": [
+      "kem mộc",
+      "ngà ấm"
+    ],
+    "camXuc": [
+      "ấm áp",
+      "hoài niệm",
+      "thư thái"
+    ],
+    "createdAt": "2026-08-28T12:37:00Z"
+  },
+  {
+    "id": "PAT-002",
+    "sku": "PAT-002",
+    "name": "Nền Giấy Kraft Nâu Mộc Cổ Điển",
+    "ten": "Nền Giấy Kraft Nâu Mộc Cổ Điển",
+    "category": "pattern",
+    "type": "paper_pattern",
+    "loai": "nền giấy kraft",
+    "description": "Giấy kraft nâu đậm chất tự nhiên mộc mạc, làm nổi bật các bức ảnh film Polaroid và sticker vintage rực rỡ.",
+    "moTa": "Giấy kraft nâu đậm chất tự nhiên mộc mạc, làm nổi bật các bức ảnh film Polaroid và sticker vintage rực rỡ.",
+    "image": "/static/assets/patterns/pat_002.png",
+    "imageUrl": "/static/assets/patterns/pat_002.png",
+    "thumbnailUrl": "/static/assets/patterns/pat_002.png",
+    "price": 500,
+    "chuDe": [
+      "kraft",
+      "nâu mộc",
+      "retro",
+      "vintage",
+      "cổ điển"
+    ],
+    "phongCach": [
+      "kraft mộc",
+      "rustic vintage"
+    ],
+    "mauSac": [
+      "nâu kraft",
+      "nâu đất"
+    ],
+    "camXuc": [
+      "bình yên",
+      "ấm cúng",
+      "chân thực"
+    ],
+    "createdAt": "2026-08-28T12:40:00Z"
+  },
+  {
+    "id": "PAT-003",
+    "sku": "PAT-003",
+    "name": "Nền Giấy Dó Truyền Thống Việt Nam",
+    "ten": "Nền Giấy Dó Truyền Thống Việt Nam",
+    "category": "pattern",
+    "type": "paper_pattern",
+    "loai": "nền giấy dó",
+    "description": "Chất liệu giấy dó thủ công làng nghề truyền thống, ánh vàng hoàng yến tinh tế, lưu giữ nét đẹp văn hóa Việt.",
+    "moTa": "Chất liệu giấy dó thủ công làng nghề truyền thống, ánh vàng hoàng yến tinh tế, lưu giữ nét đẹp văn hóa Việt.",
+    "image": "/static/assets/patterns/pat_003.png",
+    "imageUrl": "/static/assets/patterns/pat_003.png",
+    "thumbnailUrl": "/static/assets/patterns/pat_003.png",
+    "price": 500,
+    "chuDe": [
+      "giấy dó",
+      "truyền thống",
+      "văn hóa việt",
+      "hoàng sa trường sa",
+      "di sản"
+    ],
+    "phongCach": [
+      "giấy dó truyền thống",
+      "dân gian việt nam"
+    ],
+    "mauSac": [
+      "vàng hoàng yến",
+      "kem ngà"
+    ],
+    "camXuc": [
+      "trang trọng",
+      "thiêng liêng",
+      "tự hào"
+    ],
+    "createdAt": "2026-08-28T12:40:00Z"
+  },
+  {
+    "id": "PAT-004",
+    "sku": "PAT-004",
+    "name": "Nền Giấy Kẻ Ô Lưới Retro Học Trò",
+    "ten": "Nền Giấy Kẻ Ô Lưới Retro Học Trò",
+    "category": "pattern",
+    "type": "paper_pattern",
+    "loai": "nền giấy kẻ ô",
+    "description": "Họa tiết ô lưới caro mộc mạc gợi nhớ trang vở học trò, cực kỳ dễ căn chỉnh ảnh và viết lưu bút kỷ niệm.",
+    "moTa": "Họa tiết ô lưới caro mộc mạc gợi nhớ trang vở học trò, cực kỳ dễ căn chỉnh ảnh và viết lưu bút kỷ niệm.",
+    "image": "/static/assets/patterns/pat_004.png",
+    "imageUrl": "/static/assets/patterns/pat_004.png",
+    "thumbnailUrl": "/static/assets/patterns/pat_004.png",
+    "price": 500,
+    "chuDe": [
+      "ô lưới",
+      "caro",
+      "tuổi học trò",
+      "kỷ yếu",
+      "nhật ký"
+    ],
+    "phongCach": [
+      "retro grid",
+      "học sinh sinh viên"
+    ],
+    "mauSac": [
+      "kem nhạt",
+      "xám nâu"
+    ],
+    "camXuc": [
+      "trong trẻo",
+      "thanh xuân",
+      "gọn gàng"
+    ],
+    "createdAt": "2026-08-28T12:40:00Z"
+  },
+  {
+    "id": "PAT-005",
+    "sku": "PAT-005",
+    "name": "Nền Giấy Kẻ Dòng Bưu Chính Airmail",
+    "ten": "Nền Giấy Kẻ Dòng Bưu Chính Airmail",
+    "category": "pattern",
+    "type": "paper_pattern",
+    "loai": "nền giấy bưu chính",
+    "description": "Các hàng kẻ dòng thanh lịch với lề đỏ bưu thiếp cổ điển, tạo cảm giác như một bức thư tay gửi từ quá khứ.",
+    "moTa": "Các hàng kẻ dòng thanh lịch với lề đỏ bưu thiếp cổ điển, tạo cảm giác như một bức thư tay gửi từ quá khứ.",
+    "image": "/static/assets/patterns/pat_005.png",
+    "imageUrl": "/static/assets/patterns/pat_005.png",
+    "thumbnailUrl": "/static/assets/patterns/pat_005.png",
+    "price": 500,
+    "chuDe": [
+      "bưu chính",
+      "thư tay",
+      "kẻ dòng",
+      "airmail",
+      "viết nhật ký"
+    ],
+    "phongCach": [
+      "vintage airmail",
+      "thư từ bưu điện"
+    ],
+    "mauSac": [
+      "kem bưu thiếp",
+      "viền đỏ sepia"
+    ],
+    "camXuc": [
+      "da diết",
+      "tâm tình",
+      "lắng đọng"
+    ],
+    "createdAt": "2026-08-28T12:40:00Z"
+  },
+  {
+    "id": "PAT-006",
+    "sku": "PAT-006",
+    "name": "Nền Giấy Cổ Điển Ngả Vàng Thấm Cà Phê",
+    "ten": "Nền Giấy Cổ Điển Ngả Vàng Thấm Cà Phê",
+    "category": "pattern",
+    "type": "paper_pattern",
+    "loai": "nền giấy cổ",
+    "description": "Hiệu ứng viền ố ngả vàng đậm chất thời gian như trang giấy được ngâm trong nước trà và cà phê thơm nồng.",
+    "moTa": "Hiệu ứng viền ố ngả vàng đậm chất thời gian như trang giấy được ngâm trong nước trà và cà phê thơm nồng.",
+    "image": "/static/assets/patterns/pat_006.png",
+    "imageUrl": "/static/assets/patterns/pat_006.png",
+    "thumbnailUrl": "/static/assets/patterns/pat_006.png",
+    "price": 500,
+    "chuDe": [
+      "ố vàng",
+      "cổ kính",
+      "thấm cà phê",
+      "parchment",
+      "cổ vật"
+    ],
+    "phongCach": [
+      "aged parchment",
+      "vintage coffee stain"
+    ],
+    "mauSac": [
+      "nâu trà",
+      "vàng đất"
+    ],
+    "camXuc": [
+      "hoài cổ",
+      "trầm mặc",
+      "quý giá"
+    ],
+    "createdAt": "2026-08-28T12:40:00Z"
+  },
+  {
+    "id": "LAY-VN-001",
+    "sku": "LAY-VN-001",
+    "name": "Khung Ảnh Hoa Sen & Cờ Đỏ Sao Vàng Hòa Bình",
+    "ten": "Khung Ảnh Hoa Sen & Cờ Đỏ Sao Vàng Hòa Bình",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "loai": "khung ảnh",
+    "description": "Khung ảnh nghệ thuật vintage phối hợp đóa sen hồng quốc hoa thuần khiết, cánh chim bồ câu biểu tượng hòa bình và vệt cọ cờ đỏ sao vàng rực rỡ. Khoảng giữa giấy mộc để chèn ảnh kỷ niệm.",
+    "moTa": "Khung ảnh nghệ thuật vintage phối hợp đóa sen hồng quốc hoa thuần khiết, cánh chim bồ câu biểu tượng hòa bình và vệt cọ cờ đỏ sao vàng rực rỡ. Khoảng giữa giấy mộc để chèn ảnh kỷ niệm.",
+    "image": "/static/assets/layouts/lay_vn_001.png",
+    "imageUrl": "/static/assets/layouts/lay_vn_001.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_vn_001.png",
+    "price": 1500,
+    "doiTuong": [
+      "người yêu tổ quốc",
+      "học sinh sinh viên",
+      "khách du lịch",
+      "lưu giữ kỷ niệm thanh xuân"
+    ],
+    "chuDe": [
+      "việt nam",
+      "tổ quốc",
+      "hoa sen",
+      "hòa bình",
+      "cờ đỏ sao vàng",
+      "tự hào dân tộc",
+      "thanh xuân",
+      "bồ câu"
+    ],
+    "phongCach": [
+      "vintage việt nam",
+      "nghệ thuật thủ công",
+      "hoa sen quốc hoa",
+      "hòa bình"
+    ],
+    "mauSac": [
+      "đỏ cờ",
+      "vàng sao",
+      "hồng sen",
+      "xanh ngọc",
+      "kem mộc"
+    ],
+    "camXuc": [
+      "tự hào",
+      "yên bình",
+      "thanh tao",
+      "ấm áp",
+      "xúc động"
+    ],
+    "dipSuDung": [
+      "ảnh du lịch việt nam",
+      "kỷ niệm lễ quốc khánh",
+      "nhật ký thanh xuân",
+      "lưu bút học trò"
+    ],
+    "tuKhoa": [
+      "khung ảnh việt nam",
+      "hoa sen",
+      "cờ đỏ sao vàng",
+      "bồ câu",
+      "hòa bình",
+      "tổ quốc",
+      "tự hào dân tộc",
+      "layout ảnh",
+      "photo frame"
+    ],
+    "tuKhoaLienQuan": [
+      "quốc hoa",
+      "chim hòa bình",
+      "lưu bút",
+      "ảnh việt nam",
+      "scrapbook"
+    ],
+    "createdAt": "2026-08-28T13:55:00Z"
+  },
+  {
+    "id": "LAY-VN-002",
+    "sku": "LAY-VN-002",
+    "name": "Khung Viền Kỷ Hà Hoàng Gia Đông Dương Vàng Kim",
+    "ten": "Khung Viền Kỷ Hà Hoàng Gia Đông Dương Vàng Kim",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "loai": "khung viền ảnh",
+    "description": "Khung viền ảnh hoa văn kỷ hà cung đình hoàng gia Đông Dương dát vàng kim sang trọng, tách nền trong suốt 100% để lồng ảnh chân dung, ảnh gia đình và sự kiện trang trọng.",
+    "moTa": "Khung viền ảnh hoa văn kỷ hà cung đình hoàng gia Đông Dương dát vàng kim sang trọng, tách nền trong suốt 100% để lồng ảnh chân dung, ảnh gia đình và sự kiện trang trọng.",
+    "image": "/static/assets/layouts/lay_vn_002.png",
+    "imageUrl": "/static/assets/layouts/lay_vn_002.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_vn_002.png",
+    "price": 1000,
+    "doiTuong": [
+      "người thích phong cách cung đình",
+      "học sinh sinh viên",
+      "gia đình",
+      "lưu giữ kỷ niệm trang trọng"
+    ],
+    "chuDe": [
+      "kỷ hà",
+      "hoàng gia",
+      "đông dương",
+      "cung đình huế",
+      "triều nguyễn",
+      "việt nam",
+      "sang trọng",
+      "di sản"
+    ],
+    "phongCach": [
+      "hoàng gia đông dương",
+      "kỷ hà vàng kim",
+      "cung đình việt nam",
+      "quý phái"
+    ],
+    "mauSac": [
+      "vàng kim",
+      "vàng đồng",
+      "hoàng gia"
+    ],
+    "camXuc": [
+      "trang trọng",
+      "quý phái",
+      "tinh tế",
+      "hoài niệm"
+    ],
+    "dipSuDung": [
+      "lồng ảnh chân dung",
+      "ảnh kỷ yếu tốt nghiệp",
+      "ảnh gia đình",
+      "album di sản"
+    ],
+    "tuKhoa": [
+      "khung viền vàng",
+      "kỷ hà",
+      "hoàng gia",
+      "đông dương",
+      "cung đình",
+      "khung ảnh",
+      "photo frame",
+      "layout"
+    ],
+    "tuKhoaLienQuan": [
+      "viền dát vàng",
+      "hoa văn cổ",
+      "chụp ảnh áo dài",
+      "di sản việt nam"
+    ],
+    "createdAt": "2026-08-28T13:55:00Z"
+  },
+  {
+    "id": "LAY-VN-003",
+    "sku": "LAY-VN-003",
+    "name": "Khung Ảnh Trống Đồng Đông Sơn & Cờ Đỏ Tự Hào",
+    "ten": "Khung Ảnh Trống Đồng Đông Sơn & Cờ Đỏ Tự Hào",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "loai": "khung ảnh",
+    "description": "Thiết kế thẻ ảnh hoành tráng kết hợp Trống Đồng Đông Sơn ngàn năm văn hiến, bồ câu đỏ hòa bình và vệt cọ quốc kỳ rực cháy trên nền gấm rồng thiêng. Khung giấy vintage trung tâm để lồng ảnh.",
+    "moTa": "Thiết kế thẻ ảnh hoành tráng kết hợp Trống Đồng Đông Sơn ngàn năm văn hiến, bồ câu đỏ hòa bình và vệt cọ quốc kỳ rực cháy trên nền gấm rồng thiêng. Khung giấy vintage trung tâm để lồng ảnh.",
+    "image": "/static/assets/layouts/lay_vn_003.png",
+    "imageUrl": "/static/assets/layouts/lay_vn_003.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_vn_003.png",
+    "price": 1500,
+    "doiTuong": [
+      "người yêu lịch sử",
+      "học sinh sinh viên",
+      "đoàn viên thanh niên",
+      "khách quốc tế"
+    ],
+    "chuDe": [
+      "trống đồng",
+      "đông sơn",
+      "việt nam",
+      "tổ quốc",
+      "lịch sử",
+      "tự hào dân tộc",
+      "văn hiến",
+      "cờ đỏ sao vàng"
+    ],
+    "phongCach": [
+      "sử thi hào hùng",
+      "văn hiến việt nam",
+      "đông sơn",
+      "kraft vintage"
+    ],
+    "mauSac": [
+      "đỏ son",
+      "vàng đồng",
+      "nâu đất",
+      "vàng sao",
+      "kem mộc"
+    ],
+    "camXuc": [
+      "hào hùng",
+      "tự hào",
+      "thiêng liêng",
+      "bất khuất"
+    ],
+    "dipSuDung": [
+      "kỷ niệm 30/4",
+      "quốc khánh 2/9",
+      "kỷ yếu trường học",
+      "hành trình về nguồn"
+    ],
+    "tuKhoa": [
+      "trống đồng",
+      "đông sơn",
+      "khung ảnh việt nam",
+      "cờ đỏ",
+      "tự hào dân tộc",
+      "hào khí việt nam",
+      "layout ảnh",
+      "photo frame"
+    ],
+    "tuKhoaLienQuan": [
+      "hùng vương",
+      "lạc hồng",
+      "văn hóa đông sơn",
+      "lịch sử hào hùng"
+    ],
+    "createdAt": "2026-08-28T13:55:00Z"
+  },
+  {
+    "id": "LAY-VN-004",
+    "sku": "LAY-VN-004",
+    "name": "Khung Ảnh Dây Cờ Tổ Quốc & Hào Khí Rồng Thiêng",
+    "ten": "Khung Ảnh Dây Cờ Tổ Quốc & Hào Khí Rồng Thiêng",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "loai": "khung ảnh",
+    "description": "Bố cục layout ảnh tràn đầy nhiệt huyết tuổi trẻ với dải cờ đỏ sao vàng treo góc trên, biểu tượng cờ tổ quốc góc dưới và nền họa tiết rồng chìm thời Lý. Khung giữa dành để lồng ảnh cá nhân.",
+    "moTa": "Bố cục layout ảnh tràn đầy nhiệt huyết tuổi trẻ với dải cờ đỏ sao vàng treo góc trên, biểu tượng cờ tổ quốc góc dưới và nền họa tiết rồng chìm thời Lý. Khung giữa dành để lồng ảnh cá nhân.",
+    "image": "/static/assets/layouts/lay_vn_004.png",
+    "imageUrl": "/static/assets/layouts/lay_vn_004.png",
+    "thumbnailUrl": "/static/assets/layouts/lay_vn_004.png",
+    "price": 2000,
+    "doiTuong": [
+      "giới trẻ gen z",
+      "học sinh sinh viên",
+      "người đi phượt việt nam",
+      "tình nguyện viên"
+    ],
+    "chuDe": [
+      "dây cờ",
+      "cờ tổ quốc",
+      "việt nam",
+      "rồng thiêng",
+      "tự hào dân tộc",
+      "tuổi trẻ",
+      "nhiệt huyết"
+    ],
+    "phongCach": [
+      "tuổi trẻ yêu nước",
+      "vintage cách mạng",
+      "cờ treo rực rỡ",
+      "hào khí việt nam"
+    ],
+    "mauSac": [
+      "đỏ cờ",
+      "vàng tươi",
+      "nâu gấm",
+      "kem cổ điển"
+    ],
+    "camXuc": [
+      "nhiệt huyết",
+      "tươi vui",
+      "tự hào",
+      "gắn kết"
+    ],
+    "dipSuDung": [
+      "chuyến đi phượt xuyên việt",
+      "kỷ niệm chiến dịch mùa hè xanh",
+      "ngày hội non sông",
+      "ảnh tập thể"
+    ],
+    "tuKhoa": [
+      "dây cờ",
+      "cờ tổ quốc",
+      "khung ảnh việt nam",
+      "rồng thiêng",
+      "tự hào",
+      "tuổi trẻ việt nam",
+      "layout ảnh",
+      "photo frame"
+    ],
+    "tuKhoaLienQuan": [
+      "cờ đỏ sao vàng",
+      "xuyên việt",
+      "thanh niên tình nguyện",
+      "yêu nước"
+    ],
+    "createdAt": "2026-08-28T13:55:00Z"
+  }
+]

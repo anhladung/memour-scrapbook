@@ -1,0 +1,578 @@
+[
+  {
+    "id": "insp-001",
+    "title": "Tự Hào Non Sông & Biển Đảo Hoàng Sa - Trường Sa",
+    "concept": "Vietnam Heritage & Ocean Sovereignty",
+    "subtitle": "Bố cục thiêng liêng rực rỡ sắc cờ đỏ sao vàng kết hợp tem bưu chính và nón lá truyền thống",
+    "image": "/static/assets/layouts/insp_001.svg",
+    "theme": "Tự Hào Dân Tộc / Biển Đảo",
+    "difficulty": "Dễ làm (15 phút)",
+    "color_palette": [
+      "Đỏ Thắm",
+      "Vàng Kim",
+      "Kraft Mộc"
+    ],
+    "book_sku": "SCR-001",
+    "layout_skus": [
+      "LAY-VN-001",
+      "LAY-VN-003"
+    ],
+    "sticker_skus": [
+      "STK-006",
+      "STK-008",
+      "STK-011"
+    ],
+    "components": [
+      {
+        "sku": "SCR-001",
+        "name": "Sổ Scrapbook Bìa Cứng Hoàng Sa & Trường Sa",
+        "qty": 1,
+        "category": "scrapbook",
+        "price": 100000
+      },
+      {
+        "sku": "LAY-VN-001",
+        "name": "Khung Ảnh Hoa Sen & Cờ Đỏ Sao Vàng Hòa Bình",
+        "qty": 1,
+        "category": "layout",
+        "price": 1500
+      },
+      {
+        "sku": "LAY-VN-003",
+        "name": "Khung Ảnh Trống Đồng Đông Sơn & Cờ Đỏ Tự Hào",
+        "qty": 1,
+        "category": "layout",
+        "price": 1500
+      },
+      {
+        "sku": "STK-006",
+        "name": "Trẻ em rước cờ đỏ sao vàng tung bay",
+        "qty": 1,
+        "category": "sticker",
+        "price": 400
+      },
+      {
+        "sku": "STK-008",
+        "name": "Chim Lạc nón lá cờ đỏ Độc Lập - Tự Do - Hạnh Phúc",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      },
+      {
+        "sku": "STK-011",
+        "name": "Nón lá truyền thống quai đỏ thắm",
+        "qty": 1,
+        "category": "sticker",
+        "price": 300
+      }
+    ],
+    "description": "Mẫu thiết kế trang trọng tôn vinh tình yêu quê hương đất nước và chủ quyền biển đảo thiêng liêng. Điểm xuyết hoa sen, trống đồng Đông Sơn và hình ảnh thế hệ trẻ tiếp nối tinh thần dân tộc.",
+    "canvas_preset": {
+      "bg_color": "#fbf8f2",
+      "items": [
+        {
+          "sku": "LAY-VN-001",
+          "type": "layout",
+          "image": "/static/assets/layouts/lay_vn_001.png",
+          "name": "Khung Hoa Sen",
+          "left": 250,
+          "top": 220,
+          "angle": 0,
+          "scale": 0.8
+        },
+        {
+          "sku": "STK-006",
+          "type": "sticker",
+          "image": "/static/assets/stickers/stk_006.png",
+          "name": "Rước Cờ Đỏ",
+          "left": 120,
+          "top": 110,
+          "angle": -8,
+          "scale": 0.75
+        },
+        {
+          "sku": "STK-008",
+          "type": "sticker",
+          "image": "/static/assets/stickers/stk_008.png",
+          "name": "Chim Lạc",
+          "left": 400,
+          "top": 120,
+          "angle": 10,
+          "scale": 0.75
+        }
+      ]
+    },
+    "bundle_price": 88600
+  },
+  {
+    "id": "insp-002",
+    "title": "Ký Ức Tuổi Thơ & Kỷ Niệm Học Trò (Nostalgic Y2K)",
+    "concept": "Vietnamese Childhood Nostalgia",
+    "subtitle": "Bố cục dễ thương hoài niệm với đồ chơi câu cá nam châm, hộp bánh Danisa và mì Miu Miu",
+    "image": "/static/assets/layouts/insp_002.svg",
+    "theme": "Tuổi Thơ / Gen Z / Bạn Bè",
+    "difficulty": "Dễ làm (10 phút)",
+    "color_palette": [
+      "Vàng Kem",
+      "Hồng Pastel",
+      "Xanh Mint"
+    ],
+    "book_sku": "SCR-001",
+    "layout_skus": [
+      "LAY-001",
+      "LAY-002"
+    ],
+    "sticker_skus": [
+      "STK-001",
+      "STK-002",
+      "STK-004"
+    ],
+    "components": [
+      {
+        "sku": "SCR-001",
+        "name": "Sổ Scrapbook Bìa Cứng Hoàng Sa & Trường Sa",
+        "qty": 1,
+        "category": "scrapbook",
+        "price": 100000
+      },
+      {
+        "sku": "LAY-001",
+        "name": "Khung ảnh Polaroid trái tim đỏ tối giản",
+        "qty": 1,
+        "category": "layout",
+        "price": 1000
+      },
+      {
+        "sku": "LAY-002",
+        "name": "Khung máy ảnh kỹ thuật số Canon Y2K & ngôi sao bạc",
+        "qty": 1,
+        "category": "layout",
+        "price": 1500
+      },
+      {
+        "sku": "STK-001",
+        "name": "Bộ đồ chơi câu cá nam châm tuổi thơ",
+        "qty": 1,
+        "category": "sticker",
+        "price": 300
+      },
+      {
+        "sku": "STK-002",
+        "name": "Hộp bánh Danisa đựng kim chỉ huyền thoại",
+        "qty": 1,
+        "category": "sticker",
+        "price": 300
+      },
+      {
+        "sku": "STK-004",
+        "name": "Gói mì sấy Miu Miu phô mai tuổi thơ",
+        "qty": 1,
+        "category": "sticker",
+        "price": 300
+      }
+    ],
+    "description": "Gợi nhắc những ký ức tuổi thơ tươi đẹp thập niên 2000. Dán ảnh nhóm bạn thân cùng những món đồ chơi và món ăn vặt gắn liền với năm tháng cắp sách tới trường.",
+    "canvas_preset": {
+      "bg_color": "#fdfbf7",
+      "items": [
+        {
+          "sku": "LAY-001",
+          "type": "layout",
+          "image": "/static/assets/layouts/lay_001.png",
+          "name": "Khung Polaroid",
+          "left": 260,
+          "top": 240,
+          "angle": -3,
+          "scale": 0.85
+        },
+        {
+          "sku": "STK-001",
+          "type": "sticker",
+          "image": "/static/assets/stickers/stk_001.png",
+          "name": "Câu Cá",
+          "left": 130,
+          "top": 120,
+          "angle": -12,
+          "scale": 0.8
+        },
+        {
+          "sku": "STK-002",
+          "type": "sticker",
+          "image": "/static/assets/stickers/stk_002.png",
+          "name": "Hộp Danisa",
+          "left": 420,
+          "top": 380,
+          "angle": 8,
+          "scale": 0.8
+        }
+      ]
+    },
+    "bundle_price": 87900
+  },
+  {
+    "id": "insp-003",
+    "title": "Hành Trình Vi Vu Xuyên Việt (Travel Adventure)",
+    "concept": "Vietnam Road Trip & Postcard Journal",
+    "subtitle": "Bố cục nhật ký du lịch bưu chính kèm khung thư gửi các thành phố di sản",
+    "image": "/static/assets/layouts/insp_003.svg",
+    "theme": "Du Lịch / Khám Phá / Vi Vu",
+    "difficulty": "Vừa phải (20 phút)",
+    "color_palette": [
+      "Nâu Cà Phê",
+      "Xanh Biển",
+      "Giấy Bưu Chính"
+    ],
+    "book_sku": "SCR-001",
+    "layout_skus": [
+      "LAY-TXT-001",
+      "LAY-003"
+    ],
+    "sticker_skus": [
+      "STK-012",
+      "STK-013",
+      "STK-014"
+    ],
+    "components": [
+      {
+        "sku": "SCR-001",
+        "name": "Sổ Scrapbook Bìa Cứng Hoàng Sa & Trường Sa",
+        "qty": 1,
+        "category": "scrapbook",
+        "price": 100000
+      },
+      {
+        "sku": "LAY-TXT-001",
+        "name": "Layout giấy thư vintage Hà Nội Không vội được đâu",
+        "qty": 1,
+        "category": "layout",
+        "price": 2000
+      },
+      {
+        "sku": "LAY-003",
+        "name": "Khung giao diện bài đăng Instagram hiện đại",
+        "qty": 1,
+        "category": "layout",
+        "price": 1000
+      },
+      {
+        "sku": "STK-012",
+        "name": "Biểu tượng Hà Nội Cầu Thê Húc & Hoa Sen hồng",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      },
+      {
+        "sku": "STK-013",
+        "name": "Nón lá trên vệt cọ cờ đỏ sao vàng",
+        "qty": 1,
+        "category": "sticker",
+        "price": 300
+      },
+      {
+        "sku": "STK-014",
+        "name": "Bộ quà lưu niệm Nón lá & Trà sữa cờ đỏ sao vàng",
+        "qty": 1,
+        "category": "sticker",
+        "price": 400
+      }
+    ],
+    "description": "Lưu giữ trọn vẹn những điểm dừng chân từ Hà Nội 36 phố phường đến Sài Gòn nhộn nhịp. Thiết kế dạng bưu thiếp gửi trao cảm xúc sau mỗi chuyến đi.",
+    "canvas_preset": {
+      "bg_color": "#e8d8c3",
+      "items": [
+        {
+          "sku": "LAY-TXT-001",
+          "type": "layout",
+          "image": "/static/assets/layouts/lay_txt_001.png",
+          "name": "Thư Hà Nội",
+          "left": 250,
+          "top": 240,
+          "angle": 0,
+          "scale": 0.8
+        },
+        {
+          "sku": "STK-012",
+          "type": "sticker",
+          "image": "/static/assets/stickers/stk_012.png",
+          "name": "Cầu Thê Húc",
+          "left": 120,
+          "top": 100,
+          "angle": -6,
+          "scale": 0.8
+        },
+        {
+          "sku": "STK-014",
+          "type": "sticker",
+          "image": "/static/assets/stickers/stk_014.png",
+          "name": "Nón Lá Trà Sữa",
+          "left": 410,
+          "top": 400,
+          "angle": 8,
+          "scale": 0.8
+        }
+      ]
+    },
+    "bundle_price": 88600
+  },
+  {
+    "id": "insp-004",
+    "title": "Kỷ Niệm Tình Yêu Ngọt Ngào (Sweet Couple Love)",
+    "concept": "Romantic Couple Scrapbook",
+    "subtitle": "Bố cục lãng mạn dành cho cặp đôi với khung len đan ấm áp và trái tim đỏ",
+    "image": "/static/assets/layouts/insp_004.svg",
+    "theme": "Tình Yêu / Lãng Mạn / Kỷ Niệm",
+    "difficulty": "Dễ làm (15 phút)",
+    "color_palette": [
+      "Hồng Pastel",
+      "Đỏ Rượu",
+      "Trắng Kem"
+    ],
+    "book_sku": "SCR-001",
+    "layout_skus": [
+      "LAY-001",
+      "LAY-004"
+    ],
+    "sticker_skus": [
+      "STK-003",
+      "STK-007"
+    ],
+    "components": [
+      {
+        "sku": "SCR-001",
+        "name": "Sổ Scrapbook Bìa Cứng Hoàng Sa & Trường Sa",
+        "qty": 1,
+        "category": "scrapbook",
+        "price": 100000
+      },
+      {
+        "sku": "LAY-001",
+        "name": "Khung ảnh Polaroid trái tim đỏ tối giản",
+        "qty": 2,
+        "category": "layout",
+        "price": 1000
+      },
+      {
+        "sku": "LAY-004",
+        "name": "Khung ảnh len đan ấm áp & ruy băng nơ",
+        "qty": 1,
+        "category": "layout",
+        "price": 1500
+      },
+      {
+        "sku": "STK-003",
+        "name": "Trò chơi Đông Tây Nam Bắc xếp giấy",
+        "qty": 1,
+        "category": "sticker",
+        "price": 300
+      },
+      {
+        "sku": "STK-007",
+        "name": "Nét chữ uốn Đây là Việt Nam cầm cờ Tổ quốc",
+        "qty": 1,
+        "category": "sticker",
+        "price": 400
+      }
+    ],
+    "description": "Lưu giữ từng mốc thời gian đáng nhớ trong tình yêu: buổi hẹn đầu tiên, những món quà kỷ niệm và chuyến du lịch cùng nhau.",
+    "canvas_preset": {
+      "bg_color": "#fdf2f8",
+      "items": [
+        {
+          "sku": "LAY-001",
+          "type": "layout",
+          "image": "/static/assets/layouts/lay_001.png",
+          "name": "Khung Polaroid",
+          "left": 180,
+          "top": 180,
+          "angle": -5,
+          "scale": 0.8
+        },
+        {
+          "sku": "LAY-004",
+          "type": "layout",
+          "image": "/static/assets/layouts/lay_004.png",
+          "name": "Khung Len",
+          "left": 360,
+          "top": 280,
+          "angle": 4,
+          "scale": 0.8
+        }
+      ]
+    },
+    "bundle_price": 88600
+  },
+  {
+    "id": "insp-005",
+    "title": "Thanh Xuân Rực Rỡ Kỷ Yếu 2026 (Graduation Diary)",
+    "concept": "Graduation & Youth Scrapbook",
+    "subtitle": "Bố cục lưu bút thanh xuân ghi lại chữ ký, lời chúc và ảnh kỷ yếu bạn bè",
+    "image": "/static/assets/layouts/insp_005.svg",
+    "theme": "Kỷ Yếu / Tốt Nghiệp / Thanh Xuân",
+    "difficulty": "Dễ làm (15 phút)",
+    "color_palette": [
+      "Vàng Hổ Phách",
+      "Xanh Rêu",
+      "Trắng Sữa"
+    ],
+    "book_sku": "SCR-001",
+    "layout_skus": [
+      "LAY-VN-002",
+      "LAY-002"
+    ],
+    "sticker_skus": [
+      "STK-009",
+      "STK-010"
+    ],
+    "components": [
+      {
+        "sku": "SCR-001",
+        "name": "Sổ Scrapbook Bìa Cứng Hoàng Sa & Trường Sa",
+        "qty": 1,
+        "category": "scrapbook",
+        "price": 100000
+      },
+      {
+        "sku": "LAY-VN-002",
+        "name": "Khung Viền Kỷ Hà Hoàng Gia Đông Dương Vàng Kim",
+        "qty": 1,
+        "category": "layout",
+        "price": 1000
+      },
+      {
+        "sku": "LAY-002",
+        "name": "Khung máy ảnh kỹ thuật số Canon Y2K & ngôi sao bạc",
+        "qty": 1,
+        "category": "layout",
+        "price": 1500
+      },
+      {
+        "sku": "STK-009",
+        "name": "Nhãn chữ 3D VIỆT NAM khối nổi nón lá bông lúa",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      },
+      {
+        "sku": "STK-010",
+        "name": "Em bé chibi đội nón lá vẫy cờ đỏ sao vàng",
+        "qty": 1,
+        "category": "sticker",
+        "price": 400
+      }
+    ],
+    "description": "Món quà lưu niệm ý nghĩa cho mùa tốt nghiệp và chia tay mái trường. Nơi giữ lại những dòng lưu bút xúc động và nụ cười rạng rỡ của bạn bè.",
+    "canvas_preset": {
+      "bg_color": "#fcfaf6",
+      "items": [
+        {
+          "sku": "LAY-VN-002",
+          "type": "layout",
+          "image": "/static/assets/layouts/lay_vn_002.png",
+          "name": "Khung Kỷ Hà",
+          "left": 250,
+          "top": 230,
+          "angle": 0,
+          "scale": 0.85
+        },
+        {
+          "sku": "STK-009",
+          "type": "sticker",
+          "image": "/static/assets/stickers/stk_009.png",
+          "name": "Chữ 3D VN",
+          "left": 130,
+          "top": 120,
+          "angle": -8,
+          "scale": 0.8
+        }
+      ]
+    },
+    "bundle_price": 87900
+  },
+  {
+    "id": "insp-006",
+    "title": "Di Sản Hoàng Gia & Văn Hóa Đông Dương (Indochine Heritage)",
+    "concept": "Indochine & Royal Heritage Scrapbook",
+    "subtitle": "Bố cục nghệ thuật văn hóa Đông Sơn và họa tiết kỷ hà hoàng gia sang trọng",
+    "image": "/static/assets/layouts/insp_006.svg",
+    "theme": "Di Sản / Văn Hóa / Cổ Phong",
+    "difficulty": "Dễ làm (15 phút)",
+    "color_palette": [
+      "Vàng Hoàng Gia",
+      "Đỏ Thắm",
+      "Nâu Gỗ"
+    ],
+    "book_sku": "SCR-001",
+    "layout_skus": [
+      "LAY-VN-002",
+      "LAY-VN-004"
+    ],
+    "sticker_skus": [
+      "STK-005",
+      "STK-008"
+    ],
+    "components": [
+      {
+        "sku": "SCR-001",
+        "name": "Sổ Scrapbook Bìa Cứng Hoàng Sa & Trường Sa",
+        "qty": 1,
+        "category": "scrapbook",
+        "price": 100000
+      },
+      {
+        "sku": "LAY-VN-002",
+        "name": "Khung Viền Kỷ Hà Hoàng Gia Đông Dương Vàng Kim",
+        "qty": 1,
+        "category": "layout",
+        "price": 1000
+      },
+      {
+        "sku": "LAY-VN-004",
+        "name": "Khung Ảnh Dây Cờ Tổ Quốc & Hào Khí Rồng Thiêng",
+        "qty": 1,
+        "category": "layout",
+        "price": 2000
+      },
+      {
+        "sku": "STK-005",
+        "name": "Chim Hạc tiên bay phong cách cổ phong dát kim",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      },
+      {
+        "sku": "STK-008",
+        "name": "Chim Lạc nón lá cờ đỏ Độc Lập - Tự Do - Hạnh Phúc",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      }
+    ],
+    "description": "Kết hợp hoa văn mỹ thuật truyền thống và họa tiết hoàng gia tinh xảo. Phù hợp lưu giữ các chuyến tham quan di tích lịch sử và văn hóa dân tộc.",
+    "canvas_preset": {
+      "bg_color": "#f5f0e6",
+      "items": [
+        {
+          "sku": "LAY-VN-004",
+          "type": "layout",
+          "image": "/static/assets/layouts/lay_vn_004.png",
+          "name": "Khung Rồng Thiêng",
+          "left": 250,
+          "top": 240,
+          "angle": 0,
+          "scale": 0.8
+        },
+        {
+          "sku": "STK-005",
+          "type": "sticker",
+          "image": "/static/assets/stickers/stk_005.png",
+          "name": "Hạc Tiên",
+          "left": 130,
+          "top": 110,
+          "angle": -10,
+          "scale": 0.8
+        }
+      ]
+    },
+    "bundle_price": 88400
+  }
+]

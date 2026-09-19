@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}Giỏ Hàng Của Bạn - MEMOUR Studio | Every memory has a story{% endblock %}
+
+{% block content %}
+<div class="py-12 md:py-16 bg-[#fdfbf7]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="mb-8">
+      <div class="inline-flex items-center gap-2 bg-amber-300 text-stone-950 px-3.5 py-1 rounded-full text-xs font-black uppercase mb-2 border border-black shadow-neo">
+        <span>✦ THANH TOÁN &amp; ĐƠN HÀNG</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-heading font-black text-stone-900">
+        Giỏ Hàng &amp; Đặt Hàng Thủ Công
+      </h1>
+      <p class="text-xs sm:text-sm text-stone-600 font-medium mt-1">
+        Kiểm tra danh mục linh kiện, áp dụng mã voucher và điền địa chỉ nhận hàng.
+      </p>
+    </div>
+
+    <!-- Empty Cart Box -->
+    <div id="empty-cart-view" class="hidden bg-white border-3 border-black rounded-3xl p-12 text-center shadow-neo-xl max-w-lg mx-auto space-y-4">
+      <span class="text-amber-800 font-mono font-black text-3xl block font-mono">✦</span>
+      <h2 class="text-2xl font-heading font-black text-stone-900">Giỏ hàng của bạn đang trống</h2>
+      <p class="text-xs text-stone-600">Bạn chưa thêm phụ kiện hoặc thiết kế nào vào giỏ.</p>
+      <div class="pt-2 flex justify-center gap-3">
+        <a href="/products" class="bg-amber-300 hover:bg-amber-400 text-stone-950 font-heading font-black text-xs px-6 py-3 rounded-xl border-2 border-black shadow-neo transition-all">
+          Khám Phá Phụ Kiện
+        </a>
+        <a href="/studio" class="bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-xs px-6 py-3 rounded-xl border-2 border-black shadow-neo transition-all">
+          Vào Xưởng Thiết Kế
+        </a>
+      </div>
+    </div>
+
+    <!-- Cart Layout Grid (Items + Checkout Form) -->
+    <div id="cart-content-view" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column: Items List -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-xl space-y-6">
+          <div class="flex items-center justify-between pb-4 border-b border-stone-200">
+            <h2 class="text-lg font-heading font-black text-stone-900">Danh Mục Sản Phẩm (<span id="cart-items-count">0</span>)</h2>
+            <button onclick="clearAllCart()" class="text-xs font-bold text-rose-800 hover:underline">Xóa tất cả</button>
+          </div>
+
+          <!-- Dynamic Items Container -->
+          <div id="cart-items-container" class="space-y-4">
+            <!-- Items rendered via static/js/cart.js -->
+          </div>
+        </div>
+
+        <!-- Voucher Code Box -->
+        <div class="bg-white border-2 border-black rounded-3xl p-6 shadow-neo space-y-3">
+          <label class="block text-xs font-heading font-black text-stone-900 uppercase">Mã Khuyến Mãi / Voucher Giảm Giá:</label>
+          <div class="flex items-center gap-2">
+            <input type="text" id="voucher-input" placeholder="Nhập GENZ10 hoặc SCRAPCRAFT15" class="flex-grow bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-mono font-bold uppercase focus:outline-none focus:border-rose-800">
+            <button onclick="applyVoucherCode()" class="bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-xs px-5 py-2.5 rounded-xl border-2 border-black shadow-neo transition-all">
+              Áp Dụng
+            </button>
+          </div>
+          <p id="voucher-msg" class="text-xs font-bold text-amber-900 hidden"></p>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Checkout Form & Summary -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-xl space-y-6">
+          <h2 class="text-lg font-heading font-black text-stone-900 pb-3 border-b border-stone-200">Thông Tin Nhận Hàng</h2>
+
+          <form id="checkout-form" onsubmit="submitCustomerOrder(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-black text-stone-800 uppercase mb-1">Họ &amp; Tên Người Nhận *</label>
+              <input type="text" id="order-name" required placeholder="Nguyễn Văn A" class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-rose-800">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-stone-800 uppercase mb-1">Số Điện Thoại / Zalo *</label>
+              <input type="tel" id="order-phone" required placeholder="0988 xxx xxx" class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-rose-800">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-stone-800 uppercase mb-1">Địa Chỉ Nhận Hàng Chi Tiết *</label>
+              <input type="text" id="order-address" required placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/TP" class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-rose-800">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-stone-800 uppercase mb-1">Ghi Chú Đơn Hàng (Tùy chọn)</label>
+              <textarea id="order-note" rows="2" placeholder="VD: Gói quà kèm nơ, giao giờ hành chính..." class="w-full bg-stone-50 border-2 border-black rounded-xl px-4 py-2.5 text-xs font-semibold focus:outline-none focus:border-rose-800"></textarea>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="border-t border-stone-200 pt-4 space-y-2 text-xs">
+              <div class="flex justify-between text-stone-600">
+                <span>Tạm tính:</span>
+                <span id="summary-subtotal" class="font-bold text-stone-900">0 đ</span>
+              </div>
+              <div class="flex justify-between text-stone-600">
+                <span>Giảm giá voucher:</span>
+                <span id="summary-discount" class="font-bold text-rose-800">-0 đ</span>
+              </div>
+              <div class="flex justify-between text-stone-600">
+                <span>Phí vận chuyển:</span>
+                <span id="summary-shipping" class="font-bold text-stone-900">30.000 đ</span>
+              </div>
+              <div class="flex justify-between text-base font-heading font-black text-stone-900 border-t border-stone-300 pt-2">
+                <span>Tổng thanh toán:</span>
+                <span id="summary-final" class="text-rose-800">0 đ</span>
+              </div>
+            </div>
+
+            <button type="submit" id="btn-place-order" class="w-full bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-sm py-4 rounded-2xl border-2 border-black shadow-neo shadow-neo-hover transition-all text-center flex items-center justify-center gap-2">
+              <span>Xác Nhận Đặt Hàng</span>
+              <span class="font-mono">→</span>
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}

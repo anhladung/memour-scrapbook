@@ -78,7 +78,7 @@
         <div>
           <!-- Thumbnail Box -->
           <div class="w-full aspect-square bg-[#fbf8f2] relative border-b-2 border-black p-4 flex items-center justify-center overflow-hidden">
-            <img src="{{ item.image }}" alt="{{ item.name }}" class="max-h-40 object-contain group-hover:scale-105 transition-transform duration-300">
+            <img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" class="max-h-40 object-contain group-hover:scale-105 transition-transform duration-300">
             
             <span class="absolute top-3 left-3 bg-stone-900 text-white text-[10px] font-mono font-black px-2 py-0.5 rounded border border-black shadow-sm">
               {{ item.sku }}

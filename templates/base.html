@@ -248,7 +248,6 @@
   <!-- Main Scripts -->
   <script src="/static/js/main.js"></script>
   {% if request.path == '/cart' or request.path.startswith('/inspiration') %}
-  <script src="/static/js/cart.js"></script>
   {% endif %}
   {% block extra_scripts %}{% endblock %}
   <script src="/static/js/article-lightbox.js" defer></script>

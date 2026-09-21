@@ -14,6 +14,7 @@ import json
 import uuid
 import datetime
 import random
+from functools import lru_cache
 from flask import Flask, render_template, request, jsonify, redirect, url_for, Response, send_from_directory
 from config import Config, DATA_DIR
 
@@ -43,12 +44,15 @@ def save_json_data(filename, data):
     except Exception as e:
         print(f"Notice: Storage read-only on serverless ({e})")
 
+@lru_cache(maxsize=1)
 def get_products():
     return load_json_data('products.json')
 
+@lru_cache(maxsize=1)
 def get_inspirations():
     return load_json_data('inspirations.json')
 
+@lru_cache(maxsize=1)
 def get_blogs():
     blogs = load_json_data('blogs.json') + load_json_data('guides_extra.json')
     content_dir = os.path.join(DATA_DIR, 'guide_content')
@@ -64,6 +68,7 @@ def get_blogs():
                 blog['content'] = article.read()
     return sorted(blogs, key=lambda blog: blog.get('published_date', ''), reverse=True)
 
+@lru_cache(maxsize=1)
 def get_company_info():
     return load_json_data('company_info.json')
 

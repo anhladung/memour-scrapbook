@@ -4,7 +4,7 @@
 {% block meta_desc %}Khám phá sổ scrapbook thủ công, sticker và khung ảnh tại MEMOUR Studio. Tự thiết kế món quà lưu giữ kỷ niệm theo câu chuyện của bạn.{% endblock %}
 
 {% block extra_head %}
-<link rel="preload" as="image" href="/static/assets/banners/hero_banner_01.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="/static/assets/banners/hero_banner_01.webp" fetchpriority="high">
 {% endblock %}
 
 {% block content %}
@@ -18,10 +18,10 @@
       <div id="home-hero-carousel-track" class="carousel-slider-track flex w-full h-full absolute inset-0 transition-transform duration-700 ease-out will-change-transform" style="transform: translateX(0%);" data-current-index="0">
         
         {% for bg_img in [
-          '/static/assets/banners/hero_banner_01.jpg',
-          '/static/assets/banners/hero_banner_02.jpg',
-          '/static/assets/banners/hero_banner_03.jpg',
-          '/static/assets/banners/hero_banner_04.jpg'
+          '/static/assets/banners/hero_banner_01.webp',
+          '/static/assets/banners/hero_banner_02.webp',
+          '/static/assets/banners/hero_banner_03.webp',
+          '/static/assets/banners/hero_banner_04.webp'
         ] %}
         <div class="carousel-slide-item min-w-full h-full flex-shrink-0 relative overflow-hidden" data-slide-index="{{ loop.index0 }}">
           <!-- Full-Bleed Background Image -->

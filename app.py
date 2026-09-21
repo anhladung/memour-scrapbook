@@ -69,6 +69,7 @@ def get_blogs():
     return sorted(blogs, key=lambda blog: blog.get('published_date', ''), reverse=True)
 
 @lru_cache(maxsize=1)
+@lru_cache(maxsize=1)
 def get_company_info():
     return load_json_data('company_info.json')
 
@@ -865,6 +866,7 @@ def api_save_sticker_batch():
         
         with open('data/products.json', 'w', encoding='utf-8') as f:
             json.dump(updated_db, f, ensure_ascii=False, indent=2)
+        get_products.cache_clear()
             
         return jsonify({
             'success': True,
@@ -906,6 +908,7 @@ def api_delete_sticker(sku):
     if len(updated) < initial_len:
         with open('data/products.json', 'w', encoding='utf-8') as f:
             json.dump(updated, f, ensure_ascii=False, indent=2)
+        get_products.cache_clear()
         return jsonify({'success': True, 'message': f'Đã xóa sticker {sku}'})
     return jsonify({'success': False, 'message': 'Không tìm thấy sticker'}), 404
 

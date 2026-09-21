@@ -740,8 +740,8 @@ function switchStudioView(mode) {
   if (mode === '3d') {
     if (mode2D) mode2D.classList.add('hidden');
     if (mode3D) mode3D.classList.remove('hidden');
-    if (btn2D) btn2D.className = 'px-5 py-2 rounded-xl font-heading font-black text-xs border-2 border-black bg-white text-stone-900 hover:bg-stone-100 transition-all';
-    if (btn3D) btn3D.className = 'px-5 py-2 rounded-xl font-heading font-black text-xs border-2 border-black bg-rose-800 text-white shadow-neo transition-all flex items-center gap-1.5';
+    if (btn2D) btn2D.className = 'flex-1 sm:flex-none px-3 sm:px-5 py-1.5 rounded-xl font-heading font-black text-[11px] sm:text-xs border-2 border-black bg-white text-stone-900 hover:bg-stone-100 transition-all';
+    if (btn3D) btn3D.className = 'flex-1 sm:flex-none px-3 sm:px-5 py-1.5 rounded-xl font-heading font-black text-[11px] sm:text-xs border-2 border-black bg-rose-800 text-white shadow-neo transition-all flex items-center justify-center gap-1.5';
 
     if (!is3dInitialized) {
       setTimeout(init3DViewer, 50);
@@ -752,7 +752,7 @@ function switchStudioView(mode) {
   } else {
     if (mode2D) mode2D.classList.remove('hidden');
     if (mode3D) mode3D.classList.add('hidden');
-    if (btn2D) btn2D.className = 'px-5 py-2 rounded-xl font-heading font-black text-xs border-2 border-black bg-rose-800 text-white shadow-neo transition-all';
-    if (btn3D) btn3D.className = 'px-5 py-2 rounded-xl font-heading font-black text-xs border-2 border-black bg-white text-stone-900 hover:bg-stone-100 transition-all flex items-center gap-1.5';
+    if (btn2D) btn2D.className = 'flex-1 sm:flex-none px-3 sm:px-5 py-1.5 rounded-xl font-heading font-black text-[11px] sm:text-xs border-2 border-black bg-rose-800 text-white shadow-neo transition-all';
+    if (btn3D) btn3D.className = 'flex-1 sm:flex-none px-3 sm:px-5 py-1.5 rounded-xl font-heading font-black text-[11px] sm:text-xs border-2 border-black bg-white text-stone-900 hover:bg-amber-100 transition-all flex items-center justify-center gap-1.5';
   }
 }

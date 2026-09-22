@@ -62,144 +62,385 @@
 {% endblock %}
 
 {% block content %}
-<article class="py-12 bg-[#fdfbf7]">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- ================= READING PROGRESS BAR ================= -->
+<div class="fixed top-20 left-0 w-full h-1.5 bg-stone-200/80 z-30 pointer-events-none" aria-hidden="true">
+  <div id="reading-progress-bar" class="h-full bg-gradient-to-r from-amber-400 via-rose-700 to-amber-500 w-0 transition-all duration-75 ease-out shadow-sm"></div>
+</div>
+
+<article class="py-8 sm:py-12 bg-[#fdfbf7] min-h-screen">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Breadcrumbs -->
-    <nav class="flex items-center gap-2 text-xs font-bold text-stone-500 mb-6">
-      <a href="/" class="hover:text-rose-800">Trang chủ</a>
-      <span>/</span>
-      <a href="/guide" class="hover:text-rose-800">Cẩm nang</a>
-      <span>/</span>
-      <span class="text-stone-900">{{ blog.category }}</span>
+    <nav aria-label="Breadcrumb" class="mb-6">
+      <ol class="flex items-center flex-wrap gap-2 text-xs font-bold text-stone-500">
+        <li>
+          <a href="/" class="hover:text-rose-800 transition-colors flex items-center gap-1">
+            <span>Trang chủ</span>
+          </a>
+        </li>
+        <li class="text-stone-400" aria-hidden="true">&gt;</li>
+        <li>
+          <a href="/guide" class="hover:text-rose-800 transition-colors">Cẩm nang</a>
+        </li>
+        <li class="text-stone-400" aria-hidden="true">&gt;</li>
+        <li class="text-stone-900 font-extrabold truncate max-w-[260px] sm:max-w-md" aria-current="page">
+          {{ blog.title }}
+        </li>
+      </ol>
     </nav>
 
     <!-- Post Header Card -->
-    <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-10 shadow-neo-xl space-y-6">
-      
-      <div>
-        <div class="flex items-center gap-2 text-xs font-bold text-amber-800 mb-3">
-          <span class="bg-amber-300 text-stone-950 px-3 py-0.5 rounded-full border border-black font-black uppercase">{{ blog.category }}</span>
-          <span>•</span>
-          <span>{{ blog.published_date }}</span>
-          <span>•</span>
-          <span>{{ blog.read_time }}</span>
+    <header class="bg-white border-3 border-black rounded-3xl p-6 sm:p-10 md:p-12 shadow-neo-xl mb-8 sm:mb-12 relative overflow-hidden">
+      <div class="absolute -top-12 -right-12 w-48 h-48 bg-amber-200/40 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-rose-200/30 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="relative z-10 space-y-4 sm:space-y-6">
+        <div class="flex flex-wrap items-center gap-2.5">
+          <span class="inline-flex items-center gap-1.5 bg-amber-300 text-stone-950 px-3.5 py-1 rounded-full border-2 border-black font-heading font-black text-xs shadow-neo uppercase">
+            <span>✦ {{ blog.category }}</span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-stone-100 text-stone-700 px-3 py-1 rounded-full border border-stone-300 font-bold text-xs">
+            <span>⏱️ {{ blog.read_time }}</span>
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-rose-50 text-rose-900 px-3 py-1 rounded-full border border-rose-200 font-bold text-xs">
+            <span>📅 {{ blog.published_date }}</span>
+          </span>
         </div>
 
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-stone-900 leading-tight">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-black text-stone-900 leading-tight tracking-tight">
           {{ blog.title }}
         </h1>
         
-        <p class="text-sm sm:text-base text-stone-600 font-medium mt-3 leading-relaxed">
+        <p class="text-sm sm:text-base md:text-lg text-stone-600 font-medium leading-relaxed max-w-4xl">
           {{ blog.excerpt }}
         </p>
-      </div>
 
-      <!-- Hero Image -->
-      <div class="w-full aspect-video bg-stone-100 rounded-2xl overflow-hidden border-2 border-black relative">
-        <button type="button" class="article-image-trigger block w-full h-full cursor-zoom-in" aria-label="Xem ảnh đầy đủ: {{ blog.title }}">
-          <img src="{{ blog.cover_image }}" alt="{{ blog.title }}" width="1536" height="1024" class="article-hero-image w-full h-full object-cover">
-        </button>
+        <!-- Hero Cover Image -->
+        <div class="w-full aspect-[21/9] sm:aspect-[2.4/1] bg-gradient-to-br from-amber-50 to-stone-100 rounded-2xl overflow-hidden border-2 border-black shadow-neo relative group">
+          <button type="button" class="article-image-trigger block w-full h-full cursor-zoom-in" aria-label="Xem ảnh đầy đủ: {{ blog.title }}">
+            <img src="{{ blog.cover_image }}" alt="{{ blog.title }} - MEMOUR Studio" width="1536" height="1024" class="article-hero-image w-full h-full object-cover filter brightness-[0.98] group-hover:scale-105 transition-transform duration-700">
+          </button>
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] font-mono font-bold text-white/90 drop-shadow">
+            <span>MEMOUR Studio • Cẩm Nang Sổ Scrapbook &amp; Kỷ Niệm Sáng Tạo</span>
+          </div>
+        </div>
       </div>
+    </header>
 
-      <!-- Post Content Body -->
-      {% if blog.quick_answer %}
-      <aside class="bg-amber-50 border-2 border-black rounded-2xl p-5 sm:p-6 shadow-neo" aria-label="Câu trả lời nhanh">
-        <p class="text-xs font-black uppercase tracking-wider text-rose-800 mb-2">Câu trả lời nhanh</p>
-        <p class="text-sm sm:text-base font-semibold leading-relaxed text-stone-800">{{ blog.quick_answer }}</p>
+    <!-- Main Grid: Left TOC + Right Content -->
+    <div class="lg:grid lg:grid-cols-12 lg:gap-10 items-start">
+      
+      <!-- Sticky Desktop TOC -->
+      <aside class="hidden lg:block lg:col-span-4 sticky top-28 z-20">
+        <div class="bg-white border-3 border-black rounded-3xl p-6 shadow-neo-lg space-y-4 max-h-[calc(100vh-8.5rem)] flex flex-col">
+          <div class="flex items-center justify-between pb-3 border-b-2 border-black/10">
+            <h2 class="font-heading font-black text-base text-stone-900 flex items-center gap-2">
+              <span>📑 Mục Lục Bài Viết</span>
+            </h2>
+            <span class="text-[10px] font-mono font-bold bg-amber-100 text-amber-950 px-2 py-0.5 rounded border border-amber-300">
+              Tự động
+            </span>
+          </div>
+          
+          <nav id="desktop-toc" class="space-y-1 text-xs font-semibold text-stone-600 overflow-y-auto pr-1 custom-scrollbar" aria-label="Mục lục bài viết">
+            <!-- Dynamically populated from H2/H3 by JavaScript -->
+          </nav>
+        </div>
       </aside>
-      {% endif %}
 
-      <div class="seo-article-body text-stone-800 text-sm sm:text-base leading-relaxed pt-4 border-t border-stone-200">
-        {{ blog.content | safe }}
-      </div>
+      <!-- Article Main Content -->
+      <div class="lg:col-span-8">
+        
+        <!-- Mobile Accordion TOC -->
+        <nav id="mobile-toc" class="lg:hidden mb-8 bg-white border-3 border-black rounded-2xl p-4 shadow-neo">
+          <button id="mobile-toc-toggle" type="button" class="w-full flex items-center justify-between font-heading font-black text-sm text-stone-900 focus:outline-none" aria-expanded="false" aria-controls="mobile-toc-content">
+            <span class="flex items-center gap-2">
+              <span>📑 Mục Lục Bài Viết (Nhấn để xem)</span>
+            </span>
+            <svg class="toc-arrow w-5 h-5 text-stone-900 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="mobile-toc-content" class="mt-3 pt-3 border-t border-stone-200 hidden space-y-1 text-xs max-h-80 overflow-y-auto pr-1">
+            <!-- Dynamically populated from H2/H3 by JavaScript -->
+          </div>
+        </nav>
 
-      {% if blog.faqs %}
-      <section class="border-t border-stone-200 pt-7" aria-labelledby="faq-title">
-        <h2 id="faq-title" class="font-heading font-black text-2xl text-stone-900 mb-4">Câu hỏi thường gặp</h2>
-        <div class="space-y-3">
-          {% for faq in blog.faqs %}
-          <details class="group bg-stone-50 border-2 border-stone-300 rounded-2xl p-4">
-            <summary class="font-bold text-stone-900 cursor-pointer">{{ faq.question }}</summary>
-            <p class="mt-3 text-sm leading-relaxed text-stone-700">{{ faq.answer }}</p>
-          </details>
-          {% endfor %}
+        <!-- Article Body Card -->
+        <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-10 md:p-12 shadow-neo-xl">
+          
+          <!-- Quick Answer Box -->
+          {% if blog.quick_answer %}
+          <aside class="bg-amber-50 border-3 border-black rounded-2xl p-6 shadow-neo mb-8 relative overflow-hidden" aria-label="Câu trả lời nhanh">
+            <div class="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-rose-800 mb-2">
+              <span class="inline-block w-2.5 h-2.5 rounded-full bg-rose-600 animate-pulse"></span>
+              <span>Định Nghĩa Nhanh (Quick Answer)</span>
+            </div>
+            <p class="text-base sm:text-lg font-bold leading-relaxed text-stone-900">
+              {{ blog.quick_answer }}
+            </p>
+          </aside>
+          {% endif %}
+
+          <div id="article-content" class="seo-article-body text-stone-800 text-base sm:text-[17px] leading-relaxed font-sans space-y-6">
+            {{ blog.content | safe }}
+          </div>
+
+          <!-- FAQ Accordions -->
+          {% if blog.faqs %}
+          <section class="border-t-2 border-black/15 pt-8 mt-10" aria-labelledby="faq-title">
+            <h2 id="faq-title" class="font-heading font-black text-2xl sm:text-3xl text-stone-900 mb-6 flex items-center gap-2">
+              <span>❓ Câu Hỏi Thường Gặp (FAQs)</span>
+            </h2>
+            <div class="space-y-4">
+              {% for faq in blog.faqs %}
+              <details class="group bg-stone-50 hover:bg-amber-50/60 transition-colors border-2 border-black rounded-2xl p-5 shadow-neo">
+                <summary class="font-heading font-black text-base text-stone-900 cursor-pointer list-none flex items-center justify-between">
+                  <span>{{ faq.question }}</span>
+                  <span class="text-rose-800 font-mono text-xl transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p class="mt-4 text-sm sm:text-base leading-relaxed text-stone-700 font-medium border-t border-stone-200 pt-3">
+                  {{ faq.answer }}
+                </p>
+              </details>
+              {% endfor %}
+            </div>
+          </section>
+          {% endif %}
+
+          <!-- Author Box -->
+          <div class="border-t-2 border-black/15 pt-6 mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-stone-600">
+            <div>
+              <p><strong class="text-stone-900 font-bold">Biên soạn bởi:</strong> {{ blog.author }}</p>
+              <p class="mt-0.5 text-stone-500">Đăng ngày {{ blog.published_date }}{% if blog.updated_date %} · Cập nhật ngày {{ blog.updated_date }}{% endif %}</p>
+            </div>
+            <button onclick="copyArticleLink()" type="button" class="p-2.5 bg-amber-300 hover:bg-amber-400 border-2 border-black rounded-xl shadow-sm transition-all flex items-center gap-1.5 text-xs font-heading font-black text-stone-950">
+              <svg class="w-4 h-4 text-stone-950" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <span>Sao chép link</span>
+            </button>
+          </div>
+
+          <!-- Tags & CTA -->
+          <div class="border-t border-stone-200 pt-6 mt-6 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="text-xs font-black text-stone-900 uppercase">Tags:</span>
+              {% for tag in blog.tags %}
+              <a href="/guide?tag={{ tag }}" class="text-xs bg-stone-100 hover:bg-rose-100 text-stone-800 hover:text-rose-800 px-3 py-1 rounded-lg border border-stone-300 transition-colors font-bold">
+                #{{ tag }}
+              </a>
+              {% endfor %}
+            </div>
+
+            <a href="/studio" class="bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-xs px-5 py-2.5 rounded-xl border border-black shadow-sm transition-all flex items-center gap-2">
+              <span>Thử Nghiệm Trong Xưởng Thiết Kế</span>
+              <span class="font-mono">→</span>
+            </a>
+          </div>
+
         </div>
-      </section>
-      {% endif %}
 
-      <div class="border-t border-stone-200 pt-5 text-xs text-stone-500 leading-relaxed">
-        <p><strong class="text-stone-800">Biên soạn bởi {{ blog.author }}</strong> — đội ngũ thực hành thiết kế và hoàn thiện scrapbook thủ công.</p>
-        <p class="mt-1">Đăng ngày {{ blog.published_date }}{% if blog.updated_date %} · Cập nhật ngày {{ blog.updated_date }}{% endif %}</p>
-      </div>
-
-      <!-- Tags & Share -->
-      <div class="border-t border-stone-200 pt-6 flex flex-wrap items-center justify-between gap-4">
-        <div class="flex flex-wrap items-center gap-1.5">
-          <span class="text-xs font-black text-stone-900 uppercase">Tags:</span>
-          {% for tag in blog.tags %}
-          <a href="/guide?tag={{ tag }}" class="text-xs bg-stone-100 hover:bg-rose-100 text-stone-800 hover:text-rose-800 px-3 py-1 rounded-lg border border-stone-300 transition-colors font-bold">
-            #{{ tag }}
-          </a>
-          {% endfor %}
+        <!-- Related Products Box -->
+        {% if related_products %}
+        <div class="mt-10 bg-amber-50 border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-lg">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-lg">✂️</span>
+            <h3 class="font-heading font-black text-lg text-stone-900">Vật Liệu &amp; Dụng Cụ Gợi Ý Trong Bài Viết</h3>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {% for rel in related_products %}
+            <div class="bg-white border-2 border-black rounded-2xl p-4 flex items-center gap-3 shadow-sm hover:shadow-neo transition-all">
+              <img src="{{ rel.image }}" alt="{{ rel.name }}" loading="lazy" class="w-14 h-14 object-contain flex-shrink-0 bg-stone-50 rounded-xl p-1 border border-stone-200">
+              <div class="overflow-hidden">
+                <span class="text-[10px] font-mono font-black text-rose-800">{{ rel.sku }}</span>
+                <h4 class="font-bold text-xs text-stone-900 truncate">{{ rel.name }}</h4>
+                <span class="text-xs font-black text-stone-800">{{ rel.price|format_vnd }}</span>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
         </div>
+        {% endif %}
 
-        <a href="/studio" class="bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-xs px-5 py-2.5 rounded-xl border border-black shadow-sm transition-all flex items-center gap-2">
-          <span>Thử Nghiệm Trong Xưởng</span>
-          <span class="font-mono">→</span>
-        </a>
+        <!-- Related Guides -->
+        {% if related_blogs %}
+        <section class="mt-12 space-y-6" aria-labelledby="related-guides-title">
+          <div class="flex items-center justify-between">
+            <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-300 border-2 border-black px-4 py-1.5 rounded-full text-xs font-heading font-black uppercase text-stone-950 shadow-neo">
+              <span>✦ BÀI VIẾT LIÊN QUAN ✦</span>
+            </div>
+            <a href="/guide" class="text-xs font-black text-rose-800 hover:underline">Xem tất cả cẩm nang →</a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {% for rel_b in related_blogs %}
+            <article class="bg-white border-3 border-black rounded-3xl p-5 shadow-neo hover:shadow-neo-lg hover:-translate-y-1 transition-all flex flex-col justify-between group">
+              <div>
+                <div class="w-full aspect-[16/10] bg-stone-100 rounded-2xl overflow-hidden border-2 border-black mb-4 relative">
+                  <img src="{{ rel_b.cover_image or '/static/assets/banners/hero_banner_01.jpg' }}" alt="{{ rel_b.title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <span class="bg-amber-100 text-amber-950 text-[10px] font-heading font-black px-2.5 py-0.5 rounded-full border border-amber-300 uppercase">
+                  {{ rel_b.category }}
+                </span>
+                <h3 class="font-heading font-black text-sm text-stone-900 mt-2 mb-2 line-clamp-2 group-hover:text-rose-800 transition-colors">
+                  <a href="{{ rel_b.url or ('/guide/' ~ rel_b.slug) }}">{{ rel_b.title }}</a>
+                </h3>
+              </div>
+              <a href="{{ rel_b.url or ('/guide/' ~ rel_b.slug) }}" class="text-xs font-bold text-rose-800 flex items-center gap-1 mt-3">
+                <span>Đọc bài viết</span>
+                <span class="font-mono">→</span>
+              </a>
+            </article>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+
       </div>
 
     </div>
-
-    <!-- Related Products Box -->
-    {% if related_products %}
-    <div class="mt-12 bg-amber-50 border-2 border-black rounded-3xl p-6 shadow-neo">
-      <h3 class="font-heading font-black text-lg text-stone-900 mb-4">Linh Kiện Gợi Ý Sử Dụng Trong Bài Viết Này:</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {% for rel in related_products %}
-        <div class="bg-white border border-black rounded-2xl p-4 flex items-center gap-3">
-          <img src="{{ rel.image }}" alt="{{ rel.name }}" loading="lazy" class="w-12 h-12 object-contain flex-shrink-0">
-          <div class="overflow-hidden">
-            <span class="text-[10px] font-mono font-black text-rose-800">{{ rel.sku }}</span>
-            <h4 class="font-bold text-xs text-stone-900 truncate">{{ rel.name }}</h4>
-            <span class="text-xs font-black text-stone-800">{{ rel.price|format_vnd }}</span>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
-
-    {% if related_blogs %}
-    <section class="mt-12" aria-labelledby="related-guides-title">
-      <h2 id="related-guides-title" class="font-heading font-black text-2xl text-stone-900 mb-5">Đọc tiếp trong Cẩm nang MEMOUR</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {% for rel_blog in related_blogs %}
-        <article class="bg-white border-2 border-black rounded-2xl overflow-hidden shadow-neo flex flex-col">
-          <img src="{{ rel_blog.cover_image }}" alt="{{ rel_blog.title }}" loading="lazy" width="640" height="400" class="w-full aspect-[16/10] object-cover border-b-2 border-black">
-          <div class="p-4 flex flex-col flex-1">
-            <p class="text-[11px] font-black text-rose-800 uppercase">{{ rel_blog.category }}</p>
-            <h3 class="font-heading font-black text-base leading-snug mt-1 flex-1"><a class="hover:text-rose-800" href="/guide/{{ rel_blog.slug }}">{{ rel_blog.title }}</a></h3>
-            <a class="text-xs font-black text-rose-800 mt-4" href="/guide/{{ rel_blog.slug }}">Đọc bài →</a>
-          </div>
-        </article>
-        {% endfor %}
-      </div>
-    </section>
-    {% endif %}
 
   </div>
 </article>
 
+<!-- Lightbox Modal -->
 <div id="article-lightbox" class="article-lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh đầy đủ" aria-hidden="true">
   <button id="article-lightbox-close" type="button" class="article-lightbox-close" aria-label="Đóng ảnh">×</button>
   <img id="article-lightbox-image" src="" alt="">
   <p id="article-lightbox-caption" class="article-lightbox-caption"></p>
 </div>
 
+<!-- Copy Toast Notification -->
+<div id="copy-toast" class="hidden fixed bottom-6 right-6 z-50 bg-stone-900 text-white px-5 py-3 rounded-2xl border-2 border-amber-300 shadow-neo flex items-center gap-2 text-xs font-bold transition-all duration-300">
+  <span class="text-amber-300 font-black">✓</span>
+  <span>Đã sao chép liên kết bài viết vào bộ nhớ tạm!</span>
+</div>
+
 <script>
-(() => {
+document.addEventListener('DOMContentLoaded', () => {
+  const article = document.getElementById('article-content');
+  const desktopToc = document.getElementById('desktop-toc');
+  const mobileToc = document.getElementById('mobile-toc-content');
+  const progressBar = document.getElementById('reading-progress-bar');
+  
+  if (!article) return;
+  
+  // 1. Gather all H2 and H3 elements inside article
+  const headings = article.querySelectorAll('h2, h3');
+  const tocItems = [];
+  
+  headings.forEach((heading, idx) => {
+    if (!heading.id) {
+      const slug = heading.textContent
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[đĐ]/g, 'd')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+      heading.id = slug || ('muc-' + (idx + 1));
+    }
+    heading.classList.add('scroll-mt-28');
+    
+    const isH2 = heading.tagName.toLowerCase() === 'h2';
+    tocItems.push({
+      id: heading.id,
+      text: heading.textContent.trim(),
+      level: isH2 ? 2 : 3
+    });
+  });
+  
+  // 2. Render TOC Links
+  function renderTocList(container) {
+    if (!container) return;
+    container.innerHTML = '';
+    const list = document.createElement('ul');
+    list.className = 'space-y-1';
+    
+    tocItems.forEach(item => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + item.id;
+      a.textContent = item.text;
+      a.setAttribute('data-target', item.id);
+      
+      if (item.level === 2) {
+        a.className = 'toc-link block py-1.5 px-3 rounded-xl transition-all duration-150 hover:bg-amber-100 hover:text-stone-950 font-bold text-stone-800 border border-transparent';
+      } else {
+        a.className = 'toc-link block py-1 pl-6 pr-3 rounded-lg transition-all duration-150 hover:bg-amber-50 hover:text-stone-950 text-stone-600 border border-transparent text-[11px]';
+      }
+      
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById(item.id);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, null, '#' + item.id);
+        }
+      });
+      
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+    container.appendChild(list);
+  }
+  
+  renderTocList(desktopToc);
+  renderTocList(mobileToc);
+  
+  // 3. Mobile TOC Accordion Toggle
+  const mobileToggle = document.getElementById('mobile-toc-toggle');
+  const mobileContent = document.getElementById('mobile-toc-content');
+  if (mobileToggle && mobileContent) {
+    mobileToggle.addEventListener('click', () => {
+      const isExpanded = mobileContent.classList.toggle('hidden');
+      mobileToggle.setAttribute('aria-expanded', !isExpanded);
+      const arrow = mobileToggle.querySelector('.toc-arrow');
+      if (arrow) arrow.classList.toggle('rotate-180');
+    });
+  }
+  
+  // 4. Reading Progress Bar & Scrollspy
+  function updateProgressAndScrollspy() {
+    const articleRect = article.getBoundingClientRect();
+    const articleTop = articleRect.top + window.scrollY;
+    const articleHeight = article.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+    
+    const start = articleTop - 120;
+    const total = articleHeight - windowHeight + 120;
+    let progress = 0;
+    if (scrollY > start && total > 0) {
+      progress = Math.min(100, Math.max(0, ((scrollY - start) / total) * 100));
+    }
+    if (progressBar) {
+      progressBar.style.width = progress + '%';
+    }
+    
+    let activeId = '';
+    headings.forEach(heading => {
+      const rect = heading.getBoundingClientRect();
+      if (rect.top <= 160) {
+        activeId = heading.id;
+      }
+    });
+    
+    document.querySelectorAll('.toc-link').forEach(link => {
+      if (link.getAttribute('data-target') === activeId) {
+        link.classList.add('bg-amber-300', 'text-stone-950', 'font-black', 'border', 'border-black/20');
+      } else {
+        link.classList.remove('bg-amber-300', 'text-stone-950', 'font-black', 'border', 'border-black/20');
+      }
+    });
+  }
+  
+  window.addEventListener('scroll', updateProgressAndScrollspy, { passive: true });
+  updateProgressAndScrollspy();
+
+  // 5. Image Lightbox
   const lightbox = document.getElementById('article-lightbox');
   const fullImage = document.getElementById('article-lightbox-image');
   const caption = document.getElementById('article-lightbox-caption');
@@ -242,13 +483,32 @@
     });
   });
 
-  closeButton.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (event) => {
-    if (event.target === lightbox) closeLightbox();
-  });
+  if (closeButton) closeButton.addEventListener('click', closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+  }
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    if (event.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) closeLightbox();
   });
-})();
+});
+
+function copyArticleLink() {
+  const dummy = document.createElement('input');
+  document.body.appendChild(dummy);
+  dummy.value = window.location.href;
+  dummy.select();
+  document.execCommand('copy');
+  document.body.removeChild(dummy);
+
+  const toast = document.getElementById('copy-toast');
+  if (toast) {
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 2500);
+  }
+}
 </script>
 {% endblock %}

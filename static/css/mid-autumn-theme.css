@@ -1,0 +1,500 @@
+/* ==========================================================================
+   🏮 MEMOUR MID-AUTUMN FESTIVAL SEASONAL DESIGN SYSTEM
+   "TRUNG THU – MÙA CỦA NHỮNG KÝ ỨC" (Mid-Autumn Memory Scrapbook)
+   ========================================================================== */
+
+:root {
+  /* Primary Seasonal Colors */
+  --ma-burgundy: #A80F3D;
+  --ma-festival-red: #7F1428;
+  --ma-lantern-red: #C83B32;
+  --ma-moon-gold: #FFC83D;
+  --ma-lantern-gold: #EFAE32;
+  --ma-moon-cream: #FFF1C7;
+  --ma-paper-ivory: #FAF4E8;
+
+  /* Secondary Colors */
+  --ma-burnt-orange: #D96A32;
+  --ma-kraft: #C79B68;
+  --ma-kraft-light: #F4E8D8;
+  --ma-terracotta: #B95B45;
+  --ma-vintage-rose: #C97976;
+  --ma-dusty-rose: #FBF0EF;
+
+  /* Accent Colors */
+  --ma-jade: #3F745D;
+  --ma-star-green: #6D8A64;
+  --ma-night: #17233A;
+  --ma-night-deep: #0D1626;
+  --ma-moonlit-blue: #364B68;
+
+  /* Neutrals */
+  --ma-ink: #171717;
+  --ma-charcoal: #332A27;
+  --ma-vintage-paper: #E8D8BD;
+  --ma-soft-cream: #FFF9EF;
+  --ma-white: #FFFFFF;
+
+  /* Shadows */
+  --shadow-memour: 4px 4px 0px #171717;
+  --shadow-memour-lg: 7px 7px 0px #171717;
+  --shadow-memour-xl: 10px 10px 0px #171717;
+  --shadow-paper: 0 4px 14px rgba(51, 42, 39, 0.08), 0 1px 3px rgba(51, 42, 39, 0.05);
+  --shadow-festival: 5px 5px 0px #7F1428;
+  --shadow-gold: 4px 4px 0px #EFAE32;
+}
+
+/* ==========================================================================
+   1. GLOBAL PAGE & BODY SEASONAL FOUNDATION
+   ========================================================================== */
+
+body.ma-season-active {
+  background-color: var(--ma-paper-ivory);
+  background-image: 
+    radial-gradient(#d5c7b2 0.75px, transparent 0.75px),
+    radial-gradient(#e2d5c3 0.5px, transparent 0.5px);
+  background-size: 24px 24px, 12px 12px;
+  background-position: 0 0, 6px 6px;
+  color: var(--ma-ink);
+}
+
+/* Seasonal Selection */
+body.ma-season-active ::selection {
+  background-color: var(--ma-moon-gold);
+  color: var(--ma-festival-red);
+}
+
+/* Custom Scrollbar for Mid-Autumn */
+body.ma-season-active::-webkit-scrollbar-thumb {
+  background: var(--ma-burgundy);
+  border-radius: 4px;
+}
+body.ma-season-active::-webkit-scrollbar-thumb:hover {
+  background: var(--ma-festival-red);
+}
+body.ma-season-active::-webkit-scrollbar-track {
+  background: var(--ma-paper-ivory);
+}
+
+/* ==========================================================================
+   2. PAGE BACKGROUND SYSTEM
+   ========================================================================== */
+
+.ma-bg-paper {
+  background-color: var(--ma-paper-ivory);
+  background-image: radial-gradient(#d8ccb8 0.8px, transparent 0.8px);
+  background-size: 20px 20px;
+}
+
+.ma-bg-kraft {
+  background-color: #F7EFE4;
+  background-image: 
+    radial-gradient(#C79B68 0.7px, transparent 0.7px),
+    linear-gradient(to right, rgba(199, 155, 104, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px, 40px 40px;
+}
+
+.ma-bg-moon-cream {
+  background-color: #FFF9E6;
+  background-image: radial-gradient(#EFAE32 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+}
+
+.ma-bg-dusty-rose {
+  background-color: #FDF5F4;
+  background-image: radial-gradient(#C97976 0.7px, transparent 0.7px);
+  background-size: 22px 22px;
+}
+
+.ma-bg-night {
+  background: linear-gradient(180deg, var(--ma-night-deep) 0%, var(--ma-night) 60%, #1c2738 100%);
+  background-image: 
+    radial-gradient(rgba(255, 200, 61, 0.15) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.12) 0.8px, transparent 0.8px);
+  background-size: 32px 32px, 16px 16px;
+  background-position: 0 0, 8px 8px;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   3. SECTION DIVIDER & TRANSITION SYSTEM
+   ========================================================================== */
+
+/* Divider 1: Torn Paper Edge */
+.ma-divider-torn {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  background-repeat: repeat-x;
+  background-size: 36px 24px;
+  z-index: 15;
+  margin-top: -12px;
+  margin-bottom: -12px;
+  pointer-events: none;
+}
+
+.ma-divider-torn-top {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 24' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L6,14 L12,4 L18,18 L24,6 L30,16 L36,0 L36,24 L0,24 Z' fill='%23FAF4E8'/%3E%3C/svg%3E");
+}
+
+.ma-divider-torn-kraft {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 24' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L6,14 L12,4 L18,18 L24,6 L30,16 L36,0 L36,24 L0,24 Z' fill='%23F7EFE4'/%3E%3C/svg%3E");
+}
+
+/* Divider 2: Stitched Line Divider */
+.ma-divider-stitch {
+  position: relative;
+  width: 100%;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ma-divider-stitch::before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  border-top: 2px dashed rgba(168, 15, 61, 0.4);
+}
+
+/* Divider 3: Festive Starry Ribbon Divider */
+.ma-divider-stars {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ma-divider-stars::before {
+  content: '★ ✦ 🏮 ✦ ★ ✦ 🏮 ✦ ★ ✦ 🏮 ✦ ★ ✦ 🏮 ✦ ★ ✦ 🏮 ✦ ★ ✦ 🏮 ✦ ★ ✦ 🏮 ✦ ★ ✦ 🏮 ✦ ★';
+  font-size: 11px;
+  color: var(--ma-lantern-gold);
+  letter-spacing: 0.5em;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   4. SCRAPBOOK DECORATION KIT (Washi Tape, Photo Corners, Labels)
+   ========================================================================== */
+
+/* Gold Mid-Autumn Washi Tape */
+.ma-tape-gold {
+  position: relative;
+}
+.ma-tape-gold::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 90px;
+  height: 20px;
+  background: rgba(239, 174, 50, 0.82);
+  border-left: 2px dashed rgba(255, 255, 255, 0.8);
+  border-right: 2px dashed rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Burgundy Festival Washi Tape */
+.ma-tape-red {
+  position: relative;
+}
+.ma-tape-red::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 90px;
+  height: 20px;
+  background: rgba(168, 15, 61, 0.78);
+  border-left: 2px dashed rgba(255, 255, 255, 0.8);
+  border-right: 2px dashed rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Corner Tape */
+.ma-tape-corner-left {
+  position: relative;
+}
+.ma-tape-corner-left::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  transform: rotate(-45deg);
+  width: 50px;
+  height: 16px;
+  background: rgba(239, 174, 50, 0.85);
+  border-left: 1.5px dashed rgba(255,255,255,0.7);
+  border-right: 1.5px dashed rgba(255,255,255,0.7);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.ma-tape-corner-right {
+  position: relative;
+}
+.ma-tape-corner-right::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  transform: rotate(45deg);
+  width: 50px;
+  height: 16px;
+  background: rgba(168, 15, 61, 0.8);
+  border-left: 1.5px dashed rgba(255,255,255,0.7);
+  border-right: 1.5px dashed rgba(255,255,255,0.7);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Polaroid Photo Frame Styling */
+.ma-photo-polaroid {
+  background: #FFFFFF;
+  padding: 8px 8px 24px 8px;
+  border: 2px solid var(--ma-ink);
+  border-radius: 12px;
+  box-shadow: var(--shadow-memour);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ma-photo-polaroid:hover {
+  transform: translateY(-4px) rotate(1deg);
+  box-shadow: var(--shadow-memour-lg);
+}
+
+/* Film Strip Frame Styling */
+.ma-photo-film {
+  background: #171717;
+  padding: 10px 6px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: var(--shadow-memour);
+}
+.ma-photo-film::before,
+.ma-photo-film::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-image: radial-gradient(#ffffff 2px, transparent 2px);
+  background-size: 10px 6px;
+  background-repeat: repeat-x;
+}
+.ma-photo-film::before { top: 2px; }
+.ma-photo-film::after { bottom: 2px; }
+
+/* Hand-stamped Label */
+.ma-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 2px dashed var(--ma-festival-red);
+  color: var(--ma-festival-red);
+  background: rgba(255, 241, 199, 0.6);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Memory Note Card */
+.ma-note {
+  background: #FFFDF5;
+  border: 2px solid var(--ma-ink);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow-memour);
+  position: relative;
+}
+
+/* ==========================================================================
+   5. BUTTON & BADGE SYSTEM
+   ========================================================================== */
+
+/* Primary Festival Button */
+.ma-btn-primary {
+  background-color: var(--ma-burgundy);
+  background-image: linear-gradient(135deg, var(--ma-burgundy) 0%, var(--ma-festival-red) 100%);
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  box-shadow: var(--shadow-memour-lg);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  border-radius: 16px;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ma-btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 9px 9px 0px #171717;
+  background-image: linear-gradient(135deg, var(--ma-festival-red) 0%, var(--ma-burgundy) 100%);
+}
+
+/* Secondary Moonlight Button */
+.ma-btn-secondary {
+  background-color: var(--ma-moon-gold);
+  background-image: linear-gradient(135deg, #FFE082 0%, var(--ma-moon-gold) 100%);
+  color: var(--ma-ink);
+  border: 2px solid var(--ma-ink);
+  box-shadow: var(--shadow-memour);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+.ma-btn-secondary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-memour-lg);
+  background-color: var(--ma-lantern-gold);
+}
+
+/* Tertiary Cream Button */
+.ma-btn-tertiary {
+  background: var(--ma-moon-cream);
+  color: var(--ma-burgundy);
+  border: 2px solid var(--ma-ink);
+  box-shadow: var(--shadow-memour);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+.ma-btn-tertiary:hover {
+  background: #FFEAA7;
+  transform: translate(-1px, -1px);
+}
+
+/* Festival Badges */
+.ma-badge-festival {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(90deg, #FFE082, var(--ma-moon-gold), #FFD54F);
+  color: var(--ma-ink);
+  border: 2px solid var(--ma-ink);
+  border-radius: 9999px;
+  padding: 4px 14px;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 3px 3px 0px var(--ma-ink);
+}
+
+.ma-badge-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--ma-burgundy);
+  color: #FFFFFF;
+  border: 2px solid var(--ma-ink);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 11px;
+  box-shadow: 3px 3px 0px var(--ma-ink);
+}
+
+/* ==========================================================================
+   6. SVG INLINE MOTIFS & DECORATIVE ASSETS (Data URIs)
+   ========================================================================== */
+
+/* Floating Star Lantern (Đèn Ông Sao) */
+.ma-deco-star-lantern {
+  width: 48px;
+  height: 48px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,5 64,36 98,36 71,57 81,91 50,70 19,91 29,57 2,36 36,36' fill='%23C83B32' stroke='%23171717' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='16' fill='%23FFC83D' stroke='%23171717' stroke-width='3'/%3E%3Cpath d='M50,70 L50,98' stroke='%23C79B68' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  pointer-events: none;
+}
+
+/* Glowing Full Moon */
+.ma-deco-full-moon {
+  width: 64px;
+  height: 64px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%23FFC83D' stroke='%23EFAE32' stroke-width='3' filter='drop-shadow(0 0 12px rgba(255, 200, 61, 0.7))'/%3E%3Ccircle cx='38' cy='42' r='8' fill='%23F4E09E' opacity='0.6'/%3E%3Ccircle cx='62' cy='36' r='6' fill='%23F4E09E' opacity='0.6'/%3E%3Ccircle cx='54' cy='64' r='10' fill='%23F4E09E' opacity='0.6'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  pointer-events: none;
+}
+
+/* Mid-Autumn Cloud Motif */
+.ma-deco-cloud {
+  width: 60px;
+  height: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'%3E%3Cpath d='M10,40 Q25,15 50,25 Q70,5 90,30 Q98,42 85,45 Q50,48 10,40 Z' fill='%23FFF1C7' stroke='%23171717' stroke-width='3' opacity='0.85'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  pointer-events: none;
+}
+
+/* Moon Rabbit Motif */
+.ma-deco-rabbit {
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='50' cy='65' rx='28' ry='22' fill='%23FFFFFF' stroke='%23171717' stroke-width='4'/%3E%3Ccircle cx='70' cy='45' r='16' fill='%23FFFFFF' stroke='%23171717' stroke-width='4'/%3E%3Cellipse cx='68' cy='22' rx='6' ry='16' fill='%23FFFFFF' stroke='%23171717' stroke-width='3' transform='rotate(-10 68 22)'/%3E%3Cellipse cx='78' cy='25' rx='6' ry='15' fill='%23FFFFFF' stroke='%23171717' stroke-width='3' transform='rotate(15 78 25)'/%3E%3Ccircle cx='74' cy='42' r='3' fill='%23C83B32'/%3E%3Ccircle cx='24' cy='68' r='6' fill='%23FFFFFF' stroke='%23171717' stroke-width='3'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   7. SEASONAL ANIMATIONS & MICRO-INTERACTIONS
+   ========================================================================== */
+
+@keyframes maTwinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.85) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.15) rotate(180deg); }
+}
+
+.ma-twinkle {
+  animation: maTwinkle 3s ease-in-out infinite;
+}
+
+@keyframes maFloatGently {
+  0% { transform: translateY(0px) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(-2deg); }
+}
+
+.ma-float {
+  animation: maFloatGently 4.5s ease-in-out infinite;
+}
+
+@keyframes maMoonGlow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(255, 200, 61, 0.4)); }
+  50% { filter: drop-shadow(0 0 18px rgba(255, 200, 61, 0.8)); }
+}
+
+.ma-moon-glow {
+  animation: maMoonGlow 4s ease-in-out infinite;
+}
+
+/* Header bottom decorative stitched divider */
+.ma-header-border {
+  background-image: radial-gradient(#a80f3d 1px, transparent 1px);
+  background-size: 8px 3px;
+  height: 3px;
+  width: 100%;
+}

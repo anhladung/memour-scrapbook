@@ -13,10 +13,10 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}MEMOUR Studio | Sổ Scrapbook Thủ Công & Phụ Kiện{% endblock %}</title>
+  <title>{% block title %}Sổ Scrapbook Handmade & Phụ Kiện Trang Trí | MEMOUR{% endblock %}</title>
   
   <!-- SEO & Search Engine Optimization -->
-  <meta name="description" content="{% block meta_desc %}Khám phá sổ scrapbook thủ công, sticker và khung ảnh tại MEMOUR Studio. Tự thiết kế món quà lưu giữ kỷ niệm theo câu chuyện của bạn.{% endblock %}">
+  <meta name="description" content="{% block meta_desc %}Khám phá sổ scrapbook handmade, phụ kiện trang trí, sticker và mẫu lưu bút đẹp tại MEMOUR. Tự thiết kế scrapbook độc đáo để lưu giữ kỷ niệm.{% endblock %}">
   <meta name="keywords" content="{% block meta_keywords %}scrapbook, memour studio, sổ lưu niệm handmade, sticker 3d, layout polaroid, xưởng thiết kế scrapbook, tự hào việt nam, quà tặng handmade{% endblock %}">
   <meta name="author" content="MEMOUR Studio">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -26,16 +26,16 @@
   <!-- Open Graph / Facebook / Zalo -->
   <meta property="og:locale" content="vi_VN">
   <meta property="og:type" content="{% block og_type %}website{% endblock %}">
-  <meta property="og:title" content="{% block og_title %}MEMOUR Studio | Sổ Scrapbook Thủ Công & Phụ Kiện{% endblock %}">
-  <meta property="og:description" content="{% block og_desc %}Khám phá sổ scrapbook thủ công, sticker và khung ảnh tại MEMOUR Studio. Tự thiết kế món quà lưu giữ kỷ niệm theo câu chuyện của bạn.{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}Sổ Scrapbook Handmade & Phụ Kiện Trang Trí | MEMOUR{% endblock %}">
+  <meta property="og:description" content="{% block og_desc %}Khám phá sổ scrapbook handmade, phụ kiện trang trí, sticker và mẫu lưu bút đẹp tại MEMOUR. Tự thiết kế scrapbook độc đáo để lưu giữ kỷ niệm.{% endblock %}">
   <meta property="og:url" content="{% block og_url %}{{ site_url }}{{ request.path }}{% endblock %}">
   <meta property="og:site_name" content="MEMOUR Studio">
   <meta property="og:image" content="{% block og_image %}{{ site_url }}/static/assets/banners/hero_banner_01.jpg{% endblock %}">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% block twitter_title %}MEMOUR Studio | Sổ Scrapbook Thủ Công & Phụ Kiện{% endblock %}">
-  <meta name="twitter:description" content="{% block twitter_desc %}Khám phá sổ scrapbook thủ công, sticker và khung ảnh tại MEMOUR Studio. Tự thiết kế món quà lưu giữ kỷ niệm theo câu chuyện của bạn.{% endblock %}">
+  <meta name="twitter:title" content="{% block twitter_title %}Sổ Scrapbook Handmade & Phụ Kiện Trang Trí | MEMOUR{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_desc %}Khám phá sổ scrapbook handmade, phụ kiện trang trí, sticker và mẫu lưu bút đẹp tại MEMOUR. Tự thiết kế scrapbook độc đáo để lưu giữ kỷ niệm.{% endblock %}">
   <meta name="twitter:image" content="{% block twitter_image %}{{ site_url }}/static/assets/banners/hero_banner_01.jpg{% endblock %}">
   {% block canonical %}<link rel="canonical" href="{{ site_url }}{{ request.path }}">{% endblock %}
 
@@ -54,14 +54,14 @@
           "url": "{{ site_url }}/static/assets/favicon-512.png"
         },
         "slogan": "Every memory has a story",
-        "description": "Thương hiệu sổ scrapbook thủ công và phụ kiện lưu giữ ký ức cho Gen Z với xưởng thiết kế DIY 2D, AI bố cục và mô hình 3D."
+        "description": "Thương hiệu sổ scrapbook handmade, phụ kiện trang trí, sticker và mẫu lưu bút giúp bạn tự thiết kế món quà lưu giữ kỷ niệm."
       },
       {
         "@type": "WebSite",
         "@id": "{{ site_url }}/#website",
         "url": "{{ site_url }}/",
         "name": "MEMOUR Studio",
-        "alternateName": "MEMOUR",
+        "alternateName": ["MEMOUR", "MEMOUR Scrapbook"],
         "inLanguage": "vi-VN",
         "publisher": {"@id": "{{ site_url }}/#organization"},
         "potentialAction": {

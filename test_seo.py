@@ -15,8 +15,14 @@ class SeoSmokeTests(unittest.TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         html = response.get_data(as_text=True)
-        self.assertIn('MEMOUR Studio', html)
-        self.assertIn('Scrapbook', html)
+        self.assertIn(
+            '<title>Sổ Scrapbook Handmade & Phụ Kiện Trang Trí | MEMOUR</title>',
+            html,
+        )
+        self.assertIn(
+            'Khám phá sổ scrapbook handmade, phụ kiện trang trí, sticker và mẫu lưu bút đẹp',
+            html,
+        )
         self.assertIn(f'<link rel="canonical" href="{self.site_url}/">', html)
         self.assertTrue('/favicon.ico' in html or 'favicon-512.png' in html)
 
@@ -26,6 +32,7 @@ class SeoSmokeTests(unittest.TestCase):
         graph = json.loads(scripts[0])['@graph']
         website = next(item for item in graph if item['@type'] == 'WebSite')
         self.assertEqual(website['name'], 'MEMOUR Studio')
+        self.assertIn('MEMOUR Scrapbook', website['alternateName'])
         self.assertEqual(website['url'], f'{self.site_url}/')
 
     def test_production_domain_is_the_canonical_origin(self):

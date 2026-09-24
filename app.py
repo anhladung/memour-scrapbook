@@ -28,6 +28,16 @@ app = Flask(
 )
 app.config.from_object(Config)
 
+
+@app.before_request
+def redirect_legacy_vercel_domain():
+    """Consolidate the public Vercel alias into the canonical domain."""
+    if request.host.split(':', 1)[0].lower() == 'memourscrapbook.vercel.app':
+        canonical_url = f"{app.config['SITE_URL']}{request.full_path}"
+        if canonical_url.endswith('?'):
+            canonical_url = canonical_url[:-1]
+        return redirect(canonical_url, code=308)
+
 # Data loader helpers
 def load_json_data(filename):
     filepath = os.path.join(DATA_DIR, filename)

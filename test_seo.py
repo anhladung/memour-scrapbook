@@ -28,6 +28,35 @@ class SeoSmokeTests(unittest.TestCase):
         self.assertEqual(website['name'], 'MEMOUR Studio')
         self.assertEqual(website['url'], f'{self.site_url}/')
 
+    def test_production_domain_is_the_canonical_origin(self):
+        """Prevent deployment aliases from leaking into indexable SEO URLs."""
+        production_url = 'https://memourscrapbook.com'
+        self.assertEqual(self.site_url, production_url)
+
+        about_html = self.client.get('/about').get_data(as_text=True)
+        self.assertIn(
+            f'<link rel="canonical" href="{production_url}/about">',
+            about_html,
+        )
+        self.assertNotIn('memourscrapbook.vercel.app', about_html)
+
+        robots = self.client.get('/robots.txt').get_data(as_text=True)
+        sitemap = self.client.get('/sitemap.xml').get_data(as_text=True)
+        self.assertIn(f'Sitemap: {production_url}/sitemap.xml', robots)
+        self.assertIn(f'<loc>{production_url}/about</loc>', sitemap)
+        self.assertNotIn('memourscrapbook.vercel.app', robots + sitemap)
+
+    def test_legacy_vercel_domain_redirects_to_canonical_domain(self):
+        response = self.client.get(
+            '/about?source=legacy',
+            base_url='https://memourscrapbook.vercel.app',
+        )
+        self.assertEqual(response.status_code, 308)
+        self.assertEqual(
+            response.headers['Location'],
+            'https://memourscrapbook.com/about?source=legacy',
+        )
+
     def test_favicon_and_public_urls(self):
         for path in ('/favicon.ico', '/static/assets/favicon-512.png', '/static/assets/apple-touch-icon.png'):
             with self.subTest(path=path):

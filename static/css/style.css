@@ -378,3 +378,217 @@ body.lightbox-open { overflow: hidden; }
     overflow-wrap: anywhere;
   }
 }
+
+/* =========================================================
+   FESTIVE MID-AUTUMN (TẾT TRUNG THU) DECORATIVE FRAME
+   ========================================================= */
+.trung-thu-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 998;
+  overflow: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.trung-thu-overlay.hidden-festival {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.trung-thu-corner {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 998;
+  filter: drop-shadow(0 6px 16px rgba(245, 158, 11, 0.35)) drop-shadow(0 0 20px rgba(180, 83, 9, 0.2));
+  will-change: transform;
+}
+
+.trung-thu-top-left {
+  top: 0;
+  left: 0;
+  width: clamp(140px, 24vw, 360px);
+  max-width: 360px;
+  transform-origin: top left;
+  animation: floatSubtleTL 6s ease-in-out infinite alternate;
+}
+
+.trung-thu-top-right {
+  top: 0;
+  right: 0;
+  width: clamp(130px, 22vw, 340px);
+  max-width: 340px;
+  transform-origin: top right;
+  animation: floatSubtleTR 7s ease-in-out infinite alternate;
+}
+
+.trung-thu-bottom-left {
+  bottom: 0;
+  left: 0;
+  width: clamp(130px, 22vw, 330px);
+  max-width: 330px;
+  transform-origin: bottom left;
+  animation: floatSubtleBL 6.5s ease-in-out infinite alternate;
+}
+
+.trung-thu-bottom-right {
+  bottom: 0;
+  right: 0;
+  width: clamp(135px, 23vw, 340px);
+  max-width: 340px;
+  transform-origin: bottom right;
+  animation: floatSubtleBR 7.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatSubtleTL {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(4px, 5px) rotate(0.8deg); }
+}
+
+@keyframes floatSubtleTR {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-4px, 5px) scale(1.02); }
+}
+
+@keyframes floatSubtleBL {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(3px, -4px) rotate(-0.8deg); }
+}
+
+@keyframes floatSubtleBR {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-3px, -4px) rotate(0.6deg); }
+}
+
+/* Floating lantern glow pulse */
+@keyframes lanternPulse {
+  0%, 100% {
+    filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.25)) drop-shadow(0 0 16px rgba(225, 29, 72, 0.15));
+  }
+  50% {
+    filter: drop-shadow(0 6px 20px rgba(245, 158, 11, 0.5)) drop-shadow(0 0 28px rgba(225, 29, 72, 0.3));
+  }
+}
+
+.trung-thu-glow {
+  animation: lanternPulse 4.5s ease-in-out infinite;
+}
+
+/* Festive Toggle Button (Floating Gen-Z Neo Style) */
+.festive-toggle-btn {
+  position: fixed;
+  bottom: 22px;
+  left: 22px;
+  z-index: 1000;
+  background: linear-gradient(135deg, #881337 0%, #b45309 100%);
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 9999px;
+  padding: 8px 15px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 12px;
+  box-shadow: 4px 4px 0px #000;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.festive-toggle-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+  background: linear-gradient(135deg, #9f1239 0%, #d97706 100%);
+}
+
+.festive-toggle-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* Responsive adjustments for mid-autumn frame on mobile */
+@media (max-width: 640px) {
+  .trung-thu-top-left {
+    width: 100px;
+    opacity: 0.88;
+  }
+  .trung-thu-top-right {
+    width: 95px;
+    opacity: 0.88;
+  }
+  .trung-thu-bottom-left {
+    width: 90px;
+    opacity: 0.85;
+  }
+  .trung-thu-bottom-right {
+    width: 95px;
+    opacity: 0.85;
+  }
+  .festive-toggle-btn {
+    bottom: 12px;
+    left: 12px;
+    padding: 5px 10px;
+    font-size: 10.5px;
+  }
+}
+
+
+
+/* Seasonal catalog cards: warm moonlight glow without overpowering thumbnails. */
+.mid-autumn-card {
+  background: linear-gradient(145deg, rgba(255, 248, 220, .98), rgba(255, 232, 177, .86));
+  border-color: #d89b22;
+  box-shadow: 0 0 0 1px rgba(168, 15, 61, .16), 0 6px 15px rgba(127, 20, 40, .12);
+  overflow: hidden;
+}
+
+.mid-autumn-card::after {
+  content: "";
+  position: absolute;
+  inset: -80% -35%;
+  background: linear-gradient(105deg, transparent 43%, rgba(255,255,255,.6) 50%, transparent 57%);
+  transform: translateX(-55%) rotate(8deg);
+  animation: midAutumnShimmer 4.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mid-autumn-card > * { position: relative; z-index: 1; }
+
+.mid-autumn-badge {
+  position: absolute;
+  top: .4rem;
+  right: .4rem;
+  z-index: 20 !important;
+  padding: .18rem .42rem;
+  border: 1px solid #2f241e;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8f1236, #c83b32);
+  color: #fff1c7;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: .04em;
+  box-shadow: 1px 2px 0 #2f241e;
+  white-space: nowrap;
+}
+
+.mid-autumn-badge-left {
+  left: .4rem;
+  right: auto;
+}
+
+@keyframes midAutumnShimmer {
+  0%, 58% { transform: translateX(-65%) rotate(8deg); opacity: 0; }
+  66% { opacity: .75; }
+  84%, 100% { transform: translateX(65%) rotate(8deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mid-autumn-card::after { animation: none; }
+}

@@ -145,7 +145,9 @@
             {% if stickers and stickers|length > 0 %}
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-[350px] overflow-y-auto pr-1">
               {% for stk in stickers %}
-              <div data-sku="{{ stk.sku }}" data-name="{{ stk.ten or stk.name }}" data-image="{{ stk.image }}" data-price="{{ stk.price or 3000 }}" onclick="handleStickerCardClick(this)" class="stk-item-card bg-stone-50 hover:bg-amber-50 border-2 border-stone-200 hover:border-black rounded-2xl p-2 cursor-pointer transition-all flex flex-col items-center justify-between text-center group shadow-sm hover:shadow-md relative">
+              {% set is_mid_autumn = (stk.season == 'mid-autumn' or '-TT-' in stk.sku) %}
+              <div data-sku="{{ stk.sku }}" data-name="{{ stk.ten or stk.name }}" data-image="{{ stk.image }}" data-price="{{ stk.price or 3000 }}" onclick="handleStickerCardClick(this)" class="stk-item-card {% if is_mid_autumn %}mid-autumn-card{% else %}bg-stone-50 border-stone-200{% endif %} hover:bg-amber-50 border-2 hover:border-black rounded-2xl p-2 cursor-pointer transition-all flex flex-col items-center justify-between text-center group shadow-sm hover:shadow-md relative">
+                {% if is_mid_autumn %}<span class="mid-autumn-badge mid-autumn-badge-left">✦ MỚI</span>{% endif %}
                 
                 <!-- Transparent Checkerboard Thumbnail -->
                 <div class="w-16 h-16 rounded-xl p-1 flex items-center justify-center mb-1 bg-checkerboard border border-stone-200">
@@ -190,7 +192,9 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[350px] overflow-y-auto pr-1">
               {% for lay in layouts %}
               {% set is_text = (lay.subCategory == 'text_layout' or lay.type == 'layout_text' or 'TXT' in lay.sku) %}
-              <div class="lay-item-card bg-stone-50 hover:bg-amber-50/60 border-2 border-stone-200 hover:border-black rounded-2xl p-2.5 transition-all flex flex-col justify-between group shadow-sm hover:shadow-md relative" data-subtype="{% if is_text %}text{% else %}photo{% endif %}">
+              {% set is_mid_autumn = (lay.season == 'mid-autumn' or '-TT-' in lay.sku) %}
+              <div class="lay-item-card {% if is_mid_autumn %}mid-autumn-card{% else %}bg-stone-50 border-stone-200{% endif %} hover:bg-amber-50/60 border-2 hover:border-black rounded-2xl p-2.5 transition-all flex flex-col justify-between group shadow-sm hover:shadow-md relative" data-subtype="{% if is_text %}text{% else %}photo{% endif %}">
+                {% if is_mid_autumn %}<span class="mid-autumn-badge mid-autumn-badge-left">✦ MỚI • TRUNG THU</span>{% endif %}
                 
                 <!-- Badge -->
                 <span class="absolute top-2 right-2 {% if is_text %}bg-amber-700 text-amber-100{% else %}bg-rose-800 text-white{% endif %} text-[8px] font-black px-1.5 py-0.5 rounded-md shadow-sm z-10">
@@ -247,7 +251,9 @@
             {% if books and books|length > 0 %}
             <div class="space-y-3 max-h-[360px] overflow-y-auto pr-1">
               {% for bk in books %}
-              <div class="book-item-card bg-stone-50 hover:bg-amber-50/70 border-2 border-stone-200 hover:border-black rounded-2xl p-3 transition-all flex flex-col group shadow-sm hover:shadow-md relative">
+              {% set is_mid_autumn = (bk.season == 'mid-autumn' or '-TT-' in bk.sku) %}
+              <div class="book-item-card {% if is_mid_autumn %}mid-autumn-card{% else %}bg-stone-50 border-stone-200{% endif %} hover:bg-amber-50/70 border-2 hover:border-black rounded-2xl p-3 transition-all flex flex-col group shadow-sm hover:shadow-md relative">
+                {% if is_mid_autumn %}<span class="mid-autumn-badge">✦ MỚI • TRUNG THU</span>{% endif %}
                 
                 <div class="flex gap-3 items-start">
                   <!-- Thumbnail -->
@@ -296,7 +302,9 @@
             {% if patterns and patterns|length > 0 %}
             <div class="grid grid-cols-2 gap-2.5 max-h-[360px] overflow-y-auto pr-1">
               {% for pat in patterns %}
-              <div class="pattern-item-card bg-stone-50 hover:bg-amber-50/70 border-2 border-stone-200 hover:border-black rounded-2xl p-2 transition-all flex flex-col group shadow-sm hover:shadow-md relative">
+              {% set is_mid_autumn = (pat.season == 'mid-autumn' or '-TT-' in pat.sku) %}
+              <div class="pattern-item-card {% if is_mid_autumn %}mid-autumn-card{% else %}bg-stone-50 border-stone-200{% endif %} hover:bg-amber-50/70 border-2 hover:border-black rounded-2xl p-2 transition-all flex flex-col group shadow-sm hover:shadow-md relative">
+                {% if is_mid_autumn %}<span class="mid-autumn-badge">✦ MỚI • TRUNG THU</span>{% endif %}
                 <!-- Thumbnail -->
                 <div class="w-full h-32 rounded-xl p-1 bg-white border border-stone-200 overflow-hidden flex items-center justify-center shadow-sm cursor-pointer" onclick="applyBackgroundPattern('{{ pat.sku }}', '{{ pat.ten or pat.name }}', '{{ pat.image }}', {{ pat.price or 500 }})">
                   <img src="{{ pat.image }}" alt="{{ pat.ten or pat.name }}" loading="lazy" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform">

@@ -93,7 +93,52 @@
   
   {% block extra_head %}{% endblock %}
 </head>
-<body class="bg-[#fdfbf7] text-zinc-900 flex flex-col min-h-screen selection:bg-amber-200 selection:text-amber-950 font-sans">
+<body class="bg-[#fdfbf7] text-zinc-900 flex flex-col min-h-screen selection:bg-amber-200 selection:text-amber-950 font-sans relative">
+
+  <!-- ================= MID-AUTUMN FESTIVAL (TẾT TRUNG THU) DECORATIVE FRAME ================= -->
+  <div id="trung-thu-frame-overlay" class="trung-thu-overlay trung-thu-glow" aria-hidden="true">
+    <!-- Góc trên trái: Đèn ông sao & hoa mai vàng rực rỡ -->
+    <img src="/static/assets/decorations/trung_thu_top_left.webp" 
+         onerror="this.onerror=null; this.src='/static/assets/decorations/trung_thu_top_left.png';" 
+         alt="Trang trí Tết Trung Thu - Đèn ông sao" 
+         class="trung-thu-corner trung-thu-top-left"
+         loading="eager" decoding="async">
+    
+    <!-- Góc trên phải: Thỏ ngọc, vầng trăng rằm tròn & lồng đèn đỏ -->
+    <img src="/static/assets/decorations/trung_thu_top_right.webp" 
+         onerror="this.onerror=null; this.src='/static/assets/decorations/trung_thu_top_right.png';" 
+         alt="Trang trí Tết Trung Thu - Thỏ ngọc và Trăng rằm" 
+         class="trung-thu-corner trung-thu-top-right"
+         loading="eager" decoding="async">
+    
+    <!-- Góc dưới trái: Đầu múa lân sư rồng & bánh nướng Trung Thu -->
+    <img src="/static/assets/decorations/trung_thu_bottom_left.webp" 
+         onerror="this.onerror=null; this.src='/static/assets/decorations/trung_thu_bottom_left.png';" 
+         alt="Trang trí Tết Trung Thu - Đầu lân và Bánh nướng" 
+         class="trung-thu-corner trung-thu-bottom-left"
+         loading="eager" decoding="async">
+    
+    <!-- Góc dưới phải: Lồng đèn hoa sen & Sách tranh kỷ niệm -->
+    <img src="/static/assets/decorations/trung_thu_bottom_right.webp" 
+         onerror="this.onerror=null; this.src='/static/assets/decorations/trung_thu_bottom_right.png';" 
+         alt="Trang trí Tết Trung Thu - Lồng đèn và Sách cổ tích" 
+         class="trung-thu-corner trung-thu-bottom-right"
+         loading="eager" decoding="async">
+  </div>
+
+  <!-- Festive Floating Control Toggle (Bottom-Left) -->
+  <button id="trung-thu-toggle-btn" class="festive-toggle-btn group" title="Bật / Tắt không khí Tết Trung Thu" aria-label="Tết Trung Thu">
+    <span class="text-sm group-hover:scale-125 transition-transform inline-block">🏮</span>
+    <span id="festive-toggle-text">Trung Thu 2026</span>
+    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+  </button>
+
+  <!-- Top Festive Announcement Bar -->
+  <div class="bg-gradient-to-r from-amber-700 via-rose-900 to-amber-700 text-amber-200 text-xs sm:text-sm font-heading font-extrabold py-1.5 px-3 text-center border-b-2 border-black flex items-center justify-center gap-2 relative z-30 shadow-sm">
+    <span class="inline-block animate-bounce text-sm">🏮</span>
+    <span><b>TẾT TRUNG THU ĐOÀN VIÊN:</b> Tự Tay Thiết Kế Sổ Kỷ Niệm &amp; Nhận Bộ Quà Tặng Độc Quyền!</span>
+    <span class="inline-block animate-bounce text-sm">🥮</span>
+  </div>
 
   <!-- Main Navigation Header (Strictly Contained & Perfectly Responsive) -->
   <header class="sticky top-0 z-40 bg-[#fdfbf7]/95 backdrop-blur-md border-b-2 border-black shadow-sm w-full">

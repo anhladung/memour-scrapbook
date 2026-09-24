@@ -77,9 +77,10 @@ function quickAddToCart(sku, name, price, image, category = 'item') {
   }
 }
 
-// Mobile Menu Toggle
+// Mobile Menu Toggle & Festive Frame Init
 document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
+  initFestiveFrame();
 
   const mobileToggle = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-nav-drawer');
@@ -186,4 +187,34 @@ function initPageCarousels() {
     });
   });
 }
+
+// Mid-Autumn Festival Decoration Controller
+function initFestiveFrame() {
+  const overlay = document.getElementById('trung-thu-frame-overlay');
+  const toggleBtn = document.getElementById('trung-thu-toggle-btn');
+  const toggleText = document.getElementById('festive-toggle-text');
+
+  if (!overlay) return;
+
+  const isHidden = localStorage.getItem('memour_trung_thu_hidden') === 'true';
+  if (isHidden) {
+    overlay.classList.add('hidden-festival');
+    if (toggleText) toggleText.innerText = 'Bật Khung Trung Thu';
+  } else {
+    overlay.classList.remove('hidden-festival');
+    if (toggleText) toggleText.innerText = 'Trung Thu 2026';
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const currentlyHidden = overlay.classList.toggle('hidden-festival');
+      localStorage.setItem('memour_trung_thu_hidden', currentlyHidden);
+      if (toggleText) {
+        toggleText.innerText = currentlyHidden ? 'Bật Khung Trung Thu' : 'Trung Thu 2026';
+      }
+      showToast(currentlyHidden ? 'Đã tạm ẩn khung trang trí Trung Thu 🏮' : 'Đã bật không khí Tết Trung Thu rộn ràng! 🏮🥮', 'info');
+    });
+  }
+}
+
 

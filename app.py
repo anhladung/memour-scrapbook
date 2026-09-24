@@ -395,10 +395,15 @@ def studio():
     preset_id = request.args.get('remix', '')
     target_sku = request.args.get('sku', '')
     
-    stickers = [p for p in products if p.get('category') == 'sticker']
-    layouts = [p for p in products if p.get('category') == 'layout']
-    books = [p for p in products if p.get('category') in ('scrapbook', 'book')]
-    patterns = [p for p in products if p.get('category') in ('pattern', 'paper')]
+    def seasonal_first(item):
+        """Keep the current Mid-Autumn collection at the top of every catalog."""
+        is_mid_autumn = item.get('season') == 'mid-autumn' or '-TT-' in item.get('sku', '')
+        return 0 if is_mid_autumn else 1
+
+    stickers = sorted([p for p in products if p.get('category') == 'sticker'], key=seasonal_first)
+    layouts = sorted([p for p in products if p.get('category') == 'layout'], key=seasonal_first)
+    books = sorted([p for p in products if p.get('category') in ('scrapbook', 'book')], key=seasonal_first)
+    patterns = sorted([p for p in products if p.get('category') in ('pattern', 'paper')], key=seasonal_first)
     
     active_preset = None
     if preset_id:

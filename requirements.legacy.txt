@@ -1,0 +1,4 @@
+# Kept for the previous Gunicorn/Vercel/Render deployment path.
+# Cloudflare Python Workers uses dependencies from pyproject.toml instead.
+Flask>=3.0.0
+gunicorn>=22.0.0

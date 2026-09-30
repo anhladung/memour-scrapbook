@@ -9,6 +9,9 @@ venv/
 *.log
 
 .vercel
+.wrangler/
+python_modules/
+.venv-workers*/
 .env*
 
 # Local customer/order data (contains personal information)
@@ -18,4 +21,4 @@ data/orders.json
 contact_sheet.png
 clean_contact_sheet.png
 scratch_dark_mask.png
-static/assets/test_*.png
+public/static/assets/test_*.png

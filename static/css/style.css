@@ -380,8 +380,9 @@ body.lightbox-open { overflow: hidden; }
 }
 
 /* =========================================================
-   FESTIVE MID-AUTUMN (TẾT TRUNG THU) DECORATIVE FRAME
+   FESTIVE HALLOWEEN SCRAPBOOK DECORATIVE FRAME & THEME
    ========================================================= */
+.halloween-overlay,
 .trung-thu-overlay {
   position: fixed;
   inset: 0;
@@ -390,24 +391,27 @@ body.lightbox-open { overflow: hidden; }
   pointer-events: none;
   z-index: 998;
   overflow: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.halloween-overlay.hidden-festival,
 .trung-thu-overlay.hidden-festival {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
+.halloween-corner,
 .trung-thu-corner {
   position: absolute;
   pointer-events: none;
   user-select: none;
   z-index: 998;
-  filter: drop-shadow(0 6px 16px rgba(245, 158, 11, 0.35)) drop-shadow(0 0 20px rgba(180, 83, 9, 0.2));
+  filter: drop-shadow(0 8px 24px rgba(124, 58, 237, 0.32)) drop-shadow(0 4px 12px rgba(234, 88, 12, 0.25));
   will-change: transform;
 }
 
+.halloween-top-left,
 .trung-thu-top-left {
   top: 0;
   left: 0;
@@ -417,6 +421,7 @@ body.lightbox-open { overflow: hidden; }
   animation: floatSubtleTL 6s ease-in-out infinite alternate;
 }
 
+.halloween-top-right,
 .trung-thu-top-right {
   top: 0;
   right: 0;
@@ -426,6 +431,7 @@ body.lightbox-open { overflow: hidden; }
   animation: floatSubtleTR 7s ease-in-out infinite alternate;
 }
 
+.halloween-bottom-left,
 .trung-thu-bottom-left {
   bottom: 0;
   left: 0;
@@ -435,6 +441,7 @@ body.lightbox-open { overflow: hidden; }
   animation: floatSubtleBL 6.5s ease-in-out infinite alternate;
 }
 
+.halloween-bottom-right,
 .trung-thu-bottom-right {
   bottom: 0;
   right: 0;
@@ -464,31 +471,32 @@ body.lightbox-open { overflow: hidden; }
   100% { transform: translate(-3px, -4px) rotate(0.6deg); }
 }
 
-/* Floating lantern glow pulse */
-@keyframes lanternPulse {
+/* Floating Halloween Magic Glow Pulse */
+@keyframes halloweenSpookyPulse {
   0%, 100% {
-    filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.25)) drop-shadow(0 0 16px rgba(225, 29, 72, 0.15));
+    filter: drop-shadow(0 6px 18px rgba(124, 58, 237, 0.28)) drop-shadow(0 0 20px rgba(234, 88, 12, 0.2));
   }
   50% {
-    filter: drop-shadow(0 6px 20px rgba(245, 158, 11, 0.5)) drop-shadow(0 0 28px rgba(225, 29, 72, 0.3));
+    filter: drop-shadow(0 8px 28px rgba(124, 58, 237, 0.5)) drop-shadow(0 0 32px rgba(245, 158, 11, 0.35));
   }
 }
 
+.halloween-glow,
 .trung-thu-glow {
-  animation: lanternPulse 4.5s ease-in-out infinite;
+  animation: halloweenSpookyPulse 4.5s ease-in-out infinite;
 }
 
-/* Festive Toggle Button (Floating Gen-Z Neo Style) */
+/* Festive Toggle Button (Floating Scrapbook Neo-Brutalism Style) */
 .festive-toggle-btn {
   position: fixed;
   bottom: 22px;
   left: 22px;
   z-index: 1000;
-  background: linear-gradient(135deg, #881337 0%, #b45309 100%);
+  background: linear-gradient(135deg, #7c3aed 0%, #ea580c 55%, #f59e0b 100%);
   color: #fff;
   border: 2px solid #000;
   border-radius: 9999px;
-  padding: 8px 15px;
+  padding: 8px 16px;
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 12px;
@@ -504,7 +512,7 @@ body.lightbox-open { overflow: hidden; }
 .festive-toggle-btn:hover {
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px #000;
-  background: linear-gradient(135deg, #9f1239 0%, #d97706 100%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #f97316 55%, #fbbf24 100%);
 }
 
 .festive-toggle-btn:active {
@@ -512,72 +520,98 @@ body.lightbox-open { overflow: hidden; }
   box-shadow: 2px 2px 0px #000;
 }
 
-/* Responsive adjustments for mid-autumn frame on mobile */
+/* Washi Tape Ribbon Effect for Top Announcement Bar */
+.halloween-announcement-bar {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 15px,
+    rgba(255, 255, 255, 0.05) 15px,
+    rgba(255, 255, 255, 0.05) 30px
+  );
+  border-bottom: 2px solid #000;
+  box-shadow: 0 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments for Halloween frame on mobile */
 @media (max-width: 640px) {
+  .halloween-top-left,
   .trung-thu-top-left {
-    width: 100px;
-    opacity: 0.88;
+    width: 105px;
+    opacity: 0.92;
   }
+  .halloween-top-right,
   .trung-thu-top-right {
-    width: 95px;
-    opacity: 0.88;
+    width: 100px;
+    opacity: 0.92;
   }
+  .halloween-bottom-left,
   .trung-thu-bottom-left {
-    width: 90px;
-    opacity: 0.85;
-  }
-  .trung-thu-bottom-right {
     width: 95px;
-    opacity: 0.85;
+    opacity: 0.9;
+  }
+  .halloween-bottom-right,
+  .trung-thu-bottom-right {
+    width: 100px;
+    opacity: 0.9;
   }
   .festive-toggle-btn {
     bottom: 12px;
     left: 12px;
-    padding: 5px 10px;
-    font-size: 10.5px;
+    padding: 6px 12px;
+    font-size: 11px;
   }
 }
 
-
-
-/* Seasonal catalog cards: warm moonlight glow without overpowering thumbnails. */
+/* Halloween Scrapbook Seasonal Catalog Cards */
+.halloween-card,
 .mid-autumn-card {
-  background: linear-gradient(145deg, rgba(255, 248, 220, .98), rgba(255, 232, 177, .86));
-  border-color: #d89b22;
-  box-shadow: 0 0 0 1px rgba(168, 15, 61, .16), 0 6px 15px rgba(127, 20, 40, .12);
+  background: linear-gradient(145deg, rgba(254, 243, 199, .95), rgba(243, 232, 255, .92));
+  border-color: #ea580c !important;
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, .25), 0 6px 16px rgba(234, 88, 12, .18);
   overflow: hidden;
+  position: relative;
 }
 
+.halloween-card::after,
 .mid-autumn-card::after {
   content: "";
   position: absolute;
   inset: -80% -35%;
-  background: linear-gradient(105deg, transparent 43%, rgba(255,255,255,.6) 50%, transparent 57%);
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.65) 50%, transparent 60%);
   transform: translateX(-55%) rotate(8deg);
-  animation: midAutumnShimmer 4.8s ease-in-out infinite;
+  animation: halloweenShimmer 4.5s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
 }
 
+@keyframes halloweenShimmer {
+  0%, 100% { transform: translateX(-60%) rotate(8deg); opacity: 0; }
+  40%, 60% { transform: translateX(60%) rotate(8deg); opacity: 0.8; }
+}
+
+.halloween-card > *,
 .mid-autumn-card > * { position: relative; z-index: 1; }
 
+.halloween-badge,
 .mid-autumn-badge {
   position: absolute;
   top: .4rem;
   right: .4rem;
   z-index: 20 !important;
-  padding: .18rem .42rem;
-  border: 1px solid #2f241e;
+  padding: .2rem .48rem;
+  border: 1.5px solid #000;
   border-radius: 999px;
-  background: linear-gradient(90deg, #8f1236, #c83b32);
-  color: #fff1c7;
-  font-size: 7px;
+  background: linear-gradient(90deg, #7c3aed, #ea580c);
+  color: #fef08a;
+  font-size: 8px;
   font-weight: 900;
   letter-spacing: .04em;
-  box-shadow: 1px 2px 0 #2f241e;
+  box-shadow: 2px 2px 0px #000;
   white-space: nowrap;
 }
 
+.halloween-badge-left,
 .mid-autumn-badge-left {
   left: .4rem;
   right: auto;

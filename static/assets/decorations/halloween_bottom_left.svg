@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="360" height="360" fill="none">
+  <defs>
+    <!-- Drop Shadows for Die-Cut Scrapbook Stickers -->
+    <filter id="sticker-shadow-bl" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="-4" stdDeviation="4" flood-color="#0f0c29" flood-opacity="0.32"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+
+    <!-- Diagonal Stripe Washi Pattern -->
+    <pattern id="diagonal-stripe" width="14" height="14" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="7" height="14" fill="#a855f7"/>
+      <rect x="7" y="0" width="7" height="14" fill="#fb923c"/>
+    </pattern>
+
+    <!-- Kraft Paper Pattern -->
+    <pattern id="kraft-speckles" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#fef3c7"/>
+      <circle cx="8" cy="12" r="0.8" fill="#d97706" opacity="0.4"/>
+      <circle cx="28" cy="22" r="1" fill="#b45309" opacity="0.3"/>
+      <circle cx="16" cy="34" r="0.6" fill="#92400e" opacity="0.4"/>
+      <circle cx="36" cy="6" r="0.7" fill="#b45309" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- 1. TORN KRAFT PAPER CARDSTOCK BASE (Pinned to Corner) -->
+  <g transform="translate(0, 170)" filter="url(#sticker-shadow-bl)">
+    <!-- Torn paper shape -->
+    <path d="M 0 190 L 190 190 L 186 160 L 192 140 L 184 120 L 190 90 L 175 60 L 150 40 L 120 20 L 90 28 L 60 10 L 30 18 L 0 0 Z" 
+          fill="url(#kraft-speckles)" stroke="#d97706" stroke-width="1.5"/>
+    <!-- Stitched Seams along Paper Edge -->
+    <path d="M 12 180 L 175 180 L 170 140 L 168 100 L 140 50 L 80 32 L 20 20" 
+          fill="none" stroke="#b45309" stroke-width="1.6" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- 2. DIAGONAL STRIPED WASHI TAPE (Orange/Purple with Brass Pushpin) -->
+  <g transform="translate(15, 270) rotate(-28)" filter="url(#sticker-shadow-bl)">
+    <!-- Washi Strip -->
+    <path d="M 0 0 L 130 0 L 127 12 L 130 24 L 0 24 L 4 12 Z" 
+          fill="url(#diagonal-stripe)" stroke="#7c2d12" stroke-width="1.2"/>
+    <line x1="8" y1="12" x2="122" y2="12" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+    <!-- Brass Pushpin / Tack -->
+    <g transform="translate(18, 12)">
+      <circle cx="0" cy="0" r="7" fill="#f59e0b" stroke="#78350f" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="4.5" fill="#fef08a"/>
+      <circle cx="-1.5" cy="-1.5" r="1.5" fill="#ffffff"/>
+    </g>
+  </g>
+
+  <!-- 3. MAIN STICKER: KAWAII BLACK CAT IN WITCH HAT & BUBBLING CAULDRON -->
+  <g transform="translate(45, 150)" filter="url(#sticker-shadow-bl)">
+    
+    <!-- White Die-Cut Thick Outer Stroke -->
+    <path d="M 30 110 C 20 110 10 120 10 135 C 10 155 25 185 65 185 C 105 185 120 155 120 135 C 120 120 110 110 100 110 L 98 85 C 98 75 92 68 85 64 L 98 32 C 100 26 95 20 88 24 L 68 45 L 48 24 C 42 20 36 26 38 32 L 50 64 C 42 68 36 75 36 85 Z" 
+          fill="#ffffff" stroke="#ffffff" stroke-width="8" stroke-linejoin="round"/>
+
+    <!-- A. WITCH'S BUBBLING CAULDRON -->
+    <g transform="translate(15, 95)">
+      <!-- Cauldron Rim / Handles -->
+      <!-- Left Ear/Handle -->
+      <path d="M 5 25 C -5 25 -5 40 5 40" fill="none" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 5 25 C -5 25 -5 40 5 40" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
+      <!-- Right Ear/Handle -->
+      <path d="M 95 25 C 105 25 105 40 95 40" fill="none" stroke="#e2e8f0" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 95 25 C 105 25 105 40 95 40" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Cauldron Pot Body (Plum Violet Metal) -->
+      <ellipse cx="50" cy="55" rx="46" ry="34" fill="#3b0764"/>
+      <ellipse cx="50" cy="55" rx="42" ry="30" fill="#581c87"/>
+      <!-- Pot Bottom Feet -->
+      <ellipse cx="26" cy="85" rx="6" ry="4" fill="#3b0764"/>
+      <ellipse cx="74" cy="85" rx="6" ry="4" fill="#3b0764"/>
+
+      <!-- Cauldron Rim Ring -->
+      <ellipse cx="50" cy="22" rx="44" ry="10" fill="#3b0764" stroke="#c084fc" stroke-width="1.5"/>
+
+      <!-- Bubbling Slime Green Magic Potion -->
+      <ellipse cx="50" cy="21" rx="40" ry="8" fill="#84cc16"/>
+      <ellipse cx="48" cy="20" rx="34" ry="6" fill="#a3e635"/>
+
+      <!-- Rising Neon Slime Bubbles -->
+      <circle cx="30" cy="14" r="7" fill="#bef264" stroke="#4d7c0f" stroke-width="1.2"/>
+      <circle cx="28" cy="12" r="2" fill="#ffffff"/>
+
+      <circle cx="70" cy="10" r="9" fill="#a3e635" stroke="#4d7c0f" stroke-width="1.2"/>
+      <circle cx="68" cy="8" r="2.5" fill="#ffffff"/>
+
+      <circle cx="48" cy="5" r="5" fill="#bef264" stroke="#4d7c0f" stroke-width="1"/>
+      <circle cx="58" cy="-6" r="3.5" fill="#bef264"/>
+      
+      <!-- Tiny Skull on Cauldron -->
+      <g transform="translate(44, 45)">
+        <circle cx="6" cy="6" r="6" fill="#fef08a"/>
+        <rect x="3" y="10" width="6" height="4" rx="1" fill="#fef08a"/>
+        <circle cx="4" cy="6" r="1.3" fill="#3b0764"/>
+        <circle cx="8" cy="6" r="1.3" fill="#3b0764"/>
+      </g>
+    </g>
+
+    <!-- B. KAWAII BLACK CAT PEEKING (Head & Paws) -->
+    <g transform="translate(30, 25)">
+      <!-- Cat Head -->
+      <ellipse cx="36" cy="60" rx="26" ry="22" fill="#18181b"/>
+      <!-- Cat Ears -->
+      <polygon points="14,48 20,24 32,42" fill="#18181b"/>
+      <polygon points="17,45 21,29 29,42" fill="#f472b6"/>
+      <polygon points="58,48 52,24 40,42" fill="#18181b"/>
+      <polygon points="55,45 51,29 43,42" fill="#f472b6"/>
+
+      <!-- Big Shiny Amber Eyes -->
+      <ellipse cx="27" cy="58" rx="5.5" ry="6.5" fill="#facc15"/>
+      <ellipse cx="27" cy="58" rx="2.5" ry="5.5" fill="#09090b"/>
+      <circle cx="29" cy="55" r="2" fill="#ffffff"/>
+
+      <ellipse cx="45" cy="58" rx="5.5" ry="6.5" fill="#facc15"/>
+      <ellipse cx="45" cy="58" rx="2.5" ry="5.5" fill="#09090b"/>
+      <circle cx="47" cy="55" r="2" fill="#ffffff"/>
+
+      <!-- Pink Nose & Whiskers -->
+      <polygon points="36,65 34,68 38,68" fill="#fda4af"/>
+      <line x1="16" y1="64" x2="6" y2="62" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="16" y1="67" x2="7" y2="69" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="56" y1="64" x2="66" y2="62" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="56" y1="67" x2="65" y2="69" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+
+      <!-- Tiny Witch Hat on Cat's Head (Tilted) -->
+      <g transform="translate(18, -4) rotate(12)">
+        <!-- Hat Brim -->
+        <ellipse cx="20" cy="30" rx="24" ry="7" fill="#7c3aed" stroke="#fef08a" stroke-width="1.5"/>
+        <!-- Hat Cone -->
+        <path d="M 6 28 Q 18 10 24 -4 Q 24 10 32 28 Z" fill="#6d28d9"/>
+        <!-- Orange Ribbon Band -->
+        <path d="M 9 24 Q 20 22 30 24 L 31 28 Q 20 26 8 28 Z" fill="#f97316"/>
+        <!-- Gold Star Buckle -->
+        <polygon points="19,23 21,21 23,23 22,26 18,26" fill="#fde047"/>
+      </g>
+
+      <!-- Little Cat Paws on Rim -->
+      <g transform="translate(8, 80)">
+        <ellipse cx="12" cy="0" rx="6" ry="4.5" fill="#27272a" stroke="#ffffff" stroke-width="1"/>
+        <line x1="10" y1="-2" x2="10" y2="2" stroke="#71717a" stroke-width="1"/>
+        <line x1="14" y1="-2" x2="14" y2="2" stroke="#71717a" stroke-width="1"/>
+
+        <ellipse cx="44" cy="0" rx="6" ry="4.5" fill="#27272a" stroke="#ffffff" stroke-width="1"/>
+        <line x1="42" y1="-2" x2="42" y2="2" stroke="#71717a" stroke-width="1"/>
+        <line x1="46" y1="-2" x2="46" y2="2" stroke="#71717a" stroke-width="1"/>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- 4. MAGIC POTION VIAL STICKER (Magenta potion with craft label) -->
+  <g transform="translate(165, 230) rotate(18)" filter="url(#sticker-shadow-bl)">
+    <!-- White Die-Cut Border -->
+    <path d="M 12 10 L 12 18 C 12 20 4 28 4 48 C 4 64 16 74 30 74 C 44 74 56 64 56 48 C 56 28 48 20 48 18 L 48 10 Z" 
+          fill="#ffffff" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+    
+    <!-- Glass Vial Body -->
+    <path d="M 14 12 L 14 18 C 14 20 6 28 6 48 C 6 62 17 72 30 72 C 43 72 54 62 54 48 C 54 28 46 20 46 18 L 46 12 Z" 
+          fill="#fdf2f8" stroke="#f472b6" stroke-width="1.5"/>
+    
+    <!-- Glowing Magenta Magic Liquid -->
+    <path d="M 7 44 C 14 42 22 47 30 44 C 38 41 46 46 53 44 C 53 58 43 70 30 70 C 17 70 7 58 7 44 Z" 
+          fill="#ec4899"/>
+    <ellipse cx="22" cy="56" rx="4" ry="2" fill="#f472b6" opacity="0.6"/>
+
+    <!-- Cork Stopper -->
+    <rect x="18" y="2" width="24" height="10" rx="2" fill="#d97706" stroke="#92400e" stroke-width="1.2"/>
+
+    <!-- Scrapbook Paper Label: "MEMOUR MAGIC" -->
+    <rect x="14" y="32" width="32" height="18" rx="2" fill="#fef08a" stroke="#ca8a04" stroke-width="1"/>
+    <text x="30" y="44" font-family="'Patrick Hand', cursive, sans-serif" font-size="8" font-weight="bold" fill="#713f12" text-anchor="middle">MAGIC ✦</text>
+  </g>
+
+  <!-- 5. SCATTERED CANDY CORN & SPARKLES -->
+  <g transform="translate(145, 160)">
+    <path d="M 12 0 Q 12 8 20 8 Q 12 8 12 16 Q 12 8 4 8 Q 12 8 12 0 Z" fill="#facc15"/>
+  </g>
+  <circle cx="210" cy="205" r="3.5" fill="#a855f7"/>
+  <circle cx="35" cy="140" r="2.5" fill="#f43f5e"/>
+</svg>

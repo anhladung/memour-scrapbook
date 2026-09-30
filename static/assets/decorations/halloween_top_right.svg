@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="360" height="360" fill="none">
+  <defs>
+    <!-- Drop Shadows for Die-Cut Scrapbook Stickers -->
+    <filter id="sticker-shadow-tr" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="-3" dy="5" stdDeviation="4" flood-color="#0f0c29" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+
+    <!-- Gingham Washi Tape Pattern (Purple Plaid) -->
+    <pattern id="gingham-purple" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#f3e8ff"/>
+      <rect x="0" y="0" width="10" height="20" fill="#d8b4fe" opacity="0.75"/>
+      <rect x="0" y="0" width="20" height="10" fill="#d8b4fe" opacity="0.75"/>
+      <rect x="0" y="0" width="10" height="10" fill="#a855f7" opacity="0.85"/>
+      <rect x="10" y="10" width="10" height="10" fill="#a855f7" opacity="0.85"/>
+    </pattern>
+
+    <!-- Neon Candy Stripe Pattern -->
+    <pattern id="candy-stripe" width="16" height="16" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="8" height="16" fill="#f97316"/>
+      <rect x="8" y="0" width="8" height="16" fill="#fde047"/>
+    </pattern>
+  </defs>
+
+  <!-- 1. WASHI TAPE STRIP #1 (Gingham Purple, Torn Edges, Angle Across Corner) -->
+  <g transform="translate(190, 15) rotate(22)" filter="url(#sticker-shadow-tr)">
+    <path d="M 0 0 L 150 0 L 147 14 L 150 28 L 0 28 L 4 14 Z" 
+          fill="url(#gingham-purple)" stroke="#7e22ce" stroke-width="1.2"/>
+    <!-- Stitched Dashed Seam -->
+    <line x1="8" y1="14" x2="142" y2="14" stroke="#ffffff" stroke-width="1.6" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- 2. WASHI TAPE STRIP #2 (Neon Orange Striped) -->
+  <g transform="translate(230, 48) rotate(-16)" filter="url(#sticker-shadow-tr)">
+    <path d="M 0 0 L 120 0 L 118 22 L 120 25 L 0 25 L 3 12 Z" 
+          fill="url(#candy-stripe)" stroke="#c2410c" stroke-width="1.2" opacity="0.95"/>
+  </g>
+
+  <!-- 3. CRAFT CRESCENT MOON (Textured Yellow Cardstock with Stitches) -->
+  <g transform="translate(195, 25)" filter="url(#sticker-shadow-tr)">
+    <!-- White Die-Cut Border -->
+    <path d="M 68 0 C 105 0 132 28 132 68 C 132 108 105 136 68 136 C 54 136 40 130 28 122 C 60 114 84 88 84 68 C 84 48 60 22 28 14 C 40 6 54 0 68 0 Z" 
+          fill="#ffffff" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+    <!-- Yellow Moon Body -->
+    <path d="M 68 3 C 102 3 128 30 128 68 C 128 106 102 133 68 133 C 55 133 43 128 32 120 C 62 112 82 88 82 68 C 82 48 62 24 32 16 C 43 8 55 3 68 3 Z" 
+          fill="#fef08a"/>
+    <!-- Paper Texture Shading -->
+    <path d="M 68 8 C 98 8 122 34 122 68 C 122 102 98 128 68 128 C 60 128 52 124 45 119 C 70 108 86 86 86 68 C 86 50 70 28 45 17 C 52 12 60 8 68 8 Z" 
+          fill="#fde047" opacity="0.6"/>
+    <!-- Dashed Craft Stitches -->
+    <path d="M 72 15 C 96 18 114 40 114 68 C 114 96 96 118 72 121" 
+          fill="none" stroke="#ca8a04" stroke-width="1.8" stroke-dasharray="4,4"/>
+    <!-- Cute Punch Holes -->
+    <circle cx="95" cy="45" r="4.5" fill="#facc15" stroke="#ca8a04" stroke-width="1"/>
+    <circle cx="102" cy="76" r="6" fill="#facc15" stroke="#ca8a04" stroke-width="1"/>
+    <circle cx="86" cy="98" r="3.5" fill="#facc15" stroke="#ca8a04" stroke-width="1"/>
+  </g>
+
+  <!-- 4. MAIN STICKER: FRIENDLY KAWAII GHOST WITH RAINBOW LOLLIPOP (Die-Cut) -->
+  <g transform="translate(130, 80)" filter="url(#sticker-shadow-tr)">
+    <!-- White Die-Cut Thick Outer Stroke -->
+    <path d="M 60 12 C 30 12 18 36 18 64 C 18 96 14 120 26 128 C 34 133 44 124 52 128 C 60 132 68 132 76 128 C 84 124 94 133 102 128 C 114 120 110 96 110 64 C 110 36 98 12 68 12 Z" 
+          fill="#ffffff" stroke="#ffffff" stroke-width="8" stroke-linejoin="round"/>
+
+    <!-- Ghost Body (Soft Cream White with Lavender Gradient Shading) -->
+    <path d="M 60 14 C 32 14 20 38 20 64 C 20 94 16 118 28 125 C 35 130 43 122 52 126 C 60 130 68 130 76 126 C 85 122 93 130 100 125 C 112 118 108 94 108 64 C 108 38 96 14 70 14 Z" 
+          fill="#faf5ff"/>
+    <!-- Bottom Ghost Ruffle Shading -->
+    <path d="M 28 125 C 35 130 43 122 52 126 C 60 130 68 130 76 126 C 85 122 93 130 100 125 C 105 121 106 108 106 98 C 95 110 80 115 64 115 C 46 115 32 108 22 98 C 22 108 24 121 28 125 Z" 
+          fill="#e9d5ff" opacity="0.6"/>
+
+    <!-- Ghost Face (Super Cute Anime Scrapbook Expression) -->
+    <!-- Left Eye -->
+    <ellipse cx="44" cy="55" rx="4.5" ry="6" fill="#18181b"/>
+    <circle cx="45.5" cy="53" r="2" fill="#ffffff"/>
+    <!-- Right Eye (Winking ^_~) -->
+    <path d="M 72 58 Q 78 50 84 58" fill="none" stroke="#18181b" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Rosy Blushing Cheeks -->
+    <ellipse cx="38" cy="67" rx="5" ry="3" fill="#f472b6" opacity="0.75"/>
+    <ellipse cx="86" cy="67" rx="5" ry="3" fill="#f472b6" opacity="0.75"/>
+    
+    <!-- Happy Open Mouth with Tongue -->
+    <path d="M 58 64 Q 63 74 68 64 Z" fill="#e11d48"/>
+    <path d="M 60 67 Q 63 73 66 67 Z" fill="#fda4af"/>
+
+    <!-- Ghost Hands / Arms -->
+    <!-- Left Arm waving -->
+    <path d="M 22 65 Q 10 58 14 50 Q 20 48 26 56" fill="#ffffff" stroke="#e9d5ff" stroke-width="1.5"/>
+    <!-- Right Arm holding lollipop -->
+    <path d="M 98 68 Q 112 62 104 54 Q 96 52 90 62" fill="#ffffff" stroke="#e9d5ff" stroke-width="1.5"/>
+
+    <!-- Giant Swirl Spiral Lollipop in Hand -->
+    <g transform="translate(95, 20)">
+      <!-- Stick -->
+      <line x1="12" y1="42" x2="6" y2="70" stroke="#fef08a" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- White border of candy -->
+      <circle cx="15" cy="30" r="18" fill="#ffffff" stroke="#ffffff" stroke-width="4"/>
+      <!-- Colorful Swirl Candy Disk -->
+      <circle cx="15" cy="30" r="16" fill="#f43f5e"/>
+      <path d="M 15 14 A 16 16 0 0 1 31 30 L 15 30 Z" fill="#a855f7"/>
+      <path d="M 31 30 A 16 16 0 0 1 15 46 L 15 30 Z" fill="#38bdf8"/>
+      <path d="M 15 46 A 16 16 0 0 1 -1 30 L 15 30 Z" fill="#facc15"/>
+      <path d="M -1 30 A 16 16 0 0 1 15 14 L 15 30 Z" fill="#4ade80"/>
+      <!-- Center Swirl Ring -->
+      <circle cx="15" cy="30" r="6" fill="#f43f5e"/>
+      <!-- Ribbon Bow on Lollipop Stick -->
+      <path d="M 8 50 L 1 46 L 1 54 Z" fill="#f472b6"/>
+      <path d="M 14 50 L 21 46 L 21 54 Z" fill="#f472b6"/>
+      <circle cx="11" cy="50" r="2.5" fill="#db2777"/>
+    </g>
+
+    <!-- Mini Star Patch on Ghost Head -->
+    <path d="M 45 28 L 47 33 L 52 33 L 48 36 L 50 41 L 45 38 L 40 41 L 42 36 L 38 33 L 43 33 Z" fill="#fbbf24"/>
+  </g>
+
+  <!-- 5. PAPERCLIP PINNED SCRAPBOOK MINI TAG ("BOO! VIBES") -->
+  <g transform="translate(65, 30) rotate(-14)" filter="url(#sticker-shadow-tr)">
+    <!-- Kraft Mini Tag Body -->
+    <rect x="0" y="0" width="76" height="32" rx="5" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+    <line x1="4" y1="4" x2="72" y2="4" stroke="#d97706" stroke-width="1" stroke-dasharray="3,2"/>
+    <line x1="4" y1="28" x2="72" y2="28" stroke="#d97706" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="38" y="21" font-family="'Patrick Hand', 'Comic Sans MS', cursive, sans-serif" font-size="13" font-weight="900" fill="#7c2d12" text-anchor="middle">✦ BOO! 2026 ✦</text>
+
+    <!-- Metallic Golden Paperclip -->
+    <g transform="translate(56, -6)">
+      <path d="M 4 2 L 4 24 A 4 4 0 0 0 12 24 L 12 6 A 2.5 2.5 0 0 0 7 6 L 7 20" 
+            fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M 4 2 L 4 24 A 4 4 0 0 0 12 24 L 12 6 A 2.5 2.5 0 0 0 7 6 L 7 20" 
+            fill="none" stroke="#fef08a" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 6. SCATTERED NEON SCRAPBOOK STAR DOODLES -->
+  <g transform="translate(35, 115)">
+    <path d="M 15 0 Q 15 10 25 10 Q 15 10 15 20 Q 15 10 5 10 Q 15 10 15 0 Z" fill="#a855f7"/>
+  </g>
+  <g transform="translate(105, 140)">
+    <path d="M 10 0 Q 10 7 17 7 Q 10 7 10 14 Q 10 7 3 7 Q 10 7 10 0 Z" fill="#22c55e"/>
+  </g>
+  <circle cx="280" cy="180" r="3" fill="#f43f5e"/>
+</svg>

@@ -2338,15 +2338,54 @@
     "imageUrl": "/static/assets/stickers/mid-autumn/den-ong-sao.png",
     "thumbnailUrl": "/static/assets/stickers/mid-autumn/den-ong-sao.png",
     "price": 500,
-    "themes": ["trung thu", "trăng rằm", "tuổi thơ", "lễ hội"],
-    "chuDe": ["trung thu", "đèn ông sao", "rước đèn", "tuổi thơ"],
+    "themes": [
+      "trung thu",
+      "trăng rằm",
+      "tuổi thơ",
+      "lễ hội"
+    ],
+    "chuDe": [
+      "trung thu",
+      "đèn ông sao",
+      "rước đèn",
+      "tuổi thơ"
+    ],
     "style": "paper-cut",
-    "phongCach": ["paper-cut", "thủ công", "scrapbook", "vintage"],
-    "tags": ["trung thu", "đèn ông sao", "star lantern", "rước đèn", "tết đoàn viên"],
-    "tuKhoa": ["trung thu", "đèn ông sao", "star lantern", "rước đèn", "tết đoàn viên"],
-    "mauSac": ["đỏ burgundy", "vàng kim", "kem"],
-    "camXuc": ["vui tươi", "ấm áp", "hoài niệm"],
-    "dipSuDung": ["tết trung thu", "đêm hội trăng rằm", "scrapbook tuổi thơ"],
+    "phongCach": [
+      "paper-cut",
+      "thủ công",
+      "scrapbook",
+      "vintage"
+    ],
+    "tags": [
+      "trung thu",
+      "đèn ông sao",
+      "star lantern",
+      "rước đèn",
+      "tết đoàn viên"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "đèn ông sao",
+      "star lantern",
+      "rước đèn",
+      "tết đoàn viên"
+    ],
+    "mauSac": [
+      "đỏ burgundy",
+      "vàng kim",
+      "kem"
+    ],
+    "camXuc": [
+      "vui tươi",
+      "ấm áp",
+      "hoài niệm"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "đêm hội trăng rằm",
+      "scrapbook tuổi thơ"
+    ],
     "is3D": true,
     "is_3d": true,
     "createdAt": "2026-09-24T16:45:00+07:00"
@@ -2365,15 +2404,49 @@
     "imageUrl": "/static/assets/stickers/mid-autumn/cum-den-long.png",
     "thumbnailUrl": "/static/assets/stickers/mid-autumn/cum-den-long.png",
     "price": 600,
-    "themes": ["trung thu", "lễ hội", "đêm trăng"],
-    "chuDe": ["trung thu", "đèn lồng", "rước đèn"],
+    "themes": [
+      "trung thu",
+      "lễ hội",
+      "đêm trăng"
+    ],
+    "chuDe": [
+      "trung thu",
+      "đèn lồng",
+      "rước đèn"
+    ],
     "style": "paper-cut",
-    "phongCach": ["paper-cut", "thủ công", "scrapbook"],
-    "tags": ["trung thu", "đèn lồng", "lantern", "rước đèn", "đoàn viên"],
-    "tuKhoa": ["trung thu", "đèn lồng", "lantern", "rước đèn", "đoàn viên"],
-    "mauSac": ["đỏ", "vàng kim", "xanh ngọc"],
-    "camXuc": ["rộn ràng", "ấm áp"],
-    "dipSuDung": ["tết trung thu", "đêm hội trăng rằm"],
+    "phongCach": [
+      "paper-cut",
+      "thủ công",
+      "scrapbook"
+    ],
+    "tags": [
+      "trung thu",
+      "đèn lồng",
+      "lantern",
+      "rước đèn",
+      "đoàn viên"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "đèn lồng",
+      "lantern",
+      "rước đèn",
+      "đoàn viên"
+    ],
+    "mauSac": [
+      "đỏ",
+      "vàng kim",
+      "xanh ngọc"
+    ],
+    "camXuc": [
+      "rộn ràng",
+      "ấm áp"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "đêm hội trăng rằm"
+    ],
     "is3D": true,
     "is_3d": true,
     "createdAt": "2026-09-24T16:46:00+07:00"
@@ -2392,15 +2465,51 @@
     "imageUrl": "/static/assets/stickers/mid-autumn/trang-may-sao.png",
     "thumbnailUrl": "/static/assets/stickers/mid-autumn/trang-may-sao.png",
     "price": 500,
-    "themes": ["trung thu", "trăng rằm", "đêm trăng"],
-    "chuDe": ["mặt trăng", "mây", "ngôi sao", "đoàn viên"],
+    "themes": [
+      "trung thu",
+      "trăng rằm",
+      "đêm trăng"
+    ],
+    "chuDe": [
+      "mặt trăng",
+      "mây",
+      "ngôi sao",
+      "đoàn viên"
+    ],
     "style": "paper-cut",
-    "phongCach": ["paper-cut", "thủ công", "thơ mộng"],
-    "tags": ["trung thu", "trăng rằm", "mặt trăng", "mây", "moon festival"],
-    "tuKhoa": ["trung thu", "trăng rằm", "mặt trăng", "mây", "moon festival"],
-    "mauSac": ["vàng trăng", "kem", "xanh navy"],
-    "camXuc": ["bình yên", "ấm áp", "đoàn viên"],
-    "dipSuDung": ["tết trung thu", "album gia đình"],
+    "phongCach": [
+      "paper-cut",
+      "thủ công",
+      "thơ mộng"
+    ],
+    "tags": [
+      "trung thu",
+      "trăng rằm",
+      "mặt trăng",
+      "mây",
+      "moon festival"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "trăng rằm",
+      "mặt trăng",
+      "mây",
+      "moon festival"
+    ],
+    "mauSac": [
+      "vàng trăng",
+      "kem",
+      "xanh navy"
+    ],
+    "camXuc": [
+      "bình yên",
+      "ấm áp",
+      "đoàn viên"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "album gia đình"
+    ],
     "is3D": true,
     "is_3d": true,
     "createdAt": "2026-09-24T16:47:00+07:00"
@@ -2419,15 +2528,50 @@
     "imageUrl": "/static/assets/stickers/mid-autumn/dau-lan.png",
     "thumbnailUrl": "/static/assets/stickers/mid-autumn/dau-lan.png",
     "price": 700,
-    "themes": ["trung thu", "múa lân", "lễ hội Việt Nam"],
-    "chuDe": ["đầu lân", "múa lân", "đêm hội"],
+    "themes": [
+      "trung thu",
+      "múa lân",
+      "lễ hội Việt Nam"
+    ],
+    "chuDe": [
+      "đầu lân",
+      "múa lân",
+      "đêm hội"
+    ],
     "style": "paper-cut",
-    "phongCach": ["paper-cut", "thủ công", "rực rỡ"],
-    "tags": ["trung thu", "đầu lân", "múa lân", "lion dance", "lễ hội"],
-    "tuKhoa": ["trung thu", "đầu lân", "múa lân", "lion dance", "lễ hội"],
-    "mauSac": ["đỏ", "vàng kim", "xanh ngọc"],
-    "camXuc": ["náo nhiệt", "vui tươi", "hào hứng"],
-    "dipSuDung": ["tết trung thu", "đêm hội thiếu nhi"],
+    "phongCach": [
+      "paper-cut",
+      "thủ công",
+      "rực rỡ"
+    ],
+    "tags": [
+      "trung thu",
+      "đầu lân",
+      "múa lân",
+      "lion dance",
+      "lễ hội"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "đầu lân",
+      "múa lân",
+      "lion dance",
+      "lễ hội"
+    ],
+    "mauSac": [
+      "đỏ",
+      "vàng kim",
+      "xanh ngọc"
+    ],
+    "camXuc": [
+      "náo nhiệt",
+      "vui tươi",
+      "hào hứng"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "đêm hội thiếu nhi"
+    ],
     "is3D": true,
     "is_3d": true,
     "createdAt": "2026-09-24T16:48:00+07:00"
@@ -2446,15 +2590,51 @@
     "imageUrl": "/static/assets/stickers/mid-autumn/banh-trung-thu.png",
     "thumbnailUrl": "/static/assets/stickers/mid-autumn/banh-trung-thu.png",
     "price": 600,
-    "themes": ["trung thu", "ẩm thực", "đoàn viên"],
-    "chuDe": ["bánh trung thu", "trà", "sum họp"],
+    "themes": [
+      "trung thu",
+      "ẩm thực",
+      "đoàn viên"
+    ],
+    "chuDe": [
+      "bánh trung thu",
+      "trà",
+      "sum họp"
+    ],
     "style": "paper-cut",
-    "phongCach": ["paper-cut", "thủ công", "ấm áp"],
-    "tags": ["trung thu", "bánh trung thu", "mooncake", "hạt sen", "trứng muối"],
-    "tuKhoa": ["trung thu", "bánh trung thu", "mooncake", "hạt sen", "trứng muối"],
-    "mauSac": ["vàng nướng", "đỏ burgundy", "xanh lá"],
-    "camXuc": ["ấm áp", "sum vầy", "ngọt ngào"],
-    "dipSuDung": ["tết trung thu", "album gia đình", "quà tặng"],
+    "phongCach": [
+      "paper-cut",
+      "thủ công",
+      "ấm áp"
+    ],
+    "tags": [
+      "trung thu",
+      "bánh trung thu",
+      "mooncake",
+      "hạt sen",
+      "trứng muối"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "bánh trung thu",
+      "mooncake",
+      "hạt sen",
+      "trứng muối"
+    ],
+    "mauSac": [
+      "vàng nướng",
+      "đỏ burgundy",
+      "xanh lá"
+    ],
+    "camXuc": [
+      "ấm áp",
+      "sum vầy",
+      "ngọt ngào"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "album gia đình",
+      "quà tặng"
+    ],
     "is3D": true,
     "is_3d": true,
     "createdAt": "2026-09-24T16:49:00+07:00"
@@ -2473,15 +2653,53 @@
     "imageUrl": "/static/assets/stickers/mid-autumn/tho-ngoc.png",
     "thumbnailUrl": "/static/assets/stickers/mid-autumn/tho-ngoc.png",
     "price": 700,
-    "themes": ["trung thu", "thỏ ngọc", "thiếu nhi", "trăng rằm"],
-    "chuDe": ["thỏ ngọc", "đèn ông sao", "tuổi thơ"],
+    "themes": [
+      "trung thu",
+      "thỏ ngọc",
+      "thiếu nhi",
+      "trăng rằm"
+    ],
+    "chuDe": [
+      "thỏ ngọc",
+      "đèn ông sao",
+      "tuổi thơ"
+    ],
     "style": "paper-cut",
-    "phongCach": ["paper-cut", "thủ công", "dễ thương"],
-    "tags": ["trung thu", "thỏ ngọc", "moon rabbit", "đèn ông sao", "thiếu nhi"],
-    "tuKhoa": ["trung thu", "thỏ ngọc", "moon rabbit", "đèn ông sao", "thiếu nhi"],
-    "mauSac": ["kem", "hồng phấn", "đỏ burgundy", "vàng"],
-    "camXuc": ["dễ thương", "vui tươi", "ấm áp"],
-    "dipSuDung": ["tết trung thu", "album em bé", "scrapbook tuổi thơ"],
+    "phongCach": [
+      "paper-cut",
+      "thủ công",
+      "dễ thương"
+    ],
+    "tags": [
+      "trung thu",
+      "thỏ ngọc",
+      "moon rabbit",
+      "đèn ông sao",
+      "thiếu nhi"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "thỏ ngọc",
+      "moon rabbit",
+      "đèn ông sao",
+      "thiếu nhi"
+    ],
+    "mauSac": [
+      "kem",
+      "hồng phấn",
+      "đỏ burgundy",
+      "vàng"
+    ],
+    "camXuc": [
+      "dễ thương",
+      "vui tươi",
+      "ấm áp"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "album em bé",
+      "scrapbook tuổi thơ"
+    ],
     "is3D": true,
     "is_3d": true,
     "createdAt": "2026-09-24T16:50:00+07:00"
@@ -2500,15 +2718,52 @@
     "imageUrl": "/static/assets/stickers/mid-autumn/nhanh-hoa-vang.png",
     "thumbnailUrl": "/static/assets/stickers/mid-autumn/nhanh-hoa-vang.png",
     "price": 500,
-    "themes": ["trung thu", "hoa lá", "mùa thu"],
-    "chuDe": ["hoa vàng", "lá xanh", "tua rua", "trang trí góc"],
+    "themes": [
+      "trung thu",
+      "hoa lá",
+      "mùa thu"
+    ],
+    "chuDe": [
+      "hoa vàng",
+      "lá xanh",
+      "tua rua",
+      "trang trí góc"
+    ],
     "style": "paper-cut",
-    "phongCach": ["paper-cut", "thủ công", "thanh lịch"],
-    "tags": ["trung thu", "hoa vàng", "osmanthus", "hoa lá", "tua rua"],
-    "tuKhoa": ["trung thu", "hoa vàng", "osmanthus", "hoa lá", "tua rua"],
-    "mauSac": ["vàng", "xanh ngọc", "đỏ burgundy"],
-    "camXuc": ["dịu dàng", "thanh lịch", "ấm áp"],
-    "dipSuDung": ["tết trung thu", "trang trí scrapbook", "album mùa thu"],
+    "phongCach": [
+      "paper-cut",
+      "thủ công",
+      "thanh lịch"
+    ],
+    "tags": [
+      "trung thu",
+      "hoa vàng",
+      "osmanthus",
+      "hoa lá",
+      "tua rua"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "hoa vàng",
+      "osmanthus",
+      "hoa lá",
+      "tua rua"
+    ],
+    "mauSac": [
+      "vàng",
+      "xanh ngọc",
+      "đỏ burgundy"
+    ],
+    "camXuc": [
+      "dịu dàng",
+      "thanh lịch",
+      "ấm áp"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "trang trí scrapbook",
+      "album mùa thu"
+    ],
     "is3D": true,
     "is_3d": true,
     "createdAt": "2026-09-24T16:51:00+07:00"
@@ -2527,15 +2782,55 @@
     "imageUrl": "/static/assets/stickers/mid-autumn/cum-le-hoi.png",
     "thumbnailUrl": "/static/assets/stickers/mid-autumn/cum-le-hoi.png",
     "price": 800,
-    "themes": ["trung thu", "lễ hội", "đêm trăng", "đoàn viên"],
-    "chuDe": ["đèn lồng", "quạt giấy", "đèn ông sao", "mây"],
+    "themes": [
+      "trung thu",
+      "lễ hội",
+      "đêm trăng",
+      "đoàn viên"
+    ],
+    "chuDe": [
+      "đèn lồng",
+      "quạt giấy",
+      "đèn ông sao",
+      "mây"
+    ],
     "style": "paper-cut",
-    "phongCach": ["paper-cut", "thủ công", "scrapbook", "lễ hội"],
-    "tags": ["trung thu", "đèn lồng", "đèn ông sao", "quạt giấy", "lễ hội trăng rằm"],
-    "tuKhoa": ["trung thu", "đèn lồng", "đèn ông sao", "quạt giấy", "lễ hội trăng rằm"],
-    "mauSac": ["đỏ", "vàng kim", "xanh ngọc", "xanh navy"],
-    "camXuc": ["rộn ràng", "ấm áp", "sum vầy"],
-    "dipSuDung": ["tết trung thu", "đêm hội trăng rằm", "album gia đình"],
+    "phongCach": [
+      "paper-cut",
+      "thủ công",
+      "scrapbook",
+      "lễ hội"
+    ],
+    "tags": [
+      "trung thu",
+      "đèn lồng",
+      "đèn ông sao",
+      "quạt giấy",
+      "lễ hội trăng rằm"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "đèn lồng",
+      "đèn ông sao",
+      "quạt giấy",
+      "lễ hội trăng rằm"
+    ],
+    "mauSac": [
+      "đỏ",
+      "vàng kim",
+      "xanh ngọc",
+      "xanh navy"
+    ],
+    "camXuc": [
+      "rộn ràng",
+      "ấm áp",
+      "sum vầy"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "đêm hội trăng rằm",
+      "album gia đình"
+    ],
     "is3D": true,
     "is_3d": true,
     "createdAt": "2026-09-24T16:52:00+07:00"
@@ -2557,16 +2852,60 @@
     "imageUrl": "/static/assets/layouts/mid-autumn/khung-dem-hoi-trang-ram.png",
     "thumbnailUrl": "/static/assets/layouts/mid-autumn/khung-dem-hoi-trang-ram.png",
     "price": 2500,
-    "themes": ["trung thu", "trăng rằm", "đoàn viên", "rước đèn"],
-    "chuDe": ["trung thu", "đèn lồng", "bánh trung thu", "đèn ông sao"],
+    "themes": [
+      "trung thu",
+      "trăng rằm",
+      "đoàn viên",
+      "rước đèn"
+    ],
+    "chuDe": [
+      "trung thu",
+      "đèn lồng",
+      "bánh trung thu",
+      "đèn ông sao"
+    ],
     "style": "paper-cut",
-    "phongCach": ["paper-cut", "thủ công", "scrapbook Việt Nam"],
-    "tags": ["trung thu", "layout trung thu", "khung ảnh", "moon festival"],
-    "tuKhoa": ["trung thu", "layout trung thu", "khung ảnh", "moon festival"],
-    "mauSac": ["đỏ burgundy", "vàng kim", "xanh navy", "kem"],
-    "camXuc": ["rộn ràng", "ấm áp", "sum vầy"],
-    "dipSuDung": ["tết trung thu", "album gia đình", "ảnh đêm hội"],
-    "inner_window": {"x": 210, "y": 312, "width": 832, "height": 596, "origW": 1254, "origH": 1254},
+    "phongCach": [
+      "paper-cut",
+      "thủ công",
+      "scrapbook Việt Nam"
+    ],
+    "tags": [
+      "trung thu",
+      "layout trung thu",
+      "khung ảnh",
+      "moon festival"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "layout trung thu",
+      "khung ảnh",
+      "moon festival"
+    ],
+    "mauSac": [
+      "đỏ burgundy",
+      "vàng kim",
+      "xanh navy",
+      "kem"
+    ],
+    "camXuc": [
+      "rộn ràng",
+      "ấm áp",
+      "sum vầy"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "album gia đình",
+      "ảnh đêm hội"
+    ],
+    "inner_window": {
+      "x": 210,
+      "y": 312,
+      "width": 832,
+      "height": 596,
+      "origW": 1254,
+      "origH": 1254
+    },
     "createdAt": "2026-09-24T17:20:00+07:00"
   },
   {
@@ -2588,16 +2927,59 @@
     "backImageUrl": "/static/assets/scrapbooks/mid-autumn/bia-so-dem-trang-doan-vien.png",
     "price": 135000,
     "colorHex": "#f6e5bf",
-    "themes": ["trung thu", "trăng rằm", "đoàn viên", "gia đình"],
-    "chuDe": ["trung thu", "thỏ ngọc", "đèn ông sao", "hoa vàng"],
+    "themes": [
+      "trung thu",
+      "trăng rằm",
+      "đoàn viên",
+      "gia đình"
+    ],
+    "chuDe": [
+      "trung thu",
+      "thỏ ngọc",
+      "đèn ông sao",
+      "hoa vàng"
+    ],
     "style": "paper-cut premium",
-    "phongCach": ["thủ công", "paper-cut", "dập nổi", "dát vàng"],
-    "tags": ["trung thu", "bìa sổ trung thu", "scrapbook", "đoàn viên"],
-    "tuKhoa": ["trung thu", "bìa sổ trung thu", "scrapbook", "đoàn viên"],
-    "mauSac": ["kem", "đỏ burgundy", "vàng kim", "xanh navy"],
-    "camXuc": ["ấm áp", "trân quý", "đoàn viên"],
-    "dipSuDung": ["tết trung thu", "quà tặng gia đình", "lưu giữ kỷ niệm"],
-    "specs": {"pages": 30, "paperWeight": "300gsm", "size": "A5 (21 x 15 cm)", "binding": "Bìa cứng gáy vòng kim loại cổ điển"},
+    "phongCach": [
+      "thủ công",
+      "paper-cut",
+      "dập nổi",
+      "dát vàng"
+    ],
+    "tags": [
+      "trung thu",
+      "bìa sổ trung thu",
+      "scrapbook",
+      "đoàn viên"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "bìa sổ trung thu",
+      "scrapbook",
+      "đoàn viên"
+    ],
+    "mauSac": [
+      "kem",
+      "đỏ burgundy",
+      "vàng kim",
+      "xanh navy"
+    ],
+    "camXuc": [
+      "ấm áp",
+      "trân quý",
+      "đoàn viên"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "quà tặng gia đình",
+      "lưu giữ kỷ niệm"
+    ],
+    "specs": {
+      "pages": 30,
+      "paperWeight": "300gsm",
+      "size": "A5 (21 x 15 cm)",
+      "binding": "Bìa cứng gáy vòng kim loại cổ điển"
+    },
     "createdAt": "2026-09-24T17:21:00+07:00"
   },
   {
@@ -2616,15 +2998,320 @@
     "imageUrl": "/static/assets/patterns/mid-autumn/giay-trang-ram-hoa-vang.png",
     "thumbnailUrl": "/static/assets/patterns/mid-autumn/giay-trang-ram-hoa-vang.png",
     "price": 800,
-    "themes": ["trung thu", "trăng rằm", "hoa vàng", "mùa thu"],
-    "chuDe": ["trung thu", "mặt trăng", "mây", "hoa vàng"],
+    "themes": [
+      "trung thu",
+      "trăng rằm",
+      "hoa vàng",
+      "mùa thu"
+    ],
+    "chuDe": [
+      "trung thu",
+      "mặt trăng",
+      "mây",
+      "hoa vàng"
+    ],
     "style": "giấy mỹ thuật thủ công",
-    "phongCach": ["giấy dó", "thủ công", "họa tiết lặp"],
-    "tags": ["trung thu", "nền giấy", "trăng rằm", "hoa vàng"],
-    "tuKhoa": ["trung thu", "nền giấy", "trăng rằm", "hoa vàng"],
-    "mauSac": ["kem ngà", "vàng nhạt", "xanh ngọc", "đỏ burgundy"],
-    "camXuc": ["dịu dàng", "ấm áp", "thanh lịch"],
-    "dipSuDung": ["tết trung thu", "album gia đình", "viết lưu bút"],
+    "phongCach": [
+      "giấy dó",
+      "thủ công",
+      "họa tiết lặp"
+    ],
+    "tags": [
+      "trung thu",
+      "nền giấy",
+      "trăng rằm",
+      "hoa vàng"
+    ],
+    "tuKhoa": [
+      "trung thu",
+      "nền giấy",
+      "trăng rằm",
+      "hoa vàng"
+    ],
+    "mauSac": [
+      "kem ngà",
+      "vàng nhạt",
+      "xanh ngọc",
+      "đỏ burgundy"
+    ],
+    "camXuc": [
+      "dịu dàng",
+      "ấm áp",
+      "thanh lịch"
+    ],
+    "dipSuDung": [
+      "tết trung thu",
+      "album gia đình",
+      "viết lưu bút"
+    ],
     "createdAt": "2026-09-24T17:22:00+07:00"
+  },
+  {
+    "id": "STK-HW-001",
+    "sku": "STK-HW-001",
+    "name": "Sticker Bí Ngô Jack Đeo Kính Cận Scrapbook",
+    "ten": "Sticker Bí Ngô Jack Đeo Kính Cận Scrapbook",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "sticker halloween",
+    "description": "Bí ngô Jack-o-lantern ngộ nghĩnh đeo kính tròn hipster, dập nổi viền sticker trắng phong cách scrapbook thủ công.",
+    "moTa": "Bí ngô Jack-o-lantern ngộ nghĩnh đeo kính tròn hipster, dập nổi viền sticker trắng phong cách scrapbook thủ công.",
+    "image": "/static/assets/stickers/halloween/bi-ngo-jack.svg",
+    "imageUrl": "/static/assets/stickers/halloween/bi-ngo-jack.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/bi-ngo-jack.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "bí ngô",
+      "cute",
+      "spooky",
+      "scrapbook"
+    ],
+    "chuDe": [
+      "halloween",
+      "bí ngô",
+      "kính cận",
+      "thủ công"
+    ],
+    "style": "scrapbook-sticker",
+    "is3D": true,
+    "is_3d": true,
+    "createdAt": "2026-09-30T13:30:00+07:00"
+  },
+  {
+    "id": "STK-HW-002",
+    "sku": "STK-HW-002",
+    "name": "Sticker Hồn Ma Kawaii Kẹo Mút Cầu Vồng",
+    "ten": "Sticker Hồn Ma Kawaii Kẹo Mút Cầu Vồng",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "sticker halloween",
+    "description": "Bóng ma bông gòn má hồng siêu đáng yêu đang nháy mắt và cầm kẹo mút xoắn ốc nhiều màu rực rỡ.",
+    "moTa": "Bóng ma bông gòn má hồng siêu đáng yêu đang nháy mắt và cầm kẹo mút xoắn ốc nhiều màu rực rỡ.",
+    "image": "/static/assets/stickers/halloween/ma-cute-boo.svg",
+    "imageUrl": "/static/assets/stickers/halloween/ma-cute-boo.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/ma-cute-boo.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "ma cute",
+      "kẹo mút",
+      "kawaii",
+      "scrapbook"
+    ],
+    "chuDe": [
+      "halloween",
+      "hồn ma",
+      "kẹo ngọt",
+      "dễ thương"
+    ],
+    "style": "scrapbook-sticker",
+    "is3D": true,
+    "is_3d": true,
+    "createdAt": "2026-09-30T13:30:00+07:00"
+  },
+  {
+    "id": "STK-HW-003",
+    "sku": "STK-HW-003",
+    "name": "Sticker Mèo Đen Vạc Phù Thủy Slime Neons",
+    "ten": "Sticker Mèo Đen Vạc Phù Thủy Slime Neons",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "sticker halloween",
+    "description": "Mèo đen mắt hổ phách đội mũ phù thủy ngó đầu khỏi vạc thuốc ma thuật sôi sùng sục bọt xanh neon.",
+    "moTa": "Mèo đen mắt hổ phách đội mũ phù thủy ngó đầu khỏi vạc thuốc ma thuật sôi sùng sục bọt xanh neon.",
+    "image": "/static/assets/stickers/halloween/meo-den-phu-thuy.svg",
+    "imageUrl": "/static/assets/stickers/halloween/meo-den-phu-thuy.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/meo-den-phu-thuy.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "mèo đen",
+      "vạc phù thủy",
+      "magic",
+      "scrapbook"
+    ],
+    "chuDe": [
+      "halloween",
+      "mèo đen",
+      "phù thủy",
+      "slime"
+    ],
+    "style": "scrapbook-sticker",
+    "is3D": true,
+    "is_3d": true,
+    "createdAt": "2026-09-30T13:30:00+07:00"
+  },
+  {
+    "id": "STK-HW-004",
+    "sku": "STK-HW-004",
+    "name": "Sticker Kẹo Mút Khổng Lồ Halloween DIY",
+    "ten": "Sticker Kẹo Mút Khổng Lồ Halloween DIY",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "sticker halloween",
+    "description": "Cây kẹo xoắn lốc xoáy rực rỡ sắc màu tím, cam, vàng, xanh lá đính nơ ruy băng hồng pastel.",
+    "moTa": "Cây kẹo xoắn lốc xoáy rực rỡ sắc màu tím, cam, vàng, xanh lá đính nơ ruy băng hồng pastel.",
+    "image": "/static/assets/stickers/halloween/keo-mut-halloween.svg",
+    "imageUrl": "/static/assets/stickers/halloween/keo-mut-halloween.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/keo-mut-halloween.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "kẹo xoắn",
+      "lollipop",
+      "ngọt ngào",
+      "scrapbook"
+    ],
+    "chuDe": [
+      "halloween",
+      "kẹo",
+      "party",
+      "trick or treat"
+    ],
+    "style": "scrapbook-sticker",
+    "is3D": true,
+    "is_3d": true,
+    "createdAt": "2026-09-30T13:30:00+07:00"
+  },
+  {
+    "id": "STK-HW-005",
+    "sku": "STK-HW-005",
+    "name": "Sticker Dơi Giấy Origami Khâu Chỉ Tím",
+    "ten": "Sticker Dơi Giấy Origami Khâu Chỉ Tím",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "sticker halloween",
+    "description": "Chú dơi gấp giấy origami tông tím than phối đường nếp gấp kim tuyến và mắt xanh ngọc lấp lánh.",
+    "moTa": "Chú dơi gấp giấy origami tông tím than phối đường nếp gấp kim tuyến và mắt xanh ngọc lấp lánh.",
+    "image": "/static/assets/stickers/halloween/doi-giay-origami.svg",
+    "imageUrl": "/static/assets/stickers/halloween/doi-giay-origami.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/doi-giay-origami.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "dơi origami",
+      "giấy gấp",
+      "tím huyền bí"
+    ],
+    "chuDe": [
+      "halloween",
+      "dơi",
+      "origami",
+      "paper craft"
+    ],
+    "style": "scrapbook-sticker",
+    "is3D": true,
+    "is_3d": true,
+    "createdAt": "2026-09-30T13:30:00+07:00"
+  },
+  {
+    "id": "STK-HW-006",
+    "sku": "STK-HW-006",
+    "name": "Sticker Mạng Nhện Ren & Nhện Len Nút Áo",
+    "ten": "Sticker Mạng Nhện Ren & Nhện Len Nút Áo",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "sticker halloween",
+    "description": "Mạng nhện thêu chỉ ren pastel kèm chú nhện bông cúc áo đáng yêu đung đưa trên sợi chỉ hồng.",
+    "moTa": "Mạng nhện thêu chỉ ren pastel kèm chú nhện bông cúc áo đáng yêu đung đưa trên sợi chỉ hồng.",
+    "image": "/static/assets/stickers/halloween/mang-nhen-lap-lanh.svg",
+    "imageUrl": "/static/assets/stickers/halloween/mang-nhen-lap-lanh.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/mang-nhen-lap-lanh.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "mạng nhện",
+      "nhện nút áo",
+      "handmade"
+    ],
+    "chuDe": [
+      "halloween",
+      "nhện",
+      "thêu ren",
+      "trang trí"
+    ],
+    "style": "scrapbook-sticker",
+    "is3D": true,
+    "is_3d": true,
+    "createdAt": "2026-09-30T13:30:00+07:00"
+  },
+  {
+    "id": "STK-HW-007",
+    "sku": "STK-HW-007",
+    "name": "Sticker Lọ Thuốc Phép Màu Phù Thủy",
+    "ten": "Sticker Lọ Thuốc Phép Màu Phù Thủy",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "sticker halloween",
+    "description": "Bình thủy tinh nút bần chứa dung dịch ma thuật hồng tím phát sáng với nhãn giấy craft viết tay.",
+    "moTa": "Bình thủy tinh nút bần chứa dung dịch ma thuật hồng tím phát sáng với nhãn giấy craft viết tay.",
+    "image": "/static/assets/stickers/halloween/lo-thuoc-phep.svg",
+    "imageUrl": "/static/assets/stickers/halloween/lo-thuoc-phep.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/lo-thuoc-phep.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "lọ thuốc",
+      "magic potion",
+      "phù thủy"
+    ],
+    "chuDe": [
+      "halloween",
+      "potion",
+      "phép thuật",
+      "kraft"
+    ],
+    "style": "scrapbook-sticker",
+    "is3D": true,
+    "is_3d": true,
+    "createdAt": "2026-09-30T13:30:00+07:00"
+  },
+  {
+    "id": "STK-HW-008",
+    "sku": "STK-HW-008",
+    "name": "Sticker Mũ Phù Thủy Băng Dính Washi",
+    "ten": "Sticker Mũ Phù Thủy Băng Dính Washi",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "sticker halloween",
+    "description": "Mũ chóp nhọn nhung tím buộc đai washi chấm bi cam neon, khóa sao vàng và thẻ tag giấy xé xinh xắn.",
+    "moTa": "Mũ chóp nhọn nhung tím buộc đai washi chấm bi cam neon, khóa sao vàng và thẻ tag giấy xé xinh xắn.",
+    "image": "/static/assets/stickers/halloween/mu-phu-thuy-scrapbook.svg",
+    "imageUrl": "/static/assets/stickers/halloween/mu-phu-thuy-scrapbook.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/mu-phu-thuy-scrapbook.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "mũ phù thủy",
+      "washi tape",
+      "sao vàng"
+    ],
+    "chuDe": [
+      "halloween",
+      "mũ",
+      "witch hat",
+      "craft"
+    ],
+    "style": "scrapbook-sticker",
+    "is3D": true,
+    "is_3d": true,
+    "createdAt": "2026-09-30T13:30:00+07:00"
   }
 ]

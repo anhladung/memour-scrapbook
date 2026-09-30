@@ -188,31 +188,31 @@ function initPageCarousels() {
   });
 }
 
-// Mid-Autumn Festival Decoration Controller
+// Halloween & Festive Scrapbook Decoration Controller
 function initFestiveFrame() {
-  const overlay = document.getElementById('trung-thu-frame-overlay');
-  const toggleBtn = document.getElementById('trung-thu-toggle-btn');
+  const overlay = document.getElementById('halloween-frame-overlay') || document.getElementById('trung-thu-frame-overlay');
+  const toggleBtn = document.getElementById('festive-toggle-btn') || document.getElementById('trung-thu-toggle-btn');
   const toggleText = document.getElementById('festive-toggle-text');
 
   if (!overlay) return;
 
-  const isHidden = localStorage.getItem('memour_trung_thu_hidden') === 'true';
+  const isHidden = localStorage.getItem('memour_halloween_hidden') === 'true' || localStorage.getItem('memour_trung_thu_hidden') === 'true';
   if (isHidden) {
     overlay.classList.add('hidden-festival');
-    if (toggleText) toggleText.innerText = 'Bật Khung Trung Thu';
+    if (toggleText) toggleText.innerText = 'Bật Khung Halloween';
   } else {
     overlay.classList.remove('hidden-festival');
-    if (toggleText) toggleText.innerText = 'Trung Thu 2026';
+    if (toggleText) toggleText.innerText = 'Halloween 2026';
   }
 
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
       const currentlyHidden = overlay.classList.toggle('hidden-festival');
-      localStorage.setItem('memour_trung_thu_hidden', currentlyHidden);
+      localStorage.setItem('memour_halloween_hidden', currentlyHidden);
       if (toggleText) {
-        toggleText.innerText = currentlyHidden ? 'Bật Khung Trung Thu' : 'Trung Thu 2026';
+        toggleText.innerText = currentlyHidden ? 'Bật Khung Halloween' : 'Halloween 2026';
       }
-      showToast(currentlyHidden ? 'Đã tạm ẩn khung trang trí Trung Thu 🏮' : 'Đã bật không khí Tết Trung Thu rộn ràng! 🏮🥮', 'info');
+      showToast(currentlyHidden ? 'Đã tạm ẩn khung trang trí Halloween 🎃' : 'Đã bật không khí Halloween Scrapbook rực rỡ! 🎃👻🍬', 'info');
     });
   }
 }

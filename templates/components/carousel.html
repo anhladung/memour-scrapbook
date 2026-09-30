@@ -1,15 +1,16 @@
-{# Reusable Unified Page Hero Carousel Component - 2 Halloween Scrapbook Hero Banners & Fixed 3D Center Content #}
+{# Reusable Unified Page Hero Carousel Component - 3 Halloween Scrapbook Hero Banners & Fixed 3D Center Content #}
 {% macro render_hero_carousel(carousel_id, title, buttons, desc=None, brand_pill=None) %}
 <section class="py-6 sm:py-10 bg-[#fdfbf7]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div id="{{ carousel_id }}" class="carousel-container relative overflow-hidden w-full rounded-2xl sm:rounded-3xl border-3 border-black shadow-neo-xl bg-stone-900 min-h-[360px] sm:min-h-[480px] md:min-h-[520px] flex items-center justify-center" data-current-index="0">
       
-      <!-- 1. Background Image Track (2 Halloween Scrapbook Hero Banners) -->
+      <!-- 1. Background Image Track (3 Halloween Scrapbook Hero Banners) -->
       <div id="{{ carousel_id }}-track" class="carousel-slider-track flex w-full h-full absolute inset-0 transition-transform duration-700 ease-out will-change-transform" style="transform: translateX(0%);" data-current-index="0">
         {% set banner_list = [
           '/static/assets/banners/halloween_hero_banner.webp',
-          '/static/assets/banners/halloween_hero_banner_02.webp'
+          '/static/assets/banners/halloween_hero_banner_02.webp',
+          '/static/assets/banners/halloween_hero_banner_03.webp'
         ] %}
         {% for bg_img in banner_list %}
         <div class="carousel-slide-item min-w-full h-full flex-shrink-0 relative overflow-hidden" data-slide-index="{{ loop.index0 }}">
@@ -73,10 +74,11 @@
         →
       </button>
 
-      <!-- 4. Dot Indicators (2 Slides) -->
+      <!-- 4. Dot Indicators (3 Slides) -->
       <div class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-20 bg-stone-950/70 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-md">
         <button onclick="setCarouselSlide('{{ carousel_id }}', 0)" class="carousel-dot-btn h-3 rounded-full border border-black transition-all duration-300 w-7 bg-amber-400" data-dot-index="0" aria-label="Slide 1"></button>
         <button onclick="setCarouselSlide('{{ carousel_id }}', 1)" class="carousel-dot-btn h-3 rounded-full border border-black transition-all duration-300 w-3 bg-white/70 hover:bg-amber-300" data-dot-index="1" aria-label="Slide 2"></button>
+        <button onclick="setCarouselSlide('{{ carousel_id }}', 2)" class="carousel-dot-btn h-3 rounded-full border border-black transition-all duration-300 w-3 bg-white/70 hover:bg-amber-300" data-dot-index="2" aria-label="Slide 3"></button>
       </div>
 
     </div>

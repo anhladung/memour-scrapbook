@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <defs>
+    <filter id="sh-owl" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <g filter="url(#sh-owl)">
+    <!-- Die cut -->
+    <path d="M55 70 C55 45 145 45 145 70 C165 95 160 170 140 180 C120 185 80 185 60 180 C40 170 35 95 55 70 Z" fill="#fff" stroke="#fff" stroke-width="12" stroke-linejoin="round"/>
+    <polygon points="100,10 65,55 135,55" fill="#fff" stroke="#fff" stroke-width="12"/>
+    <!-- Body -->
+    <ellipse cx="100" cy="120" rx="50" ry="58" fill="#7c2d12" stroke="#451a03" stroke-width="2"/>
+    <ellipse cx="100" cy="130" rx="32" ry="40" fill="#ffedd5"/>
+    <!-- Big Glasses -->
+    <circle cx="78" cy="105" r="20" fill="#fff" stroke="#d97706" stroke-width="4"/>
+    <circle cx="78" cy="105" r="9" fill="#0284c7"/>
+    <circle cx="80" cy="103" r="3" fill="#fff"/>
+    <circle cx="122" cy="105" r="20" fill="#fff" stroke="#d97706" stroke-width="4"/>
+    <circle cx="122" cy="105" r="9" fill="#0284c7"/>
+    <circle cx="124" cy="103" r="3" fill="#fff"/>
+    <line x1="98" y1="105" x2="102" y2="105" stroke="#d97706" stroke-width="4"/>
+    <!-- Beak -->
+    <polygon points="100,118 94,128 106,128" fill="#ea580c"/>
+    <!-- Witch Hat -->
+    <polygon points="100,12 70,55 130,55" fill="#581c87"/>
+    <ellipse cx="100" cy="55" rx="38" ry="8" fill="#7e22ce"/>
+    <rect x="85" y="47" width="30" height="6" fill="#facc15"/>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" fill="none">
+  <defs>
+    <filter id="lay-sh-02" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000" flood-opacity="1"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#ea580c" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <g transform="translate(45, 75) rotate(-3 250 220)" filter="url(#lay-sh-02)">
+    <!-- Filmstrip Body -->
+    <rect x="0" y="0" width="510" height="300" rx="14" fill="#09090b" stroke="#000" stroke-width="3"/>
+    <!-- Sprocket Holes Top & Bottom -->
+    <g fill="#f8fafc">
+      <rect x="20" y="10" width="16" height="24" rx="4"/>
+      <rect x="55" y="10" width="16" height="24" rx="4"/>
+      <rect x="90" y="10" width="16" height="24" rx="4"/>
+      <rect x="125" y="10" width="16" height="24" rx="4"/>
+      <rect x="160" y="10" width="16" height="24" rx="4"/>
+      <rect x="195" y="10" width="16" height="24" rx="4"/>
+      <rect x="230" y="10" width="16" height="24" rx="4"/>
+      <rect x="265" y="10" width="16" height="24" rx="4"/>
+      <rect x="300" y="10" width="16" height="24" rx="4"/>
+      <rect x="335" y="10" width="16" height="24" rx="4"/>
+      <rect x="370" y="10" width="16" height="24" rx="4"/>
+      <rect x="405" y="10" width="16" height="24" rx="4"/>
+      <rect x="440" y="10" width="16" height="24" rx="4"/>
+      <rect x="475" y="10" width="16" height="24" rx="4"/>
+
+      <rect x="20" y="266" width="16" height="24" rx="4"/>
+      <rect x="55" y="266" width="16" height="24" rx="4"/>
+      <rect x="90" y="266" width="16" height="24" rx="4"/>
+      <rect x="125" y="266" width="16" height="24" rx="4"/>
+      <rect x="160" y="266" width="16" height="24" rx="4"/>
+      <rect x="195" y="266" width="16" height="24" rx="4"/>
+      <rect x="230" y="266" width="16" height="24" rx="4"/>
+      <rect x="265" y="266" width="16" height="24" rx="4"/>
+      <rect x="300" y="266" width="16" height="24" rx="4"/>
+      <rect x="335" y="266" width="16" height="24" rx="4"/>
+      <rect x="370" y="266" width="16" height="24" rx="4"/>
+      <rect x="405" y="266" width="16" height="24" rx="4"/>
+      <rect x="440" y="266" width="16" height="24" rx="4"/>
+      <rect x="475" y="266" width="16" height="24" rx="4"/>
+    </g>
+
+    <!-- 3 Photo Apertures -->
+    <!-- Frame 1 -->
+    <rect x="25" y="48" width="145" height="204" rx="6" fill="#181126" stroke="#ea580c" stroke-width="2"/>
+    <text x="97" y="145" font-family="'Patrick Hand', cursive" font-size="14" fill="#fb923c" text-anchor="middle">ẢNH TIỆC 01</text>
+    <circle cx="97" cy="165" r="14" fill="#a855f7" opacity="0.4"/>
+    <path d="M97 156 Q100 160 104 161 Q100 162 97 166 Q94 162 90 161 Q94 160 97 156 Z" fill="#facc15"/>
+
+    <!-- Frame 2 -->
+    <rect x="182" y="48" width="145" height="204" rx="6" fill="#181126" stroke="#a855f7" stroke-width="2"/>
+    <text x="254" y="145" font-family="'Patrick Hand', cursive" font-size="14" fill="#c084fc" text-anchor="middle">ẢNH HÓA TRANG 02</text>
+    <circle cx="254" cy="165" r="14" fill="#ea580c" opacity="0.4"/>
+    <path d="M254 156 Q257 160 261 161 Q257 162 254 166 Q251 162 247 161 Q251 160 254 156 Z" fill="#fde047"/>
+
+    <!-- Frame 3 -->
+    <rect x="340" y="48" width="145" height="204" rx="6" fill="#181126" stroke="#84cc16" stroke-width="2"/>
+    <text x="412" y="145" font-family="'Patrick Hand', cursive" font-size="14" fill="#a3e635" text-anchor="middle">ẢNH KỶ NIỆM 03</text>
+    <circle cx="412" cy="165" r="14" fill="#06b6d4" opacity="0.4"/>
+    <path d="M412 156 Q415 160 419 161 Q415 162 412 166 Q409 162 405 161 Q409 160 412 156 Z" fill="#fde047"/>
+
+    <!-- Washi Tape Accent at Top Left -->
+    <g transform="translate(-10, -10) rotate(-15)">
+      <rect x="0" y="0" width="90" height="24" rx="3" fill="#ea580c" stroke="#000" stroke-width="1.5"/>
+      <text x="45" y="16" font-family="'Patrick Hand', cursive" font-size="11" font-weight="900" fill="#fff" text-anchor="middle">✦ SPOOKY FILM ✦</text>
+    </g>
+  </g>
+</svg>

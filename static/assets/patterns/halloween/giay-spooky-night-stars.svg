@@ -1,0 +1,27 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="papernoise-01">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.08 0"/>
+      <feComposite in2="SourceGraphic" in="glare" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+    </filter>
+    <pattern id="night-stars-pat" width="80" height="80" patternUnits="userSpaceOnUse">
+      <!-- Gold Star 4-point -->
+      <path d="M20 20 Q22 26 28 28 Q22 30 20 36 Q18 30 12 28 Q18 26 20 20 Z" fill="#facc15" opacity="0.85"/>
+      <!-- Tiny Dot Stars -->
+      <circle cx="60" cy="15" r="1.5" fill="#fef08a" opacity="0.7"/>
+      <circle cx="35" cy="65" r="1.5" fill="#fef08a" opacity="0.7"/>
+      <circle cx="70" cy="55" r="2" fill="#c084fc" opacity="0.75"/>
+      <!-- Crescent Moon -->
+      <path d="M60 35 C52 35 46 41 46 49 C46 54 48 58 52 61 C50 56 50 48 57 43 C61 40 65 41 65 41 C63 37 61 35 60 35 Z" fill="#fde047" opacity="0.8"/>
+      <!-- Mini Bat Silhouette -->
+      <path d="M20 60 Q24 55 28 58 Q32 55 36 60 Q28 62 20 60 Z" fill="#7c3aed" opacity="0.6"/>
+    </pattern>
+  </defs>
+  <!-- Midnight Amethyst Base -->
+  <rect width="400" height="400" fill="#180d2b"/>
+  <!-- Paper Pattern Tile -->
+  <rect width="400" height="400" fill="url(#night-stars-pat)"/>
+  <!-- Paper Texture Grain Overlay -->
+  <rect width="400" height="400" fill="#ffffff" filter="url(#papernoise-01)" opacity="0.35"/>
+</svg>

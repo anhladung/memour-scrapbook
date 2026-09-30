@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450" fill="none">
+  <defs>
+    <filter id="inspSh-2"><feDropShadow dx="6" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.35"/></filter>
+    <linearGradient id="bg-hw-02" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="#fdfbf7"/>
+  <!-- Opened Scrapbook Spread -->
+  <rect x="30" y="25" width="540" height="400" rx="18" fill="url(#bg-hw-02)" stroke="#000" stroke-width="3" filter="url(#inspSh-2)"/>
+  <rect x="45" y="40" width="510" height="370" rx="14" fill="none" stroke="#34d399" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="300" y1="25" x2="300" y2="425" stroke="#000" stroke-width="3"/>
+  
+  <!-- Left Page: Cauldron Frame -->
+  <g transform="translate(65, 70)" filter="url(#inspSh-2)">
+    <rect width="190" height="250" rx="12" fill="#fff" stroke="#000" stroke-width="2.5"/>
+    <rect x="15" y="15" width="160" height="170" rx="8" fill="#18181b"/>
+    <!-- Cauldron Slime Graphic -->
+    <ellipse cx="95" cy="100" rx="50" ry="40" fill="#1e1b4b"/>
+    <circle cx="95" cy="85" r="30" fill="#84cc16" opacity="0.8"/>
+    <text x="95" y="215" font-family="'Patrick Hand', cursive" font-size="16" fill="#047857" text-anchor="middle">Witch's Magic Potion ✨</text>
+  </g>
+
+  <!-- Right Page: Dual Polaroid Ghost Cards -->
+  <g transform="translate(320, 80) rotate(-4 80 90)" filter="url(#inspSh-2)">
+    <rect width="115" height="150" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <rect x="10" y="10" width="95" height="100" rx="4" fill="#a855f7"/>
+    <text x="57" y="132" font-family="'Patrick Hand', cursive" font-size="12" fill="#7c3aed" text-anchor="middle">Ghost Bestie</text>
+  </g>
+
+  <g transform="translate(420, 120) rotate(6 80 90)" filter="url(#inspSh-2)">
+    <rect width="115" height="150" rx="8" fill="#fff" stroke="#000" stroke-width="2"/>
+    <rect x="10" y="10" width="95" height="100" rx="4" fill="#facc15"/>
+    <text x="57" y="132" font-family="'Patrick Hand', cursive" font-size="12" fill="#b45309" text-anchor="middle">Sweet Magic</text>
+  </g>
+
+  <!-- Witch Hat Sticker Bottom Right -->
+  <g transform="translate(360, 275) scale(0.9)">
+    <polygon points="50,10 20,50 80,50" fill="#7c3aed" stroke="#000" stroke-width="2"/>
+    <ellipse cx="50" cy="50" rx="40" ry="8" fill="#a855f7" stroke="#000" stroke-width="2"/>
+    <rect x="36" y="42" width="28" height="6" fill="#facc15"/>
+  </g>
+</svg>

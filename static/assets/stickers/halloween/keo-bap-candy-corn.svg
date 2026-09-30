@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <defs>
+    <filter id="sh-candy" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <g filter="url(#sh-candy)">
+    <!-- Die-cut white border -->
+    <path d="M100 20 C108 20 162 140 160 162 C158 178 140 185 100 185 C60 185 42 178 40 162 C38 140 92 20 100 20 Z" fill="#fff" stroke="#fff" stroke-width="12" stroke-linejoin="round"/>
+    <!-- Yellow Base -->
+    <path d="M48 140 C52 172 75 178 100 178 C125 178 148 172 152 140 Z" fill="#facc15"/>
+    <path d="M52 145 C65 170 85 174 100 174 C115 174 135 170 148 145" stroke="#fef08a" stroke-width="2" stroke-dasharray="4,2" fill="none"/>
+    <!-- Orange Middle -->
+    <path d="M62 90 L48 140 C70 144 130 144 152 140 L138 90 Z" fill="#ea580c"/>
+    <circle cx="85" cy="115" r="4" fill="#18181b"/>
+    <circle cx="115" cy="115" r="4" fill="#18181b"/>
+    <circle cx="87" cy="113" r="1.5" fill="#fff"/>
+    <circle cx="117" cy="113" r="1.5" fill="#fff"/>
+    <path d="M93 125 Q100 133 107 125" stroke="#18181b" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Cheeks -->
+    <circle cx="76" cy="120" r="5" fill="#f43f5e" opacity="0.6"/>
+    <circle cx="124" cy="120" r="5" fill="#f43f5e" opacity="0.6"/>
+    <!-- White Top -->
+    <path d="M100 26 C95 26 62 90 62 90 L138 90 C138 90 105 26 100 26 Z" fill="#fef9c3"/>
+    <!-- Sparkles -->
+    <path d="M145 60 Q150 68 158 70 Q150 72 145 80 Q140 72 132 70 Q140 68 145 60 Z" fill="#f43f5e"/>
+  </g>
+</svg>

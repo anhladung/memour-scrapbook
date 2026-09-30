@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" width="600" height="680" fill="none">
+  <defs>
+    <filter id="book-shadow-03" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="8" dy="8" stdDeviation="0" flood-color="#000000" flood-opacity="1"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="22" flood-color="#059669" flood-opacity="0.38"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="40" flood-color="#7c3aed" flood-opacity="0.2"/>
+    </filter>
+    <filter id="gold-emboss-03" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+    <linearGradient id="gold-foil-03" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="25%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#fef9c3"/>
+      <stop offset="75%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="cover-bg-03" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="50%" stop-color="#022c22"/>
+      <stop offset="100%" stop-color="#041f1a"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(40, 30)" filter="url(#book-shadow-03)">
+    <!-- Back pages peek -->
+    <rect x="25" y="8" width="495" height="610" rx="14" fill="#f5ede0" stroke="#000000" stroke-width="2.5"/>
+    <rect x="28" y="14" width="492" height="602" rx="12" fill="#eae0d0" stroke="#000000" stroke-width="2"/>
+
+    <!-- Front Hardcover -->
+    <rect x="35" y="0" width="490" height="620" rx="16" fill="url(#cover-bg-03)" stroke="#000000" stroke-width="3.5"/>
+
+    <!-- Gold Foil Victorian Ornate Frame -->
+    <rect x="55" y="20" width="450" height="580" rx="12" fill="none" stroke="url(#gold-foil-03)" stroke-width="2.5" stroke-dasharray="10,5" filter="url(#gold-emboss-03)"/>
+    <rect x="62" y="27" width="436" height="566" rx="8" fill="none" stroke="#34d399" stroke-width="1.2" opacity="0.6"/>
+
+    <!-- Corner Magic Seals -->
+    <g fill="url(#gold-foil-03)" filter="url(#gold-emboss-03)">
+      <circle cx="75" cy="40" r="10"/>
+      <circle cx="485" cy="40" r="10"/>
+      <circle cx="75" cy="580" r="10"/>
+      <circle cx="485" cy="580" r="10"/>
+      <!-- Inner star in seal -->
+      <polygon points="75,34 77,39 82,39 78,42 80,47 75,44 70,47 72,42 68,39 73,39" fill="#022c22"/>
+      <polygon points="485,34 487,39 492,39 488,42 490,47 485,44 480,47 482,42 478,39 483,39" fill="#022c22"/>
+      <polygon points="75,574 77,579 82,579 78,582 80,587 75,584 70,587 72,582 68,579 73,579" fill="#022c22"/>
+      <polygon points="485,574 487,579 492,579 488,582 490,587 485,584 480,587 482,582 478,579 483,579" fill="#022c22"/>
+    </g>
+
+    <!-- Top Ribbon Bookmark -->
+    <path d="M260 0 L260 90 L280 75 L300 90 L300 0 Z" fill="#e11d48" stroke="#000" stroke-width="2"/>
+    <line x1="280" y1="0" x2="280" y2="70" stroke="#fde047" stroke-width="2" stroke-dasharray="4,2"/>
+
+    <!-- Central Magic Grimoire Sigil (Zodiac & Magic Ring) -->
+    <circle cx="280" cy="240" r="110" fill="#022c22" stroke="url(#gold-foil-03)" stroke-width="3" filter="url(#gold-emboss-03)"/>
+    <circle cx="280" cy="240" r="95" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,4"/>
+    
+    <!-- Pentagram / Hexagram Star Geometry -->
+    <polygon points="280,150 358,285 202,285" fill="none" stroke="url(#gold-foil-03)" stroke-width="2" opacity="0.8"/>
+    <polygon points="280,330 358,195 202,195" fill="none" stroke="url(#gold-foil-03)" stroke-width="2" opacity="0.8"/>
+
+    <!-- Central Witch Hat & Wand Icon -->
+    <circle cx="280" cy="240" r="50" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+    <!-- Cute Witch Hat -->
+    <polygon points="280,205 255,245 305,245" fill="#7c3aed"/>
+    <ellipse cx="280" cy="245" rx="34" ry="7" fill="#a855f7"/>
+    <rect x="268" y="238" width="24" height="5" fill="#facc15"/>
+    <circle cx="280" cy="240" r="3" fill="#ec4899"/>
+
+    <!-- Magic Wand Diagonal across center -->
+    <line x1="220" y1="280" x2="340" y2="200" stroke="url(#gold-foil-03)" stroke-width="4" stroke-linecap="round"/>
+    <!-- Sparkles on tip -->
+    <path d="M340 195 Q343 200 348 202 Q343 204 340 209 Q337 204 332 202 Q337 200 340 195 Z" fill="#fde047"/>
+
+    <!-- Title Plaque -->
+    <g transform="translate(100, 385)">
+      <rect x="0" y="0" width="360" height="110" rx="14" fill="#022c22" stroke="url(#gold-foil-03)" stroke-width="2.5" filter="url(#gold-emboss-03)"/>
+      <rect x="6" y="6" width="348" height="98" rx="10" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <text x="180" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="20" fill="url(#gold-foil-03)" text-anchor="middle" letter-spacing="3">WITCHCRAFT ACADEMY</text>
+      <text x="180" y="66" font-family="'Patrick Hand', cursive" font-size="19" font-weight="800" fill="#34d399" text-anchor="middle">Sách Ma Thuật &amp; Nhật Ký Phù Thủy</text>
+      <text x="180" y="92" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11" fill="#fde047" text-anchor="middle" letter-spacing="1">MEMOUR SPELLBOOK • HANDMADE 2026</text>
+    </g>
+
+    <!-- Bottom Wax Seal Stamp -->
+    <g transform="translate(245, 520)" filter="url(#gold-emboss-03)">
+      <circle cx="35" cy="35" r="32" fill="#be123c" stroke="#881337" stroke-width="2"/>
+      <circle cx="35" cy="35" r="26" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <text x="35" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="20" fill="url(#gold-foil-03)" text-anchor="middle">M</text>
+    </g>
+
+    <!-- Spiral Wire Binding on Left -->
+    <g fill="url(#gold-foil-03)" stroke="#000" stroke-width="1.5">
+      <ellipse cx="35" cy="60" rx="10" ry="16"/>
+      <ellipse cx="35" cy="115" rx="10" ry="16"/>
+      <ellipse cx="35" cy="170" rx="10" ry="16"/>
+      <ellipse cx="35" cy="225" rx="10" ry="16"/>
+      <ellipse cx="35" cy="280" rx="10" ry="16"/>
+      <ellipse cx="35" cy="335" rx="10" ry="16"/>
+      <ellipse cx="35" cy="390" rx="10" ry="16"/>
+      <ellipse cx="35" cy="445" rx="10" ry="16"/>
+      <ellipse cx="35" cy="500" rx="10" ry="16"/>
+      <ellipse cx="35" cy="555" rx="10" ry="16"/>
+    </g>
+  </g>
+</svg>

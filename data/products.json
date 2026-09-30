@@ -3465,5 +3465,1091 @@
       "binding": "Bìa cứng gáy xoắn kim loại cổ điển kèm dấu sáp độc quyền"
     },
     "createdAt": "2026-09-30T14:00:00+07:00"
+  },
+  {
+    "id": "STK-HW-009",
+    "sku": "STK-HW-009",
+    "name": "Sticker Kẹo Bắp Candy Corn Pastel Ngọt Ngào",
+    "ten": "Sticker Kẹo Bắp Candy Corn Pastel Ngọt Ngào",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Kẹo tam giác 3 tầng màu pastel ngọt ngào, má hồng kawaii và điểm xuyết ngôi sao lấp lánh.",
+    "moTa": "Kẹo tam giác 3 tầng màu pastel ngọt ngào, má hồng kawaii và điểm xuyết ngôi sao lấp lánh.",
+    "image": "/static/assets/stickers/halloween/keo-bap-candy-corn.svg",
+    "imageUrl": "/static/assets/stickers/halloween/keo-bap-candy-corn.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/keo-bap-candy-corn.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "kẹo bắp",
+      "candy corn",
+      "cute"
+    ],
+    "chuDe": [
+      "halloween",
+      "kẹo",
+      "candy",
+      "kawaii"
+    ]
+  },
+  {
+    "id": "STK-HW-010",
+    "sku": "STK-HW-010",
+    "name": "Sticker Hộp Sọ Pha Lê Neon Y2K Tinh Nghịch",
+    "ten": "Sticker Hộp Sọ Pha Lê Neon Y2K Tinh Nghịch",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Đầu lâu dập nổi phủ dải gradient tím hồng cyan neon, mắt trái tim Y2K cực chất.",
+    "moTa": "Đầu lâu dập nổi phủ dải gradient tím hồng cyan neon, mắt trái tim Y2K cực chất.",
+    "image": "/static/assets/stickers/halloween/hop-so-pha-le-neon.svg",
+    "imageUrl": "/static/assets/stickers/halloween/hop-so-pha-le-neon.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/hop-so-pha-le-neon.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "hộp sọ",
+      "skull",
+      "y2k neon"
+    ],
+    "chuDe": [
+      "halloween",
+      "skull",
+      "neon",
+      "độc lạ"
+    ]
+  },
+  {
+    "id": "STK-HW-011",
+    "sku": "STK-HW-011",
+    "name": "Sticker Chổi Phù Thủy Bay Gắn Nơ Hologram",
+    "ten": "Sticker Chổi Phù Thủy Bay Gắn Nơ Hologram",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Cán chổi gỗ dập chỉ vàng, chùm rơm vàng óng thắt nơ ruy băng tím hồng óng ánh.",
+    "moTa": "Cán chổi gỗ dập chỉ vàng, chùm rơm vàng óng thắt nơ ruy băng tím hồng óng ánh.",
+    "image": "/static/assets/stickers/halloween/choi-phu-thuy-bay.svg",
+    "imageUrl": "/static/assets/stickers/halloween/choi-phu-thuy-bay.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/choi-phu-thuy-bay.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "chổi bay",
+      "phù thủy",
+      "hologram"
+    ],
+    "chuDe": [
+      "halloween",
+      "chổi",
+      "broom",
+      "phép thuật"
+    ]
+  },
+  {
+    "id": "STK-HW-012",
+    "sku": "STK-HW-012",
+    "name": "Sticker Trăng Tròn Dạ Quang Khâu Chỉ & Mũ Nhỏ",
+    "ten": "Sticker Trăng Tròn Dạ Quang Khâu Chỉ & Mũ Nhỏ",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Trăng khuyết dạ quang vàng ấm dập đường chỉ nổi thủ công, đội chiếc nón phù thủy mini siêu cưng.",
+    "moTa": "Trăng khuyết dạ quang vàng ấm dập đường chỉ nổi thủ công, đội chiếc nón phù thủy mini siêu cưng.",
+    "image": "/static/assets/stickers/halloween/mat-trang-khau-chi.svg",
+    "imageUrl": "/static/assets/stickers/halloween/mat-trang-khau-chi.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/mat-trang-khau-chi.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "mặt trăng",
+      "moon",
+      "khâu chỉ"
+    ],
+    "chuDe": [
+      "halloween",
+      "trăng",
+      "dạ quang",
+      "craft"
+    ]
+  },
+  {
+    "id": "STK-HW-013",
+    "sku": "STK-HW-013",
+    "name": "Sticker Bàn Tay Thây Ma Zombie Peace Out Sơn Móng Tím",
+    "ten": "Sticker Bàn Tay Thây Ma Zombie Peace Out Sơn Móng Tím",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Bàn tay zombie xanh cốm giơ ngón tay chữ V hòa bình, sơn móng tím fuchsia và hình xăm trái tim.",
+    "moTa": "Bàn tay zombie xanh cốm giơ ngón tay chữ V hòa bình, sơn móng tím fuchsia và hình xăm trái tim.",
+    "image": "/static/assets/stickers/halloween/ban-tay-zombie-cute.svg",
+    "imageUrl": "/static/assets/stickers/halloween/ban-tay-zombie-cute.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/ban-tay-zombie-cute.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "zombie",
+      "peace out",
+      "gen z"
+    ],
+    "chuDe": [
+      "halloween",
+      "bàn tay",
+      "zombie",
+      "chibi"
+    ]
+  },
+  {
+    "id": "STK-HW-014",
+    "sku": "STK-HW-014",
+    "name": "Sticker Bánh Cupcake Kem Tím Mắt Quái Vật",
+    "ten": "Sticker Bánh Cupcake Kem Tím Mắt Quái Vật",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Chiếc cupcake kem tím lịm dập nổi cốm màu rực rỡ, đính tròng mắt xanh quái vật ngộ nghĩnh.",
+    "moTa": "Chiếc cupcake kem tím lịm dập nổi cốm màu rực rỡ, đính tròng mắt xanh quái vật ngộ nghĩnh.",
+    "image": "/static/assets/stickers/halloween/banh-cupcake-ma-quai.svg",
+    "imageUrl": "/static/assets/stickers/halloween/banh-cupcake-ma-quai.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/banh-cupcake-ma-quai.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "cupcake",
+      "bánh ngọt",
+      "quái vật"
+    ],
+    "chuDe": [
+      "halloween",
+      "bánh",
+      "cupcake",
+      "kem"
+    ]
+  },
+  {
+    "id": "STK-HW-015",
+    "sku": "STK-HW-015",
+    "name": "Sticker Băng Dính Washi Tape 'SPOOKY VIBES' Tím Neon",
+    "ten": "Sticker Băng Dính Washi Tape 'SPOOKY VIBES' Tím Neon",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Miếng dán washi xé viền răng cưa màu tím thẫm in chữ vàng SPOOKY VIBES dán góc sổ cực chất.",
+    "moTa": "Miếng dán washi xé viền răng cưa màu tím thẫm in chữ vàng SPOOKY VIBES dán góc sổ cực chất.",
+    "image": "/static/assets/stickers/halloween/nhan-dan-spooky-vibes.svg",
+    "imageUrl": "/static/assets/stickers/halloween/nhan-dan-spooky-vibes.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/nhan-dan-spooky-vibes.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "washi tape",
+      "spooky vibes",
+      "chữ nghệ thuật"
+    ],
+    "chuDe": [
+      "halloween",
+      "băng dính",
+      "washi",
+      "nhãn dán"
+    ]
+  },
+  {
+    "id": "STK-HW-016",
+    "sku": "STK-HW-016",
+    "name": "Sticker Nến Thơm Ma Thuật Chảy Sáp Ngọn Lửa Xanh",
+    "ten": "Sticker Nến Thơm Ma Thuật Chảy Sáp Ngọn Lửa Xanh",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Cây nến trụ tím chảy giọt sáp ma mị, ngọn lửa xanh lam neon phát sáng và mặt ma nhí ẩn hiện.",
+    "moTa": "Cây nến trụ tím chảy giọt sáp ma mị, ngọn lửa xanh lam neon phát sáng và mặt ma nhí ẩn hiện.",
+    "image": "/static/assets/stickers/halloween/nen-ma-thuat-chay.svg",
+    "imageUrl": "/static/assets/stickers/halloween/nen-ma-thuat-chay.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/nen-ma-thuat-chay.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "cây nến",
+      "candle",
+      "ngọn lửa xanh"
+    ],
+    "chuDe": [
+      "halloween",
+      "nến",
+      "ánh sáng",
+      "phép thuật"
+    ]
+  },
+  {
+    "id": "STK-HW-017",
+    "sku": "STK-HW-017",
+    "name": "Sticker Quả Cầu Pha Lê Chiêm Tinh Chứa Hồn Ma",
+    "ten": "Sticker Quả Cầu Pha Lê Chiêm Tinh Chứa Hồn Ma",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Quả cầu thủy tinh vũ trụ đế vàng cổ điển ôm ấp chú ma nhỏ Kawaii đang vẫy tay chào.",
+    "moTa": "Quả cầu thủy tinh vũ trụ đế vàng cổ điển ôm ấp chú ma nhỏ Kawaii đang vẫy tay chào.",
+    "image": "/static/assets/stickers/halloween/qua-cau-pha-le-ma.svg",
+    "imageUrl": "/static/assets/stickers/halloween/qua-cau-pha-le-ma.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/qua-cau-pha-le-ma.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "quả cầu pha lê",
+      "crystal ball",
+      "hồn ma"
+    ],
+    "chuDe": [
+      "halloween",
+      "pha lê",
+      "tiên tri",
+      "ma cute"
+    ]
+  },
+  {
+    "id": "STK-HW-018",
+    "sku": "STK-HW-018",
+    "name": "Sticker Bia Mộ R.I.P Đính Hoa Cúc Họa Mi",
+    "ten": "Sticker Bia Mộ R.I.P Đính Hoa Cúc Họa Mi",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Bia đá xám tro vết nứt cổ kính, dập nổi chữ R.I.P đậm chất Halloween và đôi hoa cúc nhỏ nở chân mộ.",
+    "moTa": "Bia đá xám tro vết nứt cổ kính, dập nổi chữ R.I.P đậm chất Halloween và đôi hoa cúc nhỏ nở chân mộ.",
+    "image": "/static/assets/stickers/halloween/bia-mo-rip-dang-yeu.svg",
+    "imageUrl": "/static/assets/stickers/halloween/bia-mo-rip-dang-yeu.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/bia-mo-rip-dang-yeu.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "bia mộ",
+      "rip",
+      "tombstone"
+    ],
+    "chuDe": [
+      "halloween",
+      "mộ",
+      "spooky",
+      "nghĩa trang"
+    ]
+  },
+  {
+    "id": "STK-HW-019",
+    "sku": "STK-HW-019",
+    "name": "Sticker Bé Quỷ Chibi Cánh Dơi Ôm Kẹo Trái Tim",
+    "ten": "Sticker Bé Quỷ Chibi Cánh Dơi Ôm Kẹo Trái Tim",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Chú quỷ đỏ dễ thương sừng nhỏ, đôi cánh dơi đen huyền thoại đang ôm chặt viên kẹo bơ tim vàng óng.",
+    "moTa": "Chú quỷ đỏ dễ thương sừng nhỏ, đôi cánh dơi đen huyền thoại đang ôm chặt viên kẹo bơ tim vàng óng.",
+    "image": "/static/assets/stickers/halloween/quy-con-canh-doi.svg",
+    "imageUrl": "/static/assets/stickers/halloween/quy-con-canh-doi.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/quy-con-canh-doi.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "quỷ nhỏ",
+      "little devil",
+      "chibi"
+    ],
+    "chuDe": [
+      "halloween",
+      "quỷ",
+      "cánh dơi",
+      "cute"
+    ]
+  },
+  {
+    "id": "STK-HW-020",
+    "sku": "STK-HW-020",
+    "name": "Sticker Cú Mèo Phù Thủy Đeo Kính Tròn Ngố",
+    "ten": "Sticker Cú Mèo Phù Thủy Đeo Kính Tròn Ngố",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Bác cú mèo lông nâu học thức đeo cặp kính cận tròn to bự, đội mũ chóp ma thuật màu tím mộng mơ.",
+    "moTa": "Bác cú mèo lông nâu học thức đeo cặp kính cận tròn to bự, đội mũ chóp ma thuật màu tím mộng mơ.",
+    "image": "/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg",
+    "imageUrl": "/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "cú mèo",
+      "owl",
+      "kính cận"
+    ],
+    "chuDe": [
+      "halloween",
+      "cú",
+      "học viện",
+      "phép thuật"
+    ]
+  },
+  {
+    "id": "STK-HW-021",
+    "sku": "STK-HW-021",
+    "name": "Sticker Vạc Phù Thủy Nước Phép Slime Xanh Neon",
+    "ten": "Sticker Vạc Phù Thủy Nước Phép Slime Xanh Neon",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Chiếc vạc đen 3 chân cổ điển đang sôi sục bong bóng nước phép slime xanh neon cực bắt mắt.",
+    "moTa": "Chiếc vạc đen 3 chân cổ điển đang sôi sục bong bóng nước phép slime xanh neon cực bắt mắt.",
+    "image": "/static/assets/stickers/halloween/vac-nuoc-phep-slime.svg",
+    "imageUrl": "/static/assets/stickers/halloween/vac-nuoc-phep-slime.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/vac-nuoc-phep-slime.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "vạc phù thủy",
+      "cauldron",
+      "slime neon"
+    ],
+    "chuDe": [
+      "halloween",
+      "vạc",
+      "thuốc phép",
+      "potion"
+    ]
+  },
+  {
+    "id": "STK-HW-022",
+    "sku": "STK-HW-022",
+    "name": "Sticker Lá Bài Tarot 'The Moon' Ánh Kim Hoàng Gia",
+    "ten": "Sticker Lá Bài Tarot 'The Moon' Ánh Kim Hoàng Gia",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Lá bài tarot số XVIII với biểu tượng trăng tròn dạ quang và viền chỉ vàng hoàng gia huyền bí.",
+    "moTa": "Lá bài tarot số XVIII với biểu tượng trăng tròn dạ quang và viền chỉ vàng hoàng gia huyền bí.",
+    "image": "/static/assets/stickers/halloween/la-bai-tarot-halloween.svg",
+    "imageUrl": "/static/assets/stickers/halloween/la-bai-tarot-halloween.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/la-bai-tarot-halloween.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "bài tarot",
+      "the moon",
+      "chiêm tinh"
+    ],
+    "chuDe": [
+      "halloween",
+      "tarot",
+      "lá bài",
+      "huyền bí"
+    ]
+  },
+  {
+    "id": "STK-HW-023",
+    "sku": "STK-HW-023",
+    "name": "Sticker Thú Cưng Xác Ướp Quấn Băng Gạc Mắt To",
+    "ten": "Sticker Thú Cưng Xác Ướp Quấn Băng Gạc Mắt To",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Bé xác ướp tròn xoe quấn từng lớp băng trắng, hé lộ đôi mắt vàng sáng lấp lánh trong đêm.",
+    "moTa": "Bé xác ướp tròn xoe quấn từng lớp băng trắng, hé lộ đôi mắt vàng sáng lấp lánh trong đêm.",
+    "image": "/static/assets/stickers/halloween/chuot-tui-xac-uop.svg",
+    "imageUrl": "/static/assets/stickers/halloween/chuot-tui-xac-uop.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/chuot-tui-xac-uop.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "xác ướp",
+      "mummy",
+      "cute"
+    ],
+    "chuDe": [
+      "halloween",
+      "mummy",
+      "xác ướp",
+      "kawaii"
+    ]
+  },
+  {
+    "id": "STK-HW-024",
+    "sku": "STK-HW-024",
+    "name": "Sticker Bình Thủy Tinh Giữ Đom Đóm & Ngôi Sao",
+    "ten": "Sticker Bình Thủy Tinh Giữ Đom Đóm & Ngôi Sao",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Lọ ước thủy tinh nút bần chứa những đốm sáng phát quang xanh vàng và tag giấy BOO nhỏ xinh.",
+    "moTa": "Lọ ước thủy tinh nút bần chứa những đốm sáng phát quang xanh vàng và tag giấy BOO nhỏ xinh.",
+    "image": "/static/assets/stickers/halloween/lo-ma-thuat-dom-dom.svg",
+    "imageUrl": "/static/assets/stickers/halloween/lo-ma-thuat-dom-dom.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/lo-ma-thuat-dom-dom.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "lọ thủy tinh",
+      "đom đóm",
+      "ước nguyện"
+    ],
+    "chuDe": [
+      "halloween",
+      "lọ ước",
+      "ánh sáng",
+      "craft"
+    ]
+  },
+  {
+    "id": "STK-HW-025",
+    "sku": "STK-HW-025",
+    "name": "Sticker Hộp Sữa Ma Quái 'Ghost Milk' Y2K Pastel",
+    "ten": "Sticker Hộp Sữa Ma Quái 'Ghost Milk' Y2K Pastel",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Hộp sữa giấy gấp tông hồng dâu pastel in chữ Ghost Milk và chú ma mút sữa ngộ nghĩnh.",
+    "moTa": "Hộp sữa giấy gấp tông hồng dâu pastel in chữ Ghost Milk và chú ma mút sữa ngộ nghĩnh.",
+    "image": "/static/assets/stickers/halloween/hop-sua-ma-quai-ghost-milk.svg",
+    "imageUrl": "/static/assets/stickers/halloween/hop-sua-ma-quai-ghost-milk.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/hop-sua-ma-quai-ghost-milk.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "hộp sữa",
+      "ghost milk",
+      "y2k pastel"
+    ],
+    "chuDe": [
+      "halloween",
+      "sữa",
+      "pastel",
+      "gen z"
+    ]
+  },
+  {
+    "id": "STK-HW-026",
+    "sku": "STK-HW-026",
+    "name": "Sticker Kính Râm Gọng Cánh Dơi Tròng Hologram",
+    "ten": "Sticker Kính Râm Gọng Cánh Dơi Tròng Hologram",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Cặp kính râm gọng cánh dơi đen huyền bí kết hợp tròng kính tán sắc cầu vồng cực thời thượng.",
+    "moTa": "Cặp kính râm gọng cánh dơi đen huyền bí kết hợp tròng kính tán sắc cầu vồng cực thời thượng.",
+    "image": "/static/assets/stickers/halloween/kinh-mat-doi-hologram.svg",
+    "imageUrl": "/static/assets/stickers/halloween/kinh-mat-doi-hologram.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/kinh-mat-doi-hologram.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "kính râm",
+      "cánh dơi",
+      "hologram"
+    ],
+    "chuDe": [
+      "halloween",
+      "kính",
+      "thời trang",
+      "y2k"
+    ]
+  },
+  {
+    "id": "STK-HW-027",
+    "sku": "STK-HW-027",
+    "name": "Sticker Xương Bắt Chéo Nhảy Disco Đêm Hội",
+    "ten": "Sticker Xương Bắt Chéo Nhảy Disco Đêm Hội",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Bộ xương bắt chéo truyền thống được biến tấu trẻ trung cùng nơ huy hiệu sao vàng disco.",
+    "moTa": "Bộ xương bắt chéo truyền thống được biến tấu trẻ trung cùng nơ huy hiệu sao vàng disco.",
+    "image": "/static/assets/stickers/halloween/luc-lac-xuong-disco.svg",
+    "imageUrl": "/static/assets/stickers/halloween/luc-lac-xuong-disco.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/luc-lac-xuong-disco.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "khúc xương",
+      "crossbones",
+      "disco"
+    ],
+    "chuDe": [
+      "halloween",
+      "xương",
+      "vui nhộn",
+      "tiệc"
+    ]
+  },
+  {
+    "id": "STK-HW-028",
+    "sku": "STK-HW-028",
+    "name": "Sticker Hoa Hồng Đen Gothic Gai Nhung Quyến Rũ",
+    "ten": "Sticker Hoa Hồng Đen Gothic Gai Nhung Quyến Rũ",
+    "category": "sticker",
+    "type": "sticker",
+    "season": "halloween",
+    "isNew": true,
+    "is_3d": true,
+    "is3D": true,
+    "loai": "sticker halloween",
+    "description": "Bông hồng nhung đen pha tím mận quý phái, giọt sương mai xanh ngọc lấp lánh trên từng cánh hoa.",
+    "moTa": "Bông hồng nhung đen pha tím mận quý phái, giọt sương mai xanh ngọc lấp lánh trên từng cánh hoa.",
+    "image": "/static/assets/stickers/halloween/hoa-hong-den-gai-nhung.svg",
+    "imageUrl": "/static/assets/stickers/halloween/hoa-hong-den-gai-nhung.svg",
+    "thumbnailUrl": "/static/assets/stickers/halloween/hoa-hong-den-gai-nhung.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "hoa hồng đen",
+      "black rose",
+      "gothic"
+    ],
+    "chuDe": [
+      "halloween",
+      "hoa hồng",
+      "quý phái",
+      "tình yêu"
+    ]
+  },
+  {
+    "id": "SCR-HW-002",
+    "sku": "SCR-HW-002",
+    "name": "Sổ Scrapbook Bìa Cứng Dinh Thự Ma Ám & Vườn Bí Ngô Neon",
+    "ten": "Sổ Scrapbook Bìa Cứng Dinh Thự Ma Ám & Vườn Bí Ngô Neon",
+    "category": "scrapbook",
+    "type": "scrapbook",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "bìa sổ scrapbook halloween",
+    "description": "Bìa cứng mỹ thuật màu tím than huyền bí in hình lâu đài ma ám gothic, trăng tròn vàng neon rực rỡ và vườn bí ngô Jack-o'-lantern đáng yêu kèm gáy còng kim loại vàng.",
+    "moTa": "Bìa cứng mỹ thuật màu tím than huyền bí in hình lâu đài ma ám gothic, trăng tròn vàng neon rực rỡ và vườn bí ngô Jack-o'-lantern đáng yêu kèm gáy còng kim loại vàng.",
+    "image": "/static/assets/scrapbooks/halloween/bia-so-halloween-haunted-mansion.svg",
+    "imageUrl": "/static/assets/scrapbooks/halloween/bia-so-halloween-haunted-mansion.svg",
+    "thumbnailUrl": "/static/assets/scrapbooks/halloween/bia-so-halloween-haunted-mansion.svg",
+    "backImage": "/static/assets/scrapbooks/halloween/bia-so-halloween-haunted-mansion.svg",
+    "backImageUrl": "/static/assets/scrapbooks/halloween/bia-so-halloween-haunted-mansion.svg",
+    "price": 135000,
+    "colorHex": "#2a0845",
+    "themes": [
+      "halloween",
+      "haunted mansion",
+      "dinh thự ma ám",
+      "bí ngô neon"
+    ],
+    "chuDe": [
+      "halloween",
+      "bìa cứng",
+      "lâu đài",
+      "gáy xoắn"
+    ],
+    "style": "scrapbook-hardcover",
+    "specs": {
+      "pages": 30,
+      "paperWeight": "300gsm",
+      "size": "A5 (21 x 15 cm)",
+      "binding": "Bìa cứng gáy xoắn lò xo kim loại vàng cổ điển"
+    }
+  },
+  {
+    "id": "SCR-HW-003",
+    "sku": "SCR-HW-003",
+    "name": "Sổ Scrapbook Bìa Cứng Học Viện Phù Thủy & Sách Ma Thuật Grimoire",
+    "ten": "Sổ Scrapbook Bìa Cứng Học Viện Phù Thủy & Sách Ma Thuật Grimoire",
+    "category": "scrapbook",
+    "type": "scrapbook",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "bìa sổ scrapbook halloween",
+    "description": "Bìa cứng màu xanh lục bảo hoàng gia dập nhũ vàng vòng tròn hoàng đạo phép thuật, nơ ruy băng đánh dấu trang đỏ nhung và dấu niêm sáp hoàng gia MEMOUR.",
+    "moTa": "Bìa cứng màu xanh lục bảo hoàng gia dập nhũ vàng vòng tròn hoàng đạo phép thuật, nơ ruy băng đánh dấu trang đỏ nhung và dấu niêm sáp hoàng gia MEMOUR.",
+    "image": "/static/assets/scrapbooks/halloween/bia-so-halloween-witchcraft-academy.svg",
+    "imageUrl": "/static/assets/scrapbooks/halloween/bia-so-halloween-witchcraft-academy.svg",
+    "thumbnailUrl": "/static/assets/scrapbooks/halloween/bia-so-halloween-witchcraft-academy.svg",
+    "backImage": "/static/assets/scrapbooks/halloween/bia-so-halloween-witchcraft-academy.svg",
+    "backImageUrl": "/static/assets/scrapbooks/halloween/bia-so-halloween-witchcraft-academy.svg",
+    "price": 145000,
+    "colorHex": "#064e3b",
+    "themes": [
+      "halloween",
+      "học viện phù thủy",
+      "grimoire",
+      "phép thuật",
+      "dấu sáp"
+    ],
+    "chuDe": [
+      "halloween",
+      "sách ma thuật",
+      "phù thủy",
+      "bìa cứng"
+    ],
+    "style": "scrapbook-hardcover",
+    "specs": {
+      "pages": 30,
+      "paperWeight": "300gsm",
+      "size": "A5 (21 x 15 cm)",
+      "binding": "Bìa cứng gáy còng kim loại mở rộng kèm dấu sáp độc quyền"
+    }
+  },
+  {
+    "id": "LAY-HW-002",
+    "sku": "LAY-HW-002",
+    "name": "Dải Phim Filmstrip 3 Khung Ảnh Lễ Hội Hóa Trang",
+    "ten": "Dải Phim Filmstrip 3 Khung Ảnh Lễ Hội Hóa Trang",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Dải cuộn phim nhựa filmstrip cổ điển 3 ô ảnh nối tiếp lồng ảnh tiệc hóa trang và kỷ niệm nhóm bạn.",
+    "moTa": "Dải cuộn phim nhựa filmstrip cổ điển 3 ô ảnh nối tiếp lồng ảnh tiệc hóa trang và kỷ niệm nhóm bạn.",
+    "image": "/static/assets/layouts/halloween/khung-anh-filmstrip-halloween.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-filmstrip-halloween.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-filmstrip-halloween.svg",
+    "price": 2000,
+    "themes": [
+      "halloween",
+      "filmstrip",
+      "dải phim",
+      "tiệc hóa trang"
+    ],
+    "chuDe": [
+      "halloween",
+      "khung ảnh",
+      "film",
+      "3 ô ảnh"
+    ]
+  },
+  {
+    "id": "LAY-HW-003",
+    "sku": "LAY-HW-003",
+    "name": "Khung Polaroid Đôi Hồn Ma & Dơi Origami Lượn Quanh",
+    "ten": "Khung Polaroid Đôi Hồn Ma & Dơi Origami Lượn Quanh",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Hai tấm ảnh polaroid xếp đè góc nghệ thuật kết hợp kẹp giấy kim loại màu hồng ngọt ngào.",
+    "moTa": "Hai tấm ảnh polaroid xếp đè góc nghệ thuật kết hợp kẹp giấy kim loại màu hồng ngọt ngào.",
+    "image": "/static/assets/layouts/halloween/khung-anh-polaroid-doi-kawaii.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-polaroid-doi-kawaii.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-polaroid-doi-kawaii.svg",
+    "price": 2500,
+    "themes": [
+      "halloween",
+      "polaroid đôi",
+      "bestie",
+      "kẹp giấy"
+    ],
+    "chuDe": [
+      "halloween",
+      "khung đôi",
+      "ảnh đôi",
+      "craft"
+    ]
+  },
+  {
+    "id": "LAY-HW-004",
+    "sku": "LAY-HW-004",
+    "name": "Khung Ảnh Cửa Sổ Trái Bí Ngô Jack Dập Nổi Gỗ Cổ",
+    "ten": "Khung Ảnh Cửa Sổ Trái Bí Ngô Jack Dập Nổi Gỗ Cổ",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Khung ảnh tròn 14cm lồng ngay giữa bụng quả bí ngô khổng lồ viền chỉ vàng rực rỡ.",
+    "moTa": "Khung ảnh tròn 14cm lồng ngay giữa bụng quả bí ngô khổng lồ viền chỉ vàng rực rỡ.",
+    "image": "/static/assets/layouts/halloween/khung-anh-bi-ngo-jack-lantern.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-bi-ngo-jack-lantern.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-bi-ngo-jack-lantern.svg",
+    "price": 2000,
+    "themes": [
+      "halloween",
+      "khung tròn",
+      "trái bí ngô",
+      "jack o lantern"
+    ],
+    "chuDe": [
+      "halloween",
+      "khung ảnh tròn",
+      "bí ngô",
+      "dập nổi"
+    ]
+  },
+  {
+    "id": "LAY-HW-005",
+    "sku": "LAY-HW-005",
+    "name": "Khung Ảnh Gương Ma Thuật Viền Răng Cưa & Nhện Lấp Lánh",
+    "ten": "Khung Ảnh Gương Ma Thuật Viền Răng Cưa & Nhện Lấp Lánh",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Gương ma thuật hoàng gia oval viền răng cưa vàng óng và mạng nhện giăng mắc đầy bí ẩn.",
+    "moTa": "Gương ma thuật hoàng gia oval viền răng cưa vàng óng và mạng nhện giăng mắc đầy bí ẩn.",
+    "image": "/static/assets/layouts/halloween/khung-anh-kinh-van-hoa-magic.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-kinh-van-hoa-magic.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-kinh-van-hoa-magic.svg",
+    "price": 2000,
+    "themes": [
+      "halloween",
+      "gương ma thuật",
+      "magic mirror",
+      "oval"
+    ],
+    "chuDe": [
+      "halloween",
+      "khung gương",
+      "hoàng gia",
+      "ma mị"
+    ]
+  },
+  {
+    "id": "LAY-HW-006",
+    "sku": "LAY-HW-006",
+    "name": "Bố Cục Thẻ Ghi Chú Giấy Kraft Xé Viền Kẹp Ảnh Bí Ẩn",
+    "ten": "Bố Cục Thẻ Ghi Chú Giấy Kraft Xé Viền Kẹp Ảnh Bí Ẩn",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Thẻ ghi chú kraft xé viền kết hợp đinh ghim đỏ, ô lồng ảnh ngang và dòng kẻ tay viết nhật ký.",
+    "moTa": "Thẻ ghi chú kraft xé viền kết hợp đinh ghim đỏ, ô lồng ảnh ngang và dòng kẻ tay viết nhật ký.",
+    "image": "/static/assets/layouts/halloween/khung-anh-note-kraft-spooky.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-note-kraft-spooky.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-note-kraft-spooky.svg",
+    "price": 1500,
+    "themes": [
+      "halloween",
+      "kraft note",
+      "viết tay",
+      "nhật ký"
+    ],
+    "chuDe": [
+      "halloween",
+      "kraft",
+      "sổ tay",
+      "lưu bút"
+    ]
+  },
+  {
+    "id": "LAY-HW-007",
+    "sku": "LAY-HW-007",
+    "name": "Layout Ghép 4 Ảnh Mosaic Tiệc Hóa Trang Đa Sắc",
+    "ten": "Layout Ghép 4 Ảnh Mosaic Tiệc Hóa Trang Đa Sắc",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Bố cục ghép 4 ô ảnh vuông đa sắc (Cam, Tím, Slime, Hồng) nối nhau bằng huy hiệu BOO ở tâm.",
+    "moTa": "Bố cục ghép 4 ô ảnh vuông đa sắc (Cam, Tím, Slime, Hồng) nối nhau bằng huy hiệu BOO ở tâm.",
+    "image": "/static/assets/layouts/halloween/khung-anh-mosaic-collage-halloween.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-mosaic-collage-halloween.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-mosaic-collage-halloween.svg",
+    "price": 2500,
+    "themes": [
+      "halloween",
+      "mosaic",
+      "collage",
+      "4 ô ảnh"
+    ],
+    "chuDe": [
+      "halloween",
+      "ghép ảnh",
+      "tiệc tùng",
+      "đa sắc"
+    ]
+  },
+  {
+    "id": "LAY-HW-008",
+    "sku": "LAY-HW-008",
+    "name": "Khung Lồng Ảnh Dáng Thẻ Bài Tarot Huyền Bí",
+    "ten": "Khung Lồng Ảnh Dáng Thẻ Bài Tarot Huyền Bí",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Khung ảnh đứng dáng thẻ bài Tarot ma thuật số XIII, viền vàng kim đứt đoạn sang trọng quý phái.",
+    "moTa": "Khung ảnh đứng dáng thẻ bài Tarot ma thuật số XIII, viền vàng kim đứt đoạn sang trọng quý phái.",
+    "image": "/static/assets/layouts/halloween/khung-anh-la-bai-tarot-photo.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-la-bai-tarot-photo.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-la-bai-tarot-photo.svg",
+    "price": 2000,
+    "themes": [
+      "halloween",
+      "tarot photo",
+      "thẻ bài",
+      "huyền bí"
+    ],
+    "chuDe": [
+      "halloween",
+      "tarot",
+      "khung đứng",
+      "chiêm tinh"
+    ]
+  },
+  {
+    "id": "LAY-HW-009",
+    "sku": "LAY-HW-009",
+    "name": "Khung Túi Bí Mật Gấp Mở Kèm Ảnh Rút 'Trick or Treat'",
+    "ten": "Khung Túi Bí Mật Gấp Mở Kèm Ảnh Rút 'Trick or Treat'",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Bao thư phong bì tím gập nắp chứa tấm ảnh rút bí mật bên trong, tạo bất ngờ cho người xem.",
+    "moTa": "Bao thư phong bì tím gập nắp chứa tấm ảnh rút bí mật bên trong, tạo bất ngờ cho người xem.",
+    "image": "/static/assets/layouts/halloween/khung-anh-tui-bi-mat-trick-or-treat.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-tui-bi-mat-trick-or-treat.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-tui-bi-mat-trick-or-treat.svg",
+    "price": 2500,
+    "themes": [
+      "halloween",
+      "túi bí mật",
+      "secret pocket",
+      "trick or treat"
+    ],
+    "chuDe": [
+      "halloween",
+      "phong bì",
+      "ảnh rút",
+      "tương tác"
+    ]
+  },
+  {
+    "id": "LAY-HW-010",
+    "sku": "LAY-HW-010",
+    "name": "Khung Polaroid Nước Phép Slime Bong Bóng Neon",
+    "ten": "Khung Polaroid Nước Phép Slime Bong Bóng Neon",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Khung Polaroid trắng tinh khôi viền giọt slime xanh neon chảy trào cùng bong bóng nước phép.",
+    "moTa": "Khung Polaroid trắng tinh khôi viền giọt slime xanh neon chảy trào cùng bong bóng nước phép.",
+    "image": "/static/assets/layouts/halloween/khung-anh-polaroid-vac-phu-thuy.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-polaroid-vac-phu-thuy.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-polaroid-vac-phu-thuy.svg",
+    "price": 2000,
+    "themes": [
+      "halloween",
+      "slime",
+      "polaroid",
+      "bong bóng"
+    ],
+    "chuDe": [
+      "halloween",
+      "slime xanh",
+      "polaroid",
+      "phù thủy"
+    ]
+  },
+  {
+    "id": "LAY-HW-011",
+    "sku": "LAY-HW-011",
+    "name": "Khung Cửa Sổ Vòm Lâu Đài Gothic Nhũ Bạc & Hoa Hồng Đen",
+    "ten": "Khung Cửa Sổ Vòm Lâu Đài Gothic Nhũ Bạc & Hoa Hồng Đen",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Cửa sổ vòm lâu đài gothic cổ kính viền chỉ vàng hoàng gia và bông hồng nhung nở dưới thềm cửa.",
+    "moTa": "Cửa sổ vòm lâu đài gothic cổ kính viền chỉ vàng hoàng gia và bông hồng nhung nở dưới thềm cửa.",
+    "image": "/static/assets/layouts/halloween/khung-anh-gothic-arch-window.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-gothic-arch-window.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-gothic-arch-window.svg",
+    "price": 2500,
+    "themes": [
+      "halloween",
+      "cửa sổ gothic",
+      "arch window",
+      "hoa hồng"
+    ],
+    "chuDe": [
+      "halloween",
+      "vòm lâu đài",
+      "gothic",
+      "cổ điển"
+    ]
+  },
+  {
+    "id": "PAT-HW-001",
+    "sku": "PAT-HW-001",
+    "name": "Nền Giấy Mỹ Thuật Đêm Huyền Bí & Chòm Sao Hoàng Đạo",
+    "ten": "Nền Giấy Mỹ Thuật Đêm Huyền Bí & Chòm Sao Hoàng Đạo",
+    "category": "pattern",
+    "type": "paper_pattern",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "nền giấy mỹ thuật halloween",
+    "description": "Nền giấy mỹ thuật dập xơ sợi màu tím than huyền ảo, chòm sao hoàng đạo, trăng lưỡi liềm và dơi bay lấp lánh.",
+    "moTa": "Nền giấy mỹ thuật dập xơ sợi màu tím than huyền ảo, chòm sao hoàng đạo, trăng lưỡi liềm và dơi bay lấp lánh.",
+    "image": "/static/assets/patterns/halloween/giay-spooky-night-stars.svg",
+    "imageUrl": "/static/assets/patterns/halloween/giay-spooky-night-stars.svg",
+    "thumbnailUrl": "/static/assets/patterns/halloween/giay-spooky-night-stars.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "giấy mỹ thuật",
+      "ngôi sao",
+      "tím huyền bí"
+    ],
+    "chuDe": [
+      "halloween",
+      "nền giấy",
+      "giấy scrapbook",
+      "mỹ thuật"
+    ]
+  },
+  {
+    "id": "PAT-HW-002",
+    "sku": "PAT-HW-002",
+    "name": "Nền Giấy Kẻ Caro Gingham Cam Bí Ngô & Kẹo Bắp",
+    "ten": "Nền Giấy Kẻ Caro Gingham Cam Bí Ngô & Kẹo Bắp",
+    "category": "pattern",
+    "type": "paper_pattern",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "nền giấy mỹ thuật halloween",
+    "description": "Họa tiết kẻ sọc caro Gingham cam bí ngô kết hợp biểu tượng quả bí nhỏ, mang đậm phong cách Gen Z retro tươi vui.",
+    "moTa": "Họa tiết kẻ sọc caro Gingham cam bí ngô kết hợp biểu tượng quả bí nhỏ, mang đậm phong cách Gen Z retro tươi vui.",
+    "image": "/static/assets/patterns/halloween/giay-pumpkin-gingham-orange.svg",
+    "imageUrl": "/static/assets/patterns/halloween/giay-pumpkin-gingham-orange.svg",
+    "thumbnailUrl": "/static/assets/patterns/halloween/giay-pumpkin-gingham-orange.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "gingham",
+      "caro cam",
+      "retro gen z"
+    ],
+    "chuDe": [
+      "halloween",
+      "nền giấy",
+      "kẻ caro",
+      "vui tươi"
+    ]
+  },
+  {
+    "id": "PAT-HW-003",
+    "sku": "PAT-HW-003",
+    "name": "Nền Giấy Doodle Hồn Ma Nhí & Bong Bóng Slime",
+    "ten": "Nền Giấy Doodle Hồn Ma Nhí & Bong Bóng Slime",
+    "category": "pattern",
+    "type": "paper_pattern",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "nền giấy mỹ thuật halloween",
+    "description": "Nền giấy kem ngà dập nét vẽ tay doodle những chú ma nhí kawaii, kẹo gói bọc và tia sáng pastel siêu đáng yêu.",
+    "moTa": "Nền giấy kem ngà dập nét vẽ tay doodle những chú ma nhí kawaii, kẹo gói bọc và tia sáng pastel siêu đáng yêu.",
+    "image": "/static/assets/patterns/halloween/giay-kawaii-ghost-doodle.svg",
+    "imageUrl": "/static/assets/patterns/halloween/giay-kawaii-ghost-doodle.svg",
+    "thumbnailUrl": "/static/assets/patterns/halloween/giay-kawaii-ghost-doodle.svg",
+    "price": 500,
+    "themes": [
+      "halloween",
+      "doodle",
+      "ma cute",
+      "pastel kawaii"
+    ],
+    "chuDe": [
+      "halloween",
+      "nền giấy",
+      "vẽ tay",
+      "dễ thương"
+    ]
   }
 ]

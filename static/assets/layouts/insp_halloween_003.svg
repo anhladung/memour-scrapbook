@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450" fill="none">
+  <defs>
+    <filter id="inspSh-3"><feDropShadow dx="6" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.35"/></filter>
+    <linearGradient id="bg-hw-03" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b0764"/>
+      <stop offset="100%" stop-color="#18022e"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="#fdfbf7"/>
+  <!-- Opened Scrapbook Spread -->
+  <rect x="30" y="25" width="540" height="400" rx="18" fill="url(#bg-hw-03)" stroke="#000" stroke-width="3" filter="url(#inspSh-3)"/>
+  <rect x="45" y="40" width="510" height="370" rx="14" fill="none" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="300" y1="25" x2="300" y2="425" stroke="#000" stroke-width="3"/>
+
+  <!-- Left Page: Gothic Arch Window Frame -->
+  <g transform="translate(80, 55)" filter="url(#inspSh-3)">
+    <path d="M85 10 C35 35 10 80 10 135 L10 260 L160 260 L160 135 C160 80 135 35 85 10 Z" fill="#18181b" stroke="#facc15" stroke-width="2"/>
+    <path d="M85 25 C45 45 25 85 25 135 L25 245 L145 245 L145 135 C145 85 125 45 85 25 Z" fill="#2e1065"/>
+    <circle cx="85" cy="110" r="35" fill="#fde047"/>
+    <text x="85" y="220" font-family="'Patrick Hand', cursive" font-size="14" fill="#fde047" text-anchor="middle">Gothic Castle Window</text>
+  </g>
+
+  <!-- Right Page: Tarot Card Photo Frame -->
+  <g transform="translate(340, 65) rotate(4 90 130)" filter="url(#inspSh-3)">
+    <rect width="170" height="250" rx="10" fill="#1e1035" stroke="#d97706" stroke-width="2.5"/>
+    <rect x="8" y="8" width="154" height="234" rx="8" fill="none" stroke="#facc15" stroke-width="1.2" stroke-dasharray="4,2"/>
+    <text x="85" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="9" fill="#fde047" text-anchor="middle">THE MOON • TAROT</text>
+    <rect x="18" y="42" width="134" height="150" rx="6" fill="#09090b"/>
+    <circle cx="85" cy="115" r="35" fill="#c084fc" opacity="0.6"/>
+    <text x="85" y="215" font-family="'Patrick Hand', cursive" font-size="14" fill="#fde047" text-anchor="middle">Mystic Destiny ✦</text>
+  </g>
+
+  <!-- Neon Skull Sticker in Bottom Left -->
+  <g transform="translate(70, 310) scale(0.65)">
+    <circle cx="50" cy="50" r="45" fill="#c084fc" stroke="#fff" stroke-width="4"/>
+    <circle cx="35" cy="45" r="10" fill="#000"/>
+    <circle cx="65" cy="45" r="10" fill="#000"/>
+    <line x1="35" y1="75" x2="65" y2="75" stroke="#000" stroke-width="3"/>
+  </g>
+</svg>

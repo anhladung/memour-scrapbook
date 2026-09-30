@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" fill="none">
+  <defs>
+    <filter id="lay-sh-04" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000" flood-opacity="1"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#f97316" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <g transform="translate(60, 40)" filter="url(#lay-sh-04)">
+    <!-- Main Big Pumpkin Card Shape -->
+    <rect x="0" y="0" width="480" height="520" rx="24" fill="#fff7ed" stroke="#000" stroke-width="3"/>
+    <!-- Pumpkin Stitched Outline -->
+    <path d="M240 60 C120 60 70 120 70 240 C70 380 150 440 240 440 C330 440 410 380 410 240 C410 120 360 60 240 60 Z" fill="#ea580c" stroke="#9a3412" stroke-width="2.5"/>
+    <path d="M240 70 C130 70 85 125 85 240 C85 370 160 425 240 425 C320 425 395 370 395 240 C395 125 350 70 240 70 Z" fill="none" stroke="#fde047" stroke-width="2" stroke-dasharray="6,3"/>
+    
+    <!-- Central Circular Photo Window (The Core Aperture) -->
+    <circle cx="240" cy="245" r="140" fill="#181126" stroke="#000" stroke-width="3"/>
+    <text x="240" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="16" fill="#fde047" text-anchor="middle">LỒNG ẢNH TRÒN 14CM</text>
+    <text x="240" y="265" font-family="'Patrick Hand', cursive" font-size="15" fill="#f97316" text-anchor="middle">Khoảnh khắc nụ cười bí ngô</text>
+
+    <!-- Carved Pumpkin Face around window -->
+    <!-- Green Stem -->
+    <path d="M232 25 C230 10 248 8 252 25 L248 60 L234 60 Z" fill="#65a30d" stroke="#365314" stroke-width="2"/>
+    <!-- Bottom Title Banner -->
+    <rect x="110" y="460" width="260" height="40" rx="10" fill="#7c3aed" stroke="#000" stroke-width="2"/>
+    <text x="240" y="485" font-family="'Patrick Hand', cursive" font-weight="800" font-size="18" fill="#fff" text-anchor="middle">✦ JACK-O'-LANTERN MEMORY ✦</text>
+  </g>
+</svg>

@@ -531,7 +531,18 @@ const LAYOUT_WINDOW_PRESETS = {
   'LAY-VN-001': { xRatio: 0.12, yRatio: 0.22, wRatio: 0.76, hRatio: 0.52 }, // Hoa Sen & Cờ Đỏ
   'LAY-VN-002': { xRatio: 0.08, yRatio: 0.08, wRatio: 0.84, hRatio: 0.84 }, // Kỷ Hà Hoàng Gia
   'LAY-VN-003': { xRatio: 0.10, yRatio: 0.16, wRatio: 0.80, hRatio: 0.65 }, // Trống Đồng Đông Sơn
-  'LAY-VN-004': { xRatio: 0.10, yRatio: 0.15, wRatio: 0.80, hRatio: 0.68 }  // Cờ Tổ Quốc & Rồng Thiêng
+  'LAY-VN-004': { xRatio: 0.10, yRatio: 0.15, wRatio: 0.80, hRatio: 0.68 }, // Cờ Tổ Quốc & Rồng Thiêng
+  'LAY-HW-001': { xRatio: 0.10, yRatio: 0.12, wRatio: 0.80, hRatio: 0.65 }, // Polaroid Mạng Nhện Ma Quái
+  'LAY-HW-002': { xRatio: 0.08, yRatio: 0.06, wRatio: 0.84, hRatio: 0.88 }, // Dải Phim Filmstrip 3 Khung
+  'LAY-HW-003': { xRatio: 0.08, yRatio: 0.12, wRatio: 0.84, hRatio: 0.70 }, // Khung Polaroid Đôi Kawaii
+  'LAY-HW-004': { xRatio: 0.12, yRatio: 0.15, wRatio: 0.76, hRatio: 0.68 }, // Khung Trái Bí Ngô Jack
+  'LAY-HW-005': { xRatio: 0.15, yRatio: 0.14, wRatio: 0.70, hRatio: 0.70 }, // Khung Gương Ma Thuật Răng Cưa
+  'LAY-HW-006': { xRatio: 0.12, yRatio: 0.18, wRatio: 0.76, hRatio: 0.62 }, // Bố Cục Thẻ Kraft Spooky
+  'LAY-HW-007': { xRatio: 0.08, yRatio: 0.08, wRatio: 0.84, hRatio: 0.84 }, // Khung Ghép 4 Ảnh Mosaic
+  'LAY-HW-008': { xRatio: 0.14, yRatio: 0.16, wRatio: 0.72, hRatio: 0.65 }, // Khung Thẻ Bài Tarot
+  'LAY-HW-009': { xRatio: 0.10, yRatio: 0.20, wRatio: 0.80, hRatio: 0.60 }, // Khung Túi Bí Mật Rút Ảnh
+  'LAY-HW-010': { xRatio: 0.10, yRatio: 0.12, wRatio: 0.80, hRatio: 0.68 }, // Khung Slime Bong Bóng Neon
+  'LAY-HW-011': { xRatio: 0.12, yRatio: 0.16, wRatio: 0.76, hRatio: 0.70 }  // Cửa Sổ Vòm Gothic Nhũ Bạc
 };
 
 function addLayoutFrameToCanvas(sku, name, imageUrl, price) {

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" fill="none">
+  <defs>
+    <filter id="lay-sh-08" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000" flood-opacity="1"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#d97706" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <g transform="translate(110, 40)" filter="url(#lay-sh-08)">
+    <!-- Tarot Body -->
+    <rect x="0" y="0" width="380" height="520" rx="18" fill="#1e1035" stroke="#d97706" stroke-width="3.5"/>
+    <rect x="12" y="12" width="356" height="496" rx="12" fill="none" stroke="#facc15" stroke-width="1.5" stroke-dasharray="6,3"/>
+    
+    <!-- Top Tarot Title -->
+    <text x="190" y="45" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="14" fill="#fde047" text-anchor="middle" letter-spacing="2">XIII • THE HALLOWEEN NIGHT</text>
+    
+    <!-- Photo Aperture -->
+    <rect x="30" y="65" width="320" height="380" rx="10" fill="#0b0217" stroke="#a855f7" stroke-width="2"/>
+    <text x="190" y="250" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#c084fc" text-anchor="middle">KHUNG ẢNH LÁ BÀI TAROT</text>
+    <text x="190" y="275" font-family="'Patrick Hand', cursive" font-size="16" fill="#fde047" text-anchor="middle">Gương mặt định mệnh huyền bí</text>
+
+    <!-- Bottom Caption -->
+    <text x="190" y="485" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="13" fill="#fde047" text-anchor="middle" letter-spacing="1.5">✦ MEMOUR MYSTIC TAROT ✦</text>
+  </g>
+</svg>

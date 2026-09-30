@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <defs>
+    <filter id="sh-tape" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <g filter="url(#sh-tape)" transform="rotate(-8 100 100)">
+    <!-- Die cut -->
+    <rect x="15" y="70" width="170" height="60" rx="8" fill="#fff" stroke="#fff" stroke-width="10"/>
+    <!-- Tape body gradient -->
+    <rect x="18" y="73" width="164" height="54" rx="6" fill="#7c3aed" stroke="#000" stroke-width="2"/>
+    <!-- Zigzag ripped edges -->
+    <path d="M18 73 L24 78 L18 83 L24 88 L18 93 L24 98 L18 103 L24 108 L18 113 L24 118 L18 123 L24 127" stroke="#4c1d95" stroke-width="2" fill="none"/>
+    <path d="M182 73 L176 78 L182 83 L176 88 L182 93 L176 98 L182 103 L176 108 L182 113 L176 118 L182 123 L176 127" stroke="#4c1d95" stroke-width="2" fill="none"/>
+    <!-- Text -->
+    <text x="100" y="108" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="16" fill="#fde047" text-anchor="middle" letter-spacing="2">✦ SPOOKY VIBES ✦</text>
+  </g>
+</svg>

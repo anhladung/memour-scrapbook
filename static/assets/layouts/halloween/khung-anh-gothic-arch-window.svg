@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" fill="none">
+  <defs>
+    <filter id="lay-sh-11" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000" flood-opacity="1"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#7c3aed" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <g transform="translate(80, 30)" filter="url(#lay-sh-11)">
+    <!-- Arch Frame Outer -->
+    <path d="M220 20 C100 80 40 180 40 300 L40 540 L400 540 L400 300 C400 180 340 80 220 20 Z" fill="#18181b" stroke="#000" stroke-width="3.5"/>
+    <!-- Stitched gold border inside -->
+    <path d="M220 38 C115 95 60 190 60 300 L60 520 L380 520 L380 300 C380 190 325 95 220 38 Z" fill="none" stroke="#facc15" stroke-width="2" stroke-dasharray="8,4"/>
+    
+    <!-- Photo Window Inside Arch -->
+    <path d="M220 55 C130 110 80 195 80 300 L80 470 L360 470 L360 300 C360 195 310 110 220 55 Z" fill="#0b0217" stroke="#7c3aed" stroke-width="2.5"/>
+    <text x="220" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="17" fill="#e879f9" text-anchor="middle">CỬA SỔ VÒM LÂU ĐÀI GOTHIC</text>
+    <text x="220" y="295" font-family="'Patrick Hand', cursive" font-size="16" fill="#fde047" text-anchor="middle">Ngắm vầng trăng tròn đêm ma quái</text>
+
+    <!-- Rose at base -->
+    <circle cx="220" cy="505" r="14" fill="#e11d48"/>
+    <circle cx="220" cy="505" r="6" fill="#881337"/>
+    <!-- Top Cross Fleur -->
+    <path d="M220 2 C223 10 230 12 220 18 C210 12 217 10 220 2 Z" fill="#facc15"/>
+  </g>
+</svg>

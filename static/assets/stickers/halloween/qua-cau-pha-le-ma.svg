@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <defs>
+    <filter id="sh-orb" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <g filter="url(#sh-orb)">
+    <!-- Die cut -->
+    <circle cx="100" cy="85" r="62" fill="#fff" stroke="#fff" stroke-width="12"/>
+    <path d="M60 145 L50 180 L150 180 L140 145 Z" fill="#fff" stroke="#fff" stroke-width="12" stroke-linejoin="round"/>
+    <!-- Stand -->
+    <polygon points="62,145 52,178 148,178 138,145" fill="#d97706" stroke="#78350f" stroke-width="2"/>
+    <rect x="45" y="172" width="110" height="10" rx="3" fill="#b45309"/>
+    <!-- Crystal Glass -->
+    <circle cx="100" cy="85" r="58" fill="#1e1b4b" stroke="#818cf8" stroke-width="3"/>
+    <!-- Inside Tiny Ghost -->
+    <path d="M100 60 C85 60 75 75 75 95 C75 110 82 110 88 105 C94 110 100 105 106 110 C112 105 125 110 125 95 C125 75 115 60 100 60 Z" fill="#f8fafc"/>
+    <circle cx="92" cy="78" r="3" fill="#000"/>
+    <circle cx="108" cy="78" r="3" fill="#000"/>
+    <ellipse cx="100" cy="86" rx="3" ry="5" fill="#f43f5e"/>
+    <!-- Reflection Highlight -->
+    <path d="M65 65 C75 48 95 42 110 42" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+  </g>
+</svg>

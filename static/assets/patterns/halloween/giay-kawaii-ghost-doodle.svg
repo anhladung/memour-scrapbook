@@ -1,0 +1,39 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="papernoise-03">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.05 0"/>
+    </filter>
+    <pattern id="ghost-doodle" width="100" height="100" patternUnits="userSpaceOnUse">
+      <!-- Kawaii Ghost 1 -->
+      <path d="M25 20 C18 20 12 28 12 40 C12 46 15 45 18 43 C21 45 25 43 28 45 C31 43 35 46 38 43 C38 28 32 20 25 20 Z" fill="#ffffff" stroke="#c084fc" stroke-width="1.5"/>
+      <circle cx="21" cy="30" r="1.5" fill="#18181b"/>
+      <circle cx="29" cy="30" r="1.5" fill="#18181b"/>
+      <ellipse cx="25" cy="34" rx="1.5" ry="2" fill="#f43f5e"/>
+      <circle cx="17" cy="33" r="1.5" fill="#f43f5e" opacity="0.5"/>
+      <circle cx="33" cy="33" r="1.5" fill="#f43f5e" opacity="0.5"/>
+
+      <!-- Candy Wrapper Doodle -->
+      <circle cx="75" cy="35" r="5" fill="#facc15" stroke="#ca8a04" stroke-width="1"/>
+      <polygon points="70,35 64,30 64,40" fill="#f97316"/>
+      <polygon points="80,35 86,30 86,40" fill="#f97316"/>
+
+      <!-- Slime Splat -->
+      <circle cx="70" cy="75" r="6" fill="#a3e635" opacity="0.45"/>
+      <circle cx="78" cy="72" r="3" fill="#a3e635" opacity="0.45"/>
+      <circle cx="68" cy="82" r="2.5" fill="#a3e635" opacity="0.45"/>
+
+      <!-- Tiny Spider Web in corner -->
+      <path d="M0 0 L15 0 M0 0 L10 10 M0 0 L0 15" stroke="#cbd5e1" stroke-width="1"/>
+      <path d="M8 0 Q5 5 0 8" stroke="#cbd5e1" stroke-width="1" fill="none"/>
+
+      <!-- Sparkles Pastel -->
+      <path d="M35 75 Q37 79 41 80 Q37 81 35 85 Q33 81 29 80 Q33 79 35 75 Z" fill="#ec4899" opacity="0.7"/>
+      <circle cx="85" cy="15" r="1" fill="#818cf8"/>
+      <circle cx="15" cy="85" r="1" fill="#facc15"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="#fbf8f2"/>
+  <rect width="400" height="400" fill="url(#ghost-doodle)"/>
+  <rect width="400" height="400" fill="#000000" filter="url(#papernoise-03)" opacity="0.15"/>
+</svg>

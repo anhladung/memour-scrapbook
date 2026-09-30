@@ -1,5 +1,420 @@
 [
   {
+    "id": "insp-hw-001",
+    "title": "Đêm Vũ Hội Hóa Trang Spooky Night & Bí Ngô Tinh Nghịch",
+    "concept": "Halloween Spooky Masquerade & Neon Pumpkin",
+    "subtitle": "Bố cục dải phim filmstrip kết hợp nơ hologram, kẹo bắp và nón phù thủy dạ quang",
+    "image": "/static/assets/layouts/insp_halloween_001.svg",
+    "theme": "Halloween Spooky Vibes",
+    "difficulty": "Dễ làm (15 phút)",
+    "color_palette": [
+      "Cam Bí Ngô Neon",
+      "Tím Huyền Ảo",
+      "Đen Gothic"
+    ],
+    "book_sku": "SCR-HW-001",
+    "layout_skus": [
+      "LAY-HW-001",
+      "LAY-HW-002"
+    ],
+    "sticker_skus": [
+      "STK-HW-001",
+      "STK-HW-002",
+      "STK-HW-009",
+      "STK-HW-015"
+    ],
+    "components": [
+      {
+        "sku": "SCR-HW-001",
+        "name": "Sổ Scrapbook Bìa Cứng Lễ Hội Ma Quái Halloween",
+        "qty": 1,
+        "category": "scrapbook",
+        "price": 100000
+      },
+      {
+        "sku": "LAY-HW-001",
+        "name": "Khung Ảnh Polaroid Mạng Nhện Ma Quái & Dơi Dạ Quang",
+        "qty": 1,
+        "category": "layout",
+        "price": 1500
+      },
+      {
+        "sku": "LAY-HW-002",
+        "name": "Dải Phim Filmstrip 3 Khung Ảnh Lễ Hội Hóa Trang",
+        "qty": 1,
+        "category": "layout",
+        "price": 2000
+      },
+      {
+        "sku": "STK-HW-001",
+        "name": "Bé Ma Kawaii cầm kẹo mút Trick-or-Treat",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      },
+      {
+        "sku": "STK-HW-002",
+        "name": "Bí ngô Jack-o'-lantern tinh nghịch phát sáng",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      },
+      {
+        "sku": "STK-HW-009",
+        "name": "Sticker Kẹo Bắp Candy Corn Pastel Ngọt Ngào",
+        "qty": 1,
+        "category": "sticker",
+        "price": 400
+      },
+      {
+        "sku": "STK-HW-015",
+        "name": "Sticker Băng Dính Washi Tape 'SPOOKY VIBES' Tím Neon",
+        "qty": 1,
+        "category": "sticker",
+        "price": 600
+      }
+    ],
+    "description": "Concept lưu bút hóa trang dành riêng cho hội bạn thân dịp Halloween! Bố cục filmstrip 3 khung ảnh giúp kể lại toàn bộ hành trình chuẩn bị phục trang, đi xin kẹo trick-or-treat và quẩy tiệc đêm huyền ảo.",
+    "canvas_preset": {
+      "bg_color": "#181329",
+      "items": [
+        {
+          "sku": "LAY-HW-002",
+          "type": "layout",
+          "image": "/static/assets/layouts/halloween/khung-anh-filmstrip-halloween.svg",
+          "name": "Dải Phim Filmstrip",
+          "left": 230,
+          "top": 210,
+          "angle": -3,
+          "scale": 0.85
+        },
+        {
+          "sku": "STK-HW-001",
+          "type": "sticker",
+          "image": "/static/assets/stickers/halloween/be-ma-kawaii-candy.svg",
+          "name": "Bé Ma Kawaii",
+          "left": 90,
+          "top": 110,
+          "angle": -8,
+          "scale": 0.85
+        },
+        {
+          "sku": "STK-HW-002",
+          "type": "sticker",
+          "image": "/static/assets/stickers/halloween/bi-ngo-jack-o-lantern.svg",
+          "name": "Bí Ngô Jack-o'-lantern",
+          "left": 410,
+          "top": 290,
+          "angle": 12,
+          "scale": 0.8
+        },
+        {
+          "sku": "STK-HW-009",
+          "type": "sticker",
+          "image": "/static/assets/stickers/halloween/keo-bap-candy-corn.svg",
+          "name": "Kẹo Bắp Candy Corn",
+          "left": 430,
+          "top": 100,
+          "angle": 15,
+          "scale": 0.75
+        },
+        {
+          "sku": "STK-HW-015",
+          "type": "sticker",
+          "image": "/static/assets/stickers/halloween/nhan-dan-spooky-vibes.svg",
+          "name": "Washi Tape Spooky Vibes",
+          "left": 180,
+          "top": 70,
+          "angle": -5,
+          "scale": 0.85
+        }
+      ]
+    },
+    "bundle_price": 92000
+  },
+  {
+    "id": "insp-hw-002",
+    "title": "Học Viện Phù Thủy, Nước Phép Slime & Hồn Ma Kawaii",
+    "concept": "Witchcraft Academy & Kawaii Ghost Slime",
+    "subtitle": "Bố cục khung polaroid đôi cùng vạc phù thủy bốc khói neon và chổi bay Y2K",
+    "image": "/static/assets/layouts/insp_halloween_002.svg",
+    "theme": "Halloween Spooky Vibes",
+    "difficulty": "Trung bình (25 phút)",
+    "color_palette": [
+      "Xanh Slime Neon",
+      "Tím Pastel Y2K",
+      "Hologram Ánh Kim"
+    ],
+    "book_sku": "SCR-HW-003",
+    "layout_skus": [
+      "LAY-HW-003",
+      "LAY-HW-010"
+    ],
+    "sticker_skus": [
+      "STK-HW-003",
+      "STK-HW-011",
+      "STK-HW-014",
+      "STK-HW-021",
+      "STK-HW-025"
+    ],
+    "components": [
+      {
+        "sku": "SCR-HW-003",
+        "name": "Sổ Scrapbook Bìa Cứng Học Viện Phù Thủy & Sách Ma Thuật Grimoire",
+        "qty": 1,
+        "category": "scrapbook",
+        "price": 110000
+      },
+      {
+        "sku": "LAY-HW-003",
+        "name": "Khung Polaroid Đôi Hồn Ma & Dơi Origami Lượn Quanh",
+        "qty": 1,
+        "category": "layout",
+        "price": 1800
+      },
+      {
+        "sku": "LAY-HW-010",
+        "name": "Khung Polaroid Nước Phép Slime Bong Bóng Neon",
+        "qty": 1,
+        "category": "layout",
+        "price": 1800
+      },
+      {
+        "sku": "STK-HW-003",
+        "name": "Mèo đen phù thủy đeo nơ ma thuật",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      },
+      {
+        "sku": "STK-HW-011",
+        "name": "Sticker Chổi Phù Thủy Bay Gắn Nơ Hologram",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      },
+      {
+        "sku": "STK-HW-014",
+        "name": "Sticker Bánh Cupcake Kem Tím Mắt Quái Vật",
+        "qty": 1,
+        "category": "sticker",
+        "price": 400
+      },
+      {
+        "sku": "STK-HW-021",
+        "name": "Sticker Vạc Phù Thủy Nước Phép Slime Xanh Neon",
+        "qty": 1,
+        "category": "sticker",
+        "price": 600
+      },
+      {
+        "sku": "STK-HW-025",
+        "name": "Sticker Hộp Sữa Ma Quái 'Ghost Milk' Y2K Pastel",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      }
+    ],
+    "description": "Lấy cảm hứng từ những tiết học ma thuật tại học viện phù thủy và tiệm bánh kem quái vật. Tông màu xanh lime neon bốc khói rực rỡ bên sắc tím pastel ngộ nghĩnh, đưa trang scrapbook của bạn biến thành một phòng thí nghiệm ma thuật thứ thiệt.",
+    "canvas_preset": {
+      "bg_color": "#161b2e",
+      "items": [
+        {
+          "sku": "LAY-HW-003",
+          "type": "layout",
+          "image": "/static/assets/layouts/halloween/khung-anh-polaroid-doi-kawaii.svg",
+          "name": "Polaroid Đôi Hồn Ma",
+          "left": 170,
+          "top": 190,
+          "angle": -4,
+          "scale": 0.85
+        },
+        {
+          "sku": "LAY-HW-010",
+          "type": "layout",
+          "image": "/static/assets/layouts/halloween/khung-anh-polaroid-vac-phu-thuy.svg",
+          "name": "Khung Slime Nước Phép",
+          "left": 360,
+          "top": 210,
+          "angle": 6,
+          "scale": 0.8
+        },
+        {
+          "sku": "STK-HW-021",
+          "type": "sticker",
+          "image": "/static/assets/stickers/halloween/vac-nuoc-phep-slime.svg",
+          "name": "Vạc Phép Slime",
+          "left": 100,
+          "top": 280,
+          "angle": -5,
+          "scale": 0.8
+        },
+        {
+          "sku": "STK-HW-011",
+          "type": "sticker",
+          "image": "/static/assets/stickers/halloween/choi-phu-thuy-bay.svg",
+          "name": "Chổi Phù Thủy",
+          "left": 350,
+          "top": 80,
+          "angle": -15,
+          "scale": 0.75
+        },
+        {
+          "sku": "STK-HW-025",
+          "type": "sticker",
+          "image": "/static/assets/stickers/halloween/hop-sua-ma-quai-ghost-milk.svg",
+          "name": "Ghost Milk Pastel",
+          "left": 430,
+          "top": 260,
+          "angle": 8,
+          "scale": 0.8
+        }
+      ]
+    },
+    "bundle_price": 99000
+  },
+  {
+    "id": "insp-hw-003",
+    "title": "Bí Mật Dinh Thự Ma Ám & Lá Bài Tarot Định Mệnh",
+    "concept": "Haunted Mansion Mystery & Gothic Tarot",
+    "subtitle": "Khung ảnh vòm gothic nhũ bạc kết hợp thẻ bài tarot 'The Moon' và gương ma thuật",
+    "image": "/static/assets/layouts/insp_halloween_003.svg",
+    "theme": "Halloween Spooky Vibes",
+    "difficulty": "Sáng tạo (30 phút)",
+    "color_palette": [
+      "Tím Midnight",
+      "Vàng Hoàng Gia Gold Foil",
+      "Bạc Silver Metallic"
+    ],
+    "book_sku": "SCR-HW-002",
+    "layout_skus": [
+      "LAY-HW-008",
+      "LAY-HW-011"
+    ],
+    "sticker_skus": [
+      "STK-HW-010",
+      "STK-HW-012",
+      "STK-HW-017",
+      "STK-HW-022",
+      "STK-HW-028"
+    ],
+    "components": [
+      {
+        "sku": "SCR-HW-002",
+        "name": "Sổ Scrapbook Bìa Cứng Dinh Thự Ma Ám & Vườn Bí Ngô Neon",
+        "qty": 1,
+        "category": "scrapbook",
+        "price": 110000
+      },
+      {
+        "sku": "LAY-HW-008",
+        "name": "Khung Lồng Ảnh Dáng Thẻ Bài Tarot Huyền Bí",
+        "qty": 1,
+        "category": "layout",
+        "price": 2000
+      },
+      {
+        "sku": "LAY-HW-011",
+        "name": "Khung Cửa Sổ Vòm Lâu Đài Gothic Nhũ Bạc & Hoa Hồng Đen",
+        "qty": 1,
+        "category": "layout",
+        "price": 2200
+      },
+      {
+        "sku": "STK-HW-010",
+        "name": "Sticker Hộp Sọ Pha Lê Neon Y2K Tinh Nghịch",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      },
+      {
+        "sku": "STK-HW-012",
+        "name": "Sticker Trăng Tròn Dạ Quang Khâu Chỉ & Mũ Nhỏ",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      },
+      {
+        "sku": "STK-HW-017",
+        "name": "Sticker Quả Cầu Pha Lê Chiêm Tinh Chứa Hồn Ma",
+        "qty": 1,
+        "category": "sticker",
+        "price": 600
+      },
+      {
+        "sku": "STK-HW-022",
+        "name": "Sticker Lá Bài Tarot 'The Moon' Ánh Kim Hoàng Gia",
+        "qty": 1,
+        "category": "sticker",
+        "price": 600
+      },
+      {
+        "sku": "STK-HW-028",
+        "name": "Sticker Hoa Hồng Đen Gothic Gai Nhung Quyến Rũ",
+        "qty": 1,
+        "category": "sticker",
+        "price": 500
+      }
+    ],
+    "description": "Phong cách Gothic ma mị quý phái dành cho những tâm hồn yêu thích chiêm tinh, bài Tarot và kiến trúc lâu đài cổ tích. Khung ảnh vòm cửa sổ kết hợp hoa hồng đen và nhũ bạc tạo nên không gian lưu giữ ảnh kỷ niệm đầy bí ẩn và cuốn hút.",
+    "canvas_preset": {
+      "bg_color": "#120e24",
+      "items": [
+        {
+          "sku": "LAY-HW-011",
+          "type": "layout",
+          "image": "/static/assets/layouts/halloween/khung-anh-gothic-arch-window.svg",
+          "name": "Cửa Sổ Gothic Hoa Hồng",
+          "left": 210,
+          "top": 190,
+          "angle": -2,
+          "scale": 0.85
+        },
+        {
+          "sku": "LAY-HW-008",
+          "type": "layout",
+          "image": "/static/assets/layouts/halloween/khung-anh-la-bai-tarot-photo.svg",
+          "name": "Khung Thẻ Bài Tarot",
+          "left": 390,
+          "top": 210,
+          "angle": 8,
+          "scale": 0.8
+        },
+        {
+          "sku": "STK-HW-022",
+          "type": "sticker",
+          "image": "/static/assets/stickers/halloween/la-bai-tarot-halloween.svg",
+          "name": "Tarot The Moon",
+          "left": 100,
+          "top": 120,
+          "angle": -10,
+          "scale": 0.8
+        },
+        {
+          "sku": "STK-HW-017",
+          "type": "sticker",
+          "image": "/static/assets/stickers/halloween/qua-cau-pha-le-ma.svg",
+          "name": "Cầu Pha Lê",
+          "left": 420,
+          "top": 90,
+          "angle": 12,
+          "scale": 0.75
+        },
+        {
+          "sku": "STK-HW-028",
+          "type": "sticker",
+          "image": "/static/assets/stickers/halloween/hoa-hong-den-gai-nhung.svg",
+          "name": "Hoa Hồng Đen Gothic",
+          "left": 280,
+          "top": 320,
+          "angle": 5,
+          "scale": 0.8
+        }
+      ]
+    },
+    "bundle_price": 99000
+  },
+  {
     "id": "insp-001",
     "title": "Tự Hào Non Sông & Biển Đảo Hoàng Sa - Trường Sa",
     "concept": "Vietnam Heritage & Ocean Sovereignty",

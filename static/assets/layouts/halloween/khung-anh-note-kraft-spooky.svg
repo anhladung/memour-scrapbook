@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" fill="none">
+  <defs>
+    <filter id="lay-sh-06" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000" flood-opacity="1"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <g transform="translate(60, 50)" filter="url(#lay-sh-06)">
+    <!-- Torn Kraft Note Sheet -->
+    <rect x="0" y="0" width="480" height="500" rx="10" fill="#d97706" stroke="#000" stroke-width="3"/>
+    <rect x="15" y="15" width="450" height="470" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+    
+    <!-- Photo Box Top Half -->
+    <rect x="40" y="40" width="400" height="270" rx="8" fill="#181126" stroke="#000" stroke-width="2.5"/>
+    <text x="240" y="170" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18" fill="#fb923c" text-anchor="middle">KHUNG ẢNH KRAFT RETRO</text>
+    <text x="240" y="195" font-family="'Patrick Hand', cursive" font-size="15" fill="#fde047" text-anchor="middle">Dán ảnh kỷ niệm cùng note viết tay</text>
+
+    <!-- Notebook Lined Lines for journal entry -->
+    <line x1="45" y1="350" x2="435" y2="350" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="45" y1="385" x2="435" y2="385" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="45" y1="420" x2="435" y2="420" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="45" y1="455" x2="435" y2="455" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="50" y="342" font-family="'Patrick Hand', cursive" font-size="18" fill="#4c1d95">Ký ức đêm Halloween 2026 cùng bạn thân...</text>
+
+    <!-- Thumbtack Pin at Top Center -->
+    <circle cx="240" cy="18" r="8" fill="#e11d48" stroke="#881337" stroke-width="2"/>
+    <circle cx="238" cy="16" r="2.5" fill="#fff"/>
+  </g>
+</svg>

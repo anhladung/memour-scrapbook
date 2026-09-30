@@ -9,8 +9,7 @@
 
 {% set handbook_title = "<span class='whitespace-nowrap inline-block'>Bí Quyết Sáng Tạo Sổ Thủ Công</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Scrapbook Chuẩn Gu Gen Z</span>" %}
 {% set handbook_buttons = [
-  { "text": "Đọc Bài Viết Mới", "url": "#handbook-list", "primary": true },
-  { "text": "Bạn muốn biết thêm?", "url": "/contact", "primary": false }
+  { "text": "Liên Hệ Cùng MEMOUR Studio →", "url": "/contact", "primary": true }
 ] %}
 
 {{ carousels.render_hero_carousel("handbook-carousel", handbook_title, handbook_buttons) }}
@@ -38,7 +37,8 @@
     
     <div class="{% if blogs|length == 1 %}max-w-2xl mx-auto{% else %}grid grid-cols-1 md:grid-cols-3 gap-8{% endif %}">
       {% for blog in blogs %}
-      <article class="halloween-3d-card rounded-3xl overflow-hidden flex flex-col justify-between group">
+      {% set blog_card_color = ['card-3d-purple', 'card-3d-amber', 'card-3d-rose', 'card-3d-green'][loop.index0 % 4] %}
+      <article class="{{ blog_card_color }} rounded-3xl overflow-hidden flex flex-col justify-between group">
         <div>
           <div class="w-full aspect-[16/10] bg-stone-100 relative overflow-hidden border-b-2 border-black">
             <img src="{{ blog.cover_image }}" alt="{{ blog.title }}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">

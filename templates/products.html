@@ -7,8 +7,7 @@
 
 {% set products_title = "<span class='whitespace-nowrap inline-block'>Kho Phụ Kiện Thủ Công</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Đa Dạng Mẫu Mã Chuẩn Gu</span>" %}
 {% set products_buttons = [
-  { "text": "Mở Trong Xưởng 3D", "url": "/studio", "primary": true },
-  { "text": "Xem Mẫu Bố Cục", "url": "/inspiration", "primary": false }
+  { "text": "Xem Mẫu Bố Cục Gợi Ý →", "url": "/inspiration", "primary": true }
 ] %}
 
 {{ carousels.render_hero_carousel("products-carousel", products_title, products_buttons) }}
@@ -80,7 +79,8 @@
     {% else %}
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {% for item in products %}
-      <div class="halloween-3d-card rounded-3xl overflow-hidden flex flex-col justify-between group {% if item.season == 'halloween' or '-HW-' in item.sku %}border-purple-700/80 ring-2 ring-purple-500/20{% endif %}">
+      {% set card_color = "card-3d-purple" if (item.season == 'halloween' or '-HW-' in item.sku) else ("card-3d-amber" if item.category == 'sticker' else ("card-3d-rose" if item.category == 'layout' else "card-3d-green")) %}
+      <div class="{{ card_color }} rounded-3xl overflow-hidden flex flex-col justify-between group">
         <div>
           <!-- Thumbnail Box -->
           <div class="w-full aspect-square {% if item.season == 'halloween' or '-HW-' in item.sku %}bg-gradient-to-br from-purple-50 via-amber-50/40 to-orange-50{% else %}bg-[#fbf8f2]{% endif %} relative border-b-2 border-black p-4 flex items-center justify-center overflow-hidden">

@@ -7,8 +7,7 @@
 
 {% set contact_title = "<span class='whitespace-nowrap inline-block'>Bạn Có Gặp Khó Khăn Gì</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Cứ Liên Hệ Đến Chúng Tôi</span>" %}
 {% set contact_buttons = [
-  { "text": "Gửi Lời Nhắn Cho Xưởng", "url": "#contact-box", "primary": true },
-  { "text": "Liên hệ chúng tôi", "url": "#contact-box", "primary": false }
+  { "text": "Gửi Lời Nhắn Cho Xưởng →", "url": "#contact-box", "primary": true }
 ] %}
 
 {{ carousels.render_hero_carousel("contact-carousel", contact_title, contact_buttons) }}
@@ -21,11 +20,11 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       
       <!-- Company Information Card -->
-      <div class="lg:col-span-5 halloween-3d-card rounded-3xl p-6 sm:p-8 space-y-6">
+      <div class="lg:col-span-5 card-3d-purple rounded-3xl p-6 sm:p-8 space-y-6">
         <div>
           <span class="bg-gradient-to-r from-purple-300 to-amber-300 text-stone-900 text-xs font-black px-3 py-1 rounded-full border border-black inline-block mb-2 shadow-sm">Showroom &amp; Xưởng Thủ Công</span>
           <h2 class="text-2xl font-heading font-black text-stone-900">{{ company.brand_name }}</h2>
-          <p class="text-xs text-stone-500 font-semibold mt-1">{{ company.tagline }}</p>
+          <p class="text-xs text-stone-600 font-semibold mt-1">{{ company.tagline }}</p>
         </div>
 
         <div class="space-y-3 text-xs sm:text-sm text-stone-700">
@@ -47,27 +46,30 @@
           </p>
         </div>
 
-        <div class="pt-4 border-t border-stone-200">
+        <div class="pt-4 border-t border-purple-200">
           <span class="text-xs font-black text-stone-900 uppercase block mb-3">Kênh Mạng Xã Hội Chính Thức:</span>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <a href="{{ company.contact.socials.threads }}" target="_blank" rel="noopener noreferrer" class="bg-stone-900 hover:bg-purple-900 text-white hover:text-amber-300 text-xs font-heading font-black p-3 rounded-2xl border-2 border-black flex items-center justify-center gap-2 shadow-neo transition-all">
-              <span>@ Threads</span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+            <a href="{{ company.contact.socials.facebook }}" target="_blank" rel="noopener noreferrer" class="bg-[#1877F2] hover:bg-[#166fe5] text-white text-xs font-heading font-black p-3 rounded-2xl border-2 border-black flex items-center justify-center gap-1.5 shadow-neo transition-all hover:scale-105" title="Facebook MEMOUR">
+              <span>✦ Facebook</span>
             </a>
-            <a href="{{ company.contact.socials.instagram }}" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-500 hover:opacity-95 text-white text-xs font-heading font-black p-3 rounded-2xl border-2 border-black flex items-center justify-center gap-2 shadow-neo transition-all">
+            <a href="{{ company.contact.socials.instagram }}" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-500 hover:opacity-95 text-white text-xs font-heading font-black p-3 rounded-2xl border-2 border-black flex items-center justify-center gap-1.5 shadow-neo transition-all hover:scale-105" title="Instagram MEMOUR">
               <span>✦ Instagram</span>
+            </a>
+            <a href="{{ company.contact.socials.threads }}" target="_blank" rel="noopener noreferrer" class="bg-stone-900 hover:bg-stone-800 text-white hover:text-amber-300 text-xs font-heading font-black p-3 rounded-2xl border-2 border-black flex items-center justify-center gap-1.5 shadow-neo transition-all hover:scale-105" title="Threads MEMOUR">
+              <span>@ Threads</span>
             </a>
           </div>
         </div>
       </div>
 
       <!-- Contact Message Form -->
-      <div class="lg:col-span-7 halloween-3d-card rounded-3xl p-6 sm:p-8">
+      <div class="lg:col-span-7 card-3d-amber rounded-3xl p-6 sm:p-8">
         <div class="mb-6">
           <div class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-200 to-amber-200 text-stone-950 px-3 py-1 rounded-full text-xs font-black uppercase mb-2 border border-black shadow-sm">
             <span>Hộp Thư Tiếp Nhận Yêu Cầu</span>
           </div>
-          <h3 class="text-2xl font-heading font-black text-stone-900">Gửi Lời Nhắn Cho ScrapCraft Studio</h3>
-          <p class="text-xs text-stone-500 font-medium mt-1">Đội ngũ nghệ nhân sẽ phản hồi qua Zalo/Email trong vòng 2 giờ làm việc.</p>
+          <h3 class="text-2xl font-heading font-black text-stone-900">Gửi Lời Nhắn Cho MEMOUR Studio</h3>
+          <p class="text-xs text-stone-600 font-medium mt-1">Đội ngũ nghệ nhân sẽ phản hồi qua Zalo/Email trong vòng 2 giờ làm việc.</p>
         </div>
 
         <form id="contact-form" class="space-y-4">
@@ -125,45 +127,45 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- Policy 1: Privacy -->
-        <div class="halloween-3d-card rounded-3xl p-6 space-y-3">
+        <div class="card-3d-purple rounded-3xl p-6 space-y-3">
           <div class="flex items-center gap-3">
-            <span class="font-mono font-black text-purple-800 text-lg">01.</span>
+            <span class="font-mono font-black text-purple-900 text-lg">01.</span>
             <h3 class="font-heading font-bold text-lg text-stone-900">{{ company.policies.privacy.title }}</h3>
           </div>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-medium">
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed font-medium">
             {{ company.policies.privacy.detail }}
           </p>
         </div>
 
         <!-- Policy 2: Copyright -->
-        <div class="halloween-3d-card rounded-3xl p-6 space-y-3">
+        <div class="card-3d-rose rounded-3xl p-6 space-y-3">
           <div class="flex items-center gap-3">
-            <span class="font-mono font-black text-orange-600 text-lg">02.</span>
+            <span class="font-mono font-black text-rose-800 text-lg">02.</span>
             <h3 class="font-heading font-bold text-lg text-stone-900">{{ company.policies.copyright.title }}</h3>
           </div>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-medium">
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed font-medium">
             {{ company.policies.copyright.detail }}
           </p>
         </div>
 
         <!-- Policy 3: Shipping -->
-        <div class="halloween-3d-card rounded-3xl p-6 space-y-3">
+        <div class="card-3d-amber rounded-3xl p-6 space-y-3">
           <div class="flex items-center gap-3">
-            <span class="font-mono font-black text-stone-900 text-lg">03.</span>
+            <span class="font-mono font-black text-amber-900 text-lg">03.</span>
             <h3 class="font-heading font-bold text-lg text-stone-900">{{ company.policies.shipping.title }}</h3>
           </div>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-medium">
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed font-medium">
             {{ company.policies.shipping.detail }}
           </p>
         </div>
 
         <!-- Policy 4: Warranty -->
-        <div class="halloween-3d-card rounded-3xl p-6 space-y-3">
+        <div class="card-3d-green rounded-3xl p-6 space-y-3">
           <div class="flex items-center gap-3">
-            <span class="font-mono font-black text-purple-800 text-lg">04.</span>
+            <span class="font-mono font-black text-lime-900 text-lg">04.</span>
             <h3 class="font-heading font-bold text-lg text-stone-900">{{ company.policies.warranty.title }}</h3>
           </div>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-medium">
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed font-medium">
             {{ company.policies.warranty.detail }}
           </p>
         </div>

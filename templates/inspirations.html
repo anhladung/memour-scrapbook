@@ -7,8 +7,7 @@
 
 {% set insp_title = "<span class='whitespace-nowrap inline-block'>Mẫu Bố Cục Tinh Tuyển</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Đầy Đủ Phụ Kiện Có Sẵn</span>" %}
 {% set insp_buttons = [
-  { "text": "Khám Phá Xưởng 3D", "url": "/studio", "primary": true },
-  { "text": "Cách làm scrapbook", "url": "/guide", "primary": false }
+  { "text": "Đọc Cẩm Nang Sáng Tạo →", "url": "/guide", "primary": true }
 ] %}
 
 {{ carousels.render_hero_carousel("inspiration-carousel", insp_title, insp_buttons) }}
@@ -18,7 +17,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
     
     {% for insp in inspirations %}
-    <div class="halloween-3d-card rounded-3xl p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group">
+    {% set insp_card_color = ['card-3d-purple', 'card-3d-amber', 'card-3d-rose', 'card-3d-green'][loop.index0 % 4] %}
+    <div class="{{ insp_card_color }} rounded-3xl p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group">
       
       <!-- Visual Display Box (Mockup) -->
       <div class="lg:col-span-6 relative">
@@ -51,7 +51,7 @@
         </p>
 
         <!-- Components Breakdown with Exact SKUs -->
-        <div class="bg-[#fdfbf7] border-2 border-black rounded-2xl p-4 space-y-2">
+        <div class="bg-white/95 border-2 border-black rounded-2xl p-4 space-y-2 shadow-sm">
           <div class="flex items-center justify-between">
             <span class="text-xs font-heading font-black text-stone-900 uppercase">Linh Kiện Cấu Thành (Chuẩn SKU):</span>
             <span class="text-[11px] font-bold text-purple-900">{{ insp.components|length }} Phụ Kiện</span>
@@ -59,7 +59,7 @@
           
           <div class="flex flex-wrap gap-2 pt-1">
             {% for comp in insp.components %}
-            <a href="/product/{{ comp.sku }}" class="inline-flex items-center gap-1.5 bg-[#fdfbf7] border border-stone-300 px-2.5 py-1 rounded-lg hover:border-black transition-colors" title="{{ comp.name }}">
+            <a href="/product/{{ comp.sku }}" class="inline-flex items-center gap-1.5 bg-white border border-stone-300 px-2.5 py-1 rounded-lg hover:border-black transition-colors shadow-xs" title="{{ comp.name }}">
               <span class="text-[10px] font-mono font-black text-purple-800">{{ comp.sku }}</span>
               <span class="text-[10px] font-bold text-stone-700 truncate max-w-[120px]">{{ comp.name }}</span>
             </a>

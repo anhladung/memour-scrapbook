@@ -204,9 +204,13 @@ def index():
     blogs = get_blogs()
     company = get_company_info()
     
-    featured_stickers = [p for p in products if p['category'] == 'sticker'][:3]
-    featured_layouts = [p for p in products if p['category'] == 'layout'][:3]
-    featured_books = [p for p in products if p['category'] == 'book'][:3]
+    def seasonal_first(item):
+        is_halloween = item.get('season') == 'halloween' or '-HW-' in item.get('sku', '') or 'halloween' in item.get('themes', [])
+        return 0 if is_halloween else 1
+
+    featured_stickers = sorted([p for p in products if p['category'] == 'sticker'], key=seasonal_first)[:3]
+    featured_layouts = sorted([p for p in products if p['category'] == 'layout'], key=seasonal_first)[:3]
+    featured_books = sorted([p for p in products if p['category'] in ('scrapbook', 'book')], key=seasonal_first)[:3]
     
     return render_template(
         'index.html',
@@ -238,7 +242,16 @@ def products():
         filtered = [p for p in filtered if p['category'] == category or p.get('type') == category]
         
     if theme != 'all':
-        filtered = [p for p in filtered if any(theme.lower() in t.lower() for t in p.get('themes', [])) or theme.lower() in p.get('attributes', {}).get('theme', '').lower()]
+        th = theme.lower()
+        filtered = [
+            p for p in filtered if (
+                any(th in str(t).lower() for t in p.get('themes', [])) or
+                any(th in str(t).lower() for t in p.get('chuDe', [])) or
+                any(th in str(t).lower() for t in p.get('tags', [])) or
+                th in p.get('season', '').lower() or
+                th in p.get('attributes', {}).get('theme', '').lower()
+            )
+        ]
         
     if style != 'all':
         filtered = [p for p in filtered if style.lower() in p.get('style', '').lower()]
@@ -266,6 +279,17 @@ def products():
         filtered.sort(key=lambda x: x.get('price', 0), reverse=True)
     elif sort_by == 'name_asc':
         filtered.sort(key=lambda x: x.get('name', ''))
+    else:
+        # Default sort: Halloween seasonal products first!
+        def halloween_priority(item):
+            is_hw = (
+                item.get('season') == 'halloween' or
+                '-HW-' in item.get('sku', '') or
+                'halloween' in [str(t).lower() for t in item.get('themes', [])] or
+                'halloween' in [str(t).lower() for t in item.get('chuDe', [])]
+            )
+            return (0 if is_hw else 1, -1 if item.get('isNew') else 0)
+        filtered.sort(key=halloween_priority)
         
     categories_stat = {
         'all': len(all_products),
@@ -396,9 +420,14 @@ def studio():
     target_sku = request.args.get('sku', '')
     
     def seasonal_first(item):
-        """Keep the current Mid-Autumn collection at the top of every catalog."""
-        is_mid_autumn = item.get('season') == 'mid-autumn' or '-TT-' in item.get('sku', '')
-        return 0 if is_mid_autumn else 1
+        """Keep the current Halloween Spooky Craft collection at the top of every catalog."""
+        is_halloween = (
+            item.get('season') == 'halloween' or
+            '-HW-' in item.get('sku', '') or
+            'halloween' in [str(t).lower() for t in item.get('themes', [])] or
+            'halloween' in [str(t).lower() for t in item.get('chuDe', [])]
+        )
+        return 0 if is_halloween else 1
 
     stickers = sorted([p for p in products if p.get('category') == 'sticker'], key=seasonal_first)
     layouts = sorted([p for p in products if p.get('category') == 'layout'], key=seasonal_first)

@@ -3313,5 +3313,157 @@
     "is3D": true,
     "is_3d": true,
     "createdAt": "2026-09-30T13:30:00+07:00"
+  },
+  {
+    "id": "LAY-HW-001",
+    "sku": "LAY-HW-001",
+    "name": "Khung Ảnh Polaroid Halloween Spooky Night & Dơi Origami",
+    "ten": "Khung Ảnh Polaroid Halloween Spooky Night & Dơi Origami",
+    "category": "layout",
+    "type": "layout",
+    "subtype": "photo",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "khung ảnh halloween",
+    "description": "Khung ảnh Polaroid ma mị độc bản với trăng tròn dạ quang, mạng nhện thêu chỉ tím pastel, dơi origami và sticker bí ngô nỉ Jack-o-lantern dập nổi.",
+    "moTa": "Khung ảnh Polaroid ma mị độc bản với trăng tròn dạ quang, mạng nhện thêu chỉ tím pastel, dơi origami và sticker bí ngô nỉ Jack-o-lantern dập nổi.",
+    "image": "/static/assets/layouts/halloween/khung-anh-halloween-spooky.svg",
+    "imageUrl": "/static/assets/layouts/halloween/khung-anh-halloween-spooky.svg",
+    "thumbnailUrl": "/static/assets/layouts/halloween/khung-anh-halloween-spooky.svg",
+    "price": 2500,
+    "themes": [
+      "halloween",
+      "spooky",
+      "dơi origami",
+      "bí ngô"
+    ],
+    "chuDe": [
+      "halloween",
+      "khung polaroid",
+      "jack-o-lantern",
+      "mạng nhện"
+    ],
+    "style": "scrapbook-diecut",
+    "phongCach": [
+      "thủ công",
+      "scrapbook halloween",
+      "dập nổi 3d"
+    ],
+    "tags": [
+      "halloween",
+      "layout halloween",
+      "khung ảnh spooky",
+      "polaroid"
+    ],
+    "tuKhoa": [
+      "halloween",
+      "khung ảnh",
+      "polaroid",
+      "spooky night",
+      "bí ngô"
+    ],
+    "mauSac": [
+      "tím huyền bí",
+      "cam neon",
+      "vàng trăng",
+      "đen ma mị"
+    ],
+    "camXuc": [
+      "huyền bí",
+      "tinh nghịch",
+      "ma mị",
+      "độc đáo"
+    ],
+    "dipSuDung": [
+      "tiệc halloween",
+      "hóa trang",
+      "kỷ niệm thu đông"
+    ],
+    "inner_window": {
+      "x": 95,
+      "y": 75,
+      "width": 410,
+      "height": 380,
+      "origW": 600,
+      "origH": 600
+    },
+    "createdAt": "2026-09-30T14:00:00+07:00"
+  },
+  {
+    "id": "SCR-HW-001",
+    "sku": "SCR-HW-001",
+    "name": "Sổ Scrapbook Bìa Cứng Halloween Spooky Night Ma Quái",
+    "ten": "Sổ Scrapbook Bìa Cứng Halloween Spooky Night Ma Quái",
+    "category": "scrapbook",
+    "type": "scrapbook",
+    "season": "halloween",
+    "isNew": true,
+    "loai": "bìa sổ scrapbook halloween",
+    "description": "Bìa cứng thủ công cao cấp dập nổi lâu đài ma quái dát nhũ vàng hoàng gia, trăng tròn bí ngô, đàn dơi bóng đêm, gáy xoắn lò xo kim loại cổ điển và dấu sáp niêm phong MEMOUR.",
+    "moTa": "Bìa cứng thủ công cao cấp dập nổi lâu đài ma quái dát nhũ vàng hoàng gia, trăng tròn bí ngô, đàn dơi bóng đêm, gáy xoắn lò xo kim loại cổ điển và dấu sáp niêm phong MEMOUR.",
+    "image": "/static/assets/scrapbooks/halloween/bia-so-halloween-spooky-night.svg",
+    "imageUrl": "/static/assets/scrapbooks/halloween/bia-so-halloween-spooky-night.svg",
+    "thumbnailUrl": "/static/assets/scrapbooks/halloween/bia-so-halloween-spooky-night.svg",
+    "backImage": "/static/assets/scrapbooks/halloween/bia-so-halloween-spooky-night.svg",
+    "backImageUrl": "/static/assets/scrapbooks/halloween/bia-so-halloween-spooky-night.svg",
+    "price": 135000,
+    "colorHex": "#1a0b2e",
+    "themes": [
+      "halloween",
+      "spooky night",
+      "lâu đài ma quái",
+      "dát nhũ vàng"
+    ],
+    "chuDe": [
+      "halloween",
+      "bìa cứng",
+      "dấu sáp",
+      "gáy xoắn cổ điển"
+    ],
+    "style": "scrapbook-hardcover",
+    "phongCach": [
+      "thủ công cao cấp",
+      "dát vàng",
+      "dập nổi 3d",
+      "ma mị huyền bí"
+    ],
+    "tags": [
+      "halloween",
+      "sổ scrapbook",
+      "bìa cứng halloween",
+      "quà tặng độc bản"
+    ],
+    "tuKhoa": [
+      "halloween",
+      "sổ tay",
+      "scrapbook bìa cứng",
+      "spooky night",
+      "lâu đài ma quái"
+    ],
+    "mauSac": [
+      "tím ma mị",
+      "nhũ vàng hoàng gia",
+      "đen huyền bí",
+      "cam bí ngô"
+    ],
+    "camXuc": [
+      "huyền ảo",
+      "ma mị sang trọng",
+      "trân quý",
+      "độc bản"
+    ],
+    "dipSuDung": [
+      "lễ hội hóa trang",
+      "album halloween",
+      "kỷ niệm bạn bè",
+      "quà tặng độc lạ"
+    ],
+    "specs": {
+      "pages": 30,
+      "paperWeight": "300gsm",
+      "size": "A5 (21 x 15 cm)",
+      "binding": "Bìa cứng gáy xoắn kim loại cổ điển kèm dấu sáp độc quyền"
+    },
+    "createdAt": "2026-09-30T14:00:00+07:00"
   }
 ]

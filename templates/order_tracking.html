@@ -19,10 +19,10 @@
     </div>
 
     <!-- Query Search Form -->
-    <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-xl">
+    <div class="halloween-3d-card rounded-3xl p-6 sm:p-8">
       <form id="order-tracking-form" onsubmit="handleOrderSearch(event)" class="flex flex-col sm:flex-row items-center gap-3">
-        <input type="text" id="query-input" value="{{ initial_code }}" required placeholder="Nhập mã đơn hàng hoặc SĐT..." class="flex-grow w-full bg-stone-50 border-2 border-black rounded-2xl px-5 py-3 text-sm font-semibold focus:outline-none focus:border-rose-800">
-        <button type="submit" class="w-full sm:w-auto bg-rose-800 hover:bg-rose-900 text-white font-heading font-black text-sm px-8 py-3.5 rounded-2xl border-2 border-black shadow-neo shadow-neo-hover transition-all">
+        <input type="text" id="query-input" value="{{ initial_code }}" required placeholder="Nhập mã đơn hàng hoặc SĐT..." class="flex-grow w-full bg-[#fdfbf7] border-2 border-black rounded-2xl px-5 py-3 text-sm font-semibold focus:outline-none focus:border-purple-800">
+        <button type="submit" class="w-full sm:w-auto bg-gradient-to-r from-purple-700 to-indigo-800 hover:from-purple-800 hover:to-indigo-900 text-amber-300 font-heading font-black text-sm px-8 py-3.5 rounded-2xl border-2 border-black shadow-neo transition-all hover:translate-x-0.5 hover:-translate-y-0.5">
           Tra Cứu Ngay →
         </button>
       </form>
@@ -62,7 +62,7 @@ async function fetchOrdersData(query) {
     
     if (!data.orders || data.orders.length === 0) {
       resultsArea.innerHTML = `
-        <div class="bg-white border-2 border-black rounded-3xl p-8 text-center shadow-neo">
+        <div class="halloween-3d-card rounded-3xl p-8 text-center">
           <p class="font-heading font-black text-lg text-stone-900 mb-1">Không tìm thấy đơn hàng phù hợp</p>
           <p class="text-xs text-stone-500">Vui lòng kiểm tra lại mã đơn hàng hoặc số điện thoại.</p>
         </div>
@@ -71,7 +71,7 @@ async function fetchOrdersData(query) {
     }
 
     resultsArea.innerHTML = data.orders.map(order => `
-      <div class="bg-white border-3 border-black rounded-3xl p-6 sm:p-8 shadow-neo-xl space-y-6">
+      <div class="halloween-3d-card rounded-3xl p-6 sm:p-8 space-y-6">
         <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-stone-200">
           <div>
             <span class="text-xs font-mono font-bold text-stone-400">Mã đơn:</span>

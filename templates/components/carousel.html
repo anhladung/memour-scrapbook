@@ -1,5 +1,5 @@
 {# Reusable Unified Page Hero Carousel Component - Halloween Scrapbook Hero Banner & Fixed 3D Center Content #}
-{% macro render_hero_carousel(carousel_id, title, buttons, desc=None, brand_pill="🎃 MEMOUR HALLOWEEN CRAFT • SÁNG TẠO LƯU BÚT MA QUÁI DIỆU KỲ 👻") %}
+{% macro render_hero_carousel(carousel_id, title, buttons, desc=None, brand_pill=None) %}
 <section class="py-6 sm:py-10 bg-[#fdfbf7]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
@@ -25,10 +25,12 @@
       <!-- 2. FIXED STATIC FOREGROUND CONTENT (Permanently Fixed in Center) -->
       <div class="hero-content relative z-10 max-w-4xl mx-auto text-center space-y-3 sm:space-y-6 px-10 sm:px-8 py-6 sm:py-8 pointer-events-auto">
         
-        <!-- Fixed 3D Embossed Floating Brand Pill with Halloween Flair -->
+        {% if brand_pill %}
+        <!-- Optional Floating Brand Pill -->
         <div class="hero-brand-pill inline-flex items-center gap-2 bg-gradient-to-r from-purple-400 via-orange-400 to-amber-300 text-stone-950 px-3 sm:px-6 py-1.5 rounded-full border-2 border-black shadow-neo font-heading font-black text-[10px] sm:text-sm tracking-wider uppercase transform -rotate-1 hover:rotate-0 transition-transform max-w-full">
           <span>{{ brand_pill }}</span>
         </div>
+        {% endif %}
 
         <!-- Fixed 3D Pop High-Impact Slogan -->
         <h1 class="hero-title font-heading font-black text-xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-snug sm:leading-tight tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] [text-shadow:_2px_2px_0px_#000000,_4px_4px_0px_rgba(124,58,237,0.9),_6px_6px_0px_rgba(0,0,0,0.6)] max-w-4xl mx-auto">
@@ -75,6 +77,6 @@
 {# Backward compatibility alias #}
 {% macro render_carousel(carousel_id, slides) %}
   {% if slides and slides|length > 0 %}
-    {{ render_hero_carousel(carousel_id, slides[0].title, slides[0].buttons, slides[0].slogan or slides[0].desc, "🎃 MEMOUR HALLOWEEN CRAFT • SÁNG TẠO LƯU BÚT MA QUÁI DIỆU KỲ 👻") }}
+    {{ render_hero_carousel(carousel_id, slides[0].title, slides[0].buttons, slides[0].slogan or slides[0].desc, None) }}
   {% endif %}
 {% endmacro %}

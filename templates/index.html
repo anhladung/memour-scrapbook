@@ -18,11 +18,12 @@
       <div id="home-hero-carousel-track" class="carousel-slider-track flex w-full h-full absolute inset-0 transition-transform duration-700 ease-out will-change-transform" style="transform: translateX(0%);" data-current-index="0">
         
         {% for bg_img in [
-          '/static/assets/banners/halloween_hero_banner.webp'
+          '/static/assets/banners/halloween_hero_banner.webp',
+          '/static/assets/banners/halloween_hero_banner_02.webp'
         ] %}
         <div class="carousel-slide-item min-w-full h-full flex-shrink-0 relative overflow-hidden" data-slide-index="{{ loop.index0 }}">
           <!-- Full-Bleed Background Image -->
-          <img src="{{ bg_img }}" alt="MEMOUR Halloween Scrapbook Hero Banner" loading="eager" fetchpriority="high" decoding="async" class="hero-bg absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.88] contrast-[1.05] select-none pointer-events-none">
+          <img src="{{ bg_img }}" alt="MEMOUR Halloween Scrapbook Hero Banner" loading="{% if loop.first %}eager{% else %}lazy{% endif %}" fetchpriority="{% if loop.first %}high{% else %}low{% endif %}" decoding="async" class="hero-bg absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.88] contrast-[1.05] select-none pointer-events-none">
           
           <!-- Atmospheric Darkening & Vignette Overlay -->
           <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/25 to-stone-950/50"></div>
@@ -52,9 +53,19 @@
 
       </div>
 
-      <!-- 3. Dot Indicator -->
+      <!-- 3. Navigation Arrows (Slide Background Left / Right) -->
+      <button onclick="slideCarouselTrack('home-hero-carousel', -1)" class="hero-nav absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 rounded-2xl bg-white/90 hover:bg-amber-400 text-stone-950 font-black text-lg sm:text-xl border-2 border-black shadow-neo flex items-center justify-center transition-all z-20 hover:scale-110 active:scale-95" aria-label="Slide trước">
+        ←
+      </button>
+
+      <button onclick="slideCarouselTrack('home-hero-carousel', 1)" class="hero-nav absolute right-2 sm:right-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 rounded-2xl bg-white/90 hover:bg-amber-400 text-stone-950 font-black text-lg sm:text-xl border-2 border-black shadow-neo flex items-center justify-center transition-all z-20 hover:scale-110 active:scale-95" aria-label="Slide tiếp theo">
+        →
+      </button>
+
+      <!-- 4. Dot Indicators (2 Slides) -->
       <div class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-20 bg-stone-950/70 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-md">
         <button onclick="setCarouselSlide('home-hero-carousel', 0)" class="carousel-dot-btn h-3 rounded-full border border-black transition-all duration-300 w-7 bg-amber-400" data-dot-index="0" aria-label="Slide 1"></button>
+        <button onclick="setCarouselSlide('home-hero-carousel', 1)" class="carousel-dot-btn h-3 rounded-full border border-black transition-all duration-300 w-3 bg-white/70 hover:bg-amber-300" data-dot-index="1" aria-label="Slide 2"></button>
       </div>
 
     </div>

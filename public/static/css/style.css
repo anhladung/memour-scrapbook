@@ -1566,3 +1566,60 @@ body.lightbox-open { overflow: hidden; }
   to { opacity: 0.6; transform: scale(1.1); }
 }
 
+/* =========================================================
+   HALLOWEEN NIGHT ABOUT PAGE: SPECTACULAR BRAND STORYTELLING
+   ========================================================= */
+.halloween-night-section {
+  background: linear-gradient(180deg, #0d0118 0%, #1a042e 35%, #250642 70%, #150224 100%) !important;
+  color: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #000000 !important;
+}
+
+.halloween-logo-card {
+  background: linear-gradient(135deg, #2b074a 0%, #18022b 50%, #3b0764 100%) !important;
+  border: 3.5px solid #facc15 !important;
+  border-radius: 28px !important;
+  box-shadow: 8px 8px 0px #000000, 0 0 35px rgba(250, 204, 21, 0.35) !important;
+  position: relative;
+  padding: 24px;
+}
+
+.halloween-logo-inner {
+  background: #ffffff !important;
+  border: 2.5px solid #000000 !important;
+  border-radius: 20px !important;
+  padding: 28px 36px !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+
+.halloween-story-card {
+  background: rgba(25, 4, 46, 0.94) !important;
+  border: 2px solid #c084fc !important;
+  border-radius: 22px !important;
+  box-shadow: 6px 6px 0px #000000, 0 0 25px rgba(192, 132, 252, 0.25) !important;
+  padding: 28px;
+}
+
+.halloween-craft-pillar {
+  border: 3px solid #000000 !important;
+  border-radius: 24px !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.halloween-craft-pillar:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 8px 8px 0px #000000, 0 10px 25px rgba(250, 204, 21, 0.3) !important;
+}
+
+

@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "memour-scrapbook",
+  "main": "worker.py",
+  "compatibility_date": "2026-09-30",
+  "compatibility_flags": ["python_workers"],
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["data/**/*.json"],
+      "fallthrough": true
+    }
+  ],
+  "assets": {
+    "directory": "./public/",
+    "binding": "ASSETS",
+    "run_worker_first": false
+  },
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "memour-orders",
+      "database_id": "946c3a3a-59be-4cd3-a7b6-bfaf1ca26d24",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

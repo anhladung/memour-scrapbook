@@ -23,7 +23,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(
     __name__,
     template_folder=os.path.join(BASE_DIR, 'templates'),
-    static_folder=os.path.join(BASE_DIR, 'static'),
+    # Cloudflare uploads this directory to Static Assets. Keeping /static as
+    # the public URL preserves all existing links, Google Analytics and SEO.
+    static_folder=os.path.join(BASE_DIR, 'public', 'static'),
     static_url_path='/static'
 )
 app.config.from_object(Config)
@@ -85,6 +87,20 @@ def get_company_info():
 
 def get_orders():
     return load_json_data('orders.json')
+
+def get_worker_binding(name):
+    """Return a Cloudflare binding, or None during normal local Flask runs."""
+    worker_env = request.environ.get('workers.env')
+    return getattr(worker_env, name, None) if worker_env is not None else None
+
+def run_d1(statement, *params):
+    """Execute a D1 statement from Flask's synchronous WSGI request."""
+    from pyodide.ffi import run_sync
+
+    if params:
+        statement = statement.bind(*params)
+    result = run_sync(statement.run())
+    return result.to_py() if hasattr(result, 'to_py') else result
 
 # Context Processor for Global template variables (e.g. Company info)
 @app.context_processor
@@ -764,7 +780,16 @@ def api_ai_suggest():
 
 @app.route('/api/orders', methods=['GET', 'POST'])
 def api_orders():
-    orders = get_orders()
+    worker_env = request.environ.get('workers.env')
+    database = get_worker_binding('DB')
+
+    if worker_env is not None and database is None:
+        return jsonify({
+            'status': 'error',
+            'message': 'Chưa cấu hình D1 binding DB cho dữ liệu đơn hàng.'
+        }), 503
+
+    orders = [] if database is not None else get_orders()
     
     if request.method == 'POST':
         data = request.get_json() or {}
@@ -789,8 +814,19 @@ def api_orders():
             ]
         }
         
-        orders.append(new_order)
-        save_json_data('orders.json', orders)
+        if database is not None:
+            run_d1(
+                database.prepare(
+                    'INSERT INTO orders (order_code, phone, payload, created_at) VALUES (?, ?, ?, ?)'
+                ),
+                new_order['order_code'],
+                new_order['phone'],
+                json.dumps(new_order, ensure_ascii=False),
+                new_order['created_at']
+            )
+        else:
+            orders.append(new_order)
+            save_json_data('orders.json', orders)
         return jsonify({'status': 'success', 'order': new_order})
         
     # GET Search order
@@ -798,12 +834,23 @@ def api_orders():
     if not query:
         return jsonify({'status': 'error', 'message': 'Vui lòng nhập mã đơn hàng hoặc số điện thoại'})
         
-    found = [
-        o for o in orders if (
-            query.lower() in o['order_code'].lower() or
-            query in o['phone']
+    if database is not None:
+        result = run_d1(
+            database.prepare(
+                'SELECT payload FROM orders WHERE lower(order_code) LIKE ? OR phone LIKE ? '
+                'ORDER BY created_at DESC LIMIT 20'
+            ),
+            f"%{query.lower()}%",
+            f"%{query}%"
         )
-    ]
+        found = [json.loads(row['payload']) for row in result.get('results', [])]
+    else:
+        found = [
+            o for o in orders if (
+                query.lower() in o['order_code'].lower() or
+                query in o['phone']
+            )
+        ]
     
     if found:
         return jsonify({'status': 'success', 'orders': found})
@@ -825,6 +872,12 @@ def api_contact():
 
 @app.route('/api/stickers/analyze-sheet', methods=['POST'])
 def api_analyze_sticker_sheet():
+    if segment_sticker_sheet is None or generate_sticker_metadata is None:
+        return jsonify({
+            'success': False,
+            'message': 'Tính năng xử lý ảnh này chỉ chạy trong môi trường quản trị có OpenCV.'
+        }), 501
+
     if 'sheet_image' not in request.files:
         return jsonify({'success': False, 'message': 'Không tìm thấy file ảnh tải lên'}), 400
         
@@ -868,20 +921,27 @@ def api_analyze_sticker_sheet():
 
 @app.route('/api/stickers/save-batch', methods=['POST'])
 def api_save_sticker_batch():
+    if request.environ.get('workers.env') is not None:
+        return jsonify({
+            'success': False,
+            'message': 'Cloudflare Static Assets là chỉ đọc; hãy thêm sticker vào repository rồi deploy lại.'
+        }), 501
+
     data = request.get_json() or {}
     stickers_to_save = data.get('stickers', [])
     if not stickers_to_save:
         return jsonify({'success': False, 'message': 'Không có dữ liệu sticker để lưu'}), 400
 
     try:
-        os.makedirs('static/assets/stickers', exist_ok=True)
+        sticker_dir = os.path.join(app.static_folder, 'assets', 'stickers')
+        os.makedirs(sticker_dir, exist_ok=True)
         products = get_products()
         
         saved_items = []
         for stk in stickers_to_save:
             sku = stk.get('sku') or f"STK-{len(products)+1:03d}"
             filename = f"{sku.lower().replace('-', '_')}.png"
-            file_path = os.path.join('static/assets/stickers', filename)
+            file_path = os.path.join(sticker_dir, filename)
             img_url = f"/static/assets/stickers/{filename}"
             
             # If data_url base64 is passed, save image file
@@ -931,7 +991,17 @@ def api_stickers_ai_search():
     products = get_products()
     stickers = [p for p in products if p.get('category') == 'sticker']
     
-    results = semantic_search_stickers(prompt, stickers, top_k=6)
+    if semantic_search_stickers is None:
+        prompt_words = set(prompt.lower().split())
+        results = sorted(
+            stickers,
+            key=lambda item: len(prompt_words & set(
+                f"{item.get('name', '')} {item.get('description', '')} {' '.join(item.get('tags', []))}".lower().split()
+            )),
+            reverse=True
+        )[:6]
+    else:
+        results = semantic_search_stickers(prompt, stickers, top_k=6)
     return jsonify({
         'success': True,
         'query': prompt,
@@ -946,6 +1016,12 @@ def api_get_all_stickers():
 
 @app.route('/api/stickers/<sku>', methods=['DELETE'])
 def api_delete_sticker(sku):
+    if request.environ.get('workers.env') is not None:
+        return jsonify({
+            'success': False,
+            'message': 'Không thể xóa Static Asset lúc runtime; hãy xóa trong repository rồi deploy lại.'
+        }), 501
+
     products = get_products()
     initial_len = len(products)
     updated = [p for p in products if p.get('sku').lower() != sku.lower() and p.get('id').lower() != sku.lower()]

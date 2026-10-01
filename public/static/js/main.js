@@ -235,15 +235,15 @@ function initSpookySpider() {
   if (!container || !actor || !toggleBtn) return;
 
   const quotes = [
-    "Boo! 👻 Tớ là Nhện Memour 2026 nè!",
-    "Bắt được tớ rồi! +10 điểm khéo tay DIY 🍬",
-    "Trick or Treat! Nhớ dán sticker đẹp nha! 🎃",
-    "Hù! Chúc bạn có mùa Halloween siêu ma mị! ✨",
-    "Bé nhện đang đi tìm kẹo bắp Candy Corn đây 🍭",
-    "Sáng tạo sổ scrapbook cùng Memour vui quá! 📖✨",
-    "Chào bạn! Cùng dán sticker ma quái nào! 🕸️",
-    "Bé nhện tặng bạn 1 chiếc sticker bí ngô nha! 🎃✨",
-    "Ú òa! Scrapbook Memour làm quà tặng siêu ý nghĩa! 💝"
+    "“MUMU không giăng tơ bắt mồi – MUMU giăng tơ giữ kỷ niệm.” 🕸️💖",
+    "Boo! 👻 Tớ là MUMU the Spooky Spider - Người giữ ký ức đêm Halloween nè!",
+    "Tớ vừa nhặt được 1 khoảnh khắc nhỏ xinh, cất vào scrapbook ngay! 📖✨",
+    "MUMU giăng tơ lưu giữ nụ cười và kỷ niệm của bạn mùa Halloween này! 🍬",
+    "Bắt được MUMU rồi! +10 điểm khéo tay dán sổ scrapbook thủ công! 🍭",
+    "Mỗi trang sổ scrapbook là một kho báu ký ức lung linh cùng MUMU! 🌟",
+    "Trick or Treat! Đừng để những kỷ niệm đẹp bị lãng quên nha! 🎃✨",
+    "Hù! Cùng MUMU trang trí cuốn sổ lưu niệm thật ma mị và đáng yêu nhé! 👻",
+    "MUMU tặng bạn 1 chiếc sticker bí ngô & viên kẹo ngọt ngào nè! 🍬🕸️"
   ];
 
   let active = false;
@@ -332,7 +332,7 @@ function initSpookySpider() {
         posY = groundY;
         isDropping = false;
         actor.classList.add('spider-walking');
-        showBubble("Boo! Bé nhện 2026 đã hạ cánh! 🕷️✨", 2200);
+        showBubble("Boo! Tớ là MUMU - Người giữ ký ức đêm Halloween! 🕷️✨", 2500);
         if (silkLine) {
           silkLine.setAttribute('y2', 0);
         }
@@ -360,11 +360,11 @@ function initSpookySpider() {
       if (posX >= maxX) {
         posX = maxX;
         speedX = -Math.abs(speedX);
-        triggerPause("👀 Hết đường rồi, quay lại thôi!");
+        triggerPause("👀 Hết đường rồi, MUMU quay lại gom thêm ký ức thôi!");
       } else if (posX <= minX) {
         posX = minX;
         speedX = Math.abs(speedX);
-        triggerPause("🍬 Đi dạo vòng nữa nào!");
+        triggerPause("🍬 MUMU đi dạo dệt tơ kỷ niệm vòng nữa nào!");
       }
 
       // Chỉ lật hình ảnh bé nhện bên trong, tuyệt đối không lật toàn bộ actor (để chữ thoại không bị lộn ngược)
@@ -406,7 +406,7 @@ function initSpookySpider() {
     }
 
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    showBubble(randomQuote, 3000);
+    showBubble(randomQuote, 3200);
     spawnCandySparkles(posX, posY);
 
     setTimeout(() => {
@@ -431,16 +431,16 @@ function initSpookySpider() {
       actor.classList.remove('spider-walking');
       actor.style.transform = 'none';
       if (flipWrapper) flipWrapper.style.transform = 'scaleX(1)';
-      if (toggleText) toggleText.innerText = 'Bắt Nhện Về Tổ';
-      showToast('🕷️ Bé nhện Halloween 2026 đang trượt xuống dạo chơi! Nhấp vào bé nhện để nhận kẹo nhé!', 'success');
+      if (toggleText) toggleText.innerText = 'Cất MUMU Về Tổ';
+      showToast('🕷️ Bé Nhện MUMU - “Người giữ ký ức đêm Halloween” đang dạo chơi! Nhấp vào MUMU để nhận kẹo & lắng nghe thông điệp nhé!', 'success');
       cancelAnimationFrame(animFrameId);
       animFrameId = requestAnimationFrame(render);
     } else {
       isClimbing = true;
       actor.classList.remove('spider-walking');
-      showBubble("Bye bye! Hẹn gặp lại nhé! 👋🕸️", 1800);
-      if (toggleText) toggleText.innerText = 'Thả Nhện 2026';
-      showToast('🕷️ Bé nhện đã leo lên trần nhà ngủ rồi!', 'info');
+      showBubble("MUMU đi dệt thêm tơ ký ức đây! Hẹn gặp lại bạn nhé! 👋🕸️", 2000);
+      if (toggleText) toggleText.innerText = 'Bé Nhện MUMU';
+      showToast('🕷️ Bé Nhện MUMU đã về tổ dệt tơ kỷ niệm rồi!', 'info');
     }
   }
 
@@ -448,12 +448,28 @@ function initSpookySpider() {
     setSpiderState(!active);
   });
 
+  // Global helper to interact with MUMU from any button or banner
+  window.summonMUMU = function() {
+    if (!active) {
+      setSpiderState(true);
+      setTimeout(() => {
+        if (actor) {
+          actor.click();
+          showToast('🕷️ MUMU: “MUMU không giăng tơ bắt mồi – MUMU giăng tơ giữ kỷ niệm.”', 'info');
+        }
+      }, 800);
+    } else if (actor) {
+      actor.click();
+      showToast('🕷️ MUMU: “MUMU không giăng tơ bắt mồi – MUMU giăng tơ giữ kỷ niệm.”', 'info');
+    }
+  };
+
   // Auto-launch spider on load if previously enabled (or enable by default for Halloween vibe)
   const savedState = localStorage.getItem('memour_spider_active');
   if (savedState === 'true' || savedState === null) {
     setSpiderState(true);
   } else {
-    if (toggleText) toggleText.innerText = 'Thả Nhện 2026';
+    if (toggleText) toggleText.innerText = 'Bé Nhện MUMU';
   }
 
   // Handle window resize gracefully

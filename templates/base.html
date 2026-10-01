@@ -88,8 +88,8 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/static/assets/apple-touch-icon.png">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/static/css/tailwind.min.css?v=20261001_v5">
-  <link rel="stylesheet" href="/static/css/style.css?v=20261001_v5">
+  <link rel="stylesheet" href="/static/css/tailwind.min.css?v=20261001_v6">
+  <link rel="stylesheet" href="/static/css/style.css?v=20261001_v6">
   
   {% block extra_head %}{% endblock %}
 </head>
@@ -139,11 +139,11 @@
       <line id="spider-silk-line" x1="0" y1="0" x2="0" y2="0" stroke="rgba(244, 114, 182, 0.8)" stroke-width="2" stroke-dasharray="3,2"/>
     </svg>
 
-    <!-- Nhân vật Bé Nhện Halloween Tinh Nghịch & Tương tác -->
-    <div id="spooky-spider-actor" class="spooky-spider-actor" title="Nhấp vào bé nhện để tương tác và nhận kẹo!">
-      <!-- Bong bóng thoại của Bé Nhện -->
+    <!-- Mascot MUMU the Spooky Spider - Người Giữ Ký Ức Đêm Halloween -->
+    <div id="spooky-spider-actor" class="spooky-spider-actor" title="MUMU the Spooky Spider - Người giữ ký ức đêm Halloween. Nhấp để tương tác và nhận kẹo!">
+      <!-- Bong bóng thoại của Bé Nhện MUMU -->
       <div id="spider-speech-bubble" class="spider-speech-bubble">
-        <span id="spider-speech-text">Boo! 🍬</span>
+        <span id="spider-speech-text">MUMU giăng tơ giữ kỷ niệm ✨</span>
       </div>
 
       <!-- Khung xoay và nhảy tương tác khi click (không làm ảnh hưởng chữ thoại) -->
@@ -231,10 +231,10 @@
       <span class="w-2.5 h-2.5 rounded-full bg-lime-400 animate-pulse border border-black shadow-sm"></span>
     </button>
 
-    <!-- Nút Thả / Bắt Bé Nhện Halloween Đi Qua Đi Lại Trên Màn Hình -->
-    <button id="spider-toggle-btn" class="spider-toggle-btn group" title="Thả Bé Nhện Halloween dạo chơi qua lại trên màn hình!" aria-label="Nhện Halloween">
+    <!-- Nút Thả / Bắt Bé Nhện MUMU - Người giữ ký ức đêm Halloween -->
+    <button id="spider-toggle-btn" class="spider-toggle-btn group" title="MUMU the Spooky Spider - Người giữ ký ức đêm Halloween" aria-label="Bé Nhện MUMU">
       <span class="text-base group-hover:rotate-45 transition-transform inline-block">🕷️</span>
-      <span id="spider-toggle-text">Thả Nhện 2026</span>
+      <span id="spider-toggle-text">Bé Nhện MUMU</span>
       <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping border border-black shadow-sm"></span>
     </button>
   </div>
@@ -486,7 +486,7 @@
   </footer>
 
   <!-- Main Scripts -->
-  <script src="/static/js/main.js?v=20261001_v5"></script>
+  <script src="/static/js/main.js?v=20261001_v6"></script>
   {% if request.path == '/cart' or request.path.startswith('/inspiration') %}
   {% endif %}
   {% block extra_scripts %}{% endblock %}

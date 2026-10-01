@@ -481,5 +481,411 @@ function initSpookySpider() {
   });
 }
 
+// =========================================================
+// GEN Z INTERACTIVE MINI-GAME: MUMU GO SĂN STICKER TẶNG THẦY CÔ
+// =========================================================
+(function() {
+  const STICKERS_DATA = [
+    {
+      id: 0,
+      name: "Sticker Bí Ngô Điểm 10",
+      icon: "🎃",
+      svg: "/static/assets/stickers/halloween/bi-ngo-jack.svg",
+      quote: "U là trời! Bí Ngô 10 Điểm! Chúc Thầy/Cô luôn chấm điểm hào phóng ngập tràn 10 điểm ạ! ✨",
+      toast: "🎃 Đã nhặt Bí Ngô Điểm 10! Điểm thi kỳ này auto 10!"
+    },
+    {
+      id: 1,
+      name: "Sticker Cú Mèo Tri Thức",
+      icon: "🦉",
+      svg: "/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg",
+      quote: "Flex nhẹ Cú Mèo Thông Thái! Tri thức của Thầy Cô đỉnh nóc kịch trần bay phấp phới! 🎓",
+      toast: "🦉 Đã nhặt Cú Mèo Tri Thức! Cảm ơn người thầy thông thái!"
+    },
+    {
+      id: 2,
+      name: "Sticker Vạc Yêu Thương",
+      icon: "🧪",
+      svg: "/static/assets/stickers/halloween/vac-nuoc-phep-slime.svg",
+      quote: "100 điểm tinh tế! Vạc tri thức nấu bằng tình thương bao la của Thầy Cô! 💜",
+      toast: "🧪 Đã nhặt Vạc Yêu Thương! Tình thương thầy cô bao la!"
+    },
+    {
+      id: 3,
+      name: "Sticker Bé Ma Cute",
+      icon: "👻",
+      svg: "/static/assets/stickers/halloween/ma-cute-boo.svg",
+      quote: "Bé Ma siêu cute gửi lời cảm ơn Thầy Cô đã luôn bao dung với tụi em! 🍬",
+      toast: "👻 Đã nhặt Bé Ma Cute! Cảm ơn Thầy Cô luôn kiên nhẫn!"
+    },
+    {
+      id: 4,
+      name: "Sticker Trăng Tri Ân",
+      icon: "🌙",
+      svg: "/static/assets/stickers/halloween/mat-trang-khau-chi.svg",
+      quote: "Keng keng! Trăng khâu chỉ ký ức – Dệt trọn tình cảm tri ân sâu sắc tới Thầy Cô! 💖",
+      toast: "🌙 Đã nhặt Trăng Tri Ân! Sứ mạng hoàn thành xuất sắc!"
+    }
+  ];
+
+  let modal = null;
+  let arena = null;
+  let player = null;
+  let playerBubble = null;
+  let stickersLayer = null;
+  let counterEl = null;
+  let victoryScreen = null;
+  let toastEl = null;
+
+  let playerX = 100;
+  let playerY = 100;
+  let targetX = 100;
+  let targetY = 100;
+  let speed = 4;
+  let isMoving = false;
+  let collectedCount = 0;
+  let activeStickers = [];
+  let gameLoopId = null;
+  let bubbleTimer = null;
+  let toastTimer = null;
+  const keysDown = {};
+
+  function playChime(freq = 580, type = 'triangle', duration = 0.15) {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, ctx.currentTime);
+      gain.gain.setValueAtTime(0.15, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + duration);
+    } catch (e) {}
+  }
+
+  function playVictorySound() {
+    [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+      setTimeout(() => playChime(freq, 'triangle', 0.25), i * 140);
+    });
+  }
+
+  function showPlayerBubble(text, duration = 2500) {
+    if (!playerBubble) return;
+    playerBubble.innerText = text;
+    playerBubble.style.opacity = '1';
+    clearTimeout(bubbleTimer);
+    bubbleTimer = setTimeout(() => {
+      if (playerBubble) playerBubble.style.opacity = '0';
+    }, duration);
+  }
+
+  function showArenaToast(text, duration = 2400) {
+    if (!toastEl) return;
+    toastEl.innerText = text;
+    toastEl.style.opacity = '1';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      if (toastEl) toastEl.style.opacity = '0';
+    }, duration);
+  }
+
+  function spawnGameSparkles(x, y) {
+    if (!arena) return;
+    const emojis = ['🍬', '✨', '🍭', '⭐', '🎃', '💖'];
+    for (let i = 0; i < 8; i++) {
+      const p = document.createElement('div');
+      p.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      p.style.position = 'absolute';
+      p.style.left = x + 'px';
+      p.style.top = y + 'px';
+      p.style.fontSize = (14 + Math.random() * 8) + 'px';
+      p.style.pointerEvents = 'none';
+      p.style.zIndex = '30';
+      p.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+      arena.appendChild(p);
+
+      const angle = (Math.PI * 2 * i) / 8;
+      const dist = 30 + Math.random() * 35;
+      setTimeout(() => {
+        p.style.transform = `translate(${Math.cos(angle) * dist}px, ${Math.sin(angle) * dist}px) scale(0.4)`;
+        p.style.opacity = '0';
+      }, 16);
+
+      setTimeout(() => {
+        if (p.parentNode) p.parentNode.removeChild(p);
+      }, 650);
+    }
+  }
+
+  function initElements() {
+    modal = document.getElementById('mumu-game-modal');
+    arena = document.getElementById('mumu-game-arena');
+    player = document.getElementById('mumu-player');
+    playerBubble = document.getElementById('mumu-player-bubble');
+    stickersLayer = document.getElementById('mumu-stickers-layer');
+    counterEl = document.getElementById('mumu-sticker-counter');
+    victoryScreen = document.getElementById('mumu-victory-screen');
+    toastEl = document.getElementById('mumu-arena-toast');
+  }
+
+  function spawnStickers() {
+    if (!stickersLayer || !arena) return;
+    stickersLayer.innerHTML = '';
+    activeStickers = [];
+
+    const rect = arena.getBoundingClientRect();
+    const w = Math.max(300, rect.width || 600);
+    const h = Math.max(260, rect.height || 360);
+    const pad = 50;
+
+    // Fixed / distributed locations so they never clump or spawn on top of each other
+    const positions = [
+      { x: pad + (w - pad * 2) * 0.15, y: pad + (h - pad * 2) * 0.25 },
+      { x: pad + (w - pad * 2) * 0.85, y: pad + (h - pad * 2) * 0.20 },
+      { x: pad + (w - pad * 2) * 0.50, y: pad + (h - pad * 2) * 0.82 },
+      { x: pad + (w - pad * 2) * 0.18, y: pad + (h - pad * 2) * 0.78 },
+      { x: pad + (w - pad * 2) * 0.80, y: pad + (h - pad * 2) * 0.75 }
+    ];
+
+    STICKERS_DATA.forEach((data, index) => {
+      const pos = positions[index] || { x: w / 2, y: h / 2 };
+      const el = document.createElement('div');
+      el.className = 'mumu-target-sticker';
+      el.id = `mumu-target-stk-${data.id}`;
+      el.style.left = pos.x + 'px';
+      el.style.top = pos.y + 'px';
+      el.title = data.name;
+      el.innerHTML = `<img src="${data.svg}" alt="${data.name}" class="w-full h-full object-contain pointer-events-none drop-shadow-md">`;
+      stickersLayer.appendChild(el);
+
+      activeStickers.push({
+        id: data.id,
+        x: pos.x,
+        y: pos.y,
+        el: el,
+        data: data,
+        collected: false
+      });
+    });
+  }
+
+  function updateSlotsUI() {
+    if (counterEl) counterEl.innerText = `${collectedCount}/5`;
+    document.querySelectorAll('#mumu-inventory-slots .mumu-slot').forEach(slot => {
+      const slotId = parseInt(slot.getAttribute('data-slot'));
+      const isCollected = activeStickers.find(s => s.id === slotId && s.collected);
+      if (isCollected) {
+        slot.classList.add('slot-collected');
+      } else {
+        slot.classList.remove('slot-collected');
+      }
+    });
+  }
+
+  function gameLoop() {
+    if (!modal || modal.classList.contains('hidden')) return;
+
+    if (!arena) initElements();
+    const rect = arena.getBoundingClientRect();
+    const w = rect.width || 600;
+    const h = rect.height || 380;
+
+    let moveX = 0;
+    let moveY = 0;
+
+    if (keysDown['ArrowUp'] || keysDown['KeyW'] || keysDown['w']) moveY -= speed;
+    if (keysDown['ArrowDown'] || keysDown['KeyS'] || keysDown['s']) moveY += speed;
+    if (keysDown['ArrowLeft'] || keysDown['KeyA'] || keysDown['a']) moveX -= speed;
+    if (keysDown['ArrowRight'] || keysDown['KeyD'] || keysDown['d']) moveX += speed;
+
+    if (moveX !== 0 || moveY !== 0) {
+      playerX += moveX;
+      playerY += moveY;
+      targetX = playerX;
+      targetY = playerY;
+    } else if (isMoving) {
+      const dx = targetX - playerX;
+      const dy = targetY - playerY;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 4) {
+        playerX = targetX;
+        playerY = targetY;
+        isMoving = false;
+      } else {
+        playerX += (dx / dist) * speed;
+        playerY += (dy / dist) * speed;
+      }
+    }
+
+    // Clamp inside arena boundaries
+    playerX = Math.max(30, Math.min(w - 30, playerX));
+    playerY = Math.max(30, Math.min(h - 30, playerY));
+
+    if (player) {
+      player.style.left = playerX + 'px';
+      player.style.top = playerY + 'px';
+      if (moveX < 0 || (isMoving && targetX < playerX)) {
+        player.style.transform = 'translate(-50%, -50%) scaleX(-1)';
+      } else {
+        player.style.transform = 'translate(-50%, -50%) scaleX(1)';
+      }
+    }
+
+    // Check collision with remaining stickers
+    activeStickers.forEach(stk => {
+      if (stk.collected) return;
+      const d = Math.hypot(playerX - stk.x, playerY - stk.y);
+      if (d < 42) {
+        stk.collected = true;
+        collectedCount++;
+        playChime(640 + collectedCount * 60, 'triangle', 0.2);
+        spawnGameSparkles(stk.x, stk.y);
+
+        if (stk.el) {
+          stk.el.style.transform = 'translate(-50%, -50%) scale(1.6)';
+          stk.el.style.opacity = '0';
+          setTimeout(() => {
+            if (stk.el && stk.el.parentNode) stk.el.parentNode.removeChild(stk.el);
+          }, 250);
+        }
+
+        updateSlotsUI();
+        showPlayerBubble(stk.data.quote, 3000);
+        showArenaToast(stk.data.toast, 2400);
+
+        if (collectedCount >= 5) {
+          setTimeout(triggerVictory, 700);
+        }
+      }
+    });
+
+    gameLoopId = requestAnimationFrame(gameLoop);
+  }
+
+  function triggerVictory() {
+    playVictorySound();
+    if (victoryScreen) {
+      victoryScreen.classList.remove('hidden');
+    }
+    showToast('🎉 Chúc mừng bạn và MUMU đã thu thập đủ 5 sticker kỷ niệm kính tặng Thầy Cô!', 'success');
+  }
+
+  window.openMumuGame = function() {
+    initElements();
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    // Reset player position to center
+    const rect = arena.getBoundingClientRect();
+    playerX = (rect.width || 600) / 2;
+    playerY = (rect.height || 380) / 2;
+    targetX = playerX;
+    targetY = playerY;
+    isMoving = false;
+    collectedCount = 0;
+
+    if (victoryScreen) victoryScreen.classList.add('hidden');
+    spawnStickers();
+    updateSlotsUI();
+    showPlayerBubble("Boo! Dùng phím mũi tên hoặc chạm để nhặt sticker nhé! 🍬", 2600);
+    showArenaToast("✨ Dùng phím Mũi tên / WASD hoặc Chạm/Bấm chuột để điều khiển MUMU nhặt sticker!", 3000);
+
+    cancelAnimationFrame(gameLoopId);
+    gameLoopId = requestAnimationFrame(gameLoop);
+  };
+
+  window.closeMumuGame = function() {
+    if (!modal) return;
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+    cancelAnimationFrame(gameLoopId);
+  };
+
+  window.restartMumuGame = function() {
+    if (victoryScreen) victoryScreen.classList.add('hidden');
+    collectedCount = 0;
+    spawnStickers();
+    updateSlotsUI();
+    showPlayerBubble("Vòng mới bắt đầu! Cùng MUMU săn sticker tặng Thầy Cô nào! 🎒✨", 2500);
+  };
+
+  window.copyTeacherTribute = function() {
+    const tributeText = `Kính gửi tặng các Thầy / Cô thân thương của chúng em! 💖\n\nNhóm học trò chúng em cùng Bé Nhện MUMU xin gửi tặng Thầy/Cô trọn bộ 5 Sticker Ký Ức Mùa Halloween 2026 độc bản này. Cảm ơn Thầy Cô vì đã luôn là ngọn hải đăng soi sáng tri thức, kiên nhẫn và bao dung cho những trò nghịch ngợm của tụi em!\n\n“MUMU không giăng tơ bắt mồi – MUMU giăng tơ giữ kỷ niệm.”\n\nKính chúc Thầy/Cô mùa lễ hội Halloween ngập tràn niềm vui, sức khỏe dồi dào và luôn giữ nụ cười hạnh phúc rạng rỡ trên bục giảng! ✨💐\n\n— Nhóm Học Trò Tinh Nghịch & MEMOUR Studio —`;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(tributeText).then(() => {
+        showToast('📋 Đã sao chép trọn vẹn lời chúc tri ân Thầy Cô vào bộ nhớ tạm! Bạn có thể dán gửi ngay nhé! 💖', 'success');
+      }).catch(() => {
+        showToast('Đã sao chép lời chúc tri ân Thầy Cô!', 'info');
+      });
+    } else {
+      showToast('Đã sao chép lời chúc tri ân Thầy Cô!', 'info');
+    }
+  };
+
+  // Keyboard navigation
+  window.addEventListener('keydown', (e) => {
+    if (!modal || modal.classList.contains('hidden')) return;
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'KeyW', 'KeyA', 'KeyS', 'KeyD', 'w', 'a', 's', 'd'].includes(e.code) || ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+      e.preventDefault();
+      keysDown[e.code || e.key] = true;
+    }
+    if (e.key === 'Escape') {
+      window.closeMumuGame();
+    }
+  });
+
+  window.addEventListener('keyup', (e) => {
+    delete keysDown[e.code || e.key];
+  });
+
+  // Arena Click / Touch Event Listeners for smooth tap-to-move
+  document.addEventListener('DOMContentLoaded', () => {
+    initElements();
+    if (arena) {
+      const handlePointer = (e) => {
+        const rect = arena.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        targetX = clientX - rect.left;
+        targetY = clientY - rect.top;
+        isMoving = true;
+      };
+
+      arena.addEventListener('mousedown', handlePointer);
+      arena.addEventListener('touchstart', handlePointer, { passive: true });
+    }
+
+    // Mobile D-Pad Buttons
+    document.querySelectorAll('.mumu-dpad-btn').forEach(btn => {
+      const dir = btn.getAttribute('data-dir');
+      const startMove = (e) => {
+        e.preventDefault();
+        if (dir === 'up') keysDown['ArrowUp'] = true;
+        if (dir === 'down') keysDown['ArrowDown'] = true;
+        if (dir === 'left') keysDown['ArrowLeft'] = true;
+        if (dir === 'right') keysDown['ArrowRight'] = true;
+      };
+      const endMove = (e) => {
+        e.preventDefault();
+        delete keysDown['ArrowUp'];
+        delete keysDown['ArrowDown'];
+        delete keysDown['ArrowLeft'];
+        delete keysDown['ArrowRight'];
+      };
+      btn.addEventListener('mousedown', startMove);
+      btn.addEventListener('mouseup', endMove);
+      btn.addEventListener('touchstart', startMove, { passive: false });
+      btn.addEventListener('touchend', endMove, { passive: false });
+    });
+  });
+})();
+
 
 

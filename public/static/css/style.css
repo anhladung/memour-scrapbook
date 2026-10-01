@@ -1094,3 +1094,289 @@ body.lightbox-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .mid-autumn-card::after { animation: none; }
 }
+
+/* =========================================================
+   GEN Z INTERACTIVE MINI-GAME: MUMU GO SĂN STICKER TẶNG THẦY CÔ
+   ========================================================= */
+.mumu-game-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mumu-game-modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mumu-game-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 3, 25, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.mumu-game-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  max-height: 94vh;
+  background: linear-gradient(135deg, #1c0533 0%, #2e0854 50%, #150326 100%);
+  border: 3px solid #facc15;
+  border-radius: 26px;
+  box-shadow: 8px 8px 0px #000000, 0 0 50px rgba(168, 85, 247, 0.65);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 10;
+  animation: mumuPopIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes mumuPopIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.mumu-game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #0f021c;
+  border-bottom: 2px solid #000;
+}
+
+.mumu-game-close-btn {
+  width: 36px;
+  height: 36px;
+  background: #ef4444;
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px #000;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mumu-game-close-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #000;
+  background: #dc2626;
+}
+
+.mumu-game-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  background: #20063b;
+  border-bottom: 2px solid #3b0764;
+}
+
+.mumu-slot {
+  width: 38px;
+  height: 38px;
+  border: 2px dashed rgba(250, 204, 21, 0.4);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.35);
+  filter: grayscale(100%);
+  opacity: 0.4;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mumu-slot.slot-collected {
+  filter: grayscale(0%);
+  opacity: 1;
+  border: 2px solid #facc15;
+  background: linear-gradient(135deg, #7c3aed, #ea580c);
+  box-shadow: 0 0 14px #facc15;
+  transform: scale(1.15) rotate(4deg);
+}
+
+.mumu-arena-container {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  max-height: 52vh;
+  overflow: hidden;
+  background: #120324;
+}
+
+.mumu-arena-toast {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fde047;
+  border: 1.5px solid #facc15;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  z-index: 20;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  max-width: 90%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.mumu-game-arena {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, #2a0845 0%, #120324 85%);
+  cursor: crosshair;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+}
+
+.arena-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(244, 114, 182, 0.08) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(244, 114, 182, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.mumu-player {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+  pointer-events: none;
+  transition: transform 0.08s linear;
+}
+
+.mumu-player-bubble {
+  position: absolute;
+  bottom: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #18181b;
+  border: 2px solid #000;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0px #000;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 18;
+}
+
+.mumu-player-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+}
+
+.mumu-target-sticker {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  cursor: pointer;
+  animation: stickerFloatPulse 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.75));
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mumu-target-sticker:hover {
+  filter: drop-shadow(0 0 18px rgba(250, 204, 21, 1));
+}
+
+@keyframes stickerFloatPulse {
+  0% { transform: translate(-50%, -50%) scale(1) rotate(-4deg); }
+  100% { transform: translate(-50%, -50%) scale(1.15) rotate(4deg); }
+}
+
+.mumu-mobile-controls {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mumu-dpad-btn {
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #facc15;
+  border: 1.5px solid #facc15;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.mumu-dpad-btn:active {
+  background: #facc15;
+  color: #000;
+}
+
+.mumu-victory-screen {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 3, 36, 0.96);
+  backdrop-filter: blur(10px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+  animation: victoryFadeIn 0.4s ease-out;
+}
+
+.mumu-victory-screen.hidden {
+  display: none !important;
+}
+
+@keyframes victoryFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.mumu-victory-card {
+  width: 100%;
+  max-width: 620px;
+  margin: auto;
+}

@@ -111,6 +111,36 @@
 
     </div>
 
+    <!-- Brand Video Showcase Frame -->
+    <div class="mt-14 max-w-4xl mx-auto">
+      <div class="card-3d-purple rounded-3xl p-5 sm:p-7 relative overflow-hidden">
+        <div class="relative w-full aspect-video bg-stone-950 rounded-2xl border-2 border-black overflow-hidden shadow-neo group/video">
+          
+          <!-- HTML5 Video Player -->
+          <video 
+            id="memour-about-brand-video" 
+            class="w-full h-full object-cover"
+            poster="/static/assets/video_poster.jpg"
+            controls 
+            playsinline
+            preload="metadata"
+          >
+            <source src="/static/assets/video_intro.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ phát video HTML5.
+          </video>
+
+          <!-- Overlay Header on Video -->
+          <div class="absolute top-3 left-3 pointer-events-none z-10">
+            <span class="bg-black/80 text-amber-300 text-[10px] sm:text-xs font-heading font-black px-3 py-1 rounded-full border border-amber-400/60 backdrop-blur-sm flex items-center gap-1.5 shadow-sm">
+              <span>🎬</span>
+              <span>Video Giới Thiệu MEMOUR Studio</span>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 

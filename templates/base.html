@@ -88,8 +88,8 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/static/assets/apple-touch-icon.png">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/static/css/tailwind.min.css?v=20261001_v12">
-  <link rel="stylesheet" href="/static/css/style.css?v=20261001_v12">
+  <link rel="stylesheet" href="/static/css/tailwind.min.css?v=20261001_v13">
+  <link rel="stylesheet" href="/static/css/style.css?v=20261001_v13">
   
   {% block extra_head %}{% endblock %}
 </head>
@@ -642,8 +642,13 @@
             <span class="bg-gradient-to-r from-amber-300 to-yellow-300 text-stone-950 font-heading font-black text-[11px] sm:text-xs px-4 py-1.5 rounded-full border-2 border-black shadow-neo uppercase inline-block animate-bounce">
               🎓 BÁO CÁO DỰ ÁN CUỐI KHÓA XUẤT SẮC THÀNH CÔNG! ✦
             </span>
-            <h4 class="text-xl sm:text-2xl font-heading font-black text-[#881337] leading-tight" style="color: #fde047; text-shadow: 2px 2px 0px #000000, 0 0 15px rgba(250, 204, 21, 0.6);">
-              LỜI CẢM ƠN &amp; TRI ÂN SÂU SẮC NHẤT<br class="hidden sm:inline"> TỪ NHÓM TÁC GIẢ DỰ ÁN MEMOUR SCRAPBOOK 💐✨
+            <h4 class="font-heading font-black text-center leading-snug">
+              <span class="block text-base sm:text-xl md:text-2xl font-black uppercase tracking-tight sm:tracking-normal" style="color: #fde047; text-shadow: 2px 2px 0px #000000, 0 0 15px rgba(250, 204, 21, 0.6);">
+                LỜI CẢM ƠN &amp; TRI ÂN SÂU SẮC NHẤT
+              </span>
+              <span class="block text-xs sm:text-base md:text-lg font-bold uppercase tracking-tight sm:tracking-normal text-amber-200 mt-1" style="text-shadow: 1.5px 1.5px 0px #000000, 0 0 10px rgba(253, 224, 71, 0.4);">
+                TỪ NHÓM TÁC GIẢ DỰ ÁN MEMOUR SCRAPBOOK 💐✨
+              </span>
             </h4>
           </div>
 
@@ -743,7 +748,7 @@
   </div>
 
   <!-- Main Scripts -->
-  <script src="/static/js/main.js?v=20261001_v12"></script>
+  <script src="/static/js/main.js?v=20261001_v13"></script>
   {% if request.path == '/cart' or request.path.startswith('/inspiration') %}
   {% endif %}
   {% block extra_scripts %}{% endblock %}

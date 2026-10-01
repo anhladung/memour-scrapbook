@@ -809,23 +809,45 @@ body.lightbox-open { overflow: hidden; }
   pointer-events: auto;
   cursor: pointer;
   user-select: none;
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-  will-change: transform, left, top;
+  /* Keep transform none on actor so children like speech bubble are NEVER mirrored or inverted */
+  transform: none !important;
+  will-change: left, top;
 }
 
-.spooky-spider-actor:hover {
+.spooky-spider-actor:hover .spider-svg {
   filter: drop-shadow(0 0 14px rgba(249, 115, 22, 0.8)) drop-shadow(0 0 24px rgba(168, 85, 247, 0.6));
+}
+
+.spider-jump-wrapper {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.spider-flip-wrapper {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
 }
 
 .spider-speech-bubble {
   position: absolute;
-  bottom: 78px;
+  bottom: 84px;
   left: 50%;
   transform: translateX(-50%) scale(0.9);
   background: #ffffff;
   color: #18181b;
   border: 2px solid #000000;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 14px;
   box-shadow: 3px 3px 0px #000000;
   font-family: var(--font-heading);
@@ -835,8 +857,9 @@ body.lightbox-open { overflow: hidden; }
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   z-index: 1003;
+  line-height: 1.3;
 }
 
 .spider-speech-bubble::after {
@@ -892,7 +915,7 @@ body.lightbox-open { overflow: hidden; }
 
 @keyframes spiderJumpSpin {
   0% { transform: translateY(0) rotate(0deg) scale(1); }
-  50% { transform: translateY(-45px) rotate(180deg) scale(1.25); }
+  50% { transform: translateY(-30px) rotate(180deg) scale(1.15); }
   100% { transform: translateY(0) rotate(360deg) scale(1); }
 }
 

@@ -224,6 +224,8 @@ function initFestiveFrame() {
 function initSpookySpider() {
   const container = document.getElementById('spooky-spider-container');
   const actor = document.getElementById('spooky-spider-actor');
+  const jumpWrapper = document.getElementById('spider-jump-wrapper');
+  const flipWrapper = document.getElementById('spider-flip-wrapper');
   const toggleBtn = document.getElementById('spider-toggle-btn');
   const toggleText = document.getElementById('spider-toggle-text');
   const silkLine = document.getElementById('spider-silk-line');
@@ -239,11 +241,13 @@ function initSpookySpider() {
     "Hù! Chúc bạn có mùa Halloween siêu ma mị! ✨",
     "Bé nhện đang đi tìm kẹo bắp Candy Corn đây 🍭",
     "Sáng tạo sổ scrapbook cùng Memour vui quá! 📖✨",
-    "Chào bạn! Cùng dán sticker ma quái nào! 🕸️"
+    "Chào bạn! Cùng dán sticker ma quái nào! 🕸️",
+    "Bé nhện tặng bạn 1 chiếc sticker bí ngô nha! 🎃✨",
+    "Ú òa! Scrapbook Memour làm quà tặng siêu ý nghĩa! 💝"
   ];
 
   let active = false;
-  let posX = Math.max(40, window.innerWidth * 0.2);
+  let posX = Math.max(50, window.innerWidth * 0.2);
   let posY = -80;
   let speedX = 2.0;
   let isDropping = true;
@@ -262,6 +266,22 @@ function initSpookySpider() {
     if (!bubble || !bubbleText) return;
     bubbleText.innerText = text;
     bubble.classList.add('active-bubble');
+
+    // Giữ bong bóng thoại luôn nằm trong màn hình và thẳng đứng không bị lật ngược
+    if (posX < 80) {
+      bubble.style.left = '10px';
+      bubble.style.right = 'auto';
+      bubble.style.transform = 'scale(1)';
+    } else if (posX > window.innerWidth - 180) {
+      bubble.style.left = 'auto';
+      bubble.style.right = '10px';
+      bubble.style.transform = 'scale(1)';
+    } else {
+      bubble.style.left = '50%';
+      bubble.style.right = 'auto';
+      bubble.style.transform = 'translateX(-50%) scale(1)';
+    }
+
     clearTimeout(bubbleTimer);
     bubbleTimer = setTimeout(() => {
       bubble.classList.remove('active-bubble');
@@ -334,8 +354,8 @@ function initSpookySpider() {
     } else if (!isPaused && !isJumping) {
       // Normal horizontal crawling
       posX += speedX;
-      const minX = 20;
-      const maxX = Math.max(minX + 80, window.innerWidth - 90);
+      const minX = 30;
+      const maxX = Math.max(minX + 80, window.innerWidth - 100);
 
       if (posX >= maxX) {
         posX = maxX;
@@ -347,7 +367,11 @@ function initSpookySpider() {
         triggerPause("🍬 Đi dạo vòng nữa nào!");
       }
 
-      actor.style.transform = speedX > 0 ? 'scaleX(1)' : 'scaleX(-1)';
+      // Chỉ lật hình ảnh bé nhện bên trong, tuyệt đối không lật toàn bộ actor (để chữ thoại không bị lộn ngược)
+      if (flipWrapper) {
+        flipWrapper.style.transform = speedX > 0 ? 'scaleX(1)' : 'scaleX(-1)';
+      }
+      actor.style.transform = 'none';
     }
 
     actor.style.left = posX + 'px';
@@ -373,14 +397,20 @@ function initSpookySpider() {
     if (isJumping) return;
     isJumping = true;
     actor.classList.remove('spider-walking');
-    actor.classList.add('spider-jumping');
+
+    // Thêm hiệu ứng nhảy xoay vào jumpWrapper (không làm lộn ngược chữ trong bong bóng thoại)
+    if (jumpWrapper) {
+      jumpWrapper.classList.remove('spider-jumping');
+      void jumpWrapper.offsetWidth; // Force reflow
+      jumpWrapper.classList.add('spider-jumping');
+    }
 
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     showBubble(randomQuote, 3000);
     spawnCandySparkles(posX, posY);
 
     setTimeout(() => {
-      actor.classList.remove('spider-jumping');
+      if (jumpWrapper) jumpWrapper.classList.remove('spider-jumping');
       isJumping = false;
       if (active && !isPaused) actor.classList.add('spider-walking');
     }, 700);
@@ -396,9 +426,11 @@ function initSpookySpider() {
       isClimbing = false;
       isDropping = true;
       posY = -80;
-      posX = Math.max(30, Math.min(window.innerWidth - 100, window.innerWidth * 0.25));
-      actor.classList.remove('spider-jumping');
+      posX = Math.max(50, Math.min(window.innerWidth - 120, window.innerWidth * 0.25));
+      if (jumpWrapper) jumpWrapper.classList.remove('spider-jumping');
       actor.classList.remove('spider-walking');
+      actor.style.transform = 'none';
+      if (flipWrapper) flipWrapper.style.transform = 'scaleX(1)';
       if (toggleText) toggleText.innerText = 'Bắt Nhện Về Tổ';
       showToast('🕷️ Bé nhện Halloween 2026 đang trượt xuống dạo chơi! Nhấp vào bé nhện để nhận kẹo nhé!', 'success');
       cancelAnimationFrame(animFrameId);

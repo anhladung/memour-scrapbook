@@ -88,8 +88,8 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/static/assets/apple-touch-icon.png">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/static/css/tailwind.min.css?v=20261001_v8">
-  <link rel="stylesheet" href="/static/css/style.css?v=20261001_v8">
+  <link rel="stylesheet" href="/static/css/tailwind.min.css?v=20261001_v9">
+  <link rel="stylesheet" href="/static/css/style.css?v=20261001_v9">
   
   {% block extra_head %}{% endblock %}
 </head>
@@ -502,7 +502,7 @@
               <span class="text-[11px] text-pink-300 font-bold hidden sm:inline">Thử thách nhặt sticker ký ức</span>
             </div>
             <h3 class="text-sm sm:text-lg font-heading font-black text-white leading-tight">
-              MUMU GO: Thu Thập Sticker Ký Ức Tặng Thầy Cô!
+              MUMU GO: Thu Thập Sticker &amp; Tri Ân Buổi Báo Cáo Đồ Án!
             </h3>
           </div>
         </div>
@@ -511,20 +511,28 @@
         </button>
       </div>
 
-      <!-- Game Score & Inventory Header Bar -->
+      <!-- Game Score, Timer & Inventory Header Bar -->
       <div class="mumu-game-status-bar">
-        <div class="flex items-center gap-2">
-          <span class="text-xs font-black text-amber-300 font-heading">🎒 Túi Ký Ức:</span>
-          <span id="mumu-sticker-counter" class="bg-black/60 px-2.5 py-0.5 rounded-md border border-amber-400/60 font-mono font-black text-xs text-yellow-300">0/5</span>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Countdown Timer -->
+          <div id="mumu-game-timer" class="mumu-timer-badge">
+            <span>⏱️</span>
+            <span id="mumu-timer-text">45s</span>
+          </div>
+
+          <div class="flex items-center gap-1.5">
+            <span class="text-xs font-black text-amber-300 font-heading hidden sm:inline">🎒 Đã nhặt:</span>
+            <span id="mumu-sticker-counter" class="bg-black/60 px-2.5 py-0.5 rounded-md border border-amber-400/60 font-mono font-black text-xs text-yellow-300">0/5</span>
+          </div>
         </div>
         
         <!-- 5 Sticker Slot Indicators -->
         <div class="flex items-center gap-1.5 sm:gap-2" id="mumu-inventory-slots">
           <div class="mumu-slot" data-slot="0" title="Sticker Bí Ngô Điểm 10">🎃</div>
-          <div class="mumu-slot" data-slot="1" title="Sticker Cú Mèo Thông Thái">🦉</div>
-          <div class="mumu-slot" data-slot="2" title="Sticker Vạc Thuốc Tri Thức">🧪</div>
-          <div class="mumu-slot" data-slot="3" title="Sticker Bé Ma Yêu Thương">👻</div>
-          <div class="mumu-slot" data-slot="4" title="Sticker Trăng Khâu Tri Ân">🌙</div>
+          <div class="mumu-slot" data-slot="1" title="Sticker Cú Mèo Tri Thức">🦉</div>
+          <div class="mumu-slot" data-slot="2" title="Sticker Vạc Yêu Thương">🧪</div>
+          <div class="mumu-slot" data-slot="3" title="Sticker Bé Ma Cute">👻</div>
+          <div class="mumu-slot" data-slot="4" title="Sticker Trăng Tri Ân">🌙</div>
         </div>
       </div>
 
@@ -532,7 +540,7 @@
       <div id="mumu-arena-container" class="mumu-arena-container">
         <!-- Floating Gen Z Notification Toast on Arena -->
         <div id="mumu-arena-toast" class="mumu-arena-toast">
-          ✨ Dùng phím Mũi tên / WASD hoặc Bấm/Chạm chuột để điều khiển MUMU nhặt sticker!
+          ✨ Dùng phím Mũi tên / WASD hoặc Bấm/Chạm chuột để điều khiển MUMU né ma và nhặt sticker!
         </div>
 
         <!-- The Spooky Scrapbook Arena Canvas/Board -->
@@ -540,6 +548,9 @@
           <!-- Background Spooky Doodles & Grid -->
           <div class="arena-grid-overlay"></div>
           
+          <!-- Obstacles Layer: Moving Ghosts -->
+          <div id="mumu-obstacles-layer" class="mumu-obstacles-layer"></div>
+
           <!-- Player Character: Bé Nhện MUMU -->
           <div id="mumu-player" class="mumu-player">
             <!-- MUMU Mini Speech Bubble -->
@@ -604,73 +615,125 @@
         </div>
       </div>
 
-      <!-- VICTORY SCREEN MODAL OVERLAY: TẶNG THẦY CÔ (Toggled when 5/5) -->
+      <!-- GAME OVER SCREEN (When time runs out) -->
+      <div id="mumu-gameover-screen" class="mumu-gameover-screen hidden">
+        <div class="text-center p-6 bg-[#1f0436] border-3 border-amber-400 rounded-3xl max-w-sm mx-auto shadow-2xl text-white space-y-4">
+          <div class="text-5xl animate-bounce">⏱️👻</div>
+          <h4 class="text-xl font-heading font-black text-amber-300">Úi! Hết Giờ Mất Rồi!</h4>
+          <p class="text-xs text-purple-200 leading-relaxed">
+            Bé MUMU mải né các Bé Ma tinh nghịch nên chưa kịp gom đủ 5 sticker! Bạn có muốn thử lại để hoàn thành lời tri ân không?
+          </p>
+          <div class="pt-2 flex justify-center gap-3">
+            <button onclick="restartMumuGame()" class="bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-300 hover:to-yellow-200 text-stone-950 font-heading font-black text-xs px-5 py-2.5 rounded-xl border-2 border-black shadow-neo">
+              🔄 Thử Thách Lại Ngay
+            </button>
+            <button onclick="closeMumuGame()" class="bg-stone-800 hover:bg-stone-700 text-stone-200 font-heading font-black text-xs px-4 py-2.5 rounded-xl border border-stone-600">
+              Đóng
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VICTORY SCREEN MODAL OVERLAY: CẢM ƠN THẦY MINH, CÁC ANH CHỊ & CÁC BẠN SINH VIÊN -->
       <div id="mumu-victory-screen" class="mumu-victory-screen hidden">
         <div class="mumu-victory-card">
           <!-- Festive Garland / Header -->
-          <div class="text-center space-y-2 mb-4">
-            <span class="bg-gradient-to-r from-amber-300 to-yellow-300 text-stone-950 font-heading font-black text-xs px-4 py-1.5 rounded-full border-2 border-black shadow-neo uppercase inline-block animate-bounce">
-              🎉 SỨ MẠNG GEN Z HOÀN THÀNH! ✦
+          <div class="text-center space-y-1.5 mb-3">
+            <span class="bg-gradient-to-r from-amber-300 to-yellow-300 text-stone-950 font-heading font-black text-[11px] sm:text-xs px-4 py-1.5 rounded-full border-2 border-black shadow-neo uppercase inline-block animate-bounce">
+              🎓 BÁO CÁO DỰ ÁN CUỐI KHÓA XUẤT SẮC THÀNH CÔNG! ✦
             </span>
-            <h4 class="text-xl sm:text-2xl font-heading font-black text-[#881337] leading-tight">
-              Nhóm Đã Gom Đủ 5 Sticker Ký Ức<br class="hidden sm:inline"> Kính Tặng Các Thầy Cô! 💐🎃
+            <h4 class="text-xl sm:text-2xl font-heading font-black text-[#881337] leading-tight" style="color: #fde047; text-shadow: 2px 2px 0px #000000, 0 0 15px rgba(250, 204, 21, 0.6);">
+              LỜI CẢM ƠN &amp; TRI ÂN SÂU SẮC NHẤT<br class="hidden sm:inline"> TỪ NHÓM TÁC GIẢ DỰ ÁN MEMOUR SCRAPBOOK 💐✨
             </h4>
           </div>
 
           <!-- Beautiful Scrapbook Polaroid Tri Ân Card -->
-          <div class="bg-gradient-to-b from-[#fdfbf7] to-[#f5eedc] border-3 border-black rounded-2xl p-5 sm:p-6 shadow-neo-lg relative overflow-hidden text-stone-900">
+          <div class="bg-gradient-to-b from-[#fdfbf7] to-[#f5eedc] border-3 border-black rounded-2xl p-4 sm:p-6 shadow-neo-lg relative overflow-hidden text-stone-900">
             <!-- 5 Stickers Visual Display Ribbon -->
-            <div class="flex items-center justify-center gap-3 sm:gap-4 py-3 bg-white/80 rounded-xl border-2 border-black/20 shadow-sm mb-4">
+            <div class="flex items-center justify-center gap-2 sm:gap-4 py-2.5 px-2 bg-white/90 rounded-xl border-2 border-black/20 shadow-sm mb-3">
               <div class="text-center">
-                <img src="/static/assets/stickers/halloween/bi-ngo-jack.svg" alt="Bí ngô 10 điểm" class="w-10 h-10 sm:w-12 sm:h-12 mx-auto drop-shadow-md hover:scale-125 transition-transform">
-                <span class="text-[9px] font-black text-purple-900 block mt-1">Bí Ngô Điểm 10</span>
+                <img src="/static/assets/stickers/halloween/bi-ngo-jack.svg" alt="Bí ngô 10 điểm" class="w-9 h-9 sm:w-11 sm:h-11 mx-auto drop-shadow-md hover:scale-125 transition-transform">
+                <span class="text-[8px] sm:text-[9px] font-black text-purple-950 block mt-0.5">Bí Ngô Điểm 10</span>
               </div>
               <div class="text-center">
-                <img src="/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg" alt="Cú mèo thông thái" class="w-10 h-10 sm:w-12 sm:h-12 mx-auto drop-shadow-md hover:scale-125 transition-transform">
-                <span class="text-[9px] font-black text-purple-900 block mt-1">Cú Mèo Tri Thức</span>
+                <img src="/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg" alt="Cú mèo thông thái" class="w-9 h-9 sm:w-11 sm:h-11 mx-auto drop-shadow-md hover:scale-125 transition-transform">
+                <span class="text-[8px] sm:text-[9px] font-black text-purple-950 block mt-0.5">Cú Mèo Tri Thức</span>
               </div>
               <div class="text-center">
-                <img src="/static/assets/stickers/halloween/vac-nuoc-phep-slime.svg" alt="Vạc nước phép" class="w-10 h-10 sm:w-12 sm:h-12 mx-auto drop-shadow-md hover:scale-125 transition-transform">
-                <span class="text-[9px] font-black text-purple-900 block mt-1">Vạc Yêu Thương</span>
+                <img src="/static/assets/stickers/halloween/vac-nuoc-phep-slime.svg" alt="Vạc nước phép" class="w-9 h-9 sm:w-11 sm:h-11 mx-auto drop-shadow-md hover:scale-125 transition-transform">
+                <span class="text-[8px] sm:text-[9px] font-black text-purple-950 block mt-0.5">Vạc Yêu Thương</span>
               </div>
               <div class="text-center">
-                <img src="/static/assets/stickers/halloween/ma-cute-boo.svg" alt="Bé ma cute" class="w-10 h-10 sm:w-12 sm:h-12 mx-auto drop-shadow-md hover:scale-125 transition-transform">
-                <span class="text-[9px] font-black text-purple-900 block mt-1">Bé Ma Cute</span>
+                <img src="/static/assets/stickers/halloween/ma-cute-boo.svg" alt="Bé ma cute" class="w-9 h-9 sm:w-11 sm:h-11 mx-auto drop-shadow-md hover:scale-125 transition-transform">
+                <span class="text-[8px] sm:text-[9px] font-black text-purple-950 block mt-0.5">Bé Ma Cute</span>
               </div>
               <div class="text-center">
-                <img src="/static/assets/stickers/halloween/mat-trang-khau-chi.svg" alt="Trăng khâu chỉ" class="w-10 h-10 sm:w-12 sm:h-12 mx-auto drop-shadow-md hover:scale-125 transition-transform">
-                <span class="text-[9px] font-black text-purple-900 block mt-1">Trăng Tri Ân</span>
+                <img src="/static/assets/stickers/halloween/mat-trang-khau-chi.svg" alt="Trăng khâu chỉ" class="w-9 h-9 sm:w-11 sm:h-11 mx-auto drop-shadow-md hover:scale-125 transition-transform">
+                <span class="text-[8px] sm:text-[9px] font-black text-purple-950 block mt-0.5">Trăng Tri Ân</span>
               </div>
             </div>
 
-            <!-- Heartfelt Gen Z Teacher Tribute Message -->
-            <div class="bg-amber-50/90 border-2 border-amber-300 rounded-xl p-4 text-xs sm:text-sm leading-relaxed space-y-2.5 font-medium">
-              <p class="font-heading font-black text-[#881337] text-sm sm:text-base">
-                Kính gửi tặng các Thầy / Cô thân thương của chúng em! 💖
-              </p>
-              <p class="text-stone-800">
-                Nhóm học trò chúng em cùng Bé Nhện MUMU đã dệt trọn bộ <b>5 Sticker Ký Ức Halloween 2026</b> này để dành tặng Thầy Cô. Cảm ơn Thầy Cô vì đã luôn là ngọn hải đăng soi sáng tri thức, luôn kiên nhẫn và bao dung cho những trò nghịch ngợm của tụi em!
-              </p>
-              <div class="p-2.5 rounded-lg bg-[#2e0854] text-[#facc15] font-heading font-black text-xs italic">
-                “MUMU không giăng tơ bắt mồi – MUMU giăng tơ giữ kỷ niệm.”
+            <!-- Heartfelt Dedicated Tribute Sections -->
+            <div class="space-y-3 text-xs sm:text-sm leading-relaxed">
+              
+              <!-- 1. KÍNH GỬI THẦY MINH -->
+              <div class="bg-amber-100/90 border-2 border-amber-400/90 rounded-xl p-3.5 shadow-sm">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-base sm:text-lg">👨‍🏫</span>
+                  <span class="font-heading font-black text-[#881337] text-xs sm:text-sm uppercase tracking-wide">
+                    1. Kính Gửi Thầy Minh Thân Yêu! 💖
+                  </span>
+                </div>
+                <p class="text-stone-800 text-[11px] sm:text-xs leading-relaxed">
+                  Nhóm chúng em xin gửi lời <b>tri ân chân thành và sâu sắc nhất tới Thầy Minh</b>. Cảm ơn Thầy đã luôn tận tâm chỉ dẫn, kiên nhẫn định hướng từng chi tiết và truyền cảm hứng để chúng em có thể hoàn thiện trọn vẹn dự án <b>MEMOUR Scrapbook</b> này. Những lời dạy và sự đồng hành của Thầy là hành trang vô giá cho chúng em trên con đường phía trước!
+                </p>
               </div>
-              <p class="text-stone-700 font-semibold text-[11px] sm:text-xs">
-                Kính chúc Thầy/Cô mùa lễ hội Halloween ngập tràn niềm vui, sức khỏe dồi dào và luôn giữ nụ cười hạnh phúc trên bục giảng! ✨💐
-              </p>
+
+              <!-- 2. CẢM ƠN CÁC ANH CHỊ -->
+              <div class="bg-purple-100/90 border-2 border-purple-300 rounded-xl p-3.5 shadow-sm">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-base sm:text-lg">💼</span>
+                  <span class="font-heading font-black text-purple-950 text-xs sm:text-sm uppercase tracking-wide">
+                    2. Cảm Ơn Các Anh/Chị Đã Đến Tham Dự! 💐
+                  </span>
+                </div>
+                <p class="text-stone-800 text-[11px] sm:text-xs leading-relaxed">
+                  Chúng em xin gửi lời cảm ơn nồng nhiệt tới <b>các Anh/Chị mentor, cựu sinh viên và ban giám khảo</b> đã dành thời gian quý báu đến tham dự, theo dõi và đóng góp những nhận xét thực tế, sâu sắc. Những lời khuyên từ các Anh/Chị giúp dự án mở rộng thêm nhiều góc nhìn mới mẻ và hoàn thiện hơn rất nhiều!
+                </p>
+              </div>
+
+              <!-- 3. CẢM ƠN CÁC BẠN SINH VIÊN -->
+              <div class="bg-pink-100/90 border-2 border-pink-300 rounded-xl p-3.5 shadow-sm">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-base sm:text-lg">🎓</span>
+                  <span class="font-heading font-black text-rose-950 text-xs sm:text-sm uppercase tracking-wide">
+                    3. Cảm Ơn Toàn Thể Các Bạn Sinh Viên! 🥳
+                  </span>
+                </div>
+                <p class="text-stone-800 text-[11px] sm:text-xs leading-relaxed">
+                  Đặc biệt, cảm ơn tất cả <b>các bạn sinh viên</b> đã có mặt đông đủ, ngồi lại lắng nghe và cổ vũ hết mình cho nhóm suốt buổi trình bày hôm nay! Sự hiện diện, nụ cười và những tràng pháo tay của các bạn chính là nguồn năng lượng tuyệt vời nhất giúp nhóm tự tin tỏa sáng!
+                </p>
+              </div>
+
+              <!-- Signature Scrapbook Motto -->
+              <div class="p-2.5 rounded-xl bg-[#2e0854] text-[#facc15] font-heading font-black text-xs text-center border-2 border-black shadow-sm">
+                “MUMU không giăng tơ bắt mồi – MUMU giăng tơ giữ kỷ niệm.” 🕷️✨
+              </div>
+
             </div>
           </div>
 
           <!-- Victory Actions -->
-          <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
-            <button onclick="copyTeacherTribute()" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-heading font-black text-xs sm:text-sm px-5 py-3 rounded-xl border-2 border-black shadow-neo hover:translate-x-0.5 hover:-translate-y-0.5 transition-all">
-              <span>📋 Sao Chép Lời Chúc Gửi Thầy Cô</span>
+          <div class="mt-4 flex flex-wrap items-center justify-center gap-2.5">
+            <button onclick="copyTeacherTribute()" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-heading font-black text-xs sm:text-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl border-2 border-black shadow-neo hover:translate-x-0.5 hover:-translate-y-0.5 transition-all">
+              <span>📋 Sao Chép Lời Cảm Ơn Buổi Báo Cáo</span>
             </button>
-            <a href="/studio" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-700 to-rose-700 hover:from-purple-800 hover:to-rose-800 text-white font-heading font-black text-xs sm:text-sm px-5 py-3 rounded-xl border-2 border-black shadow-neo hover:translate-x-0.5 hover:-translate-y-0.5 transition-all">
-              <span>🎨 Mở Studio Tự Làm Sổ Tặng Thầy Cô</span>
+            <a href="/studio" class="inline-flex items-center gap-1.5 bg-gradient-to-r from-purple-700 to-rose-700 hover:from-purple-800 hover:to-rose-800 text-white font-heading font-black text-xs sm:text-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl border-2 border-black shadow-neo hover:translate-x-0.5 hover:-translate-y-0.5 transition-all">
+              <span>🎨 Trải Nghiệm Studio</span>
               <span>→</span>
             </a>
-            <button onclick="restartMumuGame()" class="inline-flex items-center gap-2 bg-white hover:bg-stone-100 text-stone-900 font-heading font-black text-xs sm:text-sm px-4 py-3 rounded-xl border-2 border-black shadow-sm transition-all">
-              <span>🔄 Chơi Lại Cùng MUMU</span>
+            <button onclick="restartMumuGame()" class="inline-flex items-center gap-1.5 bg-white hover:bg-stone-100 text-stone-900 font-heading font-black text-xs sm:text-sm px-4 py-2.5 sm:py-3 rounded-xl border-2 border-black shadow-sm transition-all">
+              <span>🔄 Chơi Lại</span>
             </button>
           </div>
         </div>
@@ -680,7 +743,7 @@
   </div>
 
   <!-- Main Scripts -->
-  <script src="/static/js/main.js?v=20261001_v8"></script>
+  <script src="/static/js/main.js?v=20261001_v9"></script>
   {% if request.path == '/cart' or request.path.startswith('/inspiration') %}
   {% endif %}
   {% block extra_scripts %}{% endblock %}

@@ -533,8 +533,12 @@ function initSpookySpider() {
   let player = null;
   let playerBubble = null;
   let stickersLayer = null;
+  let obstaclesLayer = null;
   let counterEl = null;
+  let timerBadge = null;
+  let timerText = null;
   let victoryScreen = null;
+  let gameOverScreen = null;
   let toastEl = null;
 
   let playerX = 100;
@@ -543,9 +547,13 @@ function initSpookySpider() {
   let targetY = 100;
   let speed = 4;
   let isMoving = false;
+  let isStunned = false;
   let collectedCount = 0;
   let activeStickers = [];
+  let activeObstacles = [];
   let gameLoopId = null;
+  let timerInterval = null;
+  let timeLeft = 45;
   let bubbleTimer = null;
   let toastTimer = null;
   const keysDown = {};
@@ -569,8 +577,8 @@ function initSpookySpider() {
   }
 
   function playVictorySound() {
-    [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
-      setTimeout(() => playChime(freq, 'triangle', 0.25), i * 140);
+    [523.25, 659.25, 783.99, 1046.50, 1318.51].forEach((freq, i) => {
+      setTimeout(() => playChime(freq, 'triangle', 0.28), i * 130);
     });
   }
 
@@ -628,8 +636,12 @@ function initSpookySpider() {
     player = document.getElementById('mumu-player');
     playerBubble = document.getElementById('mumu-player-bubble');
     stickersLayer = document.getElementById('mumu-stickers-layer');
+    obstaclesLayer = document.getElementById('mumu-obstacles-layer');
     counterEl = document.getElementById('mumu-sticker-counter');
+    timerBadge = document.getElementById('mumu-game-timer');
+    timerText = document.getElementById('mumu-timer-text');
     victoryScreen = document.getElementById('mumu-victory-screen');
+    gameOverScreen = document.getElementById('mumu-gameover-screen');
     toastEl = document.getElementById('mumu-arena-toast');
   }
 
@@ -643,13 +655,12 @@ function initSpookySpider() {
     const h = Math.max(260, rect.height || 360);
     const pad = 50;
 
-    // Fixed / distributed locations so they never clump or spawn on top of each other
     const positions = [
-      { x: pad + (w - pad * 2) * 0.15, y: pad + (h - pad * 2) * 0.25 },
+      { x: pad + (w - pad * 2) * 0.15, y: pad + (h - pad * 2) * 0.22 },
       { x: pad + (w - pad * 2) * 0.85, y: pad + (h - pad * 2) * 0.20 },
       { x: pad + (w - pad * 2) * 0.50, y: pad + (h - pad * 2) * 0.82 },
       { x: pad + (w - pad * 2) * 0.18, y: pad + (h - pad * 2) * 0.78 },
-      { x: pad + (w - pad * 2) * 0.80, y: pad + (h - pad * 2) * 0.75 }
+      { x: pad + (w - pad * 2) * 0.82, y: pad + (h - pad * 2) * 0.75 }
     ];
 
     STICKERS_DATA.forEach((data, index) => {
@@ -674,6 +685,39 @@ function initSpookySpider() {
     });
   }
 
+  function spawnObstacles() {
+    if (!obstaclesLayer || !arena) return;
+    obstaclesLayer.innerHTML = '';
+    activeObstacles = [];
+
+    const rect = arena.getBoundingClientRect();
+    const w = Math.max(300, rect.width || 600);
+    const h = Math.max(260, rect.height || 360);
+
+    // 2 Spooky patrol obstacles (Cute ghosts that patrol and bounce)
+    const configs = [
+      { x: w * 0.35, y: h * 0.35, vx: 2.2, vy: 1.6, icon: "👻" },
+      { x: w * 0.65, y: h * 0.60, vx: -2.0, vy: -1.8, icon: "🎃" }
+    ];
+
+    configs.forEach((cfg) => {
+      const el = document.createElement('div');
+      el.className = 'mumu-obstacle-ghost';
+      el.style.left = cfg.x + 'px';
+      el.style.top = cfg.y + 'px';
+      el.innerHTML = `<span style="font-size: 28px; line-height: 1;">${cfg.icon}</span>`;
+      obstaclesLayer.appendChild(el);
+
+      activeObstacles.push({
+        x: cfg.x,
+        y: cfg.y,
+        vx: cfg.vx,
+        vy: cfg.vy,
+        el: el
+      });
+    });
+  }
+
   function updateSlotsUI() {
     if (counterEl) counterEl.innerText = `${collectedCount}/5`;
     document.querySelectorAll('#mumu-inventory-slots .mumu-slot').forEach(slot => {
@@ -687,6 +731,62 @@ function initSpookySpider() {
     });
   }
 
+  function updateTimerUI() {
+    if (!timerText) return;
+    timerText.innerText = `${timeLeft}s`;
+    if (timeLeft <= 10) {
+      if (timerBadge) timerBadge.classList.add('timer-warning');
+    } else {
+      if (timerBadge) timerBadge.classList.remove('timer-warning');
+    }
+  }
+
+  function startTimer() {
+    clearInterval(timerInterval);
+    timeLeft = 45;
+    updateTimerUI();
+
+    timerInterval = setInterval(() => {
+      if (!modal || modal.classList.contains('hidden')) {
+        clearInterval(timerInterval);
+        return;
+      }
+      timeLeft--;
+      updateTimerUI();
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        triggerGameOver();
+      }
+    }, 1000);
+  }
+
+  function handlePlayerStun() {
+    if (isStunned) return;
+    isStunned = true;
+    playChime(190, 'sawtooth', 0.25);
+
+    if (player) player.classList.add('is-stunned');
+
+    // Time penalty
+    timeLeft = Math.max(1, timeLeft - 3);
+    updateTimerUI();
+
+    const quotes = [
+      "Úi dồi ôi ma kìa! Né gấp! 👻💫",
+      "Xỉu ngang xỉu dọc luôn! 😵",
+      "Alo cứu bé MUMU! Biến căng rồi! 🆘",
+      "MUMU bị giật mình trừ 3 giây! ⏱️💥"
+    ];
+    showPlayerBubble(quotes[Math.floor(Math.random() * quotes.length)], 1600);
+    showArenaToast("⚠️ MUMU chạm phải Bé Ma tinh nghịch! Bị choáng và trừ 3 giây!", 2000);
+
+    setTimeout(() => {
+      isStunned = false;
+      if (player) player.classList.remove('is-stunned');
+    }, 1200);
+  }
+
   function gameLoop() {
     if (!modal || modal.classList.contains('hidden')) return;
 
@@ -695,46 +795,72 @@ function initSpookySpider() {
     const w = rect.width || 600;
     const h = rect.height || 380;
 
-    let moveX = 0;
-    let moveY = 0;
+    // Movement only allowed when not stunned
+    if (!isStunned) {
+      let moveX = 0;
+      let moveY = 0;
 
-    if (keysDown['ArrowUp'] || keysDown['KeyW'] || keysDown['w']) moveY -= speed;
-    if (keysDown['ArrowDown'] || keysDown['KeyS'] || keysDown['s']) moveY += speed;
-    if (keysDown['ArrowLeft'] || keysDown['KeyA'] || keysDown['a']) moveX -= speed;
-    if (keysDown['ArrowRight'] || keysDown['KeyD'] || keysDown['d']) moveX += speed;
+      if (keysDown['ArrowUp'] || keysDown['KeyW'] || keysDown['w']) moveY -= speed;
+      if (keysDown['ArrowDown'] || keysDown['KeyS'] || keysDown['s']) moveY += speed;
+      if (keysDown['ArrowLeft'] || keysDown['KeyA'] || keysDown['a']) moveX -= speed;
+      if (keysDown['ArrowRight'] || keysDown['KeyD'] || keysDown['d']) moveX += speed;
 
-    if (moveX !== 0 || moveY !== 0) {
-      playerX += moveX;
-      playerY += moveY;
-      targetX = playerX;
-      targetY = playerY;
-    } else if (isMoving) {
-      const dx = targetX - playerX;
-      const dy = targetY - playerY;
-      const dist = Math.hypot(dx, dy);
-      if (dist < 4) {
-        playerX = targetX;
-        playerY = targetY;
-        isMoving = false;
-      } else {
-        playerX += (dx / dist) * speed;
-        playerY += (dy / dist) * speed;
+      if (moveX !== 0 || moveY !== 0) {
+        playerX += moveX;
+        playerY += moveY;
+        targetX = playerX;
+        targetY = playerY;
+      } else if (isMoving) {
+        const dx = targetX - playerX;
+        const dy = targetY - playerY;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 4) {
+          playerX = targetX;
+          playerY = targetY;
+          isMoving = false;
+        } else {
+          playerX += (dx / dist) * speed;
+          playerY += (dy / dist) * speed;
+        }
+      }
+
+      // Clamp inside arena boundaries
+      playerX = Math.max(30, Math.min(w - 30, playerX));
+      playerY = Math.max(30, Math.min(h - 30, playerY));
+
+      if (player) {
+        player.style.left = playerX + 'px';
+        player.style.top = playerY + 'px';
+        if (moveX < 0 || (isMoving && targetX < playerX)) {
+          player.style.transform = 'translate(-50%, -50%) scaleX(-1)';
+        } else {
+          player.style.transform = 'translate(-50%, -50%) scaleX(1)';
+        }
       }
     }
 
-    // Clamp inside arena boundaries
-    playerX = Math.max(30, Math.min(w - 30, playerX));
-    playerY = Math.max(30, Math.min(h - 30, playerY));
+    // Move Patrol Obstacles and detect collision
+    activeObstacles.forEach(obs => {
+      obs.x += obs.vx;
+      obs.y += obs.vy;
 
-    if (player) {
-      player.style.left = playerX + 'px';
-      player.style.top = playerY + 'px';
-      if (moveX < 0 || (isMoving && targetX < playerX)) {
-        player.style.transform = 'translate(-50%, -50%) scaleX(-1)';
-      } else {
-        player.style.transform = 'translate(-50%, -50%) scaleX(1)';
+      if (obs.x < 30 || obs.x > w - 30) obs.vx *= -1;
+      if (obs.y < 30 || obs.y > h - 30) obs.vy *= -1;
+
+      if (obs.el) {
+        obs.el.style.left = obs.x + 'px';
+        obs.el.style.top = obs.y + 'px';
+        obs.el.style.transform = `translate(-50%, -50%) scaleX(${obs.vx < 0 ? -1 : 1})`;
       }
-    }
+
+      // Collision check with player
+      if (!isStunned) {
+        const d = Math.hypot(playerX - obs.x, playerY - obs.y);
+        if (d < 36) {
+          handlePlayerStun();
+        }
+      }
+    });
 
     // Check collision with remaining stickers
     activeStickers.forEach(stk => {
@@ -755,11 +881,11 @@ function initSpookySpider() {
         }
 
         updateSlotsUI();
-        showPlayerBubble(stk.data.quote, 3000);
+        showPlayerBubble(stk.data.quote, 2800);
         showArenaToast(stk.data.toast, 2400);
 
         if (collectedCount >= 5) {
-          setTimeout(triggerVictory, 700);
+          setTimeout(triggerVictory, 600);
         }
       }
     });
@@ -767,12 +893,22 @@ function initSpookySpider() {
     gameLoopId = requestAnimationFrame(gameLoop);
   }
 
+  function triggerGameOver() {
+    cancelAnimationFrame(gameLoopId);
+    clearInterval(timerInterval);
+    playChime(220, 'sawtooth', 0.4);
+    if (gameOverScreen) gameOverScreen.classList.remove('hidden');
+    showToast('⏱️ Hết giờ mất rồi! Thử thách lại cùng MUMU nhé!', 'info');
+  }
+
   function triggerVictory() {
+    cancelAnimationFrame(gameLoopId);
+    clearInterval(timerInterval);
     playVictorySound();
     if (victoryScreen) {
       victoryScreen.classList.remove('hidden');
     }
-    showToast('🎉 Chúc mừng bạn và MUMU đã thu thập đủ 5 sticker kỷ niệm kính tặng Thầy Cô!', 'success');
+    showToast('🎉 Chúc mừng bạn đã hoàn thành thử thách tri ân Thầy Minh, các Anh/Chị và bạn bè!', 'success');
   }
 
   window.openMumuGame = function() {
@@ -788,13 +924,19 @@ function initSpookySpider() {
     targetX = playerX;
     targetY = playerY;
     isMoving = false;
+    isStunned = false;
     collectedCount = 0;
 
     if (victoryScreen) victoryScreen.classList.add('hidden');
+    if (gameOverScreen) gameOverScreen.classList.add('hidden');
+
     spawnStickers();
+    spawnObstacles();
     updateSlotsUI();
-    showPlayerBubble("Boo! Dùng phím mũi tên hoặc chạm để nhặt sticker nhé! 🍬", 2600);
-    showArenaToast("✨ Dùng phím Mũi tên / WASD hoặc Chạm/Bấm chuột để điều khiển MUMU nhặt sticker!", 3000);
+    startTimer();
+
+    showPlayerBubble("Boo! Chú ý né các Bé Ma tinh nghịch để gom đủ 5 sticker nhé! 🍬", 2800);
+    showArenaToast("✨ Dùng phím Mũi tên / WASD hoặc Bấm/Chạm chuột để né ma và nhặt sticker!", 3200);
 
     cancelAnimationFrame(gameLoopId);
     gameLoopId = requestAnimationFrame(gameLoop);
@@ -805,27 +947,60 @@ function initSpookySpider() {
     modal.classList.add('hidden');
     document.body.style.overflow = '';
     cancelAnimationFrame(gameLoopId);
+    clearInterval(timerInterval);
   };
 
   window.restartMumuGame = function() {
     if (victoryScreen) victoryScreen.classList.add('hidden');
+    if (gameOverScreen) gameOverScreen.classList.add('hidden');
     collectedCount = 0;
+    isStunned = false;
+    if (player) player.classList.remove('is-stunned');
+
+    const rect = arena.getBoundingClientRect();
+    playerX = (rect.width || 600) / 2;
+    playerY = (rect.height || 380) / 2;
+    targetX = playerX;
+    targetY = playerY;
+    isMoving = false;
+
     spawnStickers();
+    spawnObstacles();
     updateSlotsUI();
-    showPlayerBubble("Vòng mới bắt đầu! Cùng MUMU săn sticker tặng Thầy Cô nào! 🎒✨", 2500);
+    startTimer();
+    showPlayerBubble("Vòng mới bắt đầu! Cùng MUMU săn sticker tri ân Thầy Cô và các bạn nào! 🎒✨", 2500);
+
+    cancelAnimationFrame(gameLoopId);
+    gameLoopId = requestAnimationFrame(gameLoop);
   };
 
   window.copyTeacherTribute = function() {
-    const tributeText = `Kính gửi tặng các Thầy / Cô thân thương của chúng em! 💖\n\nNhóm học trò chúng em cùng Bé Nhện MUMU xin gửi tặng Thầy/Cô trọn bộ 5 Sticker Ký Ức Mùa Halloween 2026 độc bản này. Cảm ơn Thầy Cô vì đã luôn là ngọn hải đăng soi sáng tri thức, kiên nhẫn và bao dung cho những trò nghịch ngợm của tụi em!\n\n“MUMU không giăng tơ bắt mồi – MUMU giăng tơ giữ kỷ niệm.”\n\nKính chúc Thầy/Cô mùa lễ hội Halloween ngập tràn niềm vui, sức khỏe dồi dào và luôn giữ nụ cười hạnh phúc rạng rỡ trên bục giảng! ✨💐\n\n— Nhóm Học Trò Tinh Nghịch & MEMOUR Studio —`;
+    const tributeText = `🎓 BÁO CÁO DỰ ÁN CUỐI KHÓA XUẤT SẮC THÀNH CÔNG!
+KÍNH GỬI THẦY MINH, CÁC ANH/CHỊ VÀ TOÀN THỂ CÁC BẠN SINH VIÊN! 💖✨
+
+Nhóm tác giả dự án MEMOUR Scrapbook cùng Bé Nhện MUMU xin gửi lời tri ân chân thành và sâu sắc nhất:
+
+1. 👨‍🏫 KÍNH GỬI THẦY MINH THÂN YÊU:
+Lời đầu tiên, nhóm chúng em xin gửi lời tri ân chân thành và sâu sắc nhất tới Thầy Minh! Cảm ơn Thầy đã luôn tận tâm chỉ dẫn, kiên nhẫn định hướng từng chi tiết và truyền cảm hứng để chúng em hoàn thiện trọn vẹn dự án MEMOUR ngày hôm nay. Những lời dạy và sự đồng hành của Thầy là hành trang vô giá cho chúng em trên chặng đường phía trước!
+
+2. 💐 CẢM ƠN CÁC ANH/CHỊ ĐÃ ĐẾN THAM DỰ:
+Chúng em xin gửi lời cảm ơn nồng nhiệt tới các Anh/Chị (Mentor, cựu sinh viên và ban giám khảo) đã dành thời gian quý báu đến tham dự, theo dõi và đóng góp những nhận xét thực tế, sâu sắc cho dự án của chúng em. Những chia sẻ của các Anh/Chị giúp dự án mở rộng thêm nhiều góc nhìn mới mẻ và hoàn thiện hơn rất nhiều!
+
+3. 🎓 CẢM ƠN TOÀN THỂ CÁC BẠN SINH VIÊN:
+Đặc biệt, cảm ơn tất cả các bạn sinh viên đã có mặt đông đủ, ngồi lại lắng nghe và cổ vũ hết mình cho nhóm suốt buổi trình bày dự án cuối khóa hôm nay. Sự hiện diện, nụ cười và những tràng pháo tay của các bạn chính là nguồn năng lượng tuyệt vời nhất giúp nhóm tự tin tỏa sáng!
+
+“MUMU không giăng tơ bắt mồi – MUMU giăng tơ giữ kỷ niệm.” 🕷️✨
+
+— Nhóm Sinh Viên Thực Hiện Dự Án MEMOUR Scrapbook —`;
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(tributeText).then(() => {
-        showToast('📋 Đã sao chép trọn vẹn lời chúc tri ân Thầy Cô vào bộ nhớ tạm! Bạn có thể dán gửi ngay nhé! 💖', 'success');
+        showToast('📋 Đã sao chép trọn vẹn lời cảm ơn Thầy Minh, các Anh/Chị & các Bạn sinh viên! 💖', 'success');
       }).catch(() => {
-        showToast('Đã sao chép lời chúc tri ân Thầy Cô!', 'info');
+        showToast('Đã sao chép lời cảm ơn buổi báo cáo!', 'info');
       });
     } else {
-      showToast('Đã sao chép lời chúc tri ân Thầy Cô!', 'info');
+      showToast('Đã sao chép lời cảm ơn buổi báo cáo!', 'info');
     }
   };
 

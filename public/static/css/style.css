@@ -1361,12 +1361,29 @@ body.lightbox-open { overflow: hidden; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 14px;
   overflow-y: auto;
   animation: victoryFadeIn 0.4s ease-out;
 }
 
 .mumu-victory-screen.hidden {
+  display: none !important;
+}
+
+.mumu-gameover-screen {
+  position: absolute;
+  inset: 0;
+  background: rgba(24, 2, 40, 0.97);
+  backdrop-filter: blur(10px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  animation: victoryFadeIn 0.3s ease-out;
+}
+
+.mumu-gameover-screen.hidden {
   display: none !important;
 }
 
@@ -1377,6 +1394,175 @@ body.lightbox-open { overflow: hidden; }
 
 .mumu-victory-card {
   width: 100%;
-  max-width: 620px;
+  max-width: 680px;
+  max-height: 88vh;
+  overflow-y: auto;
   margin: auto;
+  padding-right: 4px;
 }
+
+/* Custom scrollbar for victory card */
+.mumu-victory-card::-webkit-scrollbar {
+  width: 6px;
+}
+.mumu-victory-card::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   HALLOWEEN MASCOT SPOTLIGHT: SOLID HIGH-CONTRAST BLOCKS
+   ========================================================= */
+.mascot-spotlight-card {
+  background: linear-gradient(135deg, #18022b 0%, #2e0854 45%, #3b0764 75%, #150224 100%) !important;
+  border: 3.5px solid #000000 !important;
+  border-radius: 28px !important;
+  box-shadow: 7px 7px 0px #000000, 0 0 50px rgba(168, 85, 247, 0.65) !important;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff !important;
+}
+
+.mascot-avatar-box {
+  background: linear-gradient(180deg, #3b0764 0%, #150326 100%) !important;
+  border: 3px solid #facc15 !important;
+  border-radius: 24px !important;
+  box-shadow: 6px 6px 0px #000000, 0 0 25px rgba(250, 204, 21, 0.4) !important;
+}
+
+.mascot-title-text {
+  color: #ffffff !important;
+  text-shadow: 0 0 16px rgba(216, 180, 254, 0.9), 2px 2px 0px #000000 !important;
+  font-weight: 900 !important;
+}
+
+.mascot-subtitle-tag {
+  color: #fde047 !important;
+  text-shadow: 1px 1px 0px #000000 !important;
+  font-weight: 800 !important;
+}
+
+.mascot-quote-box {
+  background: #0d0118 !important;
+  border: 2px solid #e879f9 !important;
+  border-radius: 18px !important;
+  box-shadow: 4px 4px 0px #000000, 0 0 20px rgba(232, 121, 249, 0.35) !important;
+  padding: 16px 20px !important;
+}
+
+.mascot-quote-text {
+  color: #fde047 !important;
+  font-weight: 900 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.01em !important;
+  text-shadow: 1px 1px 0px #000000 !important;
+}
+
+.mascot-quote-caption {
+  color: #f0abfc !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  margin-top: 4px !important;
+}
+
+.mascot-story-box {
+  background: rgba(25, 4, 46, 0.92) !important;
+  border: 2px solid #a855f7 !important;
+  border-radius: 18px !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  padding: 16px 20px !important;
+  color: #f3e8ff !important;
+  line-height: 1.65 !important;
+  font-size: 0.925rem !important;
+}
+
+.mascot-story-box b,
+.mascot-story-box strong {
+  color: #facc15 !important;
+  font-weight: 800 !important;
+}
+
+.mascot-btn-game {
+  background: linear-gradient(90deg, #f59e0b 0%, #facc15 100%) !important;
+  color: #09090b !important;
+  border: 3px solid #000000 !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  font-weight: 900 !important;
+  border-radius: 16px !important;
+  transition: all 0.15s ease !important;
+  cursor: pointer !important;
+}
+
+.mascot-btn-game:hover {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+  background: linear-gradient(90deg, #fbbf24 0%, #fef08a 100%) !important;
+}
+
+.mascot-btn-catalog {
+  background: #3b0764 !important;
+  color: #ffffff !important;
+  border: 2px solid #d946ef !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  font-weight: 900 !important;
+  border-radius: 16px !important;
+  transition: all 0.15s ease !important;
+}
+
+.mascot-btn-catalog:hover {
+  background: #581c87 !important;
+  transform: translate(2px, 2px) !important;
+  box-shadow: 2px 2px 0px #000000 !important;
+}
+
+/* =========================================================
+   GEN Z GAME: MOVING OBSTACLES & DIFFICULTY ELEMENTS
+   ========================================================= */
+.mumu-obstacle-ghost {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  transform: translate(-50%, -50%);
+  z-index: 14;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px rgba(244, 63, 94, 0.9));
+  transition: transform 0.08s linear;
+}
+
+.mumu-player.is-stunned {
+  animation: mumuStunShake 0.1s infinite alternate !important;
+  filter: hue-rotate(180deg) brightness(1.4) !important;
+}
+
+@keyframes mumuStunShake {
+  0% { transform: translate(-50%, -50%) rotate(-14deg) scale(0.95); }
+  100% { transform: translate(-50%, -50%) rotate(14deg) scale(1.05); }
+}
+
+.mumu-timer-badge {
+  background: #18022b;
+  border: 2px solid #facc15;
+  color: #facc15;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 13px;
+  font-family: monospace;
+  box-shadow: 2px 2px 0px #000;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mumu-timer-badge.timer-warning {
+  border-color: #ef4444 !important;
+  color: #f87171 !important;
+  animation: timerBlink 0.5s infinite alternate;
+}
+
+@keyframes timerBlink {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0.6; transform: scale(1.1); }
+}
+

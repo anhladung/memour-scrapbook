@@ -96,6 +96,10 @@ h1, h2, h3, h4, .font-heading {
   z-index: 10;
 }
 
+.washi-purple::before {
+  background: rgba(168, 85, 247, 0.85) !important;
+}
+
 .washi-tape-corner::after {
   content: '';
   position: absolute;
@@ -556,70 +560,70 @@ body.lightbox-open { overflow: hidden; }
   box-shadow: 7px 7px 0px #000, 0 0 28px rgba(147, 51, 234, 0.4), 0 0 45px rgba(234, 88, 12, 0.25);
 }
 
-/* Memour Brand Identity 3D Colorful Card Variants (High Visual Impact) */
+/* Memour Brand Identity 3D Colorful Card Variants (High Visual Impact & High Contrast) */
 .card-3d-purple {
   background: linear-gradient(145deg, #faf5ff 0%, #f3e8ff 50%, #fae8ff 100%) !important;
-  border: 2.5px solid #2e0854 !important;
-  box-shadow: 6px 6px 0px #2e0854, 0 8px 24px rgba(124, 58, 237, 0.22) !important;
+  border: 3px solid #18181b !important;
+  box-shadow: 6px 6px 0px #18181b, 0 6px 20px rgba(124, 58, 237, 0.2) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 .card-3d-purple:hover {
   transform: translateY(-6px) scale(1.01);
-  border-color: #7c3aed !important;
-  box-shadow: 8px 8px 0px #2e0854, 0 14px 32px rgba(124, 58, 237, 0.35) !important;
+  border-color: #581c87 !important;
+  box-shadow: 8px 8px 0px #18181b, 0 12px 28px rgba(124, 58, 237, 0.35) !important;
 }
 
 .card-3d-amber {
   background: linear-gradient(145deg, #fffbeb 0%, #fef3c7 50%, #ffedd5 100%) !important;
-  border: 2.5px solid #78350f !important;
-  box-shadow: 6px 6px 0px #78350f, 0 8px 24px rgba(245, 158, 11, 0.25) !important;
+  border: 3px solid #18181b !important;
+  box-shadow: 6px 6px 0px #18181b, 0 6px 20px rgba(245, 158, 11, 0.22) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 .card-3d-amber:hover {
   transform: translateY(-6px) scale(1.01);
-  border-color: #d97706 !important;
-  box-shadow: 8px 8px 0px #78350f, 0 14px 32px rgba(245, 158, 11, 0.38) !important;
+  border-color: #b45309 !important;
+  box-shadow: 8px 8px 0px #18181b, 0 12px 28px rgba(245, 158, 11, 0.35) !important;
 }
 
 .card-3d-rose {
   background: linear-gradient(145deg, #fff1f2 0%, #ffe4e6 50%, #fce7f3 100%) !important;
-  border: 2.5px solid #881337 !important;
-  box-shadow: 6px 6px 0px #881337, 0 8px 24px rgba(225, 29, 72, 0.22) !important;
+  border: 3px solid #18181b !important;
+  box-shadow: 6px 6px 0px #18181b, 0 6px 20px rgba(225, 29, 72, 0.2) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 .card-3d-rose:hover {
   transform: translateY(-6px) scale(1.01);
-  border-color: #e11d48 !important;
-  box-shadow: 8px 8px 0px #881337, 0 14px 32px rgba(225, 29, 72, 0.35) !important;
+  border-color: #9f1239 !important;
+  box-shadow: 8px 8px 0px #18181b, 0 12px 28px rgba(225, 29, 72, 0.35) !important;
 }
 
 .card-3d-green {
   background: linear-gradient(145deg, #f7fee7 0%, #ecfccb 50%, #dcfce7 100%) !important;
-  border: 2.5px solid #365314 !important;
-  box-shadow: 6px 6px 0px #365314, 0 8px 24px rgba(132, 204, 22, 0.22) !important;
+  border: 3px solid #18181b !important;
+  box-shadow: 6px 6px 0px #18181b, 0 6px 20px rgba(132, 204, 22, 0.2) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 .card-3d-green:hover {
   transform: translateY(-6px) scale(1.01);
-  border-color: #65a30d !important;
-  box-shadow: 8px 8px 0px #365314, 0 14px 32px rgba(132, 204, 22, 0.35) !important;
+  border-color: #3f6212 !important;
+  box-shadow: 8px 8px 0px #18181b, 0 12px 28px rgba(132, 204, 22, 0.35) !important;
 }
 
 .card-3d-dark {
   background: linear-gradient(145deg, #180d2b 0%, #2e1065 60%, #1e1b4b 100%) !important;
-  border: 2.5px solid #a855f7 !important;
-  box-shadow: 6px 6px 0px #000, 0 0 25px rgba(168, 85, 247, 0.35) !important;
+  border: 3px solid #18181b !important;
+  box-shadow: 6px 6px 0px #18181b, 0 0 25px rgba(168, 85, 247, 0.35) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 .card-3d-dark:hover {
   transform: translateY(-6px) scale(1.01);
   border-color: #c084fc !important;
-  box-shadow: 8px 8px 0px #000, 0 0 35px rgba(192, 132, 252, 0.5) !important;
+  box-shadow: 8px 8px 0px #18181b, 0 0 35px rgba(192, 132, 252, 0.5) !important;
 }
 
 /* Spooky Ambient Floating Glow for Blocks */

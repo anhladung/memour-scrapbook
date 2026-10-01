@@ -296,6 +296,7 @@ def products():
         'sticker': len([p for p in all_products if p['category'] == 'sticker' or p.get('type') == 'sticker']),
         'layout': len([p for p in all_products if p['category'] == 'layout' or p.get('type') == 'layout']),
         'scrapbook': len([p for p in all_products if p['category'] == 'scrapbook' or p.get('type') == 'scrapbook' or p.get('category') == 'book']),
+        'halloween': len([p for p in all_products if p.get('season') == 'halloween' or '-HW-' in p.get('sku', '') or 'halloween' in [str(t).lower() for t in p.get('themes', [])]]),
     }
     
     return render_template(

@@ -20,7 +20,11 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       
       <!-- Company Information Card -->
-      <div class="lg:col-span-5 card-3d-purple rounded-3xl p-6 sm:p-8 space-y-6">
+      <div class="lg:col-span-5 card-3d-purple rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
+        <!-- Decorative Halloween Stickers on Contact Card -->
+        <img src="/static/assets/stickers/halloween/meo-den-phu-thuy.svg" alt="Mèo đen phù thủy sticker" class="w-14 h-14 absolute -top-3 -right-3 transform rotate-12 drop-shadow-md z-10 pointer-events-none">
+        <img src="/static/assets/stickers/halloween/lo-ma-thuat-dom-dom.svg" alt="Lọ đom đóm ma thuật sticker" class="w-12 h-12 absolute -bottom-2 -right-2 transform -rotate-6 drop-shadow-md z-10 pointer-events-none">
+
         <div>
           <span class="bg-gradient-to-r from-purple-300 to-amber-300 text-stone-900 text-xs font-black px-3 py-1 rounded-full border border-black inline-block mb-2 shadow-sm">Showroom &amp; Xưởng Thủ Công</span>
           <h2 class="text-2xl font-heading font-black text-stone-900">{{ company.brand_name }}</h2>

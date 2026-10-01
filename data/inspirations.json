@@ -91,7 +91,7 @@
         {
           "sku": "STK-HW-001",
           "type": "sticker",
-          "image": "/static/assets/stickers/halloween/be-ma-kawaii-candy.svg",
+          "image": "/static/assets/stickers/halloween/ma-cute-boo.svg",
           "name": "Bé Ma Kawaii",
           "left": 90,
           "top": 110,
@@ -101,7 +101,7 @@
         {
           "sku": "STK-HW-002",
           "type": "sticker",
-          "image": "/static/assets/stickers/halloween/bi-ngo-jack-o-lantern.svg",
+          "image": "/static/assets/stickers/halloween/bi-ngo-jack.svg",
           "name": "Bí Ngô Jack-o'-lantern",
           "left": 410,
           "top": 290,

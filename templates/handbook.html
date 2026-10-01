@@ -35,6 +35,17 @@
 <section id="handbook-list" class="py-12 md:py-16 bg-[#fdfbf7]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
+    <!-- Section Header Badge with Owl Sticker -->
+    <div class="flex items-center justify-between mb-8">
+      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-300 via-amber-300 to-orange-300 border-2 border-black px-4 py-1.5 rounded-full text-xs font-heading font-black uppercase text-stone-950 shadow-neo transform -rotate-1">
+        <span>📖 BÍ QUYẾT &amp; CẨM NANG SCRAPBOOK 🎃</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-2">
+        <img src="/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg" alt="Cú mèo phù thủy sticker" class="w-10 h-10 drop-shadow-sm">
+        <span class="text-xs font-bold text-stone-600">Đọc &amp; Thực Hành Cùng Xưởng Thủ Công</span>
+      </div>
+    </div>
+
     <div class="{% if blogs|length == 1 %}max-w-2xl mx-auto{% else %}grid grid-cols-1 md:grid-cols-3 gap-8{% endif %}">
       {% for blog in blogs %}
       {% set blog_card_color = ['card-3d-purple', 'card-3d-amber', 'card-3d-rose', 'card-3d-green'][loop.index0 % 4] %}

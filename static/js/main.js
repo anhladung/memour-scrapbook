@@ -81,6 +81,7 @@ function quickAddToCart(sku, name, price, image, category = 'item') {
 document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
   initFestiveFrame();
+  initSpookySpider();
 
   const mobileToggle = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-nav-drawer');
@@ -216,5 +217,221 @@ function initFestiveFrame() {
     });
   }
 }
+
+// =========================================================
+// INTERACTIVE HALLOWEEN 2026 SPIDER ENGINE
+// =========================================================
+function initSpookySpider() {
+  const container = document.getElementById('spooky-spider-container');
+  const actor = document.getElementById('spooky-spider-actor');
+  const toggleBtn = document.getElementById('spider-toggle-btn');
+  const toggleText = document.getElementById('spider-toggle-text');
+  const silkLine = document.getElementById('spider-silk-line');
+  const bubble = document.getElementById('spider-speech-bubble');
+  const bubbleText = document.getElementById('spider-speech-text');
+
+  if (!container || !actor || !toggleBtn) return;
+
+  const quotes = [
+    "Boo! 👻 Tớ là Nhện Memour 2026 nè!",
+    "Bắt được tớ rồi! +10 điểm khéo tay DIY 🍬",
+    "Trick or Treat! Nhớ dán sticker đẹp nha! 🎃",
+    "Hù! Chúc bạn có mùa Halloween siêu ma mị! ✨",
+    "Bé nhện đang đi tìm kẹo bắp Candy Corn đây 🍭",
+    "Sáng tạo sổ scrapbook cùng Memour vui quá! 📖✨",
+    "Chào bạn! Cùng dán sticker ma quái nào! 🕸️"
+  ];
+
+  let active = false;
+  let posX = Math.max(40, window.innerWidth * 0.2);
+  let posY = -80;
+  let speedX = 2.0;
+  let isDropping = true;
+  let isClimbing = false;
+  let isPaused = false;
+  let isJumping = false;
+  let pauseTimer = null;
+  let bubbleTimer = null;
+  let animFrameId = null;
+
+  function getGroundY() {
+    return Math.max(120, window.innerHeight - 105);
+  }
+
+  function showBubble(text, duration = 2800) {
+    if (!bubble || !bubbleText) return;
+    bubbleText.innerText = text;
+    bubble.classList.add('active-bubble');
+    clearTimeout(bubbleTimer);
+    bubbleTimer = setTimeout(() => {
+      bubble.classList.remove('active-bubble');
+    }, duration);
+  }
+
+  function spawnCandySparkles(x, y) {
+    const emojis = ['🍬', '✨', '🍭', '⭐', '🎃'];
+    for (let i = 0; i < 6; i++) {
+      const p = document.createElement('div');
+      p.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      p.style.position = 'fixed';
+      p.style.left = (x + 20) + 'px';
+      p.style.top = (y + 10) + 'px';
+      p.style.fontSize = (14 + Math.random() * 8) + 'px';
+      p.style.pointerEvents = 'none';
+      p.style.zIndex = '1004';
+      p.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+      document.body.appendChild(p);
+
+      const angle = (Math.PI * 2 * i) / 6;
+      const dist = 30 + Math.random() * 40;
+      setTimeout(() => {
+        p.style.transform = `translate(${Math.cos(angle) * dist}px, ${Math.sin(angle) * dist - 30}px) scale(0.6)`;
+        p.style.opacity = '0';
+      }, 20);
+
+      setTimeout(() => {
+        if (p.parentNode) p.parentNode.removeChild(p);
+      }, 850);
+    }
+  }
+
+  function render() {
+    if (!active && !isClimbing) return;
+
+    const groundY = getGroundY();
+
+    if (isDropping) {
+      posY += 5;
+      if (silkLine) {
+        silkLine.setAttribute('x1', posX + 36);
+        silkLine.setAttribute('y1', 0);
+        silkLine.setAttribute('x2', posX + 36);
+        silkLine.setAttribute('y2', posY + 16);
+      }
+      if (posY >= groundY) {
+        posY = groundY;
+        isDropping = false;
+        actor.classList.add('spider-walking');
+        showBubble("Boo! Bé nhện 2026 đã hạ cánh! 🕷️✨", 2200);
+        if (silkLine) {
+          silkLine.setAttribute('y2', 0);
+        }
+      }
+    } else if (isClimbing) {
+      posY -= 8;
+      if (silkLine) {
+        silkLine.setAttribute('x1', posX + 36);
+        silkLine.setAttribute('y1', 0);
+        silkLine.setAttribute('x2', posX + 36);
+        silkLine.setAttribute('y2', posY + 16);
+      }
+      if (posY <= -90) {
+        isClimbing = false;
+        container.classList.add('hidden-spider');
+        cancelAnimationFrame(animFrameId);
+        return;
+      }
+    } else if (!isPaused && !isJumping) {
+      // Normal horizontal crawling
+      posX += speedX;
+      const minX = 20;
+      const maxX = Math.max(minX + 80, window.innerWidth - 90);
+
+      if (posX >= maxX) {
+        posX = maxX;
+        speedX = -Math.abs(speedX);
+        triggerPause("👀 Hết đường rồi, quay lại thôi!");
+      } else if (posX <= minX) {
+        posX = minX;
+        speedX = Math.abs(speedX);
+        triggerPause("🍬 Đi dạo vòng nữa nào!");
+      }
+
+      actor.style.transform = speedX > 0 ? 'scaleX(1)' : 'scaleX(-1)';
+    }
+
+    actor.style.left = posX + 'px';
+    actor.style.top = posY + 'px';
+
+    animFrameId = requestAnimationFrame(render);
+  }
+
+  function triggerPause(pauseMsg = null) {
+    isPaused = true;
+    actor.classList.remove('spider-walking');
+    if (pauseMsg && Math.random() > 0.4) showBubble(pauseMsg, 1600);
+    clearTimeout(pauseTimer);
+    pauseTimer = setTimeout(() => {
+      isPaused = false;
+      if (active) actor.classList.add('spider-walking');
+    }, 1000 + Math.random() * 800);
+  }
+
+  // Click on spider to interact!
+  actor.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isJumping) return;
+    isJumping = true;
+    actor.classList.remove('spider-walking');
+    actor.classList.add('spider-jumping');
+
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    showBubble(randomQuote, 3000);
+    spawnCandySparkles(posX, posY);
+
+    setTimeout(() => {
+      actor.classList.remove('spider-jumping');
+      isJumping = false;
+      if (active && !isPaused) actor.classList.add('spider-walking');
+    }, 700);
+  });
+
+  // Toggle button click
+  function setSpiderState(toActive) {
+    active = toActive;
+    localStorage.setItem('memour_spider_active', active);
+
+    if (active) {
+      container.classList.remove('hidden-spider');
+      isClimbing = false;
+      isDropping = true;
+      posY = -80;
+      posX = Math.max(30, Math.min(window.innerWidth - 100, window.innerWidth * 0.25));
+      actor.classList.remove('spider-jumping');
+      actor.classList.remove('spider-walking');
+      if (toggleText) toggleText.innerText = 'Bắt Nhện Về Tổ';
+      showToast('🕷️ Bé nhện Halloween 2026 đang trượt xuống dạo chơi! Nhấp vào bé nhện để nhận kẹo nhé!', 'success');
+      cancelAnimationFrame(animFrameId);
+      animFrameId = requestAnimationFrame(render);
+    } else {
+      isClimbing = true;
+      actor.classList.remove('spider-walking');
+      showBubble("Bye bye! Hẹn gặp lại nhé! 👋🕸️", 1800);
+      if (toggleText) toggleText.innerText = 'Thả Nhện 2026';
+      showToast('🕷️ Bé nhện đã leo lên trần nhà ngủ rồi!', 'info');
+    }
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    setSpiderState(!active);
+  });
+
+  // Auto-launch spider on load if previously enabled (or enable by default for Halloween vibe)
+  const savedState = localStorage.getItem('memour_spider_active');
+  if (savedState === 'true' || savedState === null) {
+    setSpiderState(true);
+  } else {
+    if (toggleText) toggleText.innerText = 'Thả Nhện 2026';
+  }
+
+  // Handle window resize gracefully
+  window.addEventListener('resize', () => {
+    if (!isDropping && !isClimbing) {
+      posY = getGroundY();
+      posX = Math.max(20, Math.min(window.innerWidth - 90, posX));
+    }
+  });
+}
+
 
 

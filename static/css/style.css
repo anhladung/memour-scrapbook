@@ -627,31 +627,378 @@ body.lightbox-open { overflow: hidden; }
   box-shadow: 0 0 25px rgba(147, 51, 234, 0.25), 0 0 50px rgba(234, 88, 12, 0.15);
 }
 
-/* Responsive adjustments for Halloween frame on mobile */
+/* =========================================================
+   HALLOWEEN 2026 FRAME ENHANCEMENTS: GARLAND & SIDE RAILS
+   ========================================================= */
+.halloween-garland-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: clamp(60px, 7.5vw, 110px);
+  object-fit: fill;
+  pointer-events: none;
+  z-index: 999;
+  filter: drop-shadow(0 6px 14px rgba(124, 58, 237, 0.45));
+  animation: garlandSway 6s ease-in-out infinite alternate;
+  transform-origin: top center;
+}
+
+@keyframes garlandSway {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(2px) rotate(0.3deg); }
+  100% { transform: translateY(0) rotate(-0.3deg); }
+}
+
+.halloween-side-rail {
+  position: absolute;
+  top: 90px;
+  bottom: 80px;
+  width: 16px;
+  pointer-events: none;
+  z-index: 997;
+  opacity: 0.85;
+}
+
+.halloween-rail-left {
+  left: 6px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #a855f7 0,
+    #a855f7 10px,
+    transparent 10px,
+    transparent 20px,
+    #f97316 20px,
+    #f97316 30px,
+    transparent 30px,
+    transparent 40px
+  );
+  width: 3px;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6), 0 0 16px rgba(249, 115, 22, 0.4);
+}
+
+.halloween-rail-right {
+  right: 6px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #f97316 0,
+    #f97316 10px,
+    transparent 10px,
+    transparent 20px,
+    #a855f7 20px,
+    #a855f7 30px,
+    transparent 30px,
+    transparent 40px
+  );
+  width: 3px;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.6), 0 0 16px rgba(168, 85, 247, 0.4);
+}
+
+/* =========================================================
+   FESTIVE DOCK & SPIDER TOGGLE BUTTONS
+   ========================================================= */
+.festive-floating-dock {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.festive-toggle-btn {
+  background: linear-gradient(135deg, #7c3aed 0%, #ea580c 55%, #f59e0b 100%);
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 12px;
+  box-shadow: 4px 4px 0px #000;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.festive-toggle-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+  background: linear-gradient(135deg, #8b5cf6 0%, #f97316 55%, #fbbf24 100%);
+}
+
+.festive-toggle-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+.spider-toggle-btn {
+  background: linear-gradient(135deg, #18181b 0%, #312e81 60%, #4c1d95 100%);
+  color: #fde047;
+  border: 2px solid #000;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 12px;
+  box-shadow: 4px 4px 0px #000;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.spider-toggle-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+  color: #ffffff;
+  background: linear-gradient(135deg, #27272a 0%, #4338ca 60%, #6d28d9 100%);
+}
+
+.spider-toggle-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* =========================================================
+   INTERACTIVE CRAWLING SPIDER ENGINE (HALLOWEEN 2026)
+   ========================================================= */
+.spooky-spider-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1002;
+  overflow: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.spooky-spider-container.hidden-spider {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spider-silk-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.spooky-spider-actor {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, left, top;
+}
+
+.spooky-spider-actor:hover {
+  filter: drop-shadow(0 0 14px rgba(249, 115, 22, 0.8)) drop-shadow(0 0 24px rgba(168, 85, 247, 0.6));
+}
+
+.spider-speech-bubble {
+  position: absolute;
+  bottom: 78px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: #ffffff;
+  color: #18181b;
+  border: 2px solid #000000;
+  padding: 5px 12px;
+  border-radius: 14px;
+  box-shadow: 3px 3px 0px #000000;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 11px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 1003;
+}
+
+.spider-speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #000000;
+}
+
+.spider-speech-bubble.active-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Spider Walking Leg Cycle */
+.spider-walking .spider-leg-L1,
+.spider-walking .spider-leg-L3,
+.spider-walking .spider-leg-R2,
+.spider-walking .spider-leg-R4 {
+  animation: spiderLegWalkA 0.3s ease-in-out infinite alternate;
+  transform-origin: 35px 35px;
+}
+
+.spider-walking .spider-leg-L2,
+.spider-walking .spider-leg-L4,
+.spider-walking .spider-leg-R1,
+.spider-walking .spider-leg-R3 {
+  animation: spiderLegWalkB 0.3s ease-in-out infinite alternate;
+  transform-origin: 35px 35px;
+}
+
+@keyframes spiderLegWalkA {
+  0% { transform: rotate(-10deg); }
+  100% { transform: rotate(12deg); }
+}
+
+@keyframes spiderLegWalkB {
+  0% { transform: rotate(12deg); }
+  100% { transform: rotate(-10deg); }
+}
+
+/* Spider Jump and Spin */
+.spider-jumping {
+  animation: spiderJumpSpin 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes spiderJumpSpin {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-45px) rotate(180deg) scale(1.25); }
+  100% { transform: translateY(0) rotate(360deg) scale(1); }
+}
+
+/* =========================================================
+   AMBIENT SCRAPBOOK STICKERS BACKGROUND LAYER
+   ========================================================= */
+.memour-ambient-stickers {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.ambient-sticker-item {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.12)) drop-shadow(0 2px 5px rgba(0, 0, 0, 0.08));
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.ambient-sticker-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ambient-washi-strip {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 55px;
+  height: 15px;
+  background: rgba(251, 146, 60, 0.85);
+  border: 1px dashed rgba(194, 65, 12, 0.6);
+  opacity: 0.9;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  pointer-events: none;
+}
+
+.washi-purple {
+  background: rgba(192, 132, 252, 0.85);
+  border-color: rgba(126, 34, 206, 0.6);
+}
+.washi-lime {
+  background: rgba(163, 230, 53, 0.85);
+  border-color: rgba(77, 124, 15, 0.6);
+}
+.washi-pink {
+  background: rgba(244, 114, 182, 0.85);
+  border-color: rgba(219, 39, 119, 0.6);
+}
+
+@keyframes floatAmbientSticker {
+  0% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  100% { transform: translateY(-8px) rotate(calc(var(--rot, 0deg) + 1.5deg)); }
+}
+
+.ambient-float-1 { animation: floatAmbientSticker 5s ease-in-out infinite alternate; }
+.ambient-float-2 { animation: floatAmbientSticker 6.5s ease-in-out infinite alternate 0.5s; }
+.ambient-float-3 { animation: floatAmbientSticker 5.8s ease-in-out infinite alternate 1s; }
+
+/* Responsive adjustments for Halloween frame & mobile dock */
+@media (max-width: 1024px) {
+  .memour-ambient-stickers {
+    display: none; /* Hide background gutter stickers on small screens so layout remains uncluttered */
+  }
+}
+
 @media (max-width: 640px) {
   .halloween-top-left,
   .trung-thu-top-left {
-    width: 105px;
+    width: 100px;
     opacity: 0.92;
   }
   .halloween-top-right,
   .trung-thu-top-right {
-    width: 100px;
+    width: 95px;
     opacity: 0.92;
   }
   .halloween-bottom-left,
   .trung-thu-bottom-left {
-    width: 95px;
+    width: 90px;
     opacity: 0.9;
   }
   .halloween-bottom-right,
   .trung-thu-bottom-right {
-    width: 100px;
+    width: 95px;
     opacity: 0.9;
   }
-  .festive-toggle-btn {
+  .halloween-garland-top {
+    height: 50px;
+  }
+  .halloween-side-rail {
+    display: none;
+  }
+  .festive-floating-dock {
     bottom: 12px;
     left: 12px;
+    gap: 6px;
+    flex-direction: column;
+  }
+  .festive-toggle-btn,
+  .spider-toggle-btn {
     padding: 6px 12px;
     font-size: 11px;
   }

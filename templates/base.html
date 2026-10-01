@@ -97,15 +97,21 @@
 
   <!-- ================= HALLOWEEN SCRAPBOOK FESTIVE DECORATIVE FRAME ================= -->
   <div id="halloween-frame-overlay" class="halloween-overlay halloween-glow" aria-hidden="true">
-    <!-- Góc trên trái: Jack-o'-lantern đeo kính, washi tape, dơi origami & nhện len đung đưa -->
+    <!-- Dây cờ đuôi nheo Halloween 2026 đung đưa ở mép trên màn hình -->
+    <img src="/static/assets/decorations/halloween_top_garland.svg" 
+         alt="Dây cờ trang trí Halloween 2026 Scrapbook" 
+         class="halloween-garland-top"
+         loading="eager" decoding="async">
+
+    <!-- Góc trên trái: Jack-o'-lantern đeo kính, washi tape, dơi origami, nhện & huy hiệu 2026 Spooky -->
     <img src="/static/assets/decorations/halloween_top_left.svg" 
-         alt="Trang trí Halloween Scrapbook - Bí ngô & Washi tape" 
+         alt="Trang trí Halloween Scrapbook - Bí ngô & Washi tape 2026" 
          class="halloween-corner halloween-top-left"
          loading="eager" decoding="async">
     
-    <!-- Góc trên phải: Hồn ma Kawaii cầm kẹo mút cầu vồng, trăng khâu chỉ & thẻ Boo -->
+    <!-- Góc trên phải: Hồn ma Kawaii cầm kẹo mút cầu vồng, trăng khâu chỉ & thẻ Boo 2026 -->
     <img src="/static/assets/decorations/halloween_top_right.svg" 
-         alt="Trang trí Halloween Scrapbook - Hồn ma & Kẹo mút" 
+         alt="Trang trí Halloween Scrapbook - Hồn ma & Kẹo mút Boo 2026" 
          class="halloween-corner halloween-top-right"
          loading="eager" decoding="async">
     
@@ -115,19 +121,191 @@
          class="halloween-corner halloween-bottom-left"
          loading="eager" decoding="async">
     
-    <!-- Góc dưới phải: Góc sổ scrapbook, thẻ luggage tag kraft, chổi phù thủy & kẹo gói -->
+    <!-- Góc dưới phải: Góc sổ scrapbook, thẻ luggage tag kraft, chổi phù thủy & huy hiệu Memour 2026 -->
     <img src="/static/assets/decorations/halloween_bottom_right.svg" 
-         alt="Trang trí Halloween Scrapbook - Sổ DIY & Chổi phù thủy" 
+         alt="Trang trí Halloween Scrapbook - Sổ DIY & Huy hiệu Memour 2026" 
          class="halloween-corner halloween-bottom-right"
          loading="eager" decoding="async">
+
+    <!-- Đường chỉ khâu dạ quang chạy dọc hai bên mép màn hình -->
+    <div class="halloween-side-rail halloween-rail-left"></div>
+    <div class="halloween-side-rail halloween-rail-right"></div>
   </div>
 
-  <!-- Festive Floating Control Toggle (Bottom-Left) -->
-  <button id="festive-toggle-btn" class="festive-toggle-btn group" title="Bật / Tắt không khí Halloween Scrapbook" aria-label="Halloween 2026">
-    <span class="text-base group-hover:scale-125 transition-transform inline-block">🎃</span>
-    <span id="festive-toggle-text">Halloween 2026</span>
-    <span class="w-2.5 h-2.5 rounded-full bg-lime-400 animate-pulse border border-black shadow-sm"></span>
-  </button>
+  <!-- ================= INTERACTIVE CRAWLING SPIDER (HALLOWEEN 2026) ================= -->
+  <div id="spooky-spider-container" class="spooky-spider-container hidden-spider" aria-hidden="true">
+    <!-- Sợi tơ nhện bạc sáng lấp lánh khi nhện đu từ trần xuống -->
+    <svg id="spider-silk-svg" class="spider-silk-svg">
+      <line id="spider-silk-line" x1="0" y1="0" x2="0" y2="0" stroke="rgba(244, 114, 182, 0.8)" stroke-width="2" stroke-dasharray="3,2"/>
+    </svg>
+
+    <!-- Nhân vật Bé Nhện Halloween Tinh Nghịch & Tương tác -->
+    <div id="spooky-spider-actor" class="spooky-spider-actor" title="Nhấp vào bé nhện để tương tác và nhận kẹo!">
+      <!-- Bong bóng thoại của Bé Nhện -->
+      <div id="spider-speech-bubble" class="spider-speech-bubble">
+        <span id="spider-speech-text">Boo! 🍬</span>
+      </div>
+
+      <!-- Đồ họa Vector Bé Nhện Kawaii 8 Chân Cử Động -->
+      <svg class="spider-svg" viewBox="0 0 100 100" width="70" height="70" fill="none">
+        <defs>
+          <filter id="spider-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#0f051d" flood-opacity="0.45"/>
+          </filter>
+        </defs>
+
+        <!-- 8 CHÂN NHỆN CỬ ĐỘNG BÒ QUA LẠI -->
+        <g stroke="#2e1065" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#spider-shadow)">
+          <!-- Chân bên trái -->
+          <path class="spider-leg-L1" d="M 40 42 Q 22 25 12 36 L 6 48" stroke="#3b0764"/>
+          <path class="spider-leg-L2" d="M 38 48 Q 18 42 10 54 L 4 66" stroke="#3b0764"/>
+          <path class="spider-leg-L3" d="M 38 54 Q 18 60 12 72 L 8 82" stroke="#3b0764"/>
+          <path class="spider-leg-L4" d="M 42 60 Q 26 75 20 86 L 16 94" stroke="#3b0764"/>
+
+          <!-- Chân bên phải -->
+          <path class="spider-leg-R1" d="M 60 42 Q 78 25 88 36 L 94 48" stroke="#3b0764"/>
+          <path class="spider-leg-R2" d="M 62 48 Q 82 42 90 54 L 96 66" stroke="#3b0764"/>
+          <path class="spider-leg-R3" d="M 62 54 Q 82 60 88 72 L 92 82" stroke="#3b0764"/>
+          <path class="spider-leg-R4" d="M 58 60 Q 74 75 80 86 L 84 94" stroke="#3b0764"/>
+        </g>
+
+        <!-- THÂN BỤNG BÉ NHỆN (Tròn Đầy, Chấm Bi Neon & Đường May Thủ Công) -->
+        <g filter="url(#spider-shadow)">
+          <ellipse cx="50" cy="56" rx="22" ry="20" fill="#ffffff" stroke="#ffffff" stroke-width="4"/>
+          <ellipse cx="50" cy="56" rx="20" ry="18" fill="#3b0764"/>
+          <ellipse cx="50" cy="54" rx="17" ry="14" fill="#581c87"/>
+          <ellipse cx="50" cy="56" rx="14" ry="12" fill="none" stroke="#facc15" stroke-width="1.2" stroke-dasharray="3,2"/>
+          <!-- Chấm bi neon kẹo bắp -->
+          <circle cx="43" cy="52" r="2.5" fill="#f97316"/>
+          <circle cx="57" cy="52" r="2.5" fill="#f97316"/>
+          <circle cx="50" cy="62" r="3" fill="#facc15"/>
+          <circle cx="38" cy="60" r="1.8" fill="#a3e635"/>
+          <circle cx="62" cy="60" r="1.8" fill="#a3e635"/>
+        </g>
+
+        <!-- ĐẦU BÉ NHỆN & MẮT MANGA KAWAII -->
+        <g filter="url(#spider-shadow)">
+          <circle cx="50" cy="38" r="14" fill="#2e1065" stroke="#ffffff" stroke-width="3"/>
+          <!-- Mắt to long lanh -->
+          <circle cx="44" cy="37" r="4.5" fill="#ffffff"/>
+          <circle cx="44" cy="37" r="3.2" fill="#09090b"/>
+          <circle cx="45.5" cy="35.5" r="1.2" fill="#ffffff"/>
+          <circle cx="43" cy="38.5" r="0.7" fill="#ffffff"/>
+
+          <circle cx="56" cy="37" r="4.5" fill="#ffffff"/>
+          <circle cx="56" cy="37" r="3.2" fill="#09090b"/>
+          <circle cx="57.5" cy="35.5" r="1.2" fill="#ffffff"/>
+          <circle cx="55" cy="38.5" r="0.7" fill="#ffffff"/>
+
+          <!-- Má hồng và miệng cười răng nanh đáng yêu -->
+          <circle cx="39" cy="42" r="2.2" fill="#f43f5e" opacity="0.85"/>
+          <circle cx="61" cy="42" r="2.2" fill="#f43f5e" opacity="0.85"/>
+          <path d="M 47 43 Q 50 46 53 43" stroke="#fef08a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <polygon points="46.5,43 48,46 49.5,43" fill="#ffffff"/>
+          <polygon points="50.5,43 52,46 53.5,43" fill="#ffffff"/>
+        </g>
+
+        <!-- MŨ PHÙ THỦY MINI ĐỘI TRÊN ĐẦU NHỆN -->
+        <g transform="translate(50, 24) rotate(-8) translate(-50, -24)" filter="url(#spider-shadow)">
+          <ellipse cx="50" cy="28" rx="16" ry="4.5" fill="#7c3aed" stroke="#18181b" stroke-width="1.5"/>
+          <path d="M 39 27 Q 44 14 47 8 Q 50 6 54 8 L 61 27 Z" fill="#7c3aed" stroke="#18181b" stroke-width="1.5"/>
+          <path d="M 40 26 Q 50 28 60 26 L 60.5 24 Q 50 26 39.5 24 Z" fill="#ea580c"/>
+          <rect x="47" y="23" width="6" height="5" rx="1" fill="#facc15" stroke="#78350f" stroke-width="0.8"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================= BỘ ĐIỀU KHIỂN NỔI (FESTIVE FLOATING DOCK) ================= -->
+  <div class="festive-floating-dock">
+    <!-- Nút Bật / Tắt Khung Halloween 2026 -->
+    <button id="festive-toggle-btn" class="festive-toggle-btn group" title="Bật / Tắt Khung Halloween 2026 Scrapbook" aria-label="Halloween 2026">
+      <span class="text-base group-hover:scale-125 transition-transform inline-block">🎃</span>
+      <span id="festive-toggle-text">Halloween 2026</span>
+      <span class="w-2.5 h-2.5 rounded-full bg-lime-400 animate-pulse border border-black shadow-sm"></span>
+    </button>
+
+    <!-- Nút Thả / Bắt Bé Nhện Halloween Đi Qua Đi Lại Trên Màn Hình -->
+    <button id="spider-toggle-btn" class="spider-toggle-btn group" title="Thả Bé Nhện Halloween dạo chơi qua lại trên màn hình!" aria-label="Nhện Halloween">
+      <span class="text-base group-hover:rotate-45 transition-transform inline-block">🕷️</span>
+      <span id="spider-toggle-text">Thả Nhện 2026</span>
+      <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping border border-black shadow-sm"></span>
+    </button>
+  </div>
+
+  <!-- ================= MEMOUR AMBIENT SCRAPBOOK STICKERS BACKGROUND LAYER ================= -->
+  <div class="memour-ambient-stickers" aria-hidden="true">
+    <!-- Cụm trên trái: Bé ma cầm kẹo trick-or-treat -->
+    <div class="ambient-sticker-item ambient-float-1" style="top: 140px; left: 1.5vw; width: 85px; --rot: -12deg;">
+      <div class="ambient-washi-strip washi-purple"></div>
+      <img src="/static/assets/stickers/halloween/ma-cute-boo.svg" alt="Bé ma kẹo mút sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm trên phải: Mặt trăng khâu chỉ & mũ nhỏ -->
+    <div class="ambient-sticker-item ambient-float-2" style="top: 160px; right: 1.5vw; width: 90px; --rot: 10deg;">
+      <div class="ambient-washi-strip"></div>
+      <img src="/static/assets/stickers/halloween/mat-trang-khau-chi.svg" alt="Mặt trăng khâu chỉ sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm giữa trên trái: Kẹo bắp Candy Corn -->
+    <div class="ambient-sticker-item ambient-float-3" style="top: 520px; left: 2vw; width: 75px; --rot: 15deg;">
+      <div class="ambient-washi-strip washi-lime"></div>
+      <img src="/static/assets/stickers/halloween/keo-bap-candy-corn.svg" alt="Kẹo bắp sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm giữa trên phải: Mũ phù thủy sao vàng -->
+    <div class="ambient-sticker-item ambient-float-1" style="top: 550px; right: 2vw; width: 85px; --rot: -14deg;">
+      <div class="ambient-washi-strip washi-pink"></div>
+      <img src="/static/assets/stickers/halloween/mu-phu-thuy-scrapbook.svg" alt="Mũ phù thủy sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm trung tâm trái: Vạc phù thủy nước slime neon -->
+    <div class="ambient-sticker-item ambient-float-2" style="top: 960px; left: 1.2vw; width: 95px; --rot: -8deg;">
+      <div class="ambient-washi-strip washi-lime"></div>
+      <img src="/static/assets/stickers/halloween/vac-nuoc-phep-slime.svg" alt="Vạc phù thủy nước slime sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm trung tâm phải: Lá bài tarot The Moon ánh kim -->
+    <div class="ambient-sticker-item ambient-float-3" style="top: 1000px; right: 1.2vw; width: 85px; --rot: 12deg;">
+      <div class="ambient-washi-strip washi-purple"></div>
+      <img src="/static/assets/stickers/halloween/la-bai-tarot-halloween.svg" alt="Lá bài tarot The Moon sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm giữa dưới trái: Bàn tay zombie Peace sơn móng tím -->
+    <div class="ambient-sticker-item ambient-float-1" style="top: 1480px; left: 2vw; width: 80px; --rot: -15deg;">
+      <div class="ambient-washi-strip"></div>
+      <img src="/static/assets/stickers/halloween/ban-tay-zombie-cute.svg" alt="Bàn tay zombie sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm giữa dưới phải: Quả cầu pha lê chiêm tinh -->
+    <div class="ambient-sticker-item ambient-float-2" style="top: 1520px; right: 2vw; width: 85px; --rot: 8deg;">
+      <div class="ambient-washi-strip washi-purple"></div>
+      <img src="/static/assets/stickers/halloween/qua-cau-pha-le-ma.svg" alt="Quả cầu pha lê sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm dưới trái: Hộp sữa Ghost Milk Y2K -->
+    <div class="ambient-sticker-item ambient-float-3" style="top: 2050px; left: 1.5vw; width: 80px; --rot: 10deg;">
+      <div class="ambient-washi-strip washi-pink"></div>
+      <img src="/static/assets/stickers/halloween/hop-sua-ma-quai-ghost-milk.svg" alt="Hộp sữa Ghost Milk sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm dưới phải: Băng dính Washi Tape 'Spooky Vibes' -->
+    <div class="ambient-sticker-item ambient-float-1" style="top: 2100px; right: 1.5vw; width: 110px; --rot: -12deg;">
+      <img src="/static/assets/stickers/halloween/nhan-dan-spooky-vibes.svg" alt="Washi tape Spooky Vibes sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm sát đáy trái: Chổi phù thủy bay nơ hologram -->
+    <div class="ambient-sticker-item ambient-float-2" style="top: 2650px; left: 2vw; width: 90px; --rot: -18deg;">
+      <div class="ambient-washi-strip washi-lime"></div>
+      <img src="/static/assets/stickers/halloween/choi-phu-thuy-bay.svg" alt="Chổi phù thủy sticker" loading="lazy">
+    </div>
+
+    <!-- Cụm sát đáy phải: Bí ngô Jack-o'-lantern phát sáng -->
+    <div class="ambient-sticker-item ambient-float-3" style="top: 2700px; right: 2vw; width: 85px; --rot: 14deg;">
+      <div class="ambient-washi-strip"></div>
+      <img src="/static/assets/stickers/halloween/bi-ngo-jack.svg" alt="Bí ngô Jack sticker" loading="lazy">
+    </div>
+  </div>
 
   <!-- Top Festive Announcement Bar (Vibrant Purple Multi-Color Washi Tape Style) -->
   <div class="halloween-announcement-bar text-xs sm:text-sm font-heading font-extrabold py-2 px-3 text-center border-b-2 border-black flex items-center justify-center gap-2 sm:gap-3 relative z-30 shadow-md">

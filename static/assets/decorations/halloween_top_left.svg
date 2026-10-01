@@ -158,8 +158,10 @@
     <path d="M 8 8 L 16 8 L 19 16 L 5 16 Z" fill="#f97316"/>
     <path d="M 5 16 L 19 16 C 16 22 8 22 5 16 Z" fill="#facc15"/>
   </g>
-  <!-- Sparkle Stars -->
-  <path d="M 215 75 Q 215 85 225 85 Q 215 85 215 95 Q 215 85 205 85 Q 215 85 215 75 Z" fill="#facc15"/>
-  <path d="M 38 140 Q 38 147 45 147 Q 38 147 38 154 Q 38 147 31 147 Q 38 147 38 140 Z" fill="#a3e635"/>
-  <circle cx="140" cy="45" r="2.5" fill="#f43f5e"/>
+  <!-- 8. HALLOWEEN 2026 NEO-BRUTALISM BADGE -->
+  <g transform="translate(145, 120) rotate(10)" filter="url(#sticker-shadow)">
+    <rect x="0" y="0" width="135" height="34" rx="17" fill="#facc15" stroke="#18181b" stroke-width="2.5"/>
+    <rect x="3" y="3" width="129" height="28" rx="14" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="3,2"/>
+    <text x="67" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="12" fill="#18181b" text-anchor="middle" letter-spacing="1">✦ 2026 SPOOKY ✦</text>
+  </g>
 </svg>

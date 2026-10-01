@@ -63,3 +63,6 @@ chuyển 308 về domain chính khi còn hoạt động.
 - API thêm/xóa sticker lúc runtime bị tắt trên Cloudflare vì asset deploy là chỉ
   đọc. Hãy sửa asset trong Git rồi deploy lại.
 - API phân tích sticker bằng OpenCV chỉ dành cho môi trường quản trị/local.
+
+
+GitHub main branch is connected to Cloudflare Workers Builds.

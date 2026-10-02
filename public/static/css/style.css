@@ -802,6 +802,10 @@ body.lightbox-open { overflow: hidden; }
   pointer-events: none;
 }
 
+#spider-silk-line {
+  transition: opacity 0.2s ease-out;
+}
+
 .spooky-spider-actor {
   position: absolute;
   width: 72px;

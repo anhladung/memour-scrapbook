@@ -264,6 +264,28 @@ function initSpookySpider() {
 
   if (!container || !actor || !toggleBtn) return;
 
+  function hideSilkLine() {
+    if (silkLine) {
+      silkLine.style.opacity = '0';
+      silkLine.style.visibility = 'hidden';
+      silkLine.setAttribute('x1', '0');
+      silkLine.setAttribute('y1', '0');
+      silkLine.setAttribute('x2', '0');
+      silkLine.setAttribute('y2', '0');
+    }
+  }
+
+  function showSilkLine(x, y) {
+    if (silkLine) {
+      silkLine.style.opacity = '1';
+      silkLine.style.visibility = 'visible';
+      silkLine.setAttribute('x1', x + 36);
+      silkLine.setAttribute('y1', 0);
+      silkLine.setAttribute('x2', x + 36);
+      silkLine.setAttribute('y2', y + 16);
+    }
+  }
+
   const quotes = [
     "“MUMU không giăng tơ bắt mồi – MUMU giăng tơ giữ kỷ niệm.” 🕸️💖",
     "Boo! 👻 Tớ là MUMU the Spooky Spider - Người giữ ký ức đêm Halloween nè!",
@@ -352,31 +374,20 @@ function initSpookySpider() {
 
     if (isDropping) {
       posY += 5;
-      if (silkLine) {
-        silkLine.setAttribute('x1', posX + 36);
-        silkLine.setAttribute('y1', 0);
-        silkLine.setAttribute('x2', posX + 36);
-        silkLine.setAttribute('y2', posY + 16);
-      }
+      showSilkLine(posX, posY);
       if (posY >= groundY) {
         posY = groundY;
         isDropping = false;
         actor.classList.add('spider-walking');
         showBubble("Boo! Tớ là MUMU - Người giữ ký ức đêm Halloween! 🕷️✨", 2500);
-        if (silkLine) {
-          silkLine.setAttribute('y2', 0);
-        }
+        hideSilkLine();
       }
     } else if (isClimbing) {
       posY -= 8;
-      if (silkLine) {
-        silkLine.setAttribute('x1', posX + 36);
-        silkLine.setAttribute('y1', 0);
-        silkLine.setAttribute('x2', posX + 36);
-        silkLine.setAttribute('y2', posY + 16);
-      }
+      showSilkLine(posX, posY);
       if (posY <= -90) {
         isClimbing = false;
+        hideSilkLine();
         container.classList.add('hidden-spider');
         cancelAnimationFrame(animFrameId);
         return;
@@ -495,6 +506,7 @@ function initSpookySpider() {
     clearTimeout(holdTimer);
     clearTimeout(holdWarningTimer);
     actor.classList.remove('is-dragging', 'spider-charge-vibrate');
+    hideSilkLine();
 
     const scareOverlay = document.getElementById('mumu-giant-scare-overlay');
     if (!scareOverlay) return;
@@ -515,10 +527,12 @@ function initSpookySpider() {
     if (!scareOverlay || scareOverlay.classList.contains('hidden')) return;
 
     scareOverlay.classList.add('scare-exit');
+    hideSilkLine();
     setTimeout(() => {
       scareOverlay.classList.add('hidden');
       scareOverlay.classList.remove('scare-exit');
       isScareActive = false;
+      hideSilkLine();
 
       if (jumpWrapper) {
         jumpWrapper.classList.remove('spider-jumping');
@@ -531,6 +545,7 @@ function initSpookySpider() {
       setTimeout(() => {
         if (jumpWrapper) jumpWrapper.classList.remove('spider-jumping');
         if (active && !isPaused) actor.classList.add('spider-walking');
+        hideSilkLine();
       }, 700);
     }, 350);
   };
@@ -594,16 +609,13 @@ function initSpookySpider() {
         flipWrapper.style.transform = dx >= 0 ? 'scaleX(1)' : 'scaleX(-1)';
       }
 
-      if (silkLine) {
-        silkLine.setAttribute('x1', posX + 36);
-        silkLine.setAttribute('y1', 0);
-        silkLine.setAttribute('x2', posX + 36);
-        silkLine.setAttribute('y2', posY + 16);
-      }
+      showSilkLine(posX, posY);
     }
   }
 
   function onDragEnd(e) {
+    hideSilkLine();
+
     if (isScareActive) return;
 
     if (isHolding) {
@@ -647,6 +659,10 @@ function initSpookySpider() {
   window.addEventListener('touchmove', onDragMove, { passive: false });
   window.addEventListener('mouseup', onDragEnd);
   window.addEventListener('touchend', onDragEnd);
+  window.addEventListener('touchcancel', onDragEnd);
+  window.addEventListener('mouseleave', () => {
+    if (isHolding || isDragging) onDragEnd();
+  });
   actor.addEventListener('click', (e) => e.stopPropagation());
 
   // Toggle button click

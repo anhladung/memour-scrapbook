@@ -117,6 +117,8 @@ function initStudioCanvas() {
     if (typeof syncTo3DViewer === 'function') setTimeout(syncTo3DViewer, 100);
   }
   setTimeout(() => { if (typeof applyBackgroundPattern === 'function') applyBackgroundPattern('PAT-001', 'Nền Giấy Mỹ Thuật Sợi Tự Nhiên', '/static/assets/patterns/pat_001.webp', 3000); }, 200);
+  initCanvaDynamicToolbar();
+  setTimeout(canvasZoomFit, 400);
 }
 
 // ================= KEYBOARD & MOUSE SHORTCUTS =================
@@ -878,17 +880,30 @@ function changeCanvasSize(sizeKey) {
 }
 
 // ================= TEMPLATE PRESETS LIBRARY (6 TEMPLATES) =================
-const TEMPLATE_PRESETS = {};
-const OLD_TEMPLATE_PRESETS = {
+const TEMPLATE_PRESETS = {
+  halloween_spooky: {
+    name: 'Halloween Spooky Night Ma Quái',
+    bg: '#1a0b2e',
+    pattern: null,
+    items: [
+      { sku: 'LAY-001', type: 'layout', image: '/static/assets/layouts/lay_001.svg', name: 'Khung Polaroid Vintage Film', left: 250, top: 260, scale: 0.85, angle: -3 },
+      { sku: 'STK-HW-001', type: 'sticker', image: '/static/assets/stickers/halloween/bi-ngo-jack.svg', name: 'Bí Ngô Jack Điểm 10', left: 110, top: 120, scale: 0.9, angle: -15 },
+      { sku: 'STK-HW-003', type: 'sticker', image: '/static/assets/stickers/halloween/ma-cute-boo.svg', name: 'Bé Ma Boo Cute', left: 390, top: 130, scale: 0.85, angle: 12 },
+      { sku: 'STK-HW-002', type: 'sticker', image: '/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg', name: 'Cú Mèo Tri Thức', left: 120, top: 460, scale: 0.85, angle: 8 },
+      { sku: 'STK-HW-005', type: 'sticker', image: '/static/assets/stickers/halloween/mat-trang-khau-chi.svg', name: 'Mặt Trăng Khâu Chỉ', left: 390, top: 470, scale: 0.8, angle: -8 },
+      { type: 'text', text: 'Spooky Halloween ✦ 2026', fontFamily: 'Patrick Hand', fontSize: 34, fill: '#facc15', left: 250, top: 80, angle: 0 }
+    ]
+  },
   dalat_vintage: {
     name: 'Chuyến Đi Đà Lạt Hoài Niệm',
     bg: '#e8d8c3',
+    pattern: '/static/assets/patterns/pat_001.webp',
     items: [
-      { sku: 'LAY-001', type: 'layout', image: '/static/assets/layouts/lay_001.svg', name: 'Khung Polaroid Vintage Film', left: 240, top: 220, scale: 0.85, angle: -4 },
-      { sku: 'STK-CMP-025', type: 'sticker', image: '/static/assets/stickers/stk_cmp_025.webp', name: 'Máy Ảnh Polaroid Vintage', left: 120, top: 110, scale: 0.7, angle: -12 },
-      { sku: 'STK-TRV-014', type: 'sticker', image: '/static/assets/stickers/stk_trv_014.webp', name: 'Tem Bưu Chính Xe Vespa', left: 460, top: 130, scale: 0.75, angle: 15 },
-      { sku: 'STK-VN-008', type: 'sticker', image: '/static/assets/stickers/stk_vn_008.webp', name: 'Ly Cà Phê Phin Nhỏ Giọt', left: 240, top: 75, scale: 0.8, angle: 2 },
-      { type: 'text', text: 'Đà Lạt ✦ Mùa Hoa Dã Quỳ', fontFamily: 'Patrick Hand', fontSize: 34, fill: '#78350f', left: 300, top: 480, angle: -2 }
+      { sku: 'LAY-001', type: 'layout', image: '/static/assets/layouts/lay_001.svg', name: 'Khung Polaroid Vintage Film', left: 250, top: 260, scale: 0.85, angle: -4 },
+      { sku: 'STK-CMP-025', type: 'sticker', image: '/static/assets/stickers/stk_cmp_025.webp', name: 'Máy Ảnh Polaroid Vintage', left: 120, top: 120, scale: 0.75, angle: -12 },
+      { sku: 'STK-TRV-014', type: 'sticker', image: '/static/assets/stickers/stk_trv_014.webp', name: 'Tem Bưu Chính Xe Vespa', left: 390, top: 130, scale: 0.75, angle: 15 },
+      { sku: 'STK-VN-008', type: 'sticker', image: '/static/assets/stickers/stk_vn_008.webp', name: 'Ly Cà Phê Phin Nhỏ Giọt', left: 250, top: 90, scale: 0.8, angle: 2 },
+      { type: 'text', text: 'Đà Lạt ✦ Mùa Dã Quỳ Hoài Niệm', fontFamily: 'Patrick Hand', fontSize: 32, fill: '#78350f', left: 250, top: 500, angle: -2 }
     ]
   },
   y2k_besties: {
@@ -896,55 +911,44 @@ const OLD_TEMPLATE_PRESETS = {
     bg: '#fdf2f8',
     pattern: '/static/assets/patterns/pat_gingham_pink.svg',
     items: [
-      { sku: 'LAY-002', type: 'layout', image: '/static/assets/layouts/lay_002.svg', name: 'Layout Khung Kép Bạn Thân', left: 300, top: 240, scale: 0.88, angle: 3 },
-      { sku: 'STK-TRV-001', type: 'sticker', image: '/static/assets/stickers/stk_trv_001.webp', name: 'Cung Đường Phượt Road Trip', left: 130, top: 120, scale: 0.75, angle: -18 },
-      { sku: 'STK-CMP-023', type: 'sticker', image: '/static/assets/stickers/stk_cmp_023.webp', name: 'Xe Van VW Camper Xanh Mint', left: 470, top: 380, scale: 0.8, angle: 12 },
-      { sku: 'STK-TRV-007', type: 'sticker', image: '/static/assets/stickers/stk_trv_007.webp', name: 'Vé Máy Bay Boarding Pass', left: 460, top: 110, scale: 0.7, angle: 20 },
-      { type: 'text', text: 'Best Friends Forever ✦', fontFamily: 'Patrick Hand', fontSize: 36, fill: '#db2777', left: 300, top: 490, angle: 0 }
+      { sku: 'LAY-002', type: 'layout', image: '/static/assets/layouts/lay_002.svg', name: 'Layout Khung Kép Bạn Thân', left: 250, top: 270, scale: 0.88, angle: 3 },
+      { sku: 'STK-TRV-001', type: 'sticker', image: '/static/assets/stickers/stk_trv_001.webp', name: 'Cung Đường Phượt Road Trip', left: 110, top: 110, scale: 0.75, angle: -18 },
+      { sku: 'STK-CMP-023', type: 'sticker', image: '/static/assets/stickers/stk_cmp_023.webp', name: 'Xe Van Camper Xanh Mint', left: 390, top: 450, scale: 0.8, angle: 12 },
+      { sku: 'STK-TRV-007', type: 'sticker', image: '/static/assets/stickers/stk_trv_007.webp', name: 'Vé Máy Bay Boarding Pass', left: 390, top: 120, scale: 0.7, angle: 18 },
+      { type: 'text', text: 'Best Friends Forever ✦ 2026', fontFamily: 'Patrick Hand', fontSize: 34, fill: '#db2777', left: 250, top: 520, angle: 0 }
     ]
   },
   sweet_love: {
-    name: 'Kỷ Niệm Du Lịch Cùng Người Yêu',
+    name: 'Kỷ Niệm Tình Yêu Lãng Mạn',
     bg: '#fbf8f2',
     pattern: '/static/assets/patterns/pat_dotgrid.svg',
     items: [
-      { sku: 'LAY-003', type: 'layout', image: '/static/assets/layouts/lay_003.svg', name: 'Khung Polaroid Viền Đỏ Rượu', left: 260, top: 230, scale: 0.82, angle: -5 },
-      { sku: 'STK-TRV-004', type: 'sticker', image: '/static/assets/stickers/stk_trv_004.webp', name: 'Máy Bay Du Lịch Quốc Tế', left: 450, top: 160, scale: 0.75, angle: 14 },
-      { sku: 'STK-TRV-028', type: 'sticker', image: '/static/assets/stickers/stk_trv_028.png', name: 'Chữ Viết Tay Memories', left: 110, top: 380, scale: 0.7, angle: -10 },
-      { type: 'text', text: 'Every moment with you ✦', fontFamily: 'Playfair Display', fontSize: 30, fill: '#881337', left: 300, top: 480, angle: 0 }
+      { sku: 'LAY-003', type: 'layout', image: '/static/assets/layouts/lay_003.svg', name: 'Khung Polaroid Viền Đỏ Rượu', left: 250, top: 260, scale: 0.82, angle: -5 },
+      { sku: 'STK-TRV-004', type: 'sticker', image: '/static/assets/stickers/stk_trv_004.webp', name: 'Máy Bay Du Lịch Quốc Tế', left: 390, top: 130, scale: 0.75, angle: 14 },
+      { sku: 'STK-TRV-028', type: 'sticker', image: '/static/assets/stickers/stk_trv_028.png', name: 'Chữ Viết Tay Memories', left: 120, top: 430, scale: 0.75, angle: -10 },
+      { type: 'text', text: 'Every moment with you ✦', fontFamily: 'Playfair Display', fontSize: 30, fill: '#881337', left: 250, top: 510, angle: 0 }
     ]
   },
   botanical_nature: {
-    name: 'Hành Trình Di Sản Việt Nam',
+    name: 'Hành Trình Di Sản Non Sông',
     bg: '#f5f0e6',
     pattern: '/static/assets/patterns/pat_botanical.svg',
     items: [
-      { sku: 'LAY-004', type: 'layout', image: '/static/assets/layouts/lay_004.svg', name: 'Bố Cục 4 Ô Kỷ Yếu', left: 300, top: 250, scale: 0.8, angle: 0 },
-      { sku: 'STK-VN-001', type: 'sticker', image: '/static/assets/stickers/stk_vn_001.webp', name: 'Nón Lá Việt Nam Quai Đỏ', left: 110, top: 100, scale: 0.75, angle: -15 },
-      { sku: 'STK-VN-017', type: 'sticker', image: '/static/assets/stickers/stk_vn_017.webp', name: 'Chữ Nghệ Thuật VIỆT NAM 3D', left: 470, top: 420, scale: 0.7, angle: 10 },
-      { type: 'text', text: 'Tự Hào Non Sông Gấm Vóc', fontFamily: 'Patrick Hand', fontSize: 32, fill: '#065f46', left: 300, top: 490, angle: 0 }
-    ]
-  },
-  cyberpunk_dark: {
-    name: 'Phiêu Lưu Khám Phá Rừng Đêm',
-    bg: '#18181b',
-    pattern: '/static/assets/patterns/pat_black_card.svg',
-    items: [
-      { sku: 'LAY-005', type: 'layout', image: '/static/assets/layouts/lay_005.svg', name: 'Layout Khung Đen Gunmetal', left: 280, top: 230, scale: 0.84, angle: 4 },
-      { sku: 'STK-CMP-002', type: 'sticker', image: '/static/assets/stickers/stk_cmp_002.webp', name: 'Huy Hiệu Cắm Trại Ngàn Sao', left: 120, top: 120, scale: 0.8, angle: -15 },
-      { sku: 'STK-CMP-030', type: 'sticker', image: '/static/assets/stickers/stk_cmp_030.webp', name: 'La Bàn Bỏ Túi Đồng Cổ', left: 300, top: 75, scale: 0.82, angle: -2 },
-      { type: 'text', text: 'EXPLORE UNDER STARS ✦', fontFamily: 'Plus Jakarta Sans', fontSize: 32, fill: '#fbbf24', left: 300, top: 480, angle: 0 }
+      { sku: 'LAY-004', type: 'layout', image: '/static/assets/layouts/lay_004.svg', name: 'Bố Cục 4 Ô Kỷ Yếu', left: 250, top: 270, scale: 0.8, angle: 0 },
+      { sku: 'STK-VN-001', type: 'sticker', image: '/static/assets/stickers/stk_vn_001.webp', name: 'Nón Lá Việt Nam Quai Đỏ', left: 110, top: 110, scale: 0.75, angle: -15 },
+      { sku: 'STK-VN-017', type: 'sticker', image: '/static/assets/stickers/stk_vn_017.webp', name: 'Chữ Nghệ Thuật VIỆT NAM 3D', left: 390, top: 460, scale: 0.7, angle: 10 },
+      { type: 'text', text: 'Tự Hào Non Sông Gấm Vóc', fontFamily: 'Patrick Hand', fontSize: 32, fill: '#065f46', left: 250, top: 520, angle: 0 }
     ]
   },
   birthday_party: {
-    name: 'Cắm Trại & Outdoor Camping',
+    name: 'Tiệc Sinh Nhật & Kỷ Niệm Rực Rỡ',
     bg: '#fcfaf6',
     pattern: '/static/assets/patterns/pat_grid.svg',
     items: [
-      { sku: 'LAY-006', type: 'layout', image: '/static/assets/layouts/lay_006.svg', name: 'Khung Ảnh Sinh Nhật Rực Rỡ', left: 270, top: 230, scale: 0.82, angle: -3 },
-      { sku: 'STK-CMP-001', type: 'sticker', image: '/static/assets/stickers/stk_cmp_001.webp', name: 'Biển Gỗ Adventure Awaits', left: 460, top: 140, scale: 0.8, angle: 12 },
-      { sku: 'STK-CMP-008', type: 'sticker', image: '/static/assets/stickers/stk_cmp_008.webp', name: 'Chữ Collect Moments', left: 300, top: 70, scale: 0.85, angle: 0 },
-      { type: 'text', text: 'Collect moments, not things! 🌲', fontFamily: 'Patrick Hand', fontSize: 34, fill: '#b45309', left: 300, top: 480, angle: 0 }
+      { sku: 'LAY-006', type: 'layout', image: '/static/assets/layouts/lay_006.svg', name: 'Khung Ảnh Sinh Nhật Rực Rỡ', left: 250, top: 260, scale: 0.82, angle: -3 },
+      { sku: 'STK-CMP-001', type: 'sticker', image: '/static/assets/stickers/stk_cmp_001.webp', name: 'Biển Gỗ Adventure Awaits', left: 390, top: 130, scale: 0.8, angle: 12 },
+      { sku: 'STK-CMP-008', type: 'sticker', image: '/static/assets/stickers/stk_cmp_008.webp', name: 'Chữ Collect Moments', left: 250, top: 90, scale: 0.85, angle: 0 },
+      { type: 'text', text: 'Collect moments, not things! 🎂', fontFamily: 'Patrick Hand', fontSize: 32, fill: '#b45309', left: 250, top: 510, angle: 0 }
     ]
   }
 };
@@ -1882,6 +1886,461 @@ function preRenderAllPagesSnapshots() {
 }
 
 
+// ================= CANVA-STYLE DYNAMIC CONTEXTUAL TOOLBAR ENGINE =================
+function initCanvaDynamicToolbar() {
+  if (!canvas) return;
+
+  canvas.on('selection:created', onCanvasSelectionChanged);
+  canvas.on('selection:updated', onCanvasSelectionChanged);
+  canvas.on('selection:cleared', onCanvasSelectionCleared);
+
+  // Set initial state
+  onCanvasSelectionCleared();
+}
+
+function onCanvasSelectionChanged(e) {
+  const activeObj = canvas.getActiveObject();
+  const barCanvas = document.getElementById('canva-bar-canvas');
+  const barText = document.getElementById('canva-bar-text');
+  const barElement = document.getElementById('canva-bar-element');
+
+  if (!activeObj) {
+    onCanvasSelectionCleared();
+    return;
+  }
+
+  if (activeObj.type === 'i-text' || activeObj.type === 'text') {
+    if (barCanvas) barCanvas.classList.add('hidden');
+    if (barElement) barElement.classList.add('hidden');
+    if (barText) {
+      barText.classList.remove('hidden');
+
+      const fontSelect = document.getElementById('toolbar-font-select');
+      if (fontSelect && activeObj.fontFamily) fontSelect.value = activeObj.fontFamily;
+
+      const sizeInput = document.getElementById('toolbar-size-input');
+      if (sizeInput && activeObj.fontSize) sizeInput.value = Math.round(activeObj.fontSize);
+
+      const colorInput = document.getElementById('toolbar-text-color');
+      if (colorInput && activeObj.fill) colorInput.value = activeObj.fill;
+
+      const btnBold = document.getElementById('btn-tool-bold');
+      if (btnBold) {
+        if (activeObj.fontWeight === 'bold') btnBold.classList.add('bg-stone-300', 'border-black');
+        else btnBold.classList.remove('bg-stone-300', 'border-black');
+      }
+
+      const btnItalic = document.getElementById('btn-tool-italic');
+      if (btnItalic) {
+        if (activeObj.fontStyle === 'italic') btnItalic.classList.add('bg-stone-300', 'border-black');
+        else btnItalic.classList.remove('bg-stone-300', 'border-black');
+      }
+
+      const btnUnderline = document.getElementById('btn-tool-underline');
+      if (btnUnderline) {
+        if (activeObj.underline) btnUnderline.classList.add('bg-stone-300', 'border-black');
+        else btnUnderline.classList.remove('bg-stone-300', 'border-black');
+      }
+    }
+  } else {
+    // Image, Sticker, Photo, Frame
+    if (barCanvas) barCanvas.classList.add('hidden');
+    if (barText) barText.classList.add('hidden');
+    if (barElement) {
+      barElement.classList.remove('hidden');
+
+      const opacitySlider = document.getElementById('toolbar-opacity-slider');
+      if (opacitySlider) opacitySlider.value = Math.round((activeObj.opacity !== undefined ? activeObj.opacity : 1) * 100);
+
+      const opacityVal = document.getElementById('toolbar-opacity-val');
+      if (opacityVal) opacityVal.innerText = `${Math.round((activeObj.opacity !== undefined ? activeObj.opacity : 1) * 100)}%`;
+
+      const btnLock = document.getElementById('btn-tool-lock');
+      if (btnLock) {
+        btnLock.innerText = activeObj.lockMovementX ? '🔒' : '🔓';
+      }
+    }
+  }
+}
+
+function onCanvasSelectionCleared() {
+  const barCanvas = document.getElementById('canva-bar-canvas');
+  const barText = document.getElementById('canva-bar-text');
+  const barElement = document.getElementById('canva-bar-element');
+
+  if (barText) barText.classList.add('hidden');
+  if (barElement) barElement.classList.add('hidden');
+  if (barCanvas) {
+    barCanvas.classList.remove('hidden');
+
+    const bgColorInput = document.getElementById('toolbar-bg-color');
+    if (bgColorInput && canvas && typeof canvas.backgroundColor === 'string') {
+      bgColorInput.value = canvas.backgroundColor;
+    }
+  }
+}
+
+// --- TEXT FORMATTING ACTIONS ---
+function changeTextFont(font) {
+  updateActiveTextStyle('fontFamily', font);
+}
+
+function changeTextSize(size) {
+  const s = parseInt(size, 10);
+  if (!isNaN(s) && s > 8 && s < 120) {
+    updateActiveTextStyle('fontSize', s);
+  }
+}
+
+function stepTextSize(delta) {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj && (activeObj.type === 'i-text' || activeObj.type === 'text')) {
+    const cur = activeObj.fontSize || 32;
+    const next = Math.max(12, Math.min(100, cur + delta));
+    activeObj.set('fontSize', next);
+    canvas.renderAll();
+    const sizeInput = document.getElementById('toolbar-size-input');
+    if (sizeInput) sizeInput.value = next;
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+function changeTextColor(hex) {
+  updateActiveTextStyle('fill', hex);
+}
+
+function toggleTextBold() {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj && (activeObj.type === 'i-text' || activeObj.type === 'text')) {
+    const next = activeObj.fontWeight === 'bold' ? 'normal' : 'bold';
+    activeObj.set('fontWeight', next);
+    canvas.renderAll();
+    const btnBold = document.getElementById('btn-tool-bold');
+    if (btnBold) {
+      if (next === 'bold') btnBold.classList.add('bg-stone-300', 'border-black');
+      else btnBold.classList.remove('bg-stone-300', 'border-black');
+    }
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+function toggleTextItalic() {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj && (activeObj.type === 'i-text' || activeObj.type === 'text')) {
+    const next = activeObj.fontStyle === 'italic' ? 'normal' : 'italic';
+    activeObj.set('fontStyle', next);
+    canvas.renderAll();
+    const btnItalic = document.getElementById('btn-tool-italic');
+    if (btnItalic) {
+      if (next === 'italic') btnItalic.classList.add('bg-stone-300', 'border-black');
+      else btnItalic.classList.remove('bg-stone-300', 'border-black');
+    }
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+function toggleTextUnderline() {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj && (activeObj.type === 'i-text' || activeObj.type === 'text')) {
+    const next = !activeObj.underline;
+    activeObj.set('underline', next);
+    canvas.renderAll();
+    const btnUnderline = document.getElementById('btn-tool-underline');
+    if (btnUnderline) {
+      if (next) btnUnderline.classList.add('bg-stone-300', 'border-black');
+      else btnUnderline.classList.remove('bg-stone-300', 'border-black');
+    }
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+function setTextAlign(align) {
+  updateActiveTextStyle('textAlign', align);
+}
+
+function stepTextLetterSpacing(delta) {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj && (activeObj.type === 'i-text' || activeObj.type === 'text')) {
+    const cur = activeObj.charSpacing || 0;
+    const next = Math.max(-50, Math.min(300, cur + delta));
+    activeObj.set('charSpacing', next);
+    canvas.renderAll();
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+function toggleTextShadow() {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj && (activeObj.type === 'i-text' || activeObj.type === 'text')) {
+    if (activeObj.shadow) {
+      activeObj.set('shadow', null);
+      showToast('Đã tắt đổ bóng chữ', 'info');
+    } else {
+      activeObj.set('shadow', new fabric.Shadow({
+        color: 'rgba(0,0,0,0.3)',
+        blur: 6,
+        offsetX: 3,
+        offsetY: 3
+      }));
+      showToast('Đã bật hiệu ứng bóng nổi 3D cho chữ', 'success');
+    }
+    canvas.renderAll();
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+// --- IMAGE / STICKER / ELEMENT ACTIONS ---
+function setElementOpacity(val) {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj) {
+    const opacity = parseFloat(val) / 100;
+    activeObj.set('opacity', opacity);
+    canvas.renderAll();
+    const opacityVal = document.getElementById('toolbar-opacity-val');
+    if (opacityVal) opacityVal.innerText = `${Math.round(opacity * 100)}%`;
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+function flipActiveObjectH() {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj) {
+    activeObj.set('flipX', !activeObj.flipX);
+    canvas.renderAll();
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+function flipActiveObjectV() {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj) {
+    activeObj.set('flipY', !activeObj.flipY);
+    canvas.renderAll();
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+function rotateActiveObject(deg) {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj) {
+    const cur = activeObj.angle || 0;
+    activeObj.rotate((cur + deg) % 360);
+    activeObj.setCoords();
+    canvas.renderAll();
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+function toggleActiveObjectShadow() {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj) {
+    if (activeObj.shadow) {
+      activeObj.set('shadow', null);
+      showToast('Đã tắt đổ bóng nổi', 'info');
+    } else {
+      activeObj.set('shadow', new fabric.Shadow({
+        color: 'rgba(0,0,0,0.32)',
+        blur: 10,
+        offsetX: 4,
+        offsetY: 6
+      }));
+      showToast('Đã bật hiệu ứng sticker nổi khối 3D', 'success');
+    }
+    canvas.renderAll();
+    saveCanvasState();
+    if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+  }
+}
+
+function toggleActiveObjectLock() {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (activeObj) {
+    const isLocked = !activeObj.lockMovementX;
+    activeObj.set({
+      lockMovementX: isLocked,
+      lockMovementY: isLocked,
+      lockRotation: isLocked,
+      lockScalingX: isLocked,
+      lockScalingY: isLocked,
+      hasControls: !isLocked
+    });
+    canvas.renderAll();
+    const btnLock = document.getElementById('btn-tool-lock');
+    if (btnLock) btnLock.innerText = isLocked ? '🔒' : '🔓';
+    showToast(isLocked ? 'Đã khóa phần tử' : 'Đã mở khóa phần tử', 'info');
+  }
+}
+
+function alignActiveObject(position) {
+  const activeObj = canvas ? canvas.getActiveObject() : null;
+  if (!activeObj || !canvas) return;
+
+  const cW = canvas.getWidth();
+  const cH = canvas.getHeight();
+  const oW = activeObj.getScaledWidth();
+  const oH = activeObj.getScaledHeight();
+
+  if (position === 'left') {
+    activeObj.set('left', activeObj.originX === 'center' ? oW / 2 + 10 : 10);
+  } else if (position === 'center-h') {
+    activeObj.centerH();
+  } else if (position === 'right') {
+    activeObj.set('left', activeObj.originX === 'center' ? cW - oW / 2 - 10 : cW - oW - 10);
+  } else if (position === 'top') {
+    activeObj.set('top', activeObj.originY === 'center' ? oH / 2 + 10 : 10);
+  } else if (position === 'center-v') {
+    activeObj.centerV();
+  } else if (position === 'bottom') {
+    activeObj.set('top', activeObj.originY === 'center' ? cH - oH / 2 - 10 : cH - oH - 10);
+  }
+
+  activeObj.setCoords();
+  canvas.renderAll();
+  saveCanvasState();
+  if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+}
+
+// --- CANVAS ZOOM ENGINE (CSS TRANSFORM) ---
+let currentCanvasZoom = 1.0;
+
+function setCanvasZoom(scale) {
+  currentCanvasZoom = Math.max(0.4, Math.min(2.0, scale));
+  const wrapper = document.querySelector('.studio-fabric-wrapper');
+  if (wrapper) {
+    wrapper.style.transform = `scale(${currentCanvasZoom})`;
+    wrapper.style.transformOrigin = 'top center';
+    wrapper.style.transition = 'transform 0.15s ease-out';
+  }
+  const label = document.getElementById('zoom-percentage-label');
+  if (label) {
+    label.innerText = `${Math.round(currentCanvasZoom * 100)}%`;
+  }
+}
+
+function canvasZoomIn() {
+  setCanvasZoom(currentCanvasZoom + 0.15);
+}
+
+function canvasZoomOut() {
+  setCanvasZoom(currentCanvasZoom - 0.15);
+}
+
+function canvasZoomReset() {
+  setCanvasZoom(1.0);
+}
+
+function canvasZoomFit() {
+  const container = document.querySelector('.studio-canvas-scroll');
+  const canvasElem = document.getElementById('scrapbook-fabric-canvas');
+  if (container && canvasElem) {
+    const availW = container.clientWidth - 40;
+    const cW = canvas ? canvas.getWidth() : 500;
+    const fitScale = Math.min(1.0, availW / cW);
+    setCanvasZoom(fitScale);
+  }
+}
+
+// --- QUICK TYPOGRAPHY PRESETS ---
+function addHeadingText() {
+  if (!canvas) return;
+  const t = new fabric.IText('TIÊU ĐỀ KỶ NIỆM ✦', {
+    left: canvas.getWidth() / 2,
+    top: 100,
+    originX: 'center',
+    originY: 'center',
+    fontFamily: 'Playfair Display',
+    fontSize: 38,
+    fontWeight: 'bold',
+    fill: '#881337',
+    shadow: new fabric.Shadow({ color: 'rgba(0,0,0,0.2)', blur: 6, offsetX: 2, offsetY: 3 })
+  });
+  canvas.add(t);
+  canvas.setActiveObject(t);
+  canvas.renderAll();
+  saveCanvasState();
+  if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+}
+
+function addSubheadingText() {
+  if (!canvas) return;
+  const t = new fabric.IText('Khoảnh khắc ngọt ngào chúng mình bên nhau', {
+    left: canvas.getWidth() / 2,
+    top: 150,
+    originX: 'center',
+    originY: 'center',
+    fontFamily: 'Patrick Hand',
+    fontSize: 26,
+    fill: '#78350f'
+  });
+  canvas.add(t);
+  canvas.setActiveObject(t);
+  canvas.renderAll();
+  saveCanvasState();
+  if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+}
+
+function addHandwrittenBodyText() {
+  if (!canvas) return;
+  const t = new fabric.IText('“Có những ký ức trôi qua rất nhanh,\nnhưng khi được dán lại trên trang sổ này,\nnó sẽ trở thành vĩnh cửu...” 🌸✨', {
+    left: canvas.getWidth() / 2,
+    top: 320,
+    originX: 'center',
+    originY: 'center',
+    fontFamily: 'Patrick Hand',
+    fontSize: 22,
+    lineHeight: 1.4,
+    fill: '#292524'
+  });
+  canvas.add(t);
+  canvas.setActiveObject(t);
+  canvas.renderAll();
+  saveCanvasState();
+  if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+}
+
+function addStickyNoteCard() {
+  if (!canvas) return;
+  const rect = new fabric.Rect({
+    width: 220,
+    height: 200,
+    fill: '#fef08a',
+    originX: 'center',
+    originY: 'center',
+    shadow: new fabric.Shadow({ color: 'rgba(0,0,0,0.25)', blur: 10, offsetX: 4, offsetY: 6 }),
+    angle: -3
+  });
+  const text = new fabric.IText('NOTE ✦\nNhớ mang theo máy ảnh\nvà rửa những tấm hình đẹp nhất!', {
+    fontFamily: 'Patrick Hand',
+    fontSize: 20,
+    fill: '#854d0e',
+    originX: 'center',
+    originY: 'center',
+    textAlign: 'center',
+    angle: -3
+  });
+  const group = new fabric.Group([rect, text], {
+    left: canvas.getWidth() / 2,
+    top: canvas.getHeight() / 2,
+    originX: 'center',
+    originY: 'center'
+  });
+  canvas.add(group);
+  canvas.setActiveObject(group);
+  canvas.renderAll();
+  saveCanvasState();
+  if (typeof syncTo3DViewer === 'function') syncTo3DViewer();
+}
+
 // ================= GLOBAL WINDOW COMPONENT CLICK HANDLERS =================
 window.handleStickerCardClick = function(elem) {
   if (!elem) return;
@@ -1902,3 +2361,30 @@ window.switchPage = switchPage;
 window.addNewPage = addNewPage;
 window.duplicatePage = duplicatePage;
 window.deletePage = deletePage;
+window.changeTextFont = changeTextFont;
+window.changeTextSize = changeTextSize;
+window.stepTextSize = stepTextSize;
+window.changeTextColor = changeTextColor;
+window.toggleTextBold = toggleTextBold;
+window.toggleTextItalic = toggleTextItalic;
+window.toggleTextUnderline = toggleTextUnderline;
+window.setTextAlign = setTextAlign;
+window.stepTextLetterSpacing = stepTextLetterSpacing;
+window.toggleTextShadow = toggleTextShadow;
+window.setElementOpacity = setElementOpacity;
+window.flipActiveObjectH = flipActiveObjectH;
+window.flipActiveObjectV = flipActiveObjectV;
+window.rotateActiveObject = rotateActiveObject;
+window.toggleActiveObjectShadow = toggleActiveObjectShadow;
+window.toggleActiveObjectLock = toggleActiveObjectLock;
+window.alignActiveObject = alignActiveObject;
+window.canvasZoomIn = canvasZoomIn;
+window.canvasZoomOut = canvasZoomOut;
+window.canvasZoomReset = canvasZoomReset;
+window.canvasZoomFit = canvasZoomFit;
+window.addHeadingText = addHeadingText;
+window.addSubheadingText = addSubheadingText;
+window.addHandwrittenBodyText = addHandwrittenBodyText;
+window.addStickyNoteCard = addStickyNoteCard;
+window.applyTemplatePreset = applyTemplatePreset;
+

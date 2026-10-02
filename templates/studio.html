@@ -5,6 +5,9 @@
 {% block extra_head %}
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Courier+Prime:wght@700&family=Dancing+Script:wght@700&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <script>
   // Server-side preset data if user came from "Remix" button
   window.STUDIO_PRESET_DATA = {% if active_preset %}{{ active_preset.canvas_preset | tojson }}{% else %}null{% endif %};
@@ -257,7 +260,7 @@
                 
                 <div class="flex gap-3 items-start">
                   <!-- Thumbnail -->
-                  <div class="w-24 h-32 rounded-xl p-1 bg-white border border-stone-200 overflow-hidden flex-shrink-0 shadow-sm cursor-pointer" onclick="setScrapbookCover('{{ bk.sku }}', '{{ bk.ten or bk.name }}', '{{ bk.image }}', {{ bk.price or 100000 }}, '{{ bk.colorHex or '#e8d8c3' }}')">
+                  <div class="w-24 h-32 rounded-xl p-1 bg-white border border-stone-200 overflow-hidden flex-shrink-0 shadow-sm cursor-pointer" onclick="setScrapbookCover('{{ bk.sku }}', '{{ bk.ten or bk.name }}', '{{ bk.image }}', {{ bk.price or 100000 }}, '{{ bk.colorHex or (bk.specs and bk.specs.color) or '#e8d8c3' }}')">
                     <img src="{{ bk.image }}" alt="{{ bk.ten or bk.name }}" loading="lazy" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform">
                   </div>
 
@@ -267,7 +270,7 @@
                       <span class="text-[9px] font-mono font-black text-rose-800">{{ bk.sku }}</span>
                       <span class="text-xs font-black text-stone-900">{{ "{:,}".format(bk.price or 100000) }} đ</span>
                     </div>
-                    <h4 class="text-xs font-heading font-black text-stone-900 leading-tight line-clamp-2 cursor-pointer hover:text-rose-800" onclick="setScrapbookCover('{{ bk.sku }}', '{{ bk.ten or bk.name }}', '{{ bk.image }}', {{ bk.price or 100000 }}, '{{ bk.colorHex or '#e8d8c3' }}')">{{ bk.ten or bk.name }}</h4>
+                    <h4 class="text-xs font-heading font-black text-stone-900 leading-tight line-clamp-2 cursor-pointer hover:text-rose-800" onclick="setScrapbookCover('{{ bk.sku }}', '{{ bk.ten or bk.name }}', '{{ bk.image }}', {{ bk.price or 100000 }}, '{{ bk.colorHex or (bk.specs and bk.specs.color) or '#e8d8c3' }}')">{{ bk.ten or bk.name }}</h4>
                     <p class="text-[10px] text-stone-500 line-clamp-3 leading-relaxed">{{ bk.moTa or bk.description }}</p>
                     
                     <div class="pt-1 flex flex-wrap gap-1 text-[9px] text-stone-600 font-bold">
@@ -278,7 +281,7 @@
                 </div>
 
                 <!-- Action Button -->
-                <button onclick="setScrapbookCover('{{ bk.sku }}', '{{ bk.ten or bk.name }}', '{{ bk.image }}', {{ bk.price or 100000 }}, '{{ bk.colorHex or '#e8d8c3' }}')" class="mt-3 w-full bg-rose-800 hover:bg-rose-900 text-white text-[11px] font-black py-2 px-3 rounded-xl border-2 border-black shadow-neo text-center flex items-center justify-center gap-1.5 transition-transform active:scale-95">
+                <button onclick="setScrapbookCover('{{ bk.sku }}', '{{ bk.ten or bk.name }}', '{{ bk.image }}', {{ bk.price or 100000 }}, '{{ bk.colorHex or (bk.specs and bk.specs.color) or '#e8d8c3' }}')" class="mt-3 w-full bg-rose-800 hover:bg-rose-900 text-white text-[11px] font-black py-2 px-3 rounded-xl border-2 border-black shadow-neo text-center flex items-center justify-center gap-1.5 transition-transform active:scale-95">
                   <span>📖 Áp Dụng Bìa Sổ Này Cho Mô Hình 3D</span>
                 </button>
               </div>
@@ -335,12 +338,97 @@
             {% endif %}
           </div>
 
-          <!-- Catalog 5: Ready-made Templates (Đã dọn trống) -->
-          <div id="catalog-templates" class="hidden space-y-2">
-            <div class="text-center py-10 px-4 bg-stone-50 rounded-2xl border-2 border-dashed border-stone-300">
-              <span class="text-2xl block mb-1.5">🎨</span>
-              <p class="text-xs font-black text-stone-700">Kho mẫu sẵn xưởng đang trống</p>
-              <p class="text-[10px] text-stone-500 mt-1">Sẵn sàng để cập nhật các mẫu thiết kế mới thực tế</p>
+          <!-- Catalog 5: Ready-made Templates (6 Mẫu Sẵn Nghệ Thuật) -->
+          <div id="catalog-templates" class="hidden space-y-2.5">
+            <div class="flex items-center justify-between pb-1 text-[10px]">
+              <span class="font-bold text-stone-600">Mẫu Thiết Kế Sẵn (6 phong cách):</span>
+              <span class="text-rose-900 font-bold bg-rose-100 px-2 py-0.5 rounded-full">✨ Áp dụng 1 chạm</span>
+            </div>
+
+            <div class="space-y-2 max-h-[360px] overflow-y-auto pr-1">
+              <!-- Template 1: Halloween -->
+              <div onclick="applyTemplatePreset('halloween_spooky')" class="bg-gradient-to-r from-purple-950 via-stone-900 to-amber-950 text-white border-2 border-amber-400 rounded-2xl p-2.5 cursor-pointer hover:scale-[1.02] transition-all shadow-sm group">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[9px] font-black bg-amber-400 text-stone-950 px-2 py-0.5 rounded-full uppercase">🎃 MỚI • HALLOWEEN</span>
+                  <span class="text-xs">👻</span>
+                </div>
+                <h4 class="text-xs font-heading font-black text-amber-300">Halloween Spooky Night Ma Quái</h4>
+                <p class="text-[10px] text-stone-300 line-clamp-1">Nền tím ma thuật, bí ngô Jack, bé ma Boo, trăng khâu chỉ &amp; khung polaroid</p>
+                <div class="mt-2 flex items-center justify-between pt-1 border-t border-purple-800/80 text-[10px] font-bold text-amber-300 group-hover:underline">
+                  <span>Nạp mẫu này vào trang</span>
+                  <span>→</span>
+                </div>
+              </div>
+
+              <!-- Template 2: Đà Lạt Vintage -->
+              <div onclick="applyTemplatePreset('dalat_vintage')" class="bg-[#fcfaf6] border-2 border-stone-300 hover:border-black rounded-2xl p-2.5 cursor-pointer hover:scale-[1.02] transition-all shadow-sm group">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[9px] font-black bg-amber-100 text-amber-950 px-2 py-0.5 rounded-full uppercase">🌲 VINTAGE</span>
+                  <span class="text-xs">📸</span>
+                </div>
+                <h4 class="text-xs font-heading font-black text-stone-900">Chuyến Đi Đà Lạt Hoài Niệm</h4>
+                <p class="text-[10px] text-stone-500 line-clamp-1">Giấy mộc kraft sợi tự nhiên, máy ảnh film, tem vespa, phin cà phê nhỏ giọt</p>
+                <div class="mt-2 flex items-center justify-between pt-1 border-t border-stone-200 text-[10px] font-bold text-rose-800 group-hover:underline">
+                  <span>Nạp mẫu này vào trang</span>
+                  <span>→</span>
+                </div>
+              </div>
+
+              <!-- Template 3: Y2K Besties -->
+              <div onclick="applyTemplatePreset('y2k_besties')" class="bg-[#fff1f2] border-2 border-rose-300 hover:border-black rounded-2xl p-2.5 cursor-pointer hover:scale-[1.02] transition-all shadow-sm group">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[9px] font-black bg-pink-200 text-pink-950 px-2 py-0.5 rounded-full uppercase">💖 Y2K BESTIES</span>
+                  <span class="text-xs">🎒</span>
+                </div>
+                <h4 class="text-xs font-heading font-black text-rose-950">Kỷ Yếu Phượt Bạn Thân</h4>
+                <p class="text-[10px] text-stone-600 line-clamp-1">Nền kẻ caro hồng pastel, khung kép, xe van camper, vé máy bay road trip</p>
+                <div class="mt-2 flex items-center justify-between pt-1 border-t border-rose-200 text-[10px] font-bold text-rose-800 group-hover:underline">
+                  <span>Nạp mẫu này vào trang</span>
+                  <span>→</span>
+                </div>
+              </div>
+
+              <!-- Template 4: Sweet Love -->
+              <div onclick="applyTemplatePreset('sweet_love')" class="bg-[#fefce8] border-2 border-amber-300 hover:border-black rounded-2xl p-2.5 cursor-pointer hover:scale-[1.02] transition-all shadow-sm group">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[9px] font-black bg-rose-200 text-rose-950 px-2 py-0.5 rounded-full uppercase">🍷 COUPLE LOVE</span>
+                  <span class="text-xs">💌</span>
+                </div>
+                <h4 class="text-xs font-heading font-black text-rose-900">Kỷ Niệm Tình Yêu Lãng Mạn</h4>
+                <p class="text-[10px] text-stone-600 line-clamp-1">Khung polaroid viền đỏ rượu bordeaux, sticker máy bay, chữ viết tay nghệ thuật</p>
+                <div class="mt-2 flex items-center justify-between pt-1 border-t border-amber-200 text-[10px] font-bold text-rose-800 group-hover:underline">
+                  <span>Nạp mẫu này vào trang</span>
+                  <span>→</span>
+                </div>
+              </div>
+
+              <!-- Template 5: Non Sông Gấm Vóc -->
+              <div onclick="applyTemplatePreset('botanical_nature')" class="bg-[#f0fdf4] border-2 border-emerald-300 hover:border-black rounded-2xl p-2.5 cursor-pointer hover:scale-[1.02] transition-all shadow-sm group">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[9px] font-black bg-emerald-200 text-emerald-950 px-2 py-0.5 rounded-full uppercase">🌿 DI SẢN</span>
+                  <span class="text-xs">🌾</span>
+                </div>
+                <h4 class="text-xs font-heading font-black text-emerald-950">Hành Trình Di Sản Non Sông</h4>
+                <p class="text-[10px] text-stone-600 line-clamp-1">Nón lá quai đỏ, chữ nghệ thuật VIỆT NAM 3D, bố cục 4 ô ảnh lưu niệm</p>
+                <div class="mt-2 flex items-center justify-between pt-1 border-t border-emerald-200 text-[10px] font-bold text-emerald-800 group-hover:underline">
+                  <span>Nạp mẫu này vào trang</span>
+                  <span>→</span>
+                </div>
+              </div>
+
+              <!-- Template 6: Sinh Nhật Party -->
+              <div onclick="applyTemplatePreset('birthday_party')" class="bg-[#fafaf9] border-2 border-stone-300 hover:border-black rounded-2xl p-2.5 cursor-pointer hover:scale-[1.02] transition-all shadow-sm group">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[9px] font-black bg-amber-200 text-amber-950 px-2 py-0.5 rounded-full uppercase">🎂 CELEBRATION</span>
+                  <span class="text-xs">🎈</span>
+                </div>
+                <h4 class="text-xs font-heading font-black text-stone-900">Tiệc Sinh Nhật &amp; Kỷ Niệm Rực Rỡ</h4>
+                <p class="text-[10px] text-stone-600 line-clamp-1">Khung ảnh sinh nhật, biển gỗ Adventure Awaits, chữ Collect Moments</p>
+                <div class="mt-2 flex items-center justify-between pt-1 border-t border-stone-200 text-[10px] font-bold text-amber-800 group-hover:underline">
+                  <span>Nạp mẫu này vào trang</span>
+                  <span>→</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -428,6 +516,128 @@
 
           </div>
 
+          <!-- CANVA-GRADE DYNAMIC CONTEXTUAL PROPERTY TOOLBAR -->
+          <div id="canva-context-bar" class="w-full bg-[#fdfbf7] border-2 border-black rounded-2xl p-2 sm:p-2.5 mb-3 shadow-neo flex items-center justify-between flex-wrap gap-2 transition-all">
+            
+            <!-- 1. Canvas Background Mode (Default when nothing selected) -->
+            <div id="canva-bar-canvas" class="flex items-center gap-2 flex-wrap w-full sm:w-auto">
+              <span class="text-[11px] font-heading font-black text-stone-700 flex items-center gap-1">
+                <span>🎨 Nền Trang:</span>
+              </span>
+              <!-- Color input & Quick Swatches -->
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <input type="color" id="toolbar-bg-color" value="#e8d8c3" onchange="changeCanvasBackground(this.value)" class="w-7 h-7 rounded-lg border-2 border-stone-800 cursor-pointer p-0.5" title="Chọn màu tùy chỉnh">
+                
+                <button onclick="changeCanvasBackground('#e8d8c3')" class="w-6 h-6 rounded-md bg-[#e8d8c3] border border-black hover:scale-110 transition-transform shadow-xs" title="Kraft Mộc"></button>
+                <button onclick="changeCanvasBackground('#fdfbf7')" class="w-6 h-6 rounded-md bg-[#fdfbf7] border border-stone-400 hover:scale-110 transition-transform shadow-xs" title="Kem Mỹ Thuật"></button>
+                <button onclick="changeCanvasBackground('#fdf2f8')" class="w-6 h-6 rounded-md bg-[#fdf2f8] border border-pink-400 hover:scale-110 transition-transform shadow-xs" title="Hồng Pastel Y2K"></button>
+                <button onclick="changeCanvasBackground('#4c0519')" class="w-6 h-6 rounded-md bg-[#4c0519] border border-black hover:scale-110 transition-transform shadow-xs" title="Đỏ Rượu Bordeaux"></button>
+                <button onclick="changeCanvasBackground('#1a0b2e')" class="w-6 h-6 rounded-md bg-[#1a0b2e] border border-amber-400 hover:scale-110 transition-transform shadow-xs" title="Tím Ma Mị Halloween"></button>
+                <button onclick="changeCanvasBackground('#064e3b')" class="w-6 h-6 rounded-md bg-[#064e3b] border border-black hover:scale-110 transition-transform shadow-xs" title="Xanh Rêu Vintage"></button>
+                <button onclick="changeCanvasBackground('#18181b')" class="w-6 h-6 rounded-md bg-[#18181b] border border-black hover:scale-110 transition-transform shadow-xs" title="Đen Huyền Bí"></button>
+              </div>
+
+              <div class="h-5 w-px bg-stone-300 mx-1 hidden sm:block"></div>
+
+              <!-- Pattern shortcut -->
+              <button onclick="switchCatalogTab('patterns')" class="text-[11px] font-bold bg-amber-100 hover:bg-amber-200 text-amber-950 px-2.5 py-1 rounded-xl border border-amber-400 transition-colors flex items-center gap-1">
+                <span>📄 Nền Giấy Mỹ Thuật</span>
+              </button>
+            </div>
+
+            <!-- 2. Text Selected Property Bar -->
+            <div id="canva-bar-text" class="hidden flex items-center gap-2 flex-wrap w-full sm:w-auto">
+              <!-- Font Select -->
+              <select id="toolbar-font-select" onchange="changeTextFont(this.value)" class="bg-white border-2 border-stone-700 rounded-xl px-2.5 py-1 text-xs font-bold text-stone-900 outline-none cursor-pointer">
+                <option value="Patrick Hand">Patrick Hand (Viết tay mộc)</option>
+                <option value="Playfair Display">Playfair Display (Cổ điển)</option>
+                <option value="Be Vietnam Pro">Be Vietnam Pro (Hiện đại)</option>
+                <option value="Courier Prime">Courier Prime (Máy đánh chữ)</option>
+                <option value="Plus Jakarta Sans">Plus Jakarta Sans (Gen Z)</option>
+                <option value="Dancing Script">Dancing Script (Mềm mại)</option>
+                <option value="Caveat">Caveat (Bút dạ ký họa)</option>
+              </select>
+
+              <!-- Size Stepper -->
+              <div class="flex items-center border-2 border-stone-700 rounded-xl overflow-hidden bg-white">
+                <button onclick="stepTextSize(-2)" class="px-2 py-0.5 hover:bg-stone-100 font-black text-xs border-r border-stone-300">-</button>
+                <input type="number" id="toolbar-size-input" value="32" onchange="changeTextSize(this.value)" class="w-11 text-center text-xs font-bold py-0.5 outline-none">
+                <button onclick="stepTextSize(2)" class="px-2 py-0.5 hover:bg-stone-100 font-black text-xs border-l border-stone-300">+</button>
+              </div>
+
+              <!-- Text Color -->
+              <div class="flex items-center gap-1">
+                <input type="color" id="toolbar-text-color" value="#78350f" onchange="changeTextColor(this.value)" class="w-7 h-7 rounded-lg border-2 border-stone-800 cursor-pointer p-0.5" title="Màu chữ">
+              </div>
+
+              <!-- Style Toggles (B, I, U) -->
+              <div class="flex items-center gap-0.5 bg-stone-100 p-0.5 rounded-xl border border-stone-300">
+                <button id="btn-tool-bold" onclick="toggleTextBold()" class="w-6 h-6 rounded-lg text-xs font-black flex items-center justify-center hover:bg-white" title="In đậm (Bold)">B</button>
+                <button id="btn-tool-italic" onclick="toggleTextItalic()" class="w-6 h-6 rounded-lg text-xs font-serif italic font-bold flex items-center justify-center hover:bg-white" title="In nghiêng (Italic)">I</button>
+                <button id="btn-tool-underline" onclick="toggleTextUnderline()" class="w-6 h-6 rounded-lg text-xs underline font-bold flex items-center justify-center hover:bg-white" title="Gạch chân (Underline)">U</button>
+              </div>
+
+              <!-- Alignment -->
+              <div class="flex items-center gap-0.5 bg-stone-100 p-0.5 rounded-xl border border-stone-300">
+                <button onclick="setTextAlign('left')" class="w-6 h-6 rounded-lg text-[10px] font-bold flex items-center justify-center hover:bg-white" title="Căn trái">◀</button>
+                <button onclick="setTextAlign('center')" class="w-6 h-6 rounded-lg text-[10px] font-bold flex items-center justify-center hover:bg-white" title="Căn giữa">●</button>
+                <button onclick="setTextAlign('right')" class="w-6 h-6 rounded-lg text-[10px] font-bold flex items-center justify-center hover:bg-white" title="Căn phải">▶</button>
+              </div>
+
+              <!-- 3D Shadow -->
+              <button onclick="toggleTextShadow()" class="px-2 py-1 bg-amber-100 hover:bg-amber-200 text-stone-900 rounded-xl border border-amber-400 text-[10px] font-bold" title="Bật/Tắt bóng nổi 3D">
+                ✨ Bóng nổi
+              </button>
+            </div>
+
+            <!-- 3. Element Selected Property Bar (Image / Sticker / Frame) -->
+            <div id="canva-bar-element" class="hidden flex items-center gap-2 flex-wrap w-full sm:w-auto">
+              <!-- Opacity Slider -->
+              <div class="flex items-center gap-1.5 bg-stone-100 px-2 py-1 rounded-xl border border-stone-300 text-xs">
+                <span class="text-[10px] font-bold text-stone-600">Độ mờ:</span>
+                <input type="range" id="toolbar-opacity-slider" min="10" max="100" value="100" oninput="setElementOpacity(this.value)" class="w-16 sm:w-20 cursor-pointer accent-rose-800">
+                <span id="toolbar-opacity-val" class="font-mono font-bold text-[10px] w-7 text-right">100%</span>
+              </div>
+
+              <!-- Flip Buttons -->
+              <div class="flex items-center gap-1">
+                <button onclick="flipActiveObjectH()" class="px-2 py-1 bg-white hover:bg-stone-100 rounded-xl border border-stone-300 text-xs font-bold" title="Lật ngang (Flip Horizontal)">⇄ Lật Ngang</button>
+                <button onclick="flipActiveObjectV()" class="px-2 py-1 bg-white hover:bg-stone-100 rounded-xl border border-stone-300 text-xs font-bold" title="Lật dọc (Flip Vertical)">⇅ Lật Dọc</button>
+                <button onclick="rotateActiveObject(90)" class="px-2 py-1 bg-white hover:bg-stone-100 rounded-xl border border-stone-300 text-xs font-bold" title="Xoay 90 độ">↷ 90°</button>
+              </div>
+
+              <!-- 3D Craft Shadow Toggle -->
+              <button onclick="toggleActiveObjectShadow()" class="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-950 rounded-xl border border-amber-400 text-xs font-bold flex items-center gap-1" title="Tạo hiệu ứng nổi khối như dán sticker thật">
+                <span>✨ Nổi Khối 3D</span>
+              </button>
+
+              <!-- Lock Toggle -->
+              <button id="btn-tool-lock" onclick="toggleActiveObjectLock()" class="px-2 py-1 bg-stone-100 hover:bg-stone-200 rounded-xl border border-stone-300 text-xs font-bold" title="Khóa/Mở khóa phần tử">
+                🔓
+              </button>
+            </div>
+
+            <!-- Common Alignment & Layer Controls -->
+            <div class="flex items-center gap-1 ml-auto">
+              <!-- Align to Canvas -->
+              <div class="relative group">
+                <button class="px-2.5 py-1 rounded-xl text-xs font-bold bg-stone-100 hover:bg-stone-200 border border-stone-300 flex items-center gap-1">
+                  <span>📐 Vị trí</span>
+                  <span class="text-[9px]">▼</span>
+                </button>
+                <div class="absolute right-0 top-full mt-1 bg-white border-2 border-black rounded-xl p-1.5 shadow-neo z-40 hidden group-hover:flex flex-col gap-1 w-32">
+                  <button onclick="alignActiveObject('left')" class="text-left text-[11px] font-bold px-2 py-1 rounded hover:bg-stone-100">Căn Trái</button>
+                  <button onclick="alignActiveObject('center-h')" class="text-left text-[11px] font-bold px-2 py-1 rounded hover:bg-stone-100">Căn Giữa Ngang</button>
+                  <button onclick="alignActiveObject('right')" class="text-left text-[11px] font-bold px-2 py-1 rounded hover:bg-stone-100">Căn Phải</button>
+                  <button onclick="alignActiveObject('top')" class="text-left text-[11px] font-bold px-2 py-1 rounded hover:bg-stone-100">Căn Trên</button>
+                  <button onclick="alignActiveObject('center-v')" class="text-left text-[11px] font-bold px-2 py-1 rounded hover:bg-stone-100">Căn Giữa Dọc</button>
+                  <button onclick="alignActiveObject('bottom')" class="text-left text-[11px] font-bold px-2 py-1 rounded hover:bg-stone-100">Căn Dưới</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
           <!-- Canvas Interactive Workspace with Safe Zone Overlay -->
           <div class="studio-canvas-scroll w-full flex flex-col justify-start sm:justify-center items-start sm:items-center bg-[#eae3d2] rounded-2xl p-2 sm:p-6 border-2 border-stone-300 shadow-inner overflow-x-auto overflow-y-hidden min-h-[420px] sm:min-h-[520px] relative">
             
@@ -440,6 +650,15 @@
               <button onclick="toggleSafeZone()" id="btn-toggle-safe-zone" class="ml-2 px-2 py-0.5 rounded bg-rose-800 hover:bg-rose-900 text-white text-[10px] font-black shrink-0 shadow-sm transition-transform active:scale-95">
                 Bật/Tắt
               </button>
+            </div>
+
+            <!-- Floating Canva Zoom Controls -->
+            <div id="canva-zoom-bar" class="absolute bottom-3 right-3 sm:bottom-5 sm:right-5 z-20 bg-stone-900/90 backdrop-blur text-white px-2.5 py-1.5 rounded-2xl border border-stone-700 shadow-xl flex items-center gap-2">
+              <button onclick="canvasZoomOut()" class="w-6 h-6 rounded-lg bg-stone-800 hover:bg-stone-700 font-black text-xs flex items-center justify-center transition-colors" title="Thu nhỏ (-)">-</button>
+              <button onclick="canvasZoomReset()" id="zoom-percentage-label" class="text-xs font-mono font-bold hover:text-amber-300 px-1 transition-colors" title="Đặt lại 100%">100%</button>
+              <button onclick="canvasZoomIn()" class="w-6 h-6 rounded-lg bg-stone-800 hover:bg-stone-700 font-black text-xs flex items-center justify-center transition-colors" title="Phóng to (+)">+</button>
+              <div class="h-4 w-px bg-stone-700 mx-0.5"></div>
+              <button onclick="canvasZoomFit()" class="text-[10px] bg-stone-800 hover:bg-stone-700 font-bold px-2 py-0.5 rounded-lg text-amber-300 transition-colors" title="Vừa màn hình">⛶ Vừa</button>
             </div>
 
             <!-- Canvas Wrapper with Rounded Aesthetic & Safe Zone Overlay -->
@@ -498,24 +717,36 @@
                 Lật Kế ⏭
               </button>
 
-              <!-- Quick Angles -->
+              <!-- Quick Angle Presets -->
+              <button onclick="set3DViewAngle('hero')" class="text-xs bg-stone-800 hover:bg-stone-700 text-amber-300 font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Góc 3/4 nghệ thuật">
+                🌟 Góc 3/4
+              </button>
+              <button onclick="set3DViewAngle('spread')" class="text-xs bg-stone-800 hover:bg-stone-700 text-white font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Xem Mặt Trong Trải Phẳng">
+                📖 Trực Diện
+              </button>
               <button onclick="set3DViewAngle('cover')" class="text-xs bg-stone-800 hover:bg-stone-700 text-white font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Xem Bìa Trước Ngoài">
-                Bìa Trước
+                📕 Bìa Trước
               </button>
               <button onclick="set3DViewAngle('back')" class="text-xs bg-stone-800 hover:bg-stone-700 text-white font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Xem Bìa Sau Ngoài">
-                Bìa Sau
+                📘 Bìa Sau
               </button>
-              <button onclick="set3DViewAngle('front')" class="text-xs bg-stone-800 hover:bg-stone-700 text-white font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Xem Mặt Trong Trải Phẳng">
-                Mặt Trong
+              <button onclick="set3DViewAngle('macro')" class="text-xs bg-stone-800 hover:bg-stone-700 text-amber-300 font-bold px-2.5 py-1.5 rounded-xl border border-stone-700" title="Xem Cận Cảnh Chi Tiết">
+                🔍 Cận Cảnh
               </button>
               <button id="btn-toggle-rotate" onclick="toggle3DAutoRotate()" class="text-xs bg-stone-800 hover:bg-stone-700 text-amber-300 font-bold px-2.5 py-1.5 rounded-xl border border-stone-700">
-                Dừng xoay
+                🔄 Tự động xoay
               </button>
             </div>
           </div>
 
           <!-- WebGL Three.js Container -->
-          <div id="threejs-container" class="w-full h-[360px] sm:h-[520px] rounded-2xl bg-gradient-to-b from-[#fdfbf7] to-[#e8d8c3] border border-stone-700 overflow-hidden relative">
+          <div id="threejs-container" class="w-full h-[380px] sm:h-[540px] rounded-2xl bg-gradient-to-b from-[#fdfbf7] to-[#e8d8c3] border border-stone-700 overflow-hidden relative">
+            <!-- 2D/3D Realtime Color Sync Badge -->
+            <div class="absolute top-3 left-3 bg-stone-900/90 backdrop-blur border border-amber-400/80 text-amber-300 text-[10px] font-mono font-black px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2 pointer-events-none z-10">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Đồng Bộ Màu Sắc &amp; Nổi Khối 2D ⇄ 3D Realtime</span>
+            </div>
+
             <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-auto bg-stone-900/80 backdrop-blur text-stone-300 text-[10px] sm:text-xs px-2.5 sm:px-3.5 py-1.5 rounded-xl border border-stone-700 pointer-events-none font-bold">
               Kéo chuột để xoay 360° • Cuộn chuột để phóng to/thu nhỏ • Bấm "Gấp Sổ" để ngắm trọn bìa trước &amp; sau
             </div>
@@ -582,8 +813,10 @@
           <label class="block text-xs font-bold text-stone-700 mb-1">Font chữ:</label>
           <select id="text-font-select" class="w-full bg-stone-50 border-2 border-stone-300 rounded-xl px-3 py-2 text-xs font-bold text-stone-900 outline-none">
             <option value="Patrick Hand" selected>Patrick Hand (Viết tay mộc)</option>
-            <option value="Be Vietnam Pro">Be Vietnam Pro (Hiện đại)</option>
             <option value="Playfair Display">Playfair Display (Cổ điển)</option>
+            <option value="Dancing Script">Dancing Script (Mềm mại)</option>
+            <option value="Caveat">Caveat (Bút dạ ký họa)</option>
+            <option value="Be Vietnam Pro">Be Vietnam Pro (Hiện đại)</option>
             <option value="Courier Prime">Courier Prime (Máy đánh chữ)</option>
             <option value="Plus Jakarta Sans">Plus Jakarta Sans (Gen Z)</option>
           </select>
@@ -676,7 +909,7 @@ function ensureStudio3DLoaded() {
   if (!studio3DLoadPromise) {
     studio3DLoadPromise = loadStudioScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js')
       .then(() => loadStudioScript('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js'))
-      .then(() => loadStudioScript('/static/js/studio-3d.js'))
+      .then(() => loadStudioScript('/static/js/studio-3d.js?v=20261002_v4'))
       .catch((error) => {
         studio3DLoadPromise = null;
         throw error;
@@ -756,6 +989,6 @@ function handleStickerCardClick(el) {
   }
 }
 </script>
-<script src="/static/js/studio-canvas.js"></script>
+<script src="/static/js/studio-canvas.js?v=20261002_v4"></script>
 <script src="/static/js/studio-ai.js"></script>
 {% endblock %}

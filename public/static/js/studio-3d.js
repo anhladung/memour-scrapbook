@@ -1,7 +1,7 @@
 /**
- * ScrapCraft / MEMOUR Studio 2.0 - Three.js 3D Interactive Engine 360°
- * Distinct Front & Back Covers, 4 Distinct Metal Ring Styles per Book SKU,
- * Natural Upward-Arched 3D Page Flipping (y > 0), Grounded 0.4mm Solid Relief
+ * MEMOUR Studio - Next-Gen 3D Interactive Scrapbook Engine 360°
+ * Photorealistic Three.js Materials, Full 2D/3D Color Synchronization,
+ * Smooth Camera Cinematics, Tactile 3D Embossed Relief & Dynamic Bindings
  */
 
 let scene, camera, renderer, controls;
@@ -10,6 +10,10 @@ let canvasTexture = null;
 let paperGrainTexture = null;
 let currentFrontCoverTexture = null;
 let currentBackCoverTexture = null;
+let innerCraftSpreadMat = null;
+let pageEdgeMat = null;
+let frontCoverMat = null;
+let backCoverMat = null;
 let is3dInitialized = false;
 let isAutoRotate = false;
 
@@ -17,11 +21,13 @@ let isAutoRotate = false;
 let isBookClosed = false;
 let isAnimatingFold = false;
 let foldProgress = 0.0; // 0.0 = Open Spread (180° flat), 1.0 = Closed Book
-let bookAspectRatio = 1.0;
+let bookAspectRatio = 0.7062; // Default A5 Portrait
 
 // Page Flip State
 let isFlippingPage = false;
+let cameraAnimFrame = null;
 
+// ================= PROCEDURAL PAPER & LEATHER TEXTURES =================
 function createPaperGrainTexture() {
   const size = 512;
   const canvasElem = document.createElement('canvas');
@@ -30,29 +36,29 @@ function createPaperGrainTexture() {
   const ctx = canvasElem.getContext('2d');
   
   // Warm Kraft Paper Base Tone
-  ctx.fillStyle = '#f4ede2';
+  ctx.fillStyle = '#f8f4ed';
   ctx.fillRect(0, 0, size, size);
   
   // Organic noise grain
   const imgData = ctx.getImageData(0, 0, size, size);
   const data = imgData.data;
   for (let i = 0; i < data.length; i += 4) {
-    const noise = (Math.random() - 0.5) * 14;
+    const noise = (Math.random() - 0.5) * 16;
     data[i] = Math.min(255, Math.max(0, data[i] + noise));
     data[i + 1] = Math.min(255, Math.max(0, data[i + 1] + noise));
     data[i + 2] = Math.min(255, Math.max(0, data[i + 2] + noise));
   }
   ctx.putImageData(imgData, 0, 0);
 
-  // Subtle paper fibers
-  ctx.strokeStyle = 'rgba(120, 53, 15, 0.05)';
+  // Subtle organic craft fibers
+  ctx.strokeStyle = 'rgba(120, 53, 15, 0.04)';
   ctx.lineWidth = 1;
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 40; i++) {
     ctx.beginPath();
     const x = Math.random() * size;
     const y = Math.random() * size;
     ctx.moveTo(x, y);
-    ctx.lineTo(x + (Math.random() - 0.5) * 25, y + (Math.random() - 0.5) * 25);
+    ctx.lineTo(x + (Math.random() - 0.5) * 28, y + (Math.random() - 0.5) * 28);
     ctx.stroke();
   }
 
@@ -63,64 +69,156 @@ function createPaperGrainTexture() {
   return texture;
 }
 
+function createProceduralCoverTexture(colorHex, title = "MEMOUR SCRAPBOOK", isFront = true) {
+  const size = 1024;
+  const canvasElem = document.createElement('canvas');
+  canvasElem.width = size;
+  canvasElem.height = size;
+  const ctx = canvasElem.getContext('2d');
+
+  // Rich base background color
+  ctx.fillStyle = colorHex || '#1a0b2e';
+  ctx.fillRect(0, 0, size, size);
+
+  // Tactile leather / kraft fine grain noise
+  const imgData = ctx.getImageData(0, 0, size, size);
+  const data = imgData.data;
+  for (let i = 0; i < data.length; i += 4) {
+    const noise = (Math.random() - 0.5) * 20;
+    data[i] = Math.min(255, Math.max(0, data[i] + noise));
+    data[i + 1] = Math.min(255, Math.max(0, data[i + 1] + noise));
+    data[i + 2] = Math.min(255, Math.max(0, data[i + 2] + noise));
+  }
+  ctx.putImageData(imgData, 0, 0);
+
+  // Luxurious embossed gold foil borders
+  ctx.strokeStyle = '#d4af37';
+  ctx.lineWidth = 10;
+  ctx.strokeRect(40, 40, size - 80, size - 80);
+
+  ctx.lineWidth = 3.5;
+  ctx.strokeRect(58, 58, size - 116, size - 116);
+
+  // Corner Ornaments
+  const corners = [
+    [70, 70], [size - 70, 70], [70, size - 70], [size - 70, size - 70]
+  ];
+  ctx.fillStyle = '#facc15';
+  corners.forEach(([cx, cy]) => {
+    ctx.beginPath();
+    ctx.arc(cx, cy, 9, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  if (isFront) {
+    // Embossed Gold Title & Brand Emblem
+    ctx.textAlign = 'center';
+    ctx.shadowColor = 'rgba(0,0,0,0.55)';
+    ctx.shadowBlur = 10;
+    ctx.shadowOffsetX = 3;
+    ctx.shadowOffsetY = 4;
+
+    ctx.fillStyle = '#fde047';
+    ctx.font = '900 48px "Playfair Display", "Times New Roman", serif';
+    ctx.fillText(title.toUpperCase(), size / 2, size / 2 - 25);
+
+    ctx.font = 'italic 700 26px "Patrick Hand", cursive';
+    ctx.fillStyle = '#fef08a';
+    ctx.fillText('✦ Every memory has a story ✦', size / 2, size / 2 + 30);
+
+    ctx.font = 'bold 20px "Plus Jakarta Sans", sans-serif';
+    ctx.fillStyle = '#e2e8f0';
+    ctx.fillText('MEMOUR STUDIO CRAFT 2026', size / 2, size / 2 + 75);
+  } else {
+    // Back Cover: Brand mark & credits
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#fde047';
+    ctx.font = 'italic 600 26px "Patrick Hand", cursive';
+    ctx.fillText('Handcrafted with love by MEMOUR Studio', size / 2, size - 95);
+    ctx.font = 'bold 18px monospace';
+    ctx.fillText('memourscrapbook.com', size / 2, size - 65);
+  }
+
+  const texture = new THREE.CanvasTexture(canvasElem);
+  texture.anisotropy = 16;
+  return texture;
+}
+
+// ================= 3D INITIALIZATION =================
 function init3DViewer() {
   const container = document.getElementById('threejs-container');
   if (!container || is3dInitialized) return;
 
-  const width = container.clientWidth || 500;
+  const width = container.clientWidth || 600;
   const height = container.clientHeight || 500;
 
   // 1. Scene
   scene = new THREE.Scene();
-  scene.background = new THREE.Color('#fdfbf7');
+  scene.background = new THREE.Color('#f9f6f0');
 
-  // 2. Camera
-  camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-  camera.position.set(0, 4.2, 6.2);
+  // 2. Camera (Hero 3/4 perspective)
+  camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 1000);
+  camera.position.set(2.8, 3.8, 4.2);
 
-  // 3. Renderer
+  // 3. Renderer (with true sRGB Color fidelity)
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
   renderer.setSize(width, height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding; // Critical for 2D/3D color match
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.05;
+  renderer.toneMappingExposure = 1.0;
 
   container.appendChild(renderer.domElement);
 
   // 4. Orbit Controls
   controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
-  controls.dampingFactor = 0.06;
-  controls.maxDistance = 14;
-  controls.minDistance = 2.0;
-  controls.maxPolarAngle = Math.PI / 2 + 0.15;
+  controls.dampingFactor = 0.05;
+  controls.maxDistance = 12;
+  controls.minDistance = 1.8;
+  controls.maxPolarAngle = Math.PI / 2 + 0.08; // Prevent looking from directly underneath
   controls.autoRotate = isAutoRotate;
-  controls.autoRotateSpeed = 1.2;
+  controls.autoRotateSpeed = 1.0;
+  controls.target.set(0.3, 0, 0);
 
-  // 5. Lighting Setup
-  const ambientLight = new THREE.AmbientLight(0xfffbeb, 0.95);
+  // 5. Studio Multi-Point Lighting Rig
+  // Ambient bounce
+  const ambientLight = new THREE.AmbientLight(0xfffbeb, 0.85);
   scene.add(ambientLight);
 
-  const mainLight = new THREE.DirectionalLight(0xfff7ed, 1.45);
-  mainLight.position.set(3.5, 7.5, 4.5);
-  mainLight.castShadow = true;
-  mainLight.shadow.mapSize.width = 2048;
-  mainLight.shadow.mapSize.height = 2048;
-  mainLight.shadow.bias = -0.0003;
-  scene.add(mainLight);
+  // Key light: Warm directional with soft shadow
+  const keyLight = new THREE.DirectionalLight(0xfff7ed, 1.4);
+  keyLight.position.set(4.0, 7.0, 4.5);
+  keyLight.castShadow = true;
+  keyLight.shadow.mapSize.width = 2048;
+  keyLight.shadow.mapSize.height = 2048;
+  keyLight.shadow.bias = -0.0002;
+  keyLight.shadow.camera.near = 0.5;
+  keyLight.shadow.camera.far = 25;
+  keyLight.shadow.camera.left = -4;
+  keyLight.shadow.camera.right = 4;
+  keyLight.shadow.camera.top = 4;
+  keyLight.shadow.camera.bottom = -4;
+  scene.add(keyLight);
 
-  const fillLight = new THREE.DirectionalLight(0xf5ebe0, 0.65);
-  fillLight.position.set(-4.5, 4.5, -3.5);
+  // Fill light: Soft warm-tinted fill from front-left
+  const fillLight = new THREE.DirectionalLight(0xfef3c7, 0.45);
+  fillLight.position.set(-4.5, 3.5, 3.0);
   scene.add(fillLight);
 
-  // 6. Ground Shadow Receiver Plane
-  const groundGeo = new THREE.PlaneGeometry(28, 28);
-  const groundMat = new THREE.ShadowMaterial({ opacity: 0.15 });
+  // Rim / Specular light: Cool rim light from upper rear to highlight rings & page bevels
+  const rimLight = new THREE.DirectionalLight(0xecfeff, 0.6);
+  rimLight.position.set(0, 5.5, -5.5);
+  scene.add(rimLight);
+
+  // 6. Studio Floor Contact Shadow
+  const groundGeo = new THREE.PlaneGeometry(30, 30);
+  const groundMat = new THREE.ShadowMaterial({ opacity: 0.18 });
   const ground = new THREE.Mesh(groundGeo, groundMat);
   ground.rotation.x = -Math.PI / 2;
-  ground.position.y = -0.55;
+  ground.position.y = -0.07;
   ground.receiveShadow = true;
   scene.add(ground);
 
@@ -132,8 +230,12 @@ function init3DViewer() {
 
   is3dInitialized = true;
   animate3D();
+
+  // Initial Sync from 2D
+  setTimeout(syncTo3DViewer, 80);
 }
 
+// ================= BUILD 3D SCRAPBOOK MODEL =================
 function build3DScrapbookModel() {
   if (bookGroup) scene.remove(bookGroup);
 
@@ -146,48 +248,40 @@ function build3DScrapbookModel() {
     canvasTexture = new THREE.CanvasTexture(fabricCanvasElem);
     canvasTexture.anisotropy = 16;
     canvasTexture.generateMipmaps = true;
+    canvasTexture.encoding = THREE.sRGBEncoding;
   }
 
-  // Load DISTINCT Front & Back Cover Textures
-  const textureLoader = new THREE.TextureLoader();
-  const skuKey = (currentBookSku || 'scr_001').toLowerCase().replace('-', '_');
-  
-  currentFrontCoverTexture = textureLoader.load(`/static/assets/books/${skuKey}_front.svg`);
-  currentFrontCoverTexture.anisotropy = 8;
-  currentFrontCoverTexture.center.set(0.5, 0.5);
-  currentFrontCoverTexture.rotation = Math.PI;
+  // Load Initial Front & Back Cover Textures
+  loadInitialCoverTextures();
 
-  currentBackCoverTexture = textureLoader.load(`/static/assets/books/${skuKey}_back.svg`);
-  currentBackCoverTexture.anisotropy = 8;
-  currentBackCoverTexture.center.set(0.5, 0.5);
-  currentBackCoverTexture.rotation = 0;
-
-  // ---------------- MATERIALS ----------------
-  const frontCoverMat = new THREE.MeshStandardMaterial({
+  // Initial Materials
+  frontCoverMat = new THREE.MeshStandardMaterial({
     map: currentFrontCoverTexture,
     bumpMap: paperGrainTexture,
     bumpScale: 0.005,
-    roughness: 0.9,
-    metalness: 0.0
+    roughness: 0.85,
+    metalness: 0.05
   });
 
-  const backCoverMat = new THREE.MeshStandardMaterial({
+  backCoverMat = new THREE.MeshStandardMaterial({
     map: currentBackCoverTexture,
     bumpMap: paperGrainTexture,
     bumpScale: 0.005,
-    roughness: 0.9,
-    metalness: 0.0
+    roughness: 0.85,
+    metalness: 0.05
   });
 
-  const innerCraftSpreadMat = new THREE.MeshStandardMaterial({
+  // Inside Left Page Material (Color Synchronized dynamically)
+  innerCraftSpreadMat = new THREE.MeshStandardMaterial({
     color: 0xe8d8c3,
     bumpMap: paperGrainTexture,
     bumpScale: 0.004,
-    roughness: 0.96,
+    roughness: 0.95,
     metalness: 0.0
   });
 
-  const pageEdgeMat = new THREE.MeshStandardMaterial({
+  // Paper Block Edge Material
+  pageEdgeMat = new THREE.MeshStandardMaterial({
     color: 0xecdcc8,
     bumpMap: paperGrainTexture,
     bumpScale: 0.003,
@@ -195,12 +289,13 @@ function build3DScrapbookModel() {
     metalness: 0.0
   });
 
+  // Active Canvas Material (Right Page)
   const activeCanvasMat = new THREE.MeshStandardMaterial({
     map: canvasTexture || null,
     bumpMap: paperGrainTexture,
     bumpScale: 0.003,
     color: 0xffffff,
-    roughness: 0.95,
+    roughness: 0.92,
     metalness: 0.0
   });
 
@@ -208,7 +303,7 @@ function build3DScrapbookModel() {
   const pageH = 2.4 / bookAspectRatio;
   const pageThickness = 0.07;
 
-  // ---------------- RIGHT WING ----------------
+  // ---------------- RIGHT PAGE (ACTIVE 2D CANVAS) ----------------
   const rightPageGeo = new THREE.BoxGeometry(pageW, pageThickness, pageH, 20, 2, 20);
   const posAttr = rightPageGeo.attributes.position;
   for (let i = 0; i < posAttr.count; i++) {
@@ -223,7 +318,7 @@ function build3DScrapbookModel() {
     pageEdgeMat,       // +x right
     pageEdgeMat,       // -x spine
     activeCanvasMat,   // +y TOP (Inside Active Spread)
-    backCoverMat,      // -y BOTTOM (OUTSIDE BACK COVER)
+    backCoverMat,      // -y BOTTOM (Outside Back Cover)
     pageEdgeMat,       // +z front
     pageEdgeMat        // -z back
   ]);
@@ -232,7 +327,7 @@ function build3DScrapbookModel() {
   pageMesh.receiveShadow = true;
   bookGroup.add(pageMesh);
 
-  // ---------------- LEFT WING PIVOT ----------------
+  // ---------------- LEFT COVER / PAGE PIVOT ----------------
   leftCoverPivot = new THREE.Group();
   leftCoverPivot.position.set(0, 0, 0);
 
@@ -249,8 +344,8 @@ function build3DScrapbookModel() {
   leftPageMesh = new THREE.Mesh(leftPageGeo, [
     pageEdgeMat,          // +x spine
     pageEdgeMat,          // -x left
-    innerCraftSpreadMat,  // +y TOP (Inside Clean Craft Sheet)
-    frontCoverMat,        // -y BOTTOM (OUTSIDE FRONT COVER EXTERIOR)
+    innerCraftSpreadMat,  // +y TOP (Inside Left Spread Sheet)
+    frontCoverMat,        // -y BOTTOM (Outside Front Cover)
     pageEdgeMat,          // +z front
     pageEdgeMat           // -z back
   ]);
@@ -261,18 +356,53 @@ function build3DScrapbookModel() {
 
   bookGroup.add(leftCoverPivot);
 
-  // ---------------- DYNAMIC METAL RINGS & SPINAL BINDING PER SKU ----------------
+  // ---------------- DYNAMIC RINGS & SPINE BINDING ----------------
   build3DRingsForSku(currentBookSku || 'SCR-001', pageH);
 
-  // ---------------- 3D PHYSICAL UNIFIED SOLID STICKERS (0.4mm GROUNDED RELIEF) ----------------
+  // ---------------- 3D PHYSICAL SOLID STICKERS RELIEF ----------------
   stickers3DGroup = new THREE.Group();
   bookGroup.add(stickers3DGroup);
 
   scene.add(bookGroup);
-
-  syncPhysical3DStickers();
 }
 
+function loadInitialCoverTextures() {
+  const textureLoader = new THREE.TextureLoader();
+  const skuKey = (currentBookSku || 'SCR-001').toLowerCase().replace('-', '_');
+
+  currentFrontCoverTexture = textureLoader.load(
+    `/static/assets/books/${skuKey}_front.svg`,
+    (tex) => {
+      tex.encoding = THREE.sRGBEncoding;
+      tex.anisotropy = 8;
+      tex.center.set(0.5, 0.5);
+      tex.rotation = Math.PI;
+    },
+    undefined,
+    () => {
+      // Fallback procedural
+      currentFrontCoverTexture = createProceduralCoverTexture('#1a0b2e', 'MEMOUR SCRAPBOOK', true);
+      if (frontCoverMat) frontCoverMat.map = currentFrontCoverTexture;
+    }
+  );
+
+  currentBackCoverTexture = textureLoader.load(
+    `/static/assets/books/${skuKey}_back.svg`,
+    (tex) => {
+      tex.encoding = THREE.sRGBEncoding;
+      tex.anisotropy = 8;
+      tex.center.set(0.5, 0.5);
+      tex.rotation = 0;
+    },
+    undefined,
+    () => {
+      currentBackCoverTexture = createProceduralCoverTexture('#1a0b2e', 'MEMOUR SCRAPBOOK', false);
+      if (backCoverMat) backCoverMat.map = currentBackCoverTexture;
+    }
+  );
+}
+
+// ================= DYNAMIC METAL RINGS & BINDINGS PER SKU =================
 function build3DRingsForSku(bookSku, pageH) {
   if (ringsGroup) bookGroup.remove(ringsGroup);
   if (spineMesh) bookGroup.remove(spineMesh);
@@ -281,17 +411,21 @@ function build3DRingsForSku(bookSku, pageH) {
   const skuUpper = (bookSku || 'SCR-001').toUpperCase();
   const halfH = pageH / 2 - 0.2;
 
-  if (skuUpper === 'SCR-002') {
-    // PASTEL HOLOGRAM: Twin Spiral Wire Silver Chrome (Lò xo xoắn kép bạc sáng)
+  let ringColor, ringRoughness, ringMetalness;
+
+  if (skuUpper === 'SCR-002' || skuUpper === 'SCR-TT-001') {
+    // Twin Spiral Wire Silver Chrome
+    ringColor = 0xf1f5f9;
+    ringRoughness = 0.12;
+    ringMetalness = 0.98;
     const ringGeo = new THREE.TorusGeometry(0.17, 0.016, 16, 32);
     const ringMat = new THREE.MeshStandardMaterial({
-      color: 0xe2e8f0,
-      roughness: 0.12,
-      metalness: 0.98
+      color: ringColor,
+      roughness: ringRoughness,
+      metalness: ringMetalness
     });
     const step = 0.22;
     for (let z = -halfH; z <= halfH; z += step) {
-      // Double coil pair
       const ring1 = new THREE.Mesh(ringGeo, ringMat);
       ring1.rotation.y = Math.PI / 2;
       ring1.position.set(0, 0.088, z - 0.04);
@@ -304,13 +438,16 @@ function build3DRingsForSku(bookSku, pageH) {
       ring2.castShadow = true;
       ringsGroup.add(ring2);
     }
-  } else if (skuUpper === 'SCR-003') {
-    // VELVET DARK: Square / Flat Gunmetal Black Rings (Còng vuông súng đen)
+  } else if (skuUpper === 'SCR-003' || skuUpper === 'SCR-HW-001') {
+    // Gunmetal Black / Deep Purple Matte Rings
+    ringColor = 0x27272a;
+    ringRoughness = 0.35;
+    ringMetalness = 0.88;
     const boxRingGeo = new THREE.BoxGeometry(0.04, 0.22, 0.07);
     const ringMat = new THREE.MeshStandardMaterial({
-      color: 0x27272a,
-      roughness: 0.38,
-      metalness: 0.88
+      color: ringColor,
+      roughness: ringRoughness,
+      metalness: ringMetalness
     });
     const step = 0.32;
     for (let z = -halfH; z <= halfH; z += step) {
@@ -319,29 +456,35 @@ function build3DRingsForSku(bookSku, pageH) {
       ring.castShadow = true;
       ringsGroup.add(ring);
     }
-  } else if (skuUpper === 'SCR-004') {
-    // VINTAGE LINEN: Antique Bronze Rivets & Rings (Cúc bấm khuyên đồng đỏ)
-    const ringGeo = new THREE.TorusGeometry(0.19, 0.028, 16, 32);
+  } else if (skuUpper === 'SCR-HW-002' || skuUpper === 'SCR-HW-003') {
+    // Emerald / Antique Witchcraft Gold Torus
+    ringColor = 0xeab308;
+    ringRoughness = 0.22;
+    ringMetalness = 0.92;
+    const ringGeo = new THREE.TorusGeometry(0.18, 0.024, 16, 32);
     const ringMat = new THREE.MeshStandardMaterial({
-      color: 0xb45309,
-      roughness: 0.3,
-      metalness: 0.88
+      color: ringColor,
+      roughness: ringRoughness,
+      metalness: ringMetalness
     });
-    const step = 0.30;
+    const step = 0.28;
     for (let z = -halfH; z <= halfH; z += step) {
       const ring = new THREE.Mesh(ringGeo, ringMat);
       ring.rotation.y = Math.PI / 2;
-      ring.position.set(0, 0.092, z);
+      ring.position.set(0, 0.09, z);
       ring.castShadow = true;
       ringsGroup.add(ring);
     }
   } else {
-    // SCR-001 (Kraft FSC): Vintage Antique Brass Gold Torus (Đồng thau cổ điển)
+    // SCR-001 (Kraft Classic FSC): Vintage Brushed Antique Brass Gold
+    ringColor = 0xd4af37;
+    ringRoughness = 0.25;
+    ringMetalness = 0.92;
     const ringGeo = new THREE.TorusGeometry(0.18, 0.024, 16, 32);
     const ringMat = new THREE.MeshStandardMaterial({
-      color: 0xd4af37,
-      roughness: 0.25,
-      metalness: 0.92
+      color: ringColor,
+      roughness: ringRoughness,
+      metalness: ringMetalness
     });
     const step = 0.28;
     for (let z = -halfH; z <= halfH; z += step) {
@@ -355,11 +498,11 @@ function build3DRingsForSku(bookSku, pageH) {
 
   bookGroup.add(ringsGroup);
 
-  // Spine Central Rod
+  // Central Spine Cylinder
   const spineMat = new THREE.MeshStandardMaterial({
-    color: (skuUpper === 'SCR-002') ? 0xe2e8f0 : (skuUpper === 'SCR-003') ? 0x27272a : (skuUpper === 'SCR-004') ? 0xb45309 : 0xd4af37,
-    roughness: 0.25,
-    metalness: 0.9
+    color: ringColor,
+    roughness: ringRoughness,
+    metalness: ringMetalness
   });
   const spineGeo = new THREE.CylinderGeometry(0.035, 0.035, pageH, 16);
   spineMesh = new THREE.Mesh(spineGeo, spineMat);
@@ -368,14 +511,88 @@ function build3DRingsForSku(bookSku, pageH) {
   bookGroup.add(spineMesh);
 }
 
-// ================= 3D GROUNDED SOLID RELIEF (0.4MM EMBOSSED ON PAPER) =================
+// ================= REAL-TIME 2D/3D COLOR & ASSET SYNCHRONIZATION =================
 function syncTo3DViewer() {
+  if (!is3dInitialized) return;
+
+  // 1. Update 2D Canvas Texture on Right Page
   if (canvasTexture) {
     canvasTexture.needsUpdate = true;
   }
+
+  // 2. Synchronize Left Page Color & Spread Aesthetics
+  let currentBgColor = '#e8d8c3';
+  let currentBgPattern = null;
+
+  if (typeof canvas !== 'undefined' && canvas) {
+    if (typeof canvas.backgroundColor === 'string' && canvas.backgroundColor) {
+      currentBgColor = canvas.backgroundColor;
+    }
+    if (canvas.backgroundImage && canvas.backgroundImage._element && canvas.backgroundImage._element.src) {
+      currentBgPattern = canvas.backgroundImage._element.src;
+    }
+  }
+
+  if (leftPageMesh && Array.isArray(leftPageMesh.material)) {
+    const leftMat = leftPageMesh.material[2];
+    if (leftMat) {
+      // Check if previous page has a rendered snapshot
+      const prevPageIdx = (typeof activePageIndex !== 'undefined') ? activePageIndex - 1 : -1;
+      if (prevPageIdx >= 0 && window.pageSnapshots && window.pageSnapshots.has(prevPageIdx)) {
+        const snapUrl = window.pageSnapshots.get(prevPageIdx);
+        if (snapUrl) {
+          const snapLoader = new THREE.TextureLoader();
+          snapLoader.load(snapUrl, (snapTex) => {
+            snapTex.encoding = THREE.sRGBEncoding;
+            snapTex.anisotropy = 8;
+            leftMat.map = snapTex;
+            leftMat.color.set(0xffffff);
+            leftMat.needsUpdate = true;
+          });
+        }
+      } else {
+        // Cohesive spread: match exact background color & pattern of right page
+        leftMat.map = null;
+        try {
+          leftMat.color.setStyle(currentBgColor);
+        } catch (e) {
+          leftMat.color.set(0xe8d8c3);
+        }
+        leftMat.needsUpdate = true;
+      }
+    }
+  }
+
+  // 3. Harmonize Paper Edge Block Colors
+  if (pageMesh && Array.isArray(pageMesh.material)) {
+    const isDark = isDarkHexColor(currentBgColor);
+    const edgeColor = isDark ? 0x27272a : 0xecdcc8;
+    [0, 1, 4, 5].forEach(idx => {
+      if (pageMesh.material[idx]) {
+        pageMesh.material[idx].color.set(edgeColor);
+      }
+    });
+  }
+
+  // 4. Update Physical 3D Tactile Relief
   syncPhysical3DStickers();
 }
 
+function isDarkHexColor(hex) {
+  if (!hex || typeof hex !== 'string') return false;
+  let c = hex.replace('#', '');
+  if (c.length === 3) c = c.split('').map(x => x + x).join('');
+  const num = parseInt(c, 16);
+  if (isNaN(num)) return false;
+  const r = (num >> 16) & 255;
+  const g = (num >> 8) & 255;
+  const b = num & 255;
+  // Perceived luminance
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+  return luminance < 128;
+}
+
+// ================= 3D GROUNDED PHYSICAL TACTILE RELIEF (0.4MM EMBOSSED) =================
 function syncPhysical3DStickers() {
   if (!stickers3DGroup || typeof canvas === 'undefined' || !canvas) return;
 
@@ -393,8 +610,8 @@ function syncPhysical3DStickers() {
 
   const objects = canvas.getObjects();
   const textureLoader = new THREE.TextureLoader();
-  const cW = canvas.width || 600;
-  const cH = canvas.height || 600;
+  const cW = canvas.width || 500;
+  const cH = canvas.height || 708;
 
   objects.forEach((obj, idx) => {
     if (!obj) return;
@@ -411,7 +628,6 @@ function syncPhysical3DStickers() {
       
       const isSticker = (obj.itemCategory === 'sticker' || (obj.sku && obj.sku.startsWith('STK')));
       
-      // Grounded 0.4mm solid relief attached flush on paper surface (y=0.035)
       const baseElevation = 0.036 + (idx * 0.0008);
       const reliefThickness = isSticker ? 0.016 : 0.009;
 
@@ -425,6 +641,7 @@ function syncPhysical3DStickers() {
       if (!srcUrl) return;
 
       const stickerTexture = textureLoader.load(srcUrl);
+      stickerTexture.encoding = THREE.sRGBEncoding;
       stickerTexture.anisotropy = 8;
       stickerTexture.generateMipmaps = true;
 
@@ -436,7 +653,7 @@ function syncPhysical3DStickers() {
         alphaTest: 0.05,
         depthWrite: true,
         roughness: isSticker ? 0.16 : 0.38,
-        metalness: isSticker ? 0.22 : 0.0,
+        metalness: isSticker ? 0.20 : 0.0,
         clearcoat: isSticker ? 0.95 : 0.3,
         clearcoatRoughness: 0.08,
         reflectivity: 0.65,
@@ -455,8 +672,8 @@ function syncPhysical3DStickers() {
       const shadowMat = new THREE.MeshBasicMaterial({
         map: stickerTexture,
         transparent: true,
-        color: 0x2d1808,
-        opacity: isSticker ? 0.38 : 0.24,
+        color: 0x221308,
+        opacity: isSticker ? 0.36 : 0.22,
         alphaTest: 0.05,
         depthWrite: false,
         side: THREE.DoubleSide
@@ -470,6 +687,79 @@ function syncPhysical3DStickers() {
       stickers3DGroup.add(shadowMesh);
     }
   });
+}
+
+// ================= DYNAMIC 3D COVER DESIGN =================
+function change3DCoverDesign(bookSku, imageUrl, colorHex) {
+  currentBookSku = bookSku;
+  const textureLoader = new THREE.TextureLoader();
+  const skuKey = bookSku.toLowerCase().replace('-', '_');
+
+  const frontUrl = imageUrl || `/static/assets/books/${skuKey}_front.svg`;
+  const backUrl = `/static/assets/books/${skuKey}_back.svg`;
+
+  textureLoader.load(
+    frontUrl,
+    (frontTex) => {
+      frontTex.encoding = THREE.sRGBEncoding;
+      frontTex.anisotropy = 8;
+      frontTex.center.set(0.5, 0.5);
+      frontTex.rotation = Math.PI;
+      currentFrontCoverTexture = frontTex;
+
+      if (leftPageMesh && Array.isArray(leftPageMesh.material)) {
+        leftPageMesh.material[3].map = frontTex;
+        leftPageMesh.material[3].needsUpdate = true;
+      }
+    },
+    undefined,
+    () => {
+      // Fallback procedural luxury foil cover
+      const fallbackTex = createProceduralCoverTexture(colorHex || '#1a0b2e', bookSku, true);
+      currentFrontCoverTexture = fallbackTex;
+      if (leftPageMesh && Array.isArray(leftPageMesh.material)) {
+        leftPageMesh.material[3].map = fallbackTex;
+        leftPageMesh.material[3].needsUpdate = true;
+      }
+    }
+  );
+
+  textureLoader.load(
+    backUrl,
+    (backTex) => {
+      backTex.encoding = THREE.sRGBEncoding;
+      backTex.anisotropy = 8;
+      backTex.center.set(0.5, 0.5);
+      backTex.rotation = 0;
+      currentBackCoverTexture = backTex;
+
+      if (pageMesh && Array.isArray(pageMesh.material)) {
+        pageMesh.material[3].map = backTex;
+        pageMesh.material[3].needsUpdate = true;
+      }
+    },
+    undefined,
+    () => {
+      const fallbackTex = createProceduralCoverTexture(colorHex || '#1a0b2e', bookSku, false);
+      currentBackCoverTexture = fallbackTex;
+      if (pageMesh && Array.isArray(pageMesh.material)) {
+        pageMesh.material[3].map = fallbackTex;
+        pageMesh.material[3].needsUpdate = true;
+      }
+    }
+  );
+
+  // Update Rings according to selected Book SKU
+  const pageH = 2.4 / bookAspectRatio;
+  build3DRingsForSku(bookSku, pageH);
+}
+
+function update3DBookDimensions(aspectRatio) {
+  bookAspectRatio = aspectRatio || 0.7062;
+  if (is3dInitialized) {
+    build3DScrapbookModel();
+    syncTo3DViewer();
+  }
 }
 
 // ================= BOOK FOLDING / CLOSING MECHANICS =================
@@ -489,7 +779,7 @@ function toggleFoldBook() {
   const targetProgress = isBookClosed ? 1.0 : 0.0;
   const startProgress = foldProgress;
   const startTime = performance.now();
-  const duration = 800;
+  const duration = 750;
 
   function animateFoldStep(now) {
     const elapsed = now - startTime;
@@ -512,7 +802,7 @@ function toggleFoldBook() {
         set3DViewAngle('cover');
         showToast('Đã gấp sổ • Bìa trước ngay ngắn ở trên, bìa sau ở dưới!', 'info');
       } else {
-        set3DViewAngle('front');
+        set3DViewAngle('spread');
         showToast('Đã mở sổ • Trải rộng 2 trang thiết kế!', 'info');
       }
     }
@@ -521,7 +811,7 @@ function toggleFoldBook() {
   requestAnimationFrame(animateFoldStep);
 }
 
-// ================= 3D PAGE FLIP: UPWARD ARCH IN THE AIR (y > 0) =================
+// ================= 3D PAGE FLIP: UPWARD ARCH IN THE AIR =================
 function flipPage3D(direction = 1) {
   if (isFlippingPage) return;
 
@@ -532,7 +822,6 @@ function flipPage3D(direction = 1) {
 
   const targetIdx = activePageIndex + direction;
 
-  // Boundary guards: NO infinite looping!
   if (targetIdx < 0) {
     showToast('✦ Bạn đang ở Trang 1 (Trang đầu tiên của cuốn sổ)', 'info');
     return;
@@ -550,7 +839,6 @@ function flipPage3D(direction = 1) {
   const pageW = 2.4;
   const pageH = 2.4 / bookAspectRatio;
 
-  // Pre-curved page leaf geometry
   const turningGeo = new THREE.PlaneGeometry(pageW, pageH, 24, 4);
   const posAttr = turningGeo.attributes.position;
   for (let i = 0; i < posAttr.count; i++) {
@@ -563,7 +851,6 @@ function flipPage3D(direction = 1) {
   const turningPivot = new THREE.Group();
   turningPivot.position.set(0, 0.082, 0);
 
-  // Dual-sided leaf
   const pageMatFront = new THREE.MeshStandardMaterial({
     map: canvasTexture || null,
     bumpMap: paperGrainTexture,
@@ -600,9 +887,6 @@ function flipPage3D(direction = 1) {
     const t = Math.min(1.0, elapsed / duration);
     const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
-    // ROTATE UPWARD INTO THE AIR (y > 0):
-    // Next Page (direction > 0): Angle goes from 0 to +Math.PI (swings from right up over spine to left)
-    // Prev Page (direction < 0): Angle goes from +Math.PI to 0 (swings from left up over spine to right)
     if (direction > 0) {
       turningPivot.rotation.z = ease * Math.PI;
     } else {
@@ -624,87 +908,84 @@ function flipPage3D(direction = 1) {
   requestAnimationFrame(animateFlip);
 }
 
-// ================= DYNAMIC 3D COVER & RING DESIGN =================
-function change3DCoverDesign(bookSku) {
-  currentBookSku = bookSku;
-  const textureLoader = new THREE.TextureLoader();
-  const skuKey = bookSku.toLowerCase().replace('-', '_');
+// ================= SMOOTH CAMERA CINEMATICS =================
+function animateCameraTo(targetPos, targetLookAt, duration = 600) {
+  if (!camera || !controls) return;
+  if (cameraAnimFrame) cancelAnimationFrame(cameraAnimFrame);
 
-  const frontCoverUrl = `/static/assets/books/${skuKey}_front.svg`;
-  const backCoverUrl = `/static/assets/books/${skuKey}_back.svg`;
+  const startPos = camera.position.clone();
+  const startLookAt = controls.target.clone();
+  const startTime = performance.now();
 
-  textureLoader.load(frontCoverUrl, (frontTex) => {
-    frontTex.anisotropy = 8;
-    frontTex.center.set(0.5, 0.5);
-    frontTex.rotation = Math.PI;
-    currentFrontCoverTexture = frontTex;
+  function step(now) {
+    const elapsed = now - startTime;
+    const t = Math.min(1.0, elapsed / duration);
+    const ease = t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
 
-    if (leftPageMesh && Array.isArray(leftPageMesh.material)) {
-      leftPageMesh.material[3].map = frontTex;
-      leftPageMesh.material[3].needsUpdate = true;
+    camera.position.lerpVectors(startPos, targetPos, ease);
+    controls.target.lerpVectors(startLookAt, targetLookAt, ease);
+    controls.update();
+
+    if (t < 1.0) {
+      cameraAnimFrame = requestAnimationFrame(step);
     }
-  });
-
-  textureLoader.load(backCoverUrl, (backTex) => {
-    backTex.anisotropy = 8;
-    backTex.center.set(0.5, 0.5);
-    backTex.rotation = 0;
-    currentBackCoverTexture = backTex;
-
-    if (pageMesh && Array.isArray(pageMesh.material)) {
-      pageMesh.material[3].map = backTex;
-      pageMesh.material[3].needsUpdate = true;
-    }
-  });
-
-  // Update Rings according to selected Book SKU
-  const pageH = 2.4 / bookAspectRatio;
-  build3DRingsForSku(bookSku, pageH);
-}
-
-function update3DBookDimensions(aspectRatio) {
-  bookAspectRatio = aspectRatio || 1.0;
-  if (is3dInitialized) {
-    build3DScrapbookModel();
   }
-}
-
-// ================= CAMERA & VIEW ANGLES =================
-function toggle3DAutoRotate() {
-  isAutoRotate = !isAutoRotate;
-  if (controls) controls.autoRotate = isAutoRotate;
-  const btn = document.getElementById('btn-toggle-rotate');
-  if (btn) {
-    btn.innerText = isAutoRotate ? 'Dừng xoay' : 'Tự động xoay 360°';
-  }
+  cameraAnimFrame = requestAnimationFrame(step);
 }
 
 function set3DViewAngle(angleType) {
   if (!camera || !controls) return;
   controls.autoRotate = false;
 
-  if (angleType === 'front') {
-    camera.position.set(0.6, 4.2, 3.2);
-    controls.target.set(0.6, 0, 0);
+  let targetPos, targetLookAt;
+
+  if (angleType === 'hero' || angleType === 'iso') {
+    // 🌟 Góc 3/4 Nghệ Thuật
+    targetPos = new THREE.Vector3(2.8, 3.6, 4.2);
+    targetLookAt = new THREE.Vector3(0.3, 0, 0);
+  } else if (angleType === 'spread' || angleType === 'front') {
+    // 📖 Mặt Trong Trải Phẳng Trực Diện
+    targetPos = new THREE.Vector3(0.0, 4.6, 2.8);
+    targetLookAt = new THREE.Vector3(0.0, 0, 0);
   } else if (angleType === 'cover') {
-    if (!isBookClosed) {
-      camera.position.set(-1.25, 4.5, 2.5);
-      controls.target.set(-1.25, 0, 0);
+    // 📕 Bìa Trước
+    if (isBookClosed) {
+      targetPos = new THREE.Vector3(0.0, 3.8, 2.0);
+      targetLookAt = new THREE.Vector3(0.0, 0.06, 0);
     } else {
-      camera.position.set(1.25, 4.0, 1.8);
-      controls.target.set(1.25, 0.08, 0);
+      targetPos = new THREE.Vector3(-1.3, 4.0, 2.2);
+      targetLookAt = new THREE.Vector3(-1.3, 0, 0);
     }
   } else if (angleType === 'back') {
-    camera.position.set(1.25, -4.0, -1.8);
-    controls.target.set(1.25, 0, 0);
-  } else if (angleType === 'iso') {
-    camera.position.set(3.4, 3.6, 4.5);
-    controls.target.set(0.6, 0, 0);
+    // 📘 Bìa Sau
+    if (isBookClosed) {
+      targetPos = new THREE.Vector3(0.0, -3.8, -2.0);
+      targetLookAt = new THREE.Vector3(0.0, 0, 0);
+    } else {
+      targetPos = new THREE.Vector3(1.3, -4.0, -2.0);
+      targetLookAt = new THREE.Vector3(1.3, 0, 0);
+    }
+  } else if (angleType === 'macro') {
+    // 🔍 Cận Cảnh Chi Tiết
+    targetPos = new THREE.Vector3(1.1, 1.4, 1.6);
+    targetLookAt = new THREE.Vector3(1.1, 0.05, 0.1);
   } else if (angleType === 'top') {
-    camera.position.set(0.6, 6.2, 0.01);
-    controls.target.set(0.6, 0, 0);
+    targetPos = new THREE.Vector3(0.0, 6.0, 0.05);
+    targetLookAt = new THREE.Vector3(0.0, 0, 0);
   }
-  controls.update();
+
+  if (targetPos && targetLookAt) {
+    animateCameraTo(targetPos, targetLookAt, 650);
+  }
+}
+
+function toggle3DAutoRotate() {
+  isAutoRotate = !isAutoRotate;
+  if (controls) controls.autoRotate = isAutoRotate;
+  const btn = document.getElementById('btn-toggle-rotate');
+  if (btn) {
+    btn.innerHTML = isAutoRotate ? '<span>⏸ Dừng xoay</span>' : '<span>🔄 Tự động xoay 360°</span>';
+  }
 }
 
 function onWindowResize() {
@@ -731,6 +1012,7 @@ function animate3D() {
   }
 }
 
+// ================= VIEW SWITCHER =================
 function switchStudioView(mode) {
   const mode2D = document.getElementById('studio-2d-panel');
   const mode3D = document.getElementById('studio-3d-panel');
@@ -756,3 +1038,14 @@ function switchStudioView(mode) {
     if (btn3D) btn3D.className = 'flex-1 sm:flex-none px-3 sm:px-5 py-1.5 rounded-xl font-heading font-black text-[11px] sm:text-xs border-2 border-black bg-white text-stone-900 hover:bg-amber-100 transition-all flex items-center justify-center gap-1.5';
   }
 }
+
+// Global Exports
+window.init3DViewer = init3DViewer;
+window.syncTo3DViewer = syncTo3DViewer;
+window.change3DCoverDesign = change3DCoverDesign;
+window.update3DBookDimensions = update3DBookDimensions;
+window.toggleFoldBook = toggleFoldBook;
+window.flipPage3D = flipPage3D;
+window.set3DViewAngle = set3DViewAngle;
+window.toggle3DAutoRotate = toggle3DAutoRotate;
+window.switchStudioView = switchStudioView;

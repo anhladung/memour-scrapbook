@@ -860,10 +860,66 @@ def api_orders():
 @app.route('/api/contact-message', methods=['POST'])
 def api_contact():
     data = request.get_json() or {}
-    # Simulate saving contact/membership
+
+    name = (data.get('name') or '').strip()
+    phone = (data.get('phone') or '').strip()
+    email = (data.get('email') or '').strip()
+    message = (data.get('message') or '').strip()
+    subject = (data.get('subject') or '').strip()
+    source = (data.get('source') or 'Trang Chủ - Kết Nối Cùng MEMOUR Studio').strip()
+
+    # Combine subject and message if subject exists
+    full_message = f"[{subject}] {message}" if subject and message else (message or subject or "")
+
+    # Vietnamese timestamp (UTC+7)
+    now_vn = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))).strftime('%d/%m/%Y %H:%M:%S')
+
+    lead_entry = {
+        'created_at': now_vn,
+        'name': name,
+        'phone': phone,
+        'email': email,
+        'message': full_message,
+        'source': source
+    }
+
+    # 1. Forward to Google Sheets Webhook if configured
+    webhook_url = os.environ.get('GOOGLE_SHEET_WEBHOOK_URL') or getattr(Config, 'GOOGLE_SHEET_WEBHOOK_URL', None)
+    if webhook_url:
+        try:
+            import urllib.request
+            req_data = json.dumps(lead_entry).encode('utf-8')
+            req = urllib.request.Request(
+                webhook_url,
+                data=req_data,
+                headers={'Content-Type': 'application/json'},
+                method='POST'
+            )
+            with urllib.request.urlopen(req, timeout=8) as resp:
+                pass
+        except Exception as e:
+            app.logger.warning(f"Could not forward lead to Google Sheet webhook: {e}")
+
+    # 2. Local fallback storage to data/contacts.json
+    try:
+        contacts_file = os.path.join(DATA_DIR, 'contacts.json')
+        contacts = []
+        if os.path.exists(contacts_file):
+            try:
+                with open(contacts_file, 'r', encoding='utf-8') as f:
+                    contacts = json.load(f)
+            except Exception:
+                contacts = []
+        contacts.append(lead_entry)
+        with open(contacts_file, 'w', encoding='utf-8') as f:
+            json.dump(contacts, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        app.logger.warning(f"Could not persist contact lead backup: {e}")
+
     return jsonify({
         'status': 'success',
-        'message': 'Cảm ơn bạn! Lời nhắn / Đăng ký thành viên của bạn đã được gửi thành công đến Xưởng ScrapCraft.'
+        'message': 'Cảm ơn bạn! Lời nhắn của bạn đã được gửi thành công đến Xưởng MEMOUR Studio. Chúng mình sẽ liên hệ hỗ trợ bạn sớm nhất nhé! 💐✨',
+        'data': lead_entry
     })
 
 

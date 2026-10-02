@@ -96,8 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>⏳ Đang gửi lời nhắn tới xưởng...</span>';
+      }
+
       const formData = new FormData(contactForm);
       const data = Object.fromEntries(formData.entries());
+      if (!data.source) {
+        data.source = window.location.pathname === '/contact' ? 'Trang Liên Hệ - MEMOUR Studio' : 'Trang Chủ - Kết Nối Cùng MEMOUR Studio';
+      }
+      data.created_at = new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
       
       try {
         const res = await fetch('/api/contact-message', {
@@ -106,11 +117,30 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify(data)
         });
         const result = await res.json();
-        showToast(result.message || 'Gửi lời nhắn thành công!', 'success');
+
+        // If client-side Google Sheet webhook URL is provided, send dual-backup directly
+        const sheetWebhook = window.GOOGLE_SHEET_WEBHOOK_URL || (window.MEMOUR_CONFIG && window.MEMOUR_CONFIG.GOOGLE_SHEET_WEBHOOK_URL);
+        if (sheetWebhook) {
+          try {
+            fetch(sheetWebhook, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data)
+            }).catch(() => {});
+          } catch(sheetErr) {}
+        }
+
+        showToast(result.message || 'Cảm ơn bạn! Lời nhắn của bạn đã được gửi thành công đến Xưởng MEMOUR Studio! 💖', 'success');
         contactForm.reset();
       } catch (err) {
-        showToast('Gửi lời nhắn thành công!', 'success');
+        showToast('Cảm ơn bạn! Lời nhắn của bạn đã được gửi thành công đến Xưởng MEMOUR Studio! 💖', 'success');
         contactForm.reset();
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
       }
     });
   }

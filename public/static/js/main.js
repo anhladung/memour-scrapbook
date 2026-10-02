@@ -421,30 +421,233 @@ function initSpookySpider() {
     }, 1000 + Math.random() * 800);
   }
 
-  // Click on spider to interact!
-  actor.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (isJumping) return;
-    isJumping = true;
+  // =========================================================
+  // INTERACTIVE DRAG & 2-SECOND HOLD CUTE JUMPSCARE FEATURE
+  // =========================================================
+  let isHolding = false;
+  let isDragging = false;
+  let isScareActive = false;
+  let holdTimer = null;
+  let holdWarningTimer = null;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let initialSpiderX = 0;
+  let initialSpiderY = 0;
+  let scareTimeout = null;
+
+  function playCuteBooSound() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = 'triangle';
+      const now = ctx.currentTime;
+      osc.frequency.setValueAtTime(260, now);
+      osc.frequency.exponentialRampToValueAtTime(659.25, now + 0.15);
+      osc.frequency.exponentialRampToValueAtTime(987.77, now + 0.3);
+      osc.frequency.exponentialRampToValueAtTime(440, now + 0.65);
+      gain.gain.setValueAtTime(0.35, now);
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.7);
+      osc.start(now);
+      osc.stop(now + 0.75);
+    } catch (e) {}
+  }
+
+  function spawnScareConfetti() {
+    const confettiStage = document.getElementById('scare-confetti-container');
+    if (!confettiStage) return;
+    confettiStage.innerHTML = '';
+    const icons = ['🍬', '🍭', '⭐', '✨', '🎃', '🦇', '🕸️', '👻', '💖', '🎉', '🌟', '🍫'];
+    for (let i = 0; i < 40; i++) {
+      const p = document.createElement('div');
+      p.innerText = icons[Math.floor(Math.random() * icons.length)];
+      p.style.position = 'absolute';
+      p.style.left = '50%';
+      p.style.top = '50%';
+      p.style.fontSize = (18 + Math.random() * 22) + 'px';
+      p.style.pointerEvents = 'none';
+      p.style.zIndex = '5';
+      p.style.transition = 'all 1.1s cubic-bezier(0.16, 1, 0.3, 1)';
+      confettiStage.appendChild(p);
+
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 140 + Math.random() * (Math.max(window.innerWidth, window.innerHeight) * 0.45);
+      const rot = (Math.random() - 0.5) * 720;
+      setTimeout(() => {
+        p.style.transform = `translate(${Math.cos(angle) * dist}px, ${Math.sin(angle) * dist}px) rotate(${rot}deg) scale(${0.7 + Math.random() * 0.5})`;
+        p.style.opacity = '0.95';
+      }, 20);
+
+      setTimeout(() => {
+        p.style.opacity = '0';
+      }, 1500);
+    }
+  }
+
+  function triggerCuteGiantScare() {
+    isScareActive = true;
+    isHolding = false;
+    isDragging = false;
+    clearTimeout(holdTimer);
+    clearTimeout(holdWarningTimer);
+    actor.classList.remove('is-dragging', 'spider-charge-vibrate');
+
+    const scareOverlay = document.getElementById('mumu-giant-scare-overlay');
+    if (!scareOverlay) return;
+
+    playCuteBooSound();
+    spawnScareConfetti();
+
+    scareOverlay.classList.remove('hidden', 'scare-exit');
+
+    clearTimeout(scareTimeout);
+    scareTimeout = setTimeout(() => {
+      window.dismissCuteScare();
+    }, 2300);
+  }
+
+  window.dismissCuteScare = function() {
+    const scareOverlay = document.getElementById('mumu-giant-scare-overlay');
+    if (!scareOverlay || scareOverlay.classList.contains('hidden')) return;
+
+    scareOverlay.classList.add('scare-exit');
+    setTimeout(() => {
+      scareOverlay.classList.add('hidden');
+      scareOverlay.classList.remove('scare-exit');
+      isScareActive = false;
+
+      if (jumpWrapper) {
+        jumpWrapper.classList.remove('spider-jumping');
+        void jumpWrapper.offsetWidth;
+        jumpWrapper.classList.add('spider-jumping');
+      }
+      showBubble("Boo! 👻 Bị MUMU hù một vố nhé! Tặng bạn 10 điểm đáng yêu nè 🍬🍭✨", 3500);
+      spawnCandySparkles(posX, posY);
+
+      setTimeout(() => {
+        if (jumpWrapper) jumpWrapper.classList.remove('spider-jumping');
+        if (active && !isPaused) actor.classList.add('spider-walking');
+      }, 700);
+    }, 350);
+  };
+
+  function onDragStart(e) {
+    if (!active || isDropping || isClimbing || isScareActive) return;
+    if (e.type === 'mousedown' && e.button !== 0) return;
+
+    isHolding = true;
+    isDragging = false;
+    dragStartX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    dragStartY = e.clientY || (e.touches && e.touches[0].clientY) || 0;
+    initialSpiderX = posX;
+    initialSpiderY = posY;
+
+    actor.classList.add('is-dragging');
     actor.classList.remove('spider-walking');
 
-    // Thêm hiệu ứng nhảy xoay vào jumpWrapper (không làm lộn ngược chữ trong bong bóng thoại)
-    if (jumpWrapper) {
-      jumpWrapper.classList.remove('spider-jumping');
-      void jumpWrapper.offsetWidth; // Force reflow
-      jumpWrapper.classList.add('spider-jumping');
+    showBubble("Á! Bạn đang bế MUMU đi dạo nè! 🕷️ Giữ 2s xem biến nhé! ✨", 2000);
+
+    clearTimeout(holdTimer);
+    clearTimeout(holdWarningTimer);
+
+    holdWarningTimer = setTimeout(() => {
+      if (isHolding && !isScareActive) {
+        showBubble("Khoan đã... 1s nữa là MUMU biến hình đó! ⚡👀", 1200);
+        actor.classList.add('spider-charge-vibrate');
+        spawnCandySparkles(posX, posY);
+      }
+    }, 1000);
+
+    holdTimer = setTimeout(() => {
+      if (isHolding && !isScareActive) {
+        triggerCuteGiantScare();
+      }
+    }, 2000);
+  }
+
+  function onDragMove(e) {
+    if (!isHolding || isScareActive) return;
+
+    const curX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    const curY = e.clientY || (e.touches && e.touches[0].clientY) || 0;
+    const dx = curX - dragStartX;
+    const dy = curY - dragStartY;
+
+    if (Math.hypot(dx, dy) > 5) {
+      isDragging = true;
     }
 
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    showBubble(randomQuote, 3200);
-    spawnCandySparkles(posX, posY);
+    if (isDragging) {
+      if (e.cancelable && e.type === 'touchmove') e.preventDefault();
 
-    setTimeout(() => {
-      if (jumpWrapper) jumpWrapper.classList.remove('spider-jumping');
-      isJumping = false;
-      if (active && !isPaused) actor.classList.add('spider-walking');
-    }, 700);
-  });
+      posX = Math.max(10, Math.min(window.innerWidth - 82, initialSpiderX + dx));
+      posY = Math.max(10, Math.min(window.innerHeight - 82, initialSpiderY + dy));
+
+      actor.style.left = posX + 'px';
+      actor.style.top = posY + 'px';
+
+      if (flipWrapper) {
+        flipWrapper.style.transform = dx >= 0 ? 'scaleX(1)' : 'scaleX(-1)';
+      }
+
+      if (silkLine) {
+        silkLine.setAttribute('x1', posX + 36);
+        silkLine.setAttribute('y1', 0);
+        silkLine.setAttribute('x2', posX + 36);
+        silkLine.setAttribute('y2', posY + 16);
+      }
+    }
+  }
+
+  function onDragEnd(e) {
+    if (isScareActive) return;
+
+    if (isHolding) {
+      isHolding = false;
+      clearTimeout(holdTimer);
+      clearTimeout(holdWarningTimer);
+      actor.classList.remove('is-dragging', 'spider-charge-vibrate');
+
+      if (isDragging) {
+        isDragging = false;
+        showBubble("Hihi được đi dạo khắp màn hình thích quá! Tặng bạn kẹo nè 🍬💖", 2500);
+        spawnCandySparkles(posX, posY);
+        if (active && !isPaused) actor.classList.add('spider-walking');
+      } else {
+        if (isJumping) return;
+        isJumping = true;
+        actor.classList.remove('spider-walking');
+
+        if (jumpWrapper) {
+          jumpWrapper.classList.remove('spider-jumping');
+          void jumpWrapper.offsetWidth;
+          jumpWrapper.classList.add('spider-jumping');
+        }
+
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        showBubble(randomQuote, 3200);
+        spawnCandySparkles(posX, posY);
+
+        setTimeout(() => {
+          if (jumpWrapper) jumpWrapper.classList.remove('spider-jumping');
+          isJumping = false;
+          if (active && !isPaused) actor.classList.add('spider-walking');
+        }, 700);
+      }
+    }
+  }
+
+  actor.addEventListener('mousedown', onDragStart);
+  actor.addEventListener('touchstart', onDragStart, { passive: false });
+  window.addEventListener('mousemove', onDragMove);
+  window.addEventListener('touchmove', onDragMove, { passive: false });
+  window.addEventListener('mouseup', onDragEnd);
+  window.addEventListener('touchend', onDragEnd);
+  actor.addEventListener('click', (e) => e.stopPropagation());
 
   // Toggle button click
   function setSpiderState(toActive) {

@@ -88,8 +88,8 @@
   <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/static/assets/apple-touch-icon.png">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/static/css/tailwind.min.css?v=20261001_v15">
-  <link rel="stylesheet" href="/static/css/style.css?v=20261001_v15">
+  <link rel="stylesheet" href="/static/css/tailwind.min.css?v=20261001_v16">
+  <link rel="stylesheet" href="/static/css/style.css?v=20261001_v16">
   
   <script>
     window.GOOGLE_SHEET_ID = "1sPPh_AWewPjGrpdxnBQYqHZghs3TVyBhaBEG3vso6Js";
@@ -224,6 +224,116 @@
           </svg>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ================= GIANT SPIDER CUTE JUMPSCARE OVERLAY (HÙ CUTE 2S HOLD) ================= -->
+  <div id="mumu-giant-scare-overlay" class="mumu-giant-scare-overlay hidden" aria-hidden="true" onclick="dismissCuteScare()">
+    <!-- Radial Shockwave Rings -->
+    <div class="scare-shockwave-ring ring-1"></div>
+    <div class="scare-shockwave-ring ring-2"></div>
+
+    <!-- Festive Candy & Confetti Burst Container -->
+    <div id="scare-confetti-container" class="scare-confetti-container"></div>
+
+    <!-- Giant MUMU Spider Character Card -->
+    <div class="giant-spider-stage">
+      
+      <!-- Festive Title Banner -->
+      <div class="text-center space-y-1 mb-2 animate-bounce">
+        <span class="inline-block bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 text-stone-950 font-heading font-black text-xs sm:text-sm px-5 py-1.5 rounded-full border-2 border-black shadow-neo uppercase tracking-wider">
+          ✦ HALLOWEEN 2026 SURPRISE! ✦
+        </span>
+      </div>
+
+      <div class="text-center mb-3">
+        <h2 class="text-4xl sm:text-6xl md:text-7xl font-heading font-black" style="color: #facc15; text-shadow: 4px 4px 0px #000000, 0 0 35px rgba(250, 204, 21, 0.95); letter-spacing: -1px;">
+          BOO! 👻🕷️
+        </h2>
+        <h3 class="text-lg sm:text-2xl md:text-3xl font-heading font-black text-white mt-1" style="text-shadow: 2px 2px 0px #000000, 0 0 20px rgba(232, 121, 249, 0.9);">
+          BỊ BÉ NHỆN MUMU HÙ RỒI NHA! 🍬✨
+        </h3>
+      </div>
+
+      <!-- Giant MUMU SVG Graphic -->
+      <div class="giant-mumu-wrapper">
+        <svg class="giant-mumu-svg" viewBox="0 0 100 100" fill="none">
+          <defs>
+            <filter id="giant-shadow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.75"/>
+            </filter>
+          </defs>
+
+          <!-- 8 Legs Wiggling Joyfully -->
+          <g stroke="#2e1065" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#giant-shadow)">
+            <path class="giant-leg-L1" d="M 40 42 Q 22 25 12 36 L 6 48" stroke="#3b0764"/>
+            <path class="giant-leg-L2" d="M 38 48 Q 18 42 10 54 L 4 66" stroke="#3b0764"/>
+            <path class="giant-leg-L3" d="M 38 54 Q 18 60 12 72 L 8 82" stroke="#3b0764"/>
+            <path class="giant-leg-L4" d="M 42 60 Q 26 75 20 86 L 16 94" stroke="#3b0764"/>
+
+            <path class="giant-leg-R1" d="M 60 42 Q 78 25 88 36 L 94 48" stroke="#3b0764"/>
+            <path class="giant-leg-R2" d="M 62 48 Q 82 42 90 54 L 96 66" stroke="#3b0764"/>
+            <path class="giant-leg-R3" d="M 62 54 Q 82 60 88 72 L 92 82" stroke="#3b0764"/>
+            <path class="giant-leg-R4" d="M 58 60 Q 74 75 80 86 L 84 94" stroke="#3b0764"/>
+          </g>
+
+          <!-- Round Plump Spider Body with Glow -->
+          <g filter="url(#giant-shadow)">
+            <ellipse cx="50" cy="56" rx="23" ry="21" fill="#ffffff" stroke="#ffffff" stroke-width="4"/>
+            <ellipse cx="50" cy="56" rx="21" ry="19" fill="#3b0764"/>
+            <ellipse cx="50" cy="54" rx="18" ry="15" fill="#6b21a8"/>
+            <ellipse cx="50" cy="56" rx="14" ry="12" fill="none" stroke="#facc15" stroke-width="1.6" stroke-dasharray="3,2"/>
+            <!-- Neon Candies Dots -->
+            <circle cx="43" cy="52" r="3" fill="#f97316"/>
+            <circle cx="57" cy="52" r="3" fill="#f97316"/>
+            <circle cx="50" cy="62" r="3.5" fill="#facc15"/>
+            <circle cx="37" cy="60" r="2.2" fill="#a3e635"/>
+            <circle cx="63" cy="60" r="2.2" fill="#a3e635"/>
+          </g>
+
+          <!-- Big Cute Head & Manga Sparkle Eyes -->
+          <g filter="url(#giant-shadow)">
+            <circle cx="50" cy="38" r="15" fill="#2e1065" stroke="#ffffff" stroke-width="3.5"/>
+            <!-- Left Eye (Big Manga Shimmer) -->
+            <circle cx="44" cy="37" r="5" fill="#ffffff"/>
+            <circle cx="44" cy="37" r="3.6" fill="#09090b"/>
+            <circle cx="45.5" cy="35" r="1.5" fill="#ffffff"/>
+            <circle cx="42.5" cy="39" r="0.8" fill="#ffffff"/>
+            <!-- Right Eye (Playful Wink or Big Shimmer) -->
+            <circle cx="56" cy="37" r="5" fill="#ffffff"/>
+            <circle cx="56" cy="37" r="3.6" fill="#09090b"/>
+            <circle cx="57.5" cy="35" r="1.5" fill="#ffffff"/>
+            <circle cx="54.5" cy="39" r="0.8" fill="#ffffff"/>
+
+            <!-- Blush Cheeks -->
+            <circle cx="38" cy="43" r="3" fill="#f43f5e" opacity="0.95"/>
+            <circle cx="62" cy="43" r="3" fill="#f43f5e" opacity="0.95"/>
+            <!-- Wide Open Joyful Smile with Cute Fangs -->
+            <path d="M 45 42 Q 50 49 55 42 Z" fill="#9f1239" stroke="#fef08a" stroke-width="1.4"/>
+            <polygon points="46,42 47.5,45 49,42" fill="#ffffff"/>
+            <polygon points="51,42 52.5,45 54,42" fill="#ffffff"/>
+          </g>
+
+          <!-- Witch Hat -->
+          <g transform="translate(50, 22) rotate(-8) translate(-50, -22)" filter="url(#giant-shadow)">
+            <ellipse cx="50" cy="27" rx="18" ry="5.5" fill="#7c3aed" stroke="#18181b" stroke-width="1.8"/>
+            <path d="M 37 26 Q 43 12 47 6 Q 50 4 54 6 L 63 26 Z" fill="#7c3aed" stroke="#18181b" stroke-width="1.8"/>
+            <path d="M 38 25 Q 50 27 62 25 L 62.5 23 Q 50 25 37.5 23 Z" fill="#ea580c"/>
+            <rect x="46.5" y="21.5" width="7" height="6" rx="1.5" fill="#facc15" stroke="#78350f" stroke-width="1"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Signature Quote Card Below -->
+      <div class="mt-3 text-center max-w-md mx-auto px-4 py-2.5 rounded-2xl border-2 border-black" style="background: rgba(15, 2, 28, 0.85); box-shadow: 4px 4px 0px #000000, 0 0 20px rgba(250, 204, 21, 0.4);">
+        <p class="font-heading font-black text-xs sm:text-sm text-yellow-300">
+          “MUMU không giăng tơ bắt mồi – MUMU giăng tơ giữ kỷ niệm.” 💖
+        </p>
+        <span class="text-[11px] text-purple-200 block mt-0.5 font-bold">
+          (Chạm hoặc đợi 2s để bé nhện quay lại dạo chơi nha!)
+        </span>
+      </div>
+
     </div>
   </div>
 
@@ -753,7 +863,7 @@
   </div>
 
   <!-- Main Scripts -->
-  <script src="/static/js/main.js?v=20261001_v15"></script>
+  <script src="/static/js/main.js?v=20261001_v16"></script>
   {% if request.path == '/cart' or request.path.startswith('/inspiration') %}
   {% endif %}
   {% block extra_scripts %}{% endblock %}

@@ -731,7 +731,7 @@ function initSpookySpider() {
 }
 
 // =========================================================
-// GEN Z INTERACTIVE MINI-GAME: MUMU GO SĂN STICKER TẶNG THẦY CÔ
+// GEN Z INTERACTIVE MINI-GAME: MUMU GO SĂN STICKER TẶNG THẦY MINH
 // =========================================================
 (function() {
   const STICKERS_DATA = [
@@ -740,7 +740,7 @@ function initSpookySpider() {
       name: "Sticker Bí Ngô Điểm 10",
       icon: "🎃",
       svg: "/static/assets/stickers/halloween/bi-ngo-jack.svg",
-      quote: "U là trời! Bí Ngô 10 Điểm! Chúc Thầy/Cô luôn chấm điểm hào phóng ngập tràn 10 điểm ạ! ✨",
+      quote: "U là trời! Bí Ngô 10 Điểm! Chúc Thầy Minh luôn chấm điểm hào phóng ngập tràn 10 điểm ạ! ✨",
       toast: "🎃 Đã nhặt Bí Ngô Điểm 10! Điểm thi kỳ này auto 10!"
     },
     {
@@ -748,31 +748,31 @@ function initSpookySpider() {
       name: "Sticker Cú Mèo Tri Thức",
       icon: "🦉",
       svg: "/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg",
-      quote: "Flex nhẹ Cú Mèo Thông Thái! Tri thức của Thầy Cô đỉnh nóc kịch trần bay phấp phới! 🎓",
-      toast: "🦉 Đã nhặt Cú Mèo Tri Thức! Cảm ơn người thầy thông thái!"
+      quote: "Flex nhẹ Cú Mèo Thông Thái! Tri thức của Thầy Minh đỉnh nóc kịch trần bay phấp phới! 🎓",
+      toast: "🦉 Đã nhặt Cú Mèo Tri Thức! Cảm ơn Thầy Minh thông thái!"
     },
     {
       id: 2,
       name: "Sticker Vạc Yêu Thương",
       icon: "🧪",
       svg: "/static/assets/stickers/halloween/vac-nuoc-phep-slime.svg",
-      quote: "100 điểm tinh tế! Vạc tri thức nấu bằng tình thương bao la của Thầy Cô! 💜",
-      toast: "🧪 Đã nhặt Vạc Yêu Thương! Tình thương thầy cô bao la!"
+      quote: "100 điểm tinh tế! Vạc tri thức nấu bằng tình thương bao la của Thầy Minh! 💜",
+      toast: "🧪 Đã nhặt Vạc Yêu Thương! Tình thương Thầy Minh bao la!"
     },
     {
       id: 3,
       name: "Sticker Bé Ma Cute",
       icon: "👻",
       svg: "/static/assets/stickers/halloween/ma-cute-boo.svg",
-      quote: "Bé Ma siêu cute gửi lời cảm ơn Thầy Cô đã luôn bao dung với tụi em! 🍬",
-      toast: "👻 Đã nhặt Bé Ma Cute! Cảm ơn Thầy Cô luôn kiên nhẫn!"
+      quote: "Bé Ma siêu cute gửi lời cảm ơn Thầy Minh đã luôn bao dung với tụi em! 🍬",
+      toast: "👻 Đã nhặt Bé Ma Cute! Cảm ơn Thầy Minh luôn kiên nhẫn!"
     },
     {
       id: 4,
       name: "Sticker Trăng Tri Ân",
       icon: "🌙",
       svg: "/static/assets/stickers/halloween/mat-trang-khau-chi.svg",
-      quote: "Keng keng! Trăng khâu chỉ ký ức – Dệt trọn tình cảm tri ân sâu sắc tới Thầy Cô! 💖",
+      quote: "Keng keng! Trăng khâu chỉ ký ức – Dệt trọn tình cảm tri ân sâu sắc tới Thầy Minh! 💖",
       toast: "🌙 Đã nhặt Trăng Tri Ân! Sứ mạng hoàn thành xuất sắc!"
     }
   ];
@@ -1217,7 +1217,7 @@ function initSpookySpider() {
     spawnObstacles();
     updateSlotsUI();
     startTimer();
-    showPlayerBubble("Vòng mới bắt đầu! Cùng MUMU săn sticker tri ân Thầy Cô và các bạn nào! 🎒✨", 2500);
+    showPlayerBubble("Vòng mới bắt đầu! Cùng MUMU săn sticker tri ân Thầy Minh và các bạn nào! 🎒✨", 2500);
 
     cancelAnimationFrame(gameLoopId);
     gameLoopId = requestAnimationFrame(gameLoop);

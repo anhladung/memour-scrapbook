@@ -44,7 +44,7 @@ def redirect_legacy_vercel_domain():
 def load_json_data(filename):
     filepath = os.path.join(DATA_DIR, filename)
     if os.path.exists(filepath):
-        with open(filepath, 'r', encoding='utf-8') as f:
+        with open(filepath, 'r', encoding='utf-8-sig') as f:
             return json.load(f)
     return []
 

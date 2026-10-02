@@ -461,7 +461,7 @@
         <a href="/about" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path == '/about' %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Về Chúng Tôi</a>
         <a href="/products" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path.startswith('/products') or request.path.startswith('/product/') %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Sản Phẩm</a>
         <a href="/inspiration" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path.startswith('/inspiration') %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Mẫu Tham Khảo</a>
-        <a href="/guide" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path.startswith('/guide') or request.path.startswith('/handbook') %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Cẩm Nang</a>
+        <a href="/guide" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path.startswith('/guide') or request.path.startswith('/handbook') %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Cẩm Nang Scrapbook</a>
         <a href="/contact" class="px-3 py-2 rounded-xl hover:bg-amber-100 hover:text-stone-900 transition-colors {% if request.path == '/contact' %}text-rose-800 bg-amber-100/80 font-black border border-black/20{% endif %}">Liên Hệ</a>
       </nav>
 
@@ -503,7 +503,7 @@
       <a href="/about" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Về Chúng Tôi (MEMOUR)</a>
       <a href="/products" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Sản Phẩm (Sticker / Layout / Sổ)</a>
       <a href="/inspiration" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Mẫu Tham Khảo DIY</a>
-      <a href="/guide" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Cẩm Nang Thủ Công</a>
+      <a href="/guide" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Cẩm Nang Scrapbook</a>
       <a href="/contact" class="block px-4 py-2.5 rounded-xl hover:bg-amber-100 text-base">Liên Hệ Xưởng</a>
       <a href="/studio" class="block px-4 py-3 rounded-xl bg-gradient-to-r from-purple-800 to-indigo-900 text-amber-300 font-black text-center shadow-neo">
         Vào Xưởng Thiết Kế 3D AI
@@ -551,7 +551,7 @@
             <li><a href="/about" class="hover:text-white transition-colors">Về MEMOUR</a></li>
             <li><a href="/products" class="hover:text-white transition-colors">Sản Phẩm &amp; Phụ Kiện</a></li>
             <li><a href="/inspiration" class="hover:text-white transition-colors">Mẫu Tham Khảo DIY</a></li>
-            <li><a href="/guide" class="hover:text-white transition-colors">Cẩm Nang Thủ Công</a></li>
+            <li><a href="/guide" class="hover:text-white transition-colors">Cẩm Nang Scrapbook A-Z</a></li>
             <li><a href="/studio" class="hover:text-amber-300 transition-colors text-rose-400 font-bold">Xưởng Thiết Kế 3D</a></li>
           </ul>
         </div>
@@ -863,7 +863,7 @@
   </div>
 
   <!-- Main Scripts -->
-  <script src="/static/js/main.js?v=20261001_v16"></script>
+  <script src="/static/js/main.js?v=20261002_v1"></script>
   {% if request.path == '/cart' or request.path.startswith('/inspiration') %}
   {% endif %}
   {% block extra_scripts %}{% endblock %}

@@ -1,48 +1,202 @@
 {% extends "base.html" %}
 
-{% block title %}Cẩm Nang Scrapbook & Nghệ Thuật Thủ Công - MEMOUR Studio | Every memory has a story{% endblock %}
-{% block meta_desc %}Cẩm nang scrapbook MEMOUR: hướng dẫn làm sổ, chọn giấy, bố cục ảnh, ý tưởng quà tặng và lưu bút học trò từ đội ngũ xưởng thủ công.{% endblock %}
+{% block title %}Cẩm Nang Scrapbook A-Z: Hướng Dẫn Tự Làm Sổ, Ý Tưởng & Mẫu Đẹp | MEMOUR{% endblock %}
+{% block meta_desc %}Cẩm nang scrapbook toàn diện từ A–Z của MEMOUR Studio: Hướng dẫn cách làm sổ scrapbook handmade chi tiết, mẹo chọn giấy acid-free, ý tưởng bố cục ảnh sáng tạo và lưu bút học trò.{% endblock %}
+{% block meta_keywords %}cẩm nang scrapbook, cẩm nang làm scrapbook, hướng dẫn làm scrapbook, cách làm scrapbook, tự làm sổ scrapbook, mẫu scrapbook đẹp, scrapbook handmade, sổ lưu niệm{% endblock %}
 {% block canonical %}<link rel="canonical" href="{{ site_url }}/guide">{% endblock %}
+
+{% block extra_head %}
+<!-- JSON-LD Structured Data: CollectionPage, BreadcrumbList, FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "{{ site_url }}/guide#webpage",
+      "url": "{{ site_url }}/guide",
+      "name": "Cẩm Nang Scrapbook: Hướng Dẫn Tự Làm Sổ Từ A–Z & Ý Tưởng Sáng Tạo",
+      "description": "Cẩm nang scrapbook toàn diện từ A–Z của MEMOUR Studio: Hướng dẫn cách làm sổ scrapbook handmade chi tiết, mẹo chọn giấy acid-free, ý tưởng bố cục ảnh sáng tạo và lưu bút học trò.",
+      "inLanguage": "vi-VN",
+      "publisher": {
+        "@id": "{{ site_url }}/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ site_url }}/guide#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Trang chủ",
+          "item": "{{ site_url }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cẩm nang scrapbook",
+          "item": "{{ site_url }}/guide"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ site_url }}/guide#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Cẩm nang scrapbook của MEMOUR Studio gồm những nội dung gì?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cẩm nang scrapbook MEMOUR cung cấp trọn bộ kiến thức từ cơ bản đến nâng cao: định nghĩa scrapbook, checklist dụng cụ cần thiết, hướng dẫn chọn giấy acid-free bảo quản ảnh trọn đời, 7 bố cục layout chuẩn nghệ thuật, và gợi ý ý tưởng làm sổ theo chủ đề (tình bạn, lưu bút cuối cấp, tình yêu, du lịch, sinh nhật)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Người mới bắt đầu tự làm scrapbook cần chuẩn bị dụng cụ gì?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Để bắt đầu làm một cuốn scrapbook handmade đơn giản, bạn chỉ cần chuẩn bị: một cuốn sổ phôi nền giấy dày (tối thiểu 250-300gsm), ảnh in mini (hoặc polaroid), keo dán khô chuyên dụng hoặc băng dính 2 mặt, kéo thủ công, một vài cuộn băng dính washi tape trang trí và bộ sticker kỷ niệm yêu thích."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Làm thế nào để bảo quản sổ scrapbook và ảnh in không bị phai màu theo năm tháng?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bí quyết quan trọng nhất là sử dụng giấy và keo dán đạt chuẩn Acid-Free (không chứa axit và lignin). Axit trong giấy thường là nguyên nhân chính khiến ảnh bị ố vàng, giòn gãy sau 1-2 năm. Ngoài ra, hãy bảo quản sổ ở nơi khô ráo, tránh ánh nắng trực tiếp và sử dụng màng bọc bảo vệ trang ảnh."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tự làm một cuốn sổ scrapbook hoàn chỉnh mất bao lâu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tùy thuộc vào số lượng trang và độ tỉ mỉ của chi tiết, một cuốn scrapbook mini (10-15 trang) thường mất từ 2-4 tiếng hoàn thiện. Đối với các cuốn sổ lưu bút tập thể hoặc kỷ yếu lớp quy mô lớn (30-50 trang), bạn có thể hoàn thành trong 2-3 ngày khi chuẩn bị sẵn bố cục và ảnh in."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
 
 {% block content %}
 {% import "components/carousel.html" as carousels %}
 
-{% set handbook_title = "<span class='whitespace-nowrap inline-block'>Bí Quyết Sáng Tạo Sổ Thủ Công</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Scrapbook Chuẩn Gu Gen Z</span>" %}
+{% set handbook_title = "<span class='whitespace-nowrap inline-block'>Cẩm Nang Scrapbook Toàn Diện</span><br><span class='whitespace-nowrap inline-block text-amber-300'>Bí Quyết Sáng Tạo Sổ Thủ Công</span>" %}
 {% set handbook_buttons = [
-  { "text": "Liên Hệ Cùng MEMOUR Studio →", "url": "/contact", "primary": true }
+  { "text": "Khám Phá Sổ & Phụ Kiện DIY →", "url": "/products", "primary": true },
+  { "text": "Liên Hệ Tư Vấn Thiết Kế", "url": "/contact", "primary": false }
 ] %}
 
 {{ carousels.render_hero_carousel("handbook-carousel", handbook_title, handbook_buttons) }}
 
-<!-- Tag Filter -->
-<section class="bg-[#fdfbf7] py-6 border-b-2 border-black">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-    <form action="/guide" method="get" class="flex gap-2 max-w-xl" role="search">
-      <label for="guide-search" class="sr-only">Tìm trong cẩm nang</label>
-      <input id="guide-search" type="search" name="q" value="{{ search_q }}" placeholder="Tìm cách làm, ý tưởng, vật liệu..." class="min-w-0 flex-1 rounded-xl border-2 border-black px-4 py-2 text-sm font-semibold bg-[#fdfbf7] focus:outline-none focus:border-purple-800">
-      <button class="bg-gradient-to-r from-purple-700 to-indigo-800 text-amber-300 border-2 border-black rounded-xl px-5 py-2 text-sm font-black shadow-neo">Tìm bài</button>
-    </form>
-    <div class="flex flex-wrap gap-2">
-      <a href="/guide" class="text-xs font-black px-4 py-2 rounded-xl border-2 border-black transition-all {% if selected_tag == 'all' %}bg-purple-800 text-white shadow-neo{% else %}bg-[#fdfbf7] text-stone-800 hover:bg-stone-100{% endif %}">Tất cả bài viết</a>
-      {% for tag in available_tags %}
-      <a href="/guide?tag={{ tag | urlencode }}" class="text-xs font-black px-4 py-2 rounded-xl border-2 border-black transition-all {% if selected_tag == tag %}bg-purple-800 text-white shadow-neo{% else %}bg-[#fdfbf7] text-stone-800 hover:bg-stone-100{% endif %}">#{{ tag }}</a>
-      {% endfor %}
+<!-- SEO Knowledge Hub Intro Section -->
+<section class="bg-[#fdfbf7] pt-10 pb-6 border-b-2 border-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Breadcrumb visual navigation -->
+    <nav aria-label="Breadcrumb" class="mb-6">
+      <ol class="flex items-center flex-wrap gap-2 text-xs font-bold text-stone-500">
+        <li>
+          <a href="/" class="hover:text-rose-800 transition-colors flex items-center gap-1">
+            <span>Trang chủ</span>
+          </a>
+        </li>
+        <li class="text-stone-400" aria-hidden="true">&gt;</li>
+        <li class="text-stone-900 font-extrabold" aria-current="page">
+          Cẩm nang scrapbook
+        </li>
+      </ol>
+    </nav>
+
+    <!-- H1 Headline optimized for 'cẩm nang scrapbook' -->
+    <div class="text-center max-w-4xl mx-auto mb-8">
+      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 via-orange-400 to-purple-400 border-2 border-black px-4 py-1.5 rounded-full text-xs font-heading font-black uppercase text-stone-950 shadow-neo transform -rotate-1 hover:rotate-0 transition-transform mb-3">
+        <span>📖 CẨM NANG SCRAPBOOK TOÀN DIỆN TỪ MEMOUR ✦</span>
+      </div>
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-heading font-black text-[#881337] leading-tight tracking-tight mb-4">
+        Cẩm Nang Scrapbook: Hướng Dẫn Tự Làm Sổ Lưu Niệm Từ A–Z
+      </h1>
+      <p class="text-sm sm:text-base text-stone-700 leading-relaxed font-medium max-w-3xl mx-auto">
+        Chào mừng bạn đến với chuyên trang <b>cẩm nang scrapbook</b> chính thức của MEMOUR Studio! Tại đây, bạn sẽ tìm thấy mọi kiến thức hữu ích: từ khái niệm cơ bản, checklist nguyên vật liệu đạt chuẩn <i>Acid-Free</i>, các mẫu bố cục ảnh sáng tạo, đến những ý tưởng lưu bút học trò và quà tặng ý nghĩa nhất.
+      </p>
     </div>
+
+    <!-- 4 Core Pillars of Scrapbooking (Rich Knowledge Cards) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div class="card-3d-amber rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
+        <div>
+          <div class="text-2xl mb-2">✂️</div>
+          <h3 class="font-heading font-black text-sm sm:text-base text-stone-900 mb-1">1. Nhập Môn Scrapbook</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">Khám phá định nghĩa, lịch sử và cách làm sổ scrapbook từ A–Z cho người mới bắt đầu.</p>
+        </div>
+        <a href="/guide/scrapbook-la-gi" class="text-xs font-black text-rose-800 hover:underline mt-3 inline-block">Xem hướng dẫn →</a>
+      </div>
+
+      <div class="card-3d-purple rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
+        <div>
+          <div class="text-2xl mb-2">📄</div>
+          <h3 class="font-heading font-black text-sm sm:text-base text-stone-900 mb-1">2. Vật Liệu &amp; Bảo Quản</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">Bí quyết chọn giấy Acid-Free chống ố vàng và bảo quản ảnh in bền bỉ qua năm tháng.</p>
+        </div>
+        <a href="/guide/giay-acid-free-la-gi" class="text-xs font-black text-purple-900 hover:underline mt-3 inline-block">Tìm hiểu giấy chuẩn →</a>
+      </div>
+
+      <div class="card-3d-green rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
+        <div>
+          <div class="text-2xl mb-2">📐</div>
+          <h3 class="font-heading font-black text-sm sm:text-base text-stone-900 mb-1">3. Bố Cục &amp; Ý Tưởng Mẫu</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">25+ mẫu scrapbook đẹp, 7 quy tắc sắp xếp ảnh polaroid đơn giản chuẩn gu Gen Z.</p>
+        </div>
+        <a href="/guide/mau-scrapbook-dep" class="text-xs font-black text-emerald-900 hover:underline mt-3 inline-block">Xem bộ sưu tập mẫu →</a>
+      </div>
+
+      <div class="card-3d-rose rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
+        <div>
+          <div class="text-2xl mb-2">💌</div>
+          <h3 class="font-heading font-black text-sm sm:text-base text-stone-900 mb-1">4. Lưu Bút &amp; Quà Tặng</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">Gợi ý cách viết lời nhắn chia tay cuối cấp xúc động và ý tưởng làm sổ tặng người yêu.</p>
+        </div>
+        <a href="/guide/mau-luu-but-dep" class="text-xs font-black text-rose-900 hover:underline mt-3 inline-block">Gợi ý viết lưu bút →</a>
+      </div>
+    </div>
+
+    <!-- Search Form and Tag Filter -->
+    <div class="space-y-4 pt-2">
+      <form action="/guide" method="get" class="flex gap-2 max-w-xl mx-auto" role="search">
+        <label for="guide-search" class="sr-only">Tìm trong cẩm nang scrapbook</label>
+        <input id="guide-search" type="search" name="q" value="{{ search_q }}" placeholder="Tìm cẩm nang: cách làm, dụng cụ, giấy acid-free, lưu bút..." class="min-w-0 flex-1 rounded-xl border-2 border-black px-4 py-2.5 text-sm font-semibold bg-[#fdfbf7] focus:outline-none focus:border-purple-800">
+        <button class="bg-gradient-to-r from-purple-700 to-indigo-800 text-amber-300 border-2 border-black rounded-xl px-5 py-2.5 text-sm font-black shadow-neo hover:scale-105 transition-transform">
+          Tìm kiếm
+        </button>
+      </form>
+      <div class="flex flex-wrap justify-center gap-2">
+        <a href="/guide" class="text-xs font-black px-4 py-2 rounded-xl border-2 border-black transition-all {% if selected_tag == 'all' %}bg-purple-800 text-white shadow-neo{% else %}bg-[#fdfbf7] text-stone-800 hover:bg-stone-100{% endif %}">Tất cả bài viết</a>
+        {% for tag in available_tags %}
+        <a href="/guide?tag={{ tag | urlencode }}" class="text-xs font-black px-4 py-2 rounded-xl border-2 border-black transition-all {% if selected_tag == tag %}bg-purple-800 text-white shadow-neo{% else %}bg-[#fdfbf7] text-stone-800 hover:bg-stone-100{% endif %}">#{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- Blog List Grid -->
-<section id="handbook-list" class="py-12 md:py-16 bg-[#fdfbf7]">
+<section id="handbook-list" class="py-12 md:py-16 bg-[#fdfbf7] border-b-2 border-black">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Header Badge with Owl Sticker -->
     <div class="flex items-center justify-between mb-8">
       <div class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-300 via-amber-300 to-orange-300 border-2 border-black px-4 py-1.5 rounded-full text-xs font-heading font-black uppercase text-stone-950 shadow-neo transform -rotate-1">
-        <span>📖 BÍ QUYẾT &amp; CẨM NANG SCRAPBOOK 🎃</span>
+        <span>📚 TỔNG HỢP CÁC BÀI VIẾT CẨM NANG SCRAPBOOK NỔI BẬT ✦</span>
       </div>
       <div class="hidden sm:flex items-center gap-2">
-        <img src="/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg" alt="Cú mèo phù thủy sticker" class="w-10 h-10 drop-shadow-sm">
-        <span class="text-xs font-bold text-stone-600">Đọc &amp; Thực Hành Cùng Xưởng Thủ Công</span>
+        <img src="/static/assets/stickers/halloween/cu-meo-phu-thuy-kinh-ngo.svg" alt="Cú mèo tri thức" class="w-10 h-10 drop-shadow-sm">
+        <span class="text-xs font-bold text-stone-600">Đọc &amp; Thực Hành Cùng Xưởng MEMOUR</span>
       </div>
     </div>
 
@@ -89,14 +243,78 @@
       </article>
       {% endfor %}
     </div>
+
     {% if not blogs %}
     <div class="max-w-2xl mx-auto halloween-3d-card rounded-2xl p-8 text-center">
       <h2 class="font-heading font-black text-xl">Chưa tìm thấy bài phù hợp</h2>
-      <p class="text-sm text-stone-600 mt-2">Thử từ khóa ngắn hơn hoặc xem toàn bộ Cẩm nang MEMOUR.</p>
-      <a href="/guide" class="inline-block mt-5 text-sm font-black text-purple-800 underline">Xem tất cả bài viết</a>
+      <p class="text-sm text-stone-600 mt-2">Thử từ khóa ngắn hơn hoặc xem toàn bộ Cẩm nang scrapbook MEMOUR.</p>
+      <a href="/guide" class="inline-block mt-5 text-sm font-black text-purple-800 underline">Xem tất cả bài viết cẩm nang</a>
     </div>
     {% endif %}
 
+  </div>
+</section>
+
+<!-- ================= SEO FAQ SECTION: CÂU HỎI THƯỜNG GẶP VỀ CẨM NANG SCRAPBOOK ================= -->
+<section class="py-14 md:py-20 bg-[#faf6ee]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <span class="bg-[#2e0854] text-[#facc15] text-xs font-heading font-black px-4 py-1.5 rounded-full border-2 border-black shadow-neo inline-block uppercase mb-2">
+        ✦ GIẢI ĐÁP CÙNG NGHỆ NHÂN ✦
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-heading font-black text-[#881337]">
+        Hỏi Đáp Về Cẩm Nang Scrapbook &amp; Kỹ Thuật Thủ Công
+      </h2>
+      <p class="text-xs sm:text-sm text-stone-600 mt-1">Những thắc mắc phổ biến của người mới bắt đầu làm sổ lưu niệm handmade</p>
+    </div>
+
+    <div class="space-y-4">
+      <details class="bg-[#fdfbf7] border-2 border-black rounded-2xl p-5 shadow-neo group" open>
+        <summary class="font-heading font-black text-sm sm:text-base text-stone-900 cursor-pointer flex items-center justify-between list-none">
+          <span>1. Cẩm nang scrapbook của MEMOUR Studio gồm những nội dung gì?</span>
+          <span class="text-purple-800 text-lg group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed mt-3 pt-3 border-t border-stone-200">
+          Cẩm nang scrapbook MEMOUR cung cấp trọn bộ kiến thức từ cơ bản đến nâng cao: định nghĩa scrapbook, checklist dụng cụ cần thiết, hướng dẫn chọn giấy acid-free bảo quản ảnh trọn đời, 7 bố cục layout chuẩn nghệ thuật, và gợi ý ý tưởng làm sổ theo chủ đề (tình bạn, lưu bút cuối cấp, tình yêu, du lịch, sinh nhật).
+        </p>
+      </details>
+
+      <details class="bg-[#fdfbf7] border-2 border-black rounded-2xl p-5 shadow-neo group">
+        <summary class="font-heading font-black text-sm sm:text-base text-stone-900 cursor-pointer flex items-center justify-between list-none">
+          <span>2. Người mới bắt đầu tự làm scrapbook cần chuẩn bị dụng cụ gì?</span>
+          <span class="text-purple-800 text-lg group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed mt-3 pt-3 border-t border-stone-200">
+          Để bắt đầu làm một cuốn scrapbook handmade đơn giản, bạn chỉ cần chuẩn bị: một cuốn sổ phôi nền giấy dày (tối thiểu 250-300gsm), ảnh in mini (hoặc polaroid), keo dán khô chuyên dụng hoặc băng dính 2 mặt, kéo thủ công, một vài cuộn băng dính washi tape trang trí và bộ sticker kỷ niệm yêu thích.
+        </p>
+      </details>
+
+      <details class="bg-[#fdfbf7] border-2 border-black rounded-2xl p-5 shadow-neo group">
+        <summary class="font-heading font-black text-sm sm:text-base text-stone-900 cursor-pointer flex items-center justify-between list-none">
+          <span>3. Làm thế nào để bảo quản sổ scrapbook và ảnh in không bị phai màu theo năm tháng?</span>
+          <span class="text-purple-800 text-lg group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed mt-3 pt-3 border-t border-stone-200">
+          Bí quyết quan trọng nhất là sử dụng giấy và keo dán đạt chuẩn <b>Acid-Free</b> (không chứa axit và lignin). Axit trong giấy thường là nguyên nhân chính khiến ảnh bị ố vàng, giòn gãy sau 1-2 năm. Ngoài ra, hãy bảo quản sổ ở nơi khô ráo, tránh ánh nắng trực tiếp và sử dụng màng bọc bảo vệ trang ảnh.
+        </p>
+      </details>
+
+      <details class="bg-[#fdfbf7] border-2 border-black rounded-2xl p-5 shadow-neo group">
+        <summary class="font-heading font-black text-sm sm:text-base text-stone-900 cursor-pointer flex items-center justify-between list-none">
+          <span>4. Tự làm một cuốn sổ scrapbook hoàn chỉnh mất bao lâu?</span>
+          <span class="text-purple-800 text-lg group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed mt-3 pt-3 border-t border-stone-200">
+          Tùy thuộc vào số lượng trang và độ tỉ mỉ của chi tiết, một cuốn scrapbook mini (10-15 trang) thường mất từ 2-4 tiếng hoàn thiện. Đối với các cuốn sổ lưu bút tập thể hoặc kỷ yếu lớp quy mô lớn (30-50 trang), bạn có thể hoàn thành trong 2-3 ngày khi chuẩn bị sẵn bố cục và ảnh in.
+        </p>
+      </details>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="/studio" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-800 to-indigo-900 hover:from-purple-900 hover:to-black text-amber-300 font-heading font-black text-xs sm:text-sm px-6 py-3.5 rounded-xl border-2 border-black shadow-neo transition-all hover:scale-105">
+        <span>🎨 Thử Nghiệm Xưởng Thiết Kế Scrapbook 3D Ngay →</span>
+      </a>
+    </div>
   </div>
 </section>
 {% endblock %}

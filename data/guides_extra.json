@@ -11,16 +11,34 @@
     "author": "Đội ngũ Xưởng MEMOUR",
     "published_date": "2026-09-19",
     "updated_date": "2026-09-19",
-    "read_time": "4 phút đọc",
+    "read_time": "13 phút đọc",
     "category": "Nhập Môn Scrapbook",
-    "tags": ["Scrapbook", "Người Mới", "Dụng Cụ"],
+    "tags": [
+      "Scrapbook",
+      "Người Mới",
+      "Dụng Cụ"
+    ],
     "keywords": "cẩm nang scrapbook, dụng cụ làm scrapbook, nguyên liệu làm scrapbook, làm scrapbook cần gì",
-    "related_skus": ["SCR-001", "PAT-001", "PAT-004", "LAY-001"],
+    "related_skus": [
+      "SCR-001",
+      "PAT-001",
+      "PAT-004",
+      "LAY-001"
+    ],
     "content_file": "dung-cu-lam-scrapbook.html",
     "faqs": [
-      {"question": "Người mới có cần máy cắt giấy không?", "answer": "Không. Kéo sắc, thước và bút chì đủ cho những trang đầu. Máy cắt chỉ đáng mua khi bạn thường xuyên cắt nhiều ảnh hoặc giấy cùng kích thước."},
-      {"question": "Có thể dùng keo dán văn phòng không?", "answer": "Nên thử trước trên giấy thừa và ảnh in mẫu. Một số loại keo làm giấy cong hoặc để lại vết; hãy chọn loại được nhà sản xuất ghi rõ dùng cho giấy hoặc ảnh."},
-      {"question": "Nên mua nguyên liệu theo bộ hay từng món?", "answer": "Bộ nhỏ phù hợp khi bạn chưa rõ phong cách. Mua từng món hợp lý hơn khi đã biết chính xác màu, kích thước và số trang cần làm."}
+      {
+        "question": "Người mới có cần máy cắt giấy không?",
+        "answer": "Không. Kéo sắc, thước và bút chì đủ cho những trang đầu. Máy cắt chỉ đáng mua khi bạn thường xuyên cắt nhiều ảnh hoặc giấy cùng kích thước."
+      },
+      {
+        "question": "Có thể dùng keo dán văn phòng không?",
+        "answer": "Nên thử trước trên giấy thừa và ảnh in mẫu. Một số loại keo làm giấy cong hoặc để lại vết; hãy chọn loại được nhà sản xuất ghi rõ dùng cho giấy hoặc ảnh."
+      },
+      {
+        "question": "Nên mua nguyên liệu theo bộ hay từng món?",
+        "answer": "Bộ nhỏ phù hợp khi bạn chưa rõ phong cách. Mua từng món hợp lý hơn khi đã biết chính xác màu, kích thước và số trang cần làm."
+      }
     ]
   },
   {
@@ -35,15 +53,29 @@
     "author": "Đội ngũ Xưởng MEMOUR",
     "published_date": "2026-09-19",
     "updated_date": "2026-09-19",
-    "read_time": "4 phút đọc",
+    "read_time": "12 phút đọc",
     "category": "Thiết Kế Trang",
-    "tags": ["Scrapbook", "Bố Cục", "Người Mới"],
+    "tags": [
+      "Scrapbook",
+      "Bố Cục",
+      "Người Mới"
+    ],
     "keywords": "cẩm nang scrapbook, bố cục scrapbook, layout scrapbook đơn giản, cách trang trí scrapbook",
-    "related_skus": ["LAY-001", "LAY-003", "PAT-004"],
+    "related_skus": [
+      "LAY-001",
+      "LAY-003",
+      "PAT-004"
+    ],
     "content_file": "bo-cuc-scrapbook-don-gian.html",
     "faqs": [
-      {"question": "Một trang scrapbook nên có bao nhiêu ảnh?", "answer": "Không có số cố định. Với trang A5, một ảnh chính và tối đa hai ảnh phụ thường dễ đọc; nếu cần nhiều ảnh, hãy dùng bố cục lưới hoặc chia sang trang bên cạnh."},
-      {"question": "Làm sao để trang không bị rối?", "answer": "Giữ một điểm nhìn chính, lặp lại một bảng màu nhỏ và để khoảng trắng giữa ảnh, chữ và vật trang trí."}
+      {
+        "question": "Một trang scrapbook nên có bao nhiêu ảnh?",
+        "answer": "Không có số cố định. Với trang A5, một ảnh chính và tối đa hai ảnh phụ thường dễ đọc; nếu cần nhiều ảnh, hãy dùng bố cục lưới hoặc chia sang trang bên cạnh."
+      },
+      {
+        "question": "Làm sao để trang không bị rối?",
+        "answer": "Giữ một điểm nhìn chính, lặp lại một bảng màu nhỏ và để khoảng trắng giữa ảnh, chữ và vật trang trí."
+      }
     ]
   },
   {
@@ -58,15 +90,29 @@
     "author": "Đội ngũ Xưởng MEMOUR",
     "published_date": "2026-09-19",
     "updated_date": "2026-09-19",
-    "read_time": "4 phút đọc",
+    "read_time": "11 phút đọc",
     "category": "Ý Tưởng Quà Tặng",
-    "tags": ["Scrapbook", "Bạn Thân", "Quà Tặng"],
+    "tags": [
+      "Scrapbook",
+      "Bạn Thân",
+      "Quà Tặng"
+    ],
     "keywords": "cẩm nang scrapbook, scrapbook tặng bạn thân, quà handmade tặng bạn thân, lời nhắn scrapbook bạn thân",
-    "related_skus": ["LAY-002", "PAT-004", "STK-003"],
+    "related_skus": [
+      "LAY-002",
+      "PAT-004",
+      "STK-003"
+    ],
     "content_file": "scrapbook-tang-ban-than.html",
     "faqs": [
-      {"question": "Không có nhiều ảnh chung thì làm thế nào?", "answer": "Dùng vé xem phim, bản đồ, tin nhắn ngắn được cả hai đồng ý chia sẻ, món ăn yêu thích hoặc câu nói nội bộ. Phần kể chuyện quan trọng hơn số ảnh."},
-      {"question": "Nên làm scrapbook cho bạn thân bao nhiêu trang?", "answer": "Hãy chọn số trang theo lượng câu chuyện thật. Một cuốn 8–12 trang có nội dung riêng từng trang thường hiệu quả hơn cuốn dài lặp lại ảnh và lời chúc."}
+      {
+        "question": "Không có nhiều ảnh chung thì làm thế nào?",
+        "answer": "Dùng vé xem phim, bản đồ, tin nhắn ngắn được cả hai đồng ý chia sẻ, món ăn yêu thích hoặc câu nói nội bộ. Phần kể chuyện quan trọng hơn số ảnh."
+      },
+      {
+        "question": "Nên làm scrapbook cho bạn thân bao nhiêu trang?",
+        "answer": "Hãy chọn số trang theo lượng câu chuyện thật. Một cuốn 8–12 trang có nội dung riêng từng trang thường hiệu quả hơn cuốn dài lặp lại ảnh và lời chúc."
+      }
     ]
   },
   {
@@ -81,15 +127,29 @@
     "author": "Đội ngũ Xưởng MEMOUR",
     "published_date": "2026-09-19",
     "updated_date": "2026-09-19",
-    "read_time": "4 phút đọc",
+    "read_time": "10 phút đọc",
     "category": "Ý Tưởng Quà Tặng",
-    "tags": ["Scrapbook", "Sinh Nhật", "Quà Tặng"],
+    "tags": [
+      "Scrapbook",
+      "Sinh Nhật",
+      "Quà Tặng"
+    ],
     "keywords": "cẩm nang scrapbook, scrapbook sinh nhật, làm scrapbook tặng sinh nhật, ý tưởng scrapbook sinh nhật",
-    "related_skus": ["LAY-001", "LAY-004", "PAT-005"],
+    "related_skus": [
+      "LAY-001",
+      "LAY-004",
+      "PAT-005"
+    ],
     "content_file": "scrapbook-sinh-nhat.html",
     "faqs": [
-      {"question": "Nên dùng ảnh của người nhận hay ảnh chụp chung?", "answer": "Nên kết hợp cả hai. Ảnh chụp chung kể mối quan hệ; ảnh của riêng người nhận thể hiện bạn chú ý đến cuộc sống và sở thích của họ."},
-      {"question": "Nếu làm gấp thì ưu tiên trang nào?", "answer": "Ưu tiên trang bìa, một kỷ niệm cụ thể và thư chúc cuối. Ít trang nhưng rõ câu chuyện vẫn là món quà trọn vẹn."}
+      {
+        "question": "Nên dùng ảnh của người nhận hay ảnh chụp chung?",
+        "answer": "Nên kết hợp cả hai. Ảnh chụp chung kể mối quan hệ; ảnh của riêng người nhận thể hiện bạn chú ý đến cuộc sống và sở thích của họ."
+      },
+      {
+        "question": "Nếu làm gấp thì ưu tiên trang nào?",
+        "answer": "Ưu tiên trang bìa, một kỷ niệm cụ thể và thư chúc cuối. Ít trang nhưng rõ câu chuyện vẫn là món quà trọn vẹn."
+      }
     ]
   },
   {
@@ -104,15 +164,29 @@
     "author": "Đội ngũ Xưởng MEMOUR",
     "published_date": "2026-09-19",
     "updated_date": "2026-09-19",
-    "read_time": "4 phút đọc",
+    "read_time": "10 phút đọc",
     "category": "Ý Tưởng Scrapbook",
-    "tags": ["Scrapbook", "Du Lịch", "Ảnh Kỷ Niệm"],
+    "tags": [
+      "Scrapbook",
+      "Du Lịch",
+      "Ảnh Kỷ Niệm"
+    ],
     "keywords": "cẩm nang scrapbook, scrapbook du lịch, nhật ký du lịch scrapbook, album ảnh du lịch handmade",
-    "related_skus": ["LAY-TXT-001", "LAY-TXT-002", "PAT-002"],
+    "related_skus": [
+      "LAY-TXT-001",
+      "LAY-TXT-002",
+      "PAT-002"
+    ],
     "content_file": "scrapbook-du-lich.html",
     "faqs": [
-      {"question": "Có nên dán vé gốc vào scrapbook?", "answer": "Nếu vé có giá trị đặc biệt, nên chụp hoặc scan trước. Giấy in nhiệt của một số loại vé có thể phai; bạn có thể dùng bản sao trong sổ và cất bản gốc riêng."},
-      {"question": "Một chuyến đi nên dành bao nhiêu trang?", "answer": "Hãy tính theo số câu chuyện chứ không theo số ảnh. Một chuyến cuối tuần có thể cần 4–6 trang, còn hành trình dài có thể chia theo từng điểm đến."}
+      {
+        "question": "Có nên dán vé gốc vào scrapbook?",
+        "answer": "Nếu vé có giá trị đặc biệt, nên chụp hoặc scan trước. Giấy in nhiệt của một số loại vé có thể phai; bạn có thể dùng bản sao trong sổ và cất bản gốc riêng."
+      },
+      {
+        "question": "Một chuyến đi nên dành bao nhiêu trang?",
+        "answer": "Hãy tính theo số câu chuyện chứ không theo số ảnh. Một chuyến cuối tuần có thể cần 4–6 trang, còn hành trình dài có thể chia theo từng điểm đến."
+      }
     ]
   },
   {
@@ -127,15 +201,29 @@
     "author": "Đội ngũ Xưởng MEMOUR",
     "published_date": "2026-09-19",
     "updated_date": "2026-09-19",
-    "read_time": "4 phút đọc",
+    "read_time": "13 phút đọc",
     "category": "Lưu Bút Học Trò",
-    "tags": ["Lưu Bút", "Kỷ Yếu", "Học Sinh"],
+    "tags": [
+      "Lưu Bút",
+      "Kỷ Yếu",
+      "Học Sinh"
+    ],
     "keywords": "cẩm nang scrapbook, lời nhắn lưu bút, lời chúc lưu bút cuối cấp, viết lưu bút cho bạn thân",
-    "related_skus": ["PAT-004", "LAY-TXT-001", "LAY-003"],
+    "related_skus": [
+      "PAT-004",
+      "LAY-TXT-001",
+      "LAY-003"
+    ],
     "content_file": "loi-nhan-luu-but.html",
     "faqs": [
-      {"question": "Viết lưu bút cho người không quá thân thế nào?", "answer": "Nhắc một khoảnh khắc chung trong lớp, một điểm tốt bạn nhận thấy và một lời chúc cụ thể. Không cần giả vờ thân thiết hơn thực tế."},
-      {"question": "Lời nhắn lưu bút nên dài bao nhiêu?", "answer": "Chỉ cần vài câu rõ ý. Một đoạn 3–5 câu thường vừa chỗ trên trang và dễ đọc lại."}
+      {
+        "question": "Viết lưu bút cho người không quá thân thế nào?",
+        "answer": "Nhắc một khoảnh khắc chung trong lớp, một điểm tốt bạn nhận thấy và một lời chúc cụ thể. Không cần giả vờ thân thiết hơn thực tế."
+      },
+      {
+        "question": "Lời nhắn lưu bút nên dài bao nhiêu?",
+        "answer": "Chỉ cần vài câu rõ ý. Một đoạn 3–5 câu thường vừa chỗ trên trang và dễ đọc lại."
+      }
     ]
   },
   {
@@ -150,15 +238,29 @@
     "author": "Đội ngũ Xưởng MEMOUR",
     "published_date": "2026-09-19",
     "updated_date": "2026-09-19",
-    "read_time": "4 phút đọc",
+    "read_time": "11 phút đọc",
     "category": "Thiết Kế Trang",
-    "tags": ["Scrapbook", "Bố Cục", "Ảnh Polaroid"],
+    "tags": [
+      "Scrapbook",
+      "Bố Cục",
+      "Ảnh Polaroid"
+    ],
     "keywords": "cẩm nang scrapbook, xếp ảnh polaroid scrapbook, bố cục ảnh polaroid, trang trí ảnh polaroid",
-    "related_skus": ["LAY-001", "LAY-002", "LAY-004"],
+    "related_skus": [
+      "LAY-001",
+      "LAY-002",
+      "LAY-004"
+    ],
     "content_file": "sap-xep-anh-polaroid-scrapbook.html",
     "faqs": [
-      {"question": "Ảnh Polaroid nên đặt thẳng hay nghiêng?", "answer": "Cả hai đều được. Với trang có nhiều chữ, ảnh đặt thẳng thường dễ đọc; chỉ nên nghiêng một ảnh làm điểm nhấn nếu bạn muốn cảm giác ngẫu hứng."},
-      {"question": "Có thể dùng khung Polaroid mà không cần ảnh in kiểu Polaroid không?", "answer": "Có. Bạn có thể đặt ảnh in thường sau khung giấy hoặc khung cài, miễn phần chủ thể nằm trong cửa sổ nhìn thấy."}
+      {
+        "question": "Ảnh Polaroid nên đặt thẳng hay nghiêng?",
+        "answer": "Cả hai đều được. Với trang có nhiều chữ, ảnh đặt thẳng thường dễ đọc; chỉ nên nghiêng một ảnh làm điểm nhấn nếu bạn muốn cảm giác ngẫu hứng."
+      },
+      {
+        "question": "Có thể dùng khung Polaroid mà không cần ảnh in kiểu Polaroid không?",
+        "answer": "Có. Bạn có thể đặt ảnh in thường sau khung giấy hoặc khung cài, miễn phần chủ thể nằm trong cửa sổ nhìn thấy."
+      }
     ]
   },
   {
@@ -173,15 +275,29 @@
     "author": "Đội ngũ Xưởng MEMOUR",
     "published_date": "2026-09-19",
     "updated_date": "2026-09-19",
-    "read_time": "4 phút đọc",
+    "read_time": "10 phút đọc",
     "category": "Tư Vấn Chọn",
-    "tags": ["Scrapbook", "Album Ảnh", "Người Mới"],
+    "tags": [
+      "Scrapbook",
+      "Album Ảnh",
+      "Người Mới"
+    ],
     "keywords": "cẩm nang scrapbook, scrapbook và album ảnh, scrapbook khác album ảnh, nên chọn scrapbook hay album ảnh",
-    "related_skus": ["SCR-001", "LAY-001", "PAT-001"],
+    "related_skus": [
+      "SCR-001",
+      "LAY-001",
+      "PAT-001"
+    ],
     "content_file": "scrapbook-va-album-anh.html",
     "faqs": [
-      {"question": "Scrapbook có thay thế hoàn toàn album ảnh không?", "answer": "Không nhất thiết. Album ảnh lưu được nhiều hình theo cách nhất quán; scrapbook phù hợp với những câu chuyện đã được chọn lọc và thêm lời kể."},
-      {"question": "Muốn tặng quà nhanh nên chọn loại nào?", "answer": "Album ảnh thường nhanh hơn nếu ảnh đã sẵn sàng. Scrapbook cần thêm thời gian chọn câu chuyện, viết chữ và dàn trang."}
+      {
+        "question": "Scrapbook có thay thế hoàn toàn album ảnh không?",
+        "answer": "Không nhất thiết. Album ảnh lưu được nhiều hình theo cách nhất quán; scrapbook phù hợp với những câu chuyện đã được chọn lọc và thêm lời kể."
+      },
+      {
+        "question": "Muốn tặng quà nhanh nên chọn loại nào?",
+        "answer": "Album ảnh thường nhanh hơn nếu ảnh đã sẵn sàng. Scrapbook cần thêm thời gian chọn câu chuyện, viết chữ và dàn trang."
+      }
     ]
   },
   {
@@ -196,15 +312,29 @@
     "author": "Đội ngũ Xưởng MEMOUR",
     "published_date": "2026-09-19",
     "updated_date": "2026-09-19",
-    "read_time": "4 phút đọc",
+    "read_time": "12 phút đọc",
     "category": "Vật Liệu",
-    "tags": ["Scrapbook", "Bảo Quản Ảnh", "Giấy"],
+    "tags": [
+      "Scrapbook",
+      "Bảo Quản Ảnh",
+      "Giấy"
+    ],
     "keywords": "cẩm nang scrapbook, cách bảo quản scrapbook, bảo quản ảnh in, bảo quản sổ lưu niệm",
-    "related_skus": ["PAT-001", "PAT-002", "SCR-001"],
+    "related_skus": [
+      "PAT-001",
+      "PAT-002",
+      "SCR-001"
+    ],
     "content_file": "bao-quan-scrapbook.html",
     "faqs": [
-      {"question": "Có nên bọc scrapbook bằng túi nhựa?", "answer": "Có thể dùng bao hoặc hộp bảo vệ sạch, khô và phù hợp với tài liệu giấy. Tránh bọc kín khi sổ còn ẩm hoặc keo chưa khô."},
-      {"question": "Ảnh trong scrapbook bị phai có khôi phục được không?", "answer": "Khó khôi phục màu gốc trên bản in đã xuống cấp. Vì vậy nên giữ file ảnh số và chụp lại trang sổ sau khi hoàn thiện để có bản dự phòng."}
+      {
+        "question": "Có nên bọc scrapbook bằng túi nhựa?",
+        "answer": "Có thể dùng bao hoặc hộp bảo vệ sạch, khô và phù hợp với tài liệu giấy. Tránh bọc kín khi sổ còn ẩm hoặc keo chưa khô."
+      },
+      {
+        "question": "Ảnh trong scrapbook bị phai có khôi phục được không?",
+        "answer": "Khó khôi phục màu gốc trên bản in đã xuống cấp. Vì vậy nên giữ file ảnh số và chụp lại trang sổ sau khi hoàn thiện để có bản dự phòng."
+      }
     ]
   },
   {
@@ -219,15 +349,29 @@
     "author": "Đội ngũ Xưởng MEMOUR",
     "published_date": "2026-09-19",
     "updated_date": "2026-09-19",
-    "read_time": "4 phút đọc",
+    "read_time": "12 phút đọc",
     "category": "Thiết Kế Trang",
-    "tags": ["Scrapbook", "Chữ Viết Tay", "Người Mới"],
+    "tags": [
+      "Scrapbook",
+      "Chữ Viết Tay",
+      "Người Mới"
+    ],
     "keywords": "cẩm nang scrapbook, cách viết chữ trong scrapbook, chữ viết tay scrapbook, viết nội dung scrapbook",
-    "related_skus": ["PAT-004", "PAT-005", "LAY-TXT-001"],
+    "related_skus": [
+      "PAT-004",
+      "PAT-005",
+      "LAY-TXT-001"
+    ],
     "content_file": "cach-viet-chu-trong-scrapbook.html",
     "faqs": [
-      {"question": "Chữ xấu có nên viết tay trong scrapbook không?", "answer": "Có. Chữ viết tay làm cuốn sổ mang dấu ấn của người làm. Chỉ cần viết đủ to, giữ khoảng cách dòng và thử mực trước khi viết lên trang chính."},
-      {"question": "Có thể in chữ rồi dán vào sổ không?", "answer": "Có. Bạn có thể in phần chữ dài, sau đó thêm tên, ngày hoặc một câu ngắn bằng tay để giữ tính cá nhân."}
+      {
+        "question": "Chữ xấu có nên viết tay trong scrapbook không?",
+        "answer": "Có. Chữ viết tay làm cuốn sổ mang dấu ấn của người làm. Chỉ cần viết đủ to, giữ khoảng cách dòng và thử mực trước khi viết lên trang chính."
+      },
+      {
+        "question": "Có thể in chữ rồi dán vào sổ không?",
+        "answer": "Có. Bạn có thể in phần chữ dài, sau đó thêm tên, ngày hoặc một câu ngắn bằng tay để giữ tính cá nhân."
+      }
     ]
   }
 ]
